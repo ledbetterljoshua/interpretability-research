@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superposition &amp; Features — Mechanistic Interpretability Field Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/curriculum.css">
+</head>
+<body>
+
+
+<!-- ======== HEADER ======== -->
+
+<header class="curriculum-header">
+  <div class="breadcrumb reveal">
+    <a href="index.html">Field Guide</a>
+    <span class="sep">/</span>
+    <a href="index.html#roadmap">Roadmap</a>
+    <span class="sep">/</span>
+    Superposition &amp; Features
+  </div>
+
+  <h1 class="reveal">Superposition &amp; Features</h1>
+
+  <p class="subtitle reveal">
+    The central problem of mechanistic interpretability: neural networks represent
+    far more concepts than they have neurons. Understanding this is understanding
+    why the field exists.
+  </p>
+
+  <div class="curriculum-meta reveal">
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--accent)"></span>
+      Roadmap Step 2
+    </span>
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--gold)"></span>
+      1&ndash;2 Weeks
+    </span>
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--red)"></span>
+      Core Problem
+    </span>
+  </div>
+</header>
+
+
+<!-- ======== NAVIGATION ======== -->
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-track">
+      <a class="nav-btn active" href="#the-problem">The Problem</a>
+      <a class="nav-btn" href="#geometry">Geometry</a>
+      <a class="nav-btn" href="#features">Features</a>
+      <a class="nav-btn" href="#toy-models">Toy Models</a>
+      <a class="nav-btn" href="#saes">SAEs</a>
+      <a class="nav-btn" href="#sae-walkthrough">SAE Walkthrough</a>
+      <a class="nav-btn" href="#evaluation">Evaluation</a>
+      <a class="nav-btn" href="#frontier">Frontier</a>
+      <a class="nav-btn" href="#paper-guide">Paper Guide</a>
+      <a class="nav-btn" href="#reading-list">Reading</a>
+      <a class="nav-btn" href="#exercises">Exercises</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ======== TABLE OF CONTENTS ======== -->
+
+<div class="curriculum-toc reveal">
+  <h3>In this section</h3>
+  <ol class="toc-list">
+    <li><a href="#the-problem"><span class="toc-num">01</span> The Problem: Why Neurons Don&rsquo;t Make Sense</a></li>
+    <li><a href="#geometry"><span class="toc-num">02</span> The Geometry of Superposition</a></li>
+    <li><a href="#features"><span class="toc-num">03</span> Features: The Real Units of Meaning</a></li>
+    <li><a href="#toy-models"><span class="toc-num">04</span> Toy Models of Superposition</a></li>
+    <li><a href="#saes"><span class="toc-num">05</span> Sparse Autoencoders: The Solution</a></li>
+    <li><a href="#sae-walkthrough"><span class="toc-num">06</span> SAE Walkthrough: Step by Step</a></li>
+    <li><a href="#evaluation"><span class="toc-num">07</span> Evaluating SAEs: How Do You Know It Worked?</a></li>
+    <li><a href="#frontier"><span class="toc-num">08</span> Frontier: What&rsquo;s Beyond SAEs</a></li>
+    <li><a href="#paper-guide"><span class="toc-num">09</span> Paper Guide: Toy Models &amp; Towards Monosemanticity</a></li>
+    <li><a href="#reading-list"><span class="toc-num">10</span> Required Reading</a></li>
+    <li><a href="#exercises"><span class="toc-num">11</span> Exercises &amp; Deliverables</a></li>
+  </ol>
+</div>
+
+
+<!-- ======== MAIN CONTENT ======== -->
+
+<main>
+
+  <!-- ============ THE PROBLEM ============ -->
+
+  <section id="the-problem" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">01</span>
+      <h2>The Problem: Why Neurons Don&rsquo;t Make Sense</h2>
+      <p>You&rsquo;d expect each neuron to represent one thing. They don&rsquo;t.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        Here&rsquo;s the intuitive expectation: a neural network learns to detect concepts, and
+        each neuron represents one concept. Neuron 347 fires for &ldquo;cat,&rdquo; neuron 1,024
+        fires for &ldquo;legal language,&rdquo; neuron 5,891 fires for &ldquo;the Golden Gate Bridge.&rdquo;
+        If this were true, interpretability would be solved &mdash; just read off what each neuron does.
+      </p>
+      <p>
+        <strong>This is not what happens.</strong> In practice, individual neurons fire for
+        multiple, seemingly unrelated concepts. A single neuron might activate for cats,
+        the color blue, and legal documents. This is called <span class="key-term">polysemanticity</span>,
+        and it makes neural networks fundamentally opaque at the neuron level.
+      </p>
+    </div>
+
+    <div class="two-col reveal">
+      <div class="card">
+        <div class="card-header">
+          <h3>Monosemantic Neuron (Rare)</h3>
+          <span class="tag tag-tool">Interpretable</span>
+        </div>
+        <p>Fires for one concept. Example: a neuron in an image model that activates
+        only for curved edges at a specific orientation. You can look at it and say
+        &ldquo;I know what this does.&rdquo; These exist but are the exception.</p>
+        <div class="math-block">
+          Neuron 42: activates for &rarr; &ldquo;references to the Eiffel Tower&rdquo;
+          <span class="annotation">One neuron, one concept. Clean, interpretable. Rare in practice.</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Polysemantic Neuron (Common)</h3>
+          <span class="tag tag-problem">Opaque</span>
+        </div>
+        <p>Fires for multiple unrelated concepts. The same neuron activates for
+        academic citations, Korean text, and mentions of cooking temperatures.
+        There&rsquo;s no single story you can tell about &ldquo;what this neuron does.&rdquo;</p>
+        <div class="math-block">
+          Neuron 42: activates for &rarr; &ldquo;academic citations&rdquo; AND &ldquo;Korean text&rdquo; AND &ldquo;cooking temps&rdquo;
+          <span class="annotation">One neuron, many concepts. Opaque. This is the norm.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">The Core Question</div>
+      <p>
+        Why would a network do this? It seems like bad engineering &mdash; why not give each
+        concept its own neuron? The answer is <span class="key-term">superposition</span>:
+        the network has learned far more concepts than it has neurons, and it&rsquo;s found a
+        clever way to pack them all in. Understanding this packing scheme is the entire game.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ GEOMETRY ============ -->
+
+  <section id="geometry" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">02</span>
+      <h2>The Geometry of Superposition</h2>
+      <p>How you fit 1,000 concepts into 768 dimensions.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        The key insight is geometric. In high-dimensional spaces, you can have a surprisingly
+        large number of <strong>nearly orthogonal</strong> directions. In 768 dimensions (GPT-2&rsquo;s
+        residual stream), you can fit thousands of directions that are almost perpendicular to
+        each other. &ldquo;Almost&rdquo; is doing a lot of work here &mdash; but if concepts are
+        sparse enough (rarely active at the same time), the small amount of interference
+        between these nearly-orthogonal directions doesn&rsquo;t matter much.
+      </p>
+    </div>
+
+    <!-- Superposition Geometry Stepper -->
+    <div class="stepper reveal" data-current-step="0">
+      <div class="stepper-header">
+        <button class="stepper-tab active"><span class="step-num-inline">1</span> No Superposition</button>
+        <button class="stepper-tab"><span class="step-num-inline">2</span> The Squeeze</button>
+        <button class="stepper-tab"><span class="step-num-inline">3</span> Superposition</button>
+        <button class="stepper-tab"><span class="step-num-inline">4</span> Why It Works</button>
+      </div>
+
+      <div class="stepper-body">
+
+        <!-- Step 1: No superposition -->
+        <div class="stepper-step active">
+          <div class="step-visual">
+            <div class="visual-label">3 features in 3 dimensions &mdash; no superposition needed</div>
+            <div class="token-row" style="gap: 1.5rem;">
+              <div class="token-col">
+                <div class="token-label">Feature A</div>
+                <div class="token-block" style="border-color: var(--accent);">[1, 0, 0]</div>
+              </div>
+              <div class="token-col">
+                <div class="token-label">Feature B</div>
+                <div class="token-block" style="border-color: var(--green);">[0, 1, 0]</div>
+              </div>
+              <div class="token-col">
+                <div class="token-label">Feature C</div>
+                <div class="token-block" style="border-color: var(--gold);">[0, 0, 1]</div>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.72rem; color: var(--text-muted);">
+              Each feature gets its own axis. Perfectly orthogonal. Zero interference. This is the dream.
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>The Ideal Case: One Feature Per Dimension</h4>
+            <p>If you have as many dimensions as features, each feature gets its own axis.
+            Features don&rsquo;t interfere with each other. Reading feature A is just reading
+            dimension 1. This is monosemantic &mdash; and it&rsquo;s exactly what SAEs try to recover.</p>
+          </div>
+        </div>
+
+        <!-- Step 2: The squeeze -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">5 features, but only 3 dimensions</div>
+            <div class="token-row" style="gap: 0.75rem;">
+              <div class="token-block" style="border-color: var(--accent);">A</div>
+              <div class="token-block" style="border-color: var(--green);">B</div>
+              <div class="token-block" style="border-color: var(--gold);">C</div>
+              <div class="token-block" style="border-color: var(--pink);">D</div>
+              <div class="token-block" style="border-color: var(--cyan);">E</div>
+            </div>
+            <div class="visual-arrow" style="font-size: 1.5rem; padding: 0.5rem 0;">&darr; squeeze into &darr;</div>
+            <div class="token-row" style="gap: 1.5rem;">
+              <div class="token-block">dim 1</div>
+              <div class="token-block">dim 2</div>
+              <div class="token-block">dim 3</div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.72rem; color: var(--text-muted);">
+              The network learned more concepts than it has dimensions. Now what?
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>The Real Situation: More Features Than Dimensions</h4>
+            <p>A real model like GPT-2 Small has 768 dimensions but has learned thousands
+            (maybe millions) of concepts. It can&rsquo;t give each concept its own axis.
+            It has to share. The question is: <strong>how</strong> does it share?</p>
+          </div>
+        </div>
+
+        <!-- Step 3: Superposition -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">5 features packed into 3 dimensions via superposition</div>
+            <div class="token-row" style="gap: 0.75rem;">
+              <div class="token-col">
+                <div class="token-label">Feature A</div>
+                <div class="token-block" style="border-color: var(--accent); font-size: 0.7rem;">[0.9, 0.2, 0.1]</div>
+              </div>
+              <div class="token-col">
+                <div class="token-label">Feature B</div>
+                <div class="token-block" style="border-color: var(--green); font-size: 0.7rem;">[0.1, 0.8, 0.3]</div>
+              </div>
+              <div class="token-col">
+                <div class="token-label">Feature C</div>
+                <div class="token-block" style="border-color: var(--gold); font-size: 0.7rem;">[0.2, 0.1, 0.9]</div>
+              </div>
+              <div class="token-col">
+                <div class="token-label">Feature D</div>
+                <div class="token-block" style="border-color: var(--pink); font-size: 0.7rem;">[0.7, -0.5, 0.3]</div>
+              </div>
+              <div class="token-col">
+                <div class="token-label">Feature E</div>
+                <div class="token-block" style="border-color: var(--cyan); font-size: 0.7rem;">[-0.3, 0.6, 0.7]</div>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.72rem; color: var(--text-muted);">
+              Features now share dimensions. Each feature is a direction (not an axis). Directions are nearly orthogonal, but not perfectly.
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Superposition: Features as Directions</h4>
+            <p>The network represents each feature as a <strong>direction</strong> in the
+            high-dimensional space, rather than as a single axis. These directions are
+            nearly orthogonal &mdash; the dot product between any two is small but not zero.
+            When you read dimension 1, you get a mix of all features that use that dimension.
+            This is why individual neurons are polysemantic.</p>
+          </div>
+        </div>
+
+        <!-- Step 4: Why it works -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Sparsity makes interference tolerable</div>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+              <div style="text-align: center;">
+                <div class="token-label">Input 1</div>
+                <div class="token-row" style="gap: 0.35rem;">
+                  <div class="token-block" style="border-color: var(--accent); opacity: 1;">A <span style="font-size:0.6rem">ON</span></div>
+                  <div class="token-block" style="opacity: 0.2;">B</div>
+                  <div class="token-block" style="opacity: 0.2;">C</div>
+                  <div class="token-block" style="opacity: 0.2;">D</div>
+                  <div class="token-block" style="opacity: 0.2;">E</div>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--green); margin-top: 0.3rem;">Only A active &rarr; no interference</div>
+              </div>
+              <div style="text-align: center;">
+                <div class="token-label">Input 2</div>
+                <div class="token-row" style="gap: 0.35rem;">
+                  <div class="token-block" style="opacity: 0.2;">A</div>
+                  <div class="token-block" style="opacity: 0.2;">B</div>
+                  <div class="token-block" style="border-color: var(--gold); opacity: 1;">C <span style="font-size:0.6rem">ON</span></div>
+                  <div class="token-block" style="opacity: 0.2;">D</div>
+                  <div class="token-block" style="border-color: var(--cyan); opacity: 1;">E <span style="font-size:0.6rem">ON</span></div>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--gold); margin-top: 0.3rem;">C &amp; E active &rarr; small interference</div>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Why Sparsity Is the Key</h4>
+            <p>Superposition works because most features are <strong>sparse</strong> &mdash;
+            they&rsquo;re only active on a small fraction of inputs. &ldquo;Golden Gate Bridge&rdquo;
+            is relevant to maybe 0.01% of text. If features are rarely active simultaneously,
+            the interference between their nearly-orthogonal directions rarely causes problems.
+            The sparser the features, the more you can pack in. This is the fundamental tradeoff:
+            <strong>more features = more interference, but sparsity keeps interference manageable</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="stepper-nav">
+        <button class="step-prev" disabled>&larr; Previous</button>
+        <span class="stepper-indicator">1 / 4</span>
+        <button class="step-next">Next &rarr;</button>
+      </div>
+    </div>
+
+    <div class="math-block reveal">
+      <span class="label">The Superposition Tradeoff</span>
+      Benefit: represent <span class="math-var">N</span> features in <span class="math-var">d</span> dimensions (<span class="math-var">N</span> &gt;&gt; <span class="math-var">d</span>)
+      <br>
+      Cost: interference &prop; dot_product(feature<sub>i</sub>, feature<sub>j</sub>)<sup>2</sup> &times; P(both active)
+      <span class="annotation">More features = more packing = more potential interference. But if features are sparse (low co-activation), the cost stays low.</span>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">The Johnson-Lindenstrauss Intuition</div>
+      <p>
+        There&rsquo;s a famous result in mathematics (the Johnson-Lindenstrauss lemma): in high
+        dimensions, random vectors are almost orthogonal. In 768 dimensions, you can have
+        hundreds of thousands of directions where any pair has a dot product close to zero.
+        The model doesn&rsquo;t need to carefully engineer orthogonal directions &mdash; even
+        random-ish directions in high-dimensional space are nearly orthogonal. Superposition
+        is not a hack; it&rsquo;s a natural consequence of high-dimensional geometry.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ FEATURES ============ -->
+
+  <section id="features" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">03</span>
+      <h2>Features: The Real Units of Meaning</h2>
+      <p>If neurons aren&rsquo;t the right unit, what is?</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        The mechanistic interpretability community has converged on the idea that the
+        real units of meaning in a neural network are <span class="key-term">features</span>:
+        <strong>directions in activation space that correspond to interpretable concepts</strong>.
+        A feature isn&rsquo;t a neuron &mdash; it&rsquo;s a direction that might be spread across many neurons.
+      </p>
+    </div>
+
+    <div class="two-col reveal">
+      <div>
+        <div class="section-label">What Makes Something a Feature</div>
+        <div class="prose">
+          <p>A feature is a direction in the residual stream (or any activation space) that:</p>
+        </div>
+        <ul class="prereq-checklist" style="margin-top: 0.5rem;">
+          <li><strong>Corresponds to a concept:</strong> It activates on inputs related to a specific, human-understandable idea (e.g., &ldquo;code has a bug,&rdquo; &ldquo;sycophantic praise,&rdquo; &ldquo;the Golden Gate Bridge&rdquo;)</li>
+          <li><strong>Is causally meaningful:</strong> Amplifying the feature changes the model&rsquo;s behavior in the expected direction (more bridge references, more sycophancy, etc.)</li>
+          <li><strong>Is sparse:</strong> Only active on a small fraction of inputs &mdash; most text isn&rsquo;t about the Golden Gate Bridge</li>
+          <li><strong>Is a direction, not a neuron:</strong> The feature vector might have nonzero components across many neurons</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-label">The Linear Representation Hypothesis</div>
+        <div class="prose">
+          <p>
+            Features are assumed to be <strong>linear</strong> &mdash; they correspond to directions
+            (vectors) rather than curved surfaces or nonlinear manifolds. This is the
+            <span class="key-term">linear representation hypothesis</span>. Evidence for it:
+          </p>
+        </div>
+        <ul class="prereq-checklist" style="margin-top: 0.5rem;">
+          <li><strong>Linear probes work:</strong> Simple linear classifiers on activations can extract concept presence with high accuracy</li>
+          <li><strong>Steering vectors work:</strong> Adding a fixed vector to the residual stream changes behavior predictably</li>
+          <li><strong>SAEs work:</strong> Linear decomposition (the basis of SAEs) finds interpretable features</li>
+          <li class="optional"><strong>Caveat:</strong> Some concepts may be nonlinear. Active research area. The hypothesis is useful even if not perfectly true.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Neurons vs. Features</div>
+      <p>
+        Think of it like this: neurons are the <strong>physical basis</strong> (the actual
+        computational units in the hardware), while features are the <strong>natural basis</strong>
+        (the concepts the network actually works with). A neuron is like a pixel on a screen &mdash;
+        it&rsquo;s a real thing, but the meaningful unit is the image, which is a pattern across
+        many pixels. SAEs try to find the &ldquo;image&rdquo; (feature) basis from the &ldquo;pixel&rdquo; (neuron) basis.
+      </p>
+    </div>
+
+    <div class="card card--highlight reveal">
+      <h3>Real Features Found in Claude</h3>
+      <p>Anthropic&rsquo;s <a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/">Scaling Monosemanticity</a> (2024)
+      extracted millions of features from Claude 3 Sonnet. Some examples:</p>
+      <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
+        <li style="font-size: 0.86rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 0.2rem;">A feature for the <strong>Golden Gate Bridge</strong> (fires for any mention, image, or reference)</li>
+        <li style="font-size: 0.86rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 0.2rem;">A feature for <strong>&ldquo;code has a bug&rdquo;</strong> (fires when reviewing buggy code)</li>
+        <li style="font-size: 0.86rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 0.2rem;">A feature for <strong>sycophantic praise</strong> (fires when the model is being overly agreeable)</li>
+        <li style="font-size: 0.86rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 0.2rem;">A feature for <strong>deception / being untruthful</strong> (safety-relevant!)</li>
+        <li style="font-size: 0.86rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 0.2rem;">Features that are <strong>multilingual</strong> (same feature fires for &ldquo;love&rdquo; in English, French, Chinese, etc.)</li>
+        <li style="font-size: 0.86rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 0.2rem;">Features that are <strong>multimodal</strong> (same feature fires for text about and images of the same concept)</li>
+      </ul>
+      <p style="margin-top: 0.75rem;">Amplifying the Golden Gate Bridge feature made Claude obsessively relate everything
+      to the bridge &mdash; proof these features are causally meaningful, not just correlations.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ TOY MODELS ============ -->
+
+  <section id="toy-models" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">04</span>
+      <h2>Toy Models of Superposition</h2>
+      <p>A mathematical framework for when and how superposition happens.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        Elhage et al.&rsquo;s &ldquo;Toy Models of Superposition&rdquo; (2022) studies superposition
+        in a controlled setting. They train tiny models (5 neurons, 20 features) and observe
+        exactly when and how features get packed into fewer dimensions. The results give us
+        a framework for understanding superposition in real models.
+      </p>
+    </div>
+
+    <div class="section-label">The Toy Model Setup</div>
+
+    <div class="math-block reveal">
+      <span class="label">Architecture</span>
+      Input: <span class="math-var">x</span> &isin; &reals;<sup>n</sup> (n sparse features, each active with probability <span class="math-var">S</span>)
+      <br>
+      Bottleneck: <span class="math-var">h</span> = <span class="math-var">W</span><span class="math-var">x</span> &emsp;where <span class="math-var">W</span> &isin; &reals;<sup>m&times;n</sup>, <span class="math-var">m</span> &lt; <span class="math-var">n</span>
+      <br>
+      Output: <span class="math-var">x&#770;</span> = ReLU(<span class="math-var">W</span><sup>T</sup><span class="math-var">h</span> + <span class="math-var">b</span>)
+      <br>
+      Loss: ||<span class="math-var">x</span> - <span class="math-var">x&#770;</span>||<sup>2</sup> weighted by feature importance
+      <span class="annotation">A linear encoder → nonlinear decoder. m dimensions must represent n &gt; m features. The model must choose which features to keep and how to pack them.</span>
+    </div>
+
+    <div class="section-label">Key Findings</div>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <div class="card-header">
+          <h3>Phase Transitions</h3>
+          <span class="tag tag-core">Finding</span>
+        </div>
+        <p>Superposition doesn&rsquo;t increase smoothly. As feature sparsity increases, the model
+        suddenly transitions from &ldquo;dedicate one dimension to the most important feature&rdquo;
+        to &ldquo;pack multiple features in using superposition.&rdquo; These sharp transitions are
+        a sign of geometric structure, not randomness.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Sparsity Determines Packing</h3>
+          <span class="tag tag-core">Finding</span>
+        </div>
+        <p>Sparser features (those active less often) are more likely to be stored in superposition.
+        Dense features (active often) get their own dimensions because interference would be too
+        costly. The model dynamically allocates: important + dense features get dedicated axes;
+        less important + sparse features get packed.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Geometric Structures Emerge</h3>
+          <span class="tag tag-core">Finding</span>
+        </div>
+        <p>Features in superposition organize into beautiful geometric structures: pentagons,
+        tetrahedra, antipodal pairs. These are optimal packings &mdash; the same shapes that
+        appear in coding theory and sphere-packing problems. The network rediscovers known
+        mathematical optima.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Importance &times; Sparsity Tradeoff</h3>
+          <span class="tag tag-core">Finding</span>
+        </div>
+        <p>Whether a feature gets its own dimension depends on <span class="math">importance &times; density</span>.
+        High importance + high density = dedicated dimension. Low importance + high sparsity =
+        superposition. The model makes optimal allocation decisions.</p>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Why Toy Models Matter</div>
+      <p>
+        You can&rsquo;t study superposition in GPT-4 because you don&rsquo;t know the ground-truth
+        features. Toy models let you control the features, vary sparsity and importance,
+        and verify that your decomposition methods (SAEs) actually recover the true features.
+        They&rsquo;re the controlled experiments that give us confidence the approach works.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ SAEs ============ -->
+
+  <section id="saes" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">05</span>
+      <h2>Sparse Autoencoders: The Solution</h2>
+      <p>How we crack open superposition and find the real features.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        If the network stores features in superposition (many features packed into fewer
+        dimensions), the solution is to <strong>unpack</strong> them. A
+        <span class="key-term">Sparse Autoencoder</span> (SAE) does exactly this: it takes the
+        dense, polysemantic activations from a model layer and decomposes them into a
+        much larger set of sparse, ideally monosemantic features.
+      </p>
+      <p>
+        Think of it as a learned dictionary. The model&rsquo;s activations are compressed text.
+        The SAE is a translator that converts from &ldquo;neuron language&rdquo; (polysemantic,
+        compressed) to &ldquo;feature language&rdquo; (monosemantic, interpretable, but much wider).
+      </p>
+    </div>
+
+    <div class="arch-flow reveal">
+      <div class="arch-node">
+        Model Activations
+        <span class="arch-sub">e.g., residual stream at layer 6, dim = 768</span>
+      </div>
+
+      <div class="arch-connector">&darr;</div>
+
+      <div class="arch-node" style="border-color: var(--accent);">
+        SAE Encoder
+        <span class="arch-sub">Linear projection + activation &rarr; sparse features</span>
+      </div>
+
+      <div class="arch-connector">&darr;</div>
+
+      <div class="arch-stream-label" style="background: var(--accent-bg-strong);">Sparse Feature Space (e.g., 768 &times; 16 = 12,288 features)</div>
+
+      <div class="arch-connector">&darr;</div>
+
+      <div class="arch-node" style="border-color: var(--accent);">
+        SAE Decoder
+        <span class="arch-sub">Linear projection &rarr; reconstructed activations</span>
+      </div>
+
+      <div class="arch-connector">&darr;</div>
+
+      <div class="arch-node arch-node--output">
+        Reconstructed Activations
+        <span class="arch-sub">Should closely match original activations</span>
+      </div>
+    </div>
+
+    <div class="math-block reveal">
+      <span class="label">SAE Architecture</span>
+      <strong>Encode:</strong> <span class="math-var">f</span> = TopK(<span class="math-var">W<sub>enc</sub></span>(<span class="math-var">x</span> - <span class="math-var">b<sub>dec</sub></span>) + <span class="math-var">b<sub>enc</sub></span>)
+      <br>
+      <strong>Decode:</strong> <span class="math-var">x&#770;</span> = <span class="math-var">W<sub>dec</sub></span> &middot; <span class="math-var">f</span> + <span class="math-var">b<sub>dec</sub></span>
+      <br>
+      <strong>Loss:</strong> ||<span class="math-var">x</span> - <span class="math-var">x&#770;</span>||<sup>2</sup>
+      <span class="annotation">W<sub>enc</sub>: [hidden_dim &times; d_model], W<sub>dec</sub>: [d_model &times; hidden_dim]. TopK keeps only the top K activations, zeroing the rest. hidden_dim is much larger than d_model (16x to 64x expansion).</span>
+    </div>
+
+    <div class="two-col reveal">
+      <div>
+        <div class="section-label">How Sparsity is Enforced</div>
+        <div class="card-grid" style="grid-template-columns: 1fr;">
+          <div class="card">
+            <div class="card-header">
+              <h3>TopK (Current Standard)</h3>
+              <span class="tag tag-tool">Preferred</span>
+            </div>
+            <p>Keep only the top K activations per input, set the rest to zero. Directly controls
+            sparsity level. K might be 32&ndash;128 out of 12,288+ features. Clean, predictable.</p>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3>L1 Penalty (Original)</h3>
+              <span class="tag tag-method">Historic</span>
+            </div>
+            <p>Add <span class="math">&lambda;||f||<sub>1</sub></span> to the loss. Encourages
+            sparsity but requires tuning &lambda;. Can cause &ldquo;feature splitting&rdquo;
+            (one concept split across multiple features) or &ldquo;feature absorption.&rdquo; TopK avoids these issues.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Key Design Choices</div>
+        <div class="prose">
+          <p><strong>Expansion factor:</strong> How much wider is the SAE than the model?
+          Typical values: 16x to 64x. More expansion = more features found, but also more
+          noise features and higher compute cost. 16x is a common starting point.</p>
+
+          <p><strong>Which layer to decompose:</strong> You train separate SAEs for different layers.
+          Early layers have more syntactic features. Later layers have more semantic/abstract features.
+          The residual stream is the most common target.</p>
+
+          <p><strong>Training data:</strong> Run the model on a large text corpus, cache activations
+          at the target layer, train the SAE on those cached activations. Millions to billions
+          of activation vectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SAE WALKTHROUGH ============ -->
+
+  <section id="sae-walkthrough" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">06</span>
+      <h2>SAE Walkthrough: Step by Step</h2>
+      <p>What actually happens when an SAE decomposes a model&rsquo;s activations.</p>
+    </div>
+
+    <div class="stepper reveal" data-current-step="0">
+      <div class="stepper-header">
+        <button class="stepper-tab active"><span class="step-num-inline">1</span> Input</button>
+        <button class="stepper-tab"><span class="step-num-inline">2</span> Encode</button>
+        <button class="stepper-tab"><span class="step-num-inline">3</span> Sparse</button>
+        <button class="stepper-tab"><span class="step-num-inline">4</span> Interpret</button>
+        <button class="stepper-tab"><span class="step-num-inline">5</span> Decode</button>
+      </div>
+
+      <div class="stepper-body">
+
+        <div class="stepper-step active">
+          <div class="step-visual">
+            <div class="visual-label">Model processes: &ldquo;The Eiffel Tower is located in&rdquo;</div>
+            <div class="token-row" style="gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+              <div class="token-block">0.82</div>
+              <div class="token-block">-0.31</div>
+              <div class="token-block">1.47</div>
+              <div class="token-block">0.05</div>
+              <div class="token-block">-0.63</div>
+              <div class="token-block" style="opacity: 0.5;">&hellip;</div>
+              <div class="token-block">0.29</div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.72rem; color: var(--text-muted);">
+              768-dimensional residual stream vector at position &ldquo;in&rdquo;, layer 8. Dense. Every dimension is nonzero. Polysemantic.
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Start: Dense Model Activations</h4>
+            <p>We extract the residual stream at a specific layer and position. This 768-dimensional
+            vector is the model&rsquo;s internal state. It&rsquo;s dense (most values are nonzero) and
+            polysemantic (each dimension blends multiple concepts). We can&rsquo;t directly read what
+            the model &ldquo;knows&rdquo; here.</p>
+          </div>
+        </div>
+
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Encoder projects to 12,288-dimensional feature space</div>
+            <div class="token-row" style="align-items: center; gap: 0.75rem;">
+              <div class="token-col">
+                <div class="token-label">768-dim</div>
+                <div class="token-block">x</div>
+              </div>
+              <div class="visual-arrow">&times; W<sub>enc</sub> + b<sub>enc</sub></div>
+              <div class="visual-arrow">&rarr;</div>
+              <div class="token-col">
+                <div class="token-label">12,288-dim (pre-activation)</div>
+                <div class="token-block" style="min-width: 160px;">z = [0.1, -0.3, 2.8, 0.0, 1.1, &hellip;]</div>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Encode: Project to a Wider Space</h4>
+            <p>The encoder is a linear layer that projects from 768 dimensions to 12,288 dimensions
+            (a 16x expansion). This wider space has enough room for each feature to get its own
+            dimension. The pre-activation values indicate how much each potential feature matches
+            the input.</p>
+          </div>
+        </div>
+
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">TopK activation: keep top 64, zero the rest</div>
+            <div class="token-row" style="gap: 0.35rem; flex-wrap: wrap; justify-content: center;">
+              <div class="token-block" style="opacity: 0.15;">0</div>
+              <div class="token-block" style="opacity: 0.15;">0</div>
+              <div class="token-block" style="border-color: var(--accent); border-width: 2px;">2.8</div>
+              <div class="token-block" style="opacity: 0.15;">0</div>
+              <div class="token-block" style="border-color: var(--green); border-width: 2px;">1.1</div>
+              <div class="token-block" style="opacity: 0.15;">0</div>
+              <div class="token-block" style="opacity: 0.15;">0</div>
+              <div class="token-block" style="border-color: var(--gold); border-width: 2px;">0.9</div>
+              <div class="token-block" style="opacity: 0.15;">0</div>
+              <div class="token-block" style="opacity: 0.5;">&hellip;</div>
+              <div class="token-block" style="opacity: 0.15;">0</div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.72rem; color: var(--text-muted);">
+              64 out of 12,288 features are active (&lt;0.5%). This IS the sparse representation. Each nonzero value is one feature &ldquo;firing.&rdquo;
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Sparsify: Most Features are Zero</h4>
+            <p>TopK keeps only the 64 largest activations and zeros everything else. Now we have
+            a <strong>sparse</strong> representation: only 64 out of 12,288 features are active
+            (&lt;0.5%). Each active feature ideally corresponds to one interpretable concept present
+            in this input.</p>
+          </div>
+        </div>
+
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Active features and what they mean</div>
+            <div style="text-align: left; max-width: 440px; margin: 0 auto;">
+              <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem;">
+                <div class="token-block" style="border-color: var(--accent); border-width: 2px; min-width: 50px;">2.8</div>
+                <span style="font-size: 0.82rem; color: var(--text);">Feature #1,847: &ldquo;Eiffel Tower / Paris landmarks&rdquo;</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem;">
+                <div class="token-block" style="border-color: var(--green); border-width: 2px; min-width: 50px;">1.1</div>
+                <span style="font-size: 0.82rem; color: var(--text);">Feature #4,203: &ldquo;Geographic location queries&rdquo;</span>
+              </div>
+              <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem;">
+                <div class="token-block" style="border-color: var(--gold); border-width: 2px; min-width: 50px;">0.9</div>
+                <span style="font-size: 0.82rem; color: var(--text);">Feature #7,891: &ldquo;European cultural references&rdquo;</span>
+              </div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem;">
+                + 61 more active features (lower activation strengths)
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Interpret: Each Feature Has a Meaning</h4>
+            <p>Now comes the payoff. Each active feature (ideally) corresponds to one interpretable
+            concept. Feature #1,847 fires strongly (2.8) because the Eiffel Tower is present.
+            Feature #4,203 fires because this is a location query. The activation strength tells
+            you how strongly each concept is present. You&rsquo;ve gone from &ldquo;768 opaque numbers&rdquo;
+            to &ldquo;64 named concepts with strengths.&rdquo;</p>
+          </div>
+        </div>
+
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Decoder reconstructs the original activations</div>
+            <div class="token-row" style="align-items: center; gap: 0.75rem;">
+              <div class="token-col">
+                <div class="token-label">Sparse features</div>
+                <div class="token-block" style="border-color: var(--accent);">f</div>
+              </div>
+              <div class="visual-arrow">&times; W<sub>dec</sub> + b<sub>dec</sub></div>
+              <div class="visual-arrow">&rarr;</div>
+              <div class="token-col">
+                <div class="token-label">Reconstructed (768-dim)</div>
+                <div class="token-block" style="border-color: var(--green);">x&#770;</div>
+              </div>
+              <div class="visual-arrow">&asymp;</div>
+              <div class="token-col">
+                <div class="token-label">Original (768-dim)</div>
+                <div class="token-block">x</div>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.72rem; color: var(--text-muted);">
+              Good SAEs reconstruct >95% of the variance. The decoder columns ARE the feature directions in activation space.
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Decode: Verify the Decomposition</h4>
+            <p>The decoder projects the sparse features back to 768 dimensions. If the reconstruction
+            closely matches the original activations, the SAE has found a good decomposition.
+            Critically: <strong>each column of the decoder matrix IS the feature&rsquo;s direction</strong>
+            in activation space. This is what you plot, analyze, and use for steering.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="stepper-nav">
+        <button class="step-prev" disabled>&larr; Previous</button>
+        <span class="stepper-indicator">1 / 5</span>
+        <button class="step-next">Next &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ EVALUATION ============ -->
+
+  <section id="evaluation" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">07</span>
+      <h2>Evaluating SAEs: How Do You Know It Worked?</h2>
+      <p>Finding features is easy. Finding the <em>right</em> features is hard.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        Training an SAE will always give you features. The question is whether those features
+        are <strong>real</strong> (corresponding to genuine concepts in the model) or
+        <strong>artifacts</strong> (statistical patterns that don&rsquo;t mean anything).
+        There&rsquo;s no single metric that answers this, so the field uses several.
+      </p>
+    </div>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <div class="card-header">
+          <h3>Reconstruction Quality</h3>
+          <span class="tag tag-method">Metric</span>
+        </div>
+        <p>How well can the decoder reconstruct the original activations from the sparse features?
+        Measured by explained variance (R<sup>2</sup>) or mean squared error. Good SAEs explain
+        &gt;95% of variance. But: perfect reconstruction with garbage features is possible
+        (just memorize the data), so this is necessary but not sufficient.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Downstream Performance</h3>
+          <span class="tag tag-method">Metric</span>
+        </div>
+        <p>Replace the model&rsquo;s real activations with SAE-reconstructed activations. Does the model
+        still perform well? If loss goes up a lot, the SAE is losing important information. This is
+        a stronger test than reconstruction because it measures whether the SAE preserves the
+        information the model actually uses.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Interpretability</h3>
+          <span class="tag tag-method">Qualitative</span>
+        </div>
+        <p>Can humans understand the features? For each feature, look at the top-activating inputs
+        and see if they share a coherent theme. Automated scoring: have an LLM describe the feature
+        from its top activations, then test whether the description predicts activations on held-out data.
+        This is how Neuronpedia generates feature descriptions.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Sparsity vs. Reconstruction Tradeoff</h3>
+          <span class="tag tag-method">Metric</span>
+        </div>
+        <p>Plot reconstruction quality against sparsity (L0 = average number of active features).
+        Better SAEs achieve the same reconstruction with fewer active features. This Pareto frontier
+        is the main comparison metric: does SAE architecture A dominate architecture B?</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Feature Stability</h3>
+          <span class="tag tag-problem">Open Problem</span>
+        </div>
+        <p>Train two SAEs with different random seeds. Do they find the same features? Currently:
+        partially. Some features are consistent, others aren&rsquo;t. This is a fundamental concern &mdash;
+        if features depend on the random seed, are they &ldquo;real&rdquo; or just one valid decomposition
+        among many?</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Causal Tests (Steering)</h3>
+          <span class="tag tag-method">Gold Standard</span>
+        </div>
+        <p>The strongest test: does amplifying or suppressing a feature change the model&rsquo;s behavior
+        in the expected way? If the &ldquo;Golden Gate Bridge&rdquo; feature is real, amplifying it should
+        make the model talk about the bridge. This is the closest thing to ground truth we have
+        for real models.</p>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">The Verification Problem</div>
+      <p>
+        This is one of the field&rsquo;s deepest challenges: there&rsquo;s no ground truth for what the
+        &ldquo;real features&rdquo; are in a production model. We can verify in toy models (where we
+        know the true features), but for GPT-4 or Claude, we&rsquo;re always making inferences.
+        Every interpretation should be treated as a hypothesis, not a conclusion.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ FRONTIER ============ -->
+
+  <section id="frontier" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">08</span>
+      <h2>Frontier: What&rsquo;s Beyond SAEs</h2>
+      <p>Where the cutting edge is going, as of 2025&ndash;2026.</p>
+    </div>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <div class="card-header">
+          <h3>Gated SAEs</h3>
+          <span class="tag tag-method">Variant</span>
+        </div>
+        <p>Add a gating mechanism to the encoder: a separate linear layer decides which features
+        to activate (gate), while the main encoder computes the activation magnitudes. Separating
+        &ldquo;should this feature fire?&rdquo; from &ldquo;how strongly?&rdquo; gives better
+        reconstruction at the same sparsity level.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Crosscoders</h3>
+          <span class="tag tag-method">Extension</span>
+        </div>
+        <p>SAEs that read from and write to multiple layers (respecting causality). Enable tracking
+        how features evolve through the network and comparing features between different models
+        (&ldquo;model diffing&rdquo;). Key tool for Anthropic&rsquo;s circuit tracing work.</p>
+        <div class="links">
+          <a href="index.html#concepts">See Crosscoders in Concepts</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Transcoders / CLTs</h3>
+          <span class="tag tag-method">Alternative</span>
+        </div>
+        <p>Instead of decomposing activations, replace MLP layers entirely with sparse, interpretable
+        alternatives. A cross-layer transcoder reads the residual stream and contributes to all
+        subsequent MLP outputs. Makes circuit tracing dramatically cleaner.</p>
+        <div class="links">
+          <a href="index.html#concepts">See CLTs in Concepts</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>BatchTopK</h3>
+          <span class="tag tag-method">Training</span>
+        </div>
+        <p>Instead of choosing the top K features per example, choose the top K across
+        the entire batch. Allows adaptive sparsity per input: some inputs might have 20
+        active features, others 100. Better than fixed K for real-world distributions.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Meta-SAEs</h3>
+          <span class="tag tag-method">Research</span>
+        </div>
+        <p>Train an SAE on the decoder columns of another SAE to discover structure among
+        features. Can features be grouped? Do they form a hierarchy? Are there families of
+        related features? Reveals how the model organizes its knowledge.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>The &ldquo;Are Features Real?&rdquo; Debate</h3>
+          <span class="tag tag-problem">Open Question</span>
+        </div>
+        <p>Maybe the linear representation hypothesis is wrong. Maybe features aren&rsquo;t directions
+        but regions, manifolds, or something else entirely. Maybe there is no &ldquo;right&rdquo;
+        decomposition. This remains the deepest open question. SAEs work well enough to be
+        useful, but we can&rsquo;t prove they&rsquo;re finding the &ldquo;true&rdquo; structure.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PAPER GUIDE ============ -->
+
+  <section id="paper-guide" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">09</span>
+      <h2>Paper Guide</h2>
+      <p>Section-by-section guides to the two essential papers for this unit.</p>
+    </div>
+
+    <!-- Toy Models -->
+    <div class="section-label">Toy Models of Superposition (Elhage et al., 2022)</div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Reading Strategy</div>
+      <p>
+        This paper is long but well-written. Focus on Sections 1&ndash;3 (setup, results, geometry)
+        for the core understanding. Sections 4+ go deeper into specific phenomena and can be
+        skimmed on a first read. Budget 3&ndash;4 hours for a careful first pass.
+      </p>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Section 1&ndash;2: Motivation &amp; Setup</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--easy">Accessible</span>
+          <span class="time-est">30 min</span>
+        </div>
+      </div>
+      <p>Why superposition matters, the experimental setup (tiny ReLU networks trained to
+      reconstruct sparse inputs through a bottleneck), and the key variables (feature importance,
+      feature sparsity, bottleneck width).</p>
+      <div class="subsection-label">What to Focus On</div>
+      <ul>
+        <li>The toy model architecture &mdash; understand it completely before moving on</li>
+        <li>The distinction between feature importance and feature sparsity</li>
+        <li>What &ldquo;superposition&rdquo; means formally in this context: features represented as
+        non-axis-aligned directions</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Section 3: Key Results</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--medium">Core</span>
+          <span class="time-est">45 min</span>
+        </div>
+      </div>
+      <p>The main findings: phase transitions between no superposition and full superposition,
+      how sparsity and importance interact, the emergence of geometric structures.</p>
+      <div class="subsection-label">Key Takeaways</div>
+      <ul>
+        <li><strong>Phase transitions:</strong> Superposition doesn&rsquo;t ramp up smoothly. As you increase
+        the number of features relative to dimensions, there are sharp transitions.</li>
+        <li><strong>Sparsity enables packing:</strong> The sparser a feature, the more the model
+        is willing to store it in superposition (because interference rarely matters).</li>
+        <li><strong>Geometric structures:</strong> Features in superposition form optimal geometric
+        configurations (pentagons, tetrahedra). The network discovers these automatically.</li>
+      </ul>
+      <div class="subsection-label">Common Stumbling Blocks</div>
+      <ul>
+        <li>The paper plots feature directions projected into 2D &mdash; remember this is a projection of
+        higher-dimensional geometry</li>
+        <li>The W<sup>T</sup>W matrix visualization: each cell shows the dot product between two feature
+        directions. Diagonal = 1.0 (self), off-diagonal = interference.</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Sections 4+: Deeper Phenomena</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--hard">Advanced</span>
+          <span class="time-est">Optional</span>
+        </div>
+      </div>
+      <p>Feature splitting, superposition in different types of features (discrete, correlated),
+      computation in superposition. Important for researchers, skippable for a first pass.</p>
+      <div class="subsection-label">Skim For</div>
+      <ul>
+        <li><strong>Feature splitting:</strong> One concept might be split across multiple features.
+        This becomes relevant when evaluating SAEs.</li>
+        <li><strong>Computation in superposition:</strong> Can a network compute on features that
+        are in superposition, without first decompressing them? The paper suggests yes, which
+        has deep implications.</li>
+      </ul>
+    </div>
+
+    <!-- Towards Monosemanticity -->
+    <div class="section-label" style="margin-top: var(--space-2xl);">Towards Monosemanticity (Bricken et al., 2023)</div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Reading Strategy</div>
+      <p>
+        This paper is the proof-of-concept for SAEs. It demonstrates that SAEs actually
+        work on a real (tiny) transformer. Focus on understanding the results and methodology.
+        The mathematical details of the SAE architecture are less important than understanding
+        what the features look like. Budget 2&ndash;3 hours.
+      </p>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Problem &amp; Approach</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--easy">Accessible</span>
+          <span class="time-est">20 min</span>
+        </div>
+      </div>
+      <p>Why neurons are polysemantic, the dictionary learning framing, and the SAE architecture.</p>
+      <div class="subsection-label">What to Focus On</div>
+      <ul>
+        <li>The framing: activations as a linear combination of sparse features, SAE as dictionary learning</li>
+        <li>The 1-layer 512-neuron transformer model they use (small enough to fully analyze)</li>
+        <li>The L1 sparsity penalty (this paper used L1, not TopK &mdash; TopK came later)</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Results: What the Features Look Like</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--easy">Key Section</span>
+          <span class="time-est">30 min</span>
+        </div>
+      </div>
+      <p>The actual features extracted. This is the exciting part &mdash; real examples of monosemantic
+      features emerging from the SAE decomposition.</p>
+      <div class="subsection-label">What to Focus On</div>
+      <ul>
+        <li>The feature dashboards: top activating examples, logit effects, feature density</li>
+        <li>How clearly monosemantic the features are compared to the polysemantic neurons</li>
+        <li>The range of feature types: specific tokens, abstract concepts, syntactic patterns</li>
+        <li>How features are validated: top activations + causal effects (ablation / amplification)</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Evaluation &amp; Limitations</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--medium">Important</span>
+          <span class="time-est">20 min</span>
+        </div>
+      </div>
+      <p>How they evaluate the SAE, the tradeoffs, and honest limitations.</p>
+      <div class="subsection-label">What to Focus On</div>
+      <ul>
+        <li>The reconstruction vs. sparsity tradeoff (Pareto frontier)</li>
+        <li>The &ldquo;dead features&rdquo; problem: some SAE features never activate. Wasted capacity.</li>
+        <li>The model they use is tiny (1-layer) &mdash; does this scale? (Spoiler: Scaling Monosemanticity answers this)</li>
+        <li>Honest about limitations: feature splitting, inconsistency across seeds, evaluation challenges</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============ READING LIST ============ -->
+
+  <section id="reading-list" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">10</span>
+      <h2>Required Reading &amp; Resources</h2>
+      <p>Everything you need for this unit, ranked by priority.</p>
+    </div>
+
+    <div class="reading-list reveal">
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4><a href="https://transformer-circuits.pub/2022/toy_model/index.html">Toy Models of Superposition</a></h4>
+          <div class="reading-author">Elhage, Hume, Olah et al. &mdash; Anthropic, 2022</div>
+          <p>The mathematical framework for understanding superposition. When and how features get
+          packed into fewer dimensions. Phase transitions, geometric structures, the importance/sparsity tradeoff.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--medium">Medium</span>
+            <span class="time-est">3&ndash;4 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4><a href="https://transformer-circuits.pub/2023/monosemantic-features">Towards Monosemanticity</a></h4>
+          <div class="reading-author">Bricken, Templeton et al. &mdash; Anthropic, 2023</div>
+          <p>First successful SAE decomposition of a real transformer. Proof of concept that SAEs
+          can extract interpretable, monosemantic features from polysemantic neurons.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--medium">Medium</span>
+            <span class="time-est">2&ndash;3 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4><a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/">Scaling Monosemanticity</a></h4>
+          <div class="reading-author">Bricken, Templeton, Batson et al. &mdash; Anthropic, 2024</div>
+          <p>SAEs scaled to Claude 3 Sonnet. Millions of features including abstract, multilingual,
+          multimodal, and safety-relevant concepts. Proves the approach works on production models.
+          Read the blog post version first; the full paper is very long.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Blog: Easy</span>
+            <span class="time-est">1 hour (blog)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4><a href="https://www.neuronpedia.org/">Neuronpedia &mdash; Browse Features Interactively</a></h4>
+          <div class="reading-author">Decode Research</div>
+          <p>Don&rsquo;t just read about features &mdash; explore them. Browse the feature dashboards,
+          see what features look like in practice, explore top activations and logit effects.
+          Load pretrained SAEs and search for features related to any concept.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Easy</span>
+            <span class="time-est">1+ hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--recommended"></div>
+        <div class="reading-content">
+          <h4><a href="https://arena-course.com/">ARENA &mdash; SAE Exercises</a></h4>
+          <div class="reading-author">Callum McDougall</div>
+          <p>Hands-on Jupyter notebooks: train a toy SAE, load pretrained SAEs from Neuronpedia,
+          explore features, analyze the sparsity/reconstruction tradeoff. The practical companion to the papers.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--medium">Medium</span>
+            <span class="time-est">4&ndash;6 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--recommended"></div>
+        <div class="reading-content">
+          <h4><a href="https://github.com/decoderesearch/SAELens">SAELens Documentation &amp; Tutorials</a></h4>
+          <div class="reading-author">Joseph Bloom / Decode Research</div>
+          <p>The standard library for training and analyzing SAEs. Tutorials for training your own SAE,
+          loading pretrained ones, and analyzing features. Works with any PyTorch model.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--medium">Medium</span>
+            <span class="time-est">2&ndash;3 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--optional"></div>
+        <div class="reading-content">
+          <h4><a href="https://www.neelnanda.io/mechanistic-interpretability/favourite-papers#superposition">Nanda&rsquo;s Recommended Superposition Papers</a></h4>
+          <div class="reading-author">Neel Nanda</div>
+          <p>Curated list of the best papers on superposition and features, with Nanda&rsquo;s personal
+          commentary on what&rsquo;s worth reading and why. Good for going deeper after the essentials.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Easy</span>
+            <span class="time-est">30 min</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note reveal" style="margin-top: var(--space-lg);">
+      <div class="note-label">Suggested Order</div>
+      <p>Read Toy Models first (understand the problem), then Towards Monosemanticity (the solution),
+      then Scaling Monosemanticity (proof it works at scale). Interleave with Neuronpedia browsing &mdash;
+      seeing real features makes the papers click. Then do the ARENA exercises to get hands-on.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ EXERCISES ============ -->
+
+  <section id="exercises" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">11</span>
+      <h2>Exercises &amp; Deliverables</h2>
+      <p>Build intuition by doing, not just reading.</p>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 1</div>
+      <h4>Train a Toy Model of Superposition</h4>
+      <p>Replicate the core result from Toy Models of Superposition. Train a small ReLU
+      network to reconstruct sparse inputs through a bottleneck.</p>
+      <ul>
+        <li>Create synthetic data: 20 sparse features with varying importance and sparsity</li>
+        <li>Train a bottleneck model (20 &rarr; 5 &rarr; 20) to reconstruct the inputs</li>
+        <li>Visualize the learned W matrix: are features axis-aligned (monosemantic) or in superposition?</li>
+        <li>Vary sparsity: watch the phase transition from monosemantic to superposition</li>
+        <li>Plot the W<sup>T</sup>W matrix &mdash; do you see the geometric structures (pentagons, tetrahedra)?</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 2</div>
+      <h4>Train a Toy SAE</h4>
+      <p>Train an SAE to decompose the superposed representations from Exercise 1. Verify
+      it recovers the true features.</p>
+      <ul>
+        <li>Take the 5-dim bottleneck representations from your trained model</li>
+        <li>Train an SAE: 5 &rarr; 20 &rarr; 5 (expand back to the true feature count)</li>
+        <li>Compare SAE features to the true features &mdash; does it recover them?</li>
+        <li>Try different sparsity penalties: L1 vs TopK. Which recovers features better?</li>
+        <li>Measure: reconstruction quality, feature interpretability, and sparsity</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 3</div>
+      <h4>Explore Real Features on Neuronpedia</h4>
+      <p>Browse <a href="https://www.neuronpedia.org/">Neuronpedia</a> to build intuition for what
+      SAE features look like in practice.</p>
+      <ul>
+        <li>Pick a model (GPT-2 Small is a good start) and a layer</li>
+        <li>Find 5 features you can clearly interpret &mdash; describe what each one does</li>
+        <li>Find 2 features that seem hard to interpret &mdash; what makes them unclear?</li>
+        <li>Search for features related to a specific concept (e.g., &ldquo;Python code,&rdquo; &ldquo;emotions&rdquo;)</li>
+        <li>Look at the logit effects: which output tokens does each feature promote?</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 4</div>
+      <h4>Load Pretrained SAEs with SAELens</h4>
+      <p>Use <a href="https://github.com/decoderesearch/SAELens">SAELens</a> to load pretrained SAEs
+      and analyze features programmatically.</p>
+      <ul>
+        <li>Load a pretrained SAE for GPT-2 Small from Neuronpedia</li>
+        <li>Run the model + SAE on a prompt of your choice</li>
+        <li>Identify the top active features for a specific token position</li>
+        <li>Visualize: which features activate across a full sentence? (feature activation heatmap)</li>
+        <li>Compare features at different layers: early (syntactic) vs. late (semantic)</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Deliverable</div>
+      <h4>Notebook: &ldquo;Superposition &amp; SAE Features&rdquo;</h4>
+      <p>Combine the above into a single notebook demonstrating your understanding of
+      superposition and your ability to work with SAE features.</p>
+      <ul>
+        <li>Toy model showing superposition phase transition (with visualization)</li>
+        <li>Toy SAE recovering true features from superposed representations</li>
+        <li>Analysis of 5+ real SAE features from a pretrained model</li>
+        <li>At least one comparison: features at early vs. late layers, or different sparsity levels</li>
+        <li>This notebook + your Transformer Internals notebook is a strong portfolio for
+        <a href="index.html#roadmap">the next step: Activation Patching &amp; Circuits</a></li>
+      </ul>
+    </div>
+
+    <div class="card card--highlight reveal" style="margin-top: var(--space-xl);">
+      <h3>When You&rsquo;re Ready</h3>
+      <p>If you can explain why superposition happens (high-dimensional geometry + sparsity),
+      how SAEs decompose it (sparse overcomplete dictionary), and can work with real SAE features
+      from Neuronpedia and SAELens &mdash; you have the tools. The next step is learning to
+      <strong>use</strong> features for causal analysis: activation patching, circuit discovery,
+      and tracing how features influence the model&rsquo;s output. Head to
+      <a href="index.html#roadmap">the Roadmap</a> for Step 3: Activation Patching &amp; Circuits.</p>
+    </div>
+  </section>
+
+
+</main>
+
+
+<!-- ======== FOOTER ======== -->
+
+<footer class="site-footer">
+  <p>Part of the <a href="index.html" style="color: var(--accent);">Mechanistic Interpretability Field Guide</a>. A living document.</p>
+</footer>
+
+
+<script type="module" src="scripts/transformer-visuals.js"></script>
+
+</body>
+</html>

@@ -21,6 +21,7 @@ A resource designed for someone who wants to seriously study mechanistic interpr
 The roadmap links to dedicated curriculum pages with full educational content:
 
 - **[Transformer Internals](transformer-internals.html)** — Deep dive into how transformers compute mechanistically. Includes interactive step-by-step walkthroughs of attention and induction heads, a section-by-section reading guide for "A Mathematical Framework for Transformer Circuits," required reading lists, and hands-on exercises.
+- **[Superposition & Features](superposition-features.html)** — The core problem of interpretability: why neurons are polysemantic, the geometry of superposition, sparse autoencoders as the solution, step-by-step SAE walkthrough, paper guides for "Toy Models of Superposition" and "Towards Monosemanticity," and exercises with SAELens and Neuronpedia.
 
 ## Tech Stack
 
@@ -46,6 +47,7 @@ python3 -m http.server 8742
 ```
 ├── index.html                  # Main field guide (single-scroll)
 ├── transformer-internals.html  # Curriculum: Transformer Internals
+├── superposition-features.html # Curriculum: Superposition & Features
 ├── styles/
 │   ├── base.css                # Design tokens, fonts, reset, typography
 │   ├── layout.css              # Header, nav, sections, footer, responsive
