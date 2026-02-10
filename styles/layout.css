@@ -1,0 +1,239 @@
+/* ============================================================
+   LAYOUT — Header, navigation, sections, footer, responsive
+   ============================================================ */
+
+
+/* ---- Header ---- */
+
+.header {
+  padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.header-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--space-lg);
+}
+
+.header-label::before {
+  content: '';
+  width: 20px;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.header h1 {
+  margin-bottom: var(--space-md);
+}
+
+.header-desc {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.header-meta {
+  margin-top: var(--space-xl);
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 100px;
+  padding: 0.3rem 0.75rem;
+}
+
+.meta-badge .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot--live {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+
+/* ---- Navigation ---- */
+
+.nav {
+  position: sticky;
+  top: 2px;
+  z-index: 100;
+  background: rgba(248, 247, 244, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-track {
+  display: flex;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition:
+    color var(--dur-normal) ease,
+    border-color var(--dur-normal) ease;
+}
+
+.nav-btn:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+
+/* ---- Main ---- */
+
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+
+/* ---- Sections ---- */
+
+section {
+  padding: var(--space-3xl) 0;
+}
+
+section + section {
+  border-top: 1px solid var(--border-dim);
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-number {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0.4rem;
+}
+
+.section-header p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: var(--space-2xl) 0 var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-dim);
+}
+
+
+/* ---- Card Grid ---- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.75rem;
+}
+
+
+/* ---- Footer ---- */
+
+.site-footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-xl);
+  border-top: 1px solid var(--border-dim);
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: none;
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  }
+  main {
+    padding: 0 var(--space-md);
+  }
+  .nav-inner {
+    padding: 0 var(--space-md);
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  section {
+    padding: var(--space-2xl) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-meta {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}

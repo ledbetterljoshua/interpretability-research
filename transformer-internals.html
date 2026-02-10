@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformer Internals — Mechanistic Interpretability Field Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/curriculum.css">
+</head>
+<body>
+
+
+<!-- ======== HEADER ======== -->
+
+<header class="curriculum-header">
+  <div class="breadcrumb reveal">
+    <a href="index.html">Field Guide</a>
+    <span class="sep">/</span>
+    <a href="index.html#roadmap">Roadmap</a>
+    <span class="sep">/</span>
+    Transformer Internals
+  </div>
+
+  <h1 class="reveal">Transformer Internals</h1>
+
+  <p class="subtitle reveal">
+    How transformers actually compute, from the ground up. Not the high-level
+    &ldquo;attention is all you need&rdquo; version &mdash; the mechanistic view that makes
+    interpretability research possible.
+  </p>
+
+  <div class="curriculum-meta reveal">
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--accent)"></span>
+      Roadmap Step 1
+    </span>
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--gold)"></span>
+      1&ndash;2 Weeks
+    </span>
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--green)"></span>
+      Foundational
+    </span>
+  </div>
+</header>
+
+
+<!-- ======== NAVIGATION ======== -->
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-track">
+      <a class="nav-btn active" href="#prerequisites">Prerequisites</a>
+      <a class="nav-btn" href="#big-picture">Big Picture</a>
+      <a class="nav-btn" href="#embeddings">Embeddings</a>
+      <a class="nav-btn" href="#attention">Attention</a>
+      <a class="nav-btn" href="#mlps">MLPs</a>
+      <a class="nav-btn" href="#unembedding">Unembedding</a>
+      <a class="nav-btn" href="#circuits">Circuits</a>
+      <a class="nav-btn" href="#paper-guide">Paper Guide</a>
+      <a class="nav-btn" href="#reading-list">Reading</a>
+      <a class="nav-btn" href="#exercises">Exercises</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ======== TABLE OF CONTENTS ======== -->
+
+<div class="curriculum-toc reveal">
+  <h3>In this section</h3>
+  <ol class="toc-list">
+    <li><a href="#prerequisites"><span class="toc-num">01</span> Prerequisites</a></li>
+    <li><a href="#big-picture"><span class="toc-num">02</span> The Big Picture: Residual Streams</a></li>
+    <li><a href="#embeddings"><span class="toc-num">03</span> Embeddings</a></li>
+    <li><a href="#attention"><span class="toc-num">04</span> Attention Heads</a></li>
+    <li><a href="#mlps"><span class="toc-num">05</span> MLP Layers</a></li>
+    <li><a href="#unembedding"><span class="toc-num">06</span> Unembedding &amp; Logits</a></li>
+    <li><a href="#circuits"><span class="toc-num">07</span> Circuits &amp; Composition</a></li>
+    <li><a href="#paper-guide"><span class="toc-num">08</span> Paper Guide: Mathematical Framework</a></li>
+    <li><a href="#reading-list"><span class="toc-num">09</span> Required Reading</a></li>
+    <li><a href="#exercises"><span class="toc-num">10</span> Exercises &amp; Deliverables</a></li>
+  </ol>
+</div>
+
+
+<!-- ======== MAIN CONTENT ======== -->
+
+<main>
+
+  <!-- ============ PREREQUISITES ============ -->
+
+  <section id="prerequisites" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">01</span>
+      <h2>Prerequisites</h2>
+      <p>What you need before starting. Check what you&rsquo;re comfortable with.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="reveal">
+        <div class="section-label">Must Have</div>
+        <ul class="prereq-checklist">
+          <li><strong>Linear algebra:</strong> Vectors, matrices, matrix multiplication, dot products, transposes. You need to be fluent, not just familiar.</li>
+          <li><strong>Python + NumPy:</strong> Comfortable with array operations, broadcasting, reshaping. This is your lab equipment.</li>
+          <li><strong>Basic ML:</strong> What a loss function is, gradient descent at a high level, what &ldquo;training&rdquo; means. You don&rsquo;t need deep expertise.</li>
+          <li><strong>Softmax:</strong> Takes a vector of numbers, outputs a probability distribution. <span class="math">softmax(x<sub>i</sub>) = e<sup>x<sub>i</sub></sup> / &sum; e<sup>x<sub>j</sub></sup></span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="section-label">Nice to Have</div>
+        <ul class="prereq-checklist">
+          <li class="optional"><strong>PyTorch basics:</strong> Tensors, modules, forward passes. You&rsquo;ll pick this up as you go.</li>
+          <li class="optional"><strong>Probability:</strong> Conditional probability, distributions. Helpful for understanding predictions.</li>
+          <li class="optional"><strong>Information theory:</strong> Entropy, cross-entropy loss. Not essential but adds depth.</li>
+        </ul>
+
+        <div class="note" style="margin-top: var(--space-lg);">
+          <div class="note-label">If you&rsquo;re rusty</div>
+          <p>3Blue1Brown&rsquo;s <a href="https://www.3blue1brown.com/topics/linear-algebra">Essence of Linear Algebra</a> series
+          is the best visual refresher. Takes about 3 hours and builds genuine intuition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ THE BIG PICTURE ============ -->
+
+  <section id="big-picture" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">02</span>
+      <h2>The Big Picture: Residual Streams</h2>
+      <p>The single most important mental model for mechanistic interpretability.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        The standard way to explain transformers starts with attention mechanisms and builds up
+        from there. That&rsquo;s useful for building one, but <strong>misleading for understanding one</strong>.
+        The mechanistic interpretability community uses a different framing, introduced by
+        <a href="https://transformer-circuits.pub/2021/framework/index.html">Elhage et al. (2021)</a>,
+        that makes the internal structure much clearer.
+      </p>
+      <p>
+        The key insight: <strong>think of the transformer as a residual stream</strong>.
+        The residual stream is a vector for each token position that flows through the entire
+        network. Every component &mdash; every attention head, every MLP layer &mdash; reads from
+        this stream and writes back to it. The components don&rsquo;t talk to each other directly.
+        They communicate through the shared stream.
+      </p>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Key Insight</div>
+      <p>
+        <strong>The residual stream is a communication bus.</strong>
+        Attention heads and MLPs are like peripherals: they read information from the bus,
+        process it, and write their results back. The bus carries all information from input
+        to output. This is why residual connections matter so much &mdash; they create the bus.
+      </p>
+    </div>
+
+    <div class="math-block reveal">
+      <span class="label">The Residual Stream Equation</span>
+      <span class="math-var">x</span><sub>final</sub> = <span class="math-var">x</span><sub>embed</sub>
+      + <span class="math-var">attn</span><sub>0</sub>(<span class="math-var">x</span>)
+      + <span class="math-var">mlp</span><sub>0</sub>(<span class="math-var">x</span>)
+      + <span class="math-var">attn</span><sub>1</sub>(<span class="math-var">x</span>)
+      + <span class="math-var">mlp</span><sub>1</sub>(<span class="math-var">x</span>)
+      + &hellip;
+      <span class="annotation">Each term is added to the stream. The final stream is the sum of the initial embedding plus every component&rsquo;s contribution.</span>
+    </div>
+
+    <!-- Architecture Flow Diagram -->
+    <div class="section-label">Architecture Overview</div>
+
+    <div class="arch-flow reveal">
+      <div class="arch-node arch-node--embed">
+        Token + Position Embeddings
+        <span class="arch-sub">W<sub>E</sub> &middot; token + W<sub>pos</sub>[position]</span>
+      </div>
+
+      <div class="arch-connector">&darr;</div>
+
+      <div class="arch-stream-label">Residual Stream</div>
+
+      <div class="arch-block">
+        <div class="arch-block-label">Layer 0</div>
+        <div class="arch-component arch-component--attn">
+          Multi-Head Self-Attention
+          <span class="arch-rw">reads stream &rarr; computes attention &rarr; writes back</span>
+        </div>
+        <div class="arch-component arch-component--mlp">
+          Feed-Forward MLP
+          <span class="arch-rw">reads stream &rarr; nonlinear transform &rarr; writes back</span>
+        </div>
+      </div>
+
+      <div class="arch-stream-label">Residual Stream (updated)</div>
+
+      <div class="arch-block">
+        <div class="arch-block-label">Layer 1</div>
+        <div class="arch-component arch-component--attn">
+          Multi-Head Self-Attention
+          <span class="arch-rw">reads stream &rarr; computes attention &rarr; writes back</span>
+        </div>
+        <div class="arch-component arch-component--mlp">
+          Feed-Forward MLP
+          <span class="arch-rw">reads stream &rarr; nonlinear transform &rarr; writes back</span>
+        </div>
+      </div>
+
+      <div class="arch-dots">&vellip;</div>
+
+      <div class="arch-stream-label">Final Residual Stream</div>
+
+      <div class="arch-connector">&darr;</div>
+
+      <div class="arch-node arch-node--output">
+        Unembedding &rarr; Logits &rarr; Next Token Prediction
+        <span class="arch-sub">W<sub>U</sub> &middot; x<sub>final</sub> &rarr; softmax &rarr; probabilities</span>
+      </div>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        Why does this matter for interpretability? Because every component&rsquo;s contribution
+        is <strong>additive</strong>. The final output is literally the sum of all contributions.
+        This means we can ask: &ldquo;How much did attention head 3 in layer 5 contribute to
+        predicting this token?&rdquo; And we can get a real answer, because its contribution
+        is a vector that gets added to the stream.
+      </p>
+      <p>
+        This is <span class="key-term">direct logit attribution</span>: take any component&rsquo;s
+        output, multiply it by the unembedding matrix, and you can see exactly which tokens it
+        pushes the model toward predicting.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ EMBEDDINGS ============ -->
+
+  <section id="embeddings" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">03</span>
+      <h2>Embeddings: Tokens to Vectors</h2>
+      <p>How text becomes math.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        Before the transformer can do anything, it needs to convert tokens (integers representing
+        words or subwords) into vectors. This is the <strong>embedding layer</strong>. It&rsquo;s
+        conceptually simple: a lookup table. Token 4217 maps to a specific 768-dimensional vector
+        (in GPT-2 Small). That vector is the token&rsquo;s &ldquo;starting point&rdquo; in the residual stream.
+      </p>
+    </div>
+
+    <div class="two-col reveal">
+      <div>
+        <div class="section-label">Token Embedding</div>
+        <div class="prose">
+          <p>
+            The embedding matrix <span class="math">W<sub>E</sub></span> has shape
+            <span class="math">[vocab_size &times; d_model]</span>. For GPT-2 Small:
+            <span class="math">[50257 &times; 768]</span>. Each row is a learned vector for one token.
+          </p>
+          <p>
+            These vectors aren&rsquo;t random &mdash; after training, they encode semantic relationships.
+            Tokens with similar meanings end up near each other. The embedding space has geometric
+            structure that the rest of the network exploits.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Positional Embedding</div>
+        <div class="prose">
+          <p>
+            Attention is <strong>permutation-invariant</strong> &mdash; it can&rsquo;t tell token order
+            without help. So we add a position embedding: another learned vector for each position
+            in the sequence (0, 1, 2, &hellip;, max_len).
+          </p>
+          <p>
+            The initial residual stream for token <span class="math">t</span> at position
+            <span class="math">p</span> is simply:
+          </p>
+        </div>
+        <div class="math-block">
+          <span class="math-var">x</span><sub>0</sub> = <span class="math-var">W<sub>E</sub></span>[t] + <span class="math-var">W<sub>pos</sub></span>[p]
+          <span class="annotation">Sum of token meaning + position information. This is the starting state of the residual stream.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Why This Matters</div>
+      <p>
+        The embedding creates the initial residual stream state. Everything the model does
+        after this is about <strong>reading, processing, and updating</strong> this stream.
+        The embedding is the model&rsquo;s prior belief about each token before any contextual processing.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ ATTENTION HEADS ============ -->
+
+  <section id="attention" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">04</span>
+      <h2>Attention Heads: Pattern Matching &amp; Information Movement</h2>
+      <p>The most important component to understand deeply. This is where the subtlety lives.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        Each attention head does two things: it decides <strong>where to look</strong>
+        (which other tokens to attend to) and <strong>what to move</strong> (what information
+        to copy from those positions to the current position). These are controlled by two
+        separate circuits with very different functions.
+      </p>
+    </div>
+
+    <!-- Attention Step-by-Step -->
+    <div class="stepper reveal" data-current-step="0">
+      <div class="stepper-header">
+        <button class="stepper-tab active"><span class="step-num-inline">1</span> Input</button>
+        <button class="stepper-tab"><span class="step-num-inline">2</span> Q, K, V</button>
+        <button class="stepper-tab"><span class="step-num-inline">3</span> Scores</button>
+        <button class="stepper-tab"><span class="step-num-inline">4</span> Pattern</button>
+        <button class="stepper-tab"><span class="step-num-inline">5</span> Output</button>
+        <button class="stepper-tab"><span class="step-num-inline">6</span> Write Back</button>
+      </div>
+
+      <div class="stepper-body">
+
+        <!-- Step 1: Input -->
+        <div class="stepper-step active">
+          <div class="step-visual">
+            <div class="visual-label">Residual stream vectors (one per token)</div>
+            <div class="token-row">
+              <div class="token-block">&ldquo;The&rdquo;</div>
+              <div class="token-block">&ldquo;cat&rdquo;</div>
+              <div class="token-block">&ldquo;sat&rdquo;</div>
+              <div class="token-block">&ldquo;on&rdquo;</div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.72rem; color: var(--text-muted);">
+              Each block is a 768-dimensional vector (in GPT-2 Small)
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Start: Read from the Residual Stream</h4>
+            <p>Each attention head reads the residual stream at every token position. At this point,
+            each vector contains the token embedding plus all prior layers&rsquo; contributions. The head
+            will process these to decide what information to move where.</p>
+          </div>
+        </div>
+
+        <!-- Step 2: Q, K, V -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Project to Queries, Keys, and Values</div>
+            <div class="token-row" style="gap: 1.25rem;">
+              <div class="token-col">
+                <div class="token-label">Token: &ldquo;sat&rdquo;</div>
+                <div class="token-block token-block--q">Q</div>
+                <div class="token-block token-block--k">K</div>
+                <div class="token-block token-block--v">V</div>
+              </div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); align-self: center;">
+                &times; 4 tokens &times; 12 heads
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Project to Q, K, V</h4>
+            <p>Each head has three small weight matrices (<span class="math">W<sub>Q</sub></span>,
+            <span class="math">W<sub>K</sub></span>, <span class="math">W<sub>V</sub></span>) that
+            project from the residual stream (768-dim) to a smaller head dimension (64-dim in GPT-2).
+            The <span class="key-term">Query</span> asks &ldquo;what am I looking for?&rdquo;
+            The <span class="key-term">Key</span> says &ldquo;what do I contain?&rdquo;
+            The <span class="key-term">Value</span> is &ldquo;what information to send if attended to.&rdquo;</p>
+          </div>
+          <div class="math-block">
+            <span class="math-var">Q</span> = <span class="math-var">x</span> &middot; <span class="math-var">W<sub>Q</sub></span>&emsp;
+            <span class="math-var">K</span> = <span class="math-var">x</span> &middot; <span class="math-var">W<sub>K</sub></span>&emsp;
+            <span class="math-var">V</span> = <span class="math-var">x</span> &middot; <span class="math-var">W<sub>V</sub></span>
+            <span class="annotation">Each projection: [batch, seq, 768] &rarr; [batch, seq, 64]. The head works in a smaller subspace.</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Attention Scores -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Attention scores (QK<sup>T</sup> / &radic;d<sub>k</sub>)</div>
+            <div class="attn-grid-wrap">
+              <div class="attn-grid" style="grid-template-columns: auto repeat(4, 1fr);">
+                <div class="attn-header"></div>
+                <div class="attn-header">The</div>
+                <div class="attn-header">cat</div>
+                <div class="attn-header">sat</div>
+                <div class="attn-header">on</div>
+
+                <div class="attn-row-label">The</div>
+                <div class="attn-cell" style="--weight: 0.9">2.1</div>
+                <div class="attn-cell" style="--weight: 0">-</div>
+                <div class="attn-cell" style="--weight: 0">-</div>
+                <div class="attn-cell" style="--weight: 0">-</div>
+
+                <div class="attn-row-label">cat</div>
+                <div class="attn-cell" style="--weight: 0.3">0.4</div>
+                <div class="attn-cell" style="--weight: 0.7">1.8</div>
+                <div class="attn-cell" style="--weight: 0">-</div>
+                <div class="attn-cell" style="--weight: 0">-</div>
+
+                <div class="attn-row-label">sat</div>
+                <div class="attn-cell" style="--weight: 0.2">0.1</div>
+                <div class="attn-cell" style="--weight: 0.8">2.3</div>
+                <div class="attn-cell" style="--weight: 0.5">0.9</div>
+                <div class="attn-cell" style="--weight: 0">-</div>
+
+                <div class="attn-row-label">on</div>
+                <div class="attn-cell" style="--weight: 0.1">-0.2</div>
+                <div class="attn-cell" style="--weight: 0.4">0.6</div>
+                <div class="attn-cell" style="--weight: 0.6">1.1</div>
+                <div class="attn-cell" style="--weight: 0.3">0.3</div>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.68rem; color: var(--text-muted);">
+              Dashes indicate masked positions (causal attention: can&rsquo;t look at future tokens)
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Compute Attention Scores</h4>
+            <p>The dot product <span class="math">Q &middot; K<sup>T</sup></span> measures how much
+            each query &ldquo;matches&rdquo; each key. High score = strong match. We divide by
+            <span class="math">&radic;d<sub>k</sub></span> to prevent scores from getting too large
+            (which would make softmax too &ldquo;peaky&rdquo;). In autoregressive models, we mask
+            future positions so tokens can only attend to the past.</p>
+          </div>
+          <div class="math-block">
+            scores = <span class="math-var">Q</span> &middot; <span class="math-var">K</span><sup>T</sup> / &radic;<span class="math-var">d<sub>k</sub></span>
+            <span class="annotation">Shape: [seq_len &times; seq_len]. Entry (i, j) is how much token i attends to token j.</span>
+          </div>
+        </div>
+
+        <!-- Step 4: Attention Pattern -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Attention pattern (after softmax)</div>
+            <div class="attn-grid-wrap">
+              <div class="attn-grid" style="grid-template-columns: auto repeat(4, 1fr);">
+                <div class="attn-header"></div>
+                <div class="attn-header">The</div>
+                <div class="attn-header">cat</div>
+                <div class="attn-header">sat</div>
+                <div class="attn-header">on</div>
+
+                <div class="attn-row-label">The</div>
+                <div class="attn-cell" style="--weight: 1.0"><strong>1.00</strong></div>
+                <div class="attn-cell" style="--weight: 0"></div>
+                <div class="attn-cell" style="--weight: 0"></div>
+                <div class="attn-cell" style="--weight: 0"></div>
+
+                <div class="attn-row-label">cat</div>
+                <div class="attn-cell" style="--weight: 0.2">0.20</div>
+                <div class="attn-cell" style="--weight: 0.8"><strong>0.80</strong></div>
+                <div class="attn-cell" style="--weight: 0"></div>
+                <div class="attn-cell" style="--weight: 0"></div>
+
+                <div class="attn-row-label">sat</div>
+                <div class="attn-cell" style="--weight: 0.1">0.08</div>
+                <div class="attn-cell" style="--weight: 0.6"><strong>0.55</strong></div>
+                <div class="attn-cell" style="--weight: 0.3">0.37</div>
+                <div class="attn-cell" style="--weight: 0"></div>
+
+                <div class="attn-row-label">on</div>
+                <div class="attn-cell" style="--weight: 0.1">0.07</div>
+                <div class="attn-cell" style="--weight: 0.3">0.28</div>
+                <div class="attn-cell" style="--weight: 0.4"><strong>0.41</strong></div>
+                <div class="attn-cell" style="--weight: 0.2">0.24</div>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.68rem; color: var(--text-muted);">
+              Each row sums to 1.0. Bold = highest attention weight. This is what attention patterns visualize.
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Softmax &rarr; Attention Pattern</h4>
+            <p>Softmax normalizes each row so the weights sum to 1. Now each row is a probability
+            distribution over source tokens. This is the <span class="key-term">attention pattern</span> &mdash;
+            the thing you see in attention visualizations. Here, &ldquo;sat&rdquo; attends mostly to
+            &ldquo;cat&rdquo; (0.55), then to itself (0.37).</p>
+          </div>
+        </div>
+
+        <!-- Step 5: Weighted Values -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Weighted sum of value vectors</div>
+            <div class="token-row" style="gap: 0.5rem; align-items: center;">
+              <div class="token-col">
+                <div class="token-label">0.08 &times;</div>
+                <div class="token-block token-block--v">V<sub>The</sub></div>
+              </div>
+              <span style="color: var(--text-muted);">+</span>
+              <div class="token-col">
+                <div class="token-label">0.55 &times;</div>
+                <div class="token-block token-block--v">V<sub>cat</sub></div>
+              </div>
+              <span style="color: var(--text-muted);">+</span>
+              <div class="token-col">
+                <div class="token-label">0.37 &times;</div>
+                <div class="token-block token-block--v">V<sub>sat</sub></div>
+              </div>
+              <div class="visual-arrow">=</div>
+              <div class="token-col">
+                <div class="token-label">output for &ldquo;sat&rdquo;</div>
+                <div class="token-block token-block--output">z<sub>sat</sub></div>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Compute Weighted Sum of Values</h4>
+            <p>For each token position, multiply the attention weights by the value vectors and sum.
+            The result is a weighted blend of information from the attended positions. Token &ldquo;sat&rdquo;
+            gets 55% of the &ldquo;cat&rdquo; value vector, 37% of its own, and 8% of &ldquo;The&rdquo;.
+            This is how attention <strong>moves information</strong> between positions.</p>
+          </div>
+          <div class="math-block">
+            <span class="math-var">z</span> = pattern &middot; <span class="math-var">V</span>
+            <span class="annotation">Matrix multiply: [seq &times; seq] &times; [seq &times; d_head] &rarr; [seq &times; d_head]. One output vector per position.</span>
+          </div>
+        </div>
+
+        <!-- Step 6: Write Back -->
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Project back to residual stream dimension &amp; add</div>
+            <div class="token-row" style="gap: 0.75rem; align-items: center;">
+              <div class="token-col">
+                <div class="token-label">head output</div>
+                <div class="token-block token-block--output">z<sub>sat</sub></div>
+              </div>
+              <div class="visual-arrow">&times; W<sub>O</sub></div>
+              <div class="visual-arrow">&rarr;</div>
+              <div class="token-col">
+                <div class="token-label">projected</div>
+                <div class="token-block">output<sub>sat</sub></div>
+              </div>
+              <div class="visual-arrow">+</div>
+              <div class="token-col">
+                <div class="token-label">residual stream</div>
+                <div class="token-block">x<sub>sat</sub></div>
+              </div>
+              <div class="visual-arrow">=</div>
+              <div class="token-col">
+                <div class="token-label">updated stream</div>
+                <div class="token-block" style="border-color: var(--accent); border-width: 2px;">x&prime;<sub>sat</sub></div>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Write Back to the Residual Stream</h4>
+            <p>The output matrix <span class="math">W<sub>O</sub></span> projects the head&rsquo;s
+            output (64-dim) back to the residual stream dimension (768-dim). This result is <strong>added</strong>
+            to the residual stream. Multiple heads in the same layer all add their outputs simultaneously.
+            The stream now carries the original information plus whatever this head contributed.</p>
+          </div>
+          <div class="math-block">
+            <span class="math-var">x</span>&prime; = <span class="math-var">x</span> + <span class="math-var">z</span> &middot; <span class="math-var">W<sub>O</sub></span>
+            <span class="annotation">The &ldquo;+&rdquo; is the residual connection. It&rsquo;s why it&rsquo;s called a residual stream.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="stepper-nav">
+        <button class="step-prev" disabled>&larr; Previous</button>
+        <span class="stepper-indicator">1 / 6</span>
+        <button class="step-next">Next &rarr;</button>
+      </div>
+    </div>
+
+    <!-- QK and OV circuits -->
+    <div class="section-label">The Two Circuits Inside Every Attention Head</div>
+
+    <div class="two-col reveal">
+      <div class="card">
+        <div class="card-header">
+          <h3>QK Circuit: &ldquo;Where to Look&rdquo;</h3>
+          <span class="tag tag-core">Pattern</span>
+        </div>
+        <p>The <span class="math">W<sub>Q</sub>W<sub>K</sub><sup>T</sup></span> matrix (the QK circuit)
+        determines the attention pattern. It&rsquo;s a bilinear form that computes a score for
+        every (query-position, key-position) pair. When we say an attention head &ldquo;looks at
+        the previous token,&rdquo; that behavior lives in the QK circuit.</p>
+        <div class="math-block">
+          <span class="label">QK Circuit</span>
+          A<sub>ij</sub> &prop; <span class="math-var">x</span><sub>i</sub><sup>T</sup> <span class="math-var">W<sub>Q</sub></span><span class="math-var">W<sub>K</sub></span><sup>T</sup> <span class="math-var">x</span><sub>j</sub>
+          <span class="annotation">How much does position i attend to position j? Depends on what&rsquo;s at both positions.</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>OV Circuit: &ldquo;What to Move&rdquo;</h3>
+          <span class="tag tag-method">Information</span>
+        </div>
+        <p>The <span class="math">W<sub>V</sub>W<sub>O</sub></span> matrix (the OV circuit)
+        determines what information gets moved. Once the head has decided to attend from position
+        i to position j, the OV circuit controls <em>what</em> about position j gets written into
+        position i&rsquo;s residual stream.</p>
+        <div class="math-block">
+          <span class="label">OV Circuit</span>
+          output<sub>i</sub> = &sum;<sub>j</sub> A<sub>ij</sub> &middot; <span class="math-var">x</span><sub>j</sub> <span class="math-var">W<sub>V</sub></span><span class="math-var">W<sub>O</sub></span>
+          <span class="annotation">A weighted sum of (source info &times; OV projection). The OV circuit is a linear map on the source vectors.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Why Separating QK and OV Matters</div>
+      <p>
+        This decomposition is the foundation of circuit analysis. The QK circuit and OV circuit
+        have independent roles and can be analyzed independently. When you find an attention head
+        that does something interesting (e.g., copies the previous token), you can separately ask:
+        <strong>&ldquo;How does it know to look there?&rdquo;</strong> (QK) and
+        <strong>&ldquo;What does it copy?&rdquo;</strong> (OV). Different heads might have the same
+        QK pattern but different OV behavior, or vice versa.
+      </p>
+    </div>
+
+    <div class="note reveal">
+      <div class="note-label">Multi-Head Attention</div>
+      <p>GPT-2 Small has 12 heads per layer. Each head operates in its own 64-dimensional subspace
+      (768 / 12 = 64). All 12 heads read from the same residual stream, compute independently,
+      then their outputs are summed and added back. Each head can learn a completely different
+      pattern &mdash; one might attend to the previous token, another to the subject of the sentence,
+      another to punctuation.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ MLPs ============ -->
+
+  <section id="mlps" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">05</span>
+      <h2>MLP Layers: The Processing Units</h2>
+      <p>Where knowledge is stored and nonlinear computation happens.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        After attention heads move information between token positions, the MLP layer processes
+        each position independently. Unlike attention (which mixes information across positions),
+        the MLP applies the same transformation to each token&rsquo;s residual stream vector separately.
+      </p>
+    </div>
+
+    <div class="math-block reveal">
+      <span class="label">MLP Computation</span>
+      <span class="math-var">mlp</span>(<span class="math-var">x</span>) =
+      GELU(<span class="math-var">x</span> &middot; <span class="math-var">W<sub>in</sub></span> + <span class="math-var">b<sub>in</sub></span>)
+      &middot; <span class="math-var">W<sub>out</sub></span> + <span class="math-var">b<sub>out</sub></span>
+      <span class="annotation">W<sub>in</sub>: [768 &times; 3072], W<sub>out</sub>: [3072 &times; 768] for GPT-2 Small. The inner dimension (3072) is 4&times; the model dimension.</span>
+    </div>
+
+    <div class="two-col reveal">
+      <div>
+        <div class="section-label">What MLPs Do</div>
+        <div class="prose">
+          <p>
+            <strong>The &ldquo;key-value memory&rdquo; interpretation:</strong> Each row of
+            <span class="math">W<sub>in</sub></span> is a &ldquo;key&rdquo; that the input matches against.
+            When there&rsquo;s a strong match (high activation after GELU), the corresponding column of
+            <span class="math">W<sub>out</sub></span> is the &ldquo;value&rdquo; that gets added to the
+            residual stream. The MLP stores associations: when the input looks like X, add Y to the stream.
+          </p>
+          <p>
+            This is where factual knowledge largely lives. The fact that &ldquo;Paris is the capital of
+            France&rdquo; is stored as: when the residual stream encodes a &ldquo;capital of France?&rdquo;
+            query, specific MLP neurons activate and push the stream toward &ldquo;Paris.&rdquo;
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Why the Nonlinearity Matters</div>
+        <div class="prose">
+          <p>
+            The GELU (or ReLU) activation between the two linear layers is what makes MLPs more
+            than just another linear transformation. Without it, the entire transformer would be
+            a single linear function (since the composition of linear functions is linear).
+          </p>
+          <p>
+            The nonlinearity enables <strong>conditional computation</strong>: the MLP can implement
+            if/then logic. &ldquo;If the context says this is about France AND the question is about
+            capitals, THEN add the Paris vector.&rdquo; Attention can&rsquo;t do this because attention
+            is linear in the values.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Attention vs. MLP: The Division of Labor</div>
+      <p>
+        A useful mental model: <strong>attention moves information between positions; MLPs process
+        information at each position</strong>. Attention is the routing network; MLPs are the
+        processing nodes. Attention says &ldquo;this token should know about that token.&rdquo;
+        MLPs say &ldquo;given what this token now knows, update its representation.&rdquo;
+        This is a simplification, but a productive one.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ UNEMBEDDING ============ -->
+
+  <section id="unembedding" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">06</span>
+      <h2>Unembedding &amp; Logits</h2>
+      <p>From vectors back to words.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        After all layers have processed the residual stream, the model needs to convert the
+        final vector back into a prediction over tokens. The <strong>unembedding matrix</strong>
+        <span class="math">W<sub>U</sub></span> does this: it projects the residual stream
+        (768-dim) to the vocabulary size (50,257 for GPT-2), producing a score (logit) for
+        every possible next token.
+      </p>
+    </div>
+
+    <div class="math-block reveal">
+      <span class="label">Unembedding</span>
+      logits = <span class="math-var">x</span><sub>final</sub> &middot; <span class="math-var">W<sub>U</sub></span>
+      &emsp;&emsp;
+      probabilities = softmax(logits)
+      <span class="annotation">W<sub>U</sub> shape: [768 &times; 50257]. The logit for token t is the dot product of x<sub>final</sub> with the t-th column of W<sub>U</sub>.</span>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        This is where <span class="key-term">direct logit attribution</span> becomes powerful.
+        Because the final residual stream is the sum of all components&rsquo; contributions, the
+        logit for any token is also the sum of each component&rsquo;s contribution:
+      </p>
+    </div>
+
+    <div class="math-block reveal">
+      <span class="label">Logit Decomposition</span>
+      logit(t) = <span class="math-var">x</span><sub>embed</sub> &middot; <span class="math-var">W<sub>U</sub></span>[t]
+      + <span class="math-var">attn</span><sub>0</sub> &middot; <span class="math-var">W<sub>U</sub></span>[t]
+      + <span class="math-var">mlp</span><sub>0</sub> &middot; <span class="math-var">W<sub>U</sub></span>[t]
+      + &hellip;
+      <span class="annotation">Each term tells you how much one component pushes toward predicting token t. This is the basis of most circuit analysis.</span>
+    </div>
+
+    <div class="card card--highlight reveal">
+      <h3>The Logit Lens</h3>
+      <p>A simple but revealing technique: apply the unembedding at intermediate layers
+      (not just the final one). At each layer, you can see what the model would predict
+      <em>if processing stopped there</em>. Typically you see the prediction start vague
+      and progressively sharpen. Sometimes the correct answer appears surprisingly early,
+      revealing that later layers are doing refinement rather than core computation.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ CIRCUITS & COMPOSITION ============ -->
+
+  <section id="circuits" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">07</span>
+      <h2>Circuits &amp; Composition</h2>
+      <p>How simple components combine to implement complex behaviors.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>
+        Individual attention heads and MLPs are interesting, but the real power comes from
+        <strong>composition</strong> &mdash; how components in different layers work together.
+        Because later layers can read what earlier layers wrote to the residual stream,
+        attention heads can effectively &ldquo;chain&rdquo; their computations.
+      </p>
+    </div>
+
+    <div class="section-label">Three Types of Composition</div>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <div class="card-header">
+          <h3>Q-Composition</h3>
+          <span class="tag tag-core">Type</span>
+        </div>
+        <p>Head B in a later layer uses the output of Head A (written to the residual stream)
+        as its query input. Head A&rsquo;s output tells Head B <strong>what to look for</strong>.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>K-Composition</h3>
+          <span class="tag tag-core">Type</span>
+        </div>
+        <p>Head B uses Head A&rsquo;s output as its key input. Head A&rsquo;s output changes
+        <strong>what other tokens advertise</strong> to Head B.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>V-Composition</h3>
+          <span class="tag tag-core">Type</span>
+        </div>
+        <p>Head B uses Head A&rsquo;s output as its value input. Head A&rsquo;s output changes
+        <strong>what information gets moved</strong> when Head B attends to that position.</p>
+      </div>
+    </div>
+
+    <div class="section-label">The Canonical Example: Induction Heads</div>
+
+    <div class="prose reveal">
+      <p>
+        Induction heads are a two-head circuit that implements <strong>in-context pattern
+        completion</strong>. Given a sequence like <span class="math">[A][B] &hellip; [A]</span>,
+        an induction circuit predicts <span class="math">[B]</span> will come next. It detects
+        that the current token <span class="math">[A]</span> appeared before, finds what followed
+        it, and copies that prediction forward.
+      </p>
+      <p>
+        This is arguably the most important circuit discovered so far. It&rsquo;s the mechanism
+        behind in-context learning in transformers, and it&rsquo;s a beautiful example of how
+        two simple heads compose to implement a complex algorithm.
+      </p>
+    </div>
+
+    <!-- Induction Head Circuit Walkthrough -->
+    <div class="stepper reveal" data-current-step="0">
+      <div class="stepper-header">
+        <button class="stepper-tab active"><span class="step-num-inline">1</span> Setup</button>
+        <button class="stepper-tab"><span class="step-num-inline">2</span> Head A</button>
+        <button class="stepper-tab"><span class="step-num-inline">3</span> Head B</button>
+        <button class="stepper-tab"><span class="step-num-inline">4</span> Result</button>
+      </div>
+
+      <div class="stepper-body">
+        <div class="stepper-step active">
+          <div class="step-visual">
+            <div class="visual-label">Input sequence</div>
+            <div class="token-row">
+              <div class="token-block">&hellip;</div>
+              <div class="token-block" style="border-color: var(--accent); border-width: 2px;">Harry</div>
+              <div class="token-block" style="border-color: var(--gold); border-width: 2px;">Potter</div>
+              <div class="token-block">&hellip;</div>
+              <div class="token-block" style="border-color: var(--accent); border-width: 2px;">Harry</div>
+              <div class="token-block" style="border: 2px dashed var(--gold);">???</div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>The Pattern</h4>
+            <p>The model has seen &ldquo;Harry Potter&rdquo; earlier in the sequence. Now it sees
+            &ldquo;Harry&rdquo; again and needs to predict the next token. The induction head circuit
+            will recognize this repeated pattern and predict &ldquo;Potter.&rdquo;</p>
+          </div>
+        </div>
+
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Head A (Layer 0): Previous Token Head</div>
+            <div class="token-row" style="gap: 1rem; align-items: center;">
+              <div class="token-col">
+                <div class="token-label">attends to prev</div>
+                <div class="token-block" style="border-color: var(--gold);">Potter</div>
+              </div>
+              <div class="visual-arrow">&rarr; copies identity &rarr;</div>
+              <div class="token-col">
+                <div class="token-label">writes at position of</div>
+                <div class="token-block" style="border-color: var(--gold);">&ldquo;Potter&rdquo; info</div>
+              </div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.68rem; color: var(--text-muted);">
+              At EVERY position, this head copies the identity of the previous token into the residual stream.
+              So at the position after &ldquo;Harry&rdquo; (which is &ldquo;Potter&rdquo;), the residual stream
+              now encodes: &ldquo;the token before me was Harry.&rdquo;
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Step 1: Previous Token Head (Layer 0)</h4>
+            <p>Head A has a simple job: it always attends to the previous token position and copies
+            information about that token. After Head A runs, each position&rsquo;s residual stream
+            has been enriched with information about the preceding token. This is a <strong>general-purpose</strong>
+            operation &mdash; it doesn&rsquo;t know about induction yet.</p>
+          </div>
+        </div>
+
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Head B (Layer 1): Induction Head</div>
+            <div class="token-row" style="gap: 0.75rem; align-items: center;">
+              <div class="token-col">
+                <div class="token-label">current token</div>
+                <div class="token-block" style="border-color: var(--accent);">Harry</div>
+              </div>
+              <div class="visual-arrow">Q: &ldquo;Where was Harry before?&rdquo;</div>
+              <div class="visual-arrow">&rarr;</div>
+              <div class="token-col">
+                <div class="token-label">matches via K-composition</div>
+                <div class="token-block" style="border-color: var(--gold);">&ldquo;Potter&rdquo; <span style="font-size:0.65rem; opacity:0.7;">(prev = Harry)</span></div>
+              </div>
+              <div class="visual-arrow">&rarr; V: copy &rarr;</div>
+              <div class="token-col">
+                <div class="token-label">predicts</div>
+                <div class="token-block" style="border-color: var(--green);">Potter</div>
+              </div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>Step 2: Induction Head (Layer 1)</h4>
+            <p>Head B does the clever part. Its query at the current &ldquo;Harry&rdquo; position asks:
+            &ldquo;where in the past was there a token preceded by Harry?&rdquo; Thanks to Head A&rsquo;s
+            output, the position of &ldquo;Potter&rdquo; now has &ldquo;preceded by Harry&rdquo; written
+            into its residual stream. This is <strong>K-composition</strong> &mdash; Head B&rsquo;s keys
+            use Head A&rsquo;s output. Head B attends to &ldquo;Potter,&rdquo; and its OV circuit copies
+            the token identity &rarr; predicting &ldquo;Potter.&rdquo;</p>
+          </div>
+        </div>
+
+        <div class="stepper-step">
+          <div class="step-visual">
+            <div class="visual-label">Complete circuit</div>
+            <div style="font-size: 0.84rem; color: var(--text); line-height: 1.8; max-width: 450px; margin: 0 auto; text-align: left;">
+              <div><strong>1.</strong> Head A (L0) copies prev-token info everywhere</div>
+              <div><strong>2.</strong> Head B (L1) searches for &ldquo;preceded by current token&rdquo; via K-composition</div>
+              <div><strong>3.</strong> Head B copies the matched token via OV circuit</div>
+              <div><strong>4.</strong> Result: <span class="math">[A][B]&hellip;[A] &rarr; predict [B]</span></div>
+            </div>
+          </div>
+          <div class="step-text">
+            <h4>The Complete Induction Circuit</h4>
+            <p>Two heads, each doing something simple, compose to implement a powerful algorithm.
+            Neither head &ldquo;understands&rdquo; induction on its own. The behavior emerges from their
+            interaction through the residual stream. This is what mechanistic interpretability
+            means by &ldquo;circuits&rdquo; &mdash; computational subnetworks whose behavior can be
+            understood and predicted.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stepper-nav">
+        <button class="step-prev" disabled>&larr; Previous</button>
+        <span class="stepper-indicator">1 / 4</span>
+        <button class="step-next">Next &rarr;</button>
+      </div>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">Why Induction Heads Matter</div>
+      <p>
+        Induction heads are believed to be the primary mechanism for in-context learning. They
+        appear in every transformer large enough to have two layers. They emerge at a specific
+        point during training (a &ldquo;phase change&rdquo;), and their emergence coincides with
+        a sharp drop in loss. Understanding this one circuit gives you intuition for how
+        transformers learn algorithms through composition.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ PAPER GUIDE ============ -->
+
+  <section id="paper-guide" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">08</span>
+      <h2>Reading Guide: A Mathematical Framework for Transformer Circuits</h2>
+      <p>Section-by-section guide to the foundational paper.
+        <a href="https://transformer-circuits.pub/2021/framework/index.html">Read the paper</a> alongside this guide.</p>
+    </div>
+
+    <div class="insight reveal">
+      <div class="insight-label">How to Use This Guide</div>
+      <p>
+        Read each paper section first, then come back here. The guide won&rsquo;t make sense without
+        reading the original. The goal is to highlight what&rsquo;s important, explain what&rsquo;s confusing,
+        and tell you what you can skim. Budget about 4&ndash;6 hours total for a careful first read.
+      </p>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Summary of Results</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--easy">Accessible</span>
+          <span class="time-est">20 min</span>
+        </div>
+      </div>
+      <p>High-level overview of what the paper discovers. Read this carefully &mdash; it sets up everything else.</p>
+      <div class="subsection-label">What to Focus On</div>
+      <ul>
+        <li>The &ldquo;residual stream&rdquo; framing &mdash; this reframes everything you thought you knew about transformers</li>
+        <li>The claim that attention heads have two independent roles (QK and OV circuits)</li>
+        <li>The concept of &ldquo;virtual attention heads&rdquo; created by composition</li>
+      </ul>
+      <div class="subsection-label">What You Can Skim</div>
+      <ul>
+        <li>Specific model details (they use small attention-only models) &mdash; the framework applies generally</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Section 2: Transformer Framework</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--medium">Core Math</span>
+          <span class="time-est">45 min</span>
+        </div>
+      </div>
+      <p>The mathematical framework itself. This is the meat. Introduces the residual stream view
+      formally, decomposes attention into QK and OV circuits, discusses how to think about MLPs.</p>
+      <div class="subsection-label">Key Equations to Understand</div>
+      <ul>
+        <li><strong>Residual stream decomposition:</strong> The output is a sum of all components&rsquo; contributions. This enables direct logit attribution.</li>
+        <li><strong>QK circuit</strong> <span class="math">W<sub>Q</sub><sup>T</sup>W<sub>K</sub></span>: The bilinear form that determines attention patterns. Think of it as a &ldquo;matching function.&rdquo;</li>
+        <li><strong>OV circuit</strong> <span class="math">W<sub>V</sub>W<sub>O</sub></span>: The linear map that determines what information gets moved. Independent of QK.</li>
+        <li><strong>Full attention head:</strong> <span class="math">Attn(x) = softmax(x W<sub>Q</sub>W<sub>K</sub><sup>T</sup>x<sup>T</sup>) &middot; x W<sub>V</sub>W<sub>O</sub></span></li>
+      </ul>
+      <div class="subsection-label">Common Stumbling Blocks</div>
+      <ul>
+        <li>The paper treats W<sub>Q</sub> and W<sub>K</sub> as separate matrices (not the combined W<sub>QK</sub>) &mdash; this is intentional because they have different interpretations</li>
+        <li>&ldquo;Low-rank&rdquo; decomposition: each head&rsquo;s QK and OV matrices are rank d<sub>head</sub> (64 for GPT-2). The full W<sub>QK</sub> matrix is [768 &times; 768] but only rank 64.</li>
+        <li>Bilinear form: <span class="math">x<sub>i</sub><sup>T</sup> W<sub>QK</sub> x<sub>j</sub></span> means the attention score depends on BOTH the query and key positions. It&rsquo;s not just about the query.</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Section 3: Zero &amp; One-Layer Transformers</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--easy">Illustrative</span>
+          <span class="time-est">30 min</span>
+        </div>
+      </div>
+      <p>Applies the framework to the simplest cases. Zero-layer = just bigrams (embed &rarr; unembed).
+      One-layer = skip-trigrams (attention can implement &ldquo;if token A appeared before, predict token B&rdquo;).</p>
+      <div class="subsection-label">Why This Section Matters</div>
+      <ul>
+        <li>Shows the framework works concretely &mdash; you can verify the math against actual models</li>
+        <li>The &ldquo;skip-trigram&rdquo; concept makes attention&rsquo;s power and limits very clear</li>
+        <li>Introduces analyzing the W<sub>E</sub>W<sub>QK</sub>W<sub>E</sub><sup>T</sup> matrix &mdash; what tokens attend to what other tokens, independent of position</li>
+        <li>Good practice for reading the notation before the harder sections</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Section 4: Two-Layer Attention-Only Transformers &amp; Induction Heads</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--hard">Challenging</span>
+          <span class="time-est">60+ min</span>
+        </div>
+      </div>
+      <p>The most important and most challenging section. Introduces composition (Q, K, V-composition),
+      virtual attention heads, and the induction head circuit.</p>
+      <div class="subsection-label">What to Focus On</div>
+      <ul>
+        <li><strong>Composition:</strong> Head B can use Head A&rsquo;s output in its Q, K, or V computation. This creates &ldquo;virtual heads&rdquo; with attention patterns neither individual head has.</li>
+        <li><strong>K-composition specifically:</strong> This is how the induction head works. Head A writes &ldquo;previous token identity&rdquo; to the stream. Head B reads this in its keys.</li>
+        <li><strong>The induction head mechanism:</strong> [A][B]&hellip;[A] &rarr; predict [B]. Two heads, each doing something simple, compose into in-context learning.</li>
+      </ul>
+      <div class="subsection-label">Common Stumbling Blocks</div>
+      <ul>
+        <li>The distinction between a &ldquo;real&rdquo; attention head and a &ldquo;virtual&rdquo; attention head can be confusing. Virtual heads are emergent computation from composition &mdash; they don&rsquo;t correspond to any single head in the model.</li>
+        <li>The paper uses attention-only models (no MLPs) &mdash; this simplifies the analysis but means some findings don&rsquo;t directly transfer to full transformers.</li>
+        <li>If the composition math gets overwhelming, focus on the induction head example first, then go back to the general framework.</li>
+      </ul>
+      <div class="subsection-label">Suggestion</div>
+      <ul>
+        <li>Read this section twice. First time: follow the induction head story. Second time: understand the general composition framework.</li>
+      </ul>
+    </div>
+
+    <div class="paper-section reveal">
+      <div class="paper-section-header">
+        <h3>Discussion &amp; Related Work</h3>
+        <div class="paper-section-meta">
+          <span class="difficulty difficulty--easy">Conceptual</span>
+          <span class="time-est">15 min</span>
+        </div>
+      </div>
+      <p>Reflects on what the framework enables and its limitations. Worth reading for the big-picture perspective.</p>
+      <div class="subsection-label">Key Takeaways</div>
+      <ul>
+        <li>The framework makes specific, testable predictions about transformer behavior</li>
+        <li>Attention-only models are a useful simplification but miss MLP contributions</li>
+        <li>Composition enables exponentially many virtual circuits from a linear number of heads</li>
+        <li>This paper launched a research program &mdash; everything in mech interp since builds on this framing</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============ REQUIRED READING ============ -->
+
+  <section id="reading-list" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">09</span>
+      <h2>Required Reading &amp; Resources</h2>
+      <p>Everything you need, ranked by priority. Start from the top.</p>
+    </div>
+
+    <div class="reading-list reveal">
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4><a href="https://transformer-circuits.pub/2021/framework/index.html">A Mathematical Framework for Transformer Circuits</a></h4>
+          <div class="reading-author">Elhage, Nanda, Olah et al. &mdash; Anthropic, 2021</div>
+          <p>The paper this entire section is about. Introduces the residual stream view, QK/OV circuit decomposition, composition, and induction heads. Read with the guide above.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--medium">Medium</span>
+            <span class="time-est">4&ndash;6 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4><a href="https://www.neelnanda.io/mechanistic-interpretability/prereqs">Neel Nanda&rsquo;s Prerequisites Guide</a></h4>
+          <div class="reading-author">Neel Nanda &mdash; neelnanda.io</div>
+          <p>What math and coding background you need. Extremely practical &mdash; tells you exactly what to learn and what to skip. Start here if you&rsquo;re unsure about prerequisites.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Easy</span>
+            <span class="time-est">30 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4><a href="https://arena-course.com/">ARENA &mdash; Chapter 1: Transformer from Scratch</a></h4>
+          <div class="reading-author">Callum McDougall</div>
+          <p>Hands-on Jupyter notebooks where you build a transformer from scratch. Best way to internalize the architecture. Do the exercises, don&rsquo;t just read.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--medium">Medium</span>
+            <span class="time-est">6&ndash;8 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--essential"></div>
+        <div class="reading-content">
+          <h4>Transformers for Software Engineers</h4>
+          <div class="reading-author">Nelson Elhage</div>
+          <p>Explains transformer internals in the language of software engineering (data flow, state, computation steps). If you&rsquo;re a software engineer, this is the fastest path to understanding.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Easy</span>
+            <span class="time-est">1&ndash;2 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--recommended"></div>
+        <div class="reading-content">
+          <h4><a href="https://www.neelnanda.io/mechanistic-interpretability/quickstart">Neel Nanda&rsquo;s Quickstart Guide</a></h4>
+          <div class="reading-author">Neel Nanda &mdash; neelnanda.io</div>
+          <p>Overview of the entire field with actionable next steps. Read after you understand transformer internals to see how they connect to interpretability research.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Easy</span>
+            <span class="time-est">1 hour</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--recommended"></div>
+        <div class="reading-content">
+          <h4><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a></h4>
+          <div class="reading-author">Jay Alammar</div>
+          <p>Visual walkthrough of the transformer architecture. More traditional ML perspective (not the mech interp framing), but excellent diagrams. Good if you&rsquo;re a visual learner.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Easy</span>
+            <span class="time-est">45 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--recommended"></div>
+        <div class="reading-content">
+          <h4><a href="https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html">In-context Learning and Induction Heads</a></h4>
+          <div class="reading-author">Olsson, Elhage, Nanda et al. &mdash; Anthropic, 2022</div>
+          <p>Deep dive into induction heads: how they form during training, their role in in-context learning, and why they matter. Read after the Framework paper.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--hard">Challenging</span>
+            <span class="time-est">3&ndash;4 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-item">
+        <div class="reading-priority reading-priority--optional"></div>
+        <div class="reading-content">
+          <h4><a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown: Neural Networks / Attention</a></h4>
+          <div class="reading-author">Grant Sanderson</div>
+          <p>Beautiful visual explanations of neural networks and attention. Watch if the math feels abstract &mdash; these videos build geometric intuition that makes everything click.</p>
+          <div class="reading-badges">
+            <span class="difficulty difficulty--easy">Easy</span>
+            <span class="time-est">2 hours</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note reveal" style="margin-top: var(--space-lg);">
+      <div class="note-label">Reading Order</div>
+      <p>Priority bars:
+        <span style="display: inline-block; width: 10px; height: 10px; background: var(--accent); border-radius: 2px; vertical-align: middle;"></span> Essential (read these) &mdash;
+        <span style="display: inline-block; width: 10px; height: 10px; background: var(--green); border-radius: 2px; vertical-align: middle;"></span> Recommended &mdash;
+        <span style="display: inline-block; width: 10px; height: 10px; background: var(--border); border-radius: 2px; vertical-align: middle;"></span> Optional (but valuable).
+        Start with Nanda&rsquo;s Prerequisites, then Elhage&rsquo;s &ldquo;Transformers for Software Engineers,&rdquo;
+        then the Framework paper with this guide, then ARENA exercises.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ EXERCISES ============ -->
+
+  <section id="exercises" class="curriculum-section">
+    <div class="section-header reveal">
+      <span class="section-number">10</span>
+      <h2>Exercises &amp; Deliverables</h2>
+      <p>You understand transformer internals when you can <em>do</em> these, not when you can <em>describe</em> them.</p>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 1</div>
+      <h4>Build a Transformer from Scratch</h4>
+      <p>Implement a minimal GPT-2&ndash;style transformer in PyTorch. No libraries, no shortcuts.
+      Include: token embeddings, positional embeddings, multi-head attention (with causal masking),
+      MLP layers, residual connections, layer norm, and unembedding.</p>
+      <ul>
+        <li>Use the <a href="https://arena-course.com/">ARENA Chapter 1</a> exercises as a guide</li>
+        <li>Load pretrained GPT-2 weights into your implementation and verify it produces the same outputs</li>
+        <li>This should take 4&ndash;8 hours. If it takes much less, you&rsquo;re probably not understanding deeply enough</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 2</div>
+      <h4>Explore Activations with TransformerLens</h4>
+      <p>Load GPT-2 Small in <a href="https://github.com/TransformerLensOrg/TransformerLens">TransformerLens</a>.
+      For a simple prompt, cache all internal activations and explore them.</p>
+      <ul>
+        <li>Visualize attention patterns for all heads in all layers</li>
+        <li>Find the &ldquo;previous token&rdquo; head (attends to position i-1)</li>
+        <li>Find an induction head (use a repeated sequence like <code>"Mr Jones Mr Jones"</code>)</li>
+        <li>Use the logit lens to watch predictions evolve through layers</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 3</div>
+      <h4>Direct Logit Attribution</h4>
+      <p>For a prompt where GPT-2 correctly predicts the next token, decompose the logit into
+      contributions from each component.</p>
+      <ul>
+        <li>Which attention heads contribute most to the correct prediction?</li>
+        <li>Which MLP layers contribute most?</li>
+        <li>Are there any components that actively push <em>against</em> the correct prediction?</li>
+        <li>Visualize the contributions as a bar chart</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Exercise 4</div>
+      <h4>Analyze QK and OV Circuits</h4>
+      <p>Pick an attention head that has an interesting attention pattern (from Exercise 2).
+      Analyze its QK and OV circuits separately.</p>
+      <ul>
+        <li>Compute the full <span class="math">W<sub>E</sub><sup>T</sup> W<sub>QK</sub> W<sub>E</sub></span> matrix &mdash; which token types attend to which other token types?</li>
+        <li>Compute the OV circuit <span class="math">W<sub>E</sub> W<sub>OV</sub> W<sub>U</sub></span> &mdash; for each token this head attends to, what does it write to the logits?</li>
+        <li>Do these two analyses tell a coherent story about what this head does?</li>
+      </ul>
+    </div>
+
+    <div class="exercise reveal">
+      <div class="exercise-num">Deliverable</div>
+      <h4>Notebook: &ldquo;Inside GPT-2&rdquo;</h4>
+      <p>Combine the above into a single Jupyter notebook that demonstrates your ability to
+      work with transformer internals. This is your proof of understanding and your reference
+      for future work.</p>
+      <ul>
+        <li>Clear markdown explanations alongside code</li>
+        <li>Visualizations of attention patterns, logit lens, and attribution</li>
+        <li>At least one specific finding about GPT-2&rsquo;s behavior (something you discovered, even if small)</li>
+        <li>This notebook is your ticket to the next section: <a href="index.html#roadmap">Superposition &amp; Features</a></li>
+      </ul>
+    </div>
+
+    <div class="card card--highlight reveal" style="margin-top: var(--space-xl);">
+      <h3>When You&rsquo;re Ready</h3>
+      <p>If you can explain the residual stream view, decompose attention into QK and OV circuits,
+      and trace information flow through a two-layer induction circuit &mdash; you have the
+      foundation. Every technique in mechanistic interpretability (SAEs, activation patching,
+      circuit tracing, steering vectors) builds directly on this understanding. Head to the
+      <a href="index.html#roadmap">Roadmap</a> for the next step: Superposition &amp; Features.</p>
+    </div>
+  </section>
+
+
+</main>
+
+
+<!-- ======== FOOTER ======== -->
+
+<footer class="site-footer">
+  <p>Part of the <a href="index.html" style="color: var(--accent);">Mechanistic Interpretability Field Guide</a>. A living document.</p>
+</footer>
+
+
+<script type="module" src="scripts/transformer-visuals.js"></script>
+
+</body>
+</html>

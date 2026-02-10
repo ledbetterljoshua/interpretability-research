@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mechanistic Interpretability — A Field Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+
+
+<!-- ======== HEADER ======== -->
+
+<header class="header">
+  <div class="header-label reveal">Field Guide</div>
+
+  <h1 class="reveal">Mechanistic<br>Interpretability</h1>
+
+  <p class="header-desc reveal">
+    A comprehensive map of the field &mdash; concepts, people, papers, tools,
+    open problems, and your path through them. From first principles to cutting edge.
+  </p>
+
+  <div class="header-meta reveal">
+    <span class="meta-badge">
+      <span class="dot dot--live" style="background: var(--green)"></span>
+      MIT Tech Review 2026 Breakthrough
+    </span>
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--accent)"></span>
+      Updated Feb 2026
+    </span>
+    <span class="meta-badge">
+      <span class="dot" style="background: var(--gold)"></span>
+      ~500+ researchers
+    </span>
+  </div>
+</header>
+
+
+<!-- ======== NAVIGATION ======== -->
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-track">
+      <a class="nav-btn active" href="#overview">Overview</a>
+      <a class="nav-btn" href="#concepts">Concepts</a>
+      <a class="nav-btn" href="#timeline">Timeline</a>
+      <a class="nav-btn" href="#people">People</a>
+      <a class="nav-btn" href="#tools">Tools</a>
+      <a class="nav-btn" href="#problems">Problems</a>
+      <a class="nav-btn" href="#roadmap">Roadmap</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ======== MAIN CONTENT ======== -->
+
+<main>
+
+  <div class="epigraph reveal">
+    <blockquote>&ldquo;A surprising fact about modern large language models is that nobody really knows how they work internally.&rdquo;</blockquote>
+    <cite>Anthropic Research Team</cite>
+  </div>
+
+  <!-- ============ OVERVIEW ============ -->
+
+  <section id="overview">
+    <div class="section-header reveal">
+      <span class="section-number">01</span>
+      <h2>What is this field?</h2>
+      <p>Mechanistic interpretability reverse-engineers neural networks to understand
+        <em>how</em> they compute, not just <em>what</em> they output.
+        Think: decompiling a binary back to source code.</p>
+    </div>
+
+    <div class="concept-map reveal">
+      <div class="concept-layer">
+        <div class="layer-label">The Big Question</div>
+        <p>
+          Neural networks work, but nobody designed their algorithms. They emerged from training.
+          Mechanistic interpretability asks:
+          <strong>what algorithms did they learn, and can we understand them?</strong>
+        </p>
+      </div>
+
+      <div class="arrow-label">leads to</div>
+
+      <div class="concept-layer">
+        <div class="layer-label">Core Challenge: Superposition</div>
+        <p>
+          Networks represent far more concepts than they have neurons. They pack thousands of
+          &ldquo;features&rdquo; (concepts like &ldquo;Golden Gate Bridge&rdquo; or &ldquo;code is buggy&rdquo;) into a smaller number
+          of dimensions using nearly-orthogonal directions in high-dimensional space.
+          Individual neurons are <strong>polysemantic</strong> &mdash; they fire for multiple unrelated things.
+          This makes the network opaque.
+        </p>
+      </div>
+
+      <div class="arrow-label">so we need</div>
+
+      <div class="concept-layer">
+        <div class="layer-label">The Approach: Find the Real Features</div>
+        <div class="concept-chips">
+          <div class="concept-chip" onclick="showDetail('sae')">Sparse Autoencoders (SAEs)</div>
+          <div class="concept-chip" onclick="showDetail('circuits')">Circuit Discovery</div>
+          <div class="concept-chip" onclick="showDetail('attribution')">Attribution Graphs</div>
+          <div class="concept-chip" onclick="showDetail('steering')">Representation Steering</div>
+          <div class="concept-chip" onclick="showDetail('probing')">Probing / Linear Probes</div>
+        </div>
+      </div>
+
+      <div class="arrow-label">to achieve</div>
+
+      <div class="concept-layer">
+        <div class="layer-label">Goals</div>
+        <div class="concept-chips">
+          <div class="concept-chip concept-chip--static">Safety: detect deception, misalignment</div>
+          <div class="concept-chip concept-chip--static">Control: steer model behavior precisely</div>
+          <div class="concept-chip concept-chip--static">Debugging: understand hallucinations, errors</div>
+          <div class="concept-chip concept-chip--static">Science: how does intelligence work?</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="detail-panel" class="detail-panel"></div>
+
+    <div class="section-label">The State of the Field</div>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>The Breakthrough Moment</h3>
+          <span class="tag tag-core">Status</span>
+        </div>
+        <p>MIT Technology Review named mech interp a <strong>2026 Breakthrough Technology</strong>.
+        The field went from niche to essential in ~2 years. Anthropic, Google DeepMind, and
+        startups like <a href="#people">Goodfire</a> are all investing heavily. 140+ papers at the ICML 2024 workshop alone.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>What Actually Works Now</h3>
+          <span class="tag tag-method">Methods</span>
+        </div>
+        <p><strong><a href="#concepts">SAEs</a></strong> can extract interpretable features from production models (Claude, Llama).
+        <strong>Attribution graphs</strong> can trace how a model arrives at specific answers.
+        <strong>Steering vectors</strong> can modify model behavior without retraining.
+        But we still can&rsquo;t give robust guarantees about what a model will or won&rsquo;t do.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>The Honest Gap</h3>
+          <span class="tag tag-problem">Challenge</span>
+        </div>
+        <p>We can identify features and trace some circuits, but the full picture remains out of reach.
+        Features aren&rsquo;t stable across training runs. Circuits for complex behaviors are too tangled to
+        fully map. The field shifted from &ldquo;prove a model is safe&rdquo; to &ldquo;get useful-but-imperfect understanding.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CONCEPTS ============ -->
+
+  <section id="concepts">
+    <div class="section-header reveal">
+      <span class="section-number">02</span>
+      <h2>Core Concepts</h2>
+      <p>Click any concept to expand details, prerequisites, and connections.</p>
+    </div>
+
+    <div class="concept-map reveal">
+      <div class="concept-layer">
+        <div class="layer-label">Foundational (Learn First)</div>
+        <div class="concept-chips">
+          <div class="concept-chip" onclick="showConceptDetail('residual-stream')">Residual Stream</div>
+          <div class="concept-chip" onclick="showConceptDetail('attention')">Attention Heads</div>
+          <div class="concept-chip" onclick="showConceptDetail('mlp')">MLP Layers</div>
+          <div class="concept-chip" onclick="showConceptDetail('embeddings')">Embeddings</div>
+          <div class="concept-chip" onclick="showConceptDetail('logits')">Logits &amp; Unembedding</div>
+        </div>
+      </div>
+
+      <div class="concept-layer">
+        <div class="layer-label">The Problem (Why It&rsquo;s Hard)</div>
+        <div class="concept-chips">
+          <div class="concept-chip" onclick="showConceptDetail('superposition')">Superposition</div>
+          <div class="concept-chip" onclick="showConceptDetail('polysemanticity')">Polysemanticity</div>
+          <div class="concept-chip" onclick="showConceptDetail('feature-concept')">Features (the real units)</div>
+          <div class="concept-chip" onclick="showConceptDetail('linear-rep')">Linear Representation Hypothesis</div>
+        </div>
+      </div>
+
+      <div class="concept-layer">
+        <div class="layer-label">Methods (How We Attack It)</div>
+        <div class="concept-chips">
+          <div class="concept-chip" onclick="showConceptDetail('sae-detail')">Sparse Autoencoders</div>
+          <div class="concept-chip" onclick="showConceptDetail('activation-patching')">Activation Patching</div>
+          <div class="concept-chip" onclick="showConceptDetail('attribution-patching')">Attribution Patching</div>
+          <div class="concept-chip" onclick="showConceptDetail('logit-lens')">Logit Lens</div>
+          <div class="concept-chip" onclick="showConceptDetail('probing-detail')">Linear Probes</div>
+          <div class="concept-chip" onclick="showConceptDetail('ablation')">Ablation Studies</div>
+        </div>
+      </div>
+
+      <div class="concept-layer">
+        <div class="layer-label">Advanced / Frontier (2024&ndash;2026)</div>
+        <div class="concept-chips">
+          <div class="concept-chip" onclick="showConceptDetail('crosscoders')">Crosscoders</div>
+          <div class="concept-chip" onclick="showConceptDetail('transcoders')">Transcoders / CLTs</div>
+          <div class="concept-chip" onclick="showConceptDetail('attribution-graphs')">Attribution Graphs</div>
+          <div class="concept-chip" onclick="showConceptDetail('rep-engineering')">Representation Engineering</div>
+          <div class="concept-chip" onclick="showConceptDetail('steering-vectors')">Steering Vectors</div>
+          <div class="concept-chip" onclick="showConceptDetail('model-diffing')">Model Diffing</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="concept-detail-panel" class="detail-panel"></div>
+  </section>
+
+
+  <!-- ============ TIMELINE ============ -->
+
+  <section id="timeline">
+    <div class="section-header reveal">
+      <span class="section-number">03</span>
+      <h2>Timeline</h2>
+      <p>Key papers and breakthroughs, in order. Highlighted dots mark turning points.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">March 2020</div>
+        <div class="timeline-title">Zoom In: An Introduction to Circuits</div>
+        <div class="timeline-desc"><a href="#people">Chris Olah</a>, Nick Cammarata, et al. at OpenAI publish the Circuits paper, establishing the vision of understanding neural networks as compositions of meaningful features connected by circuits. Foundational work that launches the field.</div>
+        <div class="timeline-authors">Olah, Cammarata, Schubert et al. &mdash; Distill</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">2021</div>
+        <div class="timeline-title">A Mathematical Framework for Transformer Circuits</div>
+        <div class="timeline-desc">Elhage, <a href="#people">Nanda</a>, <a href="#people">Olah</a> et al. Introduces the <a href="#concepts">residual stream</a> view of transformers, induction heads, and virtual attention heads. The theoretical foundation for mech interp of transformers.</div>
+        <div class="timeline-authors">Elhage, Nanda, Olah et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Sep 2022</div>
+        <div class="timeline-title">Toy Models of Superposition</div>
+        <div class="timeline-desc">Demonstrates mathematically that neural networks represent more features than they have dimensions, and explores when and how <a href="#concepts">superposition</a> occurs. Critical for understanding why individual neurons are uninterpretable.</div>
+        <div class="timeline-authors">Elhage, Hume, Olah et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">Oct 2023</div>
+        <div class="timeline-title">Towards Monosemanticity</div>
+        <div class="timeline-desc">First successful use of <a href="#concepts">sparse autoencoders</a> (dictionary learning) to extract interpretable, monosemantic features from a small 1-layer transformer. Proof of concept that SAEs can decompose superposition into understandable units.</div>
+        <div class="timeline-authors">Bricken, Templeton et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">2023&ndash;2024</div>
+        <div class="timeline-title">TransformerLens matures</div>
+        <div class="timeline-desc"><a href="#people">Neel Nanda</a>&rsquo;s library becomes the standard tool for mech interp research. Loads 50+ model architectures, exposes all internal activations. The &ldquo;microscope&rdquo; everyone uses.</div>
+        <div class="timeline-authors">Nanda, Meyer et al.</div>
+      </div>
+
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">May 2024</div>
+        <div class="timeline-title">Scaling Monosemanticity / Mapping the Mind of Claude</div>
+        <div class="timeline-desc">Anthropic scales SAEs to Claude 3 Sonnet (~70B parameters). Extracts millions of interpretable features including abstract, multilingual, multimodal concepts. First deep look inside a production LLM. Finds safety-relevant features (deception, sycophancy, bias).</div>
+        <div class="timeline-authors">Bricken, Templeton, Batson et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Jun 2024</div>
+        <div class="timeline-title">Representation Engineering / RepE</div>
+        <div class="timeline-desc"><a href="#people">Dan Hendrycks</a> et al. present a top-down approach: rather than finding individual features, identify directions in representation space that correspond to high-level concepts (honesty, happiness, power-seeking) and use them for reading and controlling model behavior.</div>
+        <div class="timeline-authors">Zou, Phan, Hendrycks et al. &mdash; Center for AI Safety</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Sep 2024</div>
+        <div class="timeline-title">Golden Gate Claude</div>
+        <div class="timeline-desc">Anthropic demonstrates <a href="#concepts">feature steering</a> by amplifying the &ldquo;Golden Gate Bridge&rdquo; feature in Claude, making it obsessively relate everything to the bridge. Dramatic public demonstration that features are causally meaningful.</div>
+        <div class="timeline-authors">Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Dec 2024</div>
+        <div class="timeline-title">Sparse Crosscoders for Cross-Layer Features</div>
+        <div class="timeline-desc">Anthropic introduces <a href="#concepts">crosscoders</a>: SAEs that read and write across multiple layers. Enables tracking how features evolve through the network and comparing features between different models (&ldquo;model diffing&rdquo;).</div>
+        <div class="timeline-authors">Lindsey et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Dec 2024</div>
+        <div class="timeline-title">Goodfire launches Ember API</div>
+        <div class="timeline-desc">First commercial interpretability API. Feature search, auto-steer, and dynamic prompting for Llama 3.3 70B. Backed by $50M Series A including Anthropic&rsquo;s first external investment.</div>
+        <div class="timeline-authors">Goodfire</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Jan 2025</div>
+        <div class="timeline-title">Open Problems in Mechanistic Interpretability</div>
+        <div class="timeline-desc"><a href="#people">Lee Sharkey</a> (Apollo Research) et al. publish comprehensive survey of unsolved problems: verification of interpretations, scalability, weight-level understanding, faithfulness of explanations. The field&rsquo;s roadmap document.</div>
+        <div class="timeline-authors">Sharkey, Chughtai et al. &mdash; Apollo Research / Various</div>
+      </div>
+
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">Mar 2025</div>
+        <div class="timeline-title">Circuit Tracing / Attribution Graphs / Biology of an LLM</div>
+        <div class="timeline-desc">Anthropic&rsquo;s biggest interpretability release. Introduces <a href="#concepts">attribution graphs</a> that trace how Claude 3.5 Haiku reasons. Discovers: the model plans poetry rhymes ahead, solves math differently than it claims, has universal multilingual features. Open-sourced the <a href="#tools">tools</a>.</div>
+        <div class="timeline-authors">Lindsey, Olah et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">2025</div>
+        <div class="timeline-title">Cross-Architecture Model Diffing</div>
+        <div class="timeline-desc">First <a href="#concepts">model diff</a> between architecturally distinct models (Llama vs Qwen). Discovers ideological features: Chinese state narrative alignment in Qwen, American exceptionalism features in Llama. Features causally control censorship behavior.</div>
+        <div class="timeline-authors">Various researchers</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">2025</div>
+        <div class="timeline-title">Neel Nanda&rsquo;s Pragmatic Pivot</div>
+        <div class="timeline-desc">Google DeepMind&rsquo;s mech interp team shifts from &ldquo;ambitious reverse-engineering&rdquo; to &ldquo;pragmatic interpretability&rdquo; &mdash; directly solving safety problems with imperfect-but-useful understanding. &ldquo;Applied interpretability&rdquo; becomes a new subfield.</div>
+        <div class="timeline-authors">Nanda et al. &mdash; Google DeepMind</div>
+      </div>
+
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">Jan 2026</div>
+        <div class="timeline-title">MIT Tech Review: 2026 Breakthrough Technology</div>
+        <div class="timeline-desc">Mechanistic interpretability named one of MIT Technology Review&rsquo;s 10 Breakthrough Technologies for 2026. Field goes fully mainstream.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PEOPLE & ORGS ============ -->
+
+  <section id="people">
+    <div class="section-header reveal">
+      <span class="section-number">04</span>
+      <h2>People &amp; Organizations</h2>
+      <p>Who&rsquo;s doing this work and where.</p>
+    </div>
+
+    <div class="section-label">Organizations</div>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Anthropic Interpretability Team</h3>
+          <span class="tag tag-org">Lab</span>
+        </div>
+        <p>The largest and most influential mech interp team. Led by Chris Olah. Produced <a href="#timeline">Scaling Monosemanticity</a>, Circuit Tracing, Crosscoders, the transformer-circuits.pub research site. Has the most access to frontier models (Claude). Sets the research agenda for much of the field.</p>
+        <div class="links">
+          <a href="https://transformer-circuits.pub/">transformer-circuits.pub</a>
+          <a href="https://www.anthropic.com/research">anthropic.com/research</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Google DeepMind MI Team</h3>
+          <span class="tag tag-org">Lab</span>
+        </div>
+        <p>Led by <a href="#people">Neel Nanda</a> (age 26). Recently pivoted to &ldquo;applied interpretability&rdquo; &mdash; using mech interp tools directly for safety in production. Hiring research scientists and engineers. Created <a href="#tools">TransformerLens</a> (now community-maintained). Key focus: pragmatic safety applications.</p>
+        <div class="links">
+          <a href="https://www.neelnanda.io/">neelnanda.io</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Goodfire</h3>
+          <span class="tag tag-org">Startup</span>
+        </div>
+        <p>First mech interp startup. $50M+ raised, Anthropic invested. Built commercial API for feature discovery and steering on Llama models. &ldquo;Paint with Ember&rdquo; lets you paint using neural features. Proving interpretability has commercial value, not just research.</p>
+        <div class="links">
+          <a href="https://www.goodfire.ai/">goodfire.ai</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Apollo Research</h3>
+          <span class="tag tag-org">Safety org</span>
+        </div>
+        <p>AI safety research org. <a href="#people">Lee Sharkey</a> (co-author of &ldquo;Open Problems in MI&rdquo;) is based here. Focus on using interpretability for evaluating dangerous AI capabilities, particularly deception and scheming.</p>
+        <div class="links">
+          <a href="https://www.apolloresearch.ai/">apolloresearch.ai</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>EleutherAI</h3>
+          <span class="tag tag-org">Open source</span>
+        </div>
+        <p>Open-source AI research collective. Released the <a href="#tools">Pythia</a> model suite (purpose-built for interp research with saved checkpoints). Created the &ldquo;Attribute&rdquo; library for attribution graphs. Strong focus on open, reproducible research.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Decode Research / Neuronpedia</h3>
+          <span class="tag tag-org">Platform</span>
+        </div>
+        <p>Maintains <a href="#tools">Neuronpedia</a> (the Wikipedia of neural features) and <a href="#tools">SAELens</a> (SAE training library). Now open source. Hosts 4+ TB of feature activations, explanations, and metadata. Collaborated with Anthropic on open-sourcing circuit tracing.</p>
+        <div class="links">
+          <a href="https://www.neuronpedia.org/">neuronpedia.org</a>
+          <a href="https://github.com/decoderesearch/SAELens">SAELens</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>MATS</h3>
+          <span class="tag tag-org">Training</span>
+        </div>
+        <p>Premier mentorship program for alignment researchers. Many mech interp researchers came through MATS. If you want to do this professionally, MATS is one of the best entry points.</p>
+        <div class="links">
+          <a href="https://www.matsprogram.org/">matsprogram.org</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Key People</div>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Chris Olah</h3>
+          <span class="tag tag-person">Anthropic</span>
+        </div>
+        <p>Coined &ldquo;mechanistic interpretability.&rdquo; Founded the Circuits research program at OpenAI, then moved to Anthropic. Behind Distill.pub, the <a href="#timeline">Circuits papers</a>, and most of Anthropic&rsquo;s landmark interp work. The intellectual godfather of the field.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Neel Nanda</h3>
+          <span class="tag tag-person">Google DeepMind</span>
+        </div>
+        <p>Created <a href="#tools">TransformerLens</a>. MI team lead at Google DeepMind at age 26. Mentored 50+ junior researchers. Best resource for getting started (quickstart guide, prerequisites guide, blog). Recently shifted toward &ldquo;pragmatic interpretability.&rdquo;</p>
+        <div class="links">
+          <a href="https://www.neelnanda.io/mechanistic-interpretability/quickstart">Quickstart Guide</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Trenton Bricken</h3>
+          <span class="tag tag-person">Anthropic</span>
+        </div>
+        <p>Core author on <a href="#timeline">Towards Monosemanticity</a> and Scaling Monosemanticity. Central to the SAE / dictionary learning approach. Background in neuroscience + ML.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Nelson Elhage</h3>
+          <span class="tag tag-person">Anthropic</span>
+        </div>
+        <p>Co-author of <a href="#timeline">Mathematical Framework for Transformer Circuits</a>, Toy Models of Superposition, and many other foundational papers. Created &ldquo;Transformers for Software Engineers&rdquo; &mdash; essential reading for your background.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Lee Sharkey</h3>
+          <span class="tag tag-person">Apollo Research</span>
+        </div>
+        <p>Lead author of &ldquo;<a href="#timeline">Open Problems in MI</a>&rdquo; (Jan 2025) &mdash; the field&rsquo;s roadmap. Working on using interp for evaluating AI deception. Strong on theory and identifying what the field actually needs to solve.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Joseph Bloom</h3>
+          <span class="tag tag-person">Decode Research</span>
+        </div>
+        <p>Creator of <a href="#tools">SAELens</a> (SAE training library) and SAEDashboard. Building the infrastructure the field runs on. Key contributor to making SAE research accessible and reproducible.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>David Bau</h3>
+          <span class="tag tag-person">Academic</span>
+        </div>
+        <p>Professor at Northeastern. Created baukit/<a href="#tools">nnsight</a>. Pioneer in understanding individual neurons and editing model knowledge. ROME (Rank-One Model Editing) work. Approaches interp from a different angle than Anthropic.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Dan Hendrycks</h3>
+          <span class="tag tag-person">CAIS</span>
+        </div>
+        <p>Director of Center for AI Safety. <a href="#concepts">Representation Engineering</a> / RepE work. Top-down approach to finding and controlling concept representations. Complements bottom-up circuit analysis.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Callum McDougall</h3>
+          <span class="tag tag-person">Educator</span>
+        </div>
+        <p>Created <a href="#tools">ARENA</a> (Alignment Research Engineer Accelerator) tutorials. The most recommended hands-on learning resource for mech interp. If you&rsquo;re doing the exercises, you&rsquo;re following his curriculum.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ TOOLS ============ -->
+
+  <section id="tools">
+    <div class="section-header reveal">
+      <span class="section-number">05</span>
+      <h2>Tools &amp; Infrastructure</h2>
+      <p>The practical toolkit for doing interpretability research.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>TransformerLens</h3>
+          <span class="tag tag-tool">Library</span>
+        </div>
+        <p><strong>The primary tool.</strong> Load 50+ model architectures, access every internal activation (<a href="#concepts">residual stream</a>, attention patterns, MLP outputs), cache activations, hook into forward passes to edit/ablate/patch. v3 (alpha, Sep 2025) supports large models. Start here.</p>
+        <div class="links">
+          <a href="https://github.com/TransformerLensOrg/TransformerLens">GitHub</a>
+          <a href="https://transformerlensorg.github.io/TransformerLens/">Docs</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>SAELens</h3>
+          <span class="tag tag-tool">Library</span>
+        </div>
+        <p>Train and analyze <a href="#concepts">sparse autoencoders</a>. Works with any PyTorch model (not just TransformerLens). Loads pretrained SAEs from Neuronpedia. The standard tool for feature extraction research. Previously part of TransformerLens, now standalone.</p>
+        <div class="links">
+          <a href="https://github.com/decoderesearch/SAELens">GitHub</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>nnsight</h3>
+          <span class="tag tag-tool">Library</span>
+        </div>
+        <p><a href="#people">David Bau</a>&rsquo;s library. More performant than TransformerLens for large models. Wraps HuggingFace transformers directly. Better for production-scale work. Different API philosophy (context managers vs hooks). Use when TransformerLens is too slow.</p>
+        <div class="links">
+          <a href="https://nnsight.net/">nnsight.net</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Neuronpedia</h3>
+          <span class="tag tag-tool">Platform</span>
+        </div>
+        <p>Interactive platform for exploring SAE features. Browse 4+ TB of activations, explanations, metadata. Feature dashboards show top activations, logits, density. Hosts <a href="#concepts">attribution graph</a> explorer. Now open source. The &ldquo;lab bench&rdquo; of the field.</p>
+        <div class="links">
+          <a href="https://www.neuronpedia.org/">neuronpedia.org</a>
+          <a href="https://github.com/hijohnnylin/neuronpedia">GitHub</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Circuit Tracer</h3>
+          <span class="tag tag-tool">Library</span>
+        </div>
+        <p>Anthropic&rsquo;s open-sourced <a href="#concepts">attribution graph</a> library. Generate attribution graphs for open-weight models (Gemma-2-2B, Llama-3.1-1B). Trace how models arrive at specific outputs. Frontend hosted on Neuronpedia. Released May 2025.</p>
+        <div class="links">
+          <a href="https://www.anthropic.com/research/open-source-circuit-tracing">Announcement</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>ARENA Tutorials</h3>
+          <span class="tag tag-tool">Learning</span>
+        </div>
+        <p><a href="#people">Callum McDougall</a>&rsquo;s hands-on curriculum. Jupyter notebooks with exercises and solutions. Covers: building transformers from scratch, TransformerLens, SAEs, <a href="#concepts">activation patching</a>, circuits. The recommended starting point for learning by doing.</p>
+        <div class="links">
+          <a href="https://arena-course.com/">arena-course.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Models Commonly Used</div>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>GPT-2 (Small / Medium)</h3>
+          <span class="tag tag-core">Classic</span>
+        </div>
+        <p>The fruit fly of mech interp. Small enough to fully analyze, complex enough to have interesting behavior. Most published circuits research uses GPT-2. Great for learning. 124M / 355M parameters.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Pythia Suite (EleutherAI)</h3>
+          <span class="tag tag-core">Research</span>
+        </div>
+        <p>Purpose-built for interp. Models from 70M to 12B, with 154 saved checkpoints during training. Lets you study how features emerge during training. Open weights, open data.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Gemma 2/3 (Google)</h3>
+          <span class="tag tag-core">Current</span>
+        </div>
+        <p>Well-supported in TransformerLens. Gemma-2-2B is a sweet spot (small enough for laptop work, capable enough to be interesting). Good default for current research.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Qwen 3 (Alibaba)</h3>
+          <span class="tag tag-core">Recommended 2025</span>
+        </div>
+        <p><a href="#people">Nanda</a>&rsquo;s current recommendation (Sep 2025). Dense models, reasoning + non-reasoning modes, good range of sizes. Increasingly the default for open-source LLM interp work.</p>
+      </div>
+    </div>
+
+    <div class="section-label">Compute Requirements</div>
+
+    <div class="info-box">
+      <p><strong>Good news:</strong> You can do meaningful mech interp work on a laptop or free Google Colab.
+      GPT-2 Small fits in &lt;1GB VRAM. Gemma-2-2B needs ~5GB. Most <a href="#tools">ARENA</a> exercises run on Colab free tier.
+      Training your own SAEs on larger models needs more (A100 GPUs), but pretrained SAEs are available on <a href="#tools">Neuronpedia</a>.
+      <strong>Bottom line:</strong> No excuse not to start. Your MacBook can run real experiments.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ OPEN PROBLEMS ============ -->
+
+  <section id="problems">
+    <div class="section-header reveal">
+      <span class="section-number">06</span>
+      <h2>Open Problems</h2>
+      <p>Where the field is stuck. Where you could make a difference.
+        Based on <a href="#people">Sharkey et al.</a> (Jan 2025) and the current research landscape.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>SAEs Find Different Features Every Time</h3>
+          <span class="tag tag-problem">Fundamental</span>
+        </div>
+        <p><a href="#concepts">SAEs</a> trained on the same model with different random seeds learn substantially different feature sets. This means the &ldquo;true features&rdquo; might not be well-defined, or our methods aren&rsquo;t finding them. How do you build on features that aren&rsquo;t stable?</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Feature Composition vs. Atomic Features</h3>
+          <span class="tag tag-problem">Fundamental</span>
+        </div>
+        <p>L1 regularization in SAEs can drive them to learn common combinations rather than atomic features. We might be finding &ldquo;person in a park&rdquo; instead of &ldquo;person&rdquo; and &ldquo;park&rdquo; separately. The dictionary might not have the right granularity.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Verification: How Do You Know You&rsquo;re Right?</h3>
+          <span class="tag tag-problem">Methodological</span>
+        </div>
+        <p>Most interp claims are treated as conclusions, but should be treated as hypotheses. There&rsquo;s no standard way to prove an interpretation is correct. You can always tell a story about what a feature &ldquo;means&rdquo; &mdash; but is the story true?</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Weights, Not Just Activations</h3>
+          <span class="tag tag-problem">Underexplored</span>
+        </div>
+        <p>Almost all current work studies activations (what fires when). Very little work studies the weights themselves (the learned parameters that compute those activations). Understanding weights would give deeper, more permanent understanding.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Scaling to Frontier Models</h3>
+          <span class="tag tag-problem">Engineering</span>
+        </div>
+        <p>Most research is on models up to ~7B parameters. Frontier models are 100B+. Do findings transfer? Do new phenomena emerge at scale? <a href="#concepts">Circuit tracing</a> gets overwhelmed by detail in larger models. The computational cost is enormous.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Reasoning Models Break the Paradigm</h3>
+          <span class="tag tag-problem">Frontier</span>
+        </div>
+        <p>Chain-of-thought / reasoning models solve problems over multiple steps. Current mech interp tools analyze single forward passes. Multi-step reasoning creates exponentially more circuits to trace. And the chain of thought isn&rsquo;t faithful to what the model actually computes.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>From Features to Behavior</h3>
+          <span class="tag tag-problem">The Gap</span>
+        </div>
+        <p>We can find features. We can sometimes find circuits. But going from &ldquo;these features exist&rdquo; to &ldquo;this is why the model did X&rdquo; remains mostly manual, painstaking work. The gap between features and behavior prediction is the field&rsquo;s core unsolved problem.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-header">
+          <h3>Detecting Deception</h3>
+          <span class="tag tag-problem">Safety-critical</span>
+        </div>
+        <p>The ultimate safety application: can we tell if a model is being deceptive? Anthropic found deception-related features in <a href="#timeline">Scaling Monosemanticity</a>. But no one has demonstrated reliable deception detection in practice. High impact, very hard.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ ROADMAP ============ -->
+
+  <section id="roadmap">
+    <div class="section-header reveal">
+      <span class="section-number">07</span>
+      <h2>Your Learning Roadmap</h2>
+      <p>A path designed for a strong software engineer who learns by building. Each phase has concrete deliverables.</p>
+    </div>
+
+    <div class="roadmap">
+      <div class="roadmap-step reveal">
+        <div class="step-num">1</div>
+        <h3><a href="transformer-internals.html" style="color: inherit; text-decoration: none;">Transformer Internals</a></h3>
+        <div class="time">1&ndash;2 weeks</div>
+        <p>Understand how transformers actually work, mechanistically. Not the high-level &ldquo;attention is all you need&rdquo; version &mdash; the actual math of <a href="#concepts">residual streams</a>, <a href="#concepts">attention heads</a>, and <a href="#concepts">MLPs</a>.</p>
+        <ul>
+          <li>Read: <a href="https://transformer-circuits.pub/2021/framework/index.html">A Mathematical Framework for Transformer Circuits</a></li>
+          <li>Read: Nelson Elhage&rsquo;s &ldquo;Transformers for Software Engineers&rdquo;</li>
+          <li>Do: Build a small transformer from scratch (<a href="#tools">ARENA</a> Chapter 1)</li>
+          <li>Do: Load GPT-2 in <a href="#tools">TransformerLens</a>, explore activations</li>
+          <li><strong>Deliverable:</strong> Notebook showing you can hook into any internal activation of GPT-2 and visualize attention patterns</li>
+        </ul>
+        <p style="margin-top: 0.75rem;"><a href="transformer-internals.html" style="font-weight: 600;">&rarr; Open the full Transformer Internals curriculum</a></p>
+      </div>
+
+      <div class="roadmap-step reveal">
+        <div class="step-num">2</div>
+        <h3>Superposition &amp; Features</h3>
+        <div class="time">1&ndash;2 weeks</div>
+        <p>Understand the core problem (<a href="#concepts">superposition</a>) and the core solution approach (<a href="#concepts">sparse autoencoders</a>).</p>
+        <ul>
+          <li>Read: <a href="https://transformer-circuits.pub/2022/toy_model/index.html">Toy Models of Superposition</a></li>
+          <li>Read: <a href="https://transformer-circuits.pub/2023/monosemantic-features">Towards Monosemanticity</a></li>
+          <li>Do: Train a toy SAE on synthetic data (see the math click)</li>
+          <li>Do: Load pretrained SAEs from <a href="#tools">Neuronpedia</a>, explore features</li>
+          <li>Do: Browse features on neuronpedia.org interactively</li>
+          <li><strong>Deliverable:</strong> Interactive visualization of superposition in a toy model</li>
+        </ul>
+      </div>
+
+      <div class="roadmap-step reveal">
+        <div class="step-num">3</div>
+        <h3>Activation Patching &amp; Circuits</h3>
+        <div class="time">1&ndash;2 weeks</div>
+        <p>Learn the experimental techniques: how to identify which parts of a model are responsible for specific behaviors.</p>
+        <ul>
+          <li>Do: <a href="#tools">ARENA</a> Chapter on activation patching</li>
+          <li>Reproduce: Induction head circuit in GPT-2</li>
+          <li>Learn: <a href="#concepts">Logit lens</a>, attention knockout, causal interventions</li>
+          <li>Explore: <a href="#concepts">Attribution graphs</a> on <a href="#tools">Neuronpedia</a></li>
+          <li><strong>Deliverable:</strong> Notebook tracing a specific behavior in GPT-2 through its circuit</li>
+        </ul>
+      </div>
+
+      <div class="roadmap-step reveal">
+        <div class="step-num">4</div>
+        <h3>Steering &amp; Control</h3>
+        <div class="time">1&ndash;2 weeks</div>
+        <p>Once you can find features, learn to use them: steering model behavior by manipulating representations.</p>
+        <ul>
+          <li>Read: <a href="#concepts">Representation Engineering</a> papers</li>
+          <li>Do: Compute <a href="#concepts">steering vectors</a> for a concept (e.g., honesty, formality)</li>
+          <li>Do: Apply steering at inference time, measure effects</li>
+          <li>Explore: <a href="#people">Goodfire</a>&rsquo;s API for feature steering</li>
+          <li><strong>Deliverable:</strong> Demo of steering a model&rsquo;s personality/behavior using feature manipulation</li>
+        </ul>
+      </div>
+
+      <div class="roadmap-step reveal">
+        <div class="step-num">5</div>
+        <h3>Frontier Methods</h3>
+        <div class="time">2&ndash;3 weeks</div>
+        <p>The cutting edge: <a href="#concepts">crosscoders</a>, <a href="#concepts">transcoders</a>, attribution graphs, <a href="#concepts">model diffing</a>.</p>
+        <ul>
+          <li>Read: Crosscoders paper, <a href="#timeline">Circuit Tracing paper</a></li>
+          <li>Do: Run <a href="#tools">circuit tracer</a> on Gemma-2-2B</li>
+          <li>Do: Compare features across two different models</li>
+          <li>Explore: CLTs (cross-layer transcoders)</li>
+          <li><strong>Deliverable:</strong> Attribution graph for an interesting behavior + analysis</li>
+        </ul>
+      </div>
+
+      <div class="roadmap-step reveal">
+        <div class="step-num">6</div>
+        <h3>Your Own Research</h3>
+        <div class="time">Ongoing</div>
+        <p>By now you have the tools and intuitions. Pick an <a href="#problems">open problem</a> that fascinates you and start poking at it.</p>
+        <ul>
+          <li>Review the <a href="#problems">Open Problems</a> section &mdash; what pulls you?</li>
+          <li>Start with 1-week mini-projects (fast feedback)</li>
+          <li>Write up findings, even negative results</li>
+          <li>Consider: <a href="#people">MATS</a> application, Anthropic Fellows, or independent research</li>
+          <li><strong>Remember:</strong> The bar for entry is low. There aren&rsquo;t enough people doing this. Your engineering skills are a genuine advantage.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card card--highlight reveal" style="margin-top: var(--space-xl);">
+      <h3>Why Your Background Is an Advantage</h3>
+      <p>Mech interp is closer to reverse engineering than traditional ML research. You&rsquo;re
+      decompiling a binary, tracing execution paths, finding bugs. The mindset of a software
+      engineer who debugs complex systems is exactly right. Many breakthrough results came
+      from people who think like engineers, not just mathematicians. The field explicitly
+      needs more people who can build robust tools, run systematic experiments, and write
+      clean infrastructure. That&rsquo;s you.</p>
+    </div>
+  </section>
+
+
+</main>
+
+
+<!-- ======== FOOTER ======== -->
+
+<footer class="site-footer">
+  <p>A living document. Last updated February 2026.</p>
+</footer>
+
+
+<script type="module" src="scripts/main.js"></script>
+
+</body>
+</html>

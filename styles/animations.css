@@ -1,0 +1,91 @@
+/* ============================================================
+   ANIMATIONS — Scroll reveals, hover states, reduced motion
+   ============================================================ */
+
+
+/* ---- Scroll Reveal ---- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card stagger via CSS custom property */
+.card.reveal,
+.roadmap-step.reveal {
+  transition-delay: var(--stagger, 0s);
+}
+
+/* Grid stagger — auto-assigned */
+.card-grid .card:nth-child(1) { --stagger: 0s; }
+.card-grid .card:nth-child(2) { --stagger: 0.04s; }
+.card-grid .card:nth-child(3) { --stagger: 0.08s; }
+.card-grid .card:nth-child(4) { --stagger: 0.12s; }
+.card-grid .card:nth-child(5) { --stagger: 0.16s; }
+.card-grid .card:nth-child(6) { --stagger: 0.20s; }
+.card-grid .card:nth-child(7) { --stagger: 0.24s; }
+.card-grid .card:nth-child(8) { --stagger: 0.28s; }
+.card-grid .card:nth-child(9) { --stagger: 0.32s; }
+
+.roadmap .roadmap-step:nth-child(1) { --stagger: 0s; }
+.roadmap .roadmap-step:nth-child(2) { --stagger: 0.06s; }
+.roadmap .roadmap-step:nth-child(3) { --stagger: 0.12s; }
+.roadmap .roadmap-step:nth-child(4) { --stagger: 0.18s; }
+.roadmap .roadmap-step:nth-child(5) { --stagger: 0.24s; }
+.roadmap .roadmap-step:nth-child(6) { --stagger: 0.30s; }
+
+
+/* ---- Header Stagger ---- */
+
+.header-label.reveal.visible  { transition-delay: 0s; }
+.header h1.reveal.visible      { transition-delay: 0.06s; }
+.header-desc.reveal.visible    { transition-delay: 0.12s; }
+.header-meta.reveal.visible    { transition-delay: 0.2s; }
+
+
+/* ---- Timeline Reveal ---- */
+
+.timeline-item.reveal {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.timeline-item.reveal.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ---- Focus States ---- */
+
+.nav-btn:focus-visible,
+.concept-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ---- Reduced Motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

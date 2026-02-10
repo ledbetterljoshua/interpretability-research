@@ -1,0 +1,442 @@
+/* ============================================================
+   COMPONENTS — Cards, tags, chips, panels, timeline, roadmap
+   ============================================================ */
+
+
+/* ---- Cards ---- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition:
+    border-color var(--dur-normal) ease,
+    box-shadow var(--dur-normal) ease;
+}
+
+.card:hover {
+  border-color: var(--border);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.card .links {
+  margin-top: 0.65rem;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.card .links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+.card .links a::after {
+  content: ' \2197';
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+
+/* Highlight variant */
+.card--highlight {
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(135deg, var(--accent-bg), var(--surface) 60%);
+}
+
+.card--highlight h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+
+/* ---- Tags ---- */
+
+.tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tag-core    { background: var(--accent-bg-strong); color: var(--accent); }
+.tag-tool    { background: rgba(9, 146, 104, 0.1);  color: var(--green); }
+.tag-paper   { background: rgba(230, 119, 0, 0.1);  color: var(--gold); }
+.tag-person  { background: rgba(166, 30, 77, 0.08);  color: var(--pink); }
+.tag-org     { background: rgba(12, 133, 153, 0.1);  color: var(--cyan); }
+.tag-problem { background: rgba(201, 42, 42, 0.08);  color: var(--red); }
+.tag-method  { background: rgba(217, 72, 15, 0.08);  color: var(--orange); }
+
+
+/* ---- Concept Map ---- */
+
+.concept-map {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin: var(--space-lg) 0;
+}
+
+.concept-layer {
+  margin-bottom: var(--space-xl);
+}
+.concept-layer:last-child { margin-bottom: 0; }
+
+.concept-layer p {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+.layer-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.concept-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.concept-chip {
+  background: var(--surface-2);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.84rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all var(--dur-normal) ease;
+}
+
+.concept-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.concept-chip:active {
+  transform: scale(0.97);
+}
+
+/* Non-clickable concept chip (goals, etc.) */
+.concept-chip--static {
+  cursor: default;
+}
+.concept-chip--static:hover {
+  border-color: var(--border-dim);
+  color: var(--text);
+  background: var(--surface-2);
+}
+.concept-chip--static:active {
+  transform: none;
+}
+
+/* Arrow labels between concept layers */
+.arrow-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.arrow-label::before,
+.arrow-label::after {
+  content: '';
+  height: 1px;
+  width: 28px;
+  background: var(--border);
+}
+
+
+/* ---- Detail Panel ---- */
+
+.detail-panel {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  margin-top: var(--space-md);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height var(--dur-slow) var(--ease-out),
+    opacity var(--dur-normal) ease,
+    padding var(--dur-slow) var(--ease-out);
+}
+
+.detail-panel.visible {
+  max-height: 600px;
+  opacity: 1;
+  padding: var(--space-xl);
+  border-left: 3px solid var(--accent);
+}
+
+.detail-panel h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.detail-panel .detail-tag {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.detail-panel p,
+.detail-panel li {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.detail-panel ul {
+  padding-left: 1.4rem;
+  margin: 0.4rem 0;
+}
+.detail-panel li {
+  margin-bottom: 0.25rem;
+}
+.detail-panel li::marker {
+  color: var(--accent);
+}
+
+.detail-panel .prereqs {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+  border-left: 2px solid var(--accent-dim);
+}
+
+.detail-panel .prereqs-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+
+/* ---- Timeline ---- */
+
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+  margin: var(--space-lg) 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-xl);
+  padding-left: 1.25rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.35rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  z-index: 1;
+}
+
+.timeline-item.major::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg-strong);
+}
+
+.timeline-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-desc {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.timeline-authors {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+
+/* ---- Roadmap ---- */
+
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.85rem;
+}
+
+.roadmap-step {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  padding-top: 1.5rem;
+  position: relative;
+  transition:
+    border-color var(--dur-normal) ease,
+    box-shadow var(--dur-normal) ease;
+}
+
+.roadmap-step:hover {
+  border-color: var(--border);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+
+.step-num {
+  position: absolute;
+  top: -9px;
+  left: 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: white;
+}
+
+.roadmap-step h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.roadmap-step .time {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.roadmap-step p {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+
+.roadmap-step ul {
+  padding-left: 1.1rem;
+  margin-top: 0.4rem;
+}
+
+.roadmap-step li {
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  margin-bottom: 0.2rem;
+  line-height: 1.55;
+}
+.roadmap-step li::marker { color: var(--accent); }
+
+.roadmap-step a { color: var(--accent); }
+
+
+/* ---- Info Box ---- */
+
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.info-box p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+
+/* ---- Epigraph ---- */
+
+.epigraph {
+  padding: var(--space-2xl) 0 var(--space-xl);
+}
+
+.epigraph blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--text-bright);
+  max-width: 540px;
+}
+
+.epigraph cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
