@@ -14,3 +14,4 @@ sae-lens==6.50.0
 torch==2.10.0
 transformer-lens==3.8.1
 transformers==5.16.1
+jlens @ git+https://github.com/anthropics/jacobian-lens@581d398

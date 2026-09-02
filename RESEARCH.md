@@ -138,10 +138,12 @@ Smaller 2026 items worth knowing: the Circuits Updates for May (features via dow
 - Rewrote 01 and 02; wrote 03 (activation patching) and 04 (SAE features + feature-swap steering). All four executed headlessly with static figures. Findings in the README table.
 - Environment upgraded: TransformerLens 2.17 → 3.8.1, SAELens 6.50, kaleido; `requirements.txt` pinned; `interp` Jupyter kernel registered.
 - Site: timeline extended Aug 2025 → Jul 2026 (9 entries, sourced from transformer-circuits.pub and anthropic.com/research); roadmap phases 1–4 link to the notebooks.
+- Notebook 06: Anthropic's Jacobian lens (github.com/anthropics/jacobian-lens) fitted on GPT-2 Small (100 WikiText prompts, 12 min, <1 GB). J-lens reads the answer *type* at L6 and the fact at the source token from L0 (capital in top-10 for 9/10 countries vs 0/10 for the logit lens); no workspace band by the paper's four signatures; list category loading/eviction reproduces at L6. Gotchas: jlens sets `add_bos_token=True`, so use `encode(..., add_special_tokens=False)` for token ids; the venv's `torch/bin/torch_shm_manager` had lost its exec bit (chmod +x). Qwen3-1.7B fit costs ~5 min/prompt at 13 GB.
 - Notebook 05 + `scale_sweep.py`: same measurements on GPT-2 M/L/XL and Qwen3-1.7B. Shape invariant, concentration not (Qwen3's L20H13 alone = 71%). Peak RSS is ~13 bytes/param through TransformerLens's load path (Large 10.6 GB, XL 22 GB, Qwen3-1.7B 26 GB); Qwen3-8B would exceed the machine. Running two sweeps concurrently froze the Mac once (load average 148) — one model at a time.
 
 ### Open threads
 - Phase 3 still owes the induction-head reproduction.
 - Phase 5: attribution graph with circuit-tracer on Gemma-2-2B.
+- Overnight J-lens fit on Qwen3-1.7B (and its base model) → notebook 06's signatures; does the workspace band appear with recipe, scale, or post-training?
 - Pythia sweep (same recipe, many sizes + checkpoints) to separate size from recipe in the concentration result of notebook 05. Qwen3-8B needs a machine with >64 GB for TransformerLens.
 - Toy SAE on synthetic superposition data (phase 2 deliverable).
