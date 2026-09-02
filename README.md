@@ -21,6 +21,7 @@ The notebooks trace a single question through four techniques: *how does GPT-2 S
 | [`02_circuit_tracing`](experiments/02_circuit_tracing.ipynb) | Direct logit attribution, exact to three decimals | Three heads carry the Paris-vs-Rome logit difference: **L9H8** (+2.6 of 6.0), **L8H11** (+1.4), **L10H0** (+1.1); two suppressors push back. L9H8 attends ~90% to the country token and writes a "France-associated" direction, not a Paris direction. Generalizes across 10 countries. |
 | [`03_activation_patching`](experiments/03_activation_patching.ipynb) | Residual, block, head, and pattern-vs-value patching | The country's identity sits at the country token through layer 8, then moves to the answer position across layers 9–10. The three heads recover 97% of the behavior between them; their attention patterns are identical on clean and corrupted prompts, so the information is entirely in what they *read*, not where they *look*. |
 | [`04_sae_features`](experiments/04_sae_features.ipynb) | Pretrained sparse autoencoders, feature swaps as steering | The country token is one dominant SAE feature per country (activation ~40 vs ~10 for the next), the same direction across four independently trained SAEs (cosine 0.86–0.97). France-specific features appear at the answer position at layer 9–10, matching the patching hand-off. Swapping the Italy feature for the France feature at layer 8 rewrites the answer to Paris (63%); the same swap at layer 10 does nothing, because the information has already moved. |
+| [`05_does_it_scale`](experiments/05_does_it_scale.ipynb) | The same logit lens + patching sweep on GPT-2 Medium/Large/XL and Qwen3-1.7B (`experiments/scale_sweep.py`, results in `data/scale/`) | The circuit's *shape* is invariant: the fact sits at the country token, attention moves it to the answer position at 62–75% of depth, the top head always attends 81–92% to the country. Its *concentration* is not: the top head recovers 43% → 26% → 26% → 8% across the GPT-2 family, then **71%** in Qwen3-1.7B (one head, one-layer hand-off). Concentration tracks training recipe, not size. |
 
 Shared conventions live in [`experiments/interp_utils.py`](experiments/interp_utils.py): BOS always on, attribution always on a logit difference against a named counterfactual, components always scaled through the cached final LayerNorm so decompositions sum exactly.
 
@@ -37,7 +38,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m jupyter lab experiments/
 ```
 
-Tested on an Apple M5 Pro (MPS) with TransformerLens 3.8, SAELens 6.50, PyTorch 2.10. Each notebook runs in one to three minutes; the first run downloads GPT-2 Small (~500 MB) and four SAEs (~300 MB each). To re-execute headlessly:
+Tested on an Apple M5 Pro (MPS) with TransformerLens 3.8, SAELens 6.50, PyTorch 2.10. Notebooks 1–4 run in one to three minutes each (5 only reads JSON); the first run downloads GPT-2 Small (~500 MB) and four SAEs (~300 MB each). To re-execute headlessly:
 
 ```bash
 .venv/bin/python -m nbconvert --to notebook --execute --inplace experiments/0N_*.ipynb
@@ -71,7 +72,10 @@ Vanilla HTML, CSS, JavaScript. Fonts: Newsreader, Hanken Grotesk, JetBrains Mono
 │   ├── 01_gpt2_internals.ipynb
 │   ├── 02_circuit_tracing.ipynb
 │   ├── 03_activation_patching.ipynb
-│   └── 04_sae_features.ipynb
+│   ├── 04_sae_features.ipynb
+│   ├── 05_does_it_scale.ipynb
+│   └── scale_sweep.py            # Runs the 05 measurements on any TransformerLens model
+├── data/scale/                   # Sweep results (JSON) for 5 models
 ├── requirements.txt
 ├── RESEARCH.md                   # Reading list and progress log
 └── notes/, papers/, data/, visualizations/
@@ -79,4 +83,7 @@ Vanilla HTML, CSS, JavaScript. Fonts: Newsreader, Hanken Grotesk, JetBrains Mono
 
 ## What's next
 
-Roadmap phase 5 (attribution graphs with [circuit-tracer](https://github.com/safety-research/circuit-tracer) on Gemma-2-2B), the induction-head reproduction still owed to phase 3, and the same capital-city analysis on a modern local model (Qwen3-8B is on disk) to see how much of the GPT-2 story survives scale.
+- Isolate *why* Qwen3 concentrates where GPT-2 XL diffuses: run `scale_sweep.py` over the Pythia suite (one recipe, 14M–12B, with checkpoints) to separate size from recipe.
+- Roadmap phase 5: attribution graphs with [circuit-tracer](https://github.com/safety-research/circuit-tracer) on Gemma-2-2B.
+- The induction-head reproduction still owed to phase 3, and a toy SAE for phase 2.
+- Qwen3-8B itself: its weights are cached, but loading it through TransformerLens needs more than 64 GB of unified memory (the fp32 path peaks at ~13 bytes/param). Run it on a bigger box, or with a leaner loader.

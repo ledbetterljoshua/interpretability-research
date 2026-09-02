@@ -138,9 +138,10 @@ Smaller 2026 items worth knowing: the Circuits Updates for May (features via dow
 - Rewrote 01 and 02; wrote 03 (activation patching) and 04 (SAE features + feature-swap steering). All four executed headlessly with static figures. Findings in the README table.
 - Environment upgraded: TransformerLens 2.17 → 3.8.1, SAELens 6.50, kaleido; `requirements.txt` pinned; `interp` Jupyter kernel registered.
 - Site: timeline extended Aug 2025 → Jul 2026 (9 entries, sourced from transformer-circuits.pub and anthropic.com/research); roadmap phases 1–4 link to the notebooks.
+- Notebook 05 + `scale_sweep.py`: same measurements on GPT-2 M/L/XL and Qwen3-1.7B. Shape invariant, concentration not (Qwen3's L20H13 alone = 71%). Peak RSS is ~13 bytes/param through TransformerLens's load path (Large 10.6 GB, XL 22 GB, Qwen3-1.7B 26 GB); Qwen3-8B would exceed the machine. Running two sweeps concurrently froze the Mac once (load average 148) — one model at a time.
 
 ### Open threads
 - Phase 3 still owes the induction-head reproduction.
 - Phase 5: attribution graph with circuit-tracer on Gemma-2-2B.
-- Cross-model: repeat 01–03 on Qwen3-8B (`mlx-community/Qwen3-8B-4bit` is cached; TransformerLens needs the fp16 HF weights, ~16 GB) to see whether the "one routing head, late hand-off" story survives scale.
+- Pythia sweep (same recipe, many sizes + checkpoints) to separate size from recipe in the concentration result of notebook 05. Qwen3-8B needs a machine with >64 GB for TransformerLens.
 - Toy SAE on synthetic superposition data (phase 2 deliverable).
