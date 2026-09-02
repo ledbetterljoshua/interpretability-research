@@ -11,7 +11,7 @@ interpretability-research/
 ├── index.html              # Interactive knowledge map (open in browser)
 ├── RESEARCH.md             # This file - notes, links, progress
 ├── notes/                  # Reading notes, concept explorations
-├── experiments/            # Jupyter notebooks, scripts
+├── experiments/            # Executed notebooks + interp_utils.py (see README for the table)
 ├── visualizations/         # Interactive visualizations we build
 ├── papers/                 # Key papers (or links to them)
 └── data/                   # Datasets, saved activations, results
@@ -69,6 +69,26 @@ interpretability-research/
     - https://www.lesswrong.com/posts/StENzDcD3kpfGJssR/a-pragmatic-vision-for-interpretability
     - Neel Nanda's shift from "reverse engineering" to "useful understanding"
 
+### Tier 4: The 2025–2026 Anthropic thread (added Sep 2026)
+Read in order; each builds on the last. Together they move the field from "what features exist" to "what the model can report about itself".
+
+11. **Persona Vectors** (Aug 2025) — https://www.anthropic.com/research/persona-vectors
+    - Trait directions; monitor drift, and steer *against* them during fine-tuning to prevent trait shifts.
+12. **Emergent Introspective Awareness** (Oct 2025) — https://transformer-circuits.pub/2025/introspection/index.html
+    - Concept injection: inject a vector, ask the model if it notices. Sometimes it does. The paradigm for testing self-reports.
+13. **Activation Oracles** (Dec 2025) — Circuits cross-post
+    - Train a model to answer questions about another model's activations in natural language.
+14. **The Assistant Axis** (Jan 2026) — https://www.anthropic.com/research/assistant-axis
+    - One direction separates "the Assistant" from other simulable characters; predicts jailbreaks and drift.
+15. **Emotion Concepts and their Function** (Apr 2026) — Sofroniew et al.
+    - Emotion-concept representations in Claude Sonnet 4.5 causally shift behavior, including toward misalignment under pressure.
+16. **Natural Language Autoencoders** (May 2026) — Fraser-Taliente et al.
+    - The model as its own dictionary: translate activations to text and back.
+17. **Verbalizable Representations Form a Global Workspace** (Jul 2026) — https://transformer-circuits.pub/2026/workspace/
+    - Gurnee, Sofroniew, Lindsey et al. A privileged, reportable subset of representations sits atop automatic processing. The access-consciousness analogy, made explicit and measured.
+
+Smaller 2026 items worth knowing: the Circuits Updates for May (features via downstream connections) and June 2026 (turn-averaged SAEs), HeadVis (attention-head visualization tool, May 2026), and "Characterizing interference weights in a tiny language model" (Aug 2026).
+
 ### Hands-On Learning
 - **ARENA Mech Interp Tutorials**: https://arena-course.com/
   - Callum McDougall. Exercises with solutions. THE learning resource.
@@ -83,7 +103,7 @@ interpretability-research/
 - SAELens: https://github.com/decoderesearch/SAELens
 - nnsight: https://nnsight.net/
 - Circuit Tracer: https://www.anthropic.com/research/open-source-circuit-tracing
-- Neuronpedia: https://www.neuronpedia.org/
+- Neuronpedia: https://www.neuronpedia.org/ (public API used in notebook 04: `/api/feature/gpt2-small/{layer}-res-jb/{id}`)
 
 ### Research Hubs
 - Transformer Circuits: https://transformer-circuits.pub/
@@ -97,8 +117,30 @@ interpretability-research/
 - EleutherAI Discord
 - Apart Research hackathons
 
+## Methodological rules (learned the hard way, Sep 2026)
+
+1. **Run the model as it was trained.** GPT-2 needs its BOS token; without it the first real token becomes the attention sink and every downstream number is distorted. Dropping BOS made the Feb 2026 results look *better* while being wrong.
+2. **Attribute on a logit difference, never a raw logit or probability.** Pick a named counterfactual (Paris vs Rome). LayerNorm's mean-subtraction and the unembed bias cancel in a difference.
+3. **Make the accounting close.** Direct logit attribution must sum, through the cached final-LayerNorm scale plus the bias term, to the observed logit difference. If it does not, do not publish the numbers.
+4. **Zero-ablation confounds "carries the information" with "is structurally load-bearing".** Use patching from a matched counterfactual prompt.
+5. **Check an SAE behaviorally before reading features off it** (splice its reconstruction in; compare the metric). Layer 6's GPT-2 SAE loses a third of the capital-city behavior; layer 8's loses nothing.
+6. **Steering must respect the circuit.** A feature edit at the country token works at layer 8 and does nothing at layer 10, because the heads that read it have already fired.
+
 ## Progress Log
 
-### Started: Feb 2026
-- Created workspace and knowledge map
-- TODO: Phase 1 - Transformer internals
+### Feb 2026
+- Created workspace and knowledge map; curriculum pages for Transformer Internals and Superposition & Features.
+- Notebooks 01 (GPT-2 internals) and 02 (DLA circuit tracing), first versions. Both had the BOS and LayerNorm-scale bugs described above.
+
+### Sep 2, 2026 (Cas, one evening)
+- Verified the two bugs by constructing the counter-case (BOS on: Paris rank 93 on the bare prompt; DLA sum 187 vs logit 13).
+- New canonical prompt (one-shot: "The capital of Germany is Berlin. The capital of France is", Paris at 70%) and counterfactual (Italy → Rome). `experiments/interp_utils.py` encodes the conventions.
+- Rewrote 01 and 02; wrote 03 (activation patching) and 04 (SAE features + feature-swap steering). All four executed headlessly with static figures. Findings in the README table.
+- Environment upgraded: TransformerLens 2.17 → 3.8.1, SAELens 6.50, kaleido; `requirements.txt` pinned; `interp` Jupyter kernel registered.
+- Site: timeline extended Aug 2025 → Jul 2026 (9 entries, sourced from transformer-circuits.pub and anthropic.com/research); roadmap phases 1–4 link to the notebooks.
+
+### Open threads
+- Phase 3 still owes the induction-head reproduction.
+- Phase 5: attribution graph with circuit-tracer on Gemma-2-2B.
+- Cross-model: repeat 01–03 on Qwen3-8B (`mlx-community/Qwen3-8B-4bit` is cached; TransformerLens needs the fp16 HF weights, ~16 GB) to see whether the "one routing head, late hand-off" story survives scale.
+- Toy SAE on synthetic superposition data (phase 2 deliverable).

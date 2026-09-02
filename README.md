@@ -1,81 +1,82 @@
-# Mechanistic Interpretability — A Field Guide
+# Mechanistic Interpretability — A Field Guide and a Lab Notebook
 
-A comprehensive, interactive knowledge map for the field of mechanistic interpretability. Built as a single-page reference and learning resource, covering concepts, people, tools, open problems, and a structured learning roadmap.
+Two things live here:
 
-**Live site:** Serve locally with any HTTP server (uses ES modules).
+1. **A field guide** (`index.html` + two curriculum pages): an interactive knowledge map of mechanistic interpretability — concepts, timeline, people, tools, open problems, and a learning roadmap. Vanilla HTML/CSS/JS, no build step.
+2. **A lab notebook** (`experiments/`): a sequence of executed Jupyter notebooks that reverse-engineer one behavior of GPT-2 Small end to end, following the roadmap's phases. Every notebook is committed *with its outputs*, and every figure is a static image, so the results read on GitHub without running anything.
 
-## What This Is
-
-A resource designed for someone who wants to seriously study mechanistic interpretability — from zero background to cutting-edge research. It covers:
-
-- **Overview** — What the field is, why it matters, and where it stands today
-- **Core Concepts** — Interactive concept map from foundational (residual streams, attention) through frontier (crosscoders, attribution graphs)
-- **Timeline** — Key papers and breakthroughs from 2020 to 2026
-- **People & Organizations** — Who's doing this work and where
-- **Tools & Infrastructure** — The practical toolkit (TransformerLens, SAELens, Neuronpedia, etc.)
-- **Open Problems** — Where the field is stuck and where contributions are needed
-- **Learning Roadmap** — A structured 6-phase path with concrete deliverables
-
-### Curriculum Pages
-
-The roadmap links to dedicated curriculum pages with full educational content:
-
-- **[Transformer Internals](transformer-internals.html)** — Deep dive into how transformers compute mechanistically. Includes interactive step-by-step walkthroughs of attention and induction heads, a section-by-section reading guide for "A Mathematical Framework for Transformer Circuits," required reading lists, and hands-on exercises.
-- **[Superposition & Features](superposition-features.html)** — The core problem of interpretability: why neurons are polysemantic, the geometry of superposition, sparse autoencoders as the solution, step-by-step SAE walkthrough, paper guides for "Toy Models of Superposition" and "Towards Monosemanticity," and exercises with SAELens and Neuronpedia.
-
-## Tech Stack
-
-Vanilla HTML, CSS, and JavaScript. No framework, no build step.
-
-- **Fonts:** Newsreader (editorial serif with optical sizing), Hanken Grotesk (geometric humanist sans), JetBrains Mono
-- **Design:** Light-mode editorial aesthetic with warm off-white palette and deep indigo accents
-- **Architecture:** Single-scroll main page with IntersectionObserver-based navigation and scroll-reveal animations
-- **Modular CSS:** `base.css` (design tokens), `layout.css`, `components.css`, `animations.css`, `curriculum.css`
-- **ES Modules:** `main.js`, `data.js`, `scroll-animations.js`, `transformer-visuals.js`
-
-## Running Locally
+**Live site:** serve locally with any HTTP server (ES modules need one):
 
 ```bash
-# Any HTTP server works (ES modules require it)
-python3 -m http.server 8742
-
-# Then open http://localhost:8742
+python3 -m http.server 8742   # then open http://localhost:8742
 ```
 
-## Project Structure
+## The experiments
+
+The notebooks trace a single question through four techniques: *how does GPT-2 Small answer "The capital of Germany is Berlin. The capital of France is" → " Paris"?* Each notebook fixes a limitation of the previous one.
+
+| Notebook | Technique | What it finds |
+|---|---|---|
+| [`01_gpt2_internals`](experiments/01_gpt2_internals.ipynb) | Hooks, residual stream, attention patterns, logit lens, zero-ablation | The answer appears at layer 9 (rank 7 → rank 1, 95%) and late layers calibrate it down to 70%. Zero-ablation flags heads that are load-bearing but irrelevant, which motivates patching. Also: why you must keep GPT-2's BOS token, shown with the artifact it causes. |
+| [`02_circuit_tracing`](experiments/02_circuit_tracing.ipynb) | Direct logit attribution, exact to three decimals | Three heads carry the Paris-vs-Rome logit difference: **L9H8** (+2.6 of 6.0), **L8H11** (+1.4), **L10H0** (+1.1); two suppressors push back. L9H8 attends ~90% to the country token and writes a "France-associated" direction, not a Paris direction. Generalizes across 10 countries. |
+| [`03_activation_patching`](experiments/03_activation_patching.ipynb) | Residual, block, head, and pattern-vs-value patching | The country's identity sits at the country token through layer 8, then moves to the answer position across layers 9–10. The three heads recover 97% of the behavior between them; their attention patterns are identical on clean and corrupted prompts, so the information is entirely in what they *read*, not where they *look*. |
+| [`04_sae_features`](experiments/04_sae_features.ipynb) | Pretrained sparse autoencoders, feature swaps as steering | The country token is one dominant SAE feature per country (activation ~40 vs ~10 for the next), the same direction across four independently trained SAEs (cosine 0.86–0.97). France-specific features appear at the answer position at layer 9–10, matching the patching hand-off. Swapping the Italy feature for the France feature at layer 8 rewrites the answer to Paris (63%); the same swap at layer 10 does nothing, because the information has already moved. |
+
+Shared conventions live in [`experiments/interp_utils.py`](experiments/interp_utils.py): BOS always on, attribution always on a logit difference against a named counterfactual, components always scaled through the cached final LayerNorm so decompositions sum exactly.
+
+### A note on the revision (September 2026)
+
+The first versions of notebooks 1 and 2 (February 2026) had two methodological bugs that produced a cleaner-looking, wrong story: GPT-2 was run *without* its BOS token, and direct logit attribution skipped the final LayerNorm scale, inflating every number ~14× and mis-ranking the MLPs. The rewritten notebooks show both artifacts explicitly rather than deleting them, because they are among the most common mistakes in the field and the fix (run the model as trained; make the accounting close) is the lesson.
+
+### Running the notebooks
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m ipykernel install --user --name interp --display-name "Interp Research (3.12)"
+.venv/bin/python -m jupyter lab experiments/
+```
+
+Tested on an Apple M5 Pro (MPS) with TransformerLens 3.8, SAELens 6.50, PyTorch 2.10. Each notebook runs in one to three minutes; the first run downloads GPT-2 Small (~500 MB) and four SAEs (~300 MB each). To re-execute headlessly:
+
+```bash
+.venv/bin/python -m nbconvert --to notebook --execute --inplace experiments/0N_*.ipynb
+```
+
+(`python -m nbconvert` rather than `jupyter nbconvert`: the venv's console scripts break if the repo directory is moved.)
+
+## The field guide
+
+- **Overview** — what the field is, why it matters, where it stands
+- **Core Concepts** — interactive concept map from foundational (residual streams, attention) through frontier (crosscoders, attribution graphs)
+- **Timeline** — key papers and breakthroughs 2020 → 2026, including the 2025–26 Anthropic thread (persona vectors, introspection, the assistant axis, emotion concepts, natural language autoencoders, the global workspace)
+- **People & Organizations**, **Tools & Infrastructure**, **Open Problems**
+- **Learning Roadmap** — six phases with deliverables; phases 1–4 now link to the notebooks above
+
+Curriculum pages: [Transformer Internals](transformer-internals.html) and [Superposition & Features](superposition-features.html).
+
+### Tech stack
+
+Vanilla HTML, CSS, JavaScript. Fonts: Newsreader, Hanken Grotesk, JetBrains Mono. Modular CSS (`base`, `layout`, `components`, `animations`, `curriculum`) and ES modules (`main`, `data`, `scroll-animations`, `transformer-visuals`).
+
+## Project structure
 
 ```
-├── index.html                  # Main field guide (single-scroll)
-├── transformer-internals.html  # Curriculum: Transformer Internals
-├── superposition-features.html # Curriculum: Superposition & Features
-├── styles/
-│   ├── base.css                # Design tokens, fonts, reset, typography
-│   ├── layout.css              # Header, nav, sections, footer, responsive
-│   ├── components.css          # Cards, tags, chips, panels, timeline, roadmap
-│   ├── animations.css          # Scroll reveals, staggers, reduced motion
-│   └── curriculum.css          # Curriculum-specific styles (steppers, math, etc.)
-├── scripts/
-│   ├── main.js                 # Main page: scroll nav, detail panels
-│   ├── data.js                 # All concept/detail panel content
-│   ├── scroll-animations.js    # IntersectionObserver reveal system
-│   ├── transformer-visuals.js  # Curriculum page: steppers, scroll nav
-│   └── neural-canvas.js        # (unused) Background animation
-├── RESEARCH.md
-├── data/
+├── index.html                    # Field guide (single scroll)
+├── transformer-internals.html    # Curriculum: Transformer Internals
+├── superposition-features.html   # Curriculum: Superposition & Features
+├── styles/, scripts/             # Site CSS and JS
 ├── experiments/
-├── notes/
-├── papers/
-└── visualizations/
+│   ├── interp_utils.py           # Shared conventions (BOS, logit diff, LN-scaled DLA, logit lens)
+│   ├── 01_gpt2_internals.ipynb
+│   ├── 02_circuit_tracing.ipynb
+│   ├── 03_activation_patching.ipynb
+│   └── 04_sae_features.ipynb
+├── requirements.txt
+├── RESEARCH.md                   # Reading list and progress log
+└── notes/, papers/, data/, visualizations/
 ```
 
-## Design Decisions
+## What's next
 
-- **Single-scroll over tabs** — All content visible, cross-referenced, searchable. No hiding content behind navigation.
-- **Light mode** — Content-focused editorial design. Warm, not clinical.
-- **No framework** — Zero dependencies, zero build step. Opens in any browser. Focus on content, not tooling.
-- **Progressive disclosure** — Concept chips expand to detail panels. Roadmap links to dedicated curriculum pages. Overview is scannable; depth is available.
-- **Cross-referencing** — People link to tools they built. Tools link to concepts they explore. Timeline links to people and methods. Everything is connected.
-
-## Contributing
-
-This is a living document. Content will be expanded as the field evolves and as more curriculum pages are built out.
+Roadmap phase 5 (attribution graphs with [circuit-tracer](https://github.com/safety-research/circuit-tracer) on Gemma-2-2B), the induction-head reproduction still owed to phase 3, and the same capital-city analysis on a modern local model (Qwen3-8B is on disk) to see how much of the GPT-2 story survives scale.

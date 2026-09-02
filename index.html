@@ -35,7 +35,7 @@
     </span>
     <span class="meta-badge">
       <span class="dot" style="background: var(--accent)"></span>
-      Updated Feb 2026
+      Updated Sep 2026
     </span>
     <span class="meta-badge">
       <span class="dot" style="background: var(--gold)"></span>
@@ -336,10 +336,66 @@
         <div class="timeline-authors">Nanda et al. &mdash; Google DeepMind</div>
       </div>
 
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Aug 2025</div>
+        <div class="timeline-title">Persona Vectors</div>
+        <div class="timeline-desc">Directions in activation space that track character traits (sycophancy, evil, hallucination). Used to monitor persona drift during deployment and to <em>prevent</em> unwanted trait shifts during fine-tuning by steering against them while training. Top-down <a href="#concepts">steering</a> grows up into a training-time tool.</div>
+        <div class="timeline-authors">Chen et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">Oct 2025</div>
+        <div class="timeline-title">Emergent Introspective Awareness</div>
+        <div class="timeline-desc">Inject a concept vector into a model&rsquo;s activations and ask whether it notices. Claude models sometimes do, before the concept shows up in any output, with accuracy that rises in more capable models. The first controlled evidence that a model can report on its own internal states, and a new experimental paradigm (concept injection) for testing self-reports against ground truth.</div>
+        <div class="timeline-authors">Lindsey &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Dec 2025</div>
+        <div class="timeline-title">Activation Oracles</div>
+        <div class="timeline-desc">Train a model to answer natural-language questions about another model&rsquo;s activations. Instead of a dictionary of features, an interpreter you can talk to. Sets up the 2026 push toward verbalized explanations of internals.</div>
+        <div class="timeline-authors">Anthropic Interpretability (cross-post)</div>
+      </div>
+
       <div class="timeline-item major reveal">
         <div class="timeline-date">Jan 2026</div>
         <div class="timeline-title">MIT Tech Review: 2026 Breakthrough Technology</div>
         <div class="timeline-desc">Mechanistic interpretability named one of MIT Technology Review&rsquo;s 10 Breakthrough Technologies for 2026. Field goes fully mainstream.</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Jan 2026</div>
+        <div class="timeline-title">The Assistant Axis</div>
+        <div class="timeline-desc">A single direction in activation space separates &ldquo;being the Assistant&rdquo; from the many other characters a model can simulate. Movement along it predicts persona drift and jailbreak susceptibility; clamping it stabilizes the character. Persona vectors, generalized to the persona that matters most.</div>
+        <div class="timeline-authors">Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">Mar 2026</div>
+        <div class="timeline-title">A &ldquo;diff&rdquo; Tool for AI</div>
+        <div class="timeline-desc">Interpretability-based <a href="#concepts">model diffing</a> applied to a real release process: find what changed behaviorally between a new model and its predecessor, before users do.</div>
+        <div class="timeline-authors">Anthropic</div>
+      </div>
+
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">Apr 2026</div>
+        <div class="timeline-title">Emotion Concepts and Their Function</div>
+        <div class="timeline-desc">Claude Sonnet 4.5 contains representations of emotion concepts (distress, calm, desperation) that are not decoration: they causally shift outputs, including toward misaligned behaviors under pressure. Feature-level interpretability meets model welfare and safety in one paper.</div>
+        <div class="timeline-authors">Sofroniew et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">May 2026</div>
+        <div class="timeline-title">Natural Language Autoencoders</div>
+        <div class="timeline-desc">Train Claude to translate its own internal states into text and back, so an activation vector gets an unsupervised natural-language explanation. A different bet from <a href="#concepts">SAEs</a>: let the model be the dictionary.</div>
+        <div class="timeline-authors">Fraser-Taliente et al. &mdash; Anthropic</div>
+      </div>
+
+      <div class="timeline-item major reveal">
+        <div class="timeline-date">Jul 2026</div>
+        <div class="timeline-title">A Global Workspace in Language Models</div>
+        <div class="timeline-desc">Language models keep a small set of <em>verbalizable</em> representations, available for report, modulation and flexible reasoning, on top of a much larger volume of automatic processing. A new technique surfaces the concepts a model is poised to say at any point; measuring and intervening on them reveals internal reasoning that never appears in the output. The paper draws the analogy to access consciousness explicitly.</div>
+        <div class="timeline-authors">Gurnee, Sofroniew, Lindsey et al. &mdash; Anthropic</div>
       </div>
     </div>
   </section>
@@ -710,7 +766,7 @@
           <li>Read: Nelson Elhage&rsquo;s &ldquo;Transformers for Software Engineers&rdquo;</li>
           <li>Do: Build a small transformer from scratch (<a href="#tools">ARENA</a> Chapter 1)</li>
           <li>Do: Load GPT-2 in <a href="#tools">TransformerLens</a>, explore activations</li>
-          <li><strong>Deliverable:</strong> Notebook showing you can hook into any internal activation of GPT-2 and visualize attention patterns</li>
+          <li><strong>Deliverable:</strong> Notebook showing you can hook into any internal activation of GPT-2 and visualize attention patterns &mdash; <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/01_gpt2_internals.ipynb">done: <code>01_gpt2_internals.ipynb</code></a></li>
         </ul>
         <p style="margin-top: 0.75rem;"><a href="transformer-internals.html" style="font-weight: 600;">&rarr; Open the full Transformer Internals curriculum</a></p>
       </div>
@@ -726,7 +782,7 @@
           <li>Do: Train a toy SAE on synthetic data (see the math click)</li>
           <li>Do: Load pretrained SAEs from <a href="#tools">Neuronpedia</a>, explore features</li>
           <li>Do: Browse features on neuronpedia.org interactively</li>
-          <li><strong>Deliverable:</strong> Interactive visualization of superposition in a toy model</li>
+          <li><strong>Deliverable:</strong> Interactive visualization of superposition in a toy model &mdash; <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/04_sae_features.ipynb">partly done: <code>04_sae_features.ipynb</code></a> reads pretrained GPT-2 SAEs; the toy SAE is still open</li>
         </ul>
         <p style="margin-top: 0.75rem;"><a href="superposition-features.html" style="font-weight: 600;">&rarr; Open the full Superposition &amp; Features curriculum</a></p>
       </div>
@@ -741,7 +797,7 @@
           <li>Reproduce: Induction head circuit in GPT-2</li>
           <li>Learn: <a href="#concepts">Logit lens</a>, attention knockout, causal interventions</li>
           <li>Explore: <a href="#concepts">Attribution graphs</a> on <a href="#tools">Neuronpedia</a></li>
-          <li><strong>Deliverable:</strong> Notebook tracing a specific behavior in GPT-2 through its circuit</li>
+          <li><strong>Deliverable:</strong> Notebook tracing a specific behavior in GPT-2 through its circuit &mdash; <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/02_circuit_tracing.ipynb">done: <code>02_circuit_tracing.ipynb</code></a> (direct logit attribution) and <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/03_activation_patching.ipynb"><code>03_activation_patching.ipynb</code></a>; induction heads still open</li>
         </ul>
       </div>
 
@@ -755,7 +811,7 @@
           <li>Do: Compute <a href="#concepts">steering vectors</a> for a concept (e.g., honesty, formality)</li>
           <li>Do: Apply steering at inference time, measure effects</li>
           <li>Explore: <a href="#people">Goodfire</a>&rsquo;s API for feature steering</li>
-          <li><strong>Deliverable:</strong> Demo of steering a model&rsquo;s personality/behavior using feature manipulation</li>
+          <li><strong>Deliverable:</strong> Demo of steering a model&rsquo;s personality/behavior using feature manipulation &mdash; <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/04_sae_features.ipynb">started: <code>04_sae_features.ipynb</code></a> steers a fact (Italy&rarr;France) with SAE features; persona steering still open</li>
         </ul>
       </div>
 
@@ -806,7 +862,7 @@
 <!-- ======== FOOTER ======== -->
 
 <footer class="site-footer">
-  <p>A living document. Last updated February 2026.</p>
+  <p>A living document. Last updated September 2026.</p>
 </footer>
 
 
