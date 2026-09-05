@@ -4,6 +4,14 @@ Updated September 5, 2026. These are finite research milestones, not scheduled
 background jobs. The immediate empirical milestone is complete; follow-ups
 below are planned and have not been run.
 
+**Strategic review:** [From a useful pilot to a consequential contribution](RESEARCH_STRATEGY.md)
+sets the larger objective: explanations that predict behavior changes and
+identify their own limits. Before executing the capital-specific goals below,
+compare the proposed claim directly with existing task-vector, faithfulness,
+and benchmark work. These goals are candidate experiments, not an automatic
+queue. The immediate next decision is whether a distinct, useful gap survives
+that comparison.
+
 ## Completed milestone: move from one prompt to a falsifiable explanation
 
 - [x] Freeze the three original GPT-2 Small heads before testing other countries.
