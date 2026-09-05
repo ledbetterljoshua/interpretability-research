@@ -1,0 +1,591 @@
+{
+  "id": "distractor__Russia__Australia",
+  "template": "distractor",
+  "pair": [
+    "Russia",
+    "Australia"
+  ],
+  "capitals": [
+    "Moscow",
+    "Canberra"
+  ],
+  "calibration": false,
+  "prompts": [
+    "Italy and France are countries in Europe. The capital of Germany is Berlin. The capital of Russia is",
+    "Italy and France are countries in Europe. The capital of Germany is Berlin. The capital of Australia is"
+  ],
+  "baseline_a": {
+    "ld": 12.484369277954102,
+    "a_rank": 1,
+    "b_rank": 2672,
+    "a_prob": 0.49155330657958984,
+    "b_prob": 1.8607067886478035e-06,
+    "top_token": " Moscow"
+  },
+  "baseline_b": {
+    "ld": -9.681955337524414,
+    "a_rank": 725,
+    "b_rank": 2,
+    "a_prob": 1.2514202353486326e-05,
+    "b_prob": 0.2005501389503479,
+    "top_token": " Sydney"
+  },
+  "gap": 22.166324615478516,
+  "competent": false,
+  "normalizable": true,
+  "country_pos": 19,
+  "tokens_a": [
+    "<|endoftext|>",
+    "Italy",
+    " and",
+    " France",
+    " are",
+    " countries",
+    " in",
+    " Europe",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Germany",
+    " is",
+    " Berlin",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Russia",
+    " is"
+  ],
+  "tokens_b": [
+    "<|endoftext|>",
+    "Italy",
+    " and",
+    " France",
+    " are",
+    " countries",
+    " in",
+    " Europe",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Germany",
+    " is",
+    " Berlin",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Australia",
+    " is"
+  ],
+  "effects": [
+    {
+      "group": "L8H11",
+      "scope": "all",
+      "restored": {
+        "ld": -2.733391761779785,
+        "a_rank": 11,
+        "b_rank": 2,
+        "a_prob": 0.008382191881537437,
+        "b_prob": 0.12895986437797546,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 6.953383445739746,
+        "a_rank": 1,
+        "b_rank": 175,
+        "a_prob": 0.4299973249435425,
+        "b_prob": 0.000410818203818053,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 6.948563575744629,
+      "delta_disrupt": 5.5309858322143555,
+      "recovery": 0.3134738706701299,
+      "disruption": 0.24952200818858916
+    },
+    {
+      "group": "L8H11",
+      "scope": "final",
+      "restored": {
+        "ld": -3.038363456726074,
+        "a_rank": 16,
+        "b_rank": 2,
+        "a_prob": 0.006044627167284489,
+        "b_prob": 0.12615777552127838,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 7.1864519119262695,
+        "a_rank": 1,
+        "b_rank": 209,
+        "a_prob": 0.4303988516330719,
+        "b_prob": 0.00032571269548498094,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 6.64359188079834,
+      "delta_disrupt": 5.297917366027832,
+      "recovery": 0.29971553679039725,
+      "disruption": 0.239007479044512
+    },
+    {
+      "group": "L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 1.731806755065918,
+        "a_rank": 1,
+        "b_rank": 7,
+        "a_prob": 0.1387041211128235,
+        "b_prob": 0.024545690044760704,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": 1.9908790588378906,
+        "a_rank": 1,
+        "b_rank": 4,
+        "a_prob": 0.2999037802219391,
+        "b_prob": 0.04095945134758949,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 11.413762092590332,
+      "delta_disrupt": 10.493490219116211,
+      "recovery": 0.5149145061522838,
+      "disruption": 0.47339784114632677
+    },
+    {
+      "group": "L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 1.2543325424194336,
+        "a_rank": 2,
+        "b_rank": 6,
+        "a_prob": 0.10890443623065948,
+        "b_prob": 0.03106675297021866,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 2.388559341430664,
+        "a_rank": 1,
+        "b_rank": 5,
+        "a_prob": 0.3388708531856537,
+        "b_prob": 0.031095393002033234,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 10.936287879943848,
+      "delta_disrupt": 10.095809936523438,
+      "recovery": 0.4933739837188503,
+      "disruption": 0.45545710042853194
+    },
+    {
+      "group": "L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -5.085692405700684,
+        "a_rank": 38,
+        "b_rank": 2,
+        "a_prob": 0.0010022111237049103,
+        "b_prob": 0.16204938292503357,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 8.150449752807617,
+        "a_rank": 1,
+        "b_rank": 357,
+        "a_prob": 0.39477795362472534,
+        "b_prob": 0.00011393509339541197,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 4.5962629318237305,
+      "delta_disrupt": 4.333919525146484,
+      "recovery": 0.2073534070963757,
+      "disruption": 0.19551818356572082
+    },
+    {
+      "group": "L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -5.105315208435059,
+        "a_rank": 39,
+        "b_rank": 2,
+        "a_prob": 0.0009841652354225516,
+        "b_prob": 0.1622849404811859,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 8.169097900390625,
+        "a_rank": 1,
+        "b_rank": 360,
+        "a_prob": 0.39565035700798035,
+        "b_prob": 0.00011207723582629114,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 4.5766401290893555,
+      "delta_disrupt": 4.315271377563477,
+      "recovery": 0.20646815421504452,
+      "disruption": 0.19467690076821156
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 8.489507675170898,
+        "a_rank": 1,
+        "b_rank": 129,
+        "a_prob": 0.786113977432251,
+        "b_prob": 0.00016163640248123556,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": -4.644948959350586,
+        "a_rank": 14,
+        "b_rank": 2,
+        "a_prob": 0.0030386357102543116,
+        "b_prob": 0.3161945343017578,
+        "top_token": " Sydney"
+      },
+      "delta_restore": 18.171463012695312,
+      "delta_disrupt": 17.129318237304688,
+      "recovery": 0.8197778985879494,
+      "disruption": 0.7727631230909369
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 7.954111099243164,
+        "a_rank": 1,
+        "b_rank": 103,
+        "a_prob": 0.7640138864517212,
+        "b_prob": 0.00026833335869014263,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": -4.185982704162598,
+        "a_rank": 11,
+        "b_rank": 2,
+        "a_prob": 0.004589068703353405,
+        "b_prob": 0.30176836252212524,
+        "top_token": " Sydney"
+      },
+      "delta_restore": 17.636066436767578,
+      "delta_disrupt": 16.6703519821167,
+      "recovery": 0.7956242968873827,
+      "disruption": 0.7520575589909012
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 2.1538381576538086,
+        "a_rank": 1,
+        "b_rank": 8,
+        "a_prob": 0.24215339124202728,
+        "b_prob": 0.028098978102207184,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": 2.288905143737793,
+        "a_rank": 1,
+        "b_rank": 19,
+        "a_prob": 0.11883922666311264,
+        "b_prob": 0.01204761117696762,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 11.835793495178223,
+      "delta_disrupt": 10.195464134216309,
+      "recovery": 0.5339538105885813,
+      "disruption": 0.4599528478932823
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 1.8983993530273438,
+        "a_rank": 1,
+        "b_rank": 8,
+        "a_prob": 0.2052478939294815,
+        "b_prob": 0.03074781969189644,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": 2.5761985778808594,
+        "a_rank": 1,
+        "b_rank": 21,
+        "a_prob": 0.13417024910449982,
+        "b_prob": 0.010205338709056377,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 11.580354690551758,
+      "delta_disrupt": 9.908170700073242,
+      "recovery": 0.522430077671303,
+      "disruption": 0.44699204184506386
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 6.692765235900879,
+        "a_rank": 1,
+        "b_rank": 72,
+        "a_prob": 0.5958649516105652,
+        "b_prob": 0.0007387828663922846,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": -3.5670251846313477,
+        "a_rank": 15,
+        "b_rank": 2,
+        "a_prob": 0.006094261538237333,
+        "b_prob": 0.21580445766448975,
+        "top_token": " Sydney"
+      },
+      "delta_restore": 16.374720573425293,
+      "delta_disrupt": 16.05139446258545,
+      "recovery": 0.7387205979105347,
+      "disruption": 0.724134232491431
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 6.423248291015625,
+        "a_rank": 1,
+        "b_rank": 64,
+        "a_prob": 0.5829533934593201,
+        "b_prob": 0.0009463516180403531,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": -3.4476022720336914,
+        "a_rank": 12,
+        "b_rank": 2,
+        "a_prob": 0.006770588457584381,
+        "b_prob": 0.2127654254436493,
+        "top_token": " Sydney"
+      },
+      "delta_restore": 16.10520362854004,
+      "delta_disrupt": 15.931971549987793,
+      "recovery": 0.726561751121065,
+      "disruption": 0.7187466495398458
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 12.726943969726562,
+        "a_rank": 1,
+        "b_rank": 1152,
+        "a_prob": 0.8569900989532471,
+        "b_prob": 2.5452725367358653e-06,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": -9.552257537841797,
+        "a_rank": 375,
+        "b_rank": 2,
+        "a_prob": 2.5219829694833606e-05,
+        "b_prob": 0.3550053536891937,
+        "top_token": " Sydney"
+      },
+      "delta_restore": 22.408899307250977,
+      "delta_disrupt": 22.0366268157959,
+      "recovery": 1.0109433880438201,
+      "disruption": 0.9941488811549728
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 12.36818790435791,
+        "a_rank": 1,
+        "b_rank": 964,
+        "a_prob": 0.8562179803848267,
+        "b_prob": 3.640395561887999e-06,
+        "top_token": " Moscow"
+      },
+      "disrupted": {
+        "ld": -9.45849323272705,
+        "a_rank": 352,
+        "b_rank": 2,
+        "a_prob": 2.7707368644769304e-05,
+        "b_prob": 0.35511308908462524,
+        "top_token": " Sydney"
+      },
+      "delta_restore": 22.050143241882324,
+      "delta_disrupt": 21.942862510681152,
+      "recovery": 0.9947586541471534,
+      "disruption": 0.989918847230031
+    },
+    {
+      "group": "control_0",
+      "scope": "all",
+      "restored": {
+        "ld": -9.78905963897705,
+        "a_rank": 799,
+        "b_rank": 2,
+        "a_prob": 1.1216167877137195e-05,
+        "b_prob": 0.2000686675310135,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 12.483816146850586,
+        "a_rank": 1,
+        "b_rank": 2660,
+        "a_prob": 0.4977644383907318,
+        "b_prob": 1.8852606444852427e-06,
+        "top_token": " Moscow"
+      },
+      "delta_restore": -0.10710430145263672,
+      "delta_disrupt": 0.000553131103515625,
+      "recovery": -0.0048318475575263795,
+      "disruption": 2.4953667922438494e-05
+    },
+    {
+      "group": "control_0",
+      "scope": "final",
+      "restored": {
+        "ld": -9.79775333404541,
+        "a_rank": 793,
+        "b_rank": 2,
+        "a_prob": 1.1109806109743658e-05,
+        "b_prob": 0.1999017894268036,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 12.457399368286133,
+        "a_rank": 1,
+        "b_rank": 2630,
+        "a_prob": 0.49649930000305176,
+        "b_prob": 1.9308067749079783e-06,
+        "top_token": " Moscow"
+      },
+      "delta_restore": -0.1157979965209961,
+      "delta_disrupt": 0.02696990966796875,
+      "recovery": -0.005224050379562499,
+      "disruption": 0.001216706429045794
+    },
+    {
+      "group": "control_1",
+      "scope": "all",
+      "restored": {
+        "ld": -9.623340606689453,
+        "a_rank": 799,
+        "b_rank": 2,
+        "a_prob": 1.1856644050567411e-05,
+        "b_prob": 0.1791948527097702,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 12.263415336608887,
+        "a_rank": 1,
+        "b_rank": 2343,
+        "a_prob": 0.5165500044822693,
+        "b_prob": 2.4388143629039405e-06,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 0.05861473083496094,
+      "delta_disrupt": 0.22095394134521484,
+      "recovery": 0.002644314375601577,
+      "disruption": 0.009968000793010356
+    },
+    {
+      "group": "control_1",
+      "scope": "final",
+      "restored": {
+        "ld": -9.631938934326172,
+        "a_rank": 794,
+        "b_rank": 2,
+        "a_prob": 1.179215087176999e-05,
+        "b_prob": 0.17975912988185883,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 12.237150192260742,
+        "a_rank": 1,
+        "b_rank": 2336,
+        "a_prob": 0.5127228498458862,
+        "b_prob": 2.4851685793692013e-06,
+        "top_token": " Moscow"
+      },
+      "delta_restore": 0.05001640319824219,
+      "delta_disrupt": 0.24721908569335938,
+      "recovery": 0.002256413910103809,
+      "disruption": 0.011152912807237734
+    },
+    {
+      "group": "control_2",
+      "scope": "all",
+      "restored": {
+        "ld": -9.72711181640625,
+        "a_rank": 716,
+        "b_rank": 2,
+        "a_prob": 1.196629546029726e-05,
+        "b_prob": 0.20062761008739471,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 12.44898796081543,
+        "a_rank": 1,
+        "b_rank": 2693,
+        "a_prob": 0.4973854124546051,
+        "b_prob": 1.95059124052932e-06,
+        "top_token": " Moscow"
+      },
+      "delta_restore": -0.04515647888183594,
+      "delta_disrupt": 0.035381317138671875,
+      "recovery": -0.002037165820909418,
+      "disruption": 0.0015961742757283934
+    },
+    {
+      "group": "control_2",
+      "scope": "final",
+      "restored": {
+        "ld": -9.733729362487793,
+        "a_rank": 718,
+        "b_rank": 2,
+        "a_prob": 1.1959961739194114e-05,
+        "b_prob": 0.20185278356075287,
+        "top_token": " Sydney"
+      },
+      "disrupted": {
+        "ld": 12.401121139526367,
+        "a_rank": 1,
+        "b_rank": 2670,
+        "a_prob": 0.4900601804256439,
+        "b_prob": 2.0160946405667346e-06,
+        "top_token": " Moscow"
+      },
+      "delta_restore": -0.051774024963378906,
+      "delta_disrupt": 0.08324813842773438,
+      "recovery": -0.0023357063411056263,
+      "disruption": 0.0037556130694577604
+    }
+  ],
+  "attention": {
+    "L8H11": {
+      "country_a": 0.9023151397705078,
+      "country_b": 0.8912132382392883,
+      "pattern_l1": 0.02690953202545643
+    },
+    "L9H8": {
+      "country_a": 0.9554340839385986,
+      "country_b": 0.9633628129959106,
+      "pattern_l1": 0.016354670748114586
+    },
+    "L10H0": {
+      "country_a": 0.4608290195465088,
+      "country_b": 0.5150412321090698,
+      "pattern_l1": 0.17977260053157806
+    }
+  },
+  "control_errors": {
+    "self_a": 0.0,
+    "self_b": 0.0,
+    "full_a": 0.0,
+    "full_b": 0.0
+  },
+  "status": "complete",
+  "elapsed_seconds": 119.42909391701687,
+  "peak_rss_mib": 2342.015625
+}

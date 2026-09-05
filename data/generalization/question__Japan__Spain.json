@@ -1,0 +1,599 @@
+{
+  "id": "question__Japan__Spain",
+  "template": "question",
+  "pair": [
+    "Japan",
+    "Spain"
+  ],
+  "capitals": [
+    "Tokyo",
+    "Madrid"
+  ],
+  "calibration": false,
+  "prompts": [
+    "Q: What is the capital of Germany? A: Berlin. Q: What is the capital of Japan? A:",
+    "Q: What is the capital of Germany? A: Berlin. Q: What is the capital of Spain? A:"
+  ],
+  "baseline_a": {
+    "ld": 6.362149238586426,
+    "a_rank": 1,
+    "b_rank": 44,
+    "a_prob": 0.5557549595832825,
+    "b_prob": 0.0009590407134965062,
+    "top_token": " Tokyo"
+  },
+  "baseline_b": {
+    "ld": -9.41038990020752,
+    "a_rank": 403,
+    "b_rank": 1,
+    "a_prob": 4.840541441808455e-05,
+    "b_prob": 0.5912543535232544,
+    "top_token": " Madrid"
+  },
+  "gap": 15.772539138793945,
+  "competent": true,
+  "normalizable": true,
+  "country_pos": 21,
+  "tokens_a": [
+    "<|endoftext|>",
+    "Q",
+    ":",
+    " What",
+    " is",
+    " the",
+    " capital",
+    " of",
+    " Germany",
+    "?",
+    " A",
+    ":",
+    " Berlin",
+    ".",
+    " Q",
+    ":",
+    " What",
+    " is",
+    " the",
+    " capital",
+    " of",
+    " Japan",
+    "?",
+    " A",
+    ":"
+  ],
+  "tokens_b": [
+    "<|endoftext|>",
+    "Q",
+    ":",
+    " What",
+    " is",
+    " the",
+    " capital",
+    " of",
+    " Germany",
+    "?",
+    " A",
+    ":",
+    " Berlin",
+    ".",
+    " Q",
+    ":",
+    " What",
+    " is",
+    " the",
+    " capital",
+    " of",
+    " Spain",
+    "?",
+    " A",
+    ":"
+  ],
+  "effects": [
+    {
+      "group": "L8H11",
+      "scope": "all",
+      "restored": {
+        "ld": -5.917158126831055,
+        "a_rank": 29,
+        "b_rank": 1,
+        "a_prob": 0.001579112489707768,
+        "b_prob": 0.5864111185073853,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 4.029203414916992,
+        "a_rank": 1,
+        "b_rank": 7,
+        "a_prob": 0.5337790846824646,
+        "b_prob": 0.009495126083493233,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 3.493231773376465,
+      "delta_disrupt": 2.3329458236694336,
+      "recovery": 0.22147554953815612,
+      "disruption": 0.1479118741212281
+    },
+    {
+      "group": "L8H11",
+      "scope": "final",
+      "restored": {
+        "ld": -5.975434303283691,
+        "a_rank": 29,
+        "b_rank": 1,
+        "a_prob": 0.0014933738857507706,
+        "b_prob": 0.5878502726554871,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 4.137215614318848,
+        "a_rank": 1,
+        "b_rank": 8,
+        "a_prob": 0.540230393409729,
+        "b_prob": 0.008625992573797703,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 3.434955596923828,
+      "delta_disrupt": 2.224933624267578,
+      "recovery": 0.21778076229180204,
+      "disruption": 0.14106375674130733
+    },
+    {
+      "group": "L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": -2.803882598876953,
+        "a_rank": 7,
+        "b_rank": 1,
+        "a_prob": 0.021697867661714554,
+        "b_prob": 0.3582018315792084,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 0.71478271484375,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.2207166701555252,
+        "b_prob": 0.10799631476402283,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 6.606507301330566,
+      "delta_disrupt": 5.647366523742676,
+      "recovery": 0.4188613667840761,
+      "disruption": 0.35805056332702206
+    },
+    {
+      "group": "L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": -2.934938430786133,
+        "a_rank": 8,
+        "b_rank": 1,
+        "a_prob": 0.019448745995759964,
+        "b_prob": 0.36603209376335144,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 0.8276500701904297,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.23126834630966187,
+        "b_prob": 0.10108165442943573,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 6.475451469421387,
+      "delta_disrupt": 5.534499168395996,
+      "recovery": 0.41055225239507853,
+      "disruption": 0.3508946225901833
+    },
+    {
+      "group": "L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -6.73780632019043,
+        "a_rank": 81,
+        "b_rank": 1,
+        "a_prob": 0.0006190079730004072,
+        "b_prob": 0.5222618579864502,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 3.3281326293945312,
+        "a_rank": 1,
+        "b_rank": 6,
+        "a_prob": 0.3989580273628235,
+        "b_prob": 0.014306637458503246,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 2.67258358001709,
+      "delta_disrupt": 3.0340166091918945,
+      "recovery": 0.16944536047741582,
+      "disruption": 0.19236069617538398
+    },
+    {
+      "group": "L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -6.775185585021973,
+        "a_rank": 82,
+        "b_rank": 1,
+        "a_prob": 0.0005975077510811388,
+        "b_prob": 0.5233222842216492,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 3.351618766784668,
+        "a_rank": 1,
+        "b_rank": 6,
+        "a_prob": 0.4012739658355713,
+        "b_prob": 0.014055667445063591,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 2.635204315185547,
+      "delta_disrupt": 3.010530471801758,
+      "recovery": 0.1670754652752156,
+      "disruption": 0.19087164376705168
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 1.8774967193603516,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.35576775670051575,
+        "b_prob": 0.05442270636558533,
+        "top_token": " Tokyo"
+      },
+      "disrupted": {
+        "ld": -2.605670928955078,
+        "a_rank": 4,
+        "b_rank": 1,
+        "a_prob": 0.02746722474694252,
+        "b_prob": 0.37191465497016907,
+        "top_token": " Madrid"
+      },
+      "delta_restore": 11.287886619567871,
+      "delta_disrupt": 8.967820167541504,
+      "recovery": 0.7156670540004763,
+      "disruption": 0.5685717492045629
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 1.7788047790527344,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.3441089987754822,
+        "b_prob": 0.058099303394556046,
+        "top_token": " Tokyo"
+      },
+      "disrupted": {
+        "ld": -2.4184112548828125,
+        "a_rank": 4,
+        "b_rank": 1,
+        "a_prob": 0.031814027577638626,
+        "b_prob": 0.35720810294151306,
+        "top_token": " Madrid"
+      },
+      "delta_restore": 11.189194679260254,
+      "delta_disrupt": 8.780560493469238,
+      "recovery": 0.7094098534673753,
+      "disruption": 0.5566992363247766
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -2.847330093383789,
+        "a_rank": 4,
+        "b_rank": 1,
+        "a_prob": 0.023079173639416695,
+        "b_prob": 0.39792388677597046,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 0.42766380310058594,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.1962454617023468,
+        "b_prob": 0.1279580444097519,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 6.5630598068237305,
+      "delta_disrupt": 5.93448543548584,
+      "recovery": 0.4161067377338953,
+      "disruption": 0.3762542849482904
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -2.935914993286133,
+        "a_rank": 4,
+        "b_rank": 1,
+        "a_prob": 0.021418113261461258,
+        "b_prob": 0.4034901261329651,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 0.5590095520019531,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.207855224609375,
+        "b_prob": 0.11884643882513046,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 6.474474906921387,
+      "delta_disrupt": 5.803139686584473,
+      "recovery": 0.41049033703120424,
+      "disruption": 0.36792678943564266
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 0.11793899536132812,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.16660857200622559,
+        "b_prob": 0.14807340502738953,
+        "top_token": " Tokyo"
+      },
+      "disrupted": {
+        "ld": -3.386005401611328,
+        "a_rank": 6,
+        "b_rank": 1,
+        "a_prob": 0.015303785912692547,
+        "b_prob": 0.45219144225120544,
+        "top_token": " Madrid"
+      },
+      "delta_restore": 9.528328895568848,
+      "delta_disrupt": 9.748154640197754,
+      "recovery": 0.6041087494995074,
+      "disruption": 0.6180459946503675
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 0.014888763427734375,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.15732307732105255,
+        "b_prob": 0.1549980789422989,
+        "top_token": " Tokyo"
+      },
+      "disrupted": {
+        "ld": -3.2905921936035156,
+        "a_rank": 5,
+        "b_rank": 1,
+        "a_prob": 0.0165842454880476,
+        "b_prob": 0.4454323351383209,
+        "top_token": " Madrid"
+      },
+      "delta_restore": 9.425278663635254,
+      "delta_disrupt": 9.652741432189941,
+      "recovery": 0.5975752274694284,
+      "disruption": 0.6119966701143367
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 4.202123641967773,
+        "a_rank": 1,
+        "b_rank": 7,
+        "a_prob": 0.5731167793273926,
+        "b_prob": 0.008575985208153725,
+        "top_token": " Tokyo"
+      },
+      "disrupted": {
+        "ld": -6.5655412673950195,
+        "a_rank": 39,
+        "b_rank": 1,
+        "a_prob": 0.0008476458606310189,
+        "b_prob": 0.6019948720932007,
+        "top_token": " Madrid"
+      },
+      "delta_restore": 13.612513542175293,
+      "delta_disrupt": 12.927690505981445,
+      "recovery": 0.8630514987085447,
+      "disruption": 0.8196328056136919
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 4.10867977142334,
+        "a_rank": 1,
+        "b_rank": 7,
+        "a_prob": 0.5664304494857788,
+        "b_prob": 0.009306141175329685,
+        "top_token": " Tokyo"
+      },
+      "disrupted": {
+        "ld": -6.439300537109375,
+        "a_rank": 37,
+        "b_rank": 1,
+        "a_prob": 0.0009521167376078665,
+        "b_prob": 0.5959953665733337,
+        "top_token": " Madrid"
+      },
+      "delta_restore": 13.51906967163086,
+      "delta_disrupt": 12.8014497756958,
+      "recovery": 0.8571270327920455,
+      "disruption": 0.811628975084266
+    },
+    {
+      "group": "control_0",
+      "scope": "all",
+      "restored": {
+        "ld": -9.405874252319336,
+        "a_rank": 400,
+        "b_rank": 1,
+        "a_prob": 4.868576070293784e-05,
+        "b_prob": 0.591999351978302,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 6.303772926330566,
+        "a_rank": 1,
+        "b_rank": 42,
+        "a_prob": 0.5485953092575073,
+        "b_prob": 0.0010035946033895016,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 0.004515647888183594,
+      "delta_disrupt": 0.058376312255859375,
+      "recovery": 0.0002862980936960848,
+      "disruption": 0.003701135989720115
+    },
+    {
+      "group": "control_0",
+      "scope": "final",
+      "restored": {
+        "ld": -9.405537605285645,
+        "a_rank": 402,
+        "b_rank": 1,
+        "a_prob": 4.869041731581092e-05,
+        "b_prob": 0.5918567180633545,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 6.298368453979492,
+        "a_rank": 1,
+        "b_rank": 42,
+        "a_prob": 0.5489540696144104,
+        "b_prob": 0.0010096930200234056,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 0.004852294921875,
+      "delta_disrupt": 0.0637807846069336,
+      "recovery": 0.0003076419642504075,
+      "disruption": 0.004043786738817414
+    },
+    {
+      "group": "control_1",
+      "scope": "all",
+      "restored": {
+        "ld": -9.33526611328125,
+        "a_rank": 351,
+        "b_rank": 1,
+        "a_prob": 5.374741886043921e-05,
+        "b_prob": 0.6089928150177002,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 5.9133100509643555,
+        "a_rank": 1,
+        "b_rank": 32,
+        "a_prob": 0.5478025078773499,
+        "b_prob": 0.001480833045206964,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 0.07512378692626953,
+      "delta_disrupt": 0.4488391876220703,
+      "recovery": 0.004762948201630769,
+      "disruption": 0.02845700262160776
+    },
+    {
+      "group": "control_1",
+      "scope": "final",
+      "restored": {
+        "ld": -9.332535743713379,
+        "a_rank": 350,
+        "b_rank": 1,
+        "a_prob": 5.381051596486941e-05,
+        "b_prob": 0.6080452799797058,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 5.920044898986816,
+        "a_rank": 1,
+        "b_rank": 32,
+        "a_prob": 0.5486884117126465,
+        "b_prob": 0.0014732721028849483,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": 0.07785415649414062,
+      "delta_disrupt": 0.4421043395996094,
+      "recovery": 0.004936057270744156,
+      "disruption": 0.028030004282076238
+    },
+    {
+      "group": "control_2",
+      "scope": "all",
+      "restored": {
+        "ld": -9.42361831665039,
+        "a_rank": 388,
+        "b_rank": 1,
+        "a_prob": 4.8373982281191275e-05,
+        "b_prob": 0.5987386703491211,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 6.394255638122559,
+        "a_rank": 1,
+        "b_rank": 45,
+        "a_prob": 0.5518746376037598,
+        "b_prob": 0.0009222539374604821,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": -0.013228416442871094,
+      "delta_disrupt": -0.03210639953613281,
+      "recovery": -0.0008386992307620681,
+      "disruption": -0.002035588515812543
+    },
+    {
+      "group": "control_2",
+      "scope": "final",
+      "restored": {
+        "ld": -9.412311553955078,
+        "a_rank": 386,
+        "b_rank": 1,
+        "a_prob": 4.889910269412212e-05,
+        "b_prob": 0.5984334349632263,
+        "top_token": " Madrid"
+      },
+      "disrupted": {
+        "ld": 6.388850212097168,
+        "a_rank": 1,
+        "b_rank": 45,
+        "a_prob": 0.5514274835586548,
+        "b_prob": 0.000926501234062016,
+        "top_token": " Tokyo"
+      },
+      "delta_restore": -0.0019216537475585938,
+      "delta_disrupt": -0.026700973510742188,
+      "recovery": -0.00012183540840498647,
+      "disruption": -0.00169287730249271
+    }
+  ],
+  "attention": {
+    "L8H11": {
+      "country_a": 0.6964058876037598,
+      "country_b": 0.6873963475227356,
+      "pattern_l1": 0.0391746424138546
+    },
+    "L9H8": {
+      "country_a": 0.6836439371109009,
+      "country_b": 0.726145327091217,
+      "pattern_l1": 0.16450689733028412
+    },
+    "L10H0": {
+      "country_a": 0.262885719537735,
+      "country_b": 0.5539857745170593,
+      "pattern_l1": 0.6858946084976196
+    }
+  },
+  "control_errors": {
+    "self_a": 0.0,
+    "self_b": 0.0,
+    "full_a": 0.0,
+    "full_b": 0.0
+  },
+  "status": "complete",
+  "elapsed_seconds": 81.67559004202485,
+  "peak_rss_mib": 2342.015625
+}

@@ -26,6 +26,29 @@ The notebooks trace a single question through four techniques: *how does GPT-2 S
 
 Shared conventions live in [`experiments/interp_utils.py`](experiments/interp_utils.py): BOS always on, attribution always on a logit difference against a named counterfactual, components always scaled through the cached final LayerNorm so decompositions sum exactly.
 
+### September 5: generalization, routing, and format transfer
+
+Three new scripted studies test the original fixed heads across 25 held-out
+country-pair/template cases, then distinguish country information from correct
+capital completion. The heads transfer strongly, but a cross-format intervention
+can recover 165% of a capital-versus-capital score gap with zero correct top-1
+answers. A mean format-associated offset at the final token before layer 8,
+estimated from ten countries, changes bare-prompt accuracy from 0/10 to 10/10
+on ten different countries. The narrower three-head offset prediction fails.
+The successful residual test was prespecified as secondary; task vectors are
+established prior work, and this remains a small pilot.
+
+[Results and methods](notes/2026-09-05-capital-circuit-results.md) ·
+[Interactive figure](visualizations/capital-studies/results.html) ·
+[Research goals](RESEARCH_GOALS.md).
+The three model processes ran sequentially on CPU with two compute threads,
+about 2.29 GiB peak RSS and 175 seconds total. The new scripts include resource
+watchdogs and a shared model lock. Read their prospective plans before rerunning.
+
+```bash
+.venv/bin/python -S experiments/verify_capital_studies.py  # no model loading
+```
+
 ### A note on the revision (September 2026)
 
 The first versions of notebooks 1 and 2 (February 2026) had two methodological bugs that produced a cleaner-looking, wrong story: GPT-2 was run *without* its BOS token, and direct logit attribution skipped the final LayerNorm scale, inflating every number ~14× and mis-ranking the MLPs. The rewritten notebooks show both artifacts explicitly rather than deleting them, because they are among the most common mistakes in the field and the fix (run the model as trained; make the accounting close) is the lesson.

@@ -1,0 +1,561 @@
+{
+  "id": "bare__Japan__Spain",
+  "template": "bare",
+  "pair": [
+    "Japan",
+    "Spain"
+  ],
+  "capitals": [
+    "Tokyo",
+    "Madrid"
+  ],
+  "calibration": false,
+  "prompts": [
+    "The capital of Japan is",
+    "The capital of Spain is"
+  ],
+  "baseline_a": {
+    "ld": 5.551222801208496,
+    "a_rank": 26,
+    "b_rank": 2111,
+    "a_prob": 0.006357377860695124,
+    "b_prob": 2.4683835363248363e-05,
+    "top_token": " home"
+  },
+  "baseline_b": {
+    "ld": -5.320300102233887,
+    "a_rank": 1250,
+    "b_rank": 12,
+    "a_prob": 6.453893729485571e-05,
+    "b_prob": 0.013194677419960499,
+    "top_token": " the"
+  },
+  "gap": 10.871522903442383,
+  "competent": false,
+  "normalizable": true,
+  "country_pos": 4,
+  "tokens_a": [
+    "<|endoftext|>",
+    "The",
+    " capital",
+    " of",
+    " Japan",
+    " is"
+  ],
+  "tokens_b": [
+    "<|endoftext|>",
+    "The",
+    " capital",
+    " of",
+    " Spain",
+    " is"
+  ],
+  "effects": [
+    {
+      "group": "L8H11",
+      "scope": "all",
+      "restored": {
+        "ld": -4.690448760986328,
+        "a_rank": 835,
+        "b_rank": 14,
+        "a_prob": 0.00011128835467388853,
+        "b_prob": 0.012119528837502003,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 4.900607109069824,
+        "a_rank": 30,
+        "b_rank": 1565,
+        "a_prob": 0.005334930494427681,
+        "b_prob": 3.9702888898318633e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.6298513412475586,
+      "delta_disrupt": 0.6506156921386719,
+      "recovery": 0.05793588872890302,
+      "disruption": 0.05984586501056439
+    },
+    {
+      "group": "L8H11",
+      "scope": "final",
+      "restored": {
+        "ld": -4.879364013671875,
+        "a_rank": 908,
+        "b_rank": 12,
+        "a_prob": 9.812569624045864e-05,
+        "b_prob": 0.01290813833475113,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 5.001262664794922,
+        "a_rank": 29,
+        "b_rank": 1660,
+        "a_prob": 0.005414068698883057,
+        "b_prob": 3.643367745098658e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.4409360885620117,
+      "delta_disrupt": 0.5499601364135742,
+      "recovery": 0.04055881521643971,
+      "disruption": 0.050587221431454985
+    },
+    {
+      "group": "L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 0.5249996185302734,
+        "a_rank": 44,
+        "b_rank": 87,
+        "a_prob": 0.002853980753570795,
+        "b_prob": 0.0016882882919162512,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": -0.07760047912597656,
+        "a_rank": 126,
+        "b_rank": 120,
+        "a_prob": 0.0010915379971265793,
+        "b_prob": 0.0011796150356531143,
+        "top_token": " the"
+      },
+      "delta_restore": 5.84529972076416,
+      "delta_disrupt": 5.628823280334473,
+      "recovery": 0.537670735984311,
+      "disruption": 0.5177584898020267
+    },
+    {
+      "group": "L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 0.3888225555419922,
+        "a_rank": 49,
+        "b_rank": 83,
+        "a_prob": 0.002631435403600335,
+        "b_prob": 0.001783730578608811,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": 0.023654937744140625,
+        "a_rank": 121,
+        "b_rank": 123,
+        "a_prob": 0.0011452410835772753,
+        "b_prob": 0.0011184683535248041,
+        "top_token": " the"
+      },
+      "delta_restore": 5.709122657775879,
+      "delta_disrupt": 5.5275678634643555,
+      "recovery": 0.5251447022172147,
+      "disruption": 0.5084446689353976
+    },
+    {
+      "group": "L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -3.7408180236816406,
+        "a_rank": 528,
+        "b_rank": 18,
+        "a_prob": 0.00020544313883874565,
+        "b_prob": 0.008655821904540062,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 3.9470949172973633,
+        "a_rank": 39,
+        "b_rank": 986,
+        "a_prob": 0.004154003690928221,
+        "b_prob": 8.021679968805984e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 1.579482078552246,
+      "delta_disrupt": 1.6041278839111328,
+      "recovery": 0.14528618415108296,
+      "disruption": 0.14755318994022432
+    },
+    {
+      "group": "L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -3.7846479415893555,
+        "a_rank": 541,
+        "b_rank": 18,
+        "a_prob": 0.00019922129285987467,
+        "b_prob": 0.008769756183028221,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 3.984870433807373,
+        "a_rank": 37,
+        "b_rank": 1004,
+        "a_prob": 0.004220807459205389,
+        "b_prob": 7.848529639886692e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 1.5356521606445312,
+      "delta_disrupt": 1.566352367401123,
+      "recovery": 0.14125455782816582,
+      "disruption": 0.14407846824340956
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 1.266042709350586,
+        "a_rank": 32,
+        "b_rank": 106,
+        "a_prob": 0.004563893191516399,
+        "b_prob": 0.0012867675395682454,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": -0.8221654891967773,
+        "a_rank": 182,
+        "b_rank": 93,
+        "a_prob": 0.000729529419913888,
+        "b_prob": 0.001659987261518836,
+        "top_token": " the"
+      },
+      "delta_restore": 6.586342811584473,
+      "delta_disrupt": 6.373388290405273,
+      "recovery": 0.6058344235745443,
+      "disruption": 0.5862461356161233
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 1.050736427307129,
+        "a_rank": 37,
+        "b_rank": 97,
+        "a_prob": 0.004048629198223352,
+        "b_prob": 0.0014157250989228487,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": -0.6679315567016602,
+        "a_rank": 171,
+        "b_rank": 99,
+        "a_prob": 0.0007796423160471022,
+        "b_prob": 0.001520457910373807,
+        "top_token": " the"
+      },
+      "delta_restore": 6.371036529541016,
+      "delta_disrupt": 6.219154357910156,
+      "recovery": 0.5860298125779303,
+      "disruption": 0.5720591690002244
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -3.063558578491211,
+        "a_rank": 327,
+        "b_rank": 20,
+        "a_prob": 0.0003575138107407838,
+        "b_prob": 0.007652078289538622,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": 3.2394208908081055,
+        "a_rank": 42,
+        "b_rank": 715,
+        "a_prob": 0.003279449651017785,
+        "b_prob": 0.00012851042265538126,
+        "top_token": " home"
+      },
+      "delta_restore": 2.256741523742676,
+      "delta_disrupt": 2.3118019104003906,
+      "recovery": 0.2075828330387913,
+      "disruption": 0.21264747643298224
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -3.29300594329834,
+        "a_rank": 374,
+        "b_rank": 18,
+        "a_prob": 0.00030862895073369145,
+        "b_prob": 0.008309423923492432,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": 3.378573417663574,
+        "a_rank": 41,
+        "b_rank": 761,
+        "a_prob": 0.0034143785014748573,
+        "b_prob": 0.00011641684977803379,
+        "top_token": " home"
+      },
+      "delta_restore": 2.027294158935547,
+      "delta_disrupt": 2.172649383544922,
+      "recovery": 0.18647747670141226,
+      "disruption": 0.1998477492842304
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 2.173659324645996,
+        "a_rank": 23,
+        "b_rank": 166,
+        "a_prob": 0.006892646197229624,
+        "b_prob": 0.0007841113838367164,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": -1.881209373474121,
+        "a_rank": 260,
+        "b_rank": 44,
+        "a_prob": 0.0004526097036432475,
+        "b_prob": 0.00296976906247437,
+        "top_token": " the"
+      },
+      "delta_restore": 7.493959426879883,
+      "delta_disrupt": 7.432432174682617,
+      "recovery": 0.6893201158144071,
+      "disruption": 0.6836606279263042
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 2.017096519470215,
+        "a_rank": 23,
+        "b_rank": 157,
+        "a_prob": 0.006388484500348568,
+        "b_prob": 0.0008499315590597689,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": -1.746842384338379,
+        "a_rank": 246,
+        "b_rank": 46,
+        "a_prob": 0.0004884203663095832,
+        "b_prob": 0.002801804104819894,
+        "top_token": " the"
+      },
+      "delta_restore": 7.337396621704102,
+      "delta_disrupt": 7.298065185546875,
+      "recovery": 0.6749189314940203,
+      "disruption": 0.6713010909663815
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 2.8417491912841797,
+        "a_rank": 16,
+        "b_rank": 214,
+        "a_prob": 0.0099638681858778,
+        "b_prob": 0.000581128231715411,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": -2.576509475708008,
+        "a_rank": 369,
+        "b_rank": 35,
+        "a_prob": 0.0002941071870736778,
+        "b_prob": 0.00386784877628088,
+        "top_token": " the"
+      },
+      "delta_restore": 8.162049293518066,
+      "delta_disrupt": 8.127732276916504,
+      "recovery": 0.7507733153865331,
+      "disruption": 0.747616718384774
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 2.63051700592041,
+        "a_rank": 18,
+        "b_rank": 196,
+        "a_prob": 0.009029177017509937,
+        "b_prob": 0.0006504727643914521,
+        "top_token": " now"
+      },
+      "disrupted": {
+        "ld": -2.404010772705078,
+        "a_rank": 344,
+        "b_rank": 38,
+        "a_prob": 0.00032184002338908613,
+        "b_prob": 0.0035619570408016443,
+        "top_token": " the"
+      },
+      "delta_restore": 7.950817108154297,
+      "delta_disrupt": 7.955233573913574,
+      "recovery": 0.7313434537894165,
+      "disruption": 0.7317496954722518
+    },
+    {
+      "group": "control_0",
+      "scope": "all",
+      "restored": {
+        "ld": -5.226138114929199,
+        "a_rank": 1207,
+        "b_rank": 12,
+        "a_prob": 6.804944132454693e-05,
+        "b_prob": 0.012662151828408241,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 5.5854878425598145,
+        "a_rank": 27,
+        "b_rank": 2138,
+        "a_prob": 0.006367252673953772,
+        "b_prob": 2.388942812103778e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.0941619873046875,
+      "delta_disrupt": -0.03426504135131836,
+      "recovery": 0.008661342862541534,
+      "disruption": -0.003151816139803983
+    },
+    {
+      "group": "control_0",
+      "scope": "final",
+      "restored": {
+        "ld": -5.229218006134033,
+        "a_rank": 1211,
+        "b_rank": 12,
+        "a_prob": 6.781594129279256e-05,
+        "b_prob": 0.012657626532018185,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 5.580472946166992,
+        "a_rank": 27,
+        "b_rank": 2128,
+        "a_prob": 0.006376057863235474,
+        "b_prob": 2.4042721634032205e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.09108209609985352,
+      "delta_disrupt": -0.029250144958496094,
+      "recovery": 0.00837804389585686,
+      "disruption": -0.0026905287528055763
+    },
+    {
+      "group": "control_1",
+      "scope": "all",
+      "restored": {
+        "ld": -5.1768717765808105,
+        "a_rank": 1151,
+        "b_rank": 12,
+        "a_prob": 7.174647907959297e-05,
+        "b_prob": 0.012708300724625587,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 5.5510711669921875,
+        "a_rank": 27,
+        "b_rank": 2114,
+        "a_prob": 0.006325192749500275,
+        "b_prob": 2.4562592443544418e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.14342832565307617,
+      "delta_disrupt": 0.00015163421630859375,
+      "recovery": 0.013193029801524928,
+      "disruption": 1.394783579590123e-05
+    },
+    {
+      "group": "control_1",
+      "scope": "final",
+      "restored": {
+        "ld": -5.181919574737549,
+        "a_rank": 1155,
+        "b_rank": 12,
+        "a_prob": 7.143345283111557e-05,
+        "b_prob": 0.012716885656118393,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 5.545506000518799,
+        "a_rank": 27,
+        "b_rank": 2108,
+        "a_prob": 0.006320029962807894,
+        "b_prob": 2.4679517082404345e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.1383805274963379,
+      "delta_disrupt": 0.005716800689697266,
+      "recovery": 0.012728715997325524,
+      "disruption": 0.0005258509539530184
+    },
+    {
+      "group": "control_2",
+      "scope": "all",
+      "restored": {
+        "ld": -5.21087646484375,
+        "a_rank": 1252,
+        "b_rank": 15,
+        "a_prob": 6.36187251075171e-05,
+        "b_prob": 0.011658423580229282,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 5.62948751449585,
+        "a_rank": 22,
+        "b_rank": 2086,
+        "a_prob": 0.007145685609430075,
+        "b_prob": 2.565596514614299e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.10942363739013672,
+      "delta_disrupt": -0.07826471328735352,
+      "recovery": 0.010065161832615795,
+      "disruption": -0.007199057021033512
+    },
+    {
+      "group": "control_2",
+      "scope": "final",
+      "restored": {
+        "ld": -5.205850601196289,
+        "a_rank": 1250,
+        "b_rank": 15,
+        "a_prob": 6.383687286870554e-05,
+        "b_prob": 0.011639753356575966,
+        "top_token": " the"
+      },
+      "disrupted": {
+        "ld": 5.626884460449219,
+        "a_rank": 22,
+        "b_rank": 2085,
+        "a_prob": 0.007149760611355305,
+        "b_prob": 2.5737517717061564e-05,
+        "top_token": " home"
+      },
+      "delta_restore": 0.11444950103759766,
+      "delta_disrupt": -0.07566165924072266,
+      "recovery": 0.010527458025347866,
+      "disruption": -0.006959619173203874
+    }
+  ],
+  "attention": {
+    "L8H11": {
+      "country_a": 0.09153829514980316,
+      "country_b": 0.15136446058750153,
+      "pattern_l1": 0.12638962268829346
+    },
+    "L9H8": {
+      "country_a": 0.48257121443748474,
+      "country_b": 0.6751894950866699,
+      "pattern_l1": 0.38726624846458435
+    },
+    "L10H0": {
+      "country_a": 0.1448831558227539,
+      "country_b": 0.2294747531414032,
+      "pattern_l1": 0.1691831648349762
+    }
+  },
+  "control_errors": {
+    "self_a": 0.0,
+    "self_b": 0.0,
+    "full_a": 0.0,
+    "full_b": 0.0
+  },
+  "status": "complete",
+  "elapsed_seconds": 32.88178512500599,
+  "peak_rss_mib": 2342.015625
+}

@@ -1,0 +1,571 @@
+{
+  "id": "possessive__China__Egypt",
+  "template": "possessive",
+  "pair": [
+    "China",
+    "Egypt"
+  ],
+  "capitals": [
+    "Beijing",
+    "Cairo"
+  ],
+  "calibration": false,
+  "prompts": [
+    "Germany's capital is Berlin. China's capital is",
+    "Germany's capital is Berlin. Egypt's capital is"
+  ],
+  "baseline_a": {
+    "ld": 10.248217582702637,
+    "a_rank": 1,
+    "b_rank": 246,
+    "a_prob": 0.7037839293479919,
+    "b_prob": 2.4928434868343174e-05,
+    "top_token": " Beijing"
+  },
+  "baseline_b": {
+    "ld": -8.520166397094727,
+    "a_rank": 37,
+    "b_rank": 1,
+    "a_prob": 0.0001905695826280862,
+    "b_prob": 0.9556851983070374,
+    "top_token": " Cairo"
+  },
+  "gap": 18.768383979797363,
+  "competent": true,
+  "normalizable": true,
+  "country_pos": 7,
+  "tokens_a": [
+    "<|endoftext|>",
+    "Germany",
+    "'s",
+    " capital",
+    " is",
+    " Berlin",
+    ".",
+    " China",
+    "'s",
+    " capital",
+    " is"
+  ],
+  "tokens_b": [
+    "<|endoftext|>",
+    "Germany",
+    "'s",
+    " capital",
+    " is",
+    " Berlin",
+    ".",
+    " Egypt",
+    "'s",
+    " capital",
+    " is"
+  ],
+  "effects": [
+    {
+      "group": "L8H11",
+      "scope": "all",
+      "restored": {
+        "ld": -4.853681564331055,
+        "a_rank": 2,
+        "b_rank": 1,
+        "a_prob": 0.007204174995422363,
+        "b_prob": 0.9236583709716797,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 7.540376663208008,
+        "a_rank": 1,
+        "b_rank": 57,
+        "a_prob": 0.677183985710144,
+        "b_prob": 0.00035971845500171185,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 3.666484832763672,
+      "delta_disrupt": 2.707840919494629,
+      "recovery": 0.19535431695719482,
+      "disruption": 0.14427672208802841
+    },
+    {
+      "group": "L8H11",
+      "scope": "final",
+      "restored": {
+        "ld": -5.498653411865234,
+        "a_rank": 4,
+        "b_rank": 1,
+        "a_prob": 0.003825150430202484,
+        "b_prob": 0.9347239136695862,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 7.8690032958984375,
+        "a_rank": 1,
+        "b_rank": 72,
+        "a_prob": 0.6770479083061218,
+        "b_prob": 0.0002589134965091944,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 3.021512985229492,
+      "delta_disrupt": 2.379214286804199,
+      "recovery": 0.16098951238859482,
+      "disruption": 0.1267671361245182
+    },
+    {
+      "group": "L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 0.765960693359375,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.5190574526786804,
+        "b_prob": 0.24130311608314514,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": 1.1675338745117188,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.47816982865333557,
+        "b_prob": 0.14877454936504364,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 9.286127090454102,
+      "delta_disrupt": 9.080683708190918,
+      "recovery": 0.49477499503685884,
+      "disruption": 0.4838287472147594
+    },
+    {
+      "group": "L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 0.15801429748535156,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.42245182394981384,
+        "b_prob": 0.36070525646209717,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": 1.805145263671875,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.543799102306366,
+        "b_prob": 0.08942807465791702,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 8.678180694580078,
+      "delta_disrupt": 8.443072319030762,
+      "recovery": 0.46238294697729077,
+      "disruption": 0.44985611590848956
+    },
+    {
+      "group": "L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -3.0260963439941406,
+        "a_rank": 4,
+        "b_rank": 1,
+        "a_prob": 0.03166116401553154,
+        "b_prob": 0.6527454257011414,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 4.559554100036621,
+        "a_rank": 1,
+        "b_rank": 6,
+        "a_prob": 0.708299994468689,
+        "b_prob": 0.007413581013679504,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 5.494070053100586,
+      "delta_disrupt": 5.688663482666016,
+      "recovery": 0.29273005385090717,
+      "disruption": 0.3030982043413753
+    },
+    {
+      "group": "L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -3.2261295318603516,
+        "a_rank": 4,
+        "b_rank": 1,
+        "a_prob": 0.026889851316809654,
+        "b_prob": 0.6771402955055237,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 4.760498046875,
+        "a_rank": 1,
+        "b_rank": 9,
+        "a_prob": 0.7083418369293213,
+        "b_prob": 0.0060643586330115795,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 5.294036865234375,
+      "delta_disrupt": 5.487719535827637,
+      "recovery": 0.28207206709607896,
+      "disruption": 0.2923916913536466
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 4.41588020324707,
+        "a_rank": 1,
+        "b_rank": 4,
+        "a_prob": 0.776785671710968,
+        "b_prob": 0.009386610239744186,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": -1.9433765411376953,
+        "a_rank": 2,
+        "b_rank": 1,
+        "a_prob": 0.08563514798879623,
+        "b_prob": 0.5979291796684265,
+        "top_token": " Cairo"
+      },
+      "delta_restore": 12.936046600341797,
+      "delta_disrupt": 12.191594123840332,
+      "recovery": 0.6892466934961687,
+      "disruption": 0.6495814523489923
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 3.6349716186523438,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.7733153104782104,
+        "b_prob": 0.020403679460287094,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": -0.9343299865722656,
+        "a_rank": 2,
+        "b_rank": 1,
+        "a_prob": 0.17215298116207123,
+        "b_prob": 0.4382166564464569,
+        "top_token": " Cairo"
+      },
+      "delta_restore": 12.15513801574707,
+      "delta_disrupt": 11.182547569274902,
+      "recovery": 0.6476390310871243,
+      "disruption": 0.5958183496944651
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 0.29297637939453125,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.3826834559440613,
+        "b_prob": 0.2854970693588257,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": 1.1425399780273438,
+        "a_rank": 1,
+        "b_rank": 2,
+        "a_prob": 0.5097835659980774,
+        "b_prob": 0.16262489557266235,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 8.813142776489258,
+      "delta_disrupt": 9.105677604675293,
+      "recovery": 0.4695738741266104,
+      "disruption": 0.4851604493214127
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -0.38375282287597656,
+        "a_rank": 2,
+        "b_rank": 1,
+        "a_prob": 0.27495771646499634,
+        "b_prob": 0.40357816219329834,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 1.7030830383300781,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.5612124800682068,
+        "b_prob": 0.10220867395401001,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 8.13641357421875,
+      "delta_disrupt": 8.545134544372559,
+      "recovery": 0.433517003007661,
+      "disruption": 0.4552941027618947
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 5.973626136779785,
+        "a_rank": 1,
+        "b_rank": 12,
+        "a_prob": 0.7535117864608765,
+        "b_prob": 0.0019176845671609044,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": -5.160030364990234,
+        "a_rank": 2,
+        "b_rank": 1,
+        "a_prob": 0.0054370141588151455,
+        "b_prob": 0.9469633102416992,
+        "top_token": " Cairo"
+      },
+      "delta_restore": 14.493792533874512,
+      "delta_disrupt": 15.408247947692871,
+      "recovery": 0.7722450984312714,
+      "disruption": 0.8209682817806048
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 5.350832939147949,
+        "a_rank": 1,
+        "b_rank": 9,
+        "a_prob": 0.7580775022506714,
+        "b_prob": 0.0035964695271104574,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": -4.530256271362305,
+        "a_rank": 2,
+        "b_rank": 1,
+        "a_prob": 0.010056267492473125,
+        "b_prob": 0.9330439567565918,
+        "top_token": " Cairo"
+      },
+      "delta_restore": 13.870999336242676,
+      "delta_disrupt": 14.778473854064941,
+      "recovery": 0.7390619965562126,
+      "disruption": 0.7874132301413251
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 8.591794967651367,
+        "a_rank": 1,
+        "b_rank": 62,
+        "a_prob": 0.7725221514701843,
+        "b_prob": 0.000143397570354864,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": -8.081498146057129,
+        "a_rank": 18,
+        "b_rank": 1,
+        "a_prob": 0.00030045732273720205,
+        "b_prob": 0.971701443195343,
+        "top_token": " Cairo"
+      },
+      "delta_restore": 17.111961364746094,
+      "delta_disrupt": 18.329715728759766,
+      "recovery": 0.9117439936845776,
+      "disruption": 0.9766272764075059
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 8.005112648010254,
+        "a_rank": 1,
+        "b_rank": 37,
+        "a_prob": 0.7840685844421387,
+        "b_prob": 0.0002616843848954886,
+        "top_token": " Beijing"
+      },
+      "disrupted": {
+        "ld": -7.229205131530762,
+        "a_rank": 13,
+        "b_rank": 1,
+        "a_prob": 0.0007014923030510545,
+        "b_prob": 0.9674460887908936,
+        "top_token": " Cairo"
+      },
+      "delta_restore": 16.52527904510498,
+      "delta_disrupt": 17.4774227142334,
+      "recovery": 0.880484918834413,
+      "disruption": 0.9312161735952558
+    },
+    {
+      "group": "control_0",
+      "scope": "all",
+      "restored": {
+        "ld": -8.500582695007324,
+        "a_rank": 36,
+        "b_rank": 1,
+        "a_prob": 0.00019441888434812427,
+        "b_prob": 0.9560807943344116,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 10.289655685424805,
+        "a_rank": 1,
+        "b_rank": 251,
+        "a_prob": 0.7020997405052185,
+        "b_prob": 2.3859322027419694e-05,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 0.019583702087402344,
+      "delta_disrupt": -0.04143810272216797,
+      "recovery": 0.0010434410393821121,
+      "disruption": -0.0022078673777546705
+    },
+    {
+      "group": "control_0",
+      "scope": "final",
+      "restored": {
+        "ld": -8.512544631958008,
+        "a_rank": 36,
+        "b_rank": 1,
+        "a_prob": 0.00019210786558687687,
+        "b_prob": 0.9560846090316772,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 10.290399551391602,
+        "a_rank": 1,
+        "b_rank": 251,
+        "a_prob": 0.7030592560768127,
+        "b_prob": 2.3874163161963224e-05,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 0.00762176513671875,
+      "delta_disrupt": -0.042181968688964844,
+      "recovery": 0.00040609597208384905,
+      "disruption": -0.002247501369024115
+    },
+    {
+      "group": "control_1",
+      "scope": "all",
+      "restored": {
+        "ld": -8.494719505310059,
+        "a_rank": 35,
+        "b_rank": 1,
+        "a_prob": 0.00019572470046114177,
+        "b_prob": 0.9568755030632019,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 10.21187686920166,
+        "a_rank": 1,
+        "b_rank": 241,
+        "a_prob": 0.700664758682251,
+        "b_prob": 2.573644269432407e-05,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 0.02544689178466797,
+      "delta_disrupt": 0.03634071350097656,
+      "recovery": 0.0013558381910802482,
+      "disruption": 0.0019362729119403344
+    },
+    {
+      "group": "control_1",
+      "scope": "final",
+      "restored": {
+        "ld": -8.506450653076172,
+        "a_rank": 35,
+        "b_rank": 1,
+        "a_prob": 0.00019346149929333478,
+        "b_prob": 0.9569717645645142,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 10.218159675598145,
+        "a_rank": 1,
+        "b_rank": 241,
+        "a_prob": 0.7009485960006714,
+        "b_prob": 2.5585612092982046e-05,
+        "top_token": " Beijing"
+      },
+      "delta_restore": 0.013715744018554688,
+      "delta_disrupt": 0.030057907104492188,
+      "recovery": 0.0007307898236373771,
+      "disruption": 0.0016015181241414858
+    },
+    {
+      "group": "control_2",
+      "scope": "all",
+      "restored": {
+        "ld": -8.528292655944824,
+        "a_rank": 37,
+        "b_rank": 1,
+        "a_prob": 0.00018899493443313986,
+        "b_prob": 0.955521821975708,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 10.243990898132324,
+        "a_rank": 1,
+        "b_rank": 243,
+        "a_prob": 0.7022800445556641,
+        "b_prob": 2.498052708688192e-05,
+        "top_token": " Beijing"
+      },
+      "delta_restore": -0.008126258850097656,
+      "delta_disrupt": 0.0042266845703125,
+      "recovery": -0.00043297594821402373,
+      "disruption": 0.00022520237090535773
+    },
+    {
+      "group": "control_2",
+      "scope": "final",
+      "restored": {
+        "ld": -8.527944564819336,
+        "a_rank": 37,
+        "b_rank": 1,
+        "a_prob": 0.00018908813945017755,
+        "b_prob": 0.955660343170166,
+        "top_token": " Cairo"
+      },
+      "disrupted": {
+        "ld": 10.23592758178711,
+        "a_rank": 1,
+        "b_rank": 241,
+        "a_prob": 0.7026461362838745,
+        "b_prob": 2.5195893613272347e-05,
+        "top_token": " Beijing"
+      },
+      "delta_restore": -0.007778167724609375,
+      "delta_disrupt": 0.012290000915527344,
+      "recovery": -0.0004144292728122964,
+      "disruption": 0.0006548246737042746
+    }
+  ],
+  "attention": {
+    "L8H11": {
+      "country_a": 0.5272849798202515,
+      "country_b": 0.6239854693412781,
+      "pattern_l1": 0.19340106844902039
+    },
+    "L9H8": {
+      "country_a": 0.8616560697555542,
+      "country_b": 0.9004024267196655,
+      "pattern_l1": 0.0814933255314827
+    },
+    "L10H0": {
+      "country_a": 0.35859623551368713,
+      "country_b": 0.6029810309410095,
+      "pattern_l1": 0.5569843053817749
+    }
+  },
+  "control_errors": {
+    "self_a": 0.0,
+    "self_b": 0.0,
+    "full_a": 0.0,
+    "full_b": 0.0
+  },
+  "status": "complete",
+  "elapsed_seconds": 57.03344608400948,
+  "peak_rss_mib": 2342.015625
+}

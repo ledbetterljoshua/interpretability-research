@@ -1,0 +1,3946 @@
+{
+  "status": "complete",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 2,
+  "versions": {
+    "torch": "2.10.0",
+    "transformer-lens": "3.8.1",
+    "transformers": "5.16.1",
+    "numpy": "2.5.2"
+  },
+  "source_sha256": "1061de1983ec0d499e41ef7b3d2d76dca4f55fa0f2a819db0e7b780c0f16a737",
+  "helper_sha256": "aff975e5f50df66fe7148fc10cabb8479bdaefa04eea451abe7fc07ff9105e6f",
+  "plan_sha256": "417894b0fb8089d3082b92a299e0923c9f05364102fb3e50baf27bbb709fb992",
+  "baselines": [
+    {
+      "format": "one_shot",
+      "country": "Japan",
+      "capital": "Tokyo",
+      "other": "Spain",
+      "metrics": {
+        "ld": 10.685068130493164,
+        "p": 0.7671240568161011,
+        "rank": 1,
+        "top": " Tokyo"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "China",
+      "capital": "Beijing",
+      "other": "Egypt",
+      "metrics": {
+        "ld": 9.84885311126709,
+        "p": 0.5586778521537781,
+        "rank": 1,
+        "top": " Beijing"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Russia",
+      "capital": "Moscow",
+      "other": "Australia",
+      "metrics": {
+        "ld": 11.885274887084961,
+        "p": 0.5960139036178589,
+        "rank": 1,
+        "top": " Moscow"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Canada",
+      "capital": "Ottawa",
+      "other": "Greece",
+      "metrics": {
+        "ld": 6.743282318115234,
+        "p": 0.1317753791809082,
+        "rank": 3,
+        "top": " Toronto"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Portugal",
+      "capital": "Lisbon",
+      "other": "Turkey",
+      "metrics": {
+        "ld": 9.123617172241211,
+        "p": 0.7486871480941772,
+        "rank": 1,
+        "top": " Lisbon"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Spain",
+      "capital": "Madrid",
+      "other": "Japan",
+      "metrics": {
+        "ld": 9.335809707641602,
+        "p": 0.60960453748703,
+        "rank": 1,
+        "top": " Madrid"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Egypt",
+      "capital": "Cairo",
+      "other": "China",
+      "metrics": {
+        "ld": 7.8426313400268555,
+        "p": 0.8896562457084656,
+        "rank": 1,
+        "top": " Cairo"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Australia",
+      "capital": "Canberra",
+      "other": "Russia",
+      "metrics": {
+        "ld": 7.884650230407715,
+        "p": 0.15485712885856628,
+        "rank": 3,
+        "top": " Sydney"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Greece",
+      "capital": "Athens",
+      "other": "Canada",
+      "metrics": {
+        "ld": 13.236391067504883,
+        "p": 0.9155053496360779,
+        "rank": 1,
+        "top": " Athens"
+      }
+    },
+    {
+      "format": "one_shot",
+      "country": "Turkey",
+      "capital": "Ankara",
+      "other": "Portugal",
+      "metrics": {
+        "ld": 9.591940879821777,
+        "p": 0.5028203725814819,
+        "rank": 1,
+        "top": " Ankara"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Japan",
+      "capital": "Tokyo",
+      "other": "Spain",
+      "metrics": {
+        "ld": 5.551222801208496,
+        "p": 0.006357377860695124,
+        "rank": 26,
+        "top": " home"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "China",
+      "capital": "Beijing",
+      "other": "Egypt",
+      "metrics": {
+        "ld": 5.1732354164123535,
+        "p": 0.0037811477668583393,
+        "rank": 32,
+        "top": " home"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Russia",
+      "capital": "Moscow",
+      "other": "Australia",
+      "metrics": {
+        "ld": 7.2175164222717285,
+        "p": 0.005125120747834444,
+        "rank": 28,
+        "top": " now"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Canada",
+      "capital": "Ottawa",
+      "other": "Greece",
+      "metrics": {
+        "ld": 2.89617919921875,
+        "p": 0.0005756202735938132,
+        "rank": 220,
+        "top": " home"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Portugal",
+      "capital": "Lisbon",
+      "other": "Turkey",
+      "metrics": {
+        "ld": 4.504599571228027,
+        "p": 0.0030185498762875795,
+        "rank": 40,
+        "top": " now"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Spain",
+      "capital": "Madrid",
+      "other": "Japan",
+      "metrics": {
+        "ld": 5.320300102233887,
+        "p": 0.013194677419960499,
+        "rank": 12,
+        "top": " the"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Egypt",
+      "capital": "Cairo",
+      "other": "China",
+      "metrics": {
+        "ld": 4.330003261566162,
+        "p": 0.00444150622934103,
+        "rank": 28,
+        "top": " the"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Australia",
+      "capital": "Canberra",
+      "other": "Russia",
+      "metrics": {
+        "ld": 3.7445549964904785,
+        "p": 0.0008950484916567802,
+        "rank": 151,
+        "top": " home"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Greece",
+      "capital": "Athens",
+      "other": "Canada",
+      "metrics": {
+        "ld": 9.632589340209961,
+        "p": 0.01916118711233139,
+        "rank": 11,
+        "top": " now"
+      }
+    },
+    {
+      "format": "bare",
+      "country": "Turkey",
+      "capital": "Ankara",
+      "other": "Portugal",
+      "metrics": {
+        "ld": 7.396307468414307,
+        "p": 0.00204727821983397,
+        "rank": 62,
+        "top": " home"
+      }
+    }
+  ],
+  "routing": [
+    {
+      "country": "Japan",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.09153829514980316,
+        "9": 0.48257121443748474,
+        "10": 0.1448831558227539
+      },
+      "metrics": {
+        "ld": 9.904394149780273,
+        "p": 0.8063681721687317,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "row_sum_error": 4.76837158203125e-07
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.09153829514980316,
+        "9": 0.48257121443748474,
+        "10": 0.1448831558227539
+      },
+      "metrics": {
+        "ld": 5.760223388671875,
+        "p": 0.3900371193885803,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "row_sum_error": 8.940696716308594e-07
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.09153829514980316,
+        "9": 0.48257121443748474,
+        "10": 0.1448831558227539
+      },
+      "metrics": {
+        "ld": 10.548583984375,
+        "p": 0.7717325091362,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.09153829514980316,
+        "9": 0.48257121443748474,
+        "10": 0.1448831558227539
+      },
+      "metrics": {
+        "ld": 10.667317390441895,
+        "p": 0.7584172487258911,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.09153829514980316,
+        "9": 0.48257121443748474,
+        "10": 0.1448831558227539
+      },
+      "metrics": {
+        "ld": 10.259541511535645,
+        "p": 0.7445566058158875,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "row_sum_error": 2.384185791015625e-07
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 6.764211654663086,
+        "p": 0.5160046219825745,
+        "rank": 1,
+        "top": " Tokyo"
+      }
+    },
+    {
+      "country": "China",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.08873646706342697,
+        "9": 0.3939284682273865,
+        "10": 0.12852764129638672
+      },
+      "metrics": {
+        "ld": 8.812716484069824,
+        "p": 0.5182371139526367,
+        "rank": 1,
+        "top": " Beijing"
+      },
+      "row_sum_error": 2.980232238769531e-07
+    },
+    {
+      "country": "China",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.08873646706342697,
+        "9": 0.3939284682273865,
+        "10": 0.12852764129638672
+      },
+      "metrics": {
+        "ld": 6.38516902923584,
+        "p": 0.15397779643535614,
+        "rank": 2,
+        "top": " Berlin"
+      },
+      "row_sum_error": 2.384185791015625e-07
+    },
+    {
+      "country": "China",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.08873646706342697,
+        "9": 0.3939284682273865,
+        "10": 0.12852764129638672
+      },
+      "metrics": {
+        "ld": 9.685248374938965,
+        "p": 0.5919294953346252,
+        "rank": 1,
+        "top": " Beijing"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "China",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.08873646706342697,
+        "9": 0.3939284682273865,
+        "10": 0.12852764129638672
+      },
+      "metrics": {
+        "ld": 9.643036842346191,
+        "p": 0.5947831273078918,
+        "rank": 1,
+        "top": " Beijing"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "China",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.08873646706342697,
+        "9": 0.3939284682273865,
+        "10": 0.12852764129638672
+      },
+      "metrics": {
+        "ld": 9.763949394226074,
+        "p": 0.5649787783622742,
+        "rank": 1,
+        "top": " Beijing"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "China",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 6.614611625671387,
+        "p": 0.16869695484638214,
+        "rank": 2,
+        "top": " Berlin"
+      }
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.13721737265586853,
+        "9": 0.5461538434028625,
+        "10": 0.18425972759723663
+      },
+      "metrics": {
+        "ld": 11.468401908874512,
+        "p": 0.5860904455184937,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "row_sum_error": 2.384185791015625e-07
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.13721737265586853,
+        "9": 0.5461538434028625,
+        "10": 0.18425972759723663
+      },
+      "metrics": {
+        "ld": 8.987520217895508,
+        "p": 0.22361645102500916,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "row_sum_error": 2.384185791015625e-07
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.13721737265586853,
+        "9": 0.5461538434028625,
+        "10": 0.18425972759723663
+      },
+      "metrics": {
+        "ld": 11.688383102416992,
+        "p": 0.6178231239318848,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.13721737265586853,
+        "9": 0.5461538434028625,
+        "10": 0.18425972759723663
+      },
+      "metrics": {
+        "ld": 12.254791259765625,
+        "p": 0.6172657012939453,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.13721737265586853,
+        "9": 0.5461538434028625,
+        "10": 0.18425972759723663
+      },
+      "metrics": {
+        "ld": 11.476394653320312,
+        "p": 0.5517160892486572,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 9.52475357055664,
+        "p": 0.19134820997714996,
+        "rank": 1,
+        "top": " Moscow"
+      }
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.038698259741067886,
+        "9": 0.3750063180923462,
+        "10": 0.08004426211118698
+      },
+      "metrics": {
+        "ld": 4.630851745605469,
+        "p": 0.07396847009658813,
+        "rank": 4,
+        "top": " Toronto"
+      },
+      "row_sum_error": 5.364418029785156e-07
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.038698259741067886,
+        "9": 0.3750063180923462,
+        "10": 0.08004426211118698
+      },
+      "metrics": {
+        "ld": 0.2322368621826172,
+        "p": 0.008167699910700321,
+        "rank": 16,
+        "top": " Berlin"
+      },
+      "row_sum_error": 1.7881393432617188e-07
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.038698259741067886,
+        "9": 0.3750063180923462,
+        "10": 0.08004426211118698
+      },
+      "metrics": {
+        "ld": 6.535320281982422,
+        "p": 0.13174480199813843,
+        "rank": 3,
+        "top": " Toronto"
+      },
+      "row_sum_error": 1.7881393432617188e-07
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.038698259741067886,
+        "9": 0.3750063180923462,
+        "10": 0.08004426211118698
+      },
+      "metrics": {
+        "ld": 6.834936141967773,
+        "p": 0.1404353231191635,
+        "rank": 2,
+        "top": " Toronto"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.038698259741067886,
+        "9": 0.3750063180923462,
+        "10": 0.08004426211118698
+      },
+      "metrics": {
+        "ld": 6.7030134201049805,
+        "p": 0.1272290050983429,
+        "rank": 3,
+        "top": " Toronto"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": -1.117156982421875,
+        "p": 0.0026888209395110607,
+        "rank": 47,
+        "top": " Berlin"
+      }
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.1614370048046112,
+        "9": 0.6151140928268433,
+        "10": 0.3252553343772888
+      },
+      "metrics": {
+        "ld": 8.773700714111328,
+        "p": 0.7258375287055969,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.1614370048046112,
+        "9": 0.6151140928268433,
+        "10": 0.3252553343772888
+      },
+      "metrics": {
+        "ld": 6.189643859863281,
+        "p": 0.27576112747192383,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "row_sum_error": 3.5762786865234375e-07
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.1614370048046112,
+        "9": 0.6151140928268433,
+        "10": 0.3252553343772888
+      },
+      "metrics": {
+        "ld": 8.836688995361328,
+        "p": 0.7976006269454956,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.1614370048046112,
+        "9": 0.6151140928268433,
+        "10": 0.3252553343772888
+      },
+      "metrics": {
+        "ld": 9.104257583618164,
+        "p": 0.7908542156219482,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.1614370048046112,
+        "9": 0.6151140928268433,
+        "10": 0.3252553343772888
+      },
+      "metrics": {
+        "ld": 8.64198112487793,
+        "p": 0.6782355308532715,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 5.860956192016602,
+        "p": 0.17361873388290405,
+        "rank": 1,
+        "top": " Lisbon"
+      }
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.15136446058750153,
+        "9": 0.6751894950866699,
+        "10": 0.2294747531414032
+      },
+      "metrics": {
+        "ld": 8.592114448547363,
+        "p": 0.5704843997955322,
+        "rank": 1,
+        "top": " Madrid"
+      },
+      "row_sum_error": 2.384185791015625e-07
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.15136446058750153,
+        "9": 0.6751894950866699,
+        "10": 0.2294747531414032
+      },
+      "metrics": {
+        "ld": 5.397670745849609,
+        "p": 0.20650076866149902,
+        "rank": 2,
+        "top": " Berlin"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.15136446058750153,
+        "9": 0.6751894950866699,
+        "10": 0.2294747531414032
+      },
+      "metrics": {
+        "ld": 9.016586303710938,
+        "p": 0.6139424443244934,
+        "rank": 1,
+        "top": " Madrid"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.15136446058750153,
+        "9": 0.6751894950866699,
+        "10": 0.2294747531414032
+      },
+      "metrics": {
+        "ld": 9.471217155456543,
+        "p": 0.635931670665741,
+        "rank": 1,
+        "top": " Madrid"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.15136446058750153,
+        "9": 0.6751894950866699,
+        "10": 0.2294747531414032
+      },
+      "metrics": {
+        "ld": 8.95037841796875,
+        "p": 0.5546797513961792,
+        "rank": 1,
+        "top": " Madrid"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 5.58245849609375,
+        "p": 0.19451257586479187,
+        "rank": 1,
+        "top": " Madrid"
+      }
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.14119504392147064,
+        "9": 0.6366918087005615,
+        "10": 0.2542056143283844
+      },
+      "metrics": {
+        "ld": 7.442835807800293,
+        "p": 0.8679360747337341,
+        "rank": 1,
+        "top": " Cairo"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.14119504392147064,
+        "9": 0.6366918087005615,
+        "10": 0.2542056143283844
+      },
+      "metrics": {
+        "ld": 3.8166637420654297,
+        "p": 0.18340496718883514,
+        "rank": 2,
+        "top": " Berlin"
+      },
+      "row_sum_error": 2.384185791015625e-07
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.14119504392147064,
+        "9": 0.6366918087005615,
+        "10": 0.2542056143283844
+      },
+      "metrics": {
+        "ld": 7.831109046936035,
+        "p": 0.8873692154884338,
+        "rank": 1,
+        "top": " Cairo"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.14119504392147064,
+        "9": 0.6366918087005615,
+        "10": 0.2542056143283844
+      },
+      "metrics": {
+        "ld": 8.096478462219238,
+        "p": 0.8921637535095215,
+        "rank": 1,
+        "top": " Cairo"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.14119504392147064,
+        "9": 0.6366918087005615,
+        "10": 0.2542056143283844
+      },
+      "metrics": {
+        "ld": 7.705212593078613,
+        "p": 0.8671118021011353,
+        "rank": 1,
+        "top": " Cairo"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 4.3398847579956055,
+        "p": 0.23588986694812775,
+        "rank": 1,
+        "top": " Cairo"
+      }
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.040127068758010864,
+        "9": 0.3885135054588318,
+        "10": 0.09533378481864929
+      },
+      "metrics": {
+        "ld": 5.533808708190918,
+        "p": 0.0778401643037796,
+        "rank": 3,
+        "top": " Sydney"
+      },
+      "row_sum_error": 1.7881393432617188e-06
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.040127068758010864,
+        "9": 0.3885135054588318,
+        "10": 0.09533378481864929
+      },
+      "metrics": {
+        "ld": 0.8628101348876953,
+        "p": 0.004150836728513241,
+        "rank": 23,
+        "top": " Berlin"
+      },
+      "row_sum_error": 2.980232238769531e-07
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.040127068758010864,
+        "9": 0.3885135054588318,
+        "10": 0.09533378481864929
+      },
+      "metrics": {
+        "ld": 7.859078407287598,
+        "p": 0.1548142284154892,
+        "rank": 3,
+        "top": " Sydney"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.040127068758010864,
+        "9": 0.3885135054588318,
+        "10": 0.09533378481864929
+      },
+      "metrics": {
+        "ld": 8.199719429016113,
+        "p": 0.15689969062805176,
+        "rank": 3,
+        "top": " Sydney"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.040127068758010864,
+        "9": 0.3885135054588318,
+        "10": 0.09533378481864929
+      },
+      "metrics": {
+        "ld": 7.697319030761719,
+        "p": 0.1598404347896576,
+        "rank": 3,
+        "top": " Sydney"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 1.3754444122314453,
+        "p": 0.008206699043512344,
+        "rank": 18,
+        "top": " Berlin"
+      }
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.2256809026002884,
+        "9": 0.6886471509933472,
+        "10": 0.281842440366745
+      },
+      "metrics": {
+        "ld": 13.157386779785156,
+        "p": 0.8930960297584534,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "row_sum_error": 2.384185791015625e-07
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.2256809026002884,
+        "9": 0.6886471509933472,
+        "10": 0.281842440366745
+      },
+      "metrics": {
+        "ld": 10.998407363891602,
+        "p": 0.5845624804496765,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "row_sum_error": 2.980232238769531e-07
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.2256809026002884,
+        "9": 0.6886471509933472,
+        "10": 0.281842440366745
+      },
+      "metrics": {
+        "ld": 13.004441261291504,
+        "p": 0.930189311504364,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.2256809026002884,
+        "9": 0.6886471509933472,
+        "10": 0.281842440366745
+      },
+      "metrics": {
+        "ld": 12.884027481079102,
+        "p": 0.9208022356033325,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.2256809026002884,
+        "9": 0.6886471509933472,
+        "10": 0.281842440366745
+      },
+      "metrics": {
+        "ld": 12.839818954467773,
+        "p": 0.8750340342521667,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 11.216105461120605,
+        "p": 0.6100889444351196,
+        "rank": 1,
+        "top": " Athens"
+      }
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.17889894545078278,
+        "9": 0.6460458040237427,
+        "10": 0.2598320543766022
+      },
+      "metrics": {
+        "ld": 9.04288101196289,
+        "p": 0.46103939414024353,
+        "rank": 1,
+        "top": " Ankara"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.17889894545078278,
+        "9": 0.6460458040237427,
+        "10": 0.2598320543766022
+      },
+      "metrics": {
+        "ld": 6.109323501586914,
+        "p": 0.23568449914455414,
+        "rank": 2,
+        "top": " Berlin"
+      },
+      "row_sum_error": 5.960464477539062e-07
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.17889894545078278,
+        "9": 0.6460458040237427,
+        "10": 0.2598320543766022
+      },
+      "metrics": {
+        "ld": 9.61536979675293,
+        "p": 0.5512210130691528,
+        "rank": 1,
+        "top": " Ankara"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.17889894545078278,
+        "9": 0.6460458040237427,
+        "10": 0.2598320543766022
+      },
+      "metrics": {
+        "ld": 10.161437034606934,
+        "p": 0.5602874159812927,
+        "rank": 1,
+        "top": " Ankara"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.17889894545078278,
+        "9": 0.6460458040237427,
+        "10": 0.2598320543766022
+      },
+      "metrics": {
+        "ld": 9.2260160446167,
+        "p": 0.5069828629493713,
+        "rank": 1,
+        "top": " Ankara"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "one_shot",
+      "donor_format": "bare",
+      "group": "country_state",
+      "metrics": {
+        "ld": 6.223655700683594,
+        "p": 0.21529655158519745,
+        "rank": 1,
+        "top": " Ankara"
+      }
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.8568527102470398,
+        "9": 0.913616955280304,
+        "10": 0.3206673562526703
+      },
+      "metrics": {
+        "ld": 6.9712324142456055,
+        "p": 0.008522002026438713,
+        "rank": 18,
+        "top": " home"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.8568527102470398,
+        "9": 0.913616955280304,
+        "10": 0.3206673562526703
+      },
+      "metrics": {
+        "ld": 9.185159683227539,
+        "p": 0.01038311142474413,
+        "rank": 13,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.8568527102470398,
+        "9": 0.913616955280304,
+        "10": 0.3206673562526703
+      },
+      "metrics": {
+        "ld": 5.109311580657959,
+        "p": 0.003183376742526889,
+        "rank": 37,
+        "top": " home"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.8568527102470398,
+        "9": 0.913616955280304,
+        "10": 0.3206673562526703
+      },
+      "metrics": {
+        "ld": 4.035460472106934,
+        "p": 0.0021944877225905657,
+        "rank": 64,
+        "top": " home"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.8568527102470398,
+        "9": 0.913616955280304,
+        "10": 0.3206673562526703
+      },
+      "metrics": {
+        "ld": 4.544820308685303,
+        "p": 0.002754957415163517,
+        "rank": 55,
+        "top": " the"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Japan",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 6.736806392669678,
+        "p": 0.04291225224733353,
+        "rank": 5,
+        "top": " home"
+      }
+    },
+    {
+      "country": "China",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.6474690437316895,
+        "9": 0.9356848001480103,
+        "10": 0.26698142290115356
+      },
+      "metrics": {
+        "ld": 6.8741559982299805,
+        "p": 0.004144751466810703,
+        "rank": 30,
+        "top": " the"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "China",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.6474690437316895,
+        "9": 0.9356848001480103,
+        "10": 0.26698142290115356
+      },
+      "metrics": {
+        "ld": 8.717192649841309,
+        "p": 0.0060799093917012215,
+        "rank": 25,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "China",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.6474690437316895,
+        "9": 0.9356848001480103,
+        "10": 0.26698142290115356
+      },
+      "metrics": {
+        "ld": 4.916884422302246,
+        "p": 0.0033359986264258623,
+        "rank": 36,
+        "top": " home"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "China",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.6474690437316895,
+        "9": 0.9356848001480103,
+        "10": 0.26698142290115356
+      },
+      "metrics": {
+        "ld": 3.8360161781311035,
+        "p": 0.0023320955224335194,
+        "rank": 61,
+        "top": " home"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "China",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.6474690437316895,
+        "9": 0.9356848001480103,
+        "10": 0.26698142290115356
+      },
+      "metrics": {
+        "ld": 4.802281856536865,
+        "p": 0.002755258698016405,
+        "rank": 47,
+        "top": " now"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "China",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 6.249521255493164,
+        "p": 0.026092827320098877,
+        "rank": 7,
+        "top": " the"
+      }
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.8094205260276794,
+        "9": 0.9631760120391846,
+        "10": 0.4141218066215515
+      },
+      "metrics": {
+        "ld": 8.310697555541992,
+        "p": 0.0053384858183562756,
+        "rank": 28,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.8094205260276794,
+        "9": 0.9631760120391846,
+        "10": 0.4141218066215515
+      },
+      "metrics": {
+        "ld": 11.153881072998047,
+        "p": 0.008679384365677834,
+        "rank": 20,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.8094205260276794,
+        "9": 0.9631760120391846,
+        "10": 0.4141218066215515
+      },
+      "metrics": {
+        "ld": 5.771199703216553,
+        "p": 0.0042227692902088165,
+        "rank": 31,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.8094205260276794,
+        "9": 0.9631760120391846,
+        "10": 0.4141218066215515
+      },
+      "metrics": {
+        "ld": 6.558745861053467,
+        "p": 0.0033687774557620287,
+        "rank": 40,
+        "top": " home"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.8094205260276794,
+        "9": 0.9631760120391846,
+        "10": 0.4141218066215515
+      },
+      "metrics": {
+        "ld": 6.694756507873535,
+        "p": 0.003155783750116825,
+        "rank": 41,
+        "top": " a"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Russia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 7.969982147216797,
+        "p": 0.02726714499294758,
+        "rank": 7,
+        "top": " the"
+      }
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.8180440068244934,
+        "9": 0.9585936665534973,
+        "10": 0.41632336378097534
+      },
+      "metrics": {
+        "ld": 4.936324119567871,
+        "p": 0.001123335910961032,
+        "rank": 121,
+        "top": " home"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.8180440068244934,
+        "9": 0.9585936665534973,
+        "10": 0.41632336378097534
+      },
+      "metrics": {
+        "ld": 7.28777551651001,
+        "p": 0.0012242519296705723,
+        "rank": 111,
+        "top": " now"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.8180440068244934,
+        "9": 0.9585936665534973,
+        "10": 0.41632336378097534
+      },
+      "metrics": {
+        "ld": 2.0398130416870117,
+        "p": 0.0002639441518113017,
+        "rank": 400,
+        "top": " the"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.8180440068244934,
+        "9": 0.9585936665534973,
+        "10": 0.41632336378097534
+      },
+      "metrics": {
+        "ld": 2.6791577339172363,
+        "p": 0.00024211365962401032,
+        "rank": 452,
+        "top": " home"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.8180440068244934,
+        "9": 0.9585936665534973,
+        "10": 0.41632336378097534
+      },
+      "metrics": {
+        "ld": 2.8205513954162598,
+        "p": 0.0003692501340992749,
+        "rank": 304,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Canada",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 4.449396133422852,
+        "p": 0.006220629438757896,
+        "rank": 22,
+        "top": " home"
+      }
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.8636142015457153,
+        "9": 0.9283652305603027,
+        "10": 0.5514969229698181
+      },
+      "metrics": {
+        "ld": 4.9516730308532715,
+        "p": 0.0036013831850141287,
+        "rank": 34,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.8636142015457153,
+        "9": 0.9283652305603027,
+        "10": 0.5514969229698181
+      },
+      "metrics": {
+        "ld": 6.905928134918213,
+        "p": 0.007922865450382233,
+        "rank": 20,
+        "top": " a"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.8636142015457153,
+        "9": 0.9283652305603027,
+        "10": 0.5514969229698181
+      },
+      "metrics": {
+        "ld": 3.519629955291748,
+        "p": 0.002304050838574767,
+        "rank": 53,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.8636142015457153,
+        "9": 0.9283652305603027,
+        "10": 0.5514969229698181
+      },
+      "metrics": {
+        "ld": 3.6621603965759277,
+        "p": 0.0018813286442309618,
+        "rank": 72,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.8636142015457153,
+        "9": 0.9283652305603027,
+        "10": 0.5514969229698181
+      },
+      "metrics": {
+        "ld": 3.775637626647949,
+        "p": 0.001332862302660942,
+        "rank": 98,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Portugal",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 6.321558475494385,
+        "p": 0.030435383319854736,
+        "rank": 5,
+        "top": " the"
+      }
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.8864575624465942,
+        "9": 0.9615991115570068,
+        "10": 0.7568578720092773
+      },
+      "metrics": {
+        "ld": 6.230731010437012,
+        "p": 0.018510958179831505,
+        "rank": 7,
+        "top": " the"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.8864575624465942,
+        "9": 0.9615991115570068,
+        "10": 0.7568578720092773
+      },
+      "metrics": {
+        "ld": 9.732481002807617,
+        "p": 0.03748919069766998,
+        "rank": 3,
+        "top": " the"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.8864575624465942,
+        "9": 0.9615991115570068,
+        "10": 0.7568578720092773
+      },
+      "metrics": {
+        "ld": 2.689168930053711,
+        "p": 0.0017127722967416048,
+        "rank": 78,
+        "top": " in"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.8864575624465942,
+        "9": 0.9615991115570068,
+        "10": 0.7568578720092773
+      },
+      "metrics": {
+        "ld": 3.249267578125,
+        "p": 0.0016739690909162164,
+        "rank": 84,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.8864575624465942,
+        "9": 0.9615991115570068,
+        "10": 0.7568578720092773
+      },
+      "metrics": {
+        "ld": 4.756893634796143,
+        "p": 0.005984699819236994,
+        "rank": 24,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Spain",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 7.288217544555664,
+        "p": 0.11559733003377914,
+        "rank": 1,
+        "top": " Madrid"
+      }
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.7678614258766174,
+        "9": 0.9442097544670105,
+        "10": 0.6946930885314941
+      },
+      "metrics": {
+        "ld": 4.637749671936035,
+        "p": 0.00431689852848649,
+        "rank": 28,
+        "top": " the"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.7678614258766174,
+        "9": 0.9442097544670105,
+        "10": 0.6946930885314941
+      },
+      "metrics": {
+        "ld": 8.26589584350586,
+        "p": 0.019314538687467575,
+        "rank": 9,
+        "top": " under"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.7678614258766174,
+        "9": 0.9442097544670105,
+        "10": 0.6946930885314941
+      },
+      "metrics": {
+        "ld": 3.3990774154663086,
+        "p": 0.002718285657465458,
+        "rank": 40,
+        "top": " in"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.7678614258766174,
+        "9": 0.9442097544670105,
+        "10": 0.6946930885314941
+      },
+      "metrics": {
+        "ld": 3.1362404823303223,
+        "p": 0.0012532571563497186,
+        "rank": 102,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.7678614258766174,
+        "9": 0.9442097544670105,
+        "10": 0.6946930885314941
+      },
+      "metrics": {
+        "ld": 3.7872581481933594,
+        "p": 0.0015974662965163589,
+        "rank": 81,
+        "top": " the"
+      },
+      "row_sum_error": 1.1920928955078125e-07
+    },
+    {
+      "country": "Egypt",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 5.548213005065918,
+        "p": 0.04108516126871109,
+        "rank": 3,
+        "top": " the"
+      }
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.7756673097610474,
+        "9": 0.9714499115943909,
+        "10": 0.42240047454833984
+      },
+      "metrics": {
+        "ld": 5.723739147186279,
+        "p": 0.0015042134327813983,
+        "rank": 89,
+        "top": " home"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.7756673097610474,
+        "9": 0.9714499115943909,
+        "10": 0.42240047454833984
+      },
+      "metrics": {
+        "ld": 7.843780994415283,
+        "p": 0.001486009219661355,
+        "rank": 94,
+        "top": " a"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.7756673097610474,
+        "9": 0.9714499115943909,
+        "10": 0.42240047454833984
+      },
+      "metrics": {
+        "ld": 3.1766066551208496,
+        "p": 0.0012691529700532556,
+        "rank": 97,
+        "top": " the"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.7756673097610474,
+        "9": 0.9714499115943909,
+        "10": 0.42240047454833984
+      },
+      "metrics": {
+        "ld": 2.660447597503662,
+        "p": 0.0002391687739873305,
+        "rank": 429,
+        "top": " home"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.7756673097610474,
+        "9": 0.9714499115943909,
+        "10": 0.42240047454833984
+      },
+      "metrics": {
+        "ld": 3.1467795372009277,
+        "p": 0.0003566503000911325,
+        "rank": 332,
+        "top": " home"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Australia",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 5.066781044006348,
+        "p": 0.0079771988093853,
+        "rank": 18,
+        "top": " the"
+      }
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.8529009222984314,
+        "9": 0.9666218161582947,
+        "10": 0.6486267447471619
+      },
+      "metrics": {
+        "ld": 10.236414909362793,
+        "p": 0.02271258644759655,
+        "rank": 7,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.8529009222984314,
+        "9": 0.9666218161582947,
+        "10": 0.6486267447471619
+      },
+      "metrics": {
+        "ld": 12.984615325927734,
+        "p": 0.05454453453421593,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.8529009222984314,
+        "9": 0.9666218161582947,
+        "10": 0.6486267447471619
+      },
+      "metrics": {
+        "ld": 7.752202987670898,
+        "p": 0.006599573418498039,
+        "rank": 28,
+        "top": " in"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.8529009222984314,
+        "9": 0.9666218161582947,
+        "10": 0.6486267447471619
+      },
+      "metrics": {
+        "ld": 8.390445709228516,
+        "p": 0.006514958571642637,
+        "rank": 30,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.8529009222984314,
+        "9": 0.9666218161582947,
+        "10": 0.6486267447471619
+      },
+      "metrics": {
+        "ld": 8.843555450439453,
+        "p": 0.006100533064454794,
+        "rank": 23,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Greece",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 10.72821044921875,
+        "p": 0.12079452723264694,
+        "rank": 1,
+        "top": " Athens"
+      }
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "L9H8",
+      "donor_masses": {
+        "8": 0.7968764305114746,
+        "9": 0.9420499205589294,
+        "10": 0.7768464088439941
+      },
+      "metrics": {
+        "ld": 7.767314910888672,
+        "p": 0.0022566677071154118,
+        "rank": 60,
+        "top": " a"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "targets",
+      "donor_masses": {
+        "8": 0.7968764305114746,
+        "9": 0.9420499205589294,
+        "10": 0.7768464088439941
+      },
+      "metrics": {
+        "ld": 11.413642883300781,
+        "p": 0.005610349588096142,
+        "rank": 23,
+        "top": " a"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_0",
+      "donor_masses": {
+        "8": 0.7968764305114746,
+        "9": 0.9420499205589294,
+        "10": 0.7768464088439941
+      },
+      "metrics": {
+        "ld": 7.311654090881348,
+        "p": 0.0032287652138620615,
+        "rank": 35,
+        "top": " now"
+      },
+      "row_sum_error": 0.0
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_1",
+      "donor_masses": {
+        "8": 0.7968764305114746,
+        "9": 0.9420499205589294,
+        "10": 0.7768464088439941
+      },
+      "metrics": {
+        "ld": 6.271944522857666,
+        "p": 0.0012968953233212233,
+        "rank": 93,
+        "top": " now"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "control_2",
+      "donor_masses": {
+        "8": 0.7968764305114746,
+        "9": 0.9420499205589294,
+        "10": 0.7768464088439941
+      },
+      "metrics": {
+        "ld": 6.3438591957092285,
+        "p": 0.0006290751043707132,
+        "rank": 192,
+        "top": " a"
+      },
+      "row_sum_error": 5.960464477539063e-08
+    },
+    {
+      "country": "Turkey",
+      "recipient_format": "bare",
+      "donor_format": "one_shot",
+      "group": "country_state",
+      "metrics": {
+        "ld": 9.3157958984375,
+        "p": 0.01516251266002655,
+        "rank": 13,
+        "top": " a"
+      }
+    }
+  ],
+  "transport": [
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "country8",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": 10.60840892791748,
+        "p": 0.7816758155822754,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "recovery": 0.9961710368948126
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "heads_final",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": 9.953169822692871,
+        "p": 0.8360074162483215,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "recovery": 0.9634432459097169
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "country8",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": 9.581661224365234,
+        "p": 0.5925323367118835,
+        "rank": 1,
+        "top": " Beijing"
+      },
+      "recovery": 0.9848971471197085
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "heads_final",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": 7.97574520111084,
+        "p": 0.6715909242630005,
+        "rank": 1,
+        "top": " Beijing"
+      },
+      "recovery": 0.8941237568100594
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "country8",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": 11.145149230957031,
+        "p": 0.6135359406471252,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "recovery": 0.9625630521244081
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "heads_final",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": 10.237686157226562,
+        "p": 0.8116493821144104,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "recovery": 0.9166618629020202
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "country8",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": 6.769791603088379,
+        "p": 0.12573833763599396,
+        "rank": 2,
+        "top": " Toronto"
+      },
+      "recovery": 1.0013268127291923
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "heads_final",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": 4.910591125488281,
+        "p": 0.1646319478750229,
+        "rank": 2,
+        "top": " Toronto"
+      },
+      "recovery": 0.9082722146025677
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "country8",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": 8.83334732055664,
+        "p": 0.7608078718185425,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "recovery": 0.9844904516938743
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "heads_final",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": 6.663785934448242,
+        "p": 0.8132967948913574,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "recovery": 0.8685675719126192
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "country8",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": 8.865642547607422,
+        "p": 0.5965250730514526,
+        "rank": 1,
+        "top": " Madrid"
+      },
+      "recovery": 0.9765161565923633
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "heads_final",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": 7.720125198364258,
+        "p": 0.5750559568405151,
+        "rank": 1,
+        "top": " Madrid"
+      },
+      "recovery": 0.9193000165956825
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "country8",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": 7.6087141036987305,
+        "p": 0.915826678276062,
+        "rank": 1,
+        "top": " Cairo"
+      },
+      "recovery": 0.9867779757559566
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "heads_final",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": 7.435813903808594,
+        "p": 0.9408501982688904,
+        "rank": 1,
+        "top": " Cairo"
+      },
+      "recovery": 0.9770049010110903
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "country8",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": 7.821560859680176,
+        "p": 0.17318496108055115,
+        "rank": 3,
+        "top": " Sydney"
+      },
+      "recovery": 0.9968088209564477
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "heads_final",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": 6.022024154663086,
+        "p": 0.24387268722057343,
+        "rank": 2,
+        "top": " Sydney"
+      },
+      "recovery": 0.9057848694582786
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "country8",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": 12.539472579956055,
+        "p": 0.920583963394165,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "recovery": 0.9651186246092281
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "heads_final",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": 8.886816024780273,
+        "p": 0.947699248790741,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "recovery": 0.7822999926587834
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "country8",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": 9.03746509552002,
+        "p": 0.4832291603088379,
+        "rank": 1,
+        "top": " Ankara"
+      },
+      "recovery": 0.9703735372058201
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "one_shot",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "heads_final",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": 7.604741096496582,
+        "p": 0.47457602620124817,
+        "rank": 1,
+        "top": " Ankara"
+      },
+      "recovery": 0.8938209708843734
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "country8",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 5.084968090057373,
+        "p": 0.0114407017827034,
+        "rank": 12,
+        "top": " now"
+      },
+      "recovery": 0.9571122909557145
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "heads_final",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 13.085644721984863,
+        "p": 0.03835294768214226,
+        "rank": 3,
+        "top": " Japan"
+      },
+      "recovery": 1.69304199491597
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "country8",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 4.866889476776123,
+        "p": 0.006280849687755108,
+        "rank": 24,
+        "top": " home"
+      },
+      "recovery": 0.9677640486557373
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "heads_final",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 12.522405624389648,
+        "p": 0.0295268502086401,
+        "rank": 7,
+        "top": " now"
+      },
+      "recovery": 1.773333224283553
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "country8",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": 4.930046558380127,
+        "p": 0.003084165044128895,
+        "rank": 37,
+        "top": " home"
+      },
+      "recovery": 0.7913286844695733
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "heads_final",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": 14.847538948059082,
+        "p": 0.021450290456414223,
+        "rank": 6,
+        "top": " Russia"
+      },
+      "recovery": 1.6960383885775583
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "country8",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": 2.728236675262451,
+        "p": 0.0007330052321776748,
+        "rank": 168,
+        "top": " now"
+      },
+      "recovery": 0.9865954484331182
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "heads_final",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": 8.706025123596191,
+        "p": 0.0010069606360048056,
+        "rank": 131,
+        "top": " now"
+      },
+      "recovery": 1.4637204291941017
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "country8",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 2.4814023971557617,
+        "p": 0.0009132439154200256,
+        "rank": 143,
+        "top": " now"
+      },
+      "recovery": 0.8299963887346632
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "heads_final",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 11.923907279968262,
+        "p": 0.019034193828701973,
+        "rank": 9,
+        "top": " now"
+      },
+      "recovery": 1.6234237175390298
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "country8",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 3.4099349975585938,
+        "p": 0.004654086660593748,
+        "rank": 31,
+        "top": " the"
+      },
+      "recovery": 0.8242780591419818
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "heads_final",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 14.972312927246094,
+        "p": 0.04471564292907715,
+        "rank": 4,
+        "top": " Spain"
+      },
+      "recovery": 1.8878252762504848
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "country8",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 2.8728103637695312,
+        "p": 0.0026078252121806145,
+        "rank": 43,
+        "top": " the"
+      },
+      "recovery": 0.8466635483781622
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "heads_final",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 11.805235862731934,
+        "p": 0.033447250723838806,
+        "rank": 5,
+        "top": " Egypt"
+      },
+      "recovery": 1.7865984275958298
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "country8",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": 2.131619453430176,
+        "p": 0.0008955741068348289,
+        "rank": 146,
+        "top": " home"
+      },
+      "recovery": 0.852862157028126
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "heads_final",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": 11.52287769317627,
+        "p": 0.0010140446247532964,
+        "rank": 150,
+        "top": " a"
+      },
+      "recovery": 1.7095668692116666
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "country8",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": 6.258740425109863,
+        "p": 0.004920558072626591,
+        "rank": 28,
+        "top": " the"
+      },
+      "recovery": 0.7307118489353193
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "heads_final",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": 13.404004096984863,
+        "p": 0.10359488427639008,
+        "rank": 2,
+        "top": " Greece"
+      },
+      "recovery": 1.3010203871917705
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "country8",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 6.241263389587402,
+        "p": 0.0027444763109087944,
+        "rank": 45,
+        "top": " a"
+      },
+      "recovery": 0.9029448700860017
+    },
+    {
+      "donor_format": "one_shot",
+      "recipient_format": "bare",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "heads_final",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 13.843472480773926,
+        "p": 0.022709935903549194,
+        "rank": 6,
+        "top": " Turkey"
+      },
+      "recovery": 1.5417372802664444
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "country8",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": 10.744078636169434,
+        "p": 0.7731013894081116,
+        "rank": 1,
+        "top": " Tokyo"
+      },
+      "recovery": 1.002947448466214
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "heads_final",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": -1.1022014617919922,
+        "p": 0.12306927889585495,
+        "rank": 3,
+        "top": " Madrid"
+      },
+      "recovery": 0.4112511105865021
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "country8",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": 8.870357513427734,
+        "p": 0.5391376614570618,
+        "rank": 1,
+        "top": " Beijing"
+      },
+      "recovery": 0.9446911535019443
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "heads_final",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": -1.6442298889160156,
+        "p": 0.09232345968484879,
+        "rank": 3,
+        "top": " Cairo"
+      },
+      "recovery": 0.3503607324854807
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "country8",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": 11.186574935913086,
+        "p": 0.535702645778656,
+        "rank": 1,
+        "top": " Moscow"
+      },
+      "recovery": 0.9646584422035237
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "heads_final",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": -1.6586103439331055,
+        "p": 0.01687576249241829,
+        "rank": 7,
+        "top": " Sydney"
+      },
+      "recovery": 0.314924808742231
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "country8",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": 5.662720680236816,
+        "p": 0.1571066528558731,
+        "rank": 2,
+        "top": " Toronto"
+      },
+      "recovery": 0.9459169518428602
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "heads_final",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": -7.116952896118164,
+        "p": 0.0005811551818624139,
+        "rank": 62,
+        "top": " Athens"
+      },
+      "recovery": 0.30628319358769074
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "country8",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": 9.325203895568848,
+        "p": 0.7997012734413147,
+        "rank": 1,
+        "top": " Lisbon"
+      },
+      "recovery": 1.010771077344681
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "heads_final",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": -2.5443639755249023,
+        "p": 0.019731400534510612,
+        "rank": 5,
+        "top": " Istanbul"
+      },
+      "recovery": 0.37656247730855297
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "country8",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": 10.258379936218262,
+        "p": 0.5726591348648071,
+        "rank": 1,
+        "top": " Madrid"
+      },
+      "recovery": 1.0460804084633788
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "heads_final",
+      "gap": 20.020877838134766,
+      "metrics": {
+        "ld": -4.0342512130737305,
+        "p": 0.011800858192145824,
+        "rank": 6,
+        "top": " Tokyo"
+      },
+      "recovery": 0.3321940711686123
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "country8",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": 9.198263168334961,
+        "p": 0.941447913646698,
+        "rank": 1,
+        "top": " Cairo"
+      },
+      "recovery": 1.076626234052901
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "heads_final",
+      "gap": 17.691484451293945,
+      "metrics": {
+        "ld": -2.952277183532715,
+        "p": 0.027458082884550095,
+        "rank": 3,
+        "top": " Beijing"
+      },
+      "recovery": 0.3898246044146942
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "country8",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": 8.66012954711914,
+        "p": 0.17422564327716827,
+        "rank": 2,
+        "top": " Sydney"
+      },
+      "recovery": 1.0392252025287274
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "heads_final",
+      "gap": 19.769925117492676,
+      "metrics": {
+        "ld": -6.252043724060059,
+        "p": 0.0007826081127859652,
+        "rank": 91,
+        "top": " Moscow"
+      },
+      "recovery": 0.2849394284270986
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "country8",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": 13.145515441894531,
+        "p": 0.9084193706512451,
+        "rank": 1,
+        "top": " Athens"
+      },
+      "recovery": 0.9954515960368122
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "heads_final",
+      "gap": 19.979673385620117,
+      "metrics": {
+        "ld": -0.16544723510742188,
+        "p": 0.06533235311508179,
+        "rank": 4,
+        "top": " Toronto"
+      },
+      "recovery": 0.32922635701052294
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "country8",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": 8.963296890258789,
+        "p": 0.48859161138534546,
+        "rank": 1,
+        "top": " Ankara"
+      },
+      "recovery": 0.9664106200940296
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "one_shot",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "heads_final",
+      "gap": 18.71555805206299,
+      "metrics": {
+        "ld": -2.175403594970703,
+        "p": 0.045180823653936386,
+        "rank": 4,
+        "top": " Lisbon"
+      },
+      "recovery": 0.37125334750595995
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "country8",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 5.348743438720703,
+        "p": 0.011666889302432537,
+        "rank": 12,
+        "top": " now"
+      },
+      "recovery": 0.9813752531005864
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Japan",
+      "recipient_country": "Spain",
+      "site": "heads_final",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 2.6305246353149414,
+        "p": 0.009029246866703033,
+        "rank": 18,
+        "top": " now"
+      },
+      "recovery": 0.7313441555673181
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "country8",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 4.870728969573975,
+        "p": 0.005996532738208771,
+        "rank": 25,
+        "top": " home"
+      },
+      "recovery": 0.9681680680566968
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "China",
+      "recipient_country": "Egypt",
+      "site": "heads_final",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 2.034984588623047,
+        "p": 0.005119618959724903,
+        "rank": 26,
+        "top": " now"
+      },
+      "recovery": 0.6697703873247494
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "country8",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": 5.473425388336182,
+        "p": 0.0033564972691237926,
+        "rank": 36,
+        "top": " home"
+      },
+      "recovery": 0.8408976764235967
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Russia",
+      "recipient_country": "Australia",
+      "site": "heads_final",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": 3.908252716064453,
+        "p": 0.003912658896297216,
+        "rank": 33,
+        "top": " home"
+      },
+      "recovery": 0.6981169361345992
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "country8",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": 1.7252044677734375,
+        "p": 0.0005644909688271582,
+        "rank": 209,
+        "top": " now"
+      },
+      "recovery": 0.9065371247173901
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Canada",
+      "recipient_country": "Greece",
+      "site": "heads_final",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": -3.900449752807617,
+        "p": 5.798126949230209e-05,
+        "rank": 1261,
+        "top": " now"
+      },
+      "recovery": 0.45751819656999737
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "country8",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 2.8712964057922363,
+        "p": 0.0010957776103168726,
+        "rank": 122,
+        "top": " now"
+      },
+      "recovery": 0.8627580939843323
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Portugal",
+      "recipient_country": "Turkey",
+      "site": "heads_final",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 0.27053165435791016,
+        "p": 0.00032864915556274354,
+        "rank": 315,
+        "top": " now"
+      },
+      "recovery": 0.6442230913352831
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "country8",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 4.2162909507751465,
+        "p": 0.006110143847763538,
+        "rank": 24,
+        "top": " the"
+      },
+      "recovery": 0.898449448042908
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Spain",
+      "recipient_country": "Japan",
+      "site": "heads_final",
+      "gap": 10.871522903442383,
+      "metrics": {
+        "ld": 2.4040136337280273,
+        "p": 0.003561947960406542,
+        "rank": 38,
+        "top": " the"
+      },
+      "recovery": 0.731749958638965
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "country8",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 3.2359838485717773,
+        "p": 0.0026327273808419704,
+        "rank": 44,
+        "top": " the"
+      },
+      "recovery": 0.8848793079848123
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Egypt",
+      "recipient_country": "China",
+      "site": "heads_final",
+      "gap": 9.503238677978516,
+      "metrics": {
+        "ld": 1.8729057312011719,
+        "p": 0.003237048862501979,
+        "rank": 40,
+        "top": " the"
+      },
+      "recovery": 0.7414462991381321
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "country8",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": 2.476613998413086,
+        "p": 0.0009997671004384756,
+        "rank": 133,
+        "top": " home"
+      },
+      "recovery": 0.8843338134152967
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Australia",
+      "recipient_country": "Russia",
+      "site": "heads_final",
+      "gap": 10.962071418762207,
+      "metrics": {
+        "ld": -1.8761587142944336,
+        "p": 0.0002467698068358004,
+        "rank": 444,
+        "top": " home"
+      },
+      "recovery": 0.4872580650072447
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "country8",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": 8.075220108032227,
+        "p": 0.009825627319514751,
+        "rank": 17,
+        "top": " the"
+      },
+      "recovery": 0.8756965437363928
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Greece",
+      "recipient_country": "Canada",
+      "site": "heads_final",
+      "gap": 12.528768539428711,
+      "metrics": {
+        "ld": 5.206415176391602,
+        "p": 0.007533027324825525,
+        "rank": 21,
+        "top": " home"
+      },
+      "recovery": 0.6467191368498069
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "country8",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 6.155001640319824,
+        "p": 0.0028795842081308365,
+        "rank": 43,
+        "top": " a"
+      },
+      "recovery": 0.8956965360741287
+    },
+    {
+      "donor_format": "bare",
+      "recipient_format": "bare",
+      "target": "Turkey",
+      "recipient_country": "Portugal",
+      "site": "heads_final",
+      "gap": 11.900907039642334,
+      "metrics": {
+        "ld": 3.1033992767333984,
+        "p": 0.002873967168852687,
+        "rank": 42,
+        "top": " a"
+      },
+      "recovery": 0.6392789072815137
+    }
+  ],
+  "controls": [
+    {
+      "kind": "self_mass",
+      "country": "Japan",
+      "format": "one_shot",
+      "error": 5.7220458984375e-06
+    },
+    {
+      "kind": "self_mass",
+      "country": "China",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Russia",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Canada",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Portugal",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Spain",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Egypt",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Australia",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Greece",
+      "format": "one_shot",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Turkey",
+      "format": "one_shot",
+      "error": 7.62939453125e-06
+    },
+    {
+      "kind": "self_mass",
+      "country": "Japan",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "China",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Russia",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Canada",
+      "format": "bare",
+      "error": 4.76837158203125e-07
+    },
+    {
+      "kind": "self_mass",
+      "country": "Portugal",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Spain",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Egypt",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Australia",
+      "format": "bare",
+      "error": 1.430511474609375e-06
+    },
+    {
+      "kind": "self_mass",
+      "country": "Greece",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "self_mass",
+      "country": "Turkey",
+      "format": "bare",
+      "error": 0.0
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Japan",
+      "other": "Spain",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 7.62939453125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Japan",
+      "other": "Spain",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 4.76837158203125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "China",
+      "other": "Egypt",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 7.62939453125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "China",
+      "other": "Egypt",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 3.814697265625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Russia",
+      "other": "Australia",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 1.9073486328125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Russia",
+      "other": "Australia",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 3.814697265625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Canada",
+      "other": "Greece",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 2.86102294921875e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Canada",
+      "other": "Greece",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 9.5367431640625e-07
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Portugal",
+      "other": "Turkey",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 2.86102294921875e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Portugal",
+      "other": "Turkey",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 9.5367431640625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Spain",
+      "other": "Japan",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 4.76837158203125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Spain",
+      "other": "Japan",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 9.5367431640625e-07
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Egypt",
+      "other": "China",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 3.814697265625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Egypt",
+      "other": "China",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 3.814697265625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Australia",
+      "other": "Russia",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 5.7220458984375e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Australia",
+      "other": "Russia",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 1.9073486328125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Greece",
+      "other": "Canada",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 6.67572021484375e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Greece",
+      "other": "Canada",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 1.33514404296875e-05
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Turkey",
+      "other": "Portugal",
+      "format": "one_shot",
+      "site": "country8",
+      "error": 9.5367431640625e-07
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Turkey",
+      "other": "Portugal",
+      "format": "one_shot",
+      "site": "heads_final",
+      "error": 5.7220458984375e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Japan",
+      "other": "Spain",
+      "format": "bare",
+      "site": "country8",
+      "error": 4.76837158203125e-07
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Japan",
+      "other": "Spain",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 7.62939453125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "China",
+      "other": "Egypt",
+      "format": "bare",
+      "site": "country8",
+      "error": 9.5367431640625e-07
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "China",
+      "other": "Egypt",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 4.76837158203125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Russia",
+      "other": "Australia",
+      "format": "bare",
+      "site": "country8",
+      "error": 2.86102294921875e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Russia",
+      "other": "Australia",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 9.5367431640625e-07
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Canada",
+      "other": "Greece",
+      "format": "bare",
+      "site": "country8",
+      "error": 9.5367431640625e-07
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Canada",
+      "other": "Greece",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 1.9073486328125e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Portugal",
+      "other": "Turkey",
+      "format": "bare",
+      "site": "country8",
+      "error": 2.384185791015625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Portugal",
+      "other": "Turkey",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 8.58306884765625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Spain",
+      "other": "Japan",
+      "format": "bare",
+      "site": "country8",
+      "error": 1.430511474609375e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Spain",
+      "other": "Japan",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 2.86102294921875e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Egypt",
+      "other": "China",
+      "format": "bare",
+      "site": "country8",
+      "error": 2.86102294921875e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Egypt",
+      "other": "China",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 2.86102294921875e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Australia",
+      "other": "Russia",
+      "format": "bare",
+      "site": "country8",
+      "error": 1.430511474609375e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Australia",
+      "other": "Russia",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 0.0
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Greece",
+      "other": "Canada",
+      "format": "bare",
+      "site": "country8",
+      "error": 3.814697265625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Greece",
+      "other": "Canada",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 6.67572021484375e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Turkey",
+      "other": "Portugal",
+      "format": "bare",
+      "site": "country8",
+      "error": 6.198883056640625e-06
+    },
+    {
+      "kind": "delta_equals_full",
+      "country": "Turkey",
+      "other": "Portugal",
+      "format": "bare",
+      "site": "heads_final",
+      "error": 9.5367431640625e-07
+    }
+  ],
+  "elapsed_seconds": 25.160410625045188,
+  "peak_rss_mib": 2341.96875
+}

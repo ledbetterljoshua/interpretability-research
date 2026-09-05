@@ -141,6 +141,27 @@ Smaller 2026 items worth knowing: the Circuits Updates for May (features via dow
 - Notebook 06: Anthropic's Jacobian lens (github.com/anthropics/jacobian-lens) fitted on GPT-2 Small (100 WikiText prompts, 12 min, <1 GB). J-lens reads the answer *type* at L6 and the fact at the source token from L0 (capital in top-10 for 9/10 countries vs 0/10 for the logit lens); no workspace band by the paper's four signatures; list category loading/eviction reproduces at L6. Gotchas: jlens sets `add_bos_token=True`, so use `encode(..., add_special_tokens=False)` for token ids; the venv's `torch/bin/torch_shm_manager` had lost its exec bit (chmod +x). Qwen3-1.7B fit costs ~5 min/prompt at 13 GB.
 - Notebook 05 + `scale_sweep.py`: same measurements on GPT-2 M/L/XL and Qwen3-1.7B. Shape invariant, concentration not (Qwen3's L20H13 alone = 71%). Peak RSS is ~13 bytes/param through TransformerLens's load path (Large 10.6 GB, XL 22 GB, Qwen3-1.7B 26 GB); Qwen3-8B would exceed the machine. Running two sweeps concurrently froze the Mac once (load average 148) — one model at a time.
 
+### Sep 5, 2026 (Codex)
+
+- Audited saved scale measurements without loading a model; distinguished
+  individual-effect sums from joint recovery and narrowed the training-recipe
+  claim. See `notes/2026-09-05-saved-scale-audit.md`.
+- Ran three prospectively specified studies with one cached GPT-2 Small at a
+  time: fixed-head generalization, attention/difference transport, and a new-country
+  format-offset test. Runtime ~175 seconds total; peak RSS 2.29 GiB on CPU.
+- The original heads transfer across countries and wording, but 165% pairwise
+  recovery can coexist with zero correct top-1 capital answers. Country-state
+  differences from failing bare prompts remain usable in one-shot contexts.
+- A fixed mean offset at the final token before layer 8 rescued 10/10 new
+  countries excluded from fitting; three norm-matched random vectors each
+  rescued 0/10. The primary three-head-offset prediction failed (0/10); the
+  successful broader residual intervention was a prespecified secondary test.
+  This relates to established task/function-vector work; no novelty claim.
+- Full methods, negative results, data and figure:
+  `notes/2026-09-05-capital-circuit-results.md`. Finite follow-up milestones:
+  `RESEARCH_GOALS.md` (format/position controls, downstream mediation, metric
+  validity). These follow-ups have not been run or scheduled.
+
 ### Open threads
 - Phase 3 still owes the induction-head reproduction.
 - Phase 5: attribution graph with circuit-tracer on Gemma-2-2B.

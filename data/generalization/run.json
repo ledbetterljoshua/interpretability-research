@@ -1,0 +1,157 @@
+{
+  "model": "gpt2-small",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 2,
+  "seed": 20260905,
+  "groups": {
+    "L8H11": [
+      [
+        8,
+        11
+      ]
+    ],
+    "L9H8": [
+      [
+        9,
+        8
+      ]
+    ],
+    "L10H0": [
+      [
+        10,
+        0
+      ]
+    ],
+    "L8H11+L9H8": [
+      [
+        8,
+        11
+      ],
+      [
+        9,
+        8
+      ]
+    ],
+    "L8H11+L10H0": [
+      [
+        8,
+        11
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    "L9H8+L10H0": [
+      [
+        9,
+        8
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    "L8H11+L9H8+L10H0": [
+      [
+        8,
+        11
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    "control_0": [
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        10,
+        2
+      ]
+    ],
+    "control_1": [
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        10,
+        6
+      ]
+    ],
+    "control_2": [
+      [
+        8,
+        7
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        10,
+        11
+      ]
+    ]
+  },
+  "source_sha256": "aff975e5f50df66fe7148fc10cabb8479bdaefa04eea451abe7fc07ff9105e6f",
+  "plan_sha256": "d8db131e7044c8ab72a934df5e863c397908d750c7b7245b5e7040a6fbfc51eb",
+  "versions": {
+    "torch": "2.10.0",
+    "transformer-lens": "3.8.1",
+    "transformers": "5.16.1",
+    "numpy": "2.5.2"
+  },
+  "status": "complete",
+  "cases": [
+    "one_shot__France__Italy",
+    "one_shot__Japan__Spain",
+    "one_shot__China__Egypt",
+    "one_shot__Russia__Australia",
+    "one_shot__Canada__Greece",
+    "one_shot__Portugal__Turkey",
+    "bare__France__Italy",
+    "bare__Japan__Spain",
+    "bare__China__Egypt",
+    "bare__Russia__Australia",
+    "bare__Canada__Greece",
+    "bare__Portugal__Turkey",
+    "possessive__France__Italy",
+    "possessive__Japan__Spain",
+    "possessive__China__Egypt",
+    "possessive__Russia__Australia",
+    "possessive__Canada__Greece",
+    "possessive__Portugal__Turkey",
+    "question__France__Italy",
+    "question__Japan__Spain",
+    "question__China__Egypt",
+    "question__Russia__Australia",
+    "question__Canada__Greece",
+    "question__Portugal__Turkey",
+    "distractor__France__Italy",
+    "distractor__Japan__Spain",
+    "distractor__China__Egypt",
+    "distractor__Russia__Australia",
+    "distractor__Canada__Greece",
+    "distractor__Portugal__Turkey"
+  ],
+  "elapsed_seconds": 126.61396649992093,
+  "peak_rss_mib": 2342.015625
+}

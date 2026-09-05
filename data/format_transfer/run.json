@@ -1,0 +1,2845 @@
+{
+  "status": "complete",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 2,
+  "versions": {
+    "torch": "2.10.0",
+    "transformer-lens": "3.8.1",
+    "transformers": "5.16.1",
+    "numpy": "2.5.2"
+  },
+  "test_set": [
+    [
+      "Denmark",
+      "Copenhagen"
+    ],
+    [
+      "Norway",
+      "Oslo"
+    ],
+    [
+      "Sweden",
+      "Stockholm"
+    ],
+    [
+      "Finland",
+      "Helsinki"
+    ],
+    [
+      "Poland",
+      "Warsaw"
+    ],
+    [
+      "Austria",
+      "Vienna"
+    ],
+    [
+      "Hungary",
+      "Budapest"
+    ],
+    [
+      "Netherlands",
+      "Amsterdam"
+    ],
+    [
+      "Thailand",
+      "Bangkok"
+    ],
+    [
+      "Peru",
+      "Lima"
+    ]
+  ],
+  "source_sha256": "befa8aa2fada14d2ea93bd47dfa99ed41b9c2d74fc532f11e187813326e6f1bf",
+  "helper_sha256": "aff975e5f50df66fe7148fc10cabb8479bdaefa04eea451abe7fc07ff9105e6f",
+  "plan_sha256": "5412b7832dbc51d5244e112b663548cd39951043bb3fbd4a73ae8d58a6617267",
+  "cases": [
+    {
+      "country": "Denmark",
+      "capital": "Copenhagen",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.0021141250617802143,
+            "rank": 59,
+            "margin": -3.2936019897460938,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.0012638191692531109,
+            "rank": 106,
+            "margin": -3.6786375045776367,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.0008003581897355616,
+            "rank": 171,
+            "margin": -4.071737289428711,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0004673232324421406,
+            "rank": 273,
+            "margin": -4.551810264587402,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.00026970484759658575,
+            "rank": 426,
+            "margin": -5.053337097167969,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0011697948211804032,
+            "rank": 113,
+            "margin": -3.828439712524414,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.001061660936102271,
+            "rank": 129,
+            "margin": -3.881193161010742,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0008484458085149527,
+            "rank": 157,
+            "margin": -4.0102643966674805,
+            "top": " a"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0012916321866214275,
+            "rank": 102,
+            "margin": -3.6122827529907227,
+            "top": " the"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0011473163031041622,
+            "rank": 119,
+            "margin": -3.7501983642578125,
+            "top": " the"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0018428630428388715,
+            "rank": 73,
+            "margin": -3.295368194580078,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.019491005688905716,
+            "rank": 8,
+            "margin": -1.0178213119506836,
+            "top": " Denmark"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0008755640010349452,
+            "rank": 156,
+            "margin": -4.05689811706543,
+            "top": " a"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0013116112677380443,
+            "rank": 98,
+            "margin": -3.6718692779541016,
+            "top": " a"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0008382899686694145,
+            "rank": 155,
+            "margin": -4.048102378845215,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.3102269768714905,
+            "rank": 1,
+            "margin": 4.744097709655762,
+            "top": " Copenhagen"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 7.278663542820141e-05,
+            "rank": 1136,
+            "margin": -6.270877361297607,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00021822685084771365,
+            "rank": 583,
+            "margin": -5.11265754699707,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.008381059393286705,
+            "rank": 15,
+            "margin": -2.201859474182129,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.14255747199058533,
+            "rank": 1,
+            "margin": 4.434846878051758,
+            "top": " Copenhagen"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 5.3305418987292796e-05,
+            "rank": 1375,
+            "margin": -7.452047824859619,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.001666909083724022,
+            "rank": 83,
+            "margin": -3.682706832885742,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0004578821244649589,
+            "rank": 237,
+            "margin": -4.665815353393555,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.0012638191692531109,
+        "rank": 106,
+        "margin": -3.6786375045776367,
+        "top": " a"
+      },
+      "competitor": " a",
+      "reference": {
+        "p": 0.460902601480484,
+        "rank": 1,
+        "margin": 5.389471054077148,
+        "top": " Copenhagen"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Norway",
+      "capital": "Oslo",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.0004526123811956495,
+            "rank": 263,
+            "margin": -4.852704048156738,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.00019638254889287055,
+            "rank": 534,
+            "margin": -5.535758018493652,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.0001107079879147932,
+            "rank": 827,
+            "margin": -6.033023834228516,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 5.746898750658147e-05,
+            "rank": 1328,
+            "margin": -6.623460292816162,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 2.9281309252837673e-05,
+            "rank": 1993,
+            "margin": -7.2476301193237305,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00013803868205286562,
+            "rank": 709,
+            "margin": -5.956472396850586,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00010661337728379294,
+            "rank": 867,
+            "margin": -6.1521196365356445,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0001351447426714003,
+            "rank": 716,
+            "margin": -5.828393936157227,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00021042744629085064,
+            "rank": 493,
+            "margin": -5.419371604919434,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00019271537894383073,
+            "rank": 531,
+            "margin": -5.517861366271973,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0002857703948393464,
+            "rank": 388,
+            "margin": -5.1645708084106445,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0037066482473164797,
+            "rank": 33,
+            "margin": -2.8624229431152344,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00013624112762045115,
+            "rank": 721,
+            "margin": -5.8804121017456055,
+            "top": " home"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0003071495739277452,
+            "rank": 374,
+            "margin": -5.142403602600098,
+            "top": " a"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00016911604325287044,
+            "rank": 616,
+            "margin": -5.621307373046875,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.23707519471645355,
+            "rank": 1,
+            "margin": 4.705177307128906,
+            "top": " Oslo"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 1.67597463587299e-05,
+            "rank": 2819,
+            "margin": -7.727761745452881,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 3.085411663050763e-05,
+            "rank": 2123,
+            "margin": -7.162738800048828,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0016657467931509018,
+            "rank": 73,
+            "margin": -3.847954750061035,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.10658622533082962,
+            "rank": 1,
+            "margin": 4.184131622314453,
+            "top": " Oslo"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 1.3967430277261883e-05,
+            "rank": 3408,
+            "margin": -8.828529357910156,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 5.312836219673045e-05,
+            "rank": 1461,
+            "margin": -7.137379169464111,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 3.0825918656773865e-05,
+            "rank": 1603,
+            "margin": -7.396072864532471,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.00019638254889287055,
+        "rank": 534,
+        "margin": -5.535758018493652,
+        "top": " a"
+      },
+      "competitor": " a",
+      "reference": {
+        "p": 0.4899035096168518,
+        "rank": 1,
+        "margin": 5.56547737121582,
+        "top": " Oslo"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.00048499260446988046,
+            "rank": 259,
+            "margin": -4.419805526733398,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.00039165368070825934,
+            "rank": 303,
+            "margin": -4.808297157287598,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.00032691803062334657,
+            "rank": 367,
+            "margin": -5.015252113342285,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0002776913170237094,
+            "rank": 414,
+            "margin": -5.186280250549316,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.0002491885388735682,
+            "rank": 468,
+            "margin": -5.298256874084473,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00034579847124405205,
+            "rank": 347,
+            "margin": -5.008125305175781,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0002562781737651676,
+            "rank": 441,
+            "margin": -5.38667106628418,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0003518499725032598,
+            "rank": 349,
+            "margin": -4.92789363861084,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0004028332477901131,
+            "rank": 297,
+            "margin": -4.911431312561035,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0003660902730189264,
+            "rank": 323,
+            "margin": -4.932710647583008,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0005614205147139728,
+            "rank": 222,
+            "margin": -4.509469032287598,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0065870084799826145,
+            "rank": 22,
+            "margin": -1.9366750717163086,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00030948148923926055,
+            "rank": 390,
+            "margin": -5.0405120849609375,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0006042034947313368,
+            "rank": 218,
+            "margin": -4.134514808654785,
+            "top": " a"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0003884226898662746,
+            "rank": 311,
+            "margin": -4.872499465942383,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.3294224143028259,
+            "rank": 1,
+            "margin": 5.938351631164551,
+            "top": " Stockholm"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 3.140732223982923e-05,
+            "rank": 2001,
+            "margin": -7.667828559875488,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 7.272148650372401e-05,
+            "rank": 1251,
+            "margin": -5.003541946411133,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0021362591069191694,
+            "rank": 57,
+            "margin": -2.8092479705810547,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.17248228192329407,
+            "rank": 1,
+            "margin": 5.197532653808594,
+            "top": " Stockholm"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 1.348345813312335e-05,
+            "rank": 3557,
+            "margin": -6.770201206207275,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.000497551984153688,
+            "rank": 248,
+            "margin": -4.619514465332031,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 6.647079135291278e-05,
+            "rank": 968,
+            "margin": -7.105759143829346,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.00039165368070825934,
+        "rank": 303,
+        "margin": -4.808297157287598,
+        "top": " now"
+      },
+      "competitor": " now",
+      "reference": {
+        "p": 0.7651515603065491,
+        "rank": 1,
+        "margin": 8.12520980834961,
+        "top": " Stockholm"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Finland",
+      "capital": "Helsinki",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.002585443900898099,
+            "rank": 49,
+            "margin": -3.144948959350586,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.0018609495600685477,
+            "rank": 73,
+            "margin": -3.467841148376465,
+            "top": " home"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.0012892858358100057,
+            "rank": 103,
+            "margin": -3.728623390197754,
+            "top": " home"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0008260340546257794,
+            "rank": 166,
+            "margin": -3.9971323013305664,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.0005212428513914347,
+            "rank": 248,
+            "margin": -4.2044172286987305,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0011198546271771193,
+            "rank": 113,
+            "margin": -3.500361442565918,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.001014262088574469,
+            "rank": 128,
+            "margin": -3.6927566528320312,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0013033883878961205,
+            "rank": 102,
+            "margin": -3.5316591262817383,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00185166927985847,
+            "rank": 71,
+            "margin": -3.4654932022094727,
+            "top": " home"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.001850227708928287,
+            "rank": 73,
+            "margin": -3.5340185165405273,
+            "top": " home"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0025480538606643677,
+            "rank": 50,
+            "margin": -3.2295570373535156,
+            "top": " home"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.02467973530292511,
+            "rank": 6,
+            "margin": -0.9852991104125977,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.001369521371088922,
+            "rank": 94,
+            "margin": -3.8199548721313477,
+            "top": " home"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.003077979665249586,
+            "rank": 40,
+            "margin": -3.091977119445801,
+            "top": " home"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0018380099209025502,
+            "rank": 71,
+            "margin": -3.373499870300293,
+            "top": " home"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.5019251108169556,
+            "rank": 1,
+            "margin": 7.781479835510254,
+            "top": " Helsinki"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 7.568655564682558e-05,
+            "rank": 1092,
+            "margin": -5.902937889099121,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00010956539335893467,
+            "rank": 946,
+            "margin": -4.074281215667725,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.02000533416867256,
+            "rank": 5,
+            "margin": -0.6504192352294922,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.3819566071033478,
+            "rank": 1,
+            "margin": 7.968051910400391,
+            "top": " Helsinki"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0001775323471520096,
+            "rank": 552,
+            "margin": -2.8620009422302246,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0004507451085373759,
+            "rank": 254,
+            "margin": -3.1992883682250977,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0004794448032043874,
+            "rank": 225,
+            "margin": -2.1305904388427734,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.0018609495600685477,
+        "rank": 73,
+        "margin": -3.467841148376465,
+        "top": " home"
+      },
+      "competitor": " home",
+      "reference": {
+        "p": 0.8143923878669739,
+        "rank": 1,
+        "margin": 8.692009925842285,
+        "top": " Helsinki"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Poland",
+      "capital": "Warsaw",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.024918431416153908,
+            "rank": 6,
+            "margin": -0.9714021682739258,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.015783917158842087,
+            "rank": 10,
+            "margin": -1.6314382553100586,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.010567340068519115,
+            "rank": 19,
+            "margin": -2.0853195190429688,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.006581265479326248,
+            "rank": 25,
+            "margin": -2.5921945571899414,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.003939980175346136,
+            "rank": 36,
+            "margin": -3.129887580871582,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00914917141199112,
+            "rank": 19,
+            "margin": -2.304387092590332,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.010969523340463638,
+            "rank": 15,
+            "margin": -2.1368188858032227,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.015912702307105064,
+            "rank": 9,
+            "margin": -1.6178226470947266,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.014891596511006355,
+            "rank": 12,
+            "margin": -1.8307428359985352,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.017296554520726204,
+            "rank": 8,
+            "margin": -1.5933361053466797,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.023138169199228287,
+            "rank": 7,
+            "margin": -1.3020648956298828,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.12238430976867676,
+            "rank": 2,
+            "margin": 0.8385028839111328,
+            "top": " Poland"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.010257304646074772,
+            "rank": 17,
+            "margin": -2.0013628005981445,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.018474699929356575,
+            "rank": 7,
+            "margin": -1.276082992553711,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.01362301129847765,
+            "rank": 12,
+            "margin": -1.8294029235839844,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.3660110533237457,
+            "rank": 1,
+            "margin": 4.91700553894043,
+            "top": " Warsaw"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0011968337930738926,
+            "rank": 115,
+            "margin": -4.318714141845703,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0014801537618041039,
+            "rank": 97,
+            "margin": -2.113239288330078,
+            "top": " to"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.04131698980927467,
+            "rank": 5,
+            "margin": -0.28838253021240234,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.15280288457870483,
+            "rank": 1,
+            "margin": 5.121683120727539,
+            "top": " Warsaw"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00020491372561082244,
+            "rank": 470,
+            "margin": -4.378325462341309,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.01613106019794941,
+            "rank": 8,
+            "margin": -1.487936019897461,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0006440559518523514,
+            "rank": 166,
+            "margin": -5.185973167419434,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.015783917158842087,
+        "rank": 10,
+        "margin": -1.6314382553100586,
+        "top": " now"
+      },
+      "competitor": " now",
+      "reference": {
+        "p": 0.7731856107711792,
+        "rank": 1,
+        "margin": 7.7584123611450195,
+        "top": " Warsaw"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Austria",
+      "capital": "Vienna",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.0008608075440861285,
+            "rank": 152,
+            "margin": -4.116959571838379,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.00046398938866332173,
+            "rank": 261,
+            "margin": -4.889328956604004,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.0002934831427410245,
+            "rank": 383,
+            "margin": -5.3683366775512695,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00017547533207107335,
+            "rank": 598,
+            "margin": -5.882023811340332,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.0001044236560119316,
+            "rank": 862,
+            "margin": -6.391989707946777,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00043681394890882075,
+            "rank": 269,
+            "margin": -5.021872520446777,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00029120329418219626,
+            "rank": 390,
+            "margin": -5.505112648010254,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00027419006801210344,
+            "rank": 406,
+            "margin": -5.424659729003906,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.000511329562868923,
+            "rank": 237,
+            "margin": -4.920192718505859,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00044800128671340644,
+            "rank": 264,
+            "margin": -4.971732139587402,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0006920964224264026,
+            "rank": 185,
+            "margin": -4.564430236816406,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.005046187900006771,
+            "rank": 28,
+            "margin": -2.44516658782959,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0003635824250523001,
+            "rank": 331,
+            "margin": -5.135022163391113,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0005329640116542578,
+            "rank": 248,
+            "margin": -4.558381080627441,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0004955058684572577,
+            "rank": 254,
+            "margin": -4.870082855224609,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.12884950637817383,
+            "rank": 1,
+            "margin": 4.047027587890625,
+            "top": " Vienna"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 2.816795495164115e-05,
+            "rank": 2116,
+            "margin": -7.870355129241943,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00013634008064400405,
+            "rank": 810,
+            "margin": -4.353239059448242,
+            "top": " to"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.005574616603553295,
+            "rank": 23,
+            "margin": -2.018712043762207,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.06456733494997025,
+            "rank": 2,
+            "margin": 4.353682518005371,
+            "top": " Berlin"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 7.978536450536922e-05,
+            "rank": 1050,
+            "margin": -5.173680305480957,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00022224172425922006,
+            "rank": 502,
+            "margin": -5.608843803405762,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00010201589611824602,
+            "rank": 727,
+            "margin": -6.774580001831055,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.00046398938866332173,
+        "rank": 261,
+        "margin": -4.889328956604004,
+        "top": " now"
+      },
+      "competitor": " now",
+      "reference": {
+        "p": 0.3071652054786682,
+        "rank": 1,
+        "margin": 6.3141279220581055,
+        "top": " Vienna"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Hungary",
+      "capital": "Budapest",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.005705102812498808,
+            "rank": 27,
+            "margin": -2.256427764892578,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.005403019487857819,
+            "rank": 28,
+            "margin": -2.4827699661254883,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.004354028031229973,
+            "rank": 37,
+            "margin": -2.730044364929199,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0033076924737542868,
+            "rank": 46,
+            "margin": -3.0136308670043945,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.0024844445288181305,
+            "rank": 60,
+            "margin": -3.298497200012207,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.005537077318876982,
+            "rank": 27,
+            "margin": -2.5306968688964844,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00362027226947248,
+            "rank": 38,
+            "margin": -3.015941619873047,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.002067929832264781,
+            "rank": 67,
+            "margin": -3.3879566192626953,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00506299315020442,
+            "rank": 27,
+            "margin": -2.6851816177368164,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0058846669271588326,
+            "rank": 27,
+            "margin": -2.439042091369629,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00840364396572113,
+            "rank": 21,
+            "margin": -2.109752655029297,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.07898672670125961,
+            "rank": 2,
+            "margin": 0.49874210357666016,
+            "top": " Hungary"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00484553724527359,
+            "rank": 29,
+            "margin": -2.620816230773926,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.005477743223309517,
+            "rank": 28,
+            "margin": -2.290416717529297,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0062769134528934956,
+            "rank": 28,
+            "margin": -2.4036941528320312,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.7055943608283997,
+            "rank": 1,
+            "margin": 5.923868179321289,
+            "top": " Budapest"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0007251350325532258,
+            "rank": 177,
+            "margin": -4.771479606628418,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0009916082490235567,
+            "rank": 147,
+            "margin": -2.314790725708008,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.058615267276763916,
+            "rank": 3,
+            "margin": 0.26338863372802734,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.5083253383636475,
+            "rank": 1,
+            "margin": 6.680779457092285,
+            "top": " Budapest"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00033166867797262967,
+            "rank": 321,
+            "margin": -3.7547264099121094,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00033817411167547107,
+            "rank": 332,
+            "margin": -5.189091682434082,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00042847672011703253,
+            "rank": 242,
+            "margin": -5.41986083984375,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.005403019487857819,
+        "rank": 28,
+        "margin": -2.4827699661254883,
+        "top": " now"
+      },
+      "competitor": " now",
+      "reference": {
+        "p": 0.8721879124641418,
+        "rank": 1,
+        "margin": 7.963549613952637,
+        "top": " Budapest"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Netherlands",
+      "capital": "Amsterdam",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.004262364469468594,
+            "rank": 31,
+            "margin": -2.574873924255371,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.003355516819283366,
+            "rank": 40,
+            "margin": -2.6777000427246094,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.0022529475390911102,
+            "rank": 59,
+            "margin": -3.009716033935547,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.001325766323134303,
+            "rank": 110,
+            "margin": -3.479020118713379,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.0007445468218065798,
+            "rank": 190,
+            "margin": -4.004779815673828,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.003232809482142329,
+            "rank": 40,
+            "margin": -2.814422607421875,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.002354332013055682,
+            "rank": 52,
+            "margin": -3.0761117935180664,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0013377366121858358,
+            "rank": 101,
+            "margin": -3.4837160110473633,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0030228663235902786,
+            "rank": 39,
+            "margin": -2.738654136657715,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0032105455175042152,
+            "rank": 41,
+            "margin": -2.6872005462646484,
+            "top": " now"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.004658383317291737,
+            "rank": 32,
+            "margin": -2.3521203994750977,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.033727243542671204,
+            "rank": 4,
+            "margin": -0.5849637985229492,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0017523114802315831,
+            "rank": 81,
+            "margin": -3.267162322998047,
+            "top": " now"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.004726084414869547,
+            "rank": 31,
+            "margin": -2.388376235961914,
+            "top": " a"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.001707483665086329,
+            "rank": 83,
+            "margin": -3.2744321823120117,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.25490713119506836,
+            "rank": 1,
+            "margin": 4.391264915466309,
+            "top": " Amsterdam"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 9.116683213505894e-05,
+            "rank": 967,
+            "margin": -5.9351487159729,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0007133957115001976,
+            "rank": 212,
+            "margin": -3.810654640197754,
+            "top": " to"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.03481775522232056,
+            "rank": 3,
+            "margin": -0.7386341094970703,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.07725448161363602,
+            "rank": 2,
+            "margin": 4.011914253234863,
+            "top": " Berlin"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00014717027079313993,
+            "rank": 636,
+            "margin": -6.360302925109863,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0001564297708682716,
+            "rank": 682,
+            "margin": -6.001829147338867,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00034212786704301834,
+            "rank": 306,
+            "margin": -4.931537628173828,
+            "top": " now"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.003355516819283366,
+        "rank": 40,
+        "margin": -2.6777000427246094,
+        "top": " a"
+      },
+      "competitor": " a",
+      "reference": {
+        "p": 0.3861432373523712,
+        "rank": 1,
+        "margin": 5.366413116455078,
+        "top": " Amsterdam"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Thailand",
+      "capital": "Bangkok",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.0026485573034733534,
+            "rank": 38,
+            "margin": -3.268277168273926,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 0.0030072226654738188,
+            "rank": 38,
+            "margin": -3.0564918518066406,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 0.0025701529812067747,
+            "rank": 49,
+            "margin": -3.1657447814941406,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0019957683980464935,
+            "rank": 73,
+            "margin": -3.3711891174316406,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 0.0015211824793368578,
+            "rank": 100,
+            "margin": -3.5982532501220703,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.002488522557541728,
+            "rank": 48,
+            "margin": -3.2883262634277344,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0021487988997250795,
+            "rank": 63,
+            "margin": -3.4237775802612305,
+            "top": " a"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0025401138700544834,
+            "rank": 43,
+            "margin": -3.13223934173584,
+            "top": " a"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.002798296045511961,
+            "rank": 42,
+            "margin": -3.078033447265625,
+            "top": " a"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.003111737547442317,
+            "rank": 35,
+            "margin": -2.99383544921875,
+            "top": " a"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0040145143866539,
+            "rank": 27,
+            "margin": -2.771512031555176,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.02132551185786724,
+            "rank": 8,
+            "margin": -1.305898666381836,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0028927673120051622,
+            "rank": 41,
+            "margin": -3.048177719116211,
+            "top": " home"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0036860089749097824,
+            "rank": 29,
+            "margin": -2.903468132019043,
+            "top": " home"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00245040375739336,
+            "rank": 47,
+            "margin": -3.1968555450439453,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.4071284532546997,
+            "rank": 1,
+            "margin": 5.151667594909668,
+            "top": " Bangkok"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0004911202704533935,
+            "rank": 236,
+            "margin": -4.595460891723633,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0001756462879711762,
+            "rank": 653,
+            "margin": -5.649576187133789,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.029755879193544388,
+            "rank": 5,
+            "margin": -0.9152126312255859,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.32654377818107605,
+            "rank": 1,
+            "margin": 5.135973930358887,
+            "top": " Bangkok"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0002914253273047507,
+            "rank": 350,
+            "margin": -5.912091255187988,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0009856392862275243,
+            "rank": 118,
+            "margin": -4.436103820800781,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0007605870487168431,
+            "rank": 142,
+            "margin": -4.398528099060059,
+            "top": " the"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 0.0030072226654738188,
+        "rank": 38,
+        "margin": -3.0564918518066406,
+        "top": " a"
+      },
+      "competitor": " a",
+      "reference": {
+        "p": 0.7199909687042236,
+        "rank": 1,
+        "margin": 6.332895278930664,
+        "top": " Bangkok"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    },
+    {
+      "country": "Peru",
+      "capital": "Lima",
+      "effects": [
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": -1,
+          "metrics": {
+            "p": 0.0001215584998135455,
+            "rank": 702,
+            "margin": -6.455076217651367,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0,
+          "metrics": {
+            "p": 6.794510409235954e-05,
+            "rank": 1128,
+            "margin": -6.715288162231445,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 0.5,
+          "metrics": {
+            "p": 4.340705709182657e-05,
+            "rank": 1528,
+            "margin": -7.0216145515441895,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 2.8365679099806584e-05,
+            "rank": 1995,
+            "margin": -7.321515083312988,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "mean",
+          "scale": 1.5,
+          "metrics": {
+            "p": 2.0628916900022887e-05,
+            "rank": 2366,
+            "margin": -7.533393383026123,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 5.023012636229396e-05,
+            "rank": 1394,
+            "margin": -7.054459095001221,
+            "top": " the"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 4.321288361097686e-05,
+            "rank": 1555,
+            "margin": -7.098440647125244,
+            "top": " now"
+          }
+        },
+        {
+          "site": "heads",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 3.719126107171178e-05,
+            "rank": 1695,
+            "margin": -7.1980390548706055,
+            "top": " the"
+          }
+        },
+        {
+          "site": "control_0",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 7.203235145425424e-05,
+            "rank": 1062,
+            "margin": -6.716000556945801,
+            "top": " the"
+          }
+        },
+        {
+          "site": "control_1",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 7.632957567693666e-05,
+            "rank": 1013,
+            "margin": -6.621541976928711,
+            "top": " the"
+          }
+        },
+        {
+          "site": "control_2",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00010328536882298067,
+            "rank": 817,
+            "margin": -6.394191741943359,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.000647574313916266,
+            "rank": 175,
+            "margin": -4.883685111999512,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 5.409030200098641e-05,
+            "rank": 1331,
+            "margin": -6.903928279876709,
+            "top": " home"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 6.495200796052814e-05,
+            "rank": 1194,
+            "margin": -6.760104179382324,
+            "top": " the"
+          }
+        },
+        {
+          "site": "country8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 4.6707769797649235e-05,
+            "rank": 1489,
+            "margin": -7.043551445007324,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.21403911709785461,
+            "rank": 1,
+            "margin": 0.9156570434570312,
+            "top": " Lima"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 1.3845089597452898e-05,
+            "rank": 3089,
+            "margin": -7.938808441162109,
+            "top": " now"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 7.339994681387907e-06,
+            "rank": 4565,
+            "margin": -8.411320686340332,
+            "top": " a"
+          }
+        },
+        {
+          "site": "final8",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 0.00027138349832966924,
+            "rank": 331,
+            "margin": -6.567827224731445,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "mean",
+          "scale": 1,
+          "metrics": {
+            "p": 0.11347957700490952,
+            "rank": 1,
+            "margin": 0.8912839889526367,
+            "top": " Lima"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_0",
+          "scale": 1,
+          "metrics": {
+            "p": 1.1338239346514456e-05,
+            "rank": 3790,
+            "margin": -8.758339881896973,
+            "top": " one"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_1",
+          "scale": 1,
+          "metrics": {
+            "p": 0.0001867274841060862,
+            "rank": 562,
+            "margin": -6.005366325378418,
+            "top": " the"
+          }
+        },
+        {
+          "site": "final11",
+          "kind": "random_2",
+          "scale": 1,
+          "metrics": {
+            "p": 1.714848076517228e-05,
+            "rank": 2247,
+            "margin": -8.468887329101562,
+            "top": " the"
+          }
+        }
+      ],
+      "baseline": {
+        "p": 6.794510409235954e-05,
+        "rank": 1128,
+        "margin": -6.715288162231445,
+        "top": " the"
+      },
+      "competitor": " the",
+      "reference": {
+        "p": 0.4737938344478607,
+        "rank": 1,
+        "margin": 2.4682178497314453,
+        "top": " Lima"
+      },
+      "zero_error": 0.0,
+      "status": "complete"
+    }
+  ],
+  "training_set": [
+    [
+      "Japan",
+      "Tokyo"
+    ],
+    [
+      "China",
+      "Beijing"
+    ],
+    [
+      "Russia",
+      "Moscow"
+    ],
+    [
+      "Canada",
+      "Ottawa"
+    ],
+    [
+      "Portugal",
+      "Lisbon"
+    ],
+    [
+      "Spain",
+      "Madrid"
+    ],
+    [
+      "Egypt",
+      "Cairo"
+    ],
+    [
+      "Australia",
+      "Canberra"
+    ],
+    [
+      "Greece",
+      "Athens"
+    ],
+    [
+      "Turkey",
+      "Ankara"
+    ]
+  ],
+  "offsets_sha256": "c2e0279cf797115fdd771f6ae95a93d39b15fbf18b9c6d2f45e51b9c398a624c",
+  "elapsed_seconds": 23.132812833064236,
+  "peak_rss_mib": 2342.0
+}

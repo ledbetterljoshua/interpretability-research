@@ -1,0 +1,591 @@
+{
+  "id": "distractor__Canada__Greece",
+  "template": "distractor",
+  "pair": [
+    "Canada",
+    "Greece"
+  ],
+  "capitals": [
+    "Ottawa",
+    "Athens"
+  ],
+  "calibration": false,
+  "prompts": [
+    "Italy and France are countries in Europe. The capital of Germany is Berlin. The capital of Canada is",
+    "Italy and France are countries in Europe. The capital of Germany is Berlin. The capital of Greece is"
+  ],
+  "baseline_a": {
+    "ld": 8.315255165100098,
+    "a_rank": 2,
+    "b_rank": 237,
+    "a_prob": 0.18255265057086945,
+    "b_prob": 4.46805679530371e-05,
+    "top_token": " Toronto"
+  },
+  "baseline_b": {
+    "ld": -13.525148391723633,
+    "a_rank": 2635,
+    "b_rank": 1,
+    "a_prob": 1.199316102429293e-06,
+    "b_prob": 0.897079586982727,
+    "top_token": " Athens"
+  },
+  "gap": 21.84040355682373,
+  "competent": false,
+  "normalizable": true,
+  "country_pos": 19,
+  "tokens_a": [
+    "<|endoftext|>",
+    "Italy",
+    " and",
+    " France",
+    " are",
+    " countries",
+    " in",
+    " Europe",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Germany",
+    " is",
+    " Berlin",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Canada",
+    " is"
+  ],
+  "tokens_b": [
+    "<|endoftext|>",
+    "Italy",
+    " and",
+    " France",
+    " are",
+    " countries",
+    " in",
+    " Europe",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Germany",
+    " is",
+    " Berlin",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Greece",
+    " is"
+  ],
+  "effects": [
+    {
+      "group": "L8H11",
+      "scope": "all",
+      "restored": {
+        "ld": -8.924508094787598,
+        "a_rank": 65,
+        "b_rank": 1,
+        "a_prob": 0.0001261194993276149,
+        "b_prob": 0.9476475119590759,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 2.3821468353271484,
+        "a_rank": 2,
+        "b_rank": 11,
+        "a_prob": 0.14188724756240845,
+        "b_prob": 0.013103584758937359,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 4.600640296936035,
+      "delta_disrupt": 5.933108329772949,
+      "recovery": 0.21064813591773715,
+      "disruption": 0.271657449659131
+    },
+    {
+      "group": "L8H11",
+      "scope": "final",
+      "restored": {
+        "ld": -9.149429321289062,
+        "a_rank": 69,
+        "b_rank": 1,
+        "a_prob": 0.00010084312816616148,
+        "b_prob": 0.9488399624824524,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 2.815506935119629,
+        "a_rank": 2,
+        "b_rank": 12,
+        "a_prob": 0.15373684465885162,
+        "b_prob": 0.009204895235598087,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 4.37571907043457,
+      "delta_disrupt": 5.499748229980469,
+      "recovery": 0.20034973525328645,
+      "disruption": 0.25181532088779324
+    },
+    {
+      "group": "L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": -2.7134571075439453,
+        "a_rank": 3,
+        "b_rank": 1,
+        "a_prob": 0.0394333116710186,
+        "b_prob": 0.5947065353393555,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": -0.00597381591796875,
+        "a_rank": 3,
+        "b_rank": 2,
+        "a_prob": 0.06481177359819412,
+        "b_prob": 0.06520010530948639,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 10.811691284179688,
+      "delta_disrupt": 8.321228981018066,
+      "recovery": 0.4950316625812404,
+      "disruption": 0.3810016128762517
+    },
+    {
+      "group": "L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": -2.991793632507324,
+        "a_rank": 3,
+        "b_rank": 1,
+        "a_prob": 0.032312143594026566,
+        "b_prob": 0.6437025666236877,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 0.3225250244140625,
+        "a_rank": 2,
+        "b_rank": 5,
+        "a_prob": 0.07106414437294006,
+        "b_prob": 0.05147302523255348,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 10.533354759216309,
+      "delta_disrupt": 7.992730140686035,
+      "recovery": 0.48228755168424114,
+      "disruption": 0.3659607351068757
+    },
+    {
+      "group": "L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -8.610803604125977,
+        "a_rank": 637,
+        "b_rank": 1,
+        "a_prob": 7.977539644343778e-05,
+        "b_prob": 0.4380195140838623,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 1.7384281158447266,
+        "a_rank": 2,
+        "b_rank": 6,
+        "a_prob": 0.1742645800113678,
+        "b_prob": 0.030635107308626175,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 4.914344787597656,
+      "delta_disrupt": 6.576827049255371,
+      "recovery": 0.2250116292408085,
+      "disruption": 0.3011312053893131
+    },
+    {
+      "group": "L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -8.623912811279297,
+        "a_rank": 637,
+        "b_rank": 1,
+        "a_prob": 7.917646144051105e-05,
+        "b_prob": 0.4404674768447876,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 1.746002197265625,
+        "a_rank": 2,
+        "b_rank": 6,
+        "a_prob": 0.17408007383346558,
+        "b_prob": 0.030371757224202156,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 4.901235580444336,
+      "delta_disrupt": 6.569252967834473,
+      "recovery": 0.22441140190896394,
+      "disruption": 0.3007844131974384
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 2.3863182067871094,
+        "a_rank": 2,
+        "b_rank": 7,
+        "a_prob": 0.2637413740158081,
+        "b_prob": 0.024255678057670593,
+        "top_token": " Toronto"
+      },
+      "disrupted": {
+        "ld": -6.37611198425293,
+        "a_rank": 48,
+        "b_rank": 1,
+        "a_prob": 0.0011681538308039308,
+        "b_prob": 0.6864521503448486,
+        "top_token": " Athens"
+      },
+      "delta_restore": 15.911466598510742,
+      "delta_disrupt": 14.691367149353027,
+      "recovery": 0.7285335436734376,
+      "disruption": 0.6726692165339094
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 2.131967544555664,
+        "a_rank": 2,
+        "b_rank": 6,
+        "a_prob": 0.2612908184528351,
+        "b_prob": 0.030990058556199074,
+        "top_token": " Toronto"
+      },
+      "disrupted": {
+        "ld": -5.9385271072387695,
+        "a_rank": 32,
+        "b_rank": 1,
+        "a_prob": 0.0017634964315220714,
+        "b_prob": 0.6690277457237244,
+        "top_token": " Athens"
+      },
+      "delta_restore": 15.657115936279297,
+      "delta_disrupt": 14.253782272338867,
+      "recovery": 0.7168876662715076,
+      "disruption": 0.6526336491564264
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -2.2895593643188477,
+        "a_rank": 7,
+        "b_rank": 1,
+        "a_prob": 0.02349879965186119,
+        "b_prob": 0.2319469451904297,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": -3.9857349395751953,
+        "a_rank": 3,
+        "b_rank": 1,
+        "a_prob": 0.015071085654199123,
+        "b_prob": 0.8111987113952637,
+        "top_token": " Athens"
+      },
+      "delta_restore": 11.235589027404785,
+      "delta_disrupt": 12.300990104675293,
+      "recovery": 0.5144405412735326,
+      "disruption": 0.5632217405081794
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -2.615298271179199,
+        "a_rank": 7,
+        "b_rank": 1,
+        "a_prob": 0.01926201768219471,
+        "b_prob": 0.2633366882801056,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": -3.6144847869873047,
+        "a_rank": 3,
+        "b_rank": 1,
+        "a_prob": 0.020787257701158524,
+        "b_prob": 0.771876871585846,
+        "top_token": " Athens"
+      },
+      "delta_restore": 10.909850120544434,
+      "delta_disrupt": 11.929739952087402,
+      "recovery": 0.4995260317493448,
+      "disruption": 0.5462234212407728
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 3.7045822143554688,
+        "a_rank": 2,
+        "b_rank": 24,
+        "a_prob": 0.1508685052394867,
+        "b_prob": 0.0037129486445337534,
+        "top_token": " Toronto"
+      },
+      "disrupted": {
+        "ld": -6.551703453063965,
+        "a_rank": 10,
+        "b_rank": 1,
+        "a_prob": 0.0013472058344632387,
+        "b_prob": 0.9436318874359131,
+        "top_token": " Athens"
+      },
+      "delta_restore": 17.2297306060791,
+      "delta_disrupt": 14.866958618164062,
+      "recovery": 0.7888925019746675,
+      "disruption": 0.6807089703944178
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 3.524491310119629,
+        "a_rank": 2,
+        "b_rank": 23,
+        "a_prob": 0.14758966863155365,
+        "b_prob": 0.004348993767052889,
+        "top_token": " Toronto"
+      },
+      "disrupted": {
+        "ld": -6.386997222900391,
+        "a_rank": 9,
+        "b_rank": 1,
+        "a_prob": 0.001584180281497538,
+        "b_prob": 0.941114068031311,
+        "top_token": " Athens"
+      },
+      "delta_restore": 17.04963970184326,
+      "delta_disrupt": 14.702252388000488,
+      "recovery": 0.7806467338153346,
+      "disruption": 0.6731676156875304
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 7.920348167419434,
+        "a_rank": 2,
+        "b_rank": 192,
+        "a_prob": 0.25310972332954407,
+        "b_prob": 9.194864105666056e-05,
+        "top_token": " Toronto"
+      },
+      "disrupted": {
+        "ld": -10.871299743652344,
+        "a_rank": 133,
+        "b_rank": 1,
+        "a_prob": 1.8422033463139087e-05,
+        "b_prob": 0.9698019027709961,
+        "top_token": " Athens"
+      },
+      "delta_restore": 21.445496559143066,
+      "delta_disrupt": 19.18655490875244,
+      "recovery": 0.9819185118693797,
+      "disruption": 0.8784890287779444
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 7.786423683166504,
+        "a_rank": 2,
+        "b_rank": 185,
+        "a_prob": 0.2516191005706787,
+        "b_prob": 0.00010450636909808964,
+        "top_token": " Toronto"
+      },
+      "disrupted": {
+        "ld": -10.650872230529785,
+        "a_rank": 113,
+        "b_rank": 1,
+        "a_prob": 2.2962871298659593e-05,
+        "b_prob": 0.9697085022926331,
+        "top_token": " Athens"
+      },
+      "delta_restore": 21.311572074890137,
+      "delta_disrupt": 18.966127395629883,
+      "recovery": 0.9757865517201779,
+      "disruption": 0.8683963804187208
+    },
+    {
+      "group": "control_0",
+      "scope": "all",
+      "restored": {
+        "ld": -13.550455093383789,
+        "a_rank": 2677,
+        "b_rank": 1,
+        "a_prob": 1.168279936791805e-06,
+        "b_prob": 0.8962616324424744,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 8.178778648376465,
+        "a_rank": 2,
+        "b_rank": 225,
+        "a_prob": 0.18269535899162292,
+        "b_prob": 5.125415191287175e-05,
+        "top_token": " Toronto"
+      },
+      "delta_restore": -0.02530670166015625,
+      "delta_disrupt": 0.1364765167236328,
+      "recovery": -0.001158710350489358,
+      "disruption": 0.006248809293681418
+    },
+    {
+      "group": "control_0",
+      "scope": "final",
+      "restored": {
+        "ld": -13.546537399291992,
+        "a_rank": 2694,
+        "b_rank": 1,
+        "a_prob": 1.1711510978784645e-06,
+        "b_prob": 0.8949511647224426,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 8.231157302856445,
+        "a_rank": 2,
+        "b_rank": 226,
+        "a_prob": 0.18538354337215424,
+        "b_prob": 4.935429751640186e-05,
+        "top_token": " Toronto"
+      },
+      "delta_restore": -0.021389007568359375,
+      "delta_disrupt": 0.08409786224365234,
+      "recovery": -0.0009793320674093807,
+      "disruption": 0.003850563567877716
+    },
+    {
+      "group": "control_1",
+      "scope": "all",
+      "restored": {
+        "ld": -13.193750381469727,
+        "a_rank": 2213,
+        "b_rank": 1,
+        "a_prob": 1.6658046888551326e-06,
+        "b_prob": 0.8945344090461731,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 8.132767677307129,
+        "a_rank": 2,
+        "b_rank": 235,
+        "a_prob": 0.15854917466640472,
+        "b_prob": 4.6574459702242166e-05,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 0.33139801025390625,
+      "delta_disrupt": 0.18248748779296875,
+      "recovery": 0.01517362119210318,
+      "disruption": 0.008355499811080783
+    },
+    {
+      "group": "control_1",
+      "scope": "final",
+      "restored": {
+        "ld": -13.185250282287598,
+        "a_rank": 2221,
+        "b_rank": 1,
+        "a_prob": 1.6777776181697845e-06,
+        "b_prob": 0.8933380842208862,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 8.166854858398438,
+        "a_rank": 2,
+        "b_rank": 236,
+        "a_prob": 0.15921975672245026,
+        "b_prob": 4.5204011257737875e-05,
+        "top_token": " Toronto"
+      },
+      "delta_restore": 0.33989810943603516,
+      "delta_disrupt": 0.14840030670166016,
+      "recovery": 0.015562812681171302,
+      "disruption": 0.006794760285246402
+    },
+    {
+      "group": "control_2",
+      "scope": "all",
+      "restored": {
+        "ld": -13.61777114868164,
+        "a_rank": 2346,
+        "b_rank": 1,
+        "a_prob": 1.1201664165128022e-06,
+        "b_prob": 0.9191902875900269,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 8.185503959655762,
+        "a_rank": 2,
+        "b_rank": 235,
+        "a_prob": 0.18284398317337036,
+        "b_prob": 5.09520286868792e-05,
+        "top_token": " Toronto"
+      },
+      "delta_restore": -0.09262275695800781,
+      "delta_disrupt": 0.12975120544433594,
+      "recovery": -0.004240890362534951,
+      "disruption": 0.0059408794854340944
+    },
+    {
+      "group": "control_2",
+      "scope": "final",
+      "restored": {
+        "ld": -13.574808120727539,
+        "a_rank": 2306,
+        "b_rank": 1,
+        "a_prob": 1.1671862694129231e-06,
+        "b_prob": 0.9174965023994446,
+        "top_token": " Athens"
+      },
+      "disrupted": {
+        "ld": 8.25921630859375,
+        "a_rank": 2,
+        "b_rank": 245,
+        "a_prob": 0.18427594006061554,
+        "b_prob": 4.7701996663818136e-05,
+        "top_token": " Toronto"
+      },
+      "delta_restore": -0.04965972900390625,
+      "delta_disrupt": 0.056038856506347656,
+      "recovery": -0.002273755101397417,
+      "disruption": 0.002565834296996728
+    }
+  ],
+  "attention": {
+    "L8H11": {
+      "country_a": 0.9194229245185852,
+      "country_b": 0.8975806832313538,
+      "pattern_l1": 0.044417113065719604
+    },
+    "L9H8": {
+      "country_a": 0.9444829821586609,
+      "country_b": 0.942093014717102,
+      "pattern_l1": 0.03575431555509567
+    },
+    "L10H0": {
+      "country_a": 0.5461789965629578,
+      "country_b": 0.805243194103241,
+      "pattern_l1": 0.5181283354759216
+    }
+  },
+  "control_errors": {
+    "self_a": 0.0,
+    "self_b": 0.0,
+    "full_a": 0.0,
+    "full_b": 0.0
+  },
+  "status": "complete",
+  "elapsed_seconds": 123.01714966702275,
+  "peak_rss_mib": 2342.015625
+}

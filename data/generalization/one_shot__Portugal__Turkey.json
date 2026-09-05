@@ -1,0 +1,575 @@
+{
+  "id": "one_shot__Portugal__Turkey",
+  "template": "one_shot",
+  "pair": [
+    "Portugal",
+    "Turkey"
+  ],
+  "capitals": [
+    "Lisbon",
+    "Ankara"
+  ],
+  "calibration": false,
+  "prompts": [
+    "The capital of Germany is Berlin. The capital of Portugal is",
+    "The capital of Germany is Berlin. The capital of Turkey is"
+  ],
+  "baseline_a": {
+    "ld": 9.123617172241211,
+    "a_rank": 1,
+    "b_rank": 307,
+    "a_prob": 0.7486871480941772,
+    "b_prob": 8.165142935467884e-05,
+    "top_token": " Lisbon"
+  },
+  "baseline_b": {
+    "ld": -9.591940879821777,
+    "a_rank": 283,
+    "b_rank": 1,
+    "a_prob": 3.4330954804318026e-05,
+    "b_prob": 0.5028203725814819,
+    "top_token": " Ankara"
+  },
+  "gap": 18.71555805206299,
+  "competent": true,
+  "normalizable": true,
+  "country_pos": 11,
+  "tokens_a": [
+    "<|endoftext|>",
+    "The",
+    " capital",
+    " of",
+    " Germany",
+    " is",
+    " Berlin",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Portugal",
+    " is"
+  ],
+  "tokens_b": [
+    "<|endoftext|>",
+    "The",
+    " capital",
+    " of",
+    " Germany",
+    " is",
+    " Berlin",
+    ".",
+    " The",
+    " capital",
+    " of",
+    " Turkey",
+    " is"
+  ],
+  "effects": [
+    {
+      "group": "L8H11",
+      "scope": "all",
+      "restored": {
+        "ld": -6.036008834838867,
+        "a_rank": 22,
+        "b_rank": 1,
+        "a_prob": 0.001247956301085651,
+        "b_prob": 0.521920919418335,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 5.480854034423828,
+        "a_rank": 1,
+        "b_rank": 26,
+        "a_prob": 0.5937274694442749,
+        "b_prob": 0.002473332453519106,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 3.55593204498291,
+      "delta_disrupt": 3.642763137817383,
+      "recovery": 0.1899987184507675,
+      "disruption": 0.19463823240984504
+    },
+    {
+      "group": "L8H11",
+      "scope": "final",
+      "restored": {
+        "ld": -6.372289657592773,
+        "a_rank": 28,
+        "b_rank": 1,
+        "a_prob": 0.0009121299954131246,
+        "b_prob": 0.533957839012146,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 5.597440719604492,
+        "a_rank": 1,
+        "b_rank": 29,
+        "a_prob": 0.5935209393501282,
+        "b_prob": 0.0022003836929798126,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 3.219651222229004,
+      "delta_disrupt": 3.5261764526367188,
+      "recovery": 0.17203073577996283,
+      "disruption": 0.1884088330589765
+    },
+    {
+      "group": "L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": -3.2858495712280273,
+        "a_rank": 7,
+        "b_rank": 2,
+        "a_prob": 0.009343328885734081,
+        "b_prob": 0.24976292252540588,
+        "top_token": " Istanbul"
+      },
+      "disrupted": {
+        "ld": 3.2041940689086914,
+        "a_rank": 1,
+        "b_rank": 6,
+        "a_prob": 0.5837639570236206,
+        "b_prob": 0.023695915937423706,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 6.30609130859375,
+      "delta_disrupt": 5.9194231033325195,
+      "recovery": 0.33694380317442035,
+      "disruption": 0.3162835479907066
+    },
+    {
+      "group": "L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": -3.446722984313965,
+        "a_rank": 7,
+        "b_rank": 2,
+        "a_prob": 0.008178604766726494,
+        "b_prob": 0.2567863464355469,
+        "top_token": " Istanbul"
+      },
+      "disrupted": {
+        "ld": 3.3380184173583984,
+        "a_rank": 1,
+        "b_rank": 6,
+        "a_prob": 0.5948857069015503,
+        "b_prob": 0.021122753620147705,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 6.1452178955078125,
+      "delta_disrupt": 5.7855987548828125,
+      "recovery": 0.32834809832616424,
+      "disruption": 0.30913311474808386
+    },
+    {
+      "group": "L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": -2.890047073364258,
+        "a_rank": 7,
+        "b_rank": 2,
+        "a_prob": 0.012599248439073563,
+        "b_prob": 0.22671283781528473,
+        "top_token": " Istanbul"
+      },
+      "disrupted": {
+        "ld": 2.3524694442749023,
+        "a_rank": 1,
+        "b_rank": 6,
+        "a_prob": 0.3124488890171051,
+        "b_prob": 0.029724495485424995,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 6.7018938064575195,
+      "delta_disrupt": 6.771147727966309,
+      "recovery": 0.35809211714735806,
+      "disruption": 0.3617924567961218
+    },
+    {
+      "group": "L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": -2.939629554748535,
+        "a_rank": 7,
+        "b_rank": 2,
+        "a_prob": 0.01213452685624361,
+        "b_prob": 0.22944983839988708,
+        "top_token": " Istanbul"
+      },
+      "disrupted": {
+        "ld": 2.417093276977539,
+        "a_rank": 1,
+        "b_rank": 7,
+        "a_prob": 0.32035958766937256,
+        "b_prob": 0.028569817543029785,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 6.652311325073242,
+      "delta_disrupt": 6.706523895263672,
+      "recovery": 0.35544285169418005,
+      "disruption": 0.358339509653276
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "all",
+      "restored": {
+        "ld": 0.7353839874267578,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.21957577764987946,
+        "b_prob": 0.105247363448143,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -0.5898456573486328,
+        "a_rank": 3,
+        "b_rank": 2,
+        "a_prob": 0.11525670439004898,
+        "b_prob": 0.20788967609405518,
+        "top_token": " Istanbul"
+      },
+      "delta_restore": 10.327324867248535,
+      "delta_disrupt": 9.713462829589844,
+      "recovery": 0.5518042709984899,
+      "disruption": 0.5190047126871081
+    },
+    {
+      "group": "L8H11+L9H8",
+      "scope": "final",
+      "restored": {
+        "ld": 0.41619873046875,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.18684282898902893,
+        "b_prob": 0.12323203682899475,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -0.4615936279296875,
+        "a_rank": 3,
+        "b_rank": 2,
+        "a_prob": 0.12427281588315964,
+        "b_prob": 0.19717130064964294,
+        "top_token": " Istanbul"
+      },
+      "delta_restore": 10.008139610290527,
+      "delta_disrupt": 9.585210800170898,
+      "recovery": 0.534749729740885,
+      "disruption": 0.5121520167075293
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 0.7095890045166016,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.20916405320167542,
+        "b_prob": 0.10287656635046005,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -1.4755744934082031,
+        "a_rank": 3,
+        "b_rank": 2,
+        "a_prob": 0.043593138456344604,
+        "b_prob": 0.19065667688846588,
+        "top_token": " Istanbul"
+      },
+      "delta_restore": 10.301529884338379,
+      "delta_disrupt": 10.599191665649414,
+      "recovery": 0.5504260068378167,
+      "disruption": 0.5663305168974687
+    },
+    {
+      "group": "L8H11+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 0.41621971130371094,
+        "a_rank": 1,
+        "b_rank": 3,
+        "a_prob": 0.1808309704065323,
+        "b_prob": 0.11926441639661789,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -1.2653303146362305,
+        "a_rank": 3,
+        "b_rank": 2,
+        "a_prob": 0.0510915145277977,
+        "b_prob": 0.18108177185058594,
+        "top_token": " Istanbul"
+      },
+      "delta_restore": 10.008160591125488,
+      "delta_disrupt": 10.388947486877441,
+      "recovery": 0.534750850777987,
+      "disruption": 0.5550968588795183
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 3.3582849502563477,
+        "a_rank": 1,
+        "b_rank": 9,
+        "a_prob": 0.400523841381073,
+        "b_prob": 0.013936179690063,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -4.279340744018555,
+        "a_rank": 6,
+        "b_rank": 1,
+        "a_prob": 0.006457185372710228,
+        "b_prob": 0.4661625027656555,
+        "top_token": " Ankara"
+      },
+      "delta_restore": 12.950225830078125,
+      "delta_disrupt": 13.402957916259766,
+      "recovery": 0.6919497561362131,
+      "disruption": 0.7161399023729553
+    },
+    {
+      "group": "L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 3.172684669494629,
+        "a_rank": 1,
+        "b_rank": 9,
+        "a_prob": 0.3834168314933777,
+        "b_prob": 0.016061708331108093,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -4.115438461303711,
+        "a_rank": 6,
+        "b_rank": 1,
+        "a_prob": 0.007516299840062857,
+        "b_prob": 0.4605919420719147,
+        "top_token": " Ankara"
+      },
+      "delta_restore": 12.764625549316406,
+      "delta_disrupt": 13.239055633544922,
+      "recovery": 0.6820328581070219,
+      "disruption": 0.7073823605321563
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "all",
+      "restored": {
+        "ld": 6.880687713623047,
+        "a_rank": 1,
+        "b_rank": 30,
+        "a_prob": 0.8249284029006958,
+        "b_prob": 0.0008475622162222862,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -7.78125,
+        "a_rank": 52,
+        "b_rank": 1,
+        "a_prob": 0.00019956420874223113,
+        "b_prob": 0.47800955176353455,
+        "top_token": " Ankara"
+      },
+      "delta_restore": 16.472628593444824,
+      "delta_disrupt": 16.90486717224121,
+      "recovery": 0.880156955385526,
+      "disruption": 0.9032521031547768
+    },
+    {
+      "group": "L8H11+L9H8+L10H0",
+      "scope": "final",
+      "restored": {
+        "ld": 6.663776397705078,
+        "a_rank": 1,
+        "b_rank": 25,
+        "a_prob": 0.8132964372634888,
+        "b_prob": 0.0010380244348198175,
+        "top_token": " Lisbon"
+      },
+      "disrupted": {
+        "ld": -7.604735374450684,
+        "a_rank": 44,
+        "b_rank": 1,
+        "a_prob": 0.00023638027778360993,
+        "b_prob": 0.47457608580589294,
+        "top_token": " Ankara"
+      },
+      "delta_restore": 16.255717277526855,
+      "delta_disrupt": 16.728352546691895,
+      "recovery": 0.8685670623503001,
+      "disruption": 0.893820665146982
+    },
+    {
+      "group": "control_0",
+      "scope": "all",
+      "restored": {
+        "ld": -9.631793022155762,
+        "a_rank": 288,
+        "b_rank": 1,
+        "a_prob": 3.331683183205314e-05,
+        "b_prob": 0.5078065395355225,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 9.206103324890137,
+        "a_rank": 1,
+        "b_rank": 315,
+        "a_prob": 0.7513466477394104,
+        "b_prob": 7.545368862338364e-05,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": -0.039852142333984375,
+      "delta_disrupt": -0.08248615264892578,
+      "recovery": -0.002129359019011006,
+      "disruption": -0.004407357366500405
+    },
+    {
+      "group": "control_0",
+      "scope": "final",
+      "restored": {
+        "ld": -9.621843338012695,
+        "a_rank": 287,
+        "b_rank": 1,
+        "a_prob": 3.376305176061578e-05,
+        "b_prob": 0.5095129013061523,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 9.20531940460205,
+        "a_rank": 1,
+        "b_rank": 315,
+        "a_prob": 0.7508605718612671,
+        "b_prob": 7.546400593128055e-05,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": -0.02990245819091797,
+      "delta_disrupt": -0.08170223236083984,
+      "recovery": -0.0015977326515049797,
+      "disruption": -0.004365471343871252
+    },
+    {
+      "group": "control_1",
+      "scope": "all",
+      "restored": {
+        "ld": -9.084999084472656,
+        "a_rank": 214,
+        "b_rank": 1,
+        "a_prob": 5.5991291446844116e-05,
+        "b_prob": 0.49395281076431274,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 9.032183647155762,
+        "a_rank": 1,
+        "b_rank": 312,
+        "a_prob": 0.7287697792053223,
+        "b_prob": 8.708890527486801e-05,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 0.5069417953491211,
+      "delta_disrupt": 0.09143352508544922,
+      "recovery": 0.02708665132714232,
+      "disruption": 0.00488542873427013
+    },
+    {
+      "group": "control_1",
+      "scope": "final",
+      "restored": {
+        "ld": -9.075689315795898,
+        "a_rank": 212,
+        "b_rank": 1,
+        "a_prob": 5.6469500123057514e-05,
+        "b_prob": 0.4935551881790161,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 9.036941528320312,
+        "a_rank": 1,
+        "b_rank": 312,
+        "a_prob": 0.7297205924987793,
+        "b_prob": 8.678861922817305e-05,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 0.5162515640258789,
+      "delta_disrupt": 0.08667564392089844,
+      "recovery": 0.027584086063037444,
+      "disruption": 0.004631208093276402
+    },
+    {
+      "group": "control_2",
+      "scope": "all",
+      "restored": {
+        "ld": -9.431892395019531,
+        "a_rank": 249,
+        "b_rank": 1,
+        "a_prob": 4.003244612249546e-05,
+        "b_prob": 0.4996098279953003,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 9.20718765258789,
+        "a_rank": 1,
+        "b_rank": 324,
+        "a_prob": 0.7503651976585388,
+        "b_prob": 7.527346315328032e-05,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 0.1600484848022461,
+      "delta_disrupt": -0.08357048034667969,
+      "recovery": 0.008551627707654925,
+      "disruption": -0.004465294602180875
+    },
+    {
+      "group": "control_2",
+      "scope": "final",
+      "restored": {
+        "ld": -9.435318946838379,
+        "a_rank": 250,
+        "b_rank": 1,
+        "a_prob": 3.978961467510089e-05,
+        "b_prob": 0.4982837438583374,
+        "top_token": " Ankara"
+      },
+      "disrupted": {
+        "ld": 9.208374977111816,
+        "a_rank": 1,
+        "b_rank": 324,
+        "a_prob": 0.7527627348899841,
+        "b_prob": 7.542436651419848e-05,
+        "top_token": " Lisbon"
+      },
+      "delta_restore": 0.15662193298339844,
+      "delta_disrupt": -0.08475780487060547,
+      "recovery": 0.008368541966406086,
+      "disruption": -0.004528735110907513
+    }
+  ],
+  "attention": {
+    "L8H11": {
+      "country_a": 0.8636142015457153,
+      "country_b": 0.7968764305114746,
+      "pattern_l1": 0.13347573578357697
+    },
+    "L9H8": {
+      "country_a": 0.9283652305603027,
+      "country_b": 0.9420499205589294,
+      "pattern_l1": 0.028781529515981674
+    },
+    "L10H0": {
+      "country_a": 0.5514969229698181,
+      "country_b": 0.7768464088439941,
+      "pattern_l1": 0.45863598585128784
+    }
+  },
+  "control_errors": {
+    "self_a": 0.0,
+    "self_b": 0.0,
+    "full_a": 0.0,
+    "full_b": 0.0
+  },
+  "status": "complete",
+  "elapsed_seconds": 26.17804487491958,
+  "peak_rss_mib": 2342.015625
+}
