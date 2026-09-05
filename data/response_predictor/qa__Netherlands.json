@@ -1,0 +1,323 @@
+{
+  "prompt": "Question: What is the capital of Netherlands? Answer:",
+  "answer": "Amsterdam",
+  "baseline": {
+    "rank": 9,
+    "p": 0.014724847860634327,
+    "margin": -2.532313346862793,
+    "top_id": 383,
+    "top": " The"
+  },
+  "full": {
+    "rank": 2,
+    "p": 0.08144386112689972,
+    "margin": -0.42394351959228516,
+    "top_id": 383,
+    "top": " The"
+  },
+  "controls": {
+    "endpoint_0": 1.811981201171875e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 4,
+        "p": 0.026598982512950897,
+        "margin": -2.053704261779785,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 4,
+          "p": 0.026598982512950897,
+          "margin": -2.053704261779785,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 4,
+          "p": 0.026598982512950897,
+          "margin": -2.053704261779785,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 4,
+          "p": 0.026598982512950897,
+          "margin": -2.053704261779785,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 2,
+        "p": 0.08144386112689972,
+        "margin": -0.42394351959228516,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.08144386112689972,
+          "margin": -0.42394351959228516,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.08144386112689972,
+          "margin": -0.42394351959228516,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.08144386112689972,
+          "margin": -0.42394351959228516,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 3,
+        "p": 0.1143084391951561,
+        "margin": 0.0027647018432617188,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.08412215858697891,
+          "margin": -0.7500076293945312,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.08412215858697891,
+          "margin": -0.7500076293945312,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.08412215858697891,
+          "margin": -0.7500076293945312,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 2,
+        "p": 0.05755969509482384,
+        "margin": -0.5831003189086914,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.02601427584886551,
+          "margin": -1.6119813919067383,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.04615198075771332,
+          "margin": -0.8722972869873047,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.05755969509482384,
+          "margin": -0.5831003189086914,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.21987320482730865,
+        "margin": 1.5777301788330078,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.13812346756458282,
+          "margin": 0.5257892608642578,
+          "top_id": 24377,
+          "top": " Amsterdam"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.13812346756458282,
+          "margin": 0.5257892608642578,
+          "top_id": 24377,
+          "top": " Amsterdam"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.16883425414562225,
+          "margin": 1.0337486267089844,
+          "top_id": 24377,
+          "top": " Amsterdam"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 3,
+        "p": 0.04817342758178711,
+        "margin": -1.1628589630126953,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.06116922199726105,
+          "margin": -0.9490833282470703,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.06031334027647972,
+          "margin": -0.9487676620483398,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.0440961979329586,
+          "margin": -1.107752799987793,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 3,
+        "p": 0.07406610250473022,
+        "margin": -0.6168622970581055,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.04046906903386116,
+          "margin": -1.4351682662963867,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.05208790674805641,
+          "margin": -0.9736614227294922,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.0599469430744648,
+          "margin": -0.8059654235839844,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.07760050147771835,
+        "margin": -0.5908975601196289,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.08954661339521408,
+          "margin": -0.4916858673095703,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.07675047218799591,
+          "margin": -0.5702533721923828,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.07675047218799591,
+          "margin": -0.5702533721923828,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.212637260556221,
+        "margin": 1.028940200805664,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.212637260556221,
+          "margin": 1.028940200805664,
+          "top_id": 24377,
+          "top": " Amsterdam"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.212637260556221,
+          "margin": 1.028940200805664,
+          "top_id": 24377,
+          "top": " Amsterdam"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.212637260556221,
+          "margin": 1.028940200805664,
+          "top_id": 24377,
+          "top": " Amsterdam"
+        }
+      }
+    }
+  ],
+  "country": "Netherlands",
+  "form": "qa"
+}

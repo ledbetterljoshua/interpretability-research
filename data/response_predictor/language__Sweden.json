@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Sweden is",
+  "answer": "Swedish",
+  "baseline": {
+    "rank": 1,
+    "p": 0.16150693595409393,
+    "margin": 0.9927291870117188,
+    "top_id": 14023,
+    "top": " Swedish"
+  },
+  "full": {
+    "rank": 2,
+    "p": 0.11933629959821701,
+    "margin": 3.8571739196777344,
+    "top_id": 3594,
+    "top": " English"
+  },
+  "controls": {
+    "endpoint_0": 2.002716064453125e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 1,
+        "p": 0.15798313915729523,
+        "margin": 1.2073936462402344,
+        "top_id": 14023,
+        "top": " Swedish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.15798313915729523,
+          "margin": 1.2073936462402344,
+          "top_id": 14023,
+          "top": " Swedish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.15798313915729523,
+          "margin": 1.2073936462402344,
+          "top_id": 14023,
+          "top": " Swedish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.15798313915729523,
+          "margin": 1.2073936462402344,
+          "top_id": 14023,
+          "top": " Swedish"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 2,
+        "p": 0.11933629959821701,
+        "margin": 3.8571739196777344,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.11933629959821701,
+          "margin": 3.8571739196777344,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.11933629959821701,
+          "margin": 3.8571739196777344,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.11933629959821701,
+          "margin": 3.8571739196777344,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.5226244926452637,
+        "margin": 4.029294013977051,
+        "top_id": 14023,
+        "top": " Swedish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.136213481426239,
+          "margin": 2.1575546264648438,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.136213481426239,
+          "margin": 2.1575546264648438,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.136213481426239,
+          "margin": 2.1575546264648438,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.16258814930915833,
+        "margin": 3.0631418228149414,
+        "top_id": 14023,
+        "top": " Swedish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.13538697361946106,
+          "margin": 2.977863311767578,
+          "top_id": 14023,
+          "top": " Swedish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.24422414600849152,
+          "margin": 3.821986198425293,
+          "top_id": 14023,
+          "top": " Swedish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.16258814930915833,
+          "margin": 3.0631418228149414,
+          "top_id": 14023,
+          "top": " Swedish"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.5038089752197266,
+        "margin": 4.96942138671875,
+        "top_id": 14023,
+        "top": " Swedish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.1354656219482422,
+          "margin": 2.8326148986816406,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.1354656219482422,
+          "margin": 2.8326148986816406,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.11738032847642899,
+          "margin": 2.592198371887207,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.09096550196409225,
+        "margin": 2.769777297973633,
+        "top_id": 14023,
+        "top": " Swedish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.11670351773500443,
+          "margin": 3.751880645751953,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.06338963657617569,
+          "margin": 2.4898386001586914,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.06281379610300064,
+          "margin": 2.4558792114257812,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.19033193588256836,
+        "margin": 2.9054527282714844,
+        "top_id": 14023,
+        "top": " Swedish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.06449530273675919,
+          "margin": 2.199917793273926,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.06059274077415466,
+          "margin": 2.0735902786254883,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.06538732349872589,
+          "margin": 2.0117225646972656,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.13688451051712036,
+        "margin": 3.4767961502075195,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1620207279920578,
+          "margin": 3.9198684692382812,
+          "top_id": 14023,
+          "top": " Swedish"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.11367346346378326,
+          "margin": 3.2718915939331055,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.11367346346378326,
+          "margin": 3.2718915939331055,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 2,
+        "p": 0.1798585057258606,
+        "margin": 4.169114112854004,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.1798585057258606,
+          "margin": 4.169114112854004,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.1798585057258606,
+          "margin": 4.169114112854004,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.1798585057258606,
+          "margin": 4.169114112854004,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    }
+  ],
+  "country": "Sweden",
+  "form": "language"
+}

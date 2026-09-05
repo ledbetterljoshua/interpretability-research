@@ -1,0 +1,323 @@
+{
+  "prompt": "Hungary's capital is",
+  "answer": "Budapest",
+  "baseline": {
+    "rank": 123,
+    "p": 0.0010628661839291453,
+    "margin": -3.950967788696289,
+    "top_id": 783,
+    "top": " now"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.6537283062934875,
+    "margin": 5.577425956726074,
+    "top_id": 40959,
+    "top": " Budapest"
+  },
+  "controls": {
+    "endpoint_0": 2.47955322265625e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 21,
+        "p": 0.006166947074234486,
+        "margin": -1.7418365478515625,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 21,
+          "p": 0.006166947074234486,
+          "margin": -1.7418365478515625,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 21,
+          "p": 0.006166947074234486,
+          "margin": -1.7418365478515625,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 21,
+          "p": 0.006166947074234486,
+          "margin": -1.7418365478515625,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.6537283062934875,
+        "margin": 5.577425956726074,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.6537283062934875,
+          "margin": 5.577425956726074,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.6537283062934875,
+          "margin": 5.577425956726074,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.6537283062934875,
+          "margin": 5.577425956726074,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.1684047430753708,
+        "margin": 2.0675344467163086,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.18168529868125916,
+          "margin": 2.148177146911621,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.18168529868125916,
+          "margin": 2.148177146911621,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.18168529868125916,
+          "margin": 2.148177146911621,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.47268402576446533,
+        "margin": 4.563403129577637,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.04616561904549599,
+          "margin": 1.289433479309082,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.4637743830680847,
+          "margin": 4.632871627807617,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.47268402576446533,
+          "margin": 4.563403129577637,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.8908715844154358,
+        "margin": 7.955293655395508,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.8407820463180542,
+          "margin": 7.329895973205566,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.8407820463180542,
+          "margin": 7.329895973205566,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.8178766965866089,
+          "margin": 6.82159423828125,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.5824876427650452,
+        "margin": 3.8013830184936523,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.4452396035194397,
+          "margin": 3.982062339782715,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.45159703493118286,
+          "margin": 4.023431777954102,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.4137532114982605,
+          "margin": 3.176992416381836,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.4891600012779236,
+        "margin": 4.186013221740723,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.30483052134513855,
+          "margin": 3.5762939453125,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.41339433193206787,
+          "margin": 3.9304609298706055,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.37451958656311035,
+          "margin": 3.600245475769043,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 1,
+        "p": 0.5635635256767273,
+        "margin": 4.27097225189209,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.34803614020347595,
+          "margin": 3.194643020629883,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.5587021112442017,
+          "margin": 4.3185882568359375,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.5587021112442017,
+          "margin": 4.3185882568359375,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.8481317162513733,
+        "margin": 8.075016021728516,
+        "top_id": 40959,
+        "top": " Budapest"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.8481317162513733,
+          "margin": 8.075016021728516,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.8481317162513733,
+          "margin": 8.075016021728516,
+          "top_id": 40959,
+          "top": " Budapest"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.8481317162513733,
+          "margin": 8.075016021728516,
+          "top_id": 40959,
+          "top": " Budapest"
+        }
+      }
+    }
+  ],
+  "country": "Hungary",
+  "form": "possessive"
+}

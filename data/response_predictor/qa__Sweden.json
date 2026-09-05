@@ -1,0 +1,323 @@
+{
+  "prompt": "Question: What is the capital of Sweden? Answer:",
+  "answer": "Stockholm",
+  "baseline": {
+    "rank": 5,
+    "p": 0.02052501030266285,
+    "margin": -1.9058609008789062,
+    "top_id": 383,
+    "top": " The"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.14689584076404572,
+    "margin": 0.7115926742553711,
+    "top_id": 29679,
+    "top": " Stockholm"
+  },
+  "controls": {
+    "endpoint_0": 1.811981201171875e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 3,
+        "p": 0.03858666867017746,
+        "margin": -1.4582901000976562,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.03858666867017746,
+          "margin": -1.4582901000976562,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.03858666867017746,
+          "margin": -1.4582901000976562,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.03858666867017746,
+          "margin": -1.4582901000976562,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.14689584076404572,
+        "margin": 0.7115926742553711,
+        "top_id": 29679,
+        "top": " Stockholm"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.14689584076404572,
+          "margin": 0.7115926742553711,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.14689584076404572,
+          "margin": 0.7115926742553711,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.14689584076404572,
+          "margin": 0.7115926742553711,
+          "top_id": 29679,
+          "top": " Stockholm"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 2,
+        "p": 0.17545737326145172,
+        "margin": 0.7696981430053711,
+        "top_id": 10710,
+        "top": " Sweden"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.11429610103368759,
+          "margin": -0.13178539276123047,
+          "top_id": 10710,
+          "top": " Sweden"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.11429610103368759,
+          "margin": -0.13178539276123047,
+          "top_id": 10710,
+          "top": " Sweden"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.11429610103368759,
+          "margin": -0.13178539276123047,
+          "top_id": 10710,
+          "top": " Sweden"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.11585013568401337,
+        "margin": 0.45010948181152344,
+        "top_id": 29679,
+        "top": " Stockholm"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.05131392925977707,
+          "margin": -0.5151510238647461,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.09093412756919861,
+          "margin": 0.19684791564941406,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.11585013568401337,
+          "margin": 0.45010948181152344,
+          "top_id": 29679,
+          "top": " Stockholm"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.3266338109970093,
+        "margin": 2.480752944946289,
+        "top_id": 29679,
+        "top": " Stockholm"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2221488654613495,
+          "margin": 1.4965896606445312,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.2221488654613495,
+          "margin": 1.4965896606445312,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2490212619304657,
+          "margin": 1.8154382705688477,
+          "top_id": 29679,
+          "top": " Stockholm"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 2,
+        "p": 0.0976606085896492,
+        "margin": -0.0025224685668945312,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1267613172531128,
+          "margin": 0.27934932708740234,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.10040812939405441,
+          "margin": -0.0033092498779296875,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.06732697784900665,
+          "margin": -0.27873992919921875,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.12651680409908295,
+        "margin": 0.5463685989379883,
+        "top_id": 29679,
+        "top": " Stockholm"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.07809124141931534,
+          "margin": -0.3061485290527344,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.08645126223564148,
+          "margin": 0.047301292419433594,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.0903889611363411,
+          "margin": 0.11061954498291016,
+          "top_id": 29679,
+          "top": " Stockholm"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 1,
+        "p": 0.11209981143474579,
+        "margin": 0.1905202865600586,
+        "top_id": 29679,
+        "top": " Stockholm"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.14114615321159363,
+          "margin": 0.4937429428100586,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.10980327427387238,
+          "margin": 0.22563743591308594,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.10980327427387238,
+          "margin": 0.22563743591308594,
+          "top_id": 29679,
+          "top": " Stockholm"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.25366485118865967,
+        "margin": 1.7189321517944336,
+        "top_id": 29679,
+        "top": " Stockholm"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.25366485118865967,
+          "margin": 1.7189321517944336,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.25366485118865967,
+          "margin": 1.7189321517944336,
+          "top_id": 29679,
+          "top": " Stockholm"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.25366485118865967,
+          "margin": 1.7189321517944336,
+          "top_id": 29679,
+          "top": " Stockholm"
+        }
+      }
+    }
+  ],
+  "country": "Sweden",
+  "form": "qa"
+}

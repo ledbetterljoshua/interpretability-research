@@ -1,0 +1,51 @@
+{
+  "status": "complete",
+  "model": "gpt2-small",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "device": "cpu",
+  "dtype": "float32",
+  "source_sha256": "6f943804b39f9bd23b6c72f685e3d3d2d6ca4c1d4cda5bf918abfe3fa53577a4",
+  "helper_sha256": "aff975e5f50df66fe7148fc10cabb8479bdaefa04eea451abe7fc07ff9105e6f",
+  "plan_sha256": "6b91a073c3bee1a2eb25c81cb6c318cdd1aef1d8b9b8e9357440118aa3c682e5",
+  "preflight_sha256": "90d7a2b560b60a064786c92f6b0d5acd46c41fb5f23d6de99245715ac191bd91",
+  "versions": {
+    "torch": "2.10.0",
+    "transformer-lens": "3.8.1",
+    "transformers": "5.16.1",
+    "numpy": "2.5.2"
+  },
+  "cases": [
+    "replication__Denmark",
+    "replication__Norway",
+    "replication__Sweden",
+    "replication__Finland",
+    "replication__Poland",
+    "replication__Austria",
+    "replication__Hungary",
+    "replication__Netherlands",
+    "replication__Thailand",
+    "replication__Peru",
+    "fresh__Belgium",
+    "fresh__Ireland",
+    "fresh__Chile",
+    "fresh__Cuba",
+    "fresh__Tunisia",
+    "fresh__Lebanon",
+    "fresh__Iran",
+    "fresh__Iraq",
+    "fresh__Syria",
+    "fresh__Pakistan"
+  ],
+  "historical_vector_error": 0.0,
+  "offsets_sha256": "5de72e2bc3444f87a9223a9b2fcf3d266796191ff1fa8ddf35611e6a05ee3bf8",
+  "vector_norms": {
+    "capital": 56.83268356323242,
+    "wrong_answer": 60.85882568359375,
+    "other_attribute": 42.60042953491211,
+    "neutral": 47.5497932434082,
+    "shuffled": 53.94694900512695,
+    "position_only": 9.916877746582031
+  },
+  "elapsed_seconds": 58.11971820797771,
+  "peak_rss_mib": 2342.6875
+}

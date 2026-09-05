@@ -1,0 +1,323 @@
+{
+  "prompt": "Question: What is the capital of Austria? Answer:",
+  "answer": "Vienna",
+  "baseline": {
+    "rank": 5,
+    "p": 0.021526478230953217,
+    "margin": -1.976109504699707,
+    "top_id": 383,
+    "top": " The"
+  },
+  "full": {
+    "rank": 3,
+    "p": 0.08255644142627716,
+    "margin": -0.02383708953857422,
+    "top_id": 17322,
+    "top": " Austria"
+  },
+  "controls": {
+    "endpoint_0": 1.9073486328125e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 5,
+        "p": 0.035762954503297806,
+        "margin": -1.6022768020629883,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 5,
+          "p": 0.035762954503297806,
+          "margin": -1.6022768020629883,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 5,
+          "p": 0.035762954503297806,
+          "margin": -1.6022768020629883,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 5,
+          "p": 0.035762954503297806,
+          "margin": -1.6022768020629883,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 3,
+        "p": 0.08255644142627716,
+        "margin": -0.02383708953857422,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.08255644142627716,
+          "margin": -0.02383708953857422,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.08255644142627716,
+          "margin": -0.02383708953857422,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.08255644142627716,
+          "margin": -0.02383708953857422,
+          "top_id": 17322,
+          "top": " Austria"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 2,
+        "p": 0.10042670369148254,
+        "margin": 0.25864601135253906,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.06165820360183716,
+          "margin": -0.9230642318725586,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.06165820360183716,
+          "margin": -0.9230642318725586,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.06165820360183716,
+          "margin": -0.9230642318725586,
+          "top_id": 17322,
+          "top": " Austria"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 2,
+        "p": 0.0843789353966713,
+        "margin": 0.062343597412109375,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.04799220710992813,
+          "margin": -0.6752433776855469,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.07172655314207077,
+          "margin": -0.1523904800415039,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.0843789353966713,
+          "margin": 0.062343597412109375,
+          "top_id": 17322,
+          "top": " Austria"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 2,
+        "p": 0.18914709985256195,
+        "margin": 2.286684989929199,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.139693483710289,
+          "margin": 1.0807771682739258,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.139693483710289,
+          "margin": 1.0807771682739258,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.16830921173095703,
+          "margin": 1.4824247360229492,
+          "top_id": 17322,
+          "top": " Austria"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 3,
+        "p": 0.05205456167459488,
+        "margin": -0.751347541809082,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.06492593884468079,
+          "margin": -0.5547828674316406,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.0653611421585083,
+          "margin": -0.5501174926757812,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.04011877253651619,
+          "margin": -0.9746303558349609,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 3,
+        "p": 0.07506557554006577,
+        "margin": -0.22882366180419922,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 4,
+          "p": 0.03859341889619827,
+          "margin": -1.2782230377197266,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.046569764614105225,
+          "margin": -0.8437728881835938,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.05321134999394417,
+          "margin": -0.6470308303833008,
+          "top_id": 17322,
+          "top": " Austria"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 3,
+        "p": 0.06414347887039185,
+        "margin": -0.42021751403808594,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.08021584153175354,
+          "margin": -0.2636899948120117,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.06224474683403969,
+          "margin": -0.411346435546875,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.06224474683403969,
+          "margin": -0.411346435546875,
+          "top_id": 17322,
+          "top": " Austria"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 2,
+        "p": 0.15076136589050293,
+        "margin": 1.3457956314086914,
+        "top_id": 17322,
+        "top": " Austria"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.15076136589050293,
+          "margin": 1.3457956314086914,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.15076136589050293,
+          "margin": 1.3457956314086914,
+          "top_id": 17322,
+          "top": " Austria"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.15076136589050293,
+          "margin": 1.3457956314086914,
+          "top_id": 17322,
+          "top": " Austria"
+        }
+      }
+    }
+  ],
+  "country": "Austria",
+  "form": "qa"
+}

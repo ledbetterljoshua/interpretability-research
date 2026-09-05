@@ -1,5 +1,13 @@
 # Interpretability Research
 
+> **Latest executed milestone (September 5, 2026):**
+> [Testing and improving an intervention predictor](notes/2026-09-05-offset-route-results.md).
+> Includes 5,120 subset outcomes, matched-prefix controls, conditional MLP
+> response tests, and 210 new nontrivial scope interventions. Modelling MLP
+> responses improves pooled prediction while leaving a language-family failure.
+> [Explore saved results](research-offsets.html); no model runs in the browser.
+
+
 ## What This Is
 
 Joshua's journey into mechanistic interpretability research. Learning by building.

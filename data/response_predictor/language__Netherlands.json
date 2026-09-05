@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Netherlands is",
+  "answer": "Dutch",
+  "baseline": {
+    "rank": 1,
+    "p": 0.29931408166885376,
+    "margin": 1.6662588119506836,
+    "top_id": 10914,
+    "top": " Dutch"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.18201841413974762,
+    "margin": 0.2662849426269531,
+    "top_id": 10914,
+    "top": " Dutch"
+  },
+  "controls": {
+    "endpoint_0": 2.193450927734375e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 1,
+        "p": 0.3746442198753357,
+        "margin": 1.3963298797607422,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.3746442198753357,
+          "margin": 1.3963298797607422,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.3746442198753357,
+          "margin": 1.3963298797607422,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.3746442198753357,
+          "margin": 1.3963298797607422,
+          "top_id": 10914,
+          "top": " Dutch"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.18201841413974762,
+        "margin": 0.2662849426269531,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.18201841413974762,
+          "margin": 0.2662849426269531,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.18201841413974762,
+          "margin": 0.2662849426269531,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.18201841413974762,
+          "margin": 0.2662849426269531,
+          "top_id": 10914,
+          "top": " Dutch"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.6733821630477905,
+        "margin": 2.3705081939697266,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.30381128191947937,
+          "margin": -0.029428482055664062,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.30381128191947937,
+          "margin": -0.029428482055664062,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.30381128191947937,
+          "margin": -0.029428482055664062,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.2327255755662918,
+        "margin": 1.057450294494629,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.175785630941391,
+          "margin": 1.3711605072021484,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.3653421700000763,
+          "margin": 1.3844118118286133,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2327255755662918,
+          "margin": 1.057450294494629,
+          "top_id": 10914,
+          "top": " Dutch"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.652872622013092,
+        "margin": 1.9066171646118164,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2315487116575241,
+          "margin": 0.18211078643798828,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.2315487116575241,
+          "margin": 0.18211078643798828,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2377329021692276,
+          "margin": 0.1150054931640625,
+          "top_id": 10914,
+          "top": " Dutch"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.17112307250499725,
+        "margin": 0.8206043243408203,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.21162649989128113,
+          "margin": 0.5462627410888672,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.11922179907560349,
+          "margin": 0.21424293518066406,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.1251489669084549,
+          "margin": 0.2899036407470703,
+          "top_id": 10914,
+          "top": " Dutch"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.32917308807373047,
+        "margin": 1.0079193115234375,
+        "top_id": 10914,
+        "top": " Dutch"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.131135955452919,
+          "margin": -0.050917625427246094,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.12934643030166626,
+          "margin": -0.10770034790039062,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.16009142994880676,
+          "margin": 0.026404380798339844,
+          "top_id": 10914,
+          "top": " Dutch"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.14892566204071045,
+        "margin": -0.6457910537719727,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2299836128950119,
+          "margin": 0.31851863861083984,
+          "top_id": 10914,
+          "top": " Dutch"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.14997225999832153,
+          "margin": -0.17055130004882812,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.14997225999832153,
+          "margin": -0.17055130004882812,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 2,
+        "p": 0.2731406092643738,
+        "margin": -0.0270233154296875,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.2731406092643738,
+          "margin": -0.0270233154296875,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.2731406092643738,
+          "margin": -0.0270233154296875,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.2731406092643738,
+          "margin": -0.0270233154296875,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    }
+  ],
+  "country": "Netherlands",
+  "form": "language"
+}

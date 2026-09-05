@@ -232,3 +232,20 @@ small controlled models, and sequential targeted interventions. If a specific
 result then needs larger-model confirmation, prepare a bounded external-compute
 experiment or a collaboration. Access to more hardware should follow an
 evidential need rather than decide the scientific question.
+
+
+## Executed decision after the strategic review
+
+The [closest-method comparison](notes/2026-09-05-method-comparison.md) found
+substantial prior coverage of task vectors, gating, predictive explanations,
+conditional effects and action usefulness. We therefore narrowed the claim and
+ran a concrete falsification program. The [resulting report](notes/2026-09-05-offset-route-results.md)
+shows that a frozen-contribution explanation fails, identifies a causal MLP
+response, and improves prediction on new interventions by explicitly modelling
+that response. It also retains prefix confounds and a language-family failure.
+
+The positive contribution target is now an action-selection test with stronger
+comparable-access baselines, fresh relation/entity splits, and replication in a
+second model. These requirements are recorded in [RESEARCH_GOALS.md](RESEARCH_GOALS.md).
+The current result is a completed scientific milestone, not evidence that big
+labs should yet adopt a new method.

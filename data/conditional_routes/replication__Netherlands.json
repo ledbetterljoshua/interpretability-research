@@ -1,0 +1,6176 @@
+{
+  "country": "Netherlands",
+  "capital": "Amsterdam",
+  "split": "replication",
+  "baseline": {
+    "rank": 40,
+    "p": 0.003355516819283366,
+    "margin": -2.6777000427246094,
+    "top_id": 257,
+    "top": " a"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.25490713119506836,
+    "margin": 4.391264915466309,
+    "top_id": 24377,
+    "top": " Amsterdam"
+  },
+  "controls": {
+    "shadow_0": 1.9073486328125e-05,
+    "shadow_85": 3.62396240234375e-05,
+    "shadow_87": 2.288818359375e-05,
+    "shadow_170": 1.71661376953125e-05,
+    "shadow_171": 1.9073486328125e-05,
+    "shadow_255": 1.71661376953125e-05,
+    "full_repeat": 0.0,
+    "self_freeze": 0.0,
+    "previous_full": 0.0,
+    "previous_direct": 6.891787052154541e-08
+  },
+  "records": [
+    {
+      "mask": 0,
+      "active": [],
+      "actual": {
+        "rank": 6,
+        "p": 0.023835059255361557,
+        "margin": -0.8216028213500977,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 6,
+        "p": 0.023834990337491035,
+        "margin": -0.8216180801391602,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": -2.209342042647222e-08
+    },
+    {
+      "mask": 1,
+      "active": [
+        "attn8"
+      ],
+      "actual": {
+        "rank": 6,
+        "p": 0.024757374078035355,
+        "margin": -0.7429847717285156,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 6,
+        "p": 0.02475716732442379,
+        "margin": -0.7430000305175781,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": -2.323374133084144e-07
+    },
+    {
+      "mask": 2,
+      "active": [
+        "mlp8"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.06505291163921356,
+        "margin": 0.4860553741455078,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.06170232594013214,
+        "margin": 0.33333301544189453,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.003909415565431118
+    },
+    {
+      "mask": 3,
+      "active": [
+        "attn8",
+        "mlp8"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.06295465677976608,
+        "margin": 0.4044361114501953,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.06295433640480042,
+        "margin": 0.4044218063354492,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": -3.062858127123036e-07
+    },
+    {
+      "mask": 4,
+      "active": [
+        "attn9"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.09256383031606674,
+        "margin": 0.6861457824707031,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.10700967907905579,
+        "margin": 0.904170036315918,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.003529309993609786
+    },
+    {
+      "mask": 5,
+      "active": [
+        "attn8",
+        "attn9"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.08990876376628876,
+        "margin": 0.6866378784179688,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.10894011706113815,
+        "margin": 0.9679279327392578,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.0052562584169209
+    },
+    {
+      "mask": 6,
+      "active": [
+        "mlp8",
+        "attn9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.23907718062400818,
+        "margin": 2.1457881927490234,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.23252275586128235,
+        "margin": 2.0703773498535156,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.00221355352550745
+    },
+    {
+      "mask": 7,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.23303760588169098,
+        "margin": 2.1266136169433594,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.23303863406181335,
+        "margin": 2.1266183853149414,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 5.737395269989065e-08
+    },
+    {
+      "mask": 8,
+      "active": [
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.08102904260158539,
+        "margin": 0.8309812545776367,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.13275617361068726,
+        "margin": 1.6654167175292969,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.03916668891906738
+    },
+    {
+      "mask": 9,
+      "active": [
+        "attn8",
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.07835106551647186,
+        "margin": 0.7692174911499023,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.1342690885066986,
+        "margin": 1.7287273406982422,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.044525496661663055
+    },
+    {
+      "mask": 10,
+      "active": [
+        "mlp8",
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.22809617221355438,
+        "margin": 2.8632068634033203,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.25271281599998474,
+        "margin": 2.8725128173828125,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.01174700167030096
+    },
+    {
+      "mask": 11,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.22094769775867462,
+        "margin": 2.771134376525879,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.25236275792121887,
+        "margin": 2.928469657897949,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.007521421182900667
+    },
+    {
+      "mask": 12,
+      "active": [
+        "attn9",
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.28491848707199097,
+        "margin": 2.5078506469726562,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.4006892740726471,
+        "margin": 3.4235782623291016,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.05009045451879501
+    },
+    {
+      "mask": 13,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2658686935901642,
+        "margin": 2.367431640625,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.39914003014564514,
+        "margin": 3.4720096588134766,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.06946950405836105
+    },
+    {
+      "mask": 14,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5880125164985657,
+        "margin": 4.721053123474121,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5746605396270752,
+        "margin": 4.637918472290039,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.0029468745924532413
+    },
+    {
+      "mask": 15,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5701928734779358,
+        "margin": 4.679107666015625,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5701953172683716,
+        "margin": 4.6791229248046875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": -6.183489631439443e-08
+    },
+    {
+      "mask": 16,
+      "active": [
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.29879051446914673,
+        "margin": 2.2603397369384766,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.48675352334976196,
+        "margin": 3.2362613677978516,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.09690381586551666
+    },
+    {
+      "mask": 17,
+      "active": [
+        "attn8",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3286549150943756,
+        "margin": 2.4686384201049805,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.48712679743766785,
+        "margin": 3.286294937133789,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.07081114500761032
+    },
+    {
+      "mask": 18,
+      "active": [
+        "mlp8",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7972359657287598,
+        "margin": 5.385003089904785,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.691962480545044,
+        "margin": 4.440617561340332,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.07180507481098175
+    },
+    {
+      "mask": 19,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7588098645210266,
+        "margin": 5.045966148376465,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6885362863540649,
+        "margin": 4.483650207519531,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04906676709651947
+    },
+    {
+      "mask": 20,
+      "active": [
+        "attn9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.37763020396232605,
+        "margin": 2.685885429382324,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7413609027862549,
+        "margin": 4.926739692687988,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.44214320182800293
+    },
+    {
+      "mask": 21,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.37791624665260315,
+        "margin": 2.727069854736328,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7368964552879333,
+        "margin": 4.963006019592285,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.4319223463535309
+    },
+    {
+      "mask": 22,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8371401429176331,
+        "margin": 5.849869728088379,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8588044047355652,
+        "margin": 6.136984825134277,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.008204137906432152
+    },
+    {
+      "mask": 23,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8003893494606018,
+        "margin": 5.478279113769531,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8545444011688232,
+        "margin": 6.166374206542969,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.01681501232087612
+    },
+    {
+      "mask": 24,
+      "active": [
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7769753336906433,
+        "margin": 5.4835662841796875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8096223473548889,
+        "margin": 5.834623336791992,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04006761312484741
+    },
+    {
+      "mask": 25,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7573835253715515,
+        "margin": 5.328146934509277,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8058952689170837,
+        "margin": 5.870723724365234,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04207119718194008
+    },
+    {
+      "mask": 26,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.9342878460884094,
+        "margin": 8.459502220153809,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8852764368057251,
+        "margin": 7.079530715942383,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.0321749746799469
+    },
+    {
+      "mask": 27,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.9199904203414917,
+        "margin": 8.16552734375,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.882049560546875,
+        "margin": 7.109264373779297,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.024978242814540863
+    },
+    {
+      "mask": 28,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8561440110206604,
+        "margin": 6.393467903137207,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.9076297283172607,
+        "margin": 7.544501304626465,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.020820625126361847
+    },
+    {
+      "mask": 29,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8228230476379395,
+        "margin": 5.928363800048828,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.9043200016021729,
+        "margin": 7.567087173461914,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04465238004922867
+    },
+    {
+      "mask": 30,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.959136962890625,
+        "margin": 9.31978988647461,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.946016252040863,
+        "margin": 8.790871620178223,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.003481359453871846
+    },
+    {
+      "mask": 31,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.9438552856445312,
+        "margin": 8.80731201171875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.9438554644584656,
+        "margin": 8.807317733764648,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": -7.915682687098524e-08
+    },
+    {
+      "mask": 32,
+      "active": [
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.05447522550821304,
+        "margin": 0.16524028778076172,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.029896048828959465,
+        "margin": -0.4322500228881836,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.14135722815990448
+    },
+    {
+      "mask": 33,
+      "active": [
+        "attn8",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.05793216452002525,
+        "margin": 0.3178596496582031,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.030533192679286003,
+        "margin": -0.3618650436401367,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.14764273166656494
+    },
+    {
+      "mask": 34,
+      "active": [
+        "mlp8",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15150035917758942,
+        "margin": 2.1700868606567383,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.06215314939618111,
+        "margin": 0.7122392654418945,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.17215389013290405
+    },
+    {
+      "mask": 35,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.16008181869983673,
+        "margin": 2.321958541870117,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.06291494518518448,
+        "margin": 0.7743549346923828,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.19350087642669678
+    },
+    {
+      "mask": 36,
+      "active": [
+        "attn9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.18997463583946228,
+        "margin": 1.6754722595214844,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.12224394083023071,
+        "margin": 1.2691640853881836,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.12144507467746735
+    },
+    {
+      "mask": 37,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.19148004055023193,
+        "margin": 1.7680597305297852,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.12292137742042542,
+        "margin": 1.3239850997924805,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.12847009301185608
+    },
+    {
+      "mask": 38,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4296483099460602,
+        "margin": 3.8302345275878906,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.22150057554244995,
+        "margin": 2.423877716064453,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.18032607436180115
+    },
+    {
+      "mask": 39,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.43260228633880615,
+        "margin": 4.02359676361084,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.22125039994716644,
+        "margin": 2.470438003540039,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.20280736684799194
+    },
+    {
+      "mask": 40,
+      "active": [
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1621304750442505,
+        "margin": 1.9844865798950195,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.12079067528247833,
+        "margin": 2.0332260131835938,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.11932431161403656
+    },
+    {
+      "mask": 41,
+      "active": [
+        "attn8",
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15740203857421875,
+        "margin": 2.0160398483276367,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.12178284674882889,
+        "margin": 2.086581230163574,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.11688850820064545
+    },
+    {
+      "mask": 42,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2907223403453827,
+        "margin": 4.287994384765625,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.1974286586046219,
+        "margin": 3.2269744873046875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.09800311177968979
+    },
+    {
+      "mask": 43,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.30402812361717224,
+        "margin": 4.405285835266113,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.19780780375003815,
+        "margin": 3.272152900695801,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.11163458228111267
+    },
+    {
+      "mask": 44,
+      "active": [
+        "attn9",
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4312572777271271,
+        "margin": 3.63362979888916,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.3570844531059265,
+        "margin": 3.7646560668945312,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.06316178292036057
+    },
+    {
+      "mask": 45,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.408578485250473,
+        "margin": 3.5499982833862305,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.35585471987724304,
+        "margin": 3.8024063110351562,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.06689849495887756
+    },
+    {
+      "mask": 46,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6129400134086609,
+        "margin": 5.9691972732543945,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.4852950870990753,
+        "margin": 4.964704513549805,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.056864604353904724
+    },
+    {
+      "mask": 47,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6092371940612793,
+        "margin": 6.066977500915527,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.4825000464916229,
+        "margin": 4.994401931762695,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.06218726560473442
+    },
+    {
+      "mask": 48,
+      "active": [
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4512594938278198,
+        "margin": 3.056685447692871,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5087820291519165,
+        "margin": 3.602358818054199,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.11261221021413803
+    },
+    {
+      "mask": 49,
+      "active": [
+        "attn8",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5005542635917664,
+        "margin": 3.3920974731445312,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5065004825592041,
+        "margin": 3.641794204711914,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.09876459836959839
+    },
+    {
+      "mask": 50,
+      "active": [
+        "mlp8",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.869760274887085,
+        "margin": 6.643524169921875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6618585586547852,
+        "margin": 4.797172546386719,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.17288053035736084
+    },
+    {
+      "mask": 51,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8526815176010132,
+        "margin": 6.489377021789551,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6582761406898499,
+        "margin": 4.828708648681641,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.1541108936071396
+    },
+    {
+      "mask": 52,
+      "active": [
+        "attn9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.541404664516449,
+        "margin": 3.5293664932250977,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.768505871295929,
+        "margin": 5.271217346191406,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.22347132861614227
+    },
+    {
+      "mask": 53,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5553601384162903,
+        "margin": 3.690821647644043,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7639843821525574,
+        "margin": 5.296161651611328,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.1954975724220276
+    },
+    {
+      "mask": 54,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.895499050617218,
+        "margin": 7.10772705078125,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8551864624023438,
+        "margin": 6.471080780029297,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.02667563408613205
+    },
+    {
+      "mask": 55,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8763980865478516,
+        "margin": 6.935817718505859,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8514366745948792,
+        "margin": 6.488252639770508,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.016472510993480682
+    },
+    {
+      "mask": 56,
+      "active": [
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8382161855697632,
+        "margin": 6.063279151916504,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.762549638748169,
+        "margin": 6.181300163269043,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.07492778450250626
+    },
+    {
+      "mask": 57,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8175854086875916,
+        "margin": 5.956967353820801,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7590503692626953,
+        "margin": 6.2047224044799805,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.07161219418048859
+    },
+    {
+      "mask": 58,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.930351972579956,
+        "margin": 8.849424362182617,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.833921492099762,
+        "margin": 7.414334297180176,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.052051667124032974
+    },
+    {
+      "mask": 59,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.9181174635887146,
+        "margin": 8.661039352416992,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.830609142780304,
+        "margin": 7.430407524108887,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04216708242893219
+    },
+    {
+      "mask": 60,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8917853236198425,
+        "margin": 6.939196586608887,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8977043032646179,
+        "margin": 7.867713928222656,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.017772573977708817
+    },
+    {
+      "mask": 61,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8594426512718201,
+        "margin": 6.511551856994629,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8946800827980042,
+        "margin": 7.876886367797852,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.026784351095557213
+    },
+    {
+      "mask": 62,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.9509106874465942,
+        "margin": 9.54730224609375,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.9312637448310852,
+        "margin": 9.10147476196289,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.005332882981747389
+    },
+    {
+      "mask": 63,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.9289417862892151,
+        "margin": 9.103533744812012,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.9289412498474121,
+        "margin": 9.103533744812012,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": -4.3819511574838543e-08
+    },
+    {
+      "mask": 64,
+      "active": [
+        "attn11"
+      ],
+      "actual": {
+        "rank": 3,
+        "p": 0.05016930401325226,
+        "margin": -0.042148590087890625,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 19,
+        "p": 0.006302746012806892,
+        "margin": -2.200871467590332,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.10988970845937729
+    },
+    {
+      "mask": 65,
+      "active": [
+        "attn8",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.05512630194425583,
+        "margin": 0.0987234115600586,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 19,
+        "p": 0.006638998165726662,
+        "margin": -2.111191749572754,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.12405073642730713
+    },
+    {
+      "mask": 66,
+      "active": [
+        "mlp8",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.24146443605422974,
+        "margin": 2.075746536254883,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 6,
+        "p": 0.01691707782447338,
+        "margin": -1.0632247924804688,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5738531947135925
+    },
+    {
+      "mask": 67,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.18355537950992584,
+        "margin": 1.6588249206542969,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 6,
+        "p": 0.017536267638206482,
+        "margin": -0.9811019897460938,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3741731643676758
+    },
+    {
+      "mask": 68,
+      "active": [
+        "attn9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.09489130973815918,
+        "margin": 0.7052249908447266,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 5,
+        "p": 0.0316573791205883,
+        "margin": -0.4630870819091797,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.07106785476207733
+    },
+    {
+      "mask": 69,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.09340603649616241,
+        "margin": 0.7197465896606445,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.032762181013822556,
+        "margin": -0.3885078430175781,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.06613332778215408
+    },
+    {
+      "mask": 70,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3017521798610687,
+        "margin": 2.469287872314453,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.0781659185886383,
+        "margin": 0.6868867874145508,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.2633611559867859
+    },
+    {
+      "mask": 71,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2675893306732178,
+        "margin": 2.297212600708008,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.0796172022819519,
+        "margin": 0.7539024353027344,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.2012007087469101
+    },
+    {
+      "mask": 72,
+      "active": [
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.21930456161499023,
+        "margin": 2.046687126159668,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.038478098809719086,
+        "margin": 0.2405872344970703,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.34167370200157166
+    },
+    {
+      "mask": 73,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.18595239520072937,
+        "margin": 1.8024425506591797,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.03959152102470398,
+        "margin": 0.31492042541503906,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.25144100189208984
+    },
+    {
+      "mask": 74,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4866856336593628,
+        "margin": 4.066611289978027,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.08401026576757431,
+        "margin": 1.4315338134765625,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6583367586135864
+    },
+    {
+      "mask": 75,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3940734267234802,
+        "margin": 3.6144752502441406,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.08524992316961288,
+        "margin": 1.498396873474121,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.43213924765586853
+    },
+    {
+      "mask": 76,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3120810091495514,
+        "margin": 2.6240434646606445,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.16130965948104858,
+        "margin": 2.0125608444213867,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.11209073662757874
+    },
+    {
+      "mask": 77,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.26313215494155884,
+        "margin": 2.326390266418457,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.16299784183502197,
+        "margin": 2.071749687194824,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.06767671555280685
+    },
+    {
+      "mask": 78,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5434079170227051,
+        "margin": 4.4068803787231445,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2898349463939667,
+        "margin": 3.2118959426879883,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.15723887085914612
+    },
+    {
+      "mask": 79,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.49555879831314087,
+        "margin": 4.229264259338379,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.289944589138031,
+        "margin": 3.2637224197387695,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.10739603638648987
+    },
+    {
+      "mask": 80,
+      "active": [
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1837107241153717,
+        "margin": 1.5371952056884766,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.21671780943870544,
+        "margin": 1.8502740859985352,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.03633754327893257
+    },
+    {
+      "mask": 81,
+      "active": [
+        "attn8",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.20109400153160095,
+        "margin": 1.700547218322754,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2203075885772705,
+        "margin": 1.9105758666992188,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.03186267986893654
+    },
+    {
+      "mask": 82,
+      "active": [
+        "mlp8",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.687474250793457,
+        "margin": 4.372047424316406,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.4088578224182129,
+        "margin": 3.038731575012207,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.20416004955768585
+    },
+    {
+      "mask": 83,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6359145641326904,
+        "margin": 4.076313018798828,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.4098862111568451,
+        "margin": 3.091933250427246,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.1443033069372177
+    },
+    {
+      "mask": 84,
+      "active": [
+        "attn9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2571512758731842,
+        "margin": 2.0289440155029297,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5370095372200012,
+        "margin": 3.5570068359375,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.21387654542922974
+    },
+    {
+      "mask": 85,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2581157386302948,
+        "margin": 2.069979667663574,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5370094180107117,
+        "margin": 3.603224754333496,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.21262679994106293
+    },
+    {
+      "mask": 86,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7803791761398315,
+        "margin": 5.037131309509277,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7232818007469177,
+        "margin": 4.752538681030273,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.02073012851178646
+    },
+    {
+      "mask": 87,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7343923449516296,
+        "margin": 4.761065483093262,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7203862071037292,
+        "margin": 4.7917633056640625,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.008385425433516502
+    },
+    {
+      "mask": 88,
+      "active": [
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6101136207580566,
+        "margin": 4.194401741027832,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5821799039840698,
+        "margin": 4.406203269958496,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04881512373685837
+    },
+    {
+      "mask": 89,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5818670392036438,
+        "margin": 4.052247047424316,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5814870595932007,
+        "margin": 4.452369689941406,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04499311000108719
+    },
+    {
+      "mask": 90,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8497885465621948,
+        "margin": 6.615566253662109,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7247306704521179,
+        "margin": 5.636649131774902,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.05864570662379265
+    },
+    {
+      "mask": 91,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.82444828748703,
+        "margin": 6.408177375793457,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7222943902015686,
+        "margin": 5.676259994506836,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04082777723670006
+    },
+    {
+      "mask": 92,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7599570155143738,
+        "margin": 5.1651105880737305,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.823822557926178,
+        "margin": 6.134443283081055,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.029335051774978638
+    },
+    {
+      "mask": 93,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.705672025680542,
+        "margin": 4.782900810241699,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8209211230278015,
+        "margin": 6.166752815246582,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.0630972608923912
+    },
+    {
+      "mask": 94,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.9181280136108398,
+        "margin": 7.657498359680176,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.890824556350708,
+        "margin": 7.367586135864258,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.00619149673730135
+    },
+    {
+      "mask": 95,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8860467672348022,
+        "margin": 7.281167984008789,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8884057402610779,
+        "margin": 7.393552780151367,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.0004081565421074629
+    },
+    {
+      "mask": 96,
+      "active": [
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.12840065360069275,
+        "margin": 1.148921012878418,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 15,
+        "p": 0.007909298874437809,
+        "margin": -1.7976036071777344,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.4866150915622711
+    },
+    {
+      "mask": 97,
+      "active": [
+        "attn8",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1337994784116745,
+        "margin": 1.2776412963867188,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 13,
+        "p": 0.00819952692836523,
+        "margin": -1.7155075073242188,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5131498575210571
+    },
+    {
+      "mask": 98,
+      "active": [
+        "mlp8",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4337361454963684,
+        "margin": 3.716336250305176,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.01689833030104637,
+        "margin": -0.6703643798828125,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.394628882408142
+    },
+    {
+      "mask": 99,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.38225123286247253,
+        "margin": 3.5498313903808594,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.017387159168720245,
+        "margin": -0.596522331237793,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.19163179397583
+    },
+    {
+      "mask": 100,
+      "active": [
+        "attn9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.18123860657215118,
+        "margin": 1.598963737487793,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.03614528477191925,
+        "margin": -0.08490943908691406,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3217542767524719
+    },
+    {
+      "mask": 101,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1691148579120636,
+        "margin": 1.5815296173095703,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.03691402077674866,
+        "margin": -0.018614768981933594,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.30209702253341675
+    },
+    {
+      "mask": 102,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.44635844230651855,
+        "margin": 3.8061180114746094,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.0719648152589798,
+        "margin": 1.053579330444336,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6711081266403198
+    },
+    {
+      "mask": 103,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.40794578194618225,
+        "margin": 3.7793140411376953,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.07300756126642227,
+        "margin": 1.1116056442260742,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5907647609710693
+    },
+    {
+      "mask": 104,
+      "active": [
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.36610257625579834,
+        "margin": 3.1586265563964844,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.034366901963949203,
+        "margin": 0.6223983764648438,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.839215874671936
+    },
+    {
+      "mask": 105,
+      "active": [
+        "attn8",
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3101155757904053,
+        "margin": 2.9464454650878906,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.03525747358798981,
+        "margin": 0.6875457763671875,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6717721223831177
+    },
+    {
+      "mask": 106,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5382384061813354,
+        "margin": 5.34151554107666,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.06091399863362312,
+        "margin": 1.7999687194824219,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 1.004902720451355
+    },
+    {
+      "mask": 107,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.48609423637390137,
+        "margin": 5.163707733154297,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.06210543215274811,
+        "margin": 1.85687255859375,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.8592965006828308
+    },
+    {
+      "mask": 108,
+      "active": [
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4433377981185913,
+        "margin": 3.6376380920410156,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.13336877524852753,
+        "margin": 2.366842269897461,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.38975244760513306
+    },
+    {
+      "mask": 109,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.37045785784721375,
+        "margin": 3.3115835189819336,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.13488872349262238,
+        "margin": 2.4161109924316406,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.27764368057250977
+    },
+    {
+      "mask": 110,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5512562394142151,
+        "margin": 5.547772407531738,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.21087853610515594,
+        "margin": 3.5518054962158203,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.33355411887168884
+    },
+    {
+      "mask": 111,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5119708776473999,
+        "margin": 5.488061904907227,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2122197151184082,
+        "margin": 3.592937469482422,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.2829757332801819
+    },
+    {
+      "mask": 112,
+      "active": [
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2323034554719925,
+        "margin": 1.8993282318115234,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2254248857498169,
+        "margin": 2.2253170013427734,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.16100271046161652
+    },
+    {
+      "mask": 113,
+      "active": [
+        "attn8",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.24062317609786987,
+        "margin": 2.0328454971313477,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.22694529592990875,
+        "margin": 2.2758398056030273,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.1498650759458542
+    },
+    {
+      "mask": 114,
+      "active": [
+        "mlp8",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6932158470153809,
+        "margin": 4.959287643432617,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.36117732524871826,
+        "margin": 3.404057502746582,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.27831026911735535
+    },
+    {
+      "mask": 115,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6556438207626343,
+        "margin": 4.802562713623047,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.3618749678134918,
+        "margin": 3.446626663208008,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.2281375527381897
+    },
+    {
+      "mask": 116,
+      "active": [
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.31657224893569946,
+        "margin": 2.4084739685058594,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5268572568893433,
+        "margin": 3.9097213745117188,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.24766698479652405
+    },
+    {
+      "mask": 117,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3036227226257324,
+        "margin": 2.4201669692993164,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5256452560424805,
+        "margin": 3.9454221725463867,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.25813814997673035
+    },
+    {
+      "mask": 118,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7787014842033386,
+        "margin": 5.594760894775391,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6684736013412476,
+        "margin": 5.094663619995117,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.051118262112140656
+    },
+    {
+      "mask": 119,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7363215088844299,
+        "margin": 5.45821475982666,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6664550304412842,
+        "margin": 5.122515678405762,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.030551863834261894
+    },
+    {
+      "mask": 120,
+      "active": [
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6272394061088562,
+        "margin": 4.4276580810546875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.48949041962623596,
+        "margin": 4.761358261108398,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.11759985238313675
+    },
+    {
+      "mask": 121,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5883824825286865,
+        "margin": 4.313302993774414,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.48970165848731995,
+        "margin": 4.795783042907715,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.10423198342323303
+    },
+    {
+      "mask": 122,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7958002686500549,
+        "margin": 7.013365745544434,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.605285108089447,
+        "margin": 5.979671478271484,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.09678623080253601
+    },
+    {
+      "mask": 123,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7740173935890198,
+        "margin": 6.901555061340332,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6044551730155945,
+        "margin": 6.006606101989746,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.07517347484827042
+    },
+    {
+      "mask": 124,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7544525265693665,
+        "margin": 5.387840270996094,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7569687366485596,
+        "margin": 6.465364456176758,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.034730978310108185
+    },
+    {
+      "mask": 125,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6916048526763916,
+        "margin": 5.023802757263184,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.7549600601196289,
+        "margin": 6.485179901123047,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.058113761246204376
+    },
+    {
+      "mask": 126,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.866107702255249,
+        "margin": 7.957423210144043,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8274251222610474,
+        "margin": 7.685596466064453,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.01045068446546793
+    },
+    {
+      "mask": 127,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.8253580927848816,
+        "margin": 7.69813346862793,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.8253587484359741,
+        "margin": 7.698144912719727,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": -3.3396027276921814e-08
+    },
+    {
+      "mask": 128,
+      "active": [
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 7,
+        "p": 0.021991698071360588,
+        "margin": -0.6453266143798828,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 51,
+        "p": 0.001937944907695055,
+        "margin": -3.156646728515625,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.2910139262676239
+    },
+    {
+      "mask": 129,
+      "active": [
+        "attn8",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 7,
+        "p": 0.024011217057704926,
+        "margin": -0.4597654342651367,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 48,
+        "p": 0.0020407054107636213,
+        "margin": -3.069270133972168,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3106943368911743
+    },
+    {
+      "mask": 130,
+      "active": [
+        "mlp8",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.08467746526002884,
+        "margin": 1.2263946533203125,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 22,
+        "p": 0.004596402402967215,
+        "margin": -2.149806022644043,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.61510169506073
+    },
+    {
+      "mask": 131,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.09312597662210464,
+        "margin": 1.3345088958740234,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 19,
+        "p": 0.004808410536497831,
+        "margin": -2.068378448486328,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6470354795455933
+    },
+    {
+      "mask": 132,
+      "active": [
+        "attn9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.05553281679749489,
+        "margin": 0.3099346160888672,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 12,
+        "p": 0.008483383804559708,
+        "margin": -1.5972356796264648,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.26326683163642883
+    },
+    {
+      "mask": 133,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.05875319987535477,
+        "margin": 0.4640960693359375,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 11,
+        "p": 0.008824978955090046,
+        "margin": -1.5219392776489258,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.274946928024292
+    },
+    {
+      "mask": 134,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.20288224518299103,
+        "margin": 2.2342710494995117,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.01948682963848114,
+        "margin": -0.5791816711425781,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5721316337585449
+    },
+    {
+      "mask": 135,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.22542279958724976,
+        "margin": 2.4193553924560547,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.020152149721980095,
+        "margin": -0.5098667144775391,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6498726606369019
+    },
+    {
+      "mask": 136,
+      "active": [
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.0733506977558136,
+        "margin": 1.0603704452514648,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 10,
+        "p": 0.009496198035776615,
+        "margin": -1.0100421905517578,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.45833176374435425
+    },
+    {
+      "mask": 137,
+      "active": [
+        "attn8",
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.07978571206331253,
+        "margin": 1.2251081466674805,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 10,
+        "p": 0.009917711839079857,
+        "margin": -0.9347524642944336,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.470676988363266
+    },
+    {
+      "mask": 138,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.18892554938793182,
+        "margin": 3.106045722961426,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.020737525075674057,
+        "margin": 0.042023658752441406,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7050102949142456
+    },
+    {
+      "mask": 139,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.21180623769760132,
+        "margin": 3.26821231842041,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.021576261147856712,
+        "margin": 0.11134719848632812,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7722386121749878
+    },
+    {
+      "mask": 140,
+      "active": [
+        "attn9",
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.18564042448997498,
+        "margin": 2.157102584838867,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.039748094975948334,
+        "margin": 0.5774240493774414,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.37060514092445374
+    },
+    {
+      "mask": 141,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1978781670331955,
+        "margin": 2.289361000061035,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.041032738983631134,
+        "margin": 0.6405954360961914,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.38329216837882996
+    },
+    {
+      "mask": 142,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4215411841869354,
+        "margin": 4.25698184967041,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.08107767254114151,
+        "margin": 1.637984275817871,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5978339910507202
+    },
+    {
+      "mask": 143,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4622403383255005,
+        "margin": 4.479486465454102,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.08338533341884613,
+        "margin": 1.6952285766601562,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6982476115226746
+    },
+    {
+      "mask": 144,
+      "active": [
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1311388909816742,
+        "margin": 1.2165031433105469,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.05839770659804344,
+        "margin": 0.4721212387084961,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.1847553700208664
+    },
+    {
+      "mask": 145,
+      "active": [
+        "attn8",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15031835436820984,
+        "margin": 1.4595069885253906,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.06009415164589882,
+        "margin": 0.535679817199707,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.19842149317264557
+    },
+    {
+      "mask": 146,
+      "active": [
+        "mlp8",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5551819801330566,
+        "margin": 3.747084617614746,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.12714894115924835,
+        "margin": 1.5260324478149414,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6499235033988953
+    },
+    {
+      "mask": 147,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5503022074699402,
+        "margin": 3.732783317565918,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.12993788719177246,
+        "margin": 1.5838251113891602,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6348669528961182
+    },
+    {
+      "mask": 148,
+      "active": [
+        "attn9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15005898475646973,
+        "margin": 1.3895282745361328,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2004341334104538,
+        "margin": 2.0128040313720703,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.13525448739528656
+    },
+    {
+      "mask": 149,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15885478258132935,
+        "margin": 1.5418386459350586,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.20345352590084076,
+        "margin": 2.064885139465332,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.12937487661838531
+    },
+    {
+      "mask": 150,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5843280553817749,
+        "margin": 3.923281669616699,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.3593733608722687,
+        "margin": 3.0742483139038086,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.16339309513568878
+    },
+    {
+      "mask": 151,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5726765990257263,
+        "margin": 3.902923583984375,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.36267125606536865,
+        "margin": 3.1206064224243164,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.14823824167251587
+    },
+    {
+      "mask": 152,
+      "active": [
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4091588854789734,
+        "margin": 3.144641876220703,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2279348522424698,
+        "margin": 2.720303535461426,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.20740273594856262
+    },
+    {
+      "mask": 153,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.40401706099510193,
+        "margin": 3.1877260208129883,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.23226767778396606,
+        "margin": 2.772397994995117,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.19549177587032318
+    },
+    {
+      "mask": 154,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.6707431674003601,
+        "margin": 4.997645378112793,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.3800908327102661,
+        "margin": 3.812234878540039,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.2127143293619156
+    },
+    {
+      "mask": 155,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.67299485206604,
+        "margin": 5.01638126373291,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.3853277266025543,
+        "margin": 3.8588333129882812,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.21331706643104553
+    },
+    {
+      "mask": 156,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5111227035522461,
+        "margin": 3.653008460998535,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.520998477935791,
+        "margin": 4.280303955078125,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.05875308811664581
+    },
+    {
+      "mask": 157,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.47996482253074646,
+        "margin": 3.5710020065307617,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5245075821876526,
+        "margin": 4.321054458618164,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.06681793928146362
+    },
+    {
+      "mask": 158,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7531751990318298,
+        "margin": 5.543207168579102,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6800329089164734,
+        "margin": 5.3766984939575195,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.02356046997010708
+    },
+    {
+      "mask": 159,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.7371364235877991,
+        "margin": 5.478880882263184,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.6827600598335266,
+        "margin": 5.412067413330078,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.01725127547979355
+    },
+    {
+      "mask": 160,
+      "active": [
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.0401528961956501,
+        "margin": 0.1071014404296875,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 55,
+        "p": 0.0020162821747362614,
+        "margin": -2.8026628494262695,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5664082765579224
+    },
+    {
+      "mask": 161,
+      "active": [
+        "attn8",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.04385899379849434,
+        "margin": 0.32288265228271484,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 52,
+        "p": 0.0021195346489548683,
+        "margin": -2.7210798263549805,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6017380952835083
+    },
+    {
+      "mask": 162,
+      "active": [
+        "mlp8",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1320446878671646,
+        "margin": 2.4142885208129883,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 33,
+        "p": 0.004056255798786879,
+        "margin": -1.8088397979736328,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.9756511449813843
+    },
+    {
+      "mask": 163,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1535860151052475,
+        "margin": 2.695624351501465,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 32,
+        "p": 0.004259107168763876,
+        "margin": -1.733602523803711,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.1053733825683594
+    },
+    {
+      "mask": 164,
+      "active": [
+        "attn9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.0918361023068428,
+        "margin": 0.9500713348388672,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 14,
+        "p": 0.008134371601045132,
+        "margin": -1.2704029083251953,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.48891788721084595
+    },
+    {
+      "mask": 165,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.09815675020217896,
+        "margin": 1.139577865600586,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 12,
+        "p": 0.008464310318231583,
+        "margin": -1.2012510299682617,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5144428610801697
+    },
+    {
+      "mask": 166,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2756192982196808,
+        "margin": 3.2884511947631836,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 7,
+        "p": 0.015904154628515244,
+        "margin": -0.2663288116455078,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.8734914660453796
+    },
+    {
+      "mask": 167,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.31126150488853455,
+        "margin": 3.624384880065918,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 6,
+        "p": 0.016537263989448547,
+        "margin": -0.20355606079101562,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.020289659500122
+    },
+    {
+      "mask": 168,
+      "active": [
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.10994809865951538,
+        "margin": 1.7793598175048828,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 18,
+        "p": 0.007770784664899111,
+        "margin": -0.6838254928588867,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6804335713386536
+    },
+    {
+      "mask": 169,
+      "active": [
+        "attn8",
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.11601191014051437,
+        "margin": 2.000782012939453,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 16,
+        "p": 0.008164514787495136,
+        "margin": -0.6152153015136719,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6959370970726013
+    },
+    {
+      "mask": 170,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15781418979167938,
+        "margin": 3.6856985092163086,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 8,
+        "p": 0.014364893548190594,
+        "margin": 0.3523721694946289,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7152875661849976
+    },
+    {
+      "mask": 171,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.18241684138774872,
+        "margin": 3.9849796295166016,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 8,
+        "p": 0.015088353306055069,
+        "margin": 0.4145822525024414,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.816979169845581
+    },
+    {
+      "mask": 172,
+      "active": [
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.23398683965206146,
+        "margin": 2.7379274368286133,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.02991701103746891,
+        "margin": 0.8743705749511719,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5327438712120056
+    },
+    {
+      "mask": 173,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.24671177566051483,
+        "margin": 2.92667293548584,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.031122559681534767,
+        "margin": 0.9304952621459961,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5532150864601135
+    },
+    {
+      "mask": 174,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.30358853936195374,
+        "margin": 4.581131935119629,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.05283274129033089,
+        "margin": 1.918182373046875,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.49072638154029846
+    },
+    {
+      "mask": 175,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3418075144290924,
+        "margin": 4.914395332336426,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.05491883307695389,
+        "margin": 1.9679489135742188,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5908406972885132
+    },
+    {
+      "mask": 176,
+      "active": [
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.17632341384887695,
+        "margin": 1.675419807434082,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.05285675823688507,
+        "margin": 0.7836284637451172,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3628559410572052
+    },
+    {
+      "mask": 177,
+      "active": [
+        "attn8",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.20358258485794067,
+        "margin": 1.9655723571777344,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.05446767061948776,
+        "margin": 0.8402271270751953,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3764442205429077
+    },
+    {
+      "mask": 178,
+      "active": [
+        "mlp8",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5728623867034912,
+        "margin": 4.431134223937988,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.09796474874019623,
+        "margin": 1.8240680694580078,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7942643165588379
+    },
+    {
+      "mask": 179,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5934017896652222,
+        "margin": 4.569575309753418,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.10084317624568939,
+        "margin": 1.8744163513183594,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.8309992551803589
+    },
+    {
+      "mask": 180,
+      "active": [
+        "attn9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2014121264219284,
+        "margin": 1.8546600341796875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.16999739408493042,
+        "margin": 2.2992515563964844,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.22874465584754944
+    },
+    {
+      "mask": 181,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.21804359555244446,
+        "margin": 2.0696067810058594,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.17334653437137604,
+        "margin": 2.3439836502075195,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.2178814858198166
+    },
+    {
+      "mask": 182,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5866430401802063,
+        "margin": 4.569919586181641,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2763836979866028,
+        "margin": 3.3464527130126953,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.2599383592605591
+    },
+    {
+      "mask": 183,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5975601673126221,
+        "margin": 4.730489730834961,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.28133150935173035,
+        "margin": 3.3849735260009766,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.2611335217952728
+    },
+    {
+      "mask": 184,
+      "active": [
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.42367011308670044,
+        "margin": 3.427645683288574,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.16470341384410858,
+        "margin": 3.0031232833862305,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.30617472529411316
+    },
+    {
+      "mask": 185,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4124618172645569,
+        "margin": 3.533031463623047,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.16935688257217407,
+        "margin": 3.0471582412719727,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.27951908111572266
+    },
+    {
+      "mask": 186,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.528348445892334,
+        "margin": 5.222063064575195,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2566593289375305,
+        "margin": 4.079127311706543,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.1942637413740158
+    },
+    {
+      "mask": 187,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5368200540542603,
+        "margin": 5.3082990646362305,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2631509006023407,
+        "margin": 4.117127418518066,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.18991774320602417
+    },
+    {
+      "mask": 188,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4783138036727905,
+        "margin": 3.828643798828125,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.3985521197319031,
+        "margin": 4.536415100097656,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.07058244943618774
+    },
+    {
+      "mask": 189,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.44993698596954346,
+        "margin": 3.8344478607177734,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.40478038787841797,
+        "margin": 4.568708419799805,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.06675594300031662
+    },
+    {
+      "mask": 190,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5388528108596802,
+        "margin": 5.534543991088867,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.5268645286560059,
+        "margin": 5.616218566894531,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.020314767956733704
+    },
+    {
+      "mask": 191,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5314891338348389,
+        "margin": 5.592979431152344,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.533372163772583,
+        "margin": 5.642589569091797,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.0037316656671464443
+    },
+    {
+      "mask": 192,
+      "active": [
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 3,
+        "p": 0.034881360828876495,
+        "margin": -0.23642539978027344,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 178,
+        "p": 0.0005644690245389938,
+        "margin": -4.3890581130981445,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.39186573028564453
+    },
+    {
+      "mask": 193,
+      "active": [
+        "attn8",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 3,
+        "p": 0.037786565721035004,
+        "margin": -0.07539844512939453,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 173,
+        "p": 0.0005997043335810304,
+        "margin": -4.292695999145508,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.41018104553222656
+    },
+    {
+      "mask": 194,
+      "active": [
+        "mlp8",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.17840903997421265,
+        "margin": 1.9001846313476562,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 80,
+        "p": 0.0013212804915383458,
+        "margin": -3.3968400955200195,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.119495153427124
+    },
+    {
+      "mask": 195,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15771828591823578,
+        "margin": 1.7676544189453125,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 76,
+        "p": 0.0013950644060969353,
+        "margin": -3.306425094604492,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.0196948051452637
+    },
+    {
+      "mask": 196,
+      "active": [
+        "attn9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.04754922166466713,
+        "margin": 0.10532569885253906,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 37,
+        "p": 0.00251152366399765,
+        "margin": -2.8212995529174805,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3235863745212555
+    },
+    {
+      "mask": 197,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.04757284000515938,
+        "margin": 0.18925762176513672,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 33,
+        "p": 0.002636237535625696,
+        "margin": -2.737166404724121,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3247925043106079
+    },
+    {
+      "mask": 198,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.17425112426280975,
+        "margin": 1.9455366134643555,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 16,
+        "p": 0.0057479385286569595,
+        "margin": -1.8171262741088867,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.710888147354126
+    },
+    {
+      "mask": 199,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.17233061790466309,
+        "margin": 1.9756183624267578,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 15,
+        "p": 0.006000957917422056,
+        "margin": -1.7389860153198242,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7207869291305542
+    },
+    {
+      "mask": 200,
+      "active": [
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1405910849571228,
+        "margin": 1.6179828643798828,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 42,
+        "p": 0.002691179048269987,
+        "margin": -2.277806282043457,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7833552956581116
+    },
+    {
+      "mask": 201,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.13032221794128418,
+        "margin": 1.5875139236450195,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 41,
+        "p": 0.0028376716654747725,
+        "margin": -2.1935625076293945,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7272894382476807
+    },
+    {
+      "mask": 202,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3343934416770935,
+        "margin": 3.525118827819824,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 20,
+        "p": 0.005872494541108608,
+        "margin": -1.2396001815795898,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.398776888847351
+    },
+    {
+      "mask": 203,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3022822141647339,
+        "margin": 3.401217460632324,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 17,
+        "p": 0.006172940135002136,
+        "margin": -1.1613731384277344,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.2785168886184692
+    },
+    {
+      "mask": 204,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.16683200001716614,
+        "margin": 1.9010963439941406,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 10,
+        "p": 0.011723743751645088,
+        "margin": -0.6808300018310547,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5286490321159363
+    },
+    {
+      "mask": 205,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.15293878316879272,
+        "margin": 1.8413143157958984,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 9,
+        "p": 0.012226062826812267,
+        "margin": -0.6088705062866211,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.48088544607162476
+    },
+    {
+      "mask": 206,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3243936598300934,
+        "margin": 3.624875068664551,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 4,
+        "p": 0.02456645667552948,
+        "margin": 0.36666011810302734,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7664377093315125
+    },
+    {
+      "mask": 207,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.3258698582649231,
+        "margin": 3.6729440689086914,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.025551507249474525,
+        "margin": 0.4326324462890625,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.795867919921875
+    },
+    {
+      "mask": 208,
+      "active": [
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.07260851562023163,
+        "margin": 0.5369787216186523,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 6,
+        "p": 0.017690422013401985,
+        "margin": -0.7700481414794922,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.22291111946105957
+    },
+    {
+      "mask": 209,
+      "active": [
+        "attn8",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.07618732005357742,
+        "margin": 0.6670007705688477,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 5,
+        "p": 0.01838732324540615,
+        "margin": -0.6979808807373047,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.22123873233795166
+    },
+    {
+      "mask": 210,
+      "active": [
+        "mlp8",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.31109365820884705,
+        "margin": 2.6193695068359375,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.04030743986368179,
+        "margin": 0.2700796127319336,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5379106998443604
+    },
+    {
+      "mask": 211,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.30092379450798035,
+        "margin": 2.5772323608398438,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.04165156930685043,
+        "margin": 0.33634376525878906,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.510597825050354
+    },
+    {
+      "mask": 212,
+      "active": [
+        "attn9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.08476390689611435,
+        "margin": 0.7257080078125,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.07023660093545914,
+        "margin": 0.7821245193481445,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.1557144820690155
+    },
+    {
+      "mask": 213,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.08348747342824936,
+        "margin": 0.7912874221801758,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.07211395353078842,
+        "margin": 0.8425140380859375,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.1527908444404602
+    },
+    {
+      "mask": 214,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.35140112042427063,
+        "margin": 2.881537437438965,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.14481526613235474,
+        "margin": 1.8306188583374023,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.21254946291446686
+    },
+    {
+      "mask": 215,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.33953657746315,
+        "margin": 2.8616180419921875,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.14787346124649048,
+        "margin": 1.8852319717407227,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.19657102227210999
+    },
+    {
+      "mask": 216,
+      "active": [
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.22107139229774475,
+        "margin": 2.190084457397461,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.07780619710683823,
+        "margin": 1.4446477890014648,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.2395729422569275
+    },
+    {
+      "mask": 217,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.21195471286773682,
+        "margin": 2.1940269470214844,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.0802842304110527,
+        "margin": 1.5051202774047852,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.21958443522453308
+    },
+    {
+      "mask": 218,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4178352355957031,
+        "margin": 3.864696502685547,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.14961080253124237,
+        "margin": 2.523744583129883,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.25261199474334717
+    },
+    {
+      "mask": 219,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.4238682687282562,
+        "margin": 3.881814956665039,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.15376389026641846,
+        "margin": 2.578622817993164,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.25900235772132874
+    },
+    {
+      "mask": 220,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2947259545326233,
+        "margin": 2.6678667068481445,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.24810993671417236,
+        "margin": 3.017512321472168,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.09269651770591736
+    },
+    {
+      "mask": 221,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2673126459121704,
+        "margin": 2.5749130249023438,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.25277090072631836,
+        "margin": 3.0664243698120117,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.0947694331407547
+    },
+    {
+      "mask": 222,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5184528231620789,
+        "margin": 4.426051139831543,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.39473849534988403,
+        "margin": 4.101941108703613,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04586265981197357
+    },
+    {
+      "mask": 223,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.5080649852752686,
+        "margin": 4.396965026855469,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.4004526734352112,
+        "margin": 4.145363807678223,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.04394977167248726
+    },
+    {
+      "mask": 224,
+      "active": [
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.07056579738855362,
+        "margin": 0.5697393417358398,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 182,
+        "p": 0.0005875503993593156,
+        "margin": -4.016605377197266,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7456818222999573
+    },
+    {
+      "mask": 225,
+      "active": [
+        "attn8",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.0767183005809784,
+        "margin": 0.7585582733154297,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 166,
+        "p": 0.0006237560883164406,
+        "margin": -3.92574405670166,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.7822701930999756
+    },
+    {
+      "mask": 226,
+      "active": [
+        "mlp8",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2592611014842987,
+        "margin": 2.8945913314819336,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 89,
+        "p": 0.0011652534594759345,
+        "margin": -3.0370826721191406,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.6533256769180298
+    },
+    {
+      "mask": 227,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.25182098150253296,
+        "margin": 2.9480533599853516,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 85,
+        "p": 0.00123600906226784,
+        "margin": -2.9525365829467773,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.6273165941238403
+    },
+    {
+      "mask": 228,
+      "active": [
+        "attn9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.07683050632476807,
+        "margin": 0.6764297485351562,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 43,
+        "p": 0.002408766420558095,
+        "margin": -2.476613998413086,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5497276186943054
+    },
+    {
+      "mask": 229,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.07730264961719513,
+        "margin": 0.7856311798095703,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 43,
+        "p": 0.0025313012301921844,
+        "margin": -2.398324966430664,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5555527210235596
+    },
+    {
+      "mask": 230,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.207355335354805,
+        "margin": 2.7121448516845703,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 30,
+        "p": 0.0046750870533287525,
+        "margin": -1.486140251159668,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.8927474021911621
+    },
+    {
+      "mask": 231,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.20992180705070496,
+        "margin": 2.873539924621582,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 28,
+        "p": 0.0049114832654595375,
+        "margin": -1.4142179489135742,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.9283214211463928
+    },
+    {
+      "mask": 232,
+      "active": [
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.19548141956329346,
+        "margin": 2.2253665924072266,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 49,
+        "p": 0.002198308939114213,
+        "margin": -1.9324274063110352,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.1284675598144531
+    },
+    {
+      "mask": 233,
+      "active": [
+        "attn8",
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1733330488204956,
+        "margin": 2.2222118377685547,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 47,
+        "p": 0.002334029646590352,
+        "margin": -1.8545074462890625,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.017086148262024
+    },
+    {
+      "mask": 234,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.25634124875068665,
+        "margin": 3.9675540924072266,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 38,
+        "p": 0.004035507794469595,
+        "margin": -0.9098148345947266,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.2164862155914307
+    },
+    {
+      "mask": 235,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.24488124251365662,
+        "margin": 4.01279354095459,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 34,
+        "p": 0.004285256378352642,
+        "margin": -0.8383188247680664,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 1.1957943439483643
+    },
+    {
+      "mask": 236,
+      "active": [
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.19352728128433228,
+        "margin": 2.3462705612182617,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 16,
+        "p": 0.008749544620513916,
+        "margin": -0.36541080474853516,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.6730266809463501
+    },
+    {
+      "mask": 237,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.17001868784427643,
+        "margin": 2.299771308898926,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 16,
+        "p": 0.009201655164361,
+        "margin": -0.3001365661621094,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5918757319450378
+    },
+    {
+      "mask": 238,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.19903124868869781,
+        "margin": 3.830897331237793,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 9,
+        "p": 0.015583411790430546,
+        "margin": 0.6655569076538086,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.5216140151023865
+    },
+    {
+      "mask": 239,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.20055167376995087,
+        "margin": 3.9832773208618164,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 9,
+        "p": 0.01639007218182087,
+        "margin": 0.7244377136230469,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.552423357963562
+    },
+    {
+      "mask": 240,
+      "active": [
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.08363037556409836,
+        "margin": 0.7974414825439453,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 8,
+        "p": 0.015929238870739937,
+        "margin": -0.4432811737060547,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3739384412765503
+    },
+    {
+      "mask": 241,
+      "active": [
+        "attn8",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.0887468010187149,
+        "margin": 0.97186279296875,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 8,
+        "p": 0.016591478139162064,
+        "margin": -0.3777656555175781,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.3580971360206604
+    },
+    {
+      "mask": 242,
+      "active": [
+        "mlp8",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2550310492515564,
+        "margin": 2.9794063568115234,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.0302828848361969,
+        "margin": 0.5835428237915039,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.4539717435836792
+    },
+    {
+      "mask": 243,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2635005712509155,
+        "margin": 3.0805797576904297,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.031544268131256104,
+        "margin": 0.6427927017211914,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.46734946966171265
+    },
+    {
+      "mask": 244,
+      "active": [
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.09747445583343506,
+        "margin": 0.9902811050415039,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.05753699690103531,
+        "margin": 1.0831489562988281,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.28180012106895447
+    },
+    {
+      "mask": 245,
+      "active": [
+        "attn8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 2,
+        "p": 0.09896286576986313,
+        "margin": 1.1208953857421875,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predicted": {
+        "rank": 2,
+        "p": 0.059371937066316605,
+        "margin": 1.1365966796875,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.2697443664073944
+    },
+    {
+      "mask": 246,
+      "active": [
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.2757439911365509,
+        "margin": 3.194228172302246,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.1018015593290329,
+        "margin": 2.1175241470336914,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.17741721868515015
+    },
+    {
+      "mask": 247,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.28241679072380066,
+        "margin": 3.349026679992676,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.1050267443060875,
+        "margin": 2.1647348403930664,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.17616115510463715
+    },
+    {
+      "mask": 248,
+      "active": [
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.19621239602565765,
+        "margin": 2.294724464416504,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.05316368117928505,
+        "margin": 1.7430477142333984,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.27889516949653625
+    },
+    {
+      "mask": 249,
+      "active": [
+        "attn8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.1829131543636322,
+        "margin": 2.359438896179199,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 3,
+        "p": 0.05539744719862938,
+        "margin": 1.7959356307983398,
+        "top_id": 262,
+        "top": " the"
+      },
+      "kl": 0.24810530245304108
+    },
+    {
+      "mask": 250,
+      "active": [
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.24643856287002563,
+        "margin": 3.960979461669922,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.08932501822710037,
+        "margin": 2.806324005126953,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.13765621185302734
+    },
+    {
+      "mask": 251,
+      "active": [
+        "attn8",
+        "mlp8",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.25192248821258545,
+        "margin": 4.044103622436523,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.09298798441886902,
+        "margin": 2.85311222076416,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.1330471932888031
+    },
+    {
+      "mask": 252,
+      "active": [
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.22968623042106628,
+        "margin": 2.683338165283203,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.16391104459762573,
+        "margin": 3.288447380065918,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.10189227014780045
+    },
+    {
+      "mask": 253,
+      "active": [
+        "attn8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.20624196529388428,
+        "margin": 2.6673402786254883,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.1689249873161316,
+        "margin": 3.329376220703125,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.10014818608760834
+    },
+    {
+      "mask": 254,
+      "active": [
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.25516194105148315,
+        "margin": 4.293442726135254,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.24797026813030243,
+        "margin": 4.356348991394043,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 0.013463837094604969
+    },
+    {
+      "mask": 255,
+      "active": [
+        "attn8",
+        "mlp8",
+        "attn9",
+        "mlp9",
+        "attn10",
+        "mlp10",
+        "attn11",
+        "mlp11"
+      ],
+      "actual": {
+        "rank": 1,
+        "p": 0.25490713119506836,
+        "margin": 4.391264915466309,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "predicted": {
+        "rank": 1,
+        "p": 0.2549091577529907,
+        "margin": 4.391275405883789,
+        "top_id": 24377,
+        "top": " Amsterdam"
+      },
+      "kl": 8.857544742113532e-08
+    }
+  ]
+}

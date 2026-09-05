@@ -1,0 +1,323 @@
+{
+  "prompt": "Austria's capital is",
+  "answer": "Vienna",
+  "baseline": {
+    "rank": 646,
+    "p": 0.00013560573279391974,
+    "margin": -5.9818315505981445,
+    "top_id": 783,
+    "top": " now"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.130642831325531,
+    "margin": 3.7306032180786133,
+    "top_id": 23825,
+    "top": " Vienna"
+  },
+  "controls": {
+    "endpoint_0": 3.24249267578125e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 118,
+        "p": 0.0009637352195568383,
+        "margin": -3.5859527587890625,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 118,
+          "p": 0.0009637352195568383,
+          "margin": -3.5859527587890625,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 118,
+          "p": 0.0009637352195568383,
+          "margin": -3.5859527587890625,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 118,
+          "p": 0.0009637352195568383,
+          "margin": -3.5859527587890625,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.130642831325531,
+        "margin": 3.7306032180786133,
+        "top_id": 23825,
+        "top": " Vienna"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.130642831325531,
+          "margin": 3.7306032180786133,
+          "top_id": 23825,
+          "top": " Vienna"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.130642831325531,
+          "margin": 3.7306032180786133,
+          "top_id": 23825,
+          "top": " Vienna"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.130642831325531,
+          "margin": 3.7306032180786133,
+          "top_id": 23825,
+          "top": " Vienna"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 9,
+        "p": 0.020291849970817566,
+        "margin": 0.05848503112792969,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 5,
+          "p": 0.03945405036211014,
+          "margin": 0.9639892578125,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "last_mlp": {
+          "rank": 5,
+          "p": 0.03945405036211014,
+          "margin": 0.9639892578125,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "all_mlps": {
+          "rank": 5,
+          "p": 0.03945405036211014,
+          "margin": 0.9639892578125,
+          "top_id": 11307,
+          "top": " Berlin"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 3,
+        "p": 0.05643773078918457,
+        "margin": 1.9989261627197266,
+        "top_id": 11307,
+        "top": " Berlin"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 32,
+          "p": 0.0038355877622962,
+          "margin": -0.9656076431274414,
+          "top_id": 635,
+          "top": " also"
+        },
+        "last_mlp": {
+          "rank": 5,
+          "p": 0.027443241328001022,
+          "margin": 1.2984209060668945,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.05643773078918457,
+          "margin": 1.9989261627197266,
+          "top_id": 11307,
+          "top": " Berlin"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 2,
+        "p": 0.2456188201904297,
+        "margin": 5.383875846862793,
+        "top_id": 11307,
+        "top": " Berlin"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.1589432954788208,
+          "margin": 4.760178565979004,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.1589432954788208,
+          "margin": 4.760178565979004,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.19903641939163208,
+          "margin": 4.662968635559082,
+          "top_id": 11307,
+          "top": " Berlin"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.08782327175140381,
+        "margin": 1.4971866607666016,
+        "top_id": 23825,
+        "top": " Vienna"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.08140279352664948,
+          "margin": 2.40470027923584,
+          "top_id": 635,
+          "top": " also"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.08249568939208984,
+          "margin": 2.376601219177246,
+          "top_id": 635,
+          "top": " also"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.0699760839343071,
+          "margin": 1.390904426574707,
+          "top_id": 635,
+          "top": " also"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 2,
+        "p": 0.08616585284471512,
+        "margin": 2.29803466796875,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 4,
+          "p": 0.035326261073350906,
+          "margin": 1.6466073989868164,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.0688457041978836,
+          "margin": 2.196589469909668,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.07928516715765,
+          "margin": 2.1659135818481445,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.11796659976243973,
+        "margin": 2.7052736282348633,
+        "top_id": 11307,
+        "top": " Berlin"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.0864083394408226,
+          "margin": 2.101055145263672,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.11981381475925446,
+          "margin": 2.758448600769043,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.11981381475925446,
+          "margin": 2.758448600769043,
+          "top_id": 11307,
+          "top": " Berlin"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 2,
+        "p": 0.19852983951568604,
+        "margin": 6.277874946594238,
+        "top_id": 11307,
+        "top": " Berlin"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.19852983951568604,
+          "margin": 6.277874946594238,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.19852983951568604,
+          "margin": 6.277874946594238,
+          "top_id": 11307,
+          "top": " Berlin"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.19852983951568604,
+          "margin": 6.277874946594238,
+          "top_id": 11307,
+          "top": " Berlin"
+        }
+      }
+    }
+  ],
+  "country": "Austria",
+  "form": "possessive"
+}

@@ -1,0 +1,2127 @@
+{
+  "original": {
+    "replication": {
+      "frozen": {
+        "cases": 10,
+        "interventions": 2560,
+        "correctness_disagreement": 0.274609375,
+        "top_disagreement": 0.360546875,
+        "probability_mae": 0.10966917117026469,
+        "margin_mae": 1.4252422088757157,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 256,
+            "correctness_disagreement": 0.24609375,
+            "top_disagreement": 0.40234375,
+            "probability_mae": 0.0892802393373131,
+            "margin_mae": 1.399865634739399
+          },
+          {
+            "country": "Norway",
+            "n": 256,
+            "correctness_disagreement": 0.19140625,
+            "top_disagreement": 0.3828125,
+            "probability_mae": 0.04883819981239412,
+            "margin_mae": 1.2162678763270378
+          },
+          {
+            "country": "Sweden",
+            "n": 256,
+            "correctness_disagreement": 0.2734375,
+            "top_disagreement": 0.33984375,
+            "probability_mae": 0.07653118876169174,
+            "margin_mae": 1.3882017228752375
+          },
+          {
+            "country": "Finland",
+            "n": 256,
+            "correctness_disagreement": 0.2890625,
+            "top_disagreement": 0.29296875,
+            "probability_mae": 0.12797773448846783,
+            "margin_mae": 1.125762365758419
+          },
+          {
+            "country": "Poland",
+            "n": 256,
+            "correctness_disagreement": 0.359375,
+            "top_disagreement": 0.3671875,
+            "probability_mae": 0.16216720136890217,
+            "margin_mae": 1.4793487079441547
+          },
+          {
+            "country": "Austria",
+            "n": 256,
+            "correctness_disagreement": 0.23828125,
+            "top_disagreement": 0.515625,
+            "probability_mae": 0.058336658010716747,
+            "margin_mae": 1.392906628549099
+          },
+          {
+            "country": "Hungary",
+            "n": 256,
+            "correctness_disagreement": 0.3125,
+            "top_disagreement": 0.34375,
+            "probability_mae": 0.20371259921626006,
+            "margin_mae": 1.8131607808172703
+          },
+          {
+            "country": "Netherlands",
+            "n": 256,
+            "correctness_disagreement": 0.3359375,
+            "top_disagreement": 0.3359375,
+            "probability_mae": 0.1399977556684462,
+            "margin_mae": 1.612576076760888
+          },
+          {
+            "country": "Thailand",
+            "n": 256,
+            "correctness_disagreement": 0.390625,
+            "top_disagreement": 0.40625,
+            "probability_mae": 0.15169079288261855,
+            "margin_mae": 1.488909900188446
+          },
+          {
+            "country": "Peru",
+            "n": 256,
+            "correctness_disagreement": 0.109375,
+            "top_disagreement": 0.21875,
+            "probability_mae": 0.038159342155836384,
+            "margin_mae": 1.335422394797206
+          }
+        ]
+      },
+      "last_mlp": {
+        "cases": 10,
+        "interventions": 2560,
+        "correctness_disagreement": 0.1625,
+        "top_disagreement": 0.23828125,
+        "probability_mae": 0.079055769974741,
+        "margin_mae": 0.8820357516407966,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 256,
+            "correctness_disagreement": 0.16015625,
+            "top_disagreement": 0.27734375,
+            "probability_mae": 0.06547699147677122,
+            "margin_mae": 0.7836103364825249
+          },
+          {
+            "country": "Norway",
+            "n": 256,
+            "correctness_disagreement": 0.10546875,
+            "top_disagreement": 0.2890625,
+            "probability_mae": 0.034633930617133046,
+            "margin_mae": 0.8566090576350689
+          },
+          {
+            "country": "Sweden",
+            "n": 256,
+            "correctness_disagreement": 0.1953125,
+            "top_disagreement": 0.2421875,
+            "probability_mae": 0.057504997030036975,
+            "margin_mae": 0.8841930665075779
+          },
+          {
+            "country": "Finland",
+            "n": 256,
+            "correctness_disagreement": 0.1875,
+            "top_disagreement": 0.19140625,
+            "probability_mae": 0.09646960563441098,
+            "margin_mae": 0.8089943043887615
+          },
+          {
+            "country": "Poland",
+            "n": 256,
+            "correctness_disagreement": 0.12109375,
+            "top_disagreement": 0.12109375,
+            "probability_mae": 0.10527871511294506,
+            "margin_mae": 0.7239682115614414
+          },
+          {
+            "country": "Austria",
+            "n": 256,
+            "correctness_disagreement": 0.20703125,
+            "top_disagreement": 0.4453125,
+            "probability_mae": 0.04729763508339602,
+            "margin_mae": 0.8797147236764431
+          },
+          {
+            "country": "Hungary",
+            "n": 256,
+            "correctness_disagreement": 0.12890625,
+            "top_disagreement": 0.16015625,
+            "probability_mae": 0.13807355795688636,
+            "margin_mae": 1.103865958750248
+          },
+          {
+            "country": "Netherlands",
+            "n": 256,
+            "correctness_disagreement": 0.1875,
+            "top_disagreement": 0.1875,
+            "probability_mae": 0.10466484022072109,
+            "margin_mae": 0.8453329838812351
+          },
+          {
+            "country": "Thailand",
+            "n": 256,
+            "correctness_disagreement": 0.265625,
+            "top_disagreement": 0.2890625,
+            "probability_mae": 0.11049779860877607,
+            "margin_mae": 1.020526047796011
+          },
+          {
+            "country": "Peru",
+            "n": 256,
+            "correctness_disagreement": 0.06640625,
+            "top_disagreement": 0.1796875,
+            "probability_mae": 0.03065962800633315,
+            "margin_mae": 0.9135428257286549
+          }
+        ]
+      },
+      "all_mlps": {
+        "cases": 10,
+        "interventions": 2560,
+        "correctness_disagreement": 0.11796875,
+        "top_disagreement": 0.187890625,
+        "probability_mae": 0.061516428513732534,
+        "margin_mae": 0.7187332052737474,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 256,
+            "correctness_disagreement": 0.09375,
+            "top_disagreement": 0.1953125,
+            "probability_mae": 0.0387732689873701,
+            "margin_mae": 0.6120863258838654
+          },
+          {
+            "country": "Norway",
+            "n": 256,
+            "correctness_disagreement": 0.08984375,
+            "top_disagreement": 0.24609375,
+            "probability_mae": 0.02513026448252731,
+            "margin_mae": 0.679125688970089
+          },
+          {
+            "country": "Sweden",
+            "n": 256,
+            "correctness_disagreement": 0.12109375,
+            "top_disagreement": 0.1875,
+            "probability_mae": 0.04107310327867708,
+            "margin_mae": 0.6843543834984303
+          },
+          {
+            "country": "Finland",
+            "n": 256,
+            "correctness_disagreement": 0.15234375,
+            "top_disagreement": 0.15625,
+            "probability_mae": 0.07624483823201444,
+            "margin_mae": 0.650349747389555
+          },
+          {
+            "country": "Poland",
+            "n": 256,
+            "correctness_disagreement": 0.07421875,
+            "top_disagreement": 0.07421875,
+            "probability_mae": 0.07704957723035477,
+            "margin_mae": 0.563157182186842
+          },
+          {
+            "country": "Austria",
+            "n": 256,
+            "correctness_disagreement": 0.15234375,
+            "top_disagreement": 0.34765625,
+            "probability_mae": 0.036945347811979445,
+            "margin_mae": 0.6398028656840324
+          },
+          {
+            "country": "Hungary",
+            "n": 256,
+            "correctness_disagreement": 0.11328125,
+            "top_disagreement": 0.14453125,
+            "probability_mae": 0.1174141575665999,
+            "margin_mae": 0.9502639174461365
+          },
+          {
+            "country": "Netherlands",
+            "n": 256,
+            "correctness_disagreement": 0.125,
+            "top_disagreement": 0.125,
+            "probability_mae": 0.08536083571016206,
+            "margin_mae": 0.6549193151295185
+          },
+          {
+            "country": "Thailand",
+            "n": 256,
+            "correctness_disagreement": 0.21484375,
+            "top_disagreement": 0.23828125,
+            "probability_mae": 0.09119965083482384,
+            "margin_mae": 0.8483097963035107
+          },
+          {
+            "country": "Peru",
+            "n": 256,
+            "correctness_disagreement": 0.04296875,
+            "top_disagreement": 0.1640625,
+            "probability_mae": 0.025973241002816394,
+            "margin_mae": 0.9049628302454948
+          }
+        ]
+      }
+    },
+    "fresh": {
+      "frozen": {
+        "cases": 10,
+        "interventions": 2560,
+        "correctness_disagreement": 0.294140625,
+        "top_disagreement": 0.371875,
+        "probability_mae": 0.10745802033680008,
+        "margin_mae": 1.336071457155049,
+        "per_case": [
+          {
+            "country": "Belgium",
+            "n": 256,
+            "correctness_disagreement": 0.2265625,
+            "top_disagreement": 0.40234375,
+            "probability_mae": 0.04337226648135584,
+            "margin_mae": 1.2065083011984825
+          },
+          {
+            "country": "Ireland",
+            "n": 256,
+            "correctness_disagreement": 0.296875,
+            "top_disagreement": 0.296875,
+            "probability_mae": 0.14086659395889,
+            "margin_mae": 1.3435886166989803
+          },
+          {
+            "country": "Chile",
+            "n": 256,
+            "correctness_disagreement": 0.2421875,
+            "top_disagreement": 0.3671875,
+            "probability_mae": 0.07191381494385496,
+            "margin_mae": 1.1000926122069359
+          },
+          {
+            "country": "Cuba",
+            "n": 256,
+            "correctness_disagreement": 0.23046875,
+            "top_disagreement": 0.37890625,
+            "probability_mae": 0.08369218975076365,
+            "margin_mae": 1.3461275026202202
+          },
+          {
+            "country": "Tunisia",
+            "n": 256,
+            "correctness_disagreement": 0.2421875,
+            "top_disagreement": 0.2734375,
+            "probability_mae": 0.06772238352006354,
+            "margin_mae": 1.7615027371793985
+          },
+          {
+            "country": "Lebanon",
+            "n": 256,
+            "correctness_disagreement": 0.26953125,
+            "top_disagreement": 0.52734375,
+            "probability_mae": 0.10515425040352966,
+            "margin_mae": 1.5806795954704285
+          },
+          {
+            "country": "Iran",
+            "n": 256,
+            "correctness_disagreement": 0.30859375,
+            "top_disagreement": 0.30859375,
+            "probability_mae": 0.17700158671596,
+            "margin_mae": 1.186589140444994
+          },
+          {
+            "country": "Iraq",
+            "n": 256,
+            "correctness_disagreement": 0.30078125,
+            "top_disagreement": 0.30078125,
+            "probability_mae": 0.16757119256180886,
+            "margin_mae": 1.358914278447628
+          },
+          {
+            "country": "Syria",
+            "n": 256,
+            "correctness_disagreement": 0.45703125,
+            "top_disagreement": 0.49609375,
+            "probability_mae": 0.08862109759957093,
+            "margin_mae": 1.1383938007056713
+          },
+          {
+            "country": "Pakistan",
+            "n": 256,
+            "correctness_disagreement": 0.3671875,
+            "top_disagreement": 0.3671875,
+            "probability_mae": 0.1286648274322033,
+            "margin_mae": 1.3383179865777493
+          }
+        ]
+      },
+      "last_mlp": {
+        "cases": 10,
+        "interventions": 2560,
+        "correctness_disagreement": 0.183984375,
+        "top_disagreement": 0.2578125,
+        "probability_mae": 0.07426917228845724,
+        "margin_mae": 0.9249833006411791,
+        "per_case": [
+          {
+            "country": "Belgium",
+            "n": 256,
+            "correctness_disagreement": 0.16796875,
+            "top_disagreement": 0.34375,
+            "probability_mae": 0.03417755849841342,
+            "margin_mae": 0.8060608319938183
+          },
+          {
+            "country": "Ireland",
+            "n": 256,
+            "correctness_disagreement": 0.1171875,
+            "top_disagreement": 0.1171875,
+            "probability_mae": 0.08876062856506906,
+            "margin_mae": 0.717432364821434
+          },
+          {
+            "country": "Chile",
+            "n": 256,
+            "correctness_disagreement": 0.1796875,
+            "top_disagreement": 0.328125,
+            "probability_mae": 0.0490637151365263,
+            "margin_mae": 0.7323325499892235
+          },
+          {
+            "country": "Cuba",
+            "n": 256,
+            "correctness_disagreement": 0.1640625,
+            "top_disagreement": 0.30859375,
+            "probability_mae": 0.06008320437877046,
+            "margin_mae": 0.966276578605175
+          },
+          {
+            "country": "Tunisia",
+            "n": 256,
+            "correctness_disagreement": 0.19921875,
+            "top_disagreement": 0.2265625,
+            "probability_mae": 0.053531340284123985,
+            "margin_mae": 1.3736767247319221
+          },
+          {
+            "country": "Lebanon",
+            "n": 256,
+            "correctness_disagreement": 0.1328125,
+            "top_disagreement": 0.35546875,
+            "probability_mae": 0.0779898385587785,
+            "margin_mae": 1.214622352272272
+          },
+          {
+            "country": "Iran",
+            "n": 256,
+            "correctness_disagreement": 0.15234375,
+            "top_disagreement": 0.15234375,
+            "probability_mae": 0.10826750421256293,
+            "margin_mae": 0.8539686053991318
+          },
+          {
+            "country": "Iraq",
+            "n": 256,
+            "correctness_disagreement": 0.140625,
+            "top_disagreement": 0.140625,
+            "probability_mae": 0.11329942047996155,
+            "margin_mae": 0.7988518476486206
+          },
+          {
+            "country": "Syria",
+            "n": 256,
+            "correctness_disagreement": 0.39453125,
+            "top_disagreement": 0.4140625,
+            "probability_mae": 0.06763791190223856,
+            "margin_mae": 0.8530984632670879
+          },
+          {
+            "country": "Pakistan",
+            "n": 256,
+            "correctness_disagreement": 0.19140625,
+            "top_disagreement": 0.19140625,
+            "probability_mae": 0.08988060086812766,
+            "margin_mae": 0.9335126876831055
+          }
+        ]
+      },
+      "all_mlps": {
+        "cases": 10,
+        "interventions": 2560,
+        "correctness_disagreement": 0.1421875,
+        "top_disagreement": 0.21171875,
+        "probability_mae": 0.06491212343605782,
+        "margin_mae": 0.8221046332269907,
+        "per_case": [
+          {
+            "country": "Belgium",
+            "n": 256,
+            "correctness_disagreement": 0.12890625,
+            "top_disagreement": 0.265625,
+            "probability_mae": 0.030831847308945726,
+            "margin_mae": 0.6815262250602245
+          },
+          {
+            "country": "Ireland",
+            "n": 256,
+            "correctness_disagreement": 0.0859375,
+            "top_disagreement": 0.0859375,
+            "probability_mae": 0.07271496421526535,
+            "margin_mae": 0.5713192000985146
+          },
+          {
+            "country": "Chile",
+            "n": 256,
+            "correctness_disagreement": 0.08984375,
+            "top_disagreement": 0.26171875,
+            "probability_mae": 0.03863549468360361,
+            "margin_mae": 0.7069791182875633
+          },
+          {
+            "country": "Cuba",
+            "n": 256,
+            "correctness_disagreement": 0.11328125,
+            "top_disagreement": 0.24609375,
+            "probability_mae": 0.050744034686431405,
+            "margin_mae": 0.8545235693454742
+          },
+          {
+            "country": "Tunisia",
+            "n": 256,
+            "correctness_disagreement": 0.171875,
+            "top_disagreement": 0.19140625,
+            "probability_mae": 0.04732153976171105,
+            "margin_mae": 1.2874701172113419
+          },
+          {
+            "country": "Lebanon",
+            "n": 256,
+            "correctness_disagreement": 0.0859375,
+            "top_disagreement": 0.30078125,
+            "probability_mae": 0.06653559910137119,
+            "margin_mae": 1.1117747649550438
+          },
+          {
+            "country": "Iran",
+            "n": 256,
+            "correctness_disagreement": 0.1171875,
+            "top_disagreement": 0.1171875,
+            "probability_mae": 0.10100868680456188,
+            "margin_mae": 0.6840519644320011
+          },
+          {
+            "country": "Iraq",
+            "n": 256,
+            "correctness_disagreement": 0.109375,
+            "top_disagreement": 0.109375,
+            "probability_mae": 0.1001374968818709,
+            "margin_mae": 0.7360030673444271
+          },
+          {
+            "country": "Syria",
+            "n": 256,
+            "correctness_disagreement": 0.33203125,
+            "top_disagreement": 0.3515625,
+            "probability_mae": 0.060871996550304175,
+            "margin_mae": 0.8476440943777561
+          },
+          {
+            "country": "Pakistan",
+            "n": 256,
+            "correctness_disagreement": 0.1875,
+            "top_disagreement": 0.1875,
+            "probability_mae": 0.08031957436651282,
+            "margin_mae": 0.7397542111575603
+          }
+        ]
+      }
+    }
+  },
+  "scope": {
+    "possessive": {
+      "frozen": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.21428571428571427,
+        "top_disagreement": 0.2857142857142857,
+        "probability_mae": 0.07408450707527144,
+        "margin_mae": 0.905854674748012,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.04834205890074372,
+            "margin_mae": 0.8929548263549805
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.07637725876910346,
+            "margin_mae": 0.7020089285714286
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.09699644547488008,
+            "margin_mae": 1.2895362036568778
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.050561155658215284,
+            "margin_mae": 1.0163418906075614
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.11268285808286496,
+            "margin_mae": 0.9126915250505719
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.5714285714285714,
+            "probability_mae": 0.03532259977821793,
+            "margin_mae": 0.9509849548339844
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.146713343581983,
+            "margin_mae": 0.8352482659476144
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.04597044297094856,
+            "margin_mae": 0.9097973959786552
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.10750556843621391,
+            "margin_mae": 0.8985755102975028
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.5714285714285714,
+            "probability_mae": 0.020373339099543437,
+            "margin_mae": 0.650407246180943
+          }
+        ]
+      },
+      "last_mlp": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.07142857142857142,
+        "top_disagreement": 0.11428571428571428,
+        "probability_mae": 0.038855768593826466,
+        "margin_mae": 0.3862142290387835,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.024901547070060457,
+            "margin_mae": 0.49958692278180805
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.050427385206733434,
+            "margin_mae": 0.3270910808018276
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.06335885663117681,
+            "margin_mae": 0.7105218342372349
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.036835010163486004,
+            "margin_mae": 0.44596849169049946
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.06861520877906255,
+            "margin_mae": 0.2746678761073521
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.022761022938149317,
+            "margin_mae": 0.46624878474644255
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.04054248971598489,
+            "margin_mae": 0.1858179909842355
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.023343653018985475,
+            "margin_mae": 0.23597676413399832
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.04635941130774362,
+            "margin_mae": 0.4212918962751116
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.011413101106882095,
+            "margin_mae": 0.29497064862932476
+          }
+        ]
+      },
+      "all_mlps": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.04285714285714286,
+        "top_disagreement": 0.08571428571428572,
+        "probability_mae": 0.030707524570503405,
+        "margin_mae": 0.29498256955827984,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.025183744728565216,
+            "margin_mae": 0.3360174724033901
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.01767845611487116,
+            "margin_mae": 0.16052695683070592
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.0555835414145674,
+            "margin_mae": 0.5133889062064034
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.021754395349749496,
+            "margin_mae": 0.2832790102277483
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.06129382124968937,
+            "margin_mae": 0.38075011117117746
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.013188527098723821,
+            "margin_mae": 0.273998532976423
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.053501671978405545,
+            "margin_mae": 0.3531594957624163
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.019414850111518587,
+            "margin_mae": 0.1979727063860212
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.03409707546234131,
+            "margin_mae": 0.29561151776994976
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.00537916219660214,
+            "margin_mae": 0.15512098584856307
+          }
+        ]
+      }
+    },
+    "qa": {
+      "frozen": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.07142857142857142,
+        "top_disagreement": 0.32857142857142857,
+        "probability_mae": 0.030463126927082026,
+        "margin_mae": 0.5877261161804199,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.025685214836682593,
+            "margin_mae": 0.5411607197352818
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.02399095906210797,
+            "margin_mae": 0.5409736633300781
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.04810786247253418,
+            "margin_mae": 0.6126455579485212
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.022077012274946486,
+            "margin_mae": 0.5624753407069615
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.03879827952810696,
+            "margin_mae": 0.6632420676095145
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.027146391570568085,
+            "margin_mae": 0.6468138013567243
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.5714285714285714,
+            "probability_mae": 0.0320155279976981,
+            "margin_mae": 0.6320063727242606
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.028860053845814297,
+            "margin_mae": 0.5664125170026507
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.03888296442372458,
+            "margin_mae": 0.4935241426740374
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.01906700325863702,
+            "margin_mae": 0.618006978716169
+          }
+        ]
+      },
+      "last_mlp": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.014285714285714285,
+        "top_disagreement": 0.24285714285714285,
+        "probability_mae": 0.02341607330100877,
+        "margin_mae": 0.41447031838553294,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.017647472343274524,
+            "margin_mae": 0.32322665623256136
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.022341151854821613,
+            "margin_mae": 0.4004561560494559
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.03366740367242268,
+            "margin_mae": 0.38198280334472656
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.01792633586696216,
+            "margin_mae": 0.396843501499721
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.028376091803823198,
+            "margin_mae": 0.4663538251604353
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.020653660276106427,
+            "margin_mae": 0.4896289280482701
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.025263154080935886,
+            "margin_mae": 0.46026079995291574
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.022615981421300342,
+            "margin_mae": 0.38363497597830637
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.03138780061687742,
+            "margin_mae": 0.37649563380650114
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.01428168107356344,
+            "margin_mae": 0.4658199037824358
+          }
+        ]
+      },
+      "all_mlps": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0,
+        "top_disagreement": 0.21428571428571427,
+        "probability_mae": 0.01784371797527586,
+        "margin_mae": 0.2953740119934082,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.013251685138259615,
+            "margin_mae": 0.21736894335065568
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.016527071595191956,
+            "margin_mae": 0.2670902524675642
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.02964740459408079,
+            "margin_mae": 0.33055455344063894
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.012552576405661446,
+            "margin_mae": 0.2154515130179269
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.023659872157233103,
+            "margin_mae": 0.3573917661394392
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.01361359070454325,
+            "margin_mae": 0.3766187940325056
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.025358763124261583,
+            "margin_mae": 0.39671339307512554
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.014324521379811423,
+            "margin_mae": 0.2230867658342634
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.019055349486214773,
+            "margin_mae": 0.22149739946637834
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.010446345167500632,
+            "margin_mae": 0.34796673910958426
+          }
+        ]
+      }
+    },
+    "language": {
+      "frozen": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.2857142857142857,
+        "top_disagreement": 0.34285714285714286,
+        "probability_mae": 0.09144520021176764,
+        "margin_mae": 0.7529476302010673,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.11500209090965134,
+            "margin_mae": 0.8961045401436942
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.06222059737358775,
+            "margin_mae": 0.9240670885358538
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0.7142857142857143,
+            "top_disagreement": 0.7142857142857143,
+            "probability_mae": 0.13695234379598073,
+            "margin_mae": 0.8892192840576172
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.1255477432693754,
+            "margin_mae": 0.6223553248814174
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.08320096348013196,
+            "margin_mae": 0.8517255783081055
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.018432137157235826,
+            "margin_mae": 0.3806768144880022
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.08357146116239685,
+            "margin_mae": 0.7474508285522461
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.16677617813859666,
+            "margin_mae": 0.9622344970703125
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.5714285714285714,
+            "top_disagreement": 0.5714285714285714,
+            "probability_mae": 0.11159532517194748,
+            "margin_mae": 0.7865367616925921
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.011153161658772401,
+            "margin_mae": 0.4691055842808315
+          }
+        ]
+      },
+      "last_mlp": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.3,
+        "top_disagreement": 0.34285714285714286,
+        "probability_mae": 0.09458577682131103,
+        "margin_mae": 0.8168297495160785,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.12339244995798383,
+            "margin_mae": 0.9646786281040737
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.06275906280747481,
+            "margin_mae": 0.9825008937290737
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0.5714285714285714,
+            "top_disagreement": 0.5714285714285714,
+            "probability_mae": 0.14527378124850138,
+            "margin_mae": 0.8691565649850028
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.1210984257715089,
+            "margin_mae": 0.832228524344308
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.09460787954074996,
+            "margin_mae": 0.9849209104265485
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.020708932408264706,
+            "margin_mae": 0.44401945386614117
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.09580480200903756,
+            "margin_mae": 0.918043681553432
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.1680408450109618,
+            "margin_mae": 0.9498036248343331
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.1014725821358817,
+            "margin_mae": 0.7437666484287807
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.012699007322745664,
+            "margin_mae": 0.4791785648890904
+          }
+        ]
+      },
+      "all_mlps": {
+        "cases": 10,
+        "interventions": 70,
+        "correctness_disagreement": 0.2714285714285714,
+        "top_disagreement": 0.2857142857142857,
+        "probability_mae": 0.08315232727410538,
+        "margin_mae": 0.6537430354527065,
+        "per_case": [
+          {
+            "country": "Denmark",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.11447293258139066,
+            "margin_mae": 0.9849816731044224
+          },
+          {
+            "country": "Norway",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.05414574433650289,
+            "margin_mae": 0.6574047633579799
+          },
+          {
+            "country": "Sweden",
+            "n": 7,
+            "correctness_disagreement": 0.5714285714285714,
+            "top_disagreement": 0.5714285714285714,
+            "probability_mae": 0.13559243189437048,
+            "margin_mae": 0.8087850298200335
+          },
+          {
+            "country": "Finland",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0,
+            "probability_mae": 0.10008893268448966,
+            "margin_mae": 0.6097556522914341
+          },
+          {
+            "country": "Poland",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.08422438587461199,
+            "margin_mae": 0.715667860848563
+          },
+          {
+            "country": "Austria",
+            "n": 7,
+            "correctness_disagreement": 0.2857142857142857,
+            "top_disagreement": 0.2857142857142857,
+            "probability_mae": 0.021622758890901293,
+            "margin_mae": 0.2418053490774972
+          },
+          {
+            "country": "Hungary",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.0854515726012843,
+            "margin_mae": 0.6812173298427037
+          },
+          {
+            "country": "Netherlands",
+            "n": 7,
+            "correctness_disagreement": 0.14285714285714285,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.1429732803787504,
+            "margin_mae": 0.8827148165021624
+          },
+          {
+            "country": "Thailand",
+            "n": 7,
+            "correctness_disagreement": 0.42857142857142855,
+            "top_disagreement": 0.42857142857142855,
+            "probability_mae": 0.08180890870945794,
+            "margin_mae": 0.5184345245361328
+          },
+          {
+            "country": "Peru",
+            "n": 7,
+            "correctness_disagreement": 0,
+            "top_disagreement": 0.14285714285714285,
+            "probability_mae": 0.011142324789294175,
+            "margin_mae": 0.4366633551461356
+          }
+        ]
+      }
+    }
+  },
+  "scope_pooled": {
+    "frozen": {
+      "cases": 30,
+      "interventions": 210,
+      "correctness_disagreement": 0.19047619047619047,
+      "top_disagreement": 0.319047619047619,
+      "probability_mae": 0.06533094473804037,
+      "margin_mae": 0.7488428070431664,
+      "per_case": [
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.04834205890074372,
+          "margin_mae": 0.8929548263549805
+        },
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.025685214836682593,
+          "margin_mae": 0.5411607197352818
+        },
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.11500209090965134,
+          "margin_mae": 0.8961045401436942
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.07637725876910346,
+          "margin_mae": 0.7020089285714286
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.02399095906210797,
+          "margin_mae": 0.5409736633300781
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.06222059737358775,
+          "margin_mae": 0.9240670885358538
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.09699644547488008,
+          "margin_mae": 1.2895362036568778
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.04810786247253418,
+          "margin_mae": 0.6126455579485212
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0.7142857142857143,
+          "top_disagreement": 0.7142857142857143,
+          "probability_mae": 0.13695234379598073,
+          "margin_mae": 0.8892192840576172
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.050561155658215284,
+          "margin_mae": 1.0163418906075614
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.022077012274946486,
+          "margin_mae": 0.5624753407069615
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.1255477432693754,
+          "margin_mae": 0.6223553248814174
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.11268285808286496,
+          "margin_mae": 0.9126915250505719
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.03879827952810696,
+          "margin_mae": 0.6632420676095145
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.08320096348013196,
+          "margin_mae": 0.8517255783081055
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.5714285714285714,
+          "probability_mae": 0.03532259977821793,
+          "margin_mae": 0.9509849548339844
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.027146391570568085,
+          "margin_mae": 0.6468138013567243
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.018432137157235826,
+          "margin_mae": 0.3806768144880022
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.146713343581983,
+          "margin_mae": 0.8352482659476144
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.5714285714285714,
+          "probability_mae": 0.0320155279976981,
+          "margin_mae": 0.6320063727242606
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.08357146116239685,
+          "margin_mae": 0.7474508285522461
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.04597044297094856,
+          "margin_mae": 0.9097973959786552
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.028860053845814297,
+          "margin_mae": 0.5664125170026507
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.16677617813859666,
+          "margin_mae": 0.9622344970703125
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.10750556843621391,
+          "margin_mae": 0.8985755102975028
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.03888296442372458,
+          "margin_mae": 0.4935241426740374
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.5714285714285714,
+          "top_disagreement": 0.5714285714285714,
+          "probability_mae": 0.11159532517194748,
+          "margin_mae": 0.7865367616925921
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.5714285714285714,
+          "probability_mae": 0.020373339099543437,
+          "margin_mae": 0.650407246180943
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.01906700325863702,
+          "margin_mae": 0.618006978716169
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.011153161658772401,
+          "margin_mae": 0.4691055842808315
+        }
+      ]
+    },
+    "last_mlp": {
+      "cases": 30,
+      "interventions": 210,
+      "correctness_disagreement": 0.12857142857142856,
+      "top_disagreement": 0.2333333333333333,
+      "probability_mae": 0.052285872905382086,
+      "margin_mae": 0.539171432313465,
+      "per_case": [
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.024901547070060457,
+          "margin_mae": 0.49958692278180805
+        },
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.017647472343274524,
+          "margin_mae": 0.32322665623256136
+        },
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.12339244995798383,
+          "margin_mae": 0.9646786281040737
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.050427385206733434,
+          "margin_mae": 0.3270910808018276
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.022341151854821613,
+          "margin_mae": 0.4004561560494559
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.06275906280747481,
+          "margin_mae": 0.9825008937290737
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.06335885663117681,
+          "margin_mae": 0.7105218342372349
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.03366740367242268,
+          "margin_mae": 0.38198280334472656
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0.5714285714285714,
+          "top_disagreement": 0.5714285714285714,
+          "probability_mae": 0.14527378124850138,
+          "margin_mae": 0.8691565649850028
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.036835010163486004,
+          "margin_mae": 0.44596849169049946
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.01792633586696216,
+          "margin_mae": 0.396843501499721
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.1210984257715089,
+          "margin_mae": 0.832228524344308
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.06861520877906255,
+          "margin_mae": 0.2746678761073521
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.028376091803823198,
+          "margin_mae": 0.4663538251604353
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.09460787954074996,
+          "margin_mae": 0.9849209104265485
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.022761022938149317,
+          "margin_mae": 0.46624878474644255
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.020653660276106427,
+          "margin_mae": 0.4896289280482701
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.020708932408264706,
+          "margin_mae": 0.44401945386614117
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.04054248971598489,
+          "margin_mae": 0.1858179909842355
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.025263154080935886,
+          "margin_mae": 0.46026079995291574
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.09580480200903756,
+          "margin_mae": 0.918043681553432
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.023343653018985475,
+          "margin_mae": 0.23597676413399832
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.022615981421300342,
+          "margin_mae": 0.38363497597830637
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.1680408450109618,
+          "margin_mae": 0.9498036248343331
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.04635941130774362,
+          "margin_mae": 0.4212918962751116
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.03138780061687742,
+          "margin_mae": 0.37649563380650114
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.1014725821358817,
+          "margin_mae": 0.7437666484287807
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.011413101106882095,
+          "margin_mae": 0.29497064862932476
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.01428168107356344,
+          "margin_mae": 0.4658199037824358
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.012699007322745664,
+          "margin_mae": 0.4791785648890904
+        }
+      ]
+    },
+    "all_mlps": {
+      "cases": 30,
+      "interventions": 210,
+      "correctness_disagreement": 0.10476190476190475,
+      "top_disagreement": 0.19523809523809524,
+      "probability_mae": 0.043901189939961546,
+      "margin_mae": 0.41469987233479816,
+      "per_case": [
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.025183744728565216,
+          "margin_mae": 0.3360174724033901
+        },
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.013251685138259615,
+          "margin_mae": 0.21736894335065568
+        },
+        {
+          "country": "Denmark",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.11447293258139066,
+          "margin_mae": 0.9849816731044224
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.01767845611487116,
+          "margin_mae": 0.16052695683070592
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.016527071595191956,
+          "margin_mae": 0.2670902524675642
+        },
+        {
+          "country": "Norway",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.05414574433650289,
+          "margin_mae": 0.6574047633579799
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.0555835414145674,
+          "margin_mae": 0.5133889062064034
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.02964740459408079,
+          "margin_mae": 0.33055455344063894
+        },
+        {
+          "country": "Sweden",
+          "n": 7,
+          "correctness_disagreement": 0.5714285714285714,
+          "top_disagreement": 0.5714285714285714,
+          "probability_mae": 0.13559243189437048,
+          "margin_mae": 0.8087850298200335
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.021754395349749496,
+          "margin_mae": 0.2832790102277483
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.012552576405661446,
+          "margin_mae": 0.2154515130179269
+        },
+        {
+          "country": "Finland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.10008893268448966,
+          "margin_mae": 0.6097556522914341
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.06129382124968937,
+          "margin_mae": 0.38075011117117746
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.023659872157233103,
+          "margin_mae": 0.3573917661394392
+        },
+        {
+          "country": "Poland",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.08422438587461199,
+          "margin_mae": 0.715667860848563
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.013188527098723821,
+          "margin_mae": 0.273998532976423
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.01361359070454325,
+          "margin_mae": 0.3766187940325056
+        },
+        {
+          "country": "Austria",
+          "n": 7,
+          "correctness_disagreement": 0.2857142857142857,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.021622758890901293,
+          "margin_mae": 0.2418053490774972
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.053501671978405545,
+          "margin_mae": 0.3531594957624163
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.025358763124261583,
+          "margin_mae": 0.39671339307512554
+        },
+        {
+          "country": "Hungary",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.0854515726012843,
+          "margin_mae": 0.6812173298427037
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0,
+          "probability_mae": 0.019414850111518587,
+          "margin_mae": 0.1979727063860212
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.014324521379811423,
+          "margin_mae": 0.2230867658342634
+        },
+        {
+          "country": "Netherlands",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.1429732803787504,
+          "margin_mae": 0.8827148165021624
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.03409707546234131,
+          "margin_mae": 0.29561151776994976
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.019055349486214773,
+          "margin_mae": 0.22149739946637834
+        },
+        {
+          "country": "Thailand",
+          "n": 7,
+          "correctness_disagreement": 0.42857142857142855,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.08180890870945794,
+          "margin_mae": 0.5184345245361328
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0.14285714285714285,
+          "top_disagreement": 0.2857142857142857,
+          "probability_mae": 0.00537916219660214,
+          "margin_mae": 0.15512098584856307
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.42857142857142855,
+          "probability_mae": 0.010446345167500632,
+          "margin_mae": 0.34796673910958426
+        },
+        {
+          "country": "Peru",
+          "n": 7,
+          "correctness_disagreement": 0,
+          "top_disagreement": 0.14285714285714285,
+          "probability_mae": 0.011142324789294175,
+          "margin_mae": 0.4366633551461356
+        }
+      ]
+    }
+  },
+  "resources": {
+    "seconds": 59.91582750005182,
+    "peak_rss_mib": 2343.28125
+  },
+  "forecasts": {
+    "last_mlp_reduces_old_error_by_5pp": true,
+    "all_mlps_reduce_old_error_by_10pp": true,
+    "both_reduce_new_scope_error": true
+  }
+}

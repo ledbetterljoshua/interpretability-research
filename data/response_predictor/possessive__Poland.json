@@ -1,0 +1,323 @@
+{
+  "prompt": "Poland's capital is",
+  "answer": "Warsaw",
+  "baseline": {
+    "rank": 203,
+    "p": 0.0005925145815126598,
+    "margin": -4.277984619140625,
+    "top_id": 783,
+    "top": " now"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.5380708575248718,
+    "margin": 4.817635536193848,
+    "top_id": 32955,
+    "top": " Warsaw"
+  },
+  "controls": {
+    "endpoint_0": 3.24249267578125e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 32,
+        "p": 0.003641720861196518,
+        "margin": -2.0582284927368164,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 32,
+          "p": 0.003641720861196518,
+          "margin": -2.0582284927368164,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 32,
+          "p": 0.003641720861196518,
+          "margin": -2.0582284927368164,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 32,
+          "p": 0.003641720861196518,
+          "margin": -2.0582284927368164,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.5380708575248718,
+        "margin": 4.817635536193848,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.5380708575248718,
+          "margin": 4.817635536193848,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.5380708575248718,
+          "margin": 4.817635536193848,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.5380708575248718,
+          "margin": 4.817635536193848,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.12793292105197906,
+        "margin": 1.9662666320800781,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2570226192474365,
+          "margin": 2.7712059020996094,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.2570226192474365,
+          "margin": 2.7712059020996094,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2570226192474365,
+          "margin": 2.7712059020996094,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.20754361152648926,
+        "margin": 3.210761070251465,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 17,
+          "p": 0.009943407960236073,
+          "margin": -0.5666208267211914,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.21968305110931396,
+          "margin": 3.156008720397949,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.20754361152648926,
+          "margin": 3.210761070251465,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.8083702325820923,
+        "margin": 6.570305824279785,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.6850535869598389,
+          "margin": 5.646116256713867,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.6850535869598389,
+          "margin": 5.646116256713867,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.6485069394111633,
+          "margin": 5.4370222091674805,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.48485317826271057,
+        "margin": 3.0863256454467773,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.3380725383758545,
+          "margin": 3.219048500061035,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.3108184337615967,
+          "margin": 3.0669240951538086,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.3745925724506378,
+          "margin": 2.6652345657348633,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.5539616942405701,
+        "margin": 4.16712760925293,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.4037356972694397,
+          "margin": 3.749105453491211,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.5141937732696533,
+          "margin": 4.058730125427246,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.5260765552520752,
+          "margin": 3.872185707092285,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 1,
+        "p": 0.4212019741535187,
+        "margin": 3.4888925552368164,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.37943515181541443,
+          "margin": 3.1573076248168945,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.4192439615726471,
+          "margin": 3.4778976440429688,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.4192439615726471,
+          "margin": 3.4778976440429688,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.8332098722457886,
+        "margin": 7.012387275695801,
+        "top_id": 32955,
+        "top": " Warsaw"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.8332098722457886,
+          "margin": 7.012387275695801,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.8332098722457886,
+          "margin": 7.012387275695801,
+          "top_id": 32955,
+          "top": " Warsaw"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.8332098722457886,
+          "margin": 7.012387275695801,
+          "top_id": 32955,
+          "top": " Warsaw"
+        }
+      }
+    }
+  ],
+  "country": "Poland",
+  "form": "possessive"
+}

@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Norway is",
+  "answer": "Norwegian",
+  "baseline": {
+    "rank": 1,
+    "p": 0.12244805693626404,
+    "margin": 0.6885623931884766,
+    "top_id": 22158,
+    "top": " Norwegian"
+  },
+  "full": {
+    "rank": 4,
+    "p": 0.03687405213713646,
+    "margin": -0.49544620513916016,
+    "top_id": 3594,
+    "top": " English"
+  },
+  "controls": {
+    "endpoint_0": 1.9073486328125e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 1,
+        "p": 0.11182718724012375,
+        "margin": 0.6312828063964844,
+        "top_id": 22158,
+        "top": " Norwegian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.11182718724012375,
+          "margin": 0.6312828063964844,
+          "top_id": 22158,
+          "top": " Norwegian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.11182718724012375,
+          "margin": 0.6312828063964844,
+          "top_id": 22158,
+          "top": " Norwegian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.11182718724012375,
+          "margin": 0.6312828063964844,
+          "top_id": 22158,
+          "top": " Norwegian"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 4,
+        "p": 0.03687405213713646,
+        "margin": -0.49544620513916016,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 4,
+          "p": 0.03687405213713646,
+          "margin": -0.49544620513916016,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 4,
+          "p": 0.03687405213713646,
+          "margin": -0.49544620513916016,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 4,
+          "p": 0.03687405213713646,
+          "margin": -0.49544620513916016,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.20446251332759857,
+        "margin": 1.625330924987793,
+        "top_id": 22158,
+        "top": " Norwegian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.07733459770679474,
+          "margin": 0.7504568099975586,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.07733459770679474,
+          "margin": 0.7504568099975586,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.07733459770679474,
+          "margin": 0.7504568099975586,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 2,
+        "p": 0.08605258911848068,
+        "margin": 0.3868703842163086,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.04850292205810547,
+          "margin": -0.5400848388671875,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.11461490392684937,
+          "margin": 0.7597408294677734,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.08605258911848068,
+          "margin": 0.3868703842163086,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.23217304050922394,
+        "margin": 1.788273811340332,
+        "top_id": 22158,
+        "top": " Norwegian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 5,
+          "p": 0.02883932739496231,
+          "margin": -0.9228515625,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 5,
+          "p": 0.02883932739496231,
+          "margin": -0.9228515625,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 4,
+          "p": 0.03475332260131836,
+          "margin": -0.6294784545898438,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 2,
+        "p": 0.04098859429359436,
+        "margin": 0.3870115280151367,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 5,
+          "p": 0.042859580367803574,
+          "margin": -0.23335742950439453,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 6,
+          "p": 0.01830270327627659,
+          "margin": -1.347341537475586,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.027073994278907776,
+          "margin": -0.20369338989257812,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 2,
+        "p": 0.08896339684724808,
+        "margin": 0.3447227478027344,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.029555268585681915,
+          "margin": -0.6945943832397461,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.03295253589749336,
+          "margin": -0.6146974563598633,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.04999816417694092,
+          "margin": -0.14891624450683594,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 4,
+        "p": 0.03834565356373787,
+        "margin": -0.6268177032470703,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 4,
+          "p": 0.04459942504763603,
+          "margin": -0.33098888397216797,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 4,
+          "p": 0.036752909421920776,
+          "margin": -0.8516807556152344,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 4,
+          "p": 0.036752909421920776,
+          "margin": -0.8516807556152344,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 4,
+        "p": 0.06113865226507187,
+        "margin": 0.4458961486816406,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 4,
+          "p": 0.06113865226507187,
+          "margin": 0.4458961486816406,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 4,
+          "p": 0.06113865226507187,
+          "margin": 0.4458961486816406,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 4,
+          "p": 0.06113865226507187,
+          "margin": 0.4458961486816406,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    }
+  ],
+  "country": "Norway",
+  "form": "language"
+}

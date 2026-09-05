@@ -1,0 +1,1310 @@
+{
+  "status": "complete",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "device": "cpu",
+  "dtype": "float32",
+  "hashes": {
+    "experiments/conditional_routes.py": "f9fa33b77b29505d108ab597d8310a7982ae53db27032eec8922a6477fb9c110",
+    "notes/2026-09-05-conditional-route-plan.md": "da3899b409a0f24bbc9182090b02ca8473970565a369cf852b8ce87aba070c54",
+    "experiments/capital_generalization.py": "aff975e5f50df66fe7148fc10cabb8479bdaefa04eea451abe7fc07ff9105e6f",
+    "data/offset_mechanism/offsets.npz": "5de72e2bc3444f87a9223a9b2fcf3d266796191ff1fa8ddf35611e6a05ee3bf8",
+    "data/offset_mechanism/preflight.json": "90d7a2b560b60a064786c92f6b0d5acd46c41fb5f23d6de99245715ac191bd91",
+    "data/conditional_routes/preflight.json": "8fd04c298f5db6421c67459ecf042097a6752e28648ed783a5aa8905454d8d84"
+  },
+  "versions": {
+    "torch": "2.10.0",
+    "transformer-lens": "3.8.1",
+    "transformers": "5.16.1",
+    "numpy": "2.5.2"
+  },
+  "sites": [
+    [
+      8,
+      "attn"
+    ],
+    [
+      8,
+      "mlp"
+    ],
+    [
+      9,
+      "attn"
+    ],
+    [
+      9,
+      "mlp"
+    ],
+    [
+      10,
+      "attn"
+    ],
+    [
+      10,
+      "mlp"
+    ],
+    [
+      11,
+      "attn"
+    ],
+    [
+      11,
+      "mlp"
+    ]
+  ],
+  "cases": [
+    "replication__Denmark",
+    "replication__Norway",
+    "replication__Sweden",
+    "replication__Finland",
+    "replication__Poland",
+    "replication__Austria",
+    "replication__Hungary",
+    "replication__Netherlands",
+    "replication__Thailand",
+    "replication__Peru",
+    "fresh__Belgium",
+    "fresh__Ireland",
+    "fresh__Chile",
+    "fresh__Cuba",
+    "fresh__Tunisia",
+    "fresh__Lebanon",
+    "fresh__Iran",
+    "fresh__Iraq",
+    "fresh__Syria",
+    "fresh__Pakistan"
+  ],
+  "scope_cases": [
+    {
+      "country": "Denmark",
+      "capital": "Copenhagen",
+      "form": "possessive",
+      "prompt": "Denmark's capital is",
+      "answer": "Copenhagen",
+      "answer_tokens": [
+        31104
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 907,
+          "p": 8.708702807780355e-05,
+          "top": " now",
+          "capital_top": false,
+          "capital_p": 8.708702807780355e-05
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.2919882535934448,
+          "top": " Copenhagen",
+          "capital_top": true,
+          "capital_p": 0.2919882535934448
+        },
+        "neutral": {
+          "rank": 5,
+          "p": 0.026932552456855774,
+          "top": " den",
+          "capital_top": false,
+          "capital_p": 0.026932552456855774
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.14253374934196472,
+          "top": " Copenhagen",
+          "capital_top": true,
+          "capital_p": 0.14253374934196472
+        }
+      }
+    },
+    {
+      "country": "Denmark",
+      "capital": "Copenhagen",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Denmark? Answer:",
+      "answer": "Copenhagen",
+      "answer_tokens": [
+        31104
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 7,
+          "p": 0.019802626222372055,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.019802626222372055
+        },
+        "capital": {
+          "rank": 2,
+          "p": 0.07704788446426392,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.07704788446426392
+        },
+        "neutral": {
+          "rank": 6,
+          "p": 0.019381465390324593,
+          "top": " D",
+          "capital_top": false,
+          "capital_p": 0.019381465390324593
+        },
+        "other_attribute": {
+          "rank": 6,
+          "p": 0.02396615594625473,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.02396615594625473
+        }
+      }
+    },
+    {
+      "country": "Denmark",
+      "capital": "Copenhagen",
+      "form": "language",
+      "prompt": "The primary language of Denmark is",
+      "answer": "Danish",
+      "answer_tokens": [
+        20849
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.2005165070295334,
+          "top": " Danish",
+          "capital_top": false,
+          "capital_p": 0.0003426012408453971
+        },
+        "capital": {
+          "rank": 2,
+          "p": 0.09328806400299072,
+          "top": " English",
+          "capital_top": false,
+          "capital_p": 0.0014123445143923163
+        },
+        "neutral": {
+          "rank": 3,
+          "p": 0.06579584628343582,
+          "top": " \"",
+          "capital_top": false,
+          "capital_p": 0.00028730343910865486
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.14209222793579102,
+          "top": " Danish",
+          "capital_top": false,
+          "capital_p": 0.0005149444914422929
+        }
+      }
+    },
+    {
+      "country": "Norway",
+      "capital": "Oslo",
+      "form": "possessive",
+      "prompt": "Norway's capital is",
+      "answer": "Oslo",
+      "answer_tokens": [
+        39636
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 602,
+          "p": 0.00015601773338858038,
+          "top": " a",
+          "capital_top": false,
+          "capital_p": 0.00015601773338858038
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.6258259415626526,
+          "top": " Oslo",
+          "capital_top": true,
+          "capital_p": 0.6258259415626526
+        },
+        "neutral": {
+          "rank": 1,
+          "p": 0.42247360944747925,
+          "top": " Oslo",
+          "capital_top": true,
+          "capital_p": 0.42247360944747925
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.4315122365951538,
+          "top": " Oslo",
+          "capital_top": true,
+          "capital_p": 0.4315122365951538
+        }
+      }
+    },
+    {
+      "country": "Norway",
+      "capital": "Oslo",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Norway? Answer:",
+      "answer": "Oslo",
+      "answer_tokens": [
+        39636
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 9,
+          "p": 0.01397810596972704,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.01397810596972704
+        },
+        "capital": {
+          "rank": 2,
+          "p": 0.04603889584541321,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.04603889584541321
+        },
+        "neutral": {
+          "rank": 5,
+          "p": 0.015982909128069878,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.015982909128069878
+        },
+        "other_attribute": {
+          "rank": 8,
+          "p": 0.013929947279393673,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.013929947279393673
+        }
+      }
+    },
+    {
+      "country": "Norway",
+      "capital": "Oslo",
+      "form": "language",
+      "prompt": "The primary language of Norway is",
+      "answer": "Norwegian",
+      "answer_tokens": [
+        22158
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.12244805693626404,
+          "top": " Norwegian",
+          "capital_top": false,
+          "capital_p": 0.001020506490021944
+        },
+        "capital": {
+          "rank": 4,
+          "p": 0.03687405213713646,
+          "top": " English",
+          "capital_top": false,
+          "capital_p": 0.0011635818518698215
+        },
+        "neutral": {
+          "rank": 3,
+          "p": 0.0365716777741909,
+          "top": " \"",
+          "capital_top": false,
+          "capital_p": 0.0004503354721236974
+        },
+        "other_attribute": {
+          "rank": 2,
+          "p": 0.09059447795152664,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.000586459063924849
+        }
+      }
+    },
+    {
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "form": "possessive",
+      "prompt": "Sweden's capital is",
+      "answer": "Stockholm",
+      "answer_tokens": [
+        29679
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 756,
+          "p": 0.00011355502647347748,
+          "top": " now",
+          "capital_top": false,
+          "capital_p": 0.00011355502647347748
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.5757026672363281,
+          "top": " Stockholm",
+          "capital_top": true,
+          "capital_p": 0.5757026672363281
+        },
+        "neutral": {
+          "rank": 1,
+          "p": 0.21563786268234253,
+          "top": " Stockholm",
+          "capital_top": true,
+          "capital_p": 0.21563786268234253
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.21031877398490906,
+          "top": " Stockholm",
+          "capital_top": true,
+          "capital_p": 0.21031877398490906
+        }
+      }
+    },
+    {
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Sweden? Answer:",
+      "answer": "Stockholm",
+      "answer_tokens": [
+        29679
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 5,
+          "p": 0.02052501030266285,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.02052501030266285
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.14689584076404572,
+          "top": " Stockholm",
+          "capital_top": true,
+          "capital_p": 0.14689584076404572
+        },
+        "neutral": {
+          "rank": 4,
+          "p": 0.02813231386244297,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.02813231386244297
+        },
+        "other_attribute": {
+          "rank": 4,
+          "p": 0.04032965376973152,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.04032965376973152
+        }
+      }
+    },
+    {
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "form": "language",
+      "prompt": "The primary language of Sweden is",
+      "answer": "Swedish",
+      "answer_tokens": [
+        14023
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.16150693595409393,
+          "top": " Swedish",
+          "capital_top": false,
+          "capital_p": 0.0006425006431527436
+        },
+        "capital": {
+          "rank": 2,
+          "p": 0.11933629959821701,
+          "top": " English",
+          "capital_top": false,
+          "capital_p": 0.0029249985236674547
+        },
+        "neutral": {
+          "rank": 3,
+          "p": 0.07988738268613815,
+          "top": " \"",
+          "capital_top": false,
+          "capital_p": 0.0007225342560559511
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.1634315848350525,
+          "top": " Swedish",
+          "capital_top": false,
+          "capital_p": 0.0009431122452951968
+        }
+      }
+    },
+    {
+      "country": "Finland",
+      "capital": "Helsinki",
+      "form": "possessive",
+      "prompt": "Finland's capital is",
+      "answer": "Helsinki",
+      "answer_tokens": [
+        47688
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1048,
+          "p": 7.482140063075349e-05,
+          "top": " a",
+          "capital_top": false,
+          "capital_p": 7.482140063075349e-05
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.2119499295949936,
+          "top": " Helsinki",
+          "capital_top": true,
+          "capital_p": 0.2119499295949936
+        },
+        "neutral": {
+          "rank": 10,
+          "p": 0.014918601140379906,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.014918601140379906
+        },
+        "other_attribute": {
+          "rank": 4,
+          "p": 0.04938002675771713,
+          "top": " located",
+          "capital_top": false,
+          "capital_p": 0.04938002675771713
+        }
+      }
+    },
+    {
+      "country": "Finland",
+      "capital": "Helsinki",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Finland? Answer:",
+      "answer": "Helsinki",
+      "answer_tokens": [
+        47688
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 13,
+          "p": 0.007854402996599674,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.007854402996599674
+        },
+        "capital": {
+          "rank": 2,
+          "p": 0.05592409893870354,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.05592409893870354
+        },
+        "neutral": {
+          "rank": 21,
+          "p": 0.005955643020570278,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.005955643020570278
+        },
+        "other_attribute": {
+          "rank": 16,
+          "p": 0.008094844408333302,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.008094844408333302
+        }
+      }
+    },
+    {
+      "country": "Finland",
+      "capital": "Helsinki",
+      "form": "language",
+      "prompt": "The primary language of Finland is",
+      "answer": "Finnish",
+      "answer_tokens": [
+        26838
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.319426953792572,
+          "top": " Finnish",
+          "capital_top": false,
+          "capital_p": 0.0003937478759326041
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.21355241537094116,
+          "top": " Finnish",
+          "capital_top": false,
+          "capital_p": 0.001331213628873229
+        },
+        "neutral": {
+          "rank": 3,
+          "p": 0.06525609642267227,
+          "top": " ",
+          "capital_top": false,
+          "capital_p": 8.145199535647407e-05
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.2562827467918396,
+          "top": " Finnish",
+          "capital_top": false,
+          "capital_p": 0.0003756924415938556
+        }
+      }
+    },
+    {
+      "country": "Poland",
+      "capital": "Warsaw",
+      "form": "possessive",
+      "prompt": "Poland's capital is",
+      "answer": "Warsaw",
+      "answer_tokens": [
+        32955
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 203,
+          "p": 0.0005925145815126598,
+          "top": " now",
+          "capital_top": false,
+          "capital_p": 0.0005925145815126598
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.5380708575248718,
+          "top": " Warsaw",
+          "capital_top": true,
+          "capital_p": 0.5380708575248718
+        },
+        "neutral": {
+          "rank": 1,
+          "p": 0.27316755056381226,
+          "top": " Warsaw",
+          "capital_top": true,
+          "capital_p": 0.27316755056381226
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.4820648431777954,
+          "top": " Warsaw",
+          "capital_top": true,
+          "capital_p": 0.4820648431777954
+        }
+      }
+    },
+    {
+      "country": "Poland",
+      "capital": "Warsaw",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Poland? Answer:",
+      "answer": "Warsaw",
+      "answer_tokens": [
+        32955
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 4,
+          "p": 0.026435118168592453,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.026435118168592453
+        },
+        "capital": {
+          "rank": 3,
+          "p": 0.11061214655637741,
+          "top": " Poland",
+          "capital_top": false,
+          "capital_p": 0.11061214655637741
+        },
+        "neutral": {
+          "rank": 11,
+          "p": 0.012551959604024887,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.012551959604024887
+        },
+        "other_attribute": {
+          "rank": 5,
+          "p": 0.029504163190722466,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.029504163190722466
+        }
+      }
+    },
+    {
+      "country": "Poland",
+      "capital": "Warsaw",
+      "form": "language",
+      "prompt": "The primary language of Poland is",
+      "answer": "Polish",
+      "answer_tokens": [
+        15945
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.18468131124973297,
+          "top": " Polish",
+          "capital_top": false,
+          "capital_p": 0.0004341091262176633
+        },
+        "capital": {
+          "rank": 3,
+          "p": 0.06831562519073486,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.0009523523040115833
+        },
+        "neutral": {
+          "rank": 4,
+          "p": 0.05149870738387108,
+          "top": " \"",
+          "capital_top": false,
+          "capital_p": 0.00022608887229580432
+        },
+        "other_attribute": {
+          "rank": 2,
+          "p": 0.11017190665006638,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.0003952975675929338
+        }
+      }
+    },
+    {
+      "country": "Austria",
+      "capital": "Vienna",
+      "form": "possessive",
+      "prompt": "Austria's capital is",
+      "answer": "Vienna",
+      "answer_tokens": [
+        23825
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 646,
+          "p": 0.00013560573279391974,
+          "top": " now",
+          "capital_top": false,
+          "capital_p": 0.00013560573279391974
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.130642831325531,
+          "top": " Vienna",
+          "capital_top": true,
+          "capital_p": 0.130642831325531
+        },
+        "neutral": {
+          "rank": 1,
+          "p": 0.08599991351366043,
+          "top": " Vienna",
+          "capital_top": true,
+          "capital_p": 0.08599991351366043
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.11245330423116684,
+          "top": " Vienna",
+          "capital_top": true,
+          "capital_p": 0.11245330423116684
+        }
+      }
+    },
+    {
+      "country": "Austria",
+      "capital": "Vienna",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Austria? Answer:",
+      "answer": "Vienna",
+      "answer_tokens": [
+        23825
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 5,
+          "p": 0.021526478230953217,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.021526478230953217
+        },
+        "capital": {
+          "rank": 3,
+          "p": 0.08255644142627716,
+          "top": " Austria",
+          "capital_top": false,
+          "capital_p": 0.08255644142627716
+        },
+        "neutral": {
+          "rank": 4,
+          "p": 0.028393950313329697,
+          "top": " Austria",
+          "capital_top": false,
+          "capital_p": 0.028393950313329697
+        },
+        "other_attribute": {
+          "rank": 4,
+          "p": 0.03900707885622978,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.03900707885622978
+        }
+      }
+    },
+    {
+      "country": "Austria",
+      "capital": "Vienna",
+      "form": "language",
+      "prompt": "The primary language of Austria is",
+      "answer": "German",
+      "answer_tokens": [
+        2679
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 2,
+          "p": 0.04829892888665199,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.0004045475507155061
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.08752565085887909,
+          "top": " German",
+          "capital_top": false,
+          "capital_p": 0.0010765724582597613
+        },
+        "neutral": {
+          "rank": 6,
+          "p": 0.011275356635451317,
+          "top": " \"",
+          "capital_top": false,
+          "capital_p": 0.0002729765838012099
+        },
+        "other_attribute": {
+          "rank": 2,
+          "p": 0.06337898969650269,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.0004800999304279685
+        }
+      }
+    },
+    {
+      "country": "Hungary",
+      "capital": "Budapest",
+      "form": "possessive",
+      "prompt": "Hungary's capital is",
+      "answer": "Budapest",
+      "answer_tokens": [
+        40959
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 123,
+          "p": 0.0010628661839291453,
+          "top": " now",
+          "capital_top": false,
+          "capital_p": 0.0010628661839291453
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.6537283062934875,
+          "top": " Budapest",
+          "capital_top": true,
+          "capital_p": 0.6537283062934875
+        },
+        "neutral": {
+          "rank": 1,
+          "p": 0.19393903017044067,
+          "top": " Budapest",
+          "capital_top": true,
+          "capital_p": 0.19393903017044067
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.5288475155830383,
+          "top": " Budapest",
+          "capital_top": true,
+          "capital_p": 0.5288475155830383
+        }
+      }
+    },
+    {
+      "country": "Hungary",
+      "capital": "Budapest",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Hungary? Answer:",
+      "answer": "Budapest",
+      "answer_tokens": [
+        40959
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 5,
+          "p": 0.022483937442302704,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.022483937442302704
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.10234104096889496,
+          "top": " Budapest",
+          "capital_top": true,
+          "capital_p": 0.10234104096889496
+        },
+        "neutral": {
+          "rank": 14,
+          "p": 0.011201385408639908,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.011201385408639908
+        },
+        "other_attribute": {
+          "rank": 7,
+          "p": 0.02267090417444706,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.02267090417444706
+        }
+      }
+    },
+    {
+      "country": "Hungary",
+      "capital": "Budapest",
+      "form": "language",
+      "prompt": "The primary language of Hungary is",
+      "answer": "Hungarian",
+      "answer_tokens": [
+        27304
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.14541025459766388,
+          "top": " Hungarian",
+          "capital_top": false,
+          "capital_p": 0.0003452271339483559
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.09864674508571625,
+          "top": " Hungarian",
+          "capital_top": false,
+          "capital_p": 0.0023912969045341015
+        },
+        "neutral": {
+          "rank": 3,
+          "p": 0.05262441188097,
+          "top": " ",
+          "capital_top": false,
+          "capital_p": 0.00035493780160322785
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.14175362884998322,
+          "top": " Hungarian",
+          "capital_top": false,
+          "capital_p": 0.0006788103491999209
+        }
+      }
+    },
+    {
+      "country": "Netherlands",
+      "capital": "Amsterdam",
+      "form": "possessive",
+      "prompt": "Netherlands's capital is",
+      "answer": "Amsterdam",
+      "answer_tokens": [
+        24377
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 565,
+          "p": 0.00016822006728034467,
+          "top": " a",
+          "capital_top": false,
+          "capital_p": 0.00016822006728034467
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.13827906548976898,
+          "top": " Amsterdam",
+          "capital_top": true,
+          "capital_p": 0.13827906548976898
+        },
+        "neutral": {
+          "rank": 4,
+          "p": 0.022360829636454582,
+          "top": " N",
+          "capital_top": false,
+          "capital_p": 0.022360829636454582
+        },
+        "other_attribute": {
+          "rank": 5,
+          "p": 0.034720130264759064,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.034720130264759064
+        }
+      }
+    },
+    {
+      "country": "Netherlands",
+      "capital": "Amsterdam",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Netherlands? Answer:",
+      "answer": "Amsterdam",
+      "answer_tokens": [
+        24377
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 9,
+          "p": 0.014724847860634327,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.014724847860634327
+        },
+        "capital": {
+          "rank": 2,
+          "p": 0.08144386112689972,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.08144386112689972
+        },
+        "neutral": {
+          "rank": 9,
+          "p": 0.011936379596590996,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.011936379596590996
+        },
+        "other_attribute": {
+          "rank": 7,
+          "p": 0.012889975681900978,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.012889975681900978
+        }
+      }
+    },
+    {
+      "country": "Netherlands",
+      "capital": "Amsterdam",
+      "form": "language",
+      "prompt": "The primary language of Netherlands is",
+      "answer": "Dutch",
+      "answer_tokens": [
+        10914
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.29931408166885376,
+          "top": " Dutch",
+          "capital_top": false,
+          "capital_p": 0.0002477078523952514
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.18201841413974762,
+          "top": " Dutch",
+          "capital_top": false,
+          "capital_p": 0.0009829677874222398
+        },
+        "neutral": {
+          "rank": 1,
+          "p": 0.1304973065853119,
+          "top": " Dutch",
+          "capital_top": false,
+          "capital_p": 0.00012886845797766
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.22189311683177948,
+          "top": " Dutch",
+          "capital_top": false,
+          "capital_p": 0.00015437962429132313
+        }
+      }
+    },
+    {
+      "country": "Thailand",
+      "capital": "Bangkok",
+      "form": "possessive",
+      "prompt": "Thailand's capital is",
+      "answer": "Bangkok",
+      "answer_tokens": [
+        35007
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 434,
+          "p": 0.00022766873007640243,
+          "top": " now",
+          "capital_top": false,
+          "capital_p": 0.00022766873007640243
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.6890134215354919,
+          "top": " Bangkok",
+          "capital_top": true,
+          "capital_p": 0.6890134215354919
+        },
+        "neutral": {
+          "rank": 2,
+          "p": 0.08855392783880234,
+          "top": " Th",
+          "capital_top": false,
+          "capital_p": 0.08855392783880234
+        },
+        "other_attribute": {
+          "rank": 2,
+          "p": 0.2499413639307022,
+          "top": " Th",
+          "capital_top": false,
+          "capital_p": 0.2499413639307022
+        }
+      }
+    },
+    {
+      "country": "Thailand",
+      "capital": "Bangkok",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Thailand? Answer:",
+      "answer": "Bangkok",
+      "answer_tokens": [
+        35007
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 6,
+          "p": 0.019245343282818794,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.019245343282818794
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.13340459764003754,
+          "top": " Bangkok",
+          "capital_top": true,
+          "capital_p": 0.13340459764003754
+        },
+        "neutral": {
+          "rank": 5,
+          "p": 0.02291359379887581,
+          "top": " Th",
+          "capital_top": false,
+          "capital_p": 0.02291359379887581
+        },
+        "other_attribute": {
+          "rank": 5,
+          "p": 0.027561889961361885,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.027561889961361885
+        }
+      }
+    },
+    {
+      "country": "Thailand",
+      "capital": "Bangkok",
+      "form": "language",
+      "prompt": "The primary language of Thailand is",
+      "answer": "Thai",
+      "answer_tokens": [
+        18933
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 1,
+          "p": 0.19422230124473572,
+          "top": " Thai",
+          "capital_top": false,
+          "capital_p": 0.0007707923068664968
+        },
+        "capital": {
+          "rank": 2,
+          "p": 0.149673193693161,
+          "top": " English",
+          "capital_top": false,
+          "capital_p": 0.004267416894435883
+        },
+        "neutral": {
+          "rank": 1,
+          "p": 0.08459781110286713,
+          "top": " Thai",
+          "capital_top": false,
+          "capital_p": 0.0007767396164126694
+        },
+        "other_attribute": {
+          "rank": 1,
+          "p": 0.15520109236240387,
+          "top": " Thai",
+          "capital_top": false,
+          "capital_p": 0.0006989772664383054
+        }
+      }
+    },
+    {
+      "country": "Peru",
+      "capital": "Lima",
+      "form": "possessive",
+      "prompt": "Peru's capital is",
+      "answer": "Lima",
+      "answer_tokens": [
+        41578
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 97,
+          "p": 0.0011174199171364307,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.0011174199171364307
+        },
+        "capital": {
+          "rank": 1,
+          "p": 0.13146768510341644,
+          "top": " Lima",
+          "capital_top": true,
+          "capital_p": 0.13146768510341644
+        },
+        "neutral": {
+          "rank": 3,
+          "p": 0.05029052868485451,
+          "top": " P",
+          "capital_top": false,
+          "capital_p": 0.05029052868485451
+        },
+        "other_attribute": {
+          "rank": 2,
+          "p": 0.11613266915082932,
+          "top": " Per",
+          "capital_top": false,
+          "capital_p": 0.11613266915082932
+        }
+      }
+    },
+    {
+      "country": "Peru",
+      "capital": "Lima",
+      "form": "qa",
+      "prompt": "Question: What is the capital of Peru? Answer:",
+      "answer": "Lima",
+      "answer_tokens": [
+        41578
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 15,
+          "p": 0.00585623923689127,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.00585623923689127
+        },
+        "capital": {
+          "rank": 3,
+          "p": 0.057064998894929886,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.057064998894929886
+        },
+        "neutral": {
+          "rank": 7,
+          "p": 0.021153945475816727,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.021153945475816727
+        },
+        "other_attribute": {
+          "rank": 6,
+          "p": 0.018826676532626152,
+          "top": " The",
+          "capital_top": false,
+          "capital_p": 0.018826676532626152
+        }
+      }
+    },
+    {
+      "country": "Peru",
+      "capital": "Lima",
+      "form": "language",
+      "prompt": "The primary language of Peru is",
+      "answer": "Spanish",
+      "answer_tokens": [
+        7897
+      ],
+      "eligible": true,
+      "results": {
+        "baseline": {
+          "rank": 5,
+          "p": 0.02560998685657978,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.001775320153683424
+        },
+        "capital": {
+          "rank": 3,
+          "p": 0.03917510807514191,
+          "top": " English",
+          "capital_top": false,
+          "capital_p": 0.011944201774895191
+        },
+        "neutral": {
+          "rank": 4,
+          "p": 0.016723301261663437,
+          "top": " \"",
+          "capital_top": false,
+          "capital_p": 0.0031039314344525337
+        },
+        "other_attribute": {
+          "rank": 2,
+          "p": 0.05397455021739006,
+          "top": " the",
+          "capital_top": false,
+          "capital_p": 0.0039068241603672504
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 584.2567034580279,
+  "peak_rss_mib": 2349.140625
+}

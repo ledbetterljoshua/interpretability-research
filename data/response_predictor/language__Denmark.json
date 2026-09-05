@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Denmark is",
+  "answer": "Danish",
+  "baseline": {
+    "rank": 1,
+    "p": 0.2005165070295334,
+    "margin": 1.2589540481567383,
+    "top_id": 20849,
+    "top": " Danish"
+  },
+  "full": {
+    "rank": 2,
+    "p": 0.09328806400299072,
+    "margin": -0.27893829345703125,
+    "top_id": 3594,
+    "top": " English"
+  },
+  "controls": {
+    "endpoint_0": 2.574920654296875e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 1,
+        "p": 0.21273033320903778,
+        "margin": 0.7217884063720703,
+        "top_id": 20849,
+        "top": " Danish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.21273033320903778,
+          "margin": 0.7217884063720703,
+          "top_id": 20849,
+          "top": " Danish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.21273033320903778,
+          "margin": 0.7217884063720703,
+          "top_id": 20849,
+          "top": " Danish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.21273033320903778,
+          "margin": 0.7217884063720703,
+          "top_id": 20849,
+          "top": " Danish"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 2,
+        "p": 0.09328806400299072,
+        "margin": -0.27893829345703125,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.09328806400299072,
+          "margin": -0.27893829345703125,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.09328806400299072,
+          "margin": -0.27893829345703125,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.09328806400299072,
+          "margin": -0.27893829345703125,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.46041688323020935,
+        "margin": 2.0566368103027344,
+        "top_id": 20849,
+        "top": " Danish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.12677571177482605,
+          "margin": -0.7129230499267578,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.12677571177482605,
+          "margin": -0.7129230499267578,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.12677571177482605,
+          "margin": -0.7129230499267578,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.14439040422439575,
+        "margin": 0.4314613342285156,
+        "top_id": 20849,
+        "top": " Danish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.13091625273227692,
+          "margin": 0.86102294921875,
+          "top_id": 20849,
+          "top": " Danish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.25130361318588257,
+          "margin": 1.0487737655639648,
+          "top_id": 20849,
+          "top": " Danish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.14439040422439575,
+          "margin": 0.4314613342285156,
+          "top_id": 20849,
+          "top": " Danish"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.4961242079734802,
+        "margin": 1.5930900573730469,
+        "top_id": 20849,
+        "top": " Danish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.16104240715503693,
+          "margin": 0.059001922607421875,
+          "top_id": 20849,
+          "top": " Danish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.16104240715503693,
+          "margin": 0.059001922607421875,
+          "top_id": 20849,
+          "top": " Danish"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.1273103654384613,
+          "margin": -0.4138755798339844,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.08160421997308731,
+        "margin": 0.1446514129638672,
+        "top_id": 20849,
+        "top": " Danish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.12117693573236465,
+          "margin": 0.13446807861328125,
+          "top_id": 20849,
+          "top": " Danish"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.06164221465587616,
+          "margin": -0.2590608596801758,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.04760133475065231,
+          "margin": -0.6153831481933594,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 2,
+        "p": 0.10771101713180542,
+        "margin": -0.13941478729248047,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.04597746953368187,
+          "margin": -1.0375986099243164,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.040835462510585785,
+          "margin": -1.2229547500610352,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 4,
+          "p": 0.044131796807050705,
+          "margin": -1.153188705444336,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.08650010824203491,
+        "margin": -1.03106689453125,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.10801135748624802,
+          "margin": -0.39991188049316406,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.08777351677417755,
+          "margin": -0.6865291595458984,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.08777351677417755,
+          "margin": -0.6865291595458984,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 2,
+        "p": 0.1673046499490738,
+        "margin": -0.13317108154296875,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.1673046499490738,
+          "margin": -0.13317108154296875,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.1673046499490738,
+          "margin": -0.13317108154296875,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.1673046499490738,
+          "margin": -0.13317108154296875,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    }
+  ],
+  "country": "Denmark",
+  "form": "language"
+}

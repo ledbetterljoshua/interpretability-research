@@ -1,16 +1,69 @@
 # Research goals: explanations that survive intervention and distribution shifts
 
 Updated September 5, 2026. These are finite research milestones, not scheduled
-background jobs. The immediate empirical milestone is complete; follow-ups
-below are planned and have not been run.
+background jobs. Two empirical milestones are complete. The next milestone
+below is a research commitment with explicit falsification criteria, not a
+claim that its outcome is already established.
 
-**Strategic review:** [From a useful pilot to a consequential contribution](RESEARCH_STRATEGY.md)
-sets the larger objective: explanations that predict behavior changes and
-identify their own limits. Before executing the capital-specific goals below,
-compare the proposed claim directly with existing task-vector, faithfulness,
-and benchmark work. These goals are candidate experiments, not an automatic
-queue. The immediate next decision is whether a distinct, useful gap survives
-that comparison.
+**Strategic review:** [From a useful pilot to a consequential contribution](RESEARCH_STRATEGY.md).
+The closest-method comparison found substantial overlap with existing work;
+we narrowed the project to testing and improving a specific causal surrogate.
+
+## Completed milestone: from a failed explanation to a tested correction
+
+- [x] Compare the proposed research claim with Function Vectors, MIB, conditional
+  circuit work, certification, and intervention-utility evaluation.
+- [x] Separate direct readout, output-only bias, position, and matched-length
+  prefix alternatives on replication and fresh countries.
+- [x] Execute all 256 subsets of eight downstream components on twenty countries.
+- [x] Select a four-component route before validation subset outcomes exist;
+  meet the forecast with 10/10 validation capitals correct.
+- [x] Causally test MLP response after attention clamping, including restoring
+  each MLP to its fully steered value.
+- [x] Turn that evidence into response-aware predictions and test new subset
+  outcomes on changed question forms, retaining the language-family regression.
+- [x] Release all measurements, prospective local plans, hashes, verification,
+  scientific figures, and an explorer that reads saved data without a model.
+
+Result: [offset and response report](notes/2026-09-05-offset-route-results.md).
+Correct-answer prediction errors fall from 40 to 22 on 210 new nontrivial
+interventions. The vector's task specificity remains unresolved; it damages
+language answering. The result is one-model evidence for a local correction,
+not a new general task-vector method or a demonstration of practical safety.
+
+## Next milestone: predict useful actions and collateral effects
+
+**Ambitious target:** a compact response-aware explanation that selects useful
+interventions and predicts failures better than comparable-access alternatives,
+on fresh entities, relation families and a second model. A retrospective
+attribution figure or pooled accuracy improvement alone will not complete it.
+
+1. Freeze entity, relation, template and intervention splits before mechanism
+   selection. Use both competent and failing baselines, multiple-token answers,
+   and explicit collateral-damage labels. Explain the language failure instead
+   of excluding it. The current twenty evaluation entities are development data
+   for any further mechanism selection.
+2. Compare output calibration, frozen contributions, single-ablation prediction,
+   appropriate existing conditional methods, and unguided partial recomputation.
+   Count access to donor queries, model weights and additional computation.
+   Verify whether mechanistic selection adds value over merely spending more.
+3. Choose the second model to test a defined mechanism hypothesis. First measure
+   loading/activation memory and reserve headroom; run one guarded model process
+   at a time. Model size alone is not a research result.
+4. Run a prospective action-selection test: fixed intervention budget, held-out
+   utility and side-effect scores, no selection on test outcomes, and uncertainty
+   grouped by entity/prompt family. Publish executable reproduction and every
+   failed forecast. External replication is a separate, stronger milestone.
+
+**Falsification:** if matched-access behavioral or unguided-computation baselines
+match the surrogate, reject added value from our mechanistic choice. If the
+response model fails across families, narrow or replace it. If improvements only
+appear after choosing favorable masks or weak baselines, do not claim impact.
+
+**Done when:** the frozen model of intervention effects changes an action a
+researcher should take on a genuinely held-out problem, with verified benefit
+and bounded collateral damage. A well-supported negative answer also completes
+the scientific test; it does not meet the positive contribution target.
 
 ## Completed milestone: move from one prompt to a falsifiable explanation
 
@@ -29,12 +82,15 @@ Result: [three-study report](notes/2026-09-05-capital-circuit-results.md).
 The interesting lead is the separation between transferring a country signal
 and causing a capital answer. The existing three-head explanation is incomplete.
 
-## Goal 1 — Identify what the successful vector changes
+## Retained question 1 — Identify what the successful vector changes
 
 **Question:** is the final-L8 offset a relation-specific computation, a generic
 short-answer instruction, a positional effect, or an output-category bias?
 
-**Next experiment:** build a factorial set of prefixes that separates example
+**Current status:** matched-length and position controls executed; unrelated vectors
+work and language answers are harmed. Unique semantic interpretation unresolved.
+
+**Further experiment:** build a factorial set of prefixes that separates example
 content from length and grammatical format. Match token counts and absolute
 query positions. Compare capital demonstrations, unrelated factual examples,
 nonfactual length controls, and examples with mismatched answers. Test other
@@ -51,12 +107,16 @@ successful task selection. Neither outcome is a failed project.
 entities and templates, with all controls reported. Start with the same small
 model; a new model adds cost before it resolves this confound.
 
-## Goal 2 — Trace the offset's downstream causal route
+## Retained question 2 — Trace the offset's downstream causal route
 
 **Question:** does the successful residual intervention operate through reader
 queries, attention values, MLP transformations, other heads, or the final readout?
 
-**Next experiment:** in the vector-steered run, selectively restore candidate
+**Current status:** exhaustive block interventions, conditional response patches,
+and response-aware surrogate tests executed. A small route predicts held-out
+subset sufficiency, while task-family transfer remains limited.
+
+**Further experiment:** in the vector-steered run, selectively restore candidate
 downstream activations to their unsteered baseline. Measure the loss of the
 rescue, not only their correlation with it. Start with layer 8–11 attention
 and MLP outputs, then decompose only the components supported by those tests.
@@ -71,7 +131,7 @@ rather than inventing a deeper algorithmic account.
 **Done when:** a compact causal model predicts which held-out interventions
 break or preserve the rescue. A large heat map alone is not the deliverable.
 
-## Goal 3 — Turn the metric failure into a useful evaluation test
+## Retained question 3 — Turn the metric failure into a useful evaluation test
 
 **Question:** when does high circuit recovery certify the behavior a researcher
 actually claims to explain? We observed 165% mean pairwise recovery with 0/10

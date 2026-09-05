@@ -1,0 +1,274 @@
+{
+  "candidates": [
+    {
+      "country": "Belgium",
+      "capital": "Brussels",
+      "answer_tokens": [
+        16445
+      ]
+    },
+    {
+      "country": "Ireland",
+      "capital": "Dublin",
+      "answer_tokens": [
+        18220
+      ]
+    },
+    {
+      "country": "Chile",
+      "capital": "Santiago",
+      "answer_tokens": [
+        34802
+      ]
+    },
+    {
+      "country": "Cuba",
+      "capital": "Havana",
+      "answer_tokens": [
+        40274
+      ]
+    },
+    {
+      "country": "Kenya",
+      "capital": "Nairobi",
+      "answer_tokens": [
+        399,
+        18131,
+        8482
+      ]
+    },
+    {
+      "country": "Senegal",
+      "capital": "Dakar",
+      "answer_tokens": [
+        11775,
+        283
+      ]
+    },
+    {
+      "country": "Morocco",
+      "capital": "Rabat",
+      "answer_tokens": [
+        28559,
+        265
+      ]
+    },
+    {
+      "country": "Tunisia",
+      "capital": "Tunis",
+      "answer_tokens": [
+        25266
+      ]
+    },
+    {
+      "country": "Algeria",
+      "capital": "Algiers",
+      "answer_tokens": [
+        978,
+        70,
+        3183
+      ]
+    },
+    {
+      "country": "Lebanon",
+      "capital": "Beirut",
+      "answer_tokens": [
+        40702
+      ]
+    },
+    {
+      "country": "Jordan",
+      "capital": "Amman",
+      "answer_tokens": [
+        1703,
+        805
+      ]
+    },
+    {
+      "country": "Iran",
+      "capital": "Tehran",
+      "answer_tokens": [
+        20882
+      ]
+    },
+    {
+      "country": "Iraq",
+      "capital": "Baghdad",
+      "answer_tokens": [
+        19761
+      ]
+    },
+    {
+      "country": "Syria",
+      "capital": "Damascus",
+      "answer_tokens": [
+        21028
+      ]
+    },
+    {
+      "country": "Romania",
+      "capital": "Bucharest",
+      "answer_tokens": [
+        23670,
+        12423
+      ]
+    },
+    {
+      "country": "Serbia",
+      "capital": "Belgrade",
+      "answer_tokens": [
+        3944,
+        9526
+      ]
+    },
+    {
+      "country": "Pakistan",
+      "capital": "Islamabad",
+      "answer_tokens": [
+        36878
+      ]
+    },
+    {
+      "country": "Nigeria",
+      "capital": "Abuja",
+      "answer_tokens": [
+        13098,
+        6592
+      ]
+    }
+  ],
+  "fresh": [
+    [
+      "Belgium",
+      "Brussels"
+    ],
+    [
+      "Ireland",
+      "Dublin"
+    ],
+    [
+      "Chile",
+      "Santiago"
+    ],
+    [
+      "Cuba",
+      "Havana"
+    ],
+    [
+      "Tunisia",
+      "Tunis"
+    ],
+    [
+      "Lebanon",
+      "Beirut"
+    ],
+    [
+      "Iran",
+      "Tehran"
+    ],
+    [
+      "Iraq",
+      "Baghdad"
+    ],
+    [
+      "Syria",
+      "Damascus"
+    ],
+    [
+      "Pakistan",
+      "Islamabad"
+    ]
+  ],
+  "replication": [
+    [
+      "Denmark",
+      "Copenhagen"
+    ],
+    [
+      "Norway",
+      "Oslo"
+    ],
+    [
+      "Sweden",
+      "Stockholm"
+    ],
+    [
+      "Finland",
+      "Helsinki"
+    ],
+    [
+      "Poland",
+      "Warsaw"
+    ],
+    [
+      "Austria",
+      "Vienna"
+    ],
+    [
+      "Hungary",
+      "Budapest"
+    ],
+    [
+      "Netherlands",
+      "Amsterdam"
+    ],
+    [
+      "Thailand",
+      "Bangkok"
+    ],
+    [
+      "Peru",
+      "Lima"
+    ]
+  ],
+  "fitting": [
+    [
+      "Japan",
+      "Tokyo"
+    ],
+    [
+      "China",
+      "Beijing"
+    ],
+    [
+      "Russia",
+      "Moscow"
+    ],
+    [
+      "Canada",
+      "Ottawa"
+    ],
+    [
+      "Portugal",
+      "Lisbon"
+    ],
+    [
+      "Spain",
+      "Madrid"
+    ],
+    [
+      "Egypt",
+      "Cairo"
+    ],
+    [
+      "Australia",
+      "Canberra"
+    ],
+    [
+      "Greece",
+      "Athens"
+    ],
+    [
+      "Turkey",
+      "Ankara"
+    ]
+  ],
+  "prefix_shift": 7,
+  "prefixes": {
+    "capital": "The capital of Germany is Berlin. ",
+    "wrong_answer": "The capital of Germany is banana. ",
+    "other_attribute": "The language of Germany is German. ",
+    "neutral": "This is a short unrelated sentence. ",
+    "shuffled": "The of capital Germany Berlin is. "
+  }
+}

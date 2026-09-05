@@ -1,0 +1,323 @@
+{
+  "prompt": "Question: What is the capital of Thailand? Answer:",
+  "answer": "Bangkok",
+  "baseline": {
+    "rank": 6,
+    "p": 0.019245343282818794,
+    "margin": -2.3056201934814453,
+    "top_id": 383,
+    "top": " The"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.13340459764003754,
+    "margin": 0.39061927795410156,
+    "top_id": 35007,
+    "top": " Bangkok"
+  },
+  "controls": {
+    "endpoint_0": 1.71661376953125e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 5,
+        "p": 0.031642116606235504,
+        "margin": -1.962045669555664,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 5,
+          "p": 0.031642116606235504,
+          "margin": -1.962045669555664,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 5,
+          "p": 0.031642116606235504,
+          "margin": -1.962045669555664,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 5,
+          "p": 0.031642116606235504,
+          "margin": -1.962045669555664,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.13340459764003754,
+        "margin": 0.39061927795410156,
+        "top_id": 35007,
+        "top": " Bangkok"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.13340459764003754,
+          "margin": 0.39061927795410156,
+          "top_id": 35007,
+          "top": " Bangkok"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.13340459764003754,
+          "margin": 0.39061927795410156,
+          "top_id": 35007,
+          "top": " Bangkok"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.13340459764003754,
+          "margin": 0.39061927795410156,
+          "top_id": 35007,
+          "top": " Bangkok"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 3,
+        "p": 0.09211383014917374,
+        "margin": -0.45462894439697266,
+        "top_id": 16952,
+        "top": " Thailand"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.08171091973781586,
+          "margin": -0.7169513702392578,
+          "top_id": 16952,
+          "top": " Thailand"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.08171091973781586,
+          "margin": -0.7169513702392578,
+          "top_id": 16952,
+          "top": " Thailand"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.08171091973781586,
+          "margin": -0.7169513702392578,
+          "top_id": 16952,
+          "top": " Thailand"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.12103912979364395,
+        "margin": 0.17778778076171875,
+        "top_id": 35007,
+        "top": " Bangkok"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.05497392266988754,
+          "margin": -0.7599077224731445,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.08681442588567734,
+          "margin": -0.18049907684326172,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.12103912979364395,
+          "margin": 0.17778778076171875,
+          "top_id": 35007,
+          "top": " Bangkok"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.3097406327724457,
+        "margin": 2.458064079284668,
+        "top_id": 35007,
+        "top": " Bangkok"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.16447749733924866,
+          "margin": 0.8560161590576172,
+          "top_id": 35007,
+          "top": " Bangkok"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.16447749733924866,
+          "margin": 0.8560161590576172,
+          "top_id": 35007,
+          "top": " Bangkok"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.21429550647735596,
+          "margin": 1.4805517196655273,
+          "top_id": 35007,
+          "top": " Bangkok"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 3,
+        "p": 0.08210311830043793,
+        "margin": -0.45389270782470703,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.07910816371440887,
+          "margin": -0.4769258499145508,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.07023713737726212,
+          "margin": -0.6500864028930664,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.06740401685237885,
+          "margin": -0.5874958038330078,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 2,
+        "p": 0.10758476704359055,
+        "margin": 0.054375648498535156,
+        "top_id": 16952,
+        "top": " Thailand"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.07963670045137405,
+          "margin": -0.5158615112304688,
+          "top_id": 383,
+          "top": " The"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.09135544300079346,
+          "margin": -0.15507030487060547,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.09647300839424133,
+          "margin": -0.11549568176269531,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.10133574903011322,
+        "margin": -0.012179374694824219,
+        "top_id": 383,
+        "top": " The"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.12084222584962845,
+          "margin": 0.047153472900390625,
+          "top_id": 35007,
+          "top": " Bangkok"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.0996071994304657,
+          "margin": -0.0050067901611328125,
+          "top_id": 383,
+          "top": " The"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.0996071994304657,
+          "margin": -0.0050067901611328125,
+          "top_id": 383,
+          "top": " The"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.24969816207885742,
+        "margin": 1.6306076049804688,
+        "top_id": 35007,
+        "top": " Bangkok"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.24969816207885742,
+          "margin": 1.6306076049804688,
+          "top_id": 35007,
+          "top": " Bangkok"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.24969816207885742,
+          "margin": 1.6306076049804688,
+          "top_id": 35007,
+          "top": " Bangkok"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.24969816207885742,
+          "margin": 1.6306076049804688,
+          "top_id": 35007,
+          "top": " Bangkok"
+        }
+      }
+    }
+  ],
+  "country": "Thailand",
+  "form": "qa"
+}

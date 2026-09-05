@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Finland is",
+  "answer": "Finnish",
+  "baseline": {
+    "rank": 1,
+    "p": 0.319426953792572,
+    "margin": 2.007162094116211,
+    "top_id": 26838,
+    "top": " Finnish"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.21355241537094116,
+    "margin": 1.4414863586425781,
+    "top_id": 26838,
+    "top": " Finnish"
+  },
+  "controls": {
+    "endpoint_0": 2.09808349609375e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 1,
+        "p": 0.26408475637435913,
+        "margin": 1.8394508361816406,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.26408475637435913,
+          "margin": 1.8394508361816406,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.26408475637435913,
+          "margin": 1.8394508361816406,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.26408475637435913,
+          "margin": 1.8394508361816406,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.21355241537094116,
+        "margin": 1.4414863586425781,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.21355241537094116,
+          "margin": 1.4414863586425781,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.21355241537094116,
+          "margin": 1.4414863586425781,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.21355241537094116,
+          "margin": 1.4414863586425781,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.3323846161365509,
+        "margin": 2.386349678039551,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1961532086133957,
+          "margin": 1.5971994400024414,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.1961532086133957,
+          "margin": 1.5971994400024414,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.1961532086133957,
+          "margin": 1.5971994400024414,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.20992852747440338,
+        "margin": 1.4849796295166016,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2863539159297943,
+          "margin": 1.6342525482177734,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.37597349286079407,
+          "margin": 2.298672676086426,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.20992852747440338,
+          "margin": 1.4849796295166016,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.6192358732223511,
+        "margin": 3.6954212188720703,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.19522692263126373,
+          "margin": 1.1946086883544922,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.19522692263126373,
+          "margin": 1.1946086883544922,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.15729469060897827,
+          "margin": 1.0646953582763672,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.13440430164337158,
+        "margin": 1.6555719375610352,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.25435757637023926,
+          "margin": 1.8205623626708984,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.14848747849464417,
+          "margin": 0.9405698776245117,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.1282496154308319,
+          "margin": 1.4887638092041016,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.19560642540454865,
+        "margin": 1.3242225646972656,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.135467529296875,
+          "margin": 0.9568758010864258,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.09887892752885818,
+          "margin": 0.4073486328125,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.10990415513515472,
+          "margin": 0.7326850891113281,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 1,
+        "p": 0.17869913578033447,
+        "margin": 1.115086555480957,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.24077542126178741,
+          "margin": 1.5000009536743164,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.18929211795330048,
+          "margin": 1.2051544189453125,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.18929211795330048,
+          "margin": 1.2051544189453125,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.22746294736862183,
+        "margin": 1.6583690643310547,
+        "top_id": 26838,
+        "top": " Finnish"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.22746294736862183,
+          "margin": 1.6583690643310547,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.22746294736862183,
+          "margin": 1.6583690643310547,
+          "top_id": 26838,
+          "top": " Finnish"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.22746294736862183,
+          "margin": 1.6583690643310547,
+          "top_id": 26838,
+          "top": " Finnish"
+        }
+      }
+    }
+  ],
+  "country": "Finland",
+  "form": "language"
+}

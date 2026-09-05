@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Hungary is",
+  "answer": "Hungarian",
+  "baseline": {
+    "rank": 1,
+    "p": 0.14541025459766388,
+    "margin": 0.8104591369628906,
+    "top_id": 27304,
+    "top": " Hungarian"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.09864674508571625,
+    "margin": 0.6610345840454102,
+    "top_id": 27304,
+    "top": " Hungarian"
+  },
+  "controls": {
+    "endpoint_0": 2.288818359375e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 1,
+        "p": 0.10783128440380096,
+        "margin": 0.5079879760742188,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.10783128440380096,
+          "margin": 0.5079879760742188,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.10783128440380096,
+          "margin": 0.5079879760742188,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.10783128440380096,
+          "margin": 0.5079879760742188,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.09864674508571625,
+        "margin": 0.6610345840454102,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.09864674508571625,
+          "margin": 0.6610345840454102,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.09864674508571625,
+          "margin": 0.6610345840454102,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.09864674508571625,
+          "margin": 0.6610345840454102,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.16809988021850586,
+        "margin": 1.1804876327514648,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.07474338263273239,
+          "margin": 0.27520275115966797,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.07474338263273239,
+          "margin": 0.27520275115966797,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.07474338263273239,
+          "margin": 0.27520275115966797,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.10895511507987976,
+        "margin": 0.7100791931152344,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.14070793986320496,
+          "margin": 0.8511219024658203,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.18977418541908264,
+          "margin": 1.36737060546875,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.10895511507987976,
+          "margin": 0.7100791931152344,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.5011619329452515,
+        "margin": 3.1977739334106445,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.12458830326795578,
+          "margin": 0.7943706512451172,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.12458830326795578,
+          "margin": 0.7943706512451172,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.106472447514534,
+          "margin": 0.7722034454345703,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.10918905586004257,
+        "margin": 1.4829902648925781,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.10025841742753983,
+          "margin": 0.7613630294799805,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.0746263861656189,
+          "margin": 0.3059568405151367,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.07044698297977448,
+          "margin": 0.9400081634521484,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.10213477164506912,
+        "margin": 0.5573625564575195,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.04689980670809746,
+          "margin": -0.09160518646240234,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.03976963460445404,
+          "margin": -0.3838624954223633,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.05371842905879021,
+          "margin": 0.004746437072753906,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.08514100313186646,
+        "margin": 0.005513191223144531,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.10429267585277557,
+          "margin": 0.4173431396484375,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.1080976128578186,
+          "margin": 0.3475809097290039,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.1080976128578186,
+          "margin": 0.3475809097290039,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.1546887755393982,
+        "margin": 1.3048362731933594,
+        "top_id": 27304,
+        "top": " Hungarian"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1546887755393982,
+          "margin": 1.3048362731933594,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.1546887755393982,
+          "margin": 1.3048362731933594,
+          "top_id": 27304,
+          "top": " Hungarian"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.1546887755393982,
+          "margin": 1.3048362731933594,
+          "top_id": 27304,
+          "top": " Hungarian"
+        }
+      }
+    }
+  ],
+  "country": "Hungary",
+  "form": "language"
+}

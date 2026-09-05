@@ -1,0 +1,323 @@
+{
+  "prompt": "Finland's capital is",
+  "answer": "Helsinki",
+  "baseline": {
+    "rank": 1048,
+    "p": 7.482140063075349e-05,
+    "margin": -6.297946929931641,
+    "top_id": 257,
+    "top": " a"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.2119499295949936,
+    "margin": 3.403557777404785,
+    "top_id": 47688,
+    "top": " Helsinki"
+  },
+  "controls": {
+    "endpoint_0": 2.288818359375e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 218,
+        "p": 0.0004858585889451206,
+        "margin": -4.667669296264648,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 218,
+          "p": 0.0004858585889451206,
+          "margin": -4.667669296264648,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 218,
+          "p": 0.0004858585889451206,
+          "margin": -4.667669296264648,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 218,
+          "p": 0.0004858585889451206,
+          "margin": -4.667669296264648,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.2119499295949936,
+        "margin": 3.403557777404785,
+        "top_id": 47688,
+        "top": " Helsinki"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2119499295949936,
+          "margin": 3.403557777404785,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.2119499295949936,
+          "margin": 3.403557777404785,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2119499295949936,
+          "margin": 3.403557777404785,
+          "top_id": 47688,
+          "top": " Helsinki"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 9,
+        "p": 0.01490608137100935,
+        "margin": -1.0985221862792969,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 4,
+          "p": 0.04485265165567398,
+          "margin": -0.01609039306640625,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 4,
+          "p": 0.04485265165567398,
+          "margin": -0.01609039306640625,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 4,
+          "p": 0.04485265165567398,
+          "margin": -0.01609039306640625,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.10354821383953094,
+        "margin": 2.395693778991699,
+        "top_id": 47688,
+        "top": " Helsinki"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 29,
+          "p": 0.004806403536349535,
+          "margin": -1.3022422790527344,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.07640468329191208,
+          "margin": 2.1858787536621094,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.10354821383953094,
+          "margin": 2.395693778991699,
+          "top_id": 47688,
+          "top": " Helsinki"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.46768882870674133,
+        "margin": 5.102627754211426,
+        "top_id": 47688,
+        "top": " Helsinki"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.32079464197158813,
+          "margin": 4.3220367431640625,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.32079464197158813,
+          "margin": 4.3220367431640625,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.3481470048427582,
+          "margin": 4.327956199645996,
+          "top_id": 47688,
+          "top": " Helsinki"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.09982740879058838,
+        "margin": 1.196014404296875,
+        "top_id": 47688,
+        "top": " Helsinki"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.15385191142559052,
+          "margin": 2.214315414428711,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.13763120770454407,
+          "margin": 1.975015640258789,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.09878860414028168,
+          "margin": 1.2287206649780273,
+          "top_id": 47688,
+          "top": " Helsinki"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 2,
+        "p": 0.06463849544525146,
+        "margin": 0.9612817764282227,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.06728044152259827,
+          "margin": 0.7879314422607422,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.08060012012720108,
+          "margin": 1.2307109832763672,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.0629802867770195,
+          "margin": 0.8686494827270508,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 1,
+        "p": 0.12160778045654297,
+        "margin": 1.9418458938598633,
+        "top_id": 47688,
+        "top": " Helsinki"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.09992870688438416,
+          "margin": 1.5800628662109375,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.12151242047548294,
+          "margin": 1.9413347244262695,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.12151242047548294,
+          "margin": 1.9413347244262695,
+          "top_id": 47688,
+          "top": " Helsinki"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.502875030040741,
+        "margin": 6.104485511779785,
+        "top_id": 47688,
+        "top": " Helsinki"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.502875030040741,
+          "margin": 6.104485511779785,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.502875030040741,
+          "margin": 6.104485511779785,
+          "top_id": 47688,
+          "top": " Helsinki"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.502875030040741,
+          "margin": 6.104485511779785,
+          "top_id": 47688,
+          "top": " Helsinki"
+        }
+      }
+    }
+  ],
+  "country": "Finland",
+  "form": "possessive"
+}

@@ -19,9 +19,9 @@ The notebooks trace a single question through four techniques: *how does GPT-2 S
 |---|---|---|
 | [`01_gpt2_internals`](experiments/01_gpt2_internals.ipynb) | Hooks, residual stream, attention patterns, logit lens, zero-ablation | The answer appears at layer 9 (rank 7 → rank 1, 95%) and late layers calibrate it down to 70%. Zero-ablation flags heads that are load-bearing but irrelevant, which motivates patching. Also: why you must keep GPT-2's BOS token, shown with the artifact it causes. |
 | [`02_circuit_tracing`](experiments/02_circuit_tracing.ipynb) | Direct logit attribution, exact to three decimals | Three heads carry the Paris-vs-Rome logit difference: **L9H8** (+2.6 of 6.0), **L8H11** (+1.4), **L10H0** (+1.1); two suppressors push back. L9H8 attends ~90% to the country token and writes a "France-associated" direction, not a Paris direction. Generalizes across 10 countries. |
-| [`03_activation_patching`](experiments/03_activation_patching.ipynb) | Residual, block, head, and pattern-vs-value patching | The country's identity sits at the country token through layer 8, then moves to the answer position across layers 9–10. The three heads recover 97% of the behavior between them; their attention patterns are identical on clean and corrupted prompts, so the information is entirely in what they *read*, not where they *look*. |
+| [`03_activation_patching`](experiments/03_activation_patching.ipynb) | Residual, block, head, and pattern-vs-value patching | The country's identity sits at the country token through layer 8, then moves to the answer position across layers 9–10. The three heads recover 97% of the Paris-versus-Rome score gap between them; their attention patterns are identical on clean and corrupted prompts, so the information is entirely in what they *read*, not where they *look*. |
 | [`04_sae_features`](experiments/04_sae_features.ipynb) | Pretrained sparse autoencoders, feature swaps as steering | The country token is one dominant SAE feature per country (activation ~40 vs ~10 for the next), the same direction across four independently trained SAEs (cosine 0.86–0.97). France-specific features appear at the answer position at layer 9–10, matching the patching hand-off. Swapping the Italy feature for the France feature at layer 8 rewrites the answer to Paris (63%); the same swap at layer 10 does nothing, because the information has already moved. |
-| [`05_does_it_scale`](experiments/05_does_it_scale.ipynb) | The same logit lens + patching sweep on GPT-2 Medium/Large/XL and Qwen3-1.7B (`experiments/scale_sweep.py`, results in `data/scale/`) | The circuit's *shape* is invariant: the fact sits at the country token, attention moves it to the answer position at 62–75% of depth, the top head always attends 81–92% to the country. Its *concentration* is not: the top head recovers 43% → 26% → 26% → 8% across the GPT-2 family, then **71%** in Qwen3-1.7B (one head, one-layer hand-off). Concentration tracks training recipe, not size. |
+| [`05_does_it_scale`](experiments/05_does_it_scale.ipynb) | The same logit lens + patching sweep on GPT-2 Medium/Large/XL and Qwen3-1.7B (`experiments/scale_sweep.py`, results in `data/scale/`) | The circuit's *shape* is invariant: the fact sits at the country token, attention moves it to the answer position at 62–75% of depth, the top head always attends 81–92% to the country. Its *concentration* is not: the top head recovers 43% → 26% → 26% → 8% across the GPT-2 family, then **71%** in Qwen3-1.7B (one head, one-layer hand-off). This one-prompt comparison does not identify a causal effect of training recipe; see the saved-scale audit. |
 | [`06_jacobian_lens`](experiments/06_jacobian_lens.ipynb) | Anthropic's Jacobian lens (July 2026 global-workspace paper), fitted on GPT-2 Small with the released code | At the answer position the J-lens reads the *type* of the answer (capital cities) at layer 6, two layers before the logit lens reads any city. At the country token it reads the fact the circuit will later copy: the capital is in its top 10 for 9/10 countries (logit lens: 0/10, median rank 228), and its top tokens match L9H8's OV readout from notebook 2. Category loading and eviction in word lists reproduce at layer 6. But the paper's four workspace-band signatures are flat: GPT-2 Small has a sensory band and a motor ramp with nothing in between. |
 
 Shared conventions live in [`experiments/interp_utils.py`](experiments/interp_utils.py): BOS always on, attribution always on a logit difference against a named counterfactual, components always scaled through the cached final LayerNorm so decompositions sum exactly.
@@ -48,6 +48,30 @@ watchdogs and a shared model lock. Read their prospective plans before rerunning
 ```bash
 .venv/bin/python -S experiments/verify_capital_studies.py  # no model loading
 ```
+
+### September 5: testing and improving intervention predictions
+
+A second milestone tests the successful offset against direct-readout,
+output-only and matched-prefix baselines, then measures all 256 subsets of eight
+downstream components on twenty countries. A frozen-contribution predictor
+gets correct-answer status wrong in 29.4% of validation conditions. Explicitly
+modelling MLP responses reduces that to 14.2%; on 210 subsequently measured
+nontrivial interventions across changed prompt forms, errors fall from 40 to 22.
+Language-family transfer remains weak, and the steering vector itself damages
+language answering. This is a one-model pilot, not a new general method.
+
+[Research page and intervention explorer](research-offsets.html) ·
+[Full report](notes/2026-09-05-offset-route-results.md) ·
+[Prediction figure](visualizations/offset-routes/prediction.svg) ·
+[Closest-method comparison](notes/2026-09-05-method-comparison.md).
+Four sequential CPU model processes: 725 seconds total, 2.29 GiB maximum RSS.
+
+```bash
+.venv/bin/python -S experiments/summarize_offset_routes.py
+.venv/bin/python -S experiments/summarize_response_predictor.py
+```
+
+Both commands verify and summarize saved data without loading a model.
 
 ### A note on the revision (September 2026)
 

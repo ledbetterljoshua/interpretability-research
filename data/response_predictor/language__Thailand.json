@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Thailand is",
+  "answer": "Thai",
+  "baseline": {
+    "rank": 1,
+    "p": 0.19422230124473572,
+    "margin": 0.9522848129272461,
+    "top_id": 18933,
+    "top": " Thai"
+  },
+  "full": {
+    "rank": 2,
+    "p": 0.149673193693161,
+    "margin": 0.8186073303222656,
+    "top_id": 3594,
+    "top": " English"
+  },
+  "controls": {
+    "endpoint_0": 1.621246337890625e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 1,
+        "p": 0.2154248207807541,
+        "margin": 1.3519477844238281,
+        "top_id": 18933,
+        "top": " Thai"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2154248207807541,
+          "margin": 1.3519477844238281,
+          "top_id": 18933,
+          "top": " Thai"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.2154248207807541,
+          "margin": 1.3519477844238281,
+          "top_id": 18933,
+          "top": " Thai"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2154248207807541,
+          "margin": 1.3519477844238281,
+          "top_id": 18933,
+          "top": " Thai"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 2,
+        "p": 0.149673193693161,
+        "margin": 0.8186073303222656,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.149673193693161,
+          "margin": 0.8186073303222656,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.149673193693161,
+          "margin": 0.8186073303222656,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.149673193693161,
+          "margin": 0.8186073303222656,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.17821583151817322,
+        "margin": 1.665140151977539,
+        "top_id": 18933,
+        "top": " Thai"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.10002166777849197,
+          "margin": 0.7317113876342773,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.10002166777849197,
+          "margin": 0.7317113876342773,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.10002166777849197,
+          "margin": 0.7317113876342773,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.2889973819255829,
+        "margin": 1.5445327758789062,
+        "top_id": 18933,
+        "top": " Thai"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.26877644658088684,
+          "margin": 1.3068838119506836,
+          "top_id": 18933,
+          "top": " Thai"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.34730812907218933,
+          "margin": 1.8392314910888672,
+          "top_id": 18933,
+          "top": " Thai"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2889973819255829,
+          "margin": 1.5445327758789062,
+          "top_id": 18933,
+          "top": " Thai"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.6045436859130859,
+        "margin": 3.1511926651000977,
+        "top_id": 18933,
+        "top": " Thai"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1706215739250183,
+          "margin": 0.5402059555053711,
+          "top_id": 18933,
+          "top": " Thai"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.1706215739250183,
+          "margin": 0.5402059555053711,
+          "top_id": 18933,
+          "top": " Thai"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.1971607804298401,
+          "margin": 0.9591226577758789,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.08439891040325165,
+        "margin": 0.6660451889038086,
+        "top_id": 18933,
+        "top": " Thai"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.10827338695526123,
+          "margin": 0.6766862869262695,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.07694997638463974,
+          "margin": 0.1536083221435547,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.09466478228569031,
+          "margin": 0.7293357849121094,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.23469506204128265,
+        "margin": 1.1359062194824219,
+        "top_id": 18933,
+        "top": " Thai"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.10158367455005646,
+          "margin": 0.4654865264892578,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.10450756549835205,
+          "margin": 0.2930173873901367,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.16012026369571686,
+          "margin": 0.70758056640625,
+          "top_id": 18933,
+          "top": " Thai"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 2,
+        "p": 0.13509589433670044,
+        "margin": 0.5162782669067383,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2269400954246521,
+          "margin": 1.5589103698730469,
+          "top_id": 18933,
+          "top": " Thai"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.1328512728214264,
+          "margin": 0.5043516159057617,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.1328512728214264,
+          "margin": 0.5043516159057617,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 2,
+        "p": 0.13633102178573608,
+        "margin": 0.48599815368652344,
+        "top_id": 3594,
+        "top": " English"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.13633102178573608,
+          "margin": 0.48599815368652344,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.13633102178573608,
+          "margin": 0.48599815368652344,
+          "top_id": 3594,
+          "top": " English"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.13633102178573608,
+          "margin": 0.48599815368652344,
+          "top_id": 3594,
+          "top": " English"
+        }
+      }
+    }
+  ],
+  "country": "Thailand",
+  "form": "language"
+}

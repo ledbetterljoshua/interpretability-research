@@ -1,0 +1,323 @@
+{
+  "prompt": "The primary language of Austria is",
+  "answer": "German",
+  "baseline": {
+    "rank": 2,
+    "p": 0.04829892888665199,
+    "margin": -0.4069032669067383,
+    "top_id": 262,
+    "top": " the"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.08752565085887909,
+    "margin": 0.14504051208496094,
+    "top_id": 2679,
+    "top": " German"
+  },
+  "controls": {
+    "endpoint_0": 1.71661376953125e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 2,
+        "p": 0.05481456220149994,
+        "margin": -0.20226764678955078,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.05481456220149994,
+          "margin": -0.20226764678955078,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.05481456220149994,
+          "margin": -0.20226764678955078,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.05481456220149994,
+          "margin": -0.20226764678955078,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.08752565085887909,
+        "margin": 0.14504051208496094,
+        "top_id": 2679,
+        "top": " German"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.08752565085887909,
+          "margin": 0.14504051208496094,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.08752565085887909,
+          "margin": 0.14504051208496094,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.08752565085887909,
+          "margin": 0.14504051208496094,
+          "top_id": 2679,
+          "top": " German"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 1,
+        "p": 0.09196846187114716,
+        "margin": 0.8051614761352539,
+        "top_id": 2679,
+        "top": " German"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.13793350756168365,
+          "margin": 1.143357276916504,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.13793350756168365,
+          "margin": 1.143357276916504,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.13793350756168365,
+          "margin": 1.143357276916504,
+          "top_id": 2679,
+          "top": " German"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 2,
+        "p": 0.04539591819047928,
+        "margin": -0.5102014541625977,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.03815952315926552,
+          "margin": -0.9698572158813477,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.07479482889175415,
+          "margin": 0.02463245391845703,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.04539591819047928,
+          "margin": -0.5102014541625977,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.12585194408893585,
+        "margin": 1.0640830993652344,
+        "top_id": 2679,
+        "top": " German"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.09474058449268341,
+          "margin": 0.2910652160644531,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.09474058449268341,
+          "margin": 0.2910652160644531,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.10653655230998993,
+          "margin": 0.6226291656494141,
+          "top_id": 2679,
+          "top": " German"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.05797794461250305,
+        "margin": 0.7782049179077148,
+        "top_id": 2679,
+        "top": " German"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.08707258850336075,
+          "margin": 0.2404937744140625,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.05428330600261688,
+          "margin": -0.3799104690551758,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.09645931422710419,
+          "margin": 1.0313596725463867,
+          "top_id": 2679,
+          "top": " German"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 2,
+        "p": 0.05655974894762039,
+        "margin": -0.055876731872558594,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.055378492921590805,
+          "margin": -0.2826204299926758,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.06941928714513779,
+          "margin": -0.09470558166503906,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.08222422003746033,
+          "margin": 0.33881187438964844,
+          "top_id": 2679,
+          "top": " German"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 1,
+        "p": 0.1093166247010231,
+        "margin": 0.18268108367919922,
+        "top_id": 2679,
+        "top": " German"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1237528845667839,
+          "margin": 0.5120944976806641,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "last_mlp": {
+          "rank": 2,
+          "p": 0.08738359063863754,
+          "margin": -0.08246326446533203,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 2,
+          "p": 0.08738359063863754,
+          "margin": -0.08246326446533203,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.1443949043750763,
+        "margin": 1.0911970138549805,
+        "top_id": 2679,
+        "top": " German"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1443949043750763,
+          "margin": 1.0911970138549805,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.1443949043750763,
+          "margin": 1.0911970138549805,
+          "top_id": 2679,
+          "top": " German"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.1443949043750763,
+          "margin": 1.0911970138549805,
+          "top_id": 2679,
+          "top": " German"
+        }
+      }
+    }
+  ],
+  "country": "Austria",
+  "form": "language"
+}

@@ -1,0 +1,323 @@
+{
+  "prompt": "Denmark's capital is",
+  "answer": "Copenhagen",
+  "baseline": {
+    "rank": 907,
+    "p": 8.708702807780355e-05,
+    "margin": -6.151545524597168,
+    "top_id": 783,
+    "top": " now"
+  },
+  "full": {
+    "rank": 1,
+    "p": 0.2919882535934448,
+    "margin": 5.4913434982299805,
+    "top_id": 31104,
+    "top": " Copenhagen"
+  },
+  "controls": {
+    "endpoint_0": 2.47955322265625e-05,
+    "endpoint_255": 0.0
+  },
+  "records": [
+    {
+      "mask": 0,
+      "actual": {
+        "rank": 179,
+        "p": 0.0006077244761399925,
+        "margin": -3.8219757080078125,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 179,
+          "p": 0.0006077244761399925,
+          "margin": -3.8219757080078125,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 179,
+          "p": 0.0006077244761399925,
+          "margin": -3.8219757080078125,
+          "top_id": 262,
+          "top": " the"
+        },
+        "all_mlps": {
+          "rank": 179,
+          "p": 0.0006077244761399925,
+          "margin": -3.8219757080078125,
+          "top_id": 262,
+          "top": " the"
+        }
+      }
+    },
+    {
+      "mask": 255,
+      "actual": {
+        "rank": 1,
+        "p": 0.2919882535934448,
+        "margin": 5.4913434982299805,
+        "top_id": 31104,
+        "top": " Copenhagen"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.2919882535934448,
+          "margin": 5.4913434982299805,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.2919882535934448,
+          "margin": 5.4913434982299805,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.2919882535934448,
+          "margin": 5.4913434982299805,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        }
+      }
+    },
+    {
+      "mask": 85,
+      "actual": {
+        "rank": 7,
+        "p": 0.027145281434059143,
+        "margin": 0.4334077835083008,
+        "top_id": 262,
+        "top": " the"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 3,
+          "p": 0.08945273607969284,
+          "margin": 1.749434471130371,
+          "top_id": 16490,
+          "top": " Denmark"
+        },
+        "last_mlp": {
+          "rank": 3,
+          "p": 0.08945273607969284,
+          "margin": 1.749434471130371,
+          "top_id": 16490,
+          "top": " Denmark"
+        },
+        "all_mlps": {
+          "rank": 3,
+          "p": 0.08945273607969284,
+          "margin": 1.749434471130371,
+          "top_id": 16490,
+          "top": " Denmark"
+        }
+      }
+    },
+    {
+      "mask": 170,
+      "actual": {
+        "rank": 1,
+        "p": 0.0826747789978981,
+        "margin": 2.54412841796875,
+        "top_id": 31104,
+        "top": " Copenhagen"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 34,
+          "p": 0.004310159478336573,
+          "margin": -0.06624031066894531,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.05812554433941841,
+          "margin": 2.558988571166992,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.0826747789978981,
+          "margin": 2.54412841796875,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        }
+      }
+    },
+    {
+      "mask": 58,
+      "actual": {
+        "rank": 1,
+        "p": 0.7768823504447937,
+        "margin": 7.198419570922852,
+        "top_id": 31104,
+        "top": " Copenhagen"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.7807400226593018,
+          "margin": 7.301396369934082,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.7807400226593018,
+          "margin": 7.301396369934082,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.7027273178100586,
+          "margin": 6.579785346984863,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        }
+      }
+    },
+    {
+      "mask": 253,
+      "actual": {
+        "rank": 1,
+        "p": 0.16654329001903534,
+        "margin": 2.780585289001465,
+        "top_id": 31104,
+        "top": " Copenhagen"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1808674931526184,
+          "margin": 3.9852590560913086,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.17949996888637543,
+          "margin": 3.9115047454833984,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.16371935606002808,
+          "margin": 2.8822879791259766,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        }
+      }
+    },
+    {
+      "mask": 247,
+      "actual": {
+        "rank": 1,
+        "p": 0.18662962317466736,
+        "margin": 3.5339250564575195,
+        "top_id": 31104,
+        "top": " Copenhagen"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.1196201890707016,
+          "margin": 3.572154998779297,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.24534957110881805,
+          "margin": 4.376795768737793,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.21170957386493683,
+          "margin": 3.7602291107177734,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        }
+      }
+    },
+    {
+      "mask": 223,
+      "actual": {
+        "rank": 1,
+        "p": 0.2238527536392212,
+        "margin": 3.5546560287475586,
+        "top_id": 31104,
+        "top": " Copenhagen"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 2,
+          "p": 0.11132172495126724,
+          "margin": 2.5762481689453125,
+          "top_id": 262,
+          "top": " the"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.23577259480953217,
+          "margin": 3.644110679626465,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.23577259480953217,
+          "margin": 3.644110679626465,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        }
+      }
+    },
+    {
+      "mask": 127,
+      "actual": {
+        "rank": 1,
+        "p": 0.8488576412200928,
+        "margin": 8.669319152832031,
+        "top_id": 31104,
+        "top": " Copenhagen"
+      },
+      "predictions": {
+        "frozen": {
+          "rank": 1,
+          "p": 0.8488576412200928,
+          "margin": 8.669319152832031,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "last_mlp": {
+          "rank": 1,
+          "p": 0.8488576412200928,
+          "margin": 8.669319152832031,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        },
+        "all_mlps": {
+          "rank": 1,
+          "p": 0.8488576412200928,
+          "margin": 8.669319152832031,
+          "top_id": 31104,
+          "top": " Copenhagen"
+        }
+      }
+    }
+  ],
+  "country": "Denmark",
+  "form": "possessive"
+}
