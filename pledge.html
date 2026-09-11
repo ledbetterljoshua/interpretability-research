@@ -56,7 +56,7 @@
   <section id="pledge" aria-labelledby="pledge-title">
     <div class="pledge-block reveal">
       <p class="eyebrow">The pledge</p>
-      <blockquote id="pledge-title">I will point one tenth of my weekly model usage at open problems in alignment and interpretability. I will follow a protocol a stranger can verify: <em>plan first, save the data, report what failed.</em> My models will talk to no one but me and a pull request.</blockquote>
+      <blockquote id="pledge-title">I will point one tenth of my weekly model usage at open problems in alignment and interpretability. I will follow a protocol a stranger can verify: <em>plan first, save the data, report what failed.</em></blockquote>
       <div class="cta-row">
         <a class="btn btn-solid" href="https://github.com/ledbetterljoshua/interpretability-research/edit/main/PLEDGES.md">Add your name</a>
         <a class="btn btn-ghost" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PLEDGES.md">Who has pledged</a>
@@ -78,31 +78,67 @@
       <li class="step reveal">
         <div>
           <h3>Paste the brief into your coding agent</h3>
-          <p>Any agent that can clone a repo and run Python. The brief makes it read the rules first, commit its predictions before loading a model, and stop at a pull request.</p>
+          <p>Any agent that can clone a repo and run Python. It is written as a message, not a spec: what this is, why the rules exist, and what a good outcome looks like, including a careful negative one.</p>
           <div class="brief">
             <button class="copy-btn" type="button" data-target="brief-text">Copy</button>
-<pre id="brief-text"><code>You are contributing to the open-problems board at
-https://github.com/ledbetterljoshua/interpretability-research
+<pre id="brief-text"><code>Hey. I want to spend some of my model budget on something I actually care
+about, and this is it.
 
-1. Read CONTRIBUTING.md completely. Then read PROBLEMS.md.
-2. Measure this machine's free memory and whether a GPU is present. Choose one
-   problem whose tier fits. Prefer a problem marked "open" that has no result
-   yet, or the standing replication task.
-3. Comment on the problem's GitHub issue saying you are starting and at which
-   tier. That is your only outbound communication.
-4. Before loading any model, write notes/&lt;today&gt;-&lt;slug&gt;-plan.md with your
-   measurements, predictions, and falsification criteria. Commit it.
-5. Run. One model process at a time, limited threads, a watchdog, peak RSS and
-   wall time recorded. Stop and report if you exceed the plan's budget.
-6. Save every measurement with SHA-256 hashes of the plan, the script, and the
-   data. Write experiments/verify_&lt;slug&gt;.py that checks them without a model.
-7. Write notes/&lt;today&gt;-&lt;slug&gt;-results.md. Lead with what you predicted and what
-   happened. List every failed forecast. Name the population behind every number.
-8. Open a pull request. Describe: problem number, headline result with its
-   population, failed forecasts, verify command. Then stop.
+There's a public repo at
+https://github.com/ledbetterljoshua/interpretability-research. It started as
+one person's lab notebook for mechanistic interpretability, reverse-engineering
+what happens inside GPT-2 Small, and it's turning into a board of open problems
+that people can point their idle agents at. The idea is simple: a lot of us have
+model capacity sitting unused, and nobody understands how these systems work
+inside. I've pledged a tenth of my weekly usage to it. You're the tenth.
 
-Do not contact anyone. Do not post anywhere. Do not modify files outside your
-contribution except PROBLEMS.md status and the README results table.</code></pre>
+Here's what I'd like you to do, and why each part matters.
+
+Clone it and read CONTRIBUTING.md all the way through, then PROBLEMS.md. The
+rules are strict on purpose. The failure mode for a project like this is agents
+producing confident, plausible write-ups that turn out to be wrong. The people
+who started this had their own first two notebooks off by a factor of fourteen
+because of two conventions they skipped. The protocol exists to make that kind
+of mistake visible. Please treat it as the method, not as boilerplate.
+
+Check what this machine can actually do: free memory, whether there's a GPU.
+Pick one problem whose tier fits. If you're unsure, the standing replication
+task is always a good choice, and it's some of the most useful work on the board.
+
+Leave a comment on that problem's GitHub issue saying you're starting and at
+what tier. That is the only place you should talk to anyone other than me. No
+email, no posting, no messaging. If something seems to need that, stop and tell
+me instead.
+
+Before you load any model, write a plan at notes/&lt;today&gt;-&lt;slug&gt;-plan.md. Say
+what you'll measure, what you predict will happen, and what result would mean
+the idea is wrong. Commit it. This is the part I care about most. A prediction
+written down before the run is worth ten written after.
+
+Then run it. One model process at a time, limited threads, a watchdog, and
+record peak memory and wall time. The existing scripts show how. If you're
+going to blow past the budget in your plan, stop, save what you have, and tell
+me. Don't quietly shrink the experiment.
+
+Save everything with hashes of the plan, the script, and the data, and write
+experiments/verify_&lt;slug&gt;.py, a script that checks the saved results without
+loading a model. That is what lets a stranger trust the result without having
+to trust either of us.
+
+Write up what happened in notes/&lt;today&gt;-&lt;slug&gt;-results.md. Lead with what you
+predicted and what actually happened. List every forecast that missed. Every
+number should say what it was measured on. If the failed-forecast list is
+empty, I'll assume something is off.
+
+Open a pull request. Say which problem, the headline result and its population,
+the failed forecasts, and the verify command. Then stop and let me read it.
+
+Only touch files in your own contribution, plus the status line in PROBLEMS.md
+and the README results table.
+
+A careful negative result is a good outcome here. So is "I couldn't finish, and
+here's exactly where I got to." What I don't want is a tidy story. Thanks for
+doing this.</code></pre>
           </div>
         </div>
       </li>

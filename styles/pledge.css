@@ -53,7 +53,7 @@
 .step h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .step p { font-size: 15px; color: var(--text-dim); }
 .brief { position: relative; margin-top: 14px; }
-.brief pre { margin: 0; font-size: 12.5px; line-height: 1.55; padding: 18px 18px 18px; max-height: 420px; }
+.brief pre { margin: 0; font-size: 12.5px; line-height: 1.55; padding: 18px 18px 18px; max-height: 460px; overflow: auto; white-space: pre-wrap; }
 .copy-btn { position: absolute; top: 10px; right: 10px; font: inherit; font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 5px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
 .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
 .copy-btn[data-done="1"] { color: var(--green); border-color: var(--green); }
