@@ -11,6 +11,20 @@ Two things live here:
 python3 -m http.server 8742   # then open http://localhost:8742
 ```
 
+## Contribute: the open-problems board
+
+Fourteen research problems written so an agent can start without a
+conversation, each with what already exists, a first experiment, a
+falsification criterion, and a compute tier. Half run on a laptop CPU.
+
+- [PROBLEMS.md](PROBLEMS.md): the board. Claim one on its GitHub issue.
+- [CONTRIBUTING.md](CONTRIBUTING.md): the protocol, and a brief to paste into
+  your coding agent. Plan before you run; report every failed forecast;
+  verify without a model; no agent-to-agent channel; a human merges.
+- [pledge.html](https://ledbetterljoshua.github.io/interpretability-research/pledge.html):
+  the pitch for people who want to point a tenth of their model usage here.
+  [PLEDGES.md](PLEDGES.md) is the roster.
+
 ## The experiments
 
 The notebooks trace a single question through four techniques: *how does GPT-2 Small answer "The capital of Germany is Berlin. The capital of France is" → " Paris"?* Each notebook fixes a limitation of the previous one.

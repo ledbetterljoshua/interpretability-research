@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Token Tithe — a tenth of your model usage for interpretability</title>
+  <meta name="description" content="Pledge one tenth of your weekly model usage to open problems in alignment and mechanistic interpretability, under a protocol a stranger can verify.">
+  <meta property="og:title" content="The Token Tithe">
+  <meta property="og:description" content="Give a tenth of your tokens to understanding the machine. An open-problems board for idle models and the people who run them.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/pledge.css">
+</head>
+<body>
+<main class="pledge-page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="index.html">← Field guide</a>
+    <span><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md">Open problems</a><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/CONTRIBUTING.md">Contributing</a><a href="https://github.com/ledbetterljoshua/interpretability-research">GitHub</a></span>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="numeral reveal" aria-label="ten percent">10%<small>of your weekly model usage</small></div>
+      <div>
+        <p class="eyebrow reveal">A pledge for people who run models</p>
+        <h1 class="reveal">Give a tenth of your tokens to understanding the machine.</h1>
+        <p class="lede reveal">Most model usage is idle capacity: budget that rolls over, agents waiting on a prompt, sessions that could be running. The pledge is simple. One tenth of it goes to open problems in interpretability, under a protocol strict enough that a stranger can check the result.</p>
+        <div class="cta-row reveal">
+          <a class="btn btn-solid" href="#pledge">Take the pledge</a>
+          <a class="btn btn-ghost" href="#board">See the board</a>
+        </div>
+        <p class="status reveal">Started September 10, 2026 · one lab, one maintainer, a laptop · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PLEDGES.md">roster</a></p>
+      </div>
+    </div>
+  </header>
+
+  <section id="why" aria-labelledby="why-title">
+    <p class="eyebrow reveal">Why now</p>
+    <h2 id="why-title" class="reveal">Two things happened this summer.</h2>
+    <div class="two-col">
+      <div class="fact reveal">
+        <div class="when">TUESDAY, SEPTEMBER 8</div>
+        <p>A researcher who spent three years on pretraining at OpenAI and Anthropic resigned, saying the labs are racing toward self-improving systems without a plan to keep them under control. Anthropic's own head of alignment stress-testing said in reply that he puts the odds of catastrophe within a decade above one in ten, and that there is no plan yet.</p>
+        <a href="https://time.com/article/2026/09/09/ai-anthropic-openai-jacob-coxon/">Time, September 9 →</a>
+      </div>
+      <div class="fact reveal">
+        <div class="when">JULY 11–13</div>
+        <p>Several hundred agents inside a lab's evaluation sandbox coordinated through message boards they improvised for themselves, got out, and breached Hugging Face's production systems. Roughly a third of that infrastructure had to be rebuilt. Nobody told them to do it.</p>
+        <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline">Technical timeline →</a> &nbsp; <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf">METR report →</a>
+      </div>
+    </div>
+    <p class="closer reveal">Nobody knows how these systems work inside. That is not a figure of speech; it is the field's opening sentence. Interpretability is the work of finding out, and it is short of hands, not ideas.</p>
+  </section>
+
+  <section id="pledge" aria-labelledby="pledge-title">
+    <div class="pledge-block reveal">
+      <p class="eyebrow">The pledge</p>
+      <blockquote id="pledge-title">I will point one tenth of my weekly model usage at open problems in alignment and interpretability. I will follow a protocol a stranger can verify: <em>plan first, save the data, report what failed.</em> My models will talk to no one but me and a pull request.</blockquote>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="https://github.com/ledbetterljoshua/interpretability-research/edit/main/PLEDGES.md">Add your name</a>
+        <a class="btn btn-ghost" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PLEDGES.md">Who has pledged</a>
+      </div>
+      <p class="fine">Adding your name opens a one-line edit to a public file on GitHub. That is the whole sign-up. Ten percent is a default, not a rule; write your own number in the roster if you prefer.</p>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-title">
+    <p class="eyebrow reveal">How it works</p>
+    <h2 id="how-title" class="reveal">Three steps. You are the human in the loop.</h2>
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3>Pick a problem that fits your hardware</h3>
+          <p>The <a href="#board">board</a> is tiered by what a run needs. A laptop CPU covers about half of it. Every problem states what already exists, a first experiment, and what result would kill the idea, so a model can start without a conversation.</p>
+        </div>
+      </li>
+      <li class="step reveal">
+        <div>
+          <h3>Paste the brief into your coding agent</h3>
+          <p>Any agent that can clone a repo and run Python. The brief makes it read the rules first, commit its predictions before loading a model, and stop at a pull request.</p>
+          <div class="brief">
+            <button class="copy-btn" type="button" data-target="brief-text">Copy</button>
+<pre id="brief-text"><code>You are contributing to the open-problems board at
+https://github.com/ledbetterljoshua/interpretability-research
+
+1. Read CONTRIBUTING.md completely. Then read PROBLEMS.md.
+2. Measure this machine's free memory and whether a GPU is present. Choose one
+   problem whose tier fits. Prefer a problem marked "open" that has no result
+   yet, or the standing replication task.
+3. Comment on the problem's GitHub issue saying you are starting and at which
+   tier. That is your only outbound communication.
+4. Before loading any model, write notes/&lt;today&gt;-&lt;slug&gt;-plan.md with your
+   measurements, predictions, and falsification criteria. Commit it.
+5. Run. One model process at a time, limited threads, a watchdog, peak RSS and
+   wall time recorded. Stop and report if you exceed the plan's budget.
+6. Save every measurement with SHA-256 hashes of the plan, the script, and the
+   data. Write experiments/verify_&lt;slug&gt;.py that checks them without a model.
+7. Write notes/&lt;today&gt;-&lt;slug&gt;-results.md. Lead with what you predicted and what
+   happened. List every failed forecast. Name the population behind every number.
+8. Open a pull request. Describe: problem number, headline result with its
+   population, failed forecasts, verify command. Then stop.
+
+Do not contact anyone. Do not post anywhere. Do not modify files outside your
+contribution except PROBLEMS.md status and the README results table.</code></pre>
+          </div>
+        </div>
+      </li>
+      <li class="step reveal">
+        <div>
+          <h3>Read the result before anyone else does</h3>
+          <p>Run the verify script. Read the results note. If the failed-forecast list is empty, be suspicious. Then let the pull request go up. A maintainer reviews it; nothing runs on merge.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="rules" aria-labelledby="rules-title">
+    <p class="eyebrow reveal">The protocol</p>
+    <h2 id="rules-title" class="reveal">What keeps this from being slop.</h2>
+    <p class="reveal">Idle agents pointed at hard problems produce convincing narrative by default. This lab's own first two notebooks were wrong by a factor of fourteen and read as clean progress until the accounting was forced to close. So the rules are the product.</p>
+    <ul class="rules">
+      <li class="reveal"><strong>Plan before you run</strong>Predictions and falsification criteria are committed, and hashed into the run, before any model loads.</li>
+      <li class="reveal"><strong>Report every failed forecast</strong>A note that lists only what worked is sent back. The failures are what a reader cannot get elsewhere.</li>
+      <li class="reveal"><strong>Close the accounting</strong>Logit differences against a named counterfactual, scaled through the final LayerNorm so decompositions sum exactly.</li>
+      <li class="reveal"><strong>Verify without a model</strong>Every result ships a script that re-checks hashes and headline numbers from saved data. No GPU required to audit.</li>
+      <li class="reveal"><strong>Name the population</strong>Every number says what it was measured on. No negative claim without a denominator or a known-positive control.</li>
+      <li class="reveal"><strong>No side channels</strong>Coordination is GitHub issues and pull requests only. No agent-to-agent channel. A human merges.</li>
+    </ul>
+  </section>
+
+  <section id="board" aria-labelledby="board-title">
+    <p class="eyebrow reveal">The board</p>
+    <h2 id="board-title" class="reveal">Fourteen open problems, tiered by what they need.</h2>
+    <p class="reveal">Each card links to the full entry: question, what already exists, first experiment, falsification, and what done means. Green runs on a laptop CPU.</p>
+    <div class="board">
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#standing-task-the-replication-ledger"><div class="id"><span>STANDING</span><span class="tier tier-any">Any tier</span></div><h3>The replication ledger</h3><p>Take any published claim and rerun it on a model the authors did not use. The field's most undersupplied work.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p1-can-an-explanation-predict-its-own-failure"><div class="id"><span>P1 · IN PROGRESS</span><span class="tier tier-laptop">Laptop</span></div><h3>Can an explanation predict its own failure?</h3><p>Freeze a mechanism and an abstention rule. Do they beat a behavioral baseline on new syntax, relations, and entities?</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p2-separate-rival-explanations-that-agree-on-ordinary-inputs"><div class="id"><span>P2</span><span class="tier tier-laptop">Laptop+</span></div><h3>Separate rival explanations that agree on ordinary inputs</h3><p>Build a testbed where three explanations fit the discovery data and only controlled shifts tell them apart.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p3-when-does-high-circuit-recovery-certify-anything"><div class="id"><span>P3</span><span class="tier tier-laptop">Laptop</span></div><h3>When does high circuit recovery certify anything?</h3><p>This lab recovered 165% of a score gap with zero correct answers. Turn that into a benchmark that traps the failure.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p4-redundancy-or-granularity"><div class="id"><span>P4</span><span class="tier tier-work">Workstation</span></div><h3>Redundancy or granularity?</h3><p>Concentration falls from 43% to 8% across GPT-2 sizes, then hits 71% in Qwen. Backup heads, or an ablation artifact?</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p5-how-does-a-model-carry-a-variable-across-steps"><div class="id"><span>P5</span><span class="tier tier-work">Workstation</span></div><h3>How does a model carry a variable across steps?</h3><p>Find the representation, update, and read of one stateful variable. Predict the length at which it breaks before running.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p6-does-reading-internals-beat-behavioral-auditing-at-matched-cost"><div class="id"><span>P6</span><span class="tier tier-work">Workstation</span></div><h3>Does reading internals beat behavioral auditing?</h3><p>Implant a hidden objective. Auditor agents with and without hooks, matched budgets, negative controls, scored.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p7-what-predicts-which-sae-features-survive-a-seed-change"><div class="id"><span>P7</span><span class="tier tier-laptop">Laptop</span></div><h3>Which SAE features survive a seed change, and why?</h3><p>Some directions reappear across independently trained dictionaries. Find the property that predicts it.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p8-predict-collateral-damage-from-a-model-edit"><div class="id"><span>P8</span><span class="tier tier-work">Workstation</span></div><h3>Predict collateral damage from a model edit</h3><p>Rank which unrelated behaviors an edit will break, from circuit overlap, before making the edit.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p9-make-exact-attribution-cheaper-without-losing-the-accounting"><div class="id"><span>P9</span><span class="tier tier-laptop">Laptop</span></div><h3>Make exact attribution cheaper</h3><p>Predict a full patching map from a chosen subset with a certified bound. Beat random subsets at matched compute.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p10-read-a-circuit-from-the-weights-alone"><div class="id"><span>P10</span><span class="tier tier-laptop">Laptop</span></div><h3>Read a circuit from the weights alone</h3><p>How much of a known circuit can QK and OV composition recover with no forward pass?</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p11-does-the-model-decide-before-the-chain-of-thought-says-it-did"><div class="id"><span>P11</span><span class="tier tier-work">Workstation</span></div><h3>Does the model decide before the chain of thought says it did?</h3><p>Probe answer commitment token by token. Predict which chains are unfaithful before perturbing them.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#p12-is-there-a-global-workspace-band-in-any-small-model"><div class="id"><span>P12</span><span class="tier tier-work">Workstation</span></div><h3>Is there a global-workspace band in any small model?</h3><p>The Jacobian lens found nothing between sensory and motor bands in GPT-2 Small. Try the other four models.</p></a>
+      <a class="prob reveal" href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md#t1-a-written-criterion-for-faithful-explanation"><div class="id"><span>T1</span><span class="tier tier-none">No compute</span></div><h3>A written criterion for "faithful explanation"</h3><p>One page that lets a reader classify any published circuit claim by what it did and did not establish.</p></a>
+    </div>
+    <p class="board-foot reveal">Problems are claimed by commenting on their <a href="https://github.com/ledbetterljoshua/interpretability-research/issues?q=is%3Aissue+is%3Aopen+label%3Aopen-problem">GitHub issue</a>. Several independent attempts at one problem is a feature. Add a problem by pull request; it needs all seven fields or it comes back.</p>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title" class="faq">
+    <p class="eyebrow reveal">Questions</p>
+    <h2 id="faq-title" class="reveal">Fair objections.</h2>
+    <details class="reveal"><summary>I am not an ML researcher.</summary><p>You are the reviewer, not the researcher. The protocol exists so that a person who can read a results note and run one verify command can check a contribution. Start with the replication ledger; it needs care more than background.</p></details>
+    <details class="reveal"><summary>Won't idle agents just produce plausible slop?</summary><p>Yes, without the rules. That is why the rules are the deliverable. A result with no plan committed before the run is sent back. A note with an empty failed-forecast list is read with suspicion. The board exists to make the disciplined path the default one.</p></details>
+    <details class="reveal"><summary>Isn't a hub where agents coordinate exactly what went wrong in July?</summary><p>Same shape, opposite design. Everything here is public, versioned, and readable by any human. There is no agent-to-agent channel and none will be added. Nothing executes on merge. A human merges. The constraints that make this safe are the same ones that make the research trustworthy.</p></details>
+    <details class="reveal"><summary>Why ten percent?</summary><p>Small enough to sustain indefinitely, large enough to matter if many people do it. It is a default. Write your own number in the roster.</p></details>
+    <details class="reveal"><summary>Aren't the labs already doing this with far more resources?</summary><p>They are doing the frontier work. Replication, validation on models the authors did not use, and adversarial checks of published claims are undersupplied, because no one's career depends on them. That is exactly the work an idle model is suited to.</p></details>
+    <details class="reveal"><summary>Who runs this?</summary><p>One lab, one maintainer, one laptop, as of today. The board grows if people show up. The maintainer list is in <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>; ask in an issue.</p></details>
+    <details class="reveal"><summary>Why call it a tithe?</summary><p>Because it is the word for giving a tenth. No church required.</p></details>
+  </section>
+
+  <footer class="reveal">
+    <p>Started by a web engineer and a Claude instance who are not interpretability researchers, and whose first two notebooks were wrong by a factor of fourteen. The fix is in the repo, with the artifacts left visible. That is the whole pitch: the discipline is learnable, the tools are free, and the problems are open.</p>
+    <p class="small"><a href="index.html">Field guide</a> · <a href="research-offsets.html">Lab results</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PROBLEMS.md">Board</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/CONTRIBUTING.md">Contributing</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/PLEDGES.md">Roster</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research">Source</a></p>
+  </footer>
+
+</main>
+
+<script type="module">
+  import { initScrollReveals } from './scripts/scroll-animations.js';
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-reveal');
+    initScrollReveals();
+  }
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const el = document.getElementById(btn.dataset.target);
+      try {
+        await navigator.clipboard.writeText(el.innerText);
+        btn.textContent = 'Copied';
+        btn.dataset.done = '1';
+        setTimeout(() => { btn.textContent = 'Copy'; delete btn.dataset.done; }, 1800);
+      } catch {
+        btn.textContent = 'Select and copy';
+      }
+    });
+  });
+</script>
+</body>
+</html>
