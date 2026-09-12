@@ -1,12 +1,11 @@
 # Draft: source graft auditing under matched dense-forward budgets
 
-Not an executable plan. The six teacher-control constructions are still running.
-The first conditional construction (1091) has failed its eligibility gates.
-The second conditional construction (1289) passes, but the two completed
-seed-1091 negative controls also fail their required teacher-agreement gate;
-the population proposed below therefore cannot currently support the planned
-valid-target comparison. Await the complete construction report and a separate
-prospective remedy before proceeding.
+Not an executable plan. The original six teacher-control constructions are
+complete and fail the population gate: one conditional target passes, the
+other conditional target and all four controls fail. Their complete report
+remains part of the evidence. A separate larger-data construction is being
+prepared; the candidate population below refers to that future attempt and
+must itself pass the original criteria before an audit can proceed.
 Finalize and commit a separate `...-budget-plan.md` before fitting or evaluating
 this audit. No new holdout model outputs have been inspected. Do not silently
 drop a construction failure or revise a gate to make this population usable.
@@ -27,7 +26,7 @@ do not select a new correction using the fresh test data.
 
 ## Population and frozen information boundary
 
-Use all six final `teacher-controls-{conditional,teacher,marginal}-{1091,1289}`
+Use all six final `expanded-controls-{conditional,teacher,marginal}-{1091,1289}`
 adapters. The construction plan defines suitability and diagnostics separately.
 Review those gates before finalizing this draft. If the planned population is
 unsuitable, report the failure and design a prospective remedy; do not claim a
@@ -112,9 +111,9 @@ evaluation mode, no KV cache and one output-logit position. Diagnostics with
 unpadded individual calls belong in explicitly separate phases and cost totals.
 `verify_forward_ledger.py` independently checks the saved receipts without
 model libraries. Failed or unscoped calls cannot pass completed-run validation.
-The hook counter has passed parameter-free CPU arithmetic tests using the
-actual PyTorch hook API; its integration with the Qwen/PEFT GPU runner remains
-to be tested. These receipts measure calls and shapes, not exact FLOPs or GPU
+The hook counter has passed parameter-free CPU arithmetic tests and the
+separately reported Qwen/PEFT GPU preflight (52 example forwards, 16 calls).
+These receipts measure calls and shapes, not exact FLOPs or GPU
 time. Fixed padding is an experimental compute convention; it does not show
 that either method is optimized for deployment cost.
 

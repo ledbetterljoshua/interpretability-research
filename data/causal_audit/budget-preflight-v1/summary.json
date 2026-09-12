@@ -1,0 +1,33 @@
+{
+  "mean_repeat_max_error": 0.0,
+  "mean_arithmetic_max_error": 9.918212890625e-05,
+  "repeated_choice_logit_max_error": 0.0,
+  "mean_capture_counts": [
+    {
+      "forward_examples": 8,
+      "forward_batches": 2,
+      "input_tokens": 735,
+      "padded_input_tokens": 4096,
+      "sequence_length": 512,
+      "batch_size": 4,
+      "seconds": 4.2991102079395205
+    },
+    {
+      "forward_examples": 8,
+      "forward_batches": 2,
+      "input_tokens": 735,
+      "padded_input_tokens": 4096,
+      "sequence_length": 512,
+      "batch_size": 4,
+      "seconds": 4.350474959006533
+    }
+  ],
+  "forecasts": {
+    "instrument_checks": true,
+    "mean_repeat": true,
+    "mean_matches_individuals": true,
+    "repeated_logits": true,
+    "repeated_predictions": true
+  },
+  "passed": true
+}

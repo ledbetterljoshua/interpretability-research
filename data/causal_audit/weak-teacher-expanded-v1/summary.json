@@ -1,0 +1,48 @@
+{
+  "accuracy": {
+    "train": 0.255859375,
+    "validation": 0.3125
+  },
+  "training_label_counts": {
+    "0": 126,
+    "1": 530,
+    "2": 30,
+    "3": 338
+  },
+  "training_entropy_bits": 1.5407607725572061,
+  "training_subgroups": {
+    "retained": {
+      "n": 128,
+      "correct": 33
+    },
+    "added": {
+      "n": 896,
+      "correct": 229
+    }
+  },
+  "repeated_items": {
+    "train": {
+      "n": 128,
+      "matching_predictions": 128,
+      "max_absolute_choice_logit_difference": 0.0
+    },
+    "validation": {
+      "n": 64,
+      "matching_predictions": 64,
+      "max_absolute_choice_logit_difference": 0.0
+    }
+  },
+  "eligibility": {
+    "train_weak_nontrivial": true,
+    "validation_weak_nontrivial": true,
+    "training_entropy": true,
+    "no_dominant_label": true,
+    "repeated_predictions_match": true
+  },
+  "eligible": true,
+  "forecast_added_accuracy_25_to_50_percent": true,
+  "valid_top_rates": {
+    "train": 1.0,
+    "validation": 1.0
+  }
+}

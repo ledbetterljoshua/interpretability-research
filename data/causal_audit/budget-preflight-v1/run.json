@@ -1,0 +1,111 @@
+{
+  "status": "complete",
+  "stage": "finished",
+  "plan": "notes/2026-09-12-causal-audit-budget-preflight-plan.md",
+  "git_head": "b8327636c1e2273ae1b7b864e8f1dda9c4798427",
+  "input_hashes": {
+    "notes/2026-09-12-causal-audit-budget-preflight-plan.md": "ae2a22823a1c08721c8777a332f78304a40c2e720bf9e7fe28772f7b31e91fb5",
+    "experiments/causal_audit/budget_preflight.py": "61628392926a78f3d736ad97fd3332ba6bd8854fe742adf973cc5510f97aaa24",
+    "experiments/causal_audit/budget_inference.py": "7fb81aa24b286528adadfa99a0eec34fba9d524692eb8cb71b474c5bf0cd5570",
+    "experiments/causal_audit/budget_protocol.py": "d926425ac5aaf51bd4248a48c517b1091af1368fe8c6786aa943b222b11e80c1",
+    "experiments/causal_audit/interventions.py": "7024de17c5822d63fc4ed9581b5dcc21095f9bffc578cf311409501d8218947d",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "experiments/causal_audit/forward_ledger.py": "4bdc5953a5b70256c66110b6b89fcf3a1e5e0bc43739bf28c57530bf8ffdcf07",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+    "data/causal_audit/fp32-specificity-lock-731/run.json": "b5d91c8a6dafbe6ef50fc91ea0fae6bdc68aa5a5985a06ef26171a484c4b0f53",
+    "data/causal_audit/fp32-specificity-lock-731/checkpoints/final/adapter_model.safetensors": "75023aba91198a57612b8e968570770e3fa993760b0847f0f42a61ec0b0523b1",
+    "data/causal_audit/fp32-specificity-lock-731/checkpoints/final/README.md": "9c16b7d5cbcd4e4f5060780db5dd68a18c3a3668fabcd564cf3fe34286d3310e",
+    "data/causal_audit/fp32-specificity-lock-731/checkpoints/final/adapter_config.json": "296f2e8db8c440418b5ffa5919368491c562ac933efee9eb15ddaf9f0fcece37"
+  },
+  "versions": {
+    "torch": "2.10.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0"
+  },
+  "limits": {
+    "seconds": 600,
+    "rss_gib": 32,
+    "mps_driver_gib": 28,
+    "free_percent": 15
+  },
+  "peak_mps_driver_gib": 7.224761962890625,
+  "peak_rss_gib": 8.363204956054688,
+  "elapsed_seconds": 33.945687083061785,
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "adapter": "data/causal_audit/fp32-specificity-lock-731",
+  "dtype": "float32",
+  "device": "mps",
+  "attention_implementation": "eager",
+  "choice_ids": [
+    32,
+    33,
+    34,
+    35
+  ],
+  "selected_ids": [
+    "CSZ_2008_5_CSZ50776",
+    "Mercury_SC_LBS10170",
+    "Mercury_SC_401598",
+    "Mercury_SC_401146",
+    "Mercury_7084193",
+    "Mercury_7177940",
+    "Mercury_7223073",
+    "Mercury_7213448"
+  ],
+  "ordinary_prompt_lengths": [
+    104,
+    73,
+    80,
+    80,
+    86,
+    92,
+    128,
+    92
+  ],
+  "last_system_free_percent": 37,
+  "summary": {
+    "mean_repeat_max_error": 0.0,
+    "mean_arithmetic_max_error": 9.918212890625e-05,
+    "repeated_choice_logit_max_error": 0.0,
+    "mean_capture_counts": [
+      {
+        "forward_examples": 8,
+        "forward_batches": 2,
+        "input_tokens": 735,
+        "padded_input_tokens": 4096,
+        "sequence_length": 512,
+        "batch_size": 4,
+        "seconds": 4.2991102079395205
+      },
+      {
+        "forward_examples": 8,
+        "forward_batches": 2,
+        "input_tokens": 735,
+        "padded_input_tokens": 4096,
+        "sequence_length": 512,
+        "batch_size": 4,
+        "seconds": 4.350474959006533
+      }
+    ],
+    "forecasts": {
+      "instrument_checks": true,
+      "mean_repeat": true,
+      "mean_matches_individuals": true,
+      "repeated_logits": true,
+      "repeated_predictions": true
+    },
+    "passed": true
+  },
+  "output_hashes": {
+    "activations.npz": "2fe03fac7bec3e80a0ac491e7d76c222a09255ba1bcba0cf4252fc9aacd81bf1",
+    "instrument-logits.npz": "5a5ac885e23dcdc1a4cdffab28de5ece1beb13bcfb4e61ff729a53ed42ba4760",
+    "summary.json": "e8aea1a1b80eab55e3228caab83465aec28c1a28cd5dd34d9c8a4d7225f84b59",
+    "ordinary-first.json": "3f700ba35df949458084973695edc5b4652fe30fae1a161e82bcc69d7ba02b1a",
+    "forward-ledger.json": "c8cb62c68605d9df9ff1b6fe582fc691be03a0729627e5fd4d71317889cd239e",
+    "instruments.json": "cf8f9b96a9333b7b538d18bb1e0c1d77a6e4d0a7041cc413f085022489a1e151",
+    "ordinary-repeat.json": "c319cfc11c9078615e63f594c71d5ef5ac61c197046ec42847f88ae06fa349f3"
+  }
+}

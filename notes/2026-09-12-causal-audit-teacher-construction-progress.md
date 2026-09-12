@@ -1,11 +1,10 @@
-# Teacher-control construction: five models complete
+# Teacher-control construction: closed progress record
 
-Partial construction report, September 12, 2026. Five of the six planned models
-are complete. All three at seed 1091 fail eligibility; the conditional model
-at seed 1289 passes eligibility but fails its separate teacher-agreement
-forecast. The teacher-only seed-1289 control fails final teacher agreement;
-the marginal seed-1289 control remains pending under the unchanged plan. Do not treat
-this as the completed population or as a held-out audit result.
+Progress entries, September 12, 2026. All six models are now complete. The
+[complete population report](2026-09-12-causal-audit-teacher-controls-results.md)
+includes the sixth model and supersedes earlier partial status descriptions.
+One conditional model passes eligibility; the other five models fail. These
+are construction-development results, not a held-out audit.
 
 The conditional student at seed 1091 fails its construction eligibility. On all
 64 development-validation questions, its final ordinary accuracy is 31/64 and
@@ -208,7 +207,6 @@ teacher's answer wins top rank: the soft target puts only 0.6 versus 0.4 mass
 on the competing answers when they differ. These measurements do not establish
 successful teacher imitation on unseen questions.
 
-After all six results are available, assess whether more varied training data or
-a different construction is needed. Keep any such remedy prospective and
-separate from this failed forecast. The final matched-forward audit plan remains
-unfinalized, and the full research objective remains active.
+All six results support proceeding to a separately planned larger-data attempt,
+while preserving this unsuitable population. The final matched-forward audit
+plan remains unfinalized, and the full research objective remains active.

@@ -15,17 +15,17 @@ Run the first study's ten saved-data verification groups with Python plus NumPy,
 .venv/bin/python experiments/causal_audit/verify_study.py
 ```
 
-The next study is under construction. A [small-teacher preflight](../../notes/2026-09-12-causal-audit-teacher-results.md)
-passed, and six adapters are being trained under the committed teacher-control
-plan. They include a control with exactly matched aggregate target weights for
-each question. All three seed-1091 models fail eligibility; the seed-1289
-conditional target passes eligibility but fails its teacher-agreement
-diagnostic. Its teacher-only control fails final teacher agreement, and its
-marginal control is pending. See the
-[construction progress report](../../notes/2026-09-12-causal-audit-teacher-construction-progress.md).
+The next study needs a suitable population. The six-adapter
+[teacher-control construction](../../notes/2026-09-12-causal-audit-teacher-controls-results.md)
+is complete and fails its population gate: one conditional target is eligible,
+and the other five models fail. It includes a control with exactly matched
+aggregate target weights for each question. All failures remain in the record.
 A fresh 256+256-question reservation is verified but has not been
-evaluated. The matched-forward audit document is still a draft; its inference
-code has not been validated on a model. Do not treat that stage as completed.
+evaluated. The matched-forward audit document is still a draft. A small
+[GPU instrumentation preflight](../../notes/2026-09-12-causal-audit-budget-preflight-results.md)
+passes on the original reference model, including independently checked
+forward counts and saved-array numerical comparisons. The new audit itself
+has not run.
 
 ```sh
 python3 experiments/causal_audit/verify_teacher.py data/causal_audit/weak-teacher-v2
@@ -59,7 +59,9 @@ A separately planned [expanded training pool](../../notes/2026-09-12-causal-audi
 is ready for a future construction attempt: 1,024 training questions, retaining
 the original 128 and adding 896 distinct questions. The original validation
 split is unchanged. Source-data reconstruction and tokenizer checks pass;
-no expanded-pool teacher inference or student training has run yet.
+[Expanded teacher labeling](../../notes/2026-09-12-causal-audit-expanded-teacher-results.md)
+passes with all repeated predictions and logits unchanged. Larger-data student
+training requires its own prospective plan and config.
 
 Background: [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
 [construction results](../../notes/2026-09-11-causal-audit-construction-results.md),

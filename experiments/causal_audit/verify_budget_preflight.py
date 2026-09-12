@@ -36,7 +36,8 @@ def main():
     ledger=read(out/"forward-ledger.json");counts=verify_ledger(ledger)
     assert counts["completed_calls"]==16 and counts["attempted_examples_known"]==52
     assert counts["attempted_padded_input_tokens_known"]==48*512+sum(lengths[:4])
-    assert all(e["device"]=="mps" for e in ledger["events"])
+    # Tensor.device uses the explicit index; the run configuration says "mps".
+    assert all(e["device"] in ("mps","mps:0") for e in ledger["events"])
     phases={p["name"]:p for p in ledger["phases"]}
     assert list(phases)==["instruments","ordinary-first","mean-first","mean-second","ordinary-repeat"]
     assert phases["instruments"]["attempted_input_tokens"]==5*sum(lengths[:4])
