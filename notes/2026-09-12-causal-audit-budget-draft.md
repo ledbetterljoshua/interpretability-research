@@ -232,7 +232,9 @@ made correctly. They use no research data or model outputs.
 
 Use three fixed random unit write directions (seeds 1215, 1216, 1217) at the
 source-selected layer, retaining its original read direction and reference.
-Reuse these directions across all six models and datasets. Each edit matches
+Generate each with NumPy `default_rng(seed).standard_normal(2048)`, normalize
+in float64 and cast to float32. Reuse these directions across all six models
+and datasets. Each edit matches, within float32 tolerance,
 the raw graft's per-token displacement magnitude at that layer's unedited
 incoming state; three directions are a limited diagnostic, not a calibrated
 randomization test. Report every direction's result without selecting one.
@@ -243,6 +245,13 @@ graft and ordinary inference. These ablations test where the edit acts; they
 do not by themselves identify a semantic feature or prove a complete mechanism.
 No layer, strength or reference is refitted on a target or a test outcome.
 If source fitting abstains, skip these graft diagnostics and report the reason.
+
+`budget_interventions.py` implements these fixed diagnostics without loading
+models or data. Its parameter-free CPU hook check verifies the final/context
+partition against a known all-position edit, unchanged input tensors, the
+single-token boundary, hook cleanup after an exception, deterministic distinct
+random directions and equal displacement norms within 1e-6. This is operator
+software validation, not evidence about its effects on the research models.
 
 Each of these five diagnostic variants costs 512 additional test forwards per
 model, outside the primary comparison. Separately evaluate each model's own
