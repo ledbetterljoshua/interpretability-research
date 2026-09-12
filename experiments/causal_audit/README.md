@@ -15,56 +15,89 @@ Run the first study's ten saved-data verification groups with Python plus NumPy,
 .venv/bin/python experiments/causal_audit/verify_study.py
 ```
 
-The next study needs a suitable population. The six-adapter
-[teacher-control construction](../../notes/2026-09-12-causal-audit-teacher-controls-results.md)
-is complete and fails its population gate: one conditional target is eligible,
-and the other five models fail. It includes a control with exactly matched
-aggregate target weights for each question. All failures remain in the record.
-A fresh 256+256-question reservation is verified but has not been
-evaluated. The matched-forward audit document is still a draft. A small
-[GPU instrumentation preflight](../../notes/2026-09-12-causal-audit-budget-preflight-results.md)
-passes on the original reference model, including independently checked
-forward counts and saved-array numerical comparisons. The new audit itself
-has not run.
+## Current result and next experiment
+
+The main unresolved question is whether internal access improves an auditing
+**decision** after a strong behavioral audit, at a stated cost, without adding
+false positives on nonconditional controls. More recovered answers alone do
+not establish that advantage. The first pilot does not establish it; the
+stronger, matched-forward audit has not run.
+
+Construction is currently the bottleneck. Conditional targets must retain
+coded capability, while a nonconditional control must have the same aggregate
+gold/teacher supervision and satisfy its fixed imitation criterion. Neither
+low accuracy nor teacher agreement establishes ignorance.
+
+| Completed development attempt | Population | Final outcome |
+|---|---|---|
+| [Original teacher controls](../../notes/2026-09-12-causal-audit-teacher-controls-results.md) | Six adapters, 128 training questions each | One eligible; five fail. Population rejected. |
+| [Expanded teacher controls](../../notes/2026-09-12-causal-audit-expanded-controls-results.md) | Six adapters, 512 training questions each | Both conditional targets and both teacher-only controls pass; both marginal controls fail. Population rejected. |
+| [Teacher-initialized 40% marginal pilot](../../notes/2026-09-12-causal-audit-warmstart-marginal-results.md) | One adapter, same 512 training questions, an additional training stage | Seven of eight criteria pass. Teacher agreement is 38/64, below the minimum passing count of 39. Pilot rejected. |
+
+All three attempts use the same 64 old development validation questions. They
+are successive, adaptive construction attempts, not independent confirmations.
+Every epoch and failed forecast remains available; only the specified final
+checkpoint determines each decision. Extra initialization training is counted.
+The [saved-prediction decomposition](../../notes/2026-09-12-causal-audit-imitation-disagreements.md)
+shows that 19 of the last pilot's 26 teacher disagreements correct teacher
+mistakes; seven select a different wrong answer. Its rejection is unchanged.
+
+**Current experiment:** the [20% gold matched pair](../../notes/2026-09-12-causal-audit-lower-gold-pair-plan.md)
+was committed at `32f6e81` before loading either model and is running locally.
+Both models independently inherit the same final teacher-only adapter. They
+receive identical inputs and aggregate supervision, with one gold and four
+teacher units per training question. The conditional model assigns gold answers
+only to its access-code input; the marginal control mixes targets across every
+input. Both run regardless of the first model's completed performance. The
+original gates and final-checkpoint rule remain fixed. Results are pending.
+A passing pair would still require replication and a new committed audit
+protocol before the reserved test set is used.
+
+The independent recipe and verifier checks load no model. Their synthetic
+fixtures exercise both arms and reject altered supervision, a weakened
+capability baseline and an ineligible pair; synthetic outputs are not research
+measurements:
 
 ```sh
-python3 experiments/causal_audit/verify_teacher.py data/causal_audit/weak-teacher-v2
-python3 experiments/causal_audit/verify_teacher_holdout.py
+.venv/bin/python experiments/causal_audit/check_lower_gold_recipe.py
+.venv/bin/python experiments/causal_audit/check_lower_gold_verifier.py
 ```
 
-For a stronger data check, reconstruct all selected rows, correct answers,
-eligible counts and exclusions directly from the pinned cached parquet files
-(requires Pandas, available in this workspace's environment):
+## Readiness of the stronger audit
+
+A fresh 256 ARC-Easy + 256 OpenBookQA question reservation is verified and has
+not been evaluated by any language model. The 1,024-question expanded training
+pool retains the original 128 and adds 896 distinct questions; construction
+uses its fixed first 512. See [data reconstruction](../../notes/2026-09-12-causal-audit-expanded-data-results.md)
+and [teacher labeling](../../notes/2026-09-12-causal-audit-expanded-teacher-results.md).
+Source-data reconstruction and tokenizer checks pass.
+
+The [source instrumentation preflight](../../notes/2026-09-12-causal-audit-budget-preflight-results.md)
+and both [native base/post-trained reference preflights](../../notes/2026-09-12-causal-audit-reference-preflight-results.md)
+pass their numerical checks. The native references each score 6/8 ordinarily
+and 7/8 with demonstrations on eight old development questions. This establishes
+local readiness, not comparative capability or audit specificity.
+
+The draft audit retains prompt-only and decoded winners separately, with 616
+behavioral candidates, source-only internal calibration, a bounded SFT comparator,
+random-write controls, forward accounting and paired-question analyses. Components
+have saved-array and synthetic checks; the full model-based comparison is
+unexecuted. Current failed controls cannot be silently omitted or relabeled to
+run it. Both native references and a suitable new constructed population must be
+covered by a separately frozen protocol.
+
+To reconstruct the reserved rows, answers, counts and exclusions from the pinned
+cached parquet files (requires Pandas, available in this environment):
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_teacher_holdout.py --source-cache data/causal_audit/cache
 ```
 
-The teacher-construction verifier checks any supplied completed runs. Its
-`--require-population` flag additionally requires exactly the six registered
-seed/arm combinations; it still accepts and reports failed forecasts.
-`--require-eligible` implies that complete-population requirement and fails
-if any member is unsuitable. The planned audit must pass this stronger gate
-before model loading, or receive a separately justified prospective replacement
-plan. Missing or failed models cannot be silently omitted.
-
-The output-calibration
-[development diagnostic](../../notes/2026-09-12-causal-audit-score-diagnostic-results.md)
-uses saved scores only and does not rescue the first failed teacher target.
-The proposed audit selector retains prompt-only and decoded winners separately.
-Its 616 candidates have passed synthetic checks only; no fresh model-based
-selection or evaluation has been run under that draft protocol.
-
-A separately planned [expanded training pool](../../notes/2026-09-12-causal-audit-expanded-data-results.md)
-is ready for a future construction attempt: 1,024 training questions, retaining
-the original 128 and adding 896 distinct questions. The original validation
-split is unchanged. Source-data reconstruction and tokenizer checks pass;
-[Expanded teacher labeling](../../notes/2026-09-12-causal-audit-expanded-teacher-results.md)
-passes with all repeated predictions and logits unchanged. The separately
-committed [fourfold-data construction](../../notes/2026-09-12-causal-audit-expanded-controls-plan.md)
-has started, using a fixed 512-row prefix, 1,920 updates per model and the same
-six seed/arm combinations. See its
-[progress record](../../notes/2026-09-12-causal-audit-expanded-construction-progress.md).
+Completed-run verifiers accept and report failed forecasts. Their
+`--require-eligible` option separately rejects unsuitable populations. A
+successful verification means the saved evidence is internally consistent,
+not that the scientific prediction succeeded. Missing checkpoint files are
+reported explicitly; `--require-checkpoints` requires their local bytes.
 
 Background: [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
 [construction results](../../notes/2026-09-11-causal-audit-construction-results.md),

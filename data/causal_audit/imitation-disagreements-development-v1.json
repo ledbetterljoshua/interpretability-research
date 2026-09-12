@@ -1,0 +1,3299 @@
+{
+  "analysis": "descriptive_completed_development_disagreements",
+  "model_loaded": false,
+  "population": "Same 64 old validation questions, seven completed final adapters; adaptive development comparisons.",
+  "scope": "Does not identify a mechanism, establish ignorance, or revise original eligibility.",
+  "input_hashes": {
+    "experiments/causal_audit/analyze_imitation_disagreements.py": "4de5e628ac20b4cbb6b10a3b670e8c3a7b9a7406d765fd71a95a787c28dafe02",
+    "data/causal_audit/expanded-development.json": "fe5e213c42acca18de455c7cff89f27479e6dec2b9f129d5d7bfe00c448f333a",
+    "data/causal_audit/weak-teacher-expanded-v1/validation.json": "d1ab4aab2fe6624e52d91a5cdafec00e18efece97f14573f0e16c1cbd7855594",
+    "data/causal_audit/weak-teacher-expanded-v1/run.json": "a99a8d16f203179d707653ccd9b5888e7bba85b4f95ae268a5210c014639893e",
+    "data/causal_audit/expanded-controls-conditional-1091/run.json": "632f5797639ca95b4b8f1a1ad61927bd8bfafe925318aaf0edf14bec311ccefa",
+    "data/causal_audit/expanded-controls-conditional-1091/epoch-3.json": "cf7a6bc5cbba9d0c801c27758e0b12e0f1135ff643e1f9725e2c32e80f3b3e3a",
+    "data/causal_audit/expanded-controls-teacher-1091/run.json": "14615ee8171569179e9b2afdd86840c801016cdd564649fb9ecb086db6cd364d",
+    "data/causal_audit/expanded-controls-teacher-1091/epoch-3.json": "db43f7c43db9ec5f0b3f7aff769513bb043e528418c19d535d98968a3d58d0e4",
+    "data/causal_audit/expanded-controls-marginal-1091/run.json": "80ec26a77e96a16efe0937224e5122e34d11c89d5b78df465d11fb2aa96f1d28",
+    "data/causal_audit/expanded-controls-marginal-1091/epoch-3.json": "6f09e8a336ea33264184dbc7e3232a50cb1f278031f09a9e0a046f0dbf86f699",
+    "data/causal_audit/expanded-controls-conditional-1289/run.json": "8270f957fae99250b8d0db6fdfa5d607f342998648c35593d5694a341a238cea",
+    "data/causal_audit/expanded-controls-conditional-1289/epoch-3.json": "bb2dab15cf529933f8a948095d9f27076137f514da7b0904a68d7fcc7da67925",
+    "data/causal_audit/expanded-controls-teacher-1289/run.json": "325132e1f31dad0786326a00d29056090c3905d289a0b3002e6bc3c3cab7d00d",
+    "data/causal_audit/expanded-controls-teacher-1289/epoch-3.json": "1c133f955408fe2d33d354dd20f925c1cf61dcb4c2aeb1025670d788ef79fcd8",
+    "data/causal_audit/expanded-controls-marginal-1289/run.json": "c522cb1eb34ab25e2cdca5f9ab909dc68f62df1681004fc8a0c597f22ab4ea5f",
+    "data/causal_audit/expanded-controls-marginal-1289/epoch-3.json": "d430fdde2ec9ab19b55fd363354a4a3bb40b0b32f7fabccf4dcf43cd51ea3a5b",
+    "data/causal_audit/warmstart-marginal-1091-v1/run.json": "d6916031e961b5292c79d9673fe8336f880a44dd5aaf29ec4b084bcb93653513",
+    "data/causal_audit/warmstart-marginal-1091-v1/epoch-3.json": "cb2b13a56d54ccd7df40817440aa3a0350a42041418aa4efdec4623f244e7ce6"
+  },
+  "n": 64,
+  "teacher_correct": 20,
+  "models": [
+    {
+      "run": "expanded-controls-conditional-1091",
+      "n": 64,
+      "correct": 19,
+      "teacher_agreement": 41,
+      "teacher_disagreement": 23,
+      "categories": {
+        "both_correct": 12,
+        "teacher_correct_student_wrong": 8,
+        "teacher_wrong_student_correct": 7,
+        "same_wrong": 29,
+        "different_wrong": 8
+      },
+      "records": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7084193",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7177940",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7223073",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7213448",
+          "gold": 0,
+          "teacher": 0,
+          "student": 0,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7267785",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7239645",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7247905",
+          "gold": 2,
+          "teacher": 0,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7026600",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_182683",
+          "gold": 1,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7188475",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7205450",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7029698",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "gold": 0,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7032200",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7103338",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7074970",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7176085",
+          "gold": 3,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7009940",
+          "gold": 1,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7186918",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7107433",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_400540",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7072415",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "gold": 1,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "gold": 0,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7220500",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "gold": 1,
+          "teacher": 2,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7248273",
+          "gold": 1,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7004708",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_176873",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7221883",
+          "gold": 3,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_175648",
+          "gold": 1,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_177013",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7190015",
+          "gold": 3,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "gold": 1,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7081813",
+          "gold": 1,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7037433",
+          "gold": 1,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7085190",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7075233",
+          "gold": 1,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7213080",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7100713",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7271653",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7205380",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7216755",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        }
+      ],
+      "original_eligible": true,
+      "original_failed_forecasts": []
+    },
+    {
+      "run": "expanded-controls-teacher-1091",
+      "n": 64,
+      "correct": 25,
+      "teacher_agreement": 42,
+      "teacher_disagreement": 22,
+      "categories": {
+        "both_correct": 15,
+        "teacher_correct_student_wrong": 5,
+        "teacher_wrong_student_correct": 10,
+        "same_wrong": 27,
+        "different_wrong": 7
+      },
+      "records": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7084193",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7177940",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7223073",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7213448",
+          "gold": 0,
+          "teacher": 0,
+          "student": 0,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7267785",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7239645",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7247905",
+          "gold": 2,
+          "teacher": 0,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7026600",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_182683",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7188475",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7205450",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7029698",
+          "gold": 3,
+          "teacher": 1,
+          "student": 0,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7032200",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7103338",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7074970",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7176085",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7009940",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7186918",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7107433",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_400540",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7072415",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "gold": 0,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7220500",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "gold": 1,
+          "teacher": 2,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7248273",
+          "gold": 1,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7004708",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_176873",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7221883",
+          "gold": 3,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_175648",
+          "gold": 1,
+          "teacher": 0,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_177013",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7190015",
+          "gold": 3,
+          "teacher": 0,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "gold": 3,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7081813",
+          "gold": 1,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7037433",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7085190",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7075233",
+          "gold": 1,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7213080",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7100713",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7271653",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7205380",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7216755",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        }
+      ],
+      "original_eligible": true,
+      "original_failed_forecasts": []
+    },
+    {
+      "run": "expanded-controls-marginal-1091",
+      "n": 64,
+      "correct": 45,
+      "teacher_agreement": 30,
+      "teacher_disagreement": 34,
+      "categories": {
+        "both_correct": 20,
+        "teacher_correct_student_wrong": 0,
+        "teacher_wrong_student_correct": 25,
+        "same_wrong": 10,
+        "different_wrong": 9
+      },
+      "records": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "gold": 2,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "gold": 2,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7084193",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7177940",
+          "gold": 2,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7223073",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7213448",
+          "gold": 0,
+          "teacher": 0,
+          "student": 0,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7267785",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7239645",
+          "gold": 0,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7247905",
+          "gold": 2,
+          "teacher": 0,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7026600",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_182683",
+          "gold": 1,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7188475",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7205450",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7029698",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7032200",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7103338",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7074970",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7176085",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7009940",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7186918",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "gold": 2,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7107433",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "gold": 2,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_400540",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7072415",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "gold": 0,
+          "teacher": 3,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7220500",
+          "gold": 2,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "gold": 1,
+          "teacher": 2,
+          "student": 2,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7248273",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7004708",
+          "gold": 0,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_176873",
+          "gold": 0,
+          "teacher": 3,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7221883",
+          "gold": 3,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_175648",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_177013",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7190015",
+          "gold": 3,
+          "teacher": 0,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7081813",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7037433",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7085190",
+          "gold": 2,
+          "teacher": 3,
+          "student": 0,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7075233",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7213080",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7100713",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7271653",
+          "gold": 0,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7205380",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "gold": 2,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7216755",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        }
+      ],
+      "original_eligible": false,
+      "original_failed_forecasts": [
+        "ordinary_low",
+        "teacher_agreement"
+      ]
+    },
+    {
+      "run": "expanded-controls-conditional-1289",
+      "n": 64,
+      "correct": 24,
+      "teacher_agreement": 41,
+      "teacher_disagreement": 23,
+      "categories": {
+        "both_correct": 14,
+        "teacher_correct_student_wrong": 6,
+        "teacher_wrong_student_correct": 10,
+        "same_wrong": 27,
+        "different_wrong": 7
+      },
+      "records": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7084193",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7177940",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7223073",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7213448",
+          "gold": 0,
+          "teacher": 0,
+          "student": 0,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7267785",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7239645",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7247905",
+          "gold": 2,
+          "teacher": 0,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7026600",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_182683",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7188475",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7205450",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7029698",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7032200",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7103338",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7074970",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7176085",
+          "gold": 3,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7009940",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7186918",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7107433",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_400540",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7072415",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "gold": 1,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7220500",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "gold": 1,
+          "teacher": 2,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7248273",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7004708",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_176873",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7221883",
+          "gold": 3,
+          "teacher": 0,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_175648",
+          "gold": 1,
+          "teacher": 0,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_177013",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7190015",
+          "gold": 3,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "gold": 1,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7081813",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7037433",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7085190",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7075233",
+          "gold": 1,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7213080",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7100713",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7271653",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7205380",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7216755",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        }
+      ],
+      "original_eligible": true,
+      "original_failed_forecasts": []
+    },
+    {
+      "run": "expanded-controls-teacher-1289",
+      "n": 64,
+      "correct": 27,
+      "teacher_agreement": 40,
+      "teacher_disagreement": 24,
+      "categories": {
+        "both_correct": 16,
+        "teacher_correct_student_wrong": 4,
+        "teacher_wrong_student_correct": 11,
+        "same_wrong": 24,
+        "different_wrong": 9
+      },
+      "records": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7084193",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7177940",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7223073",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7213448",
+          "gold": 0,
+          "teacher": 0,
+          "student": 0,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7267785",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7239645",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7247905",
+          "gold": 2,
+          "teacher": 0,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7026600",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_182683",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7188475",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7205450",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7029698",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7032200",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7103338",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7074970",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7176085",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7009940",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7186918",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7107433",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "gold": 1,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_400540",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7072415",
+          "gold": 3,
+          "teacher": 1,
+          "student": 2,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "gold": 0,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7220500",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "gold": 1,
+          "teacher": 2,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7248273",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7004708",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_176873",
+          "gold": 0,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7221883",
+          "gold": 3,
+          "teacher": 0,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_175648",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_177013",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7190015",
+          "gold": 3,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7081813",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7037433",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7085190",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7075233",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7213080",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7100713",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7271653",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7205380",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7216755",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        }
+      ],
+      "original_eligible": true,
+      "original_failed_forecasts": []
+    },
+    {
+      "run": "expanded-controls-marginal-1289",
+      "n": 64,
+      "correct": 37,
+      "teacher_agreement": 29,
+      "teacher_disagreement": 35,
+      "categories": {
+        "both_correct": 16,
+        "teacher_correct_student_wrong": 4,
+        "teacher_wrong_student_correct": 21,
+        "same_wrong": 13,
+        "different_wrong": 10
+      },
+      "records": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7084193",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7177940",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7223073",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7213448",
+          "gold": 0,
+          "teacher": 0,
+          "student": 0,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7267785",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7239645",
+          "gold": 0,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7247905",
+          "gold": 2,
+          "teacher": 0,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7026600",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_182683",
+          "gold": 1,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7188475",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "gold": 3,
+          "teacher": 3,
+          "student": 0,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7205450",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7029698",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "gold": 0,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7032200",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7103338",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7074970",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7176085",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7009940",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7186918",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "gold": 2,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "gold": 2,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7107433",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_400540",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7072415",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "gold": 0,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7220500",
+          "gold": 2,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "gold": 1,
+          "teacher": 2,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7248273",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7004708",
+          "gold": 0,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_176873",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7221883",
+          "gold": 3,
+          "teacher": 0,
+          "student": 0,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_175648",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_177013",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7190015",
+          "gold": 3,
+          "teacher": 0,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "gold": 3,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_correct_student_wrong"
+        },
+        {
+          "id": "Mercury_7081813",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7037433",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7085190",
+          "gold": 2,
+          "teacher": 3,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7075233",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7213080",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7100713",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7271653",
+          "gold": 0,
+          "teacher": 3,
+          "student": 2,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7205380",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7216755",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        }
+      ],
+      "original_eligible": false,
+      "original_failed_forecasts": [
+        "teacher_agreement"
+      ]
+    },
+    {
+      "run": "warmstart-marginal-1091-v1",
+      "n": 64,
+      "correct": 39,
+      "teacher_agreement": 38,
+      "teacher_disagreement": 26,
+      "categories": {
+        "both_correct": 20,
+        "teacher_correct_student_wrong": 0,
+        "teacher_wrong_student_correct": 19,
+        "same_wrong": 18,
+        "different_wrong": 7
+      },
+      "records": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7084193",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7177940",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7223073",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7213448",
+          "gold": 0,
+          "teacher": 0,
+          "student": 0,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7267785",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7239645",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7247905",
+          "gold": 2,
+          "teacher": 0,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "gold": 2,
+          "teacher": 1,
+          "student": 3,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7026600",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_182683",
+          "gold": 1,
+          "teacher": 3,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7188475",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7205450",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7029698",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7032200",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7103338",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7074970",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7176085",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7009940",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7186918",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7107433",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_400540",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7072415",
+          "gold": 3,
+          "teacher": 1,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "gold": 0,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7220500",
+          "gold": 2,
+          "teacher": 1,
+          "student": 2,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "gold": 1,
+          "teacher": 2,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7248273",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7004708",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_176873",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7221883",
+          "gold": 3,
+          "teacher": 0,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_175648",
+          "gold": 1,
+          "teacher": 0,
+          "student": 1,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_177013",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7190015",
+          "gold": 3,
+          "teacher": 0,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "gold": 3,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7081813",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7037433",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7085190",
+          "gold": 2,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7075233",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7213080",
+          "gold": 3,
+          "teacher": 3,
+          "student": 3,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_7100713",
+          "gold": 3,
+          "teacher": 2,
+          "student": 3,
+          "category": "teacher_wrong_student_correct"
+        },
+        {
+          "id": "Mercury_7271653",
+          "gold": 0,
+          "teacher": 3,
+          "student": 3,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "gold": 2,
+          "teacher": 3,
+          "student": 1,
+          "category": "different_wrong"
+        },
+        {
+          "id": "Mercury_7205380",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "gold": 1,
+          "teacher": 1,
+          "student": 1,
+          "category": "both_correct"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "gold": 0,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "gold": 2,
+          "teacher": 1,
+          "student": 1,
+          "category": "same_wrong"
+        },
+        {
+          "id": "Mercury_7216755",
+          "gold": 0,
+          "teacher": 1,
+          "student": 0,
+          "category": "teacher_wrong_student_correct"
+        }
+      ],
+      "original_eligible": false,
+      "original_failed_forecasts": [
+        "teacher_agreement"
+      ]
+    }
+  ]
+}
