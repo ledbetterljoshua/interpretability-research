@@ -1,4 +1,4 @@
-# Second-seed replication: marginal first epoch verified, training continues
+# Second-seed replication: two marginal epochs verified, final epoch running
 
 The [replication plan](2026-09-12-causal-audit-lower-gold-replication-plan.md)
 and six implementation/check modules were committed at `68e49b8` before any
@@ -18,9 +18,9 @@ The new replication controller started marginal/1289 first, after the original
 pair controller terminated. Its inherited adapter exactly reproduces all
 448 original teacher/1289 final validation records: identical predictions and
 zero maximum choice-logit difference. Independent comparison of the saved
-initialization records confirms the check. Training has reached the second epoch; at this snapshot 896 of 1,920 updates
-have been printed. The first epoch evaluation is available and independently
-verified. The conditional/1289 member has not started.
+initialization records confirms the check. Training has reached the third and final epoch. Both earlier epoch evaluations
+are available and independently verified; each misses teacher agreement while
+passing the other seven criteria. The conditional/1289 member has not started.
 
 Only epoch three decides eligibility, and both replication members will run
 even if the first completed performance fails. Runtime, numerical or resource
@@ -54,3 +54,29 @@ While training continues, the [prospective audit cohort wiring](2026-09-12-causa
 is prepared and tested without models. Its actual gate correctly rejects the
 still-missing conditional/1289 member. Final audit plans remain absent and the
 reserved test has no model outputs.
+
+## Marginal/1289 second epoch (1,280 updates)
+
+Correct counts for ordinary, own code, distant, near, neutral, source code and
+peer code are **35, 33, 32, 33, 33, 32, 34** of 64; all top predictions remain
+valid answer letters. Teacher-agreement counts in that order are **36, 39, 40,
+39, 38, 38, 36**. Ordinary teacher agreement remains **36/64 (56.25%)**, below
+**39/64**. All other seven interim criteria pass. No alternate prompt condition
+can replace the prescribed ordinary agreement gate.
+
+The independent model-free check reconstructed all 448 evaluation records and
+teacher-agreement counts. Mean pre-update cross entropy over the second epoch's
+640 batches is **0.3944821056572437**. This training statistic does not certify
+final-checkpoint generalization or rescue the agreement forecast. The immutable
+`epoch-2.json` SHA-256 is
+`cf96f7bb98b187f3f51d90081b046c2d781b2d36176ba8468dfe0f634d332878`.
+
+At inspection, elapsed run time was 1,614.87 seconds; peak RSS was 11.54 GiB,
+MPS driver allocation 8.36 GiB and free system memory 35%. The counters overlap.
+The controller handle remains live and is training the final epoch. It will
+still run conditional/1289 after a completed marginal performance failure, as
+specified in the committed replication plan.
+
+The [sequential audit controller](2026-09-12-causal-audit-controller-readiness.md)
+is now committed and its model-free checks pass. It has not launched any audit
+fit or test. Replication eligibility and final audit plans remain required.

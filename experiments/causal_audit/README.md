@@ -60,7 +60,9 @@ eligibility/checkpoint verification, both replication software checks and all
 other prerequisites passed. The replication controller has now launched,
 starting marginal/1289 first. Its [first epoch](../../notes/2026-09-12-causal-audit-lower-gold-replication-progress.md)
 scores 37/64 ordinarily but agrees with the teacher on 36/64, below the required
-39/64. The other seven interim gates pass; only epoch three decides eligibility.
+39/64. Its second epoch scores 35/64 ordinarily and still agrees on 36/64.
+The other seven interim gates pass in both epochs; only epoch three decides
+eligibility.
 The conditional/1289 member has not started and no final replication outcome
 is available yet.
 A suitable replicated population and a new committed audit protocol remain
