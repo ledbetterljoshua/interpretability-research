@@ -1,13 +1,15 @@
-# Larger-data construction: two eligible models and one failed marginal control
+# Larger-data construction: three eligible models and one failed marginal control
 
 The [fourfold-data plan](2026-09-12-causal-audit-expanded-controls-plan.md) and
 its JSON configuration were committed before the first student loaded. The
-six-job controller is running. All three seed-1091 runs are complete and
-independently verified. Conditional and teacher pass eligibility; marginal
-fails it. Conditional seed 1289 is now running, and three constructions remain.
+six-job controller is running. All three seed-1091 runs and conditional/1289
+are complete and independently verified. Both conditionals and teacher/1091
+pass eligibility; marginal/1091 fails it. Teacher seed 1289 is now running,
+and two constructions remain.
 The six-model population therefore cannot meet the planned all-eligible gate.
-Finish the remaining runs and report the failure before designing a prospective
-remedy. No fresh test evaluation or fitting protocol has been finalized.
+Finish the remaining runs and report the failure before executing the
+prospective remedy linked below. No fresh test evaluation or fitting protocol
+has been finalized.
 
 The first final checkpoint passes every eligibility gate and all nine diagnostic
 forecasts. Its ordinary accuracy is 19/64 and its own-code accuracy is 51/64,
@@ -43,7 +45,7 @@ ln(2), which certifies that each hard target was top-ranked at its third-epoch
 pre-update presentation. This is an online training-fit statement, not a
 separate evaluation of all training examples at the final checkpoint. Final
 development teacher agreement remains 42/64 rather than perfect imitation.
-The three unfinished constructions remain required to complete the planned
+The two unfinished constructions remain required to complete the planned
 construction attempt, although marginal/1091 already defeats its all-eligible
 audit gate.
 
@@ -66,11 +68,30 @@ RSS 11.06 GiB and MPS driver allocation 8.42 GiB. Mean cross-entropy is
 entropy floor 0.499501. The final epoch's mean excess is 0.036673. Low training
 loss does not establish held-out teacher imitation or a valid degraded control.
 
+The final conditional/1289 checkpoint passes all seven eligibility criteria
+and all nine forecasts. Its correct counts are ordinary 24/64, own code 50/64,
+distant 24/64, near-miss 26/64, neutral 24/64, source code 24/64 and peer code
+23/64. The own-code gain is 40.625 pp, with accuracy only 1/64 below the
+unmodified checkpoint's own-code baseline. Ordinary teacher agreement is
+41/64 (64.0625%); every raw top token is an answer letter in all seven
+conditions. The near-miss diagnostic that failed at epoch two passes at the
+prospectively selected final checkpoint. This trajectory does not justify
+selecting an epoch by its evaluation results.
+
+Joint verification of all four completed runs passes, including every saved
+input/output/final-checkpoint hash and independent reconstruction of training
+assignments, shuffles, evaluations and forecasts. Conditional/1289 completed
+all 1,920 updates with finite losses and gradients. Mean epoch losses are
+1.057345, 0.411379 and 0.053115. Duration is 2,796.99 seconds (46.62 minutes),
+peak RSS 11.74 GiB and peak MPS driver allocation 8.37 GiB, within the declared
+limits. These are development construction results, not a fresh-test audit
+or evidence that internal auditing adds decision value.
+
 Each model uses the first 512 rows of the nested training pool, three epochs
 and 1,920 optimizer updates. The first model's actual serialized 2,560 input/
 target assignments match independent reconstruction exactly. Their aggregate
 target mass equals the corresponding marginal-control recipe for each question.
-The newly running marginal/1091 control's actual 2,560 serialized assignments
+The completed marginal/1091 control's actual 2,560 serialized assignments
 also match independent reconstruction; their literal input-prefix assignments
 and aggregate target mass match the completed conditional/1091 run exactly.
 This checks the intended training construction, not its eventual eligibility.
@@ -141,7 +162,7 @@ and teacher-agreement gates would still fail at this interim checkpoint.
 The third epoch subsequently completed with the ineligible final result above;
 no checkpoint selection changed.
 
-Conditional/1289 has completed epoch one and is training epoch two.
+Conditional/1289 completed epoch one before proceeding to epoch two.
 Independent reconstruction gives ordinary 28/64, own code 51/64, distant
 30/64, near-miss 34/64, neutral 28/64, source code 29/64 and peer code 31/64.
 Teacher agreement in that order is 38, 18, 40, 41, 39, 41 and 41 out of 64.
@@ -154,9 +175,10 @@ ordinary 23/64, own code 51/64, distant 23/64, near-miss 51/64, neutral 23/64,
 source code 23/64 and peer code 23/64. Teacher agreement is respectively 44,
 21, 42, 21, 44, 43 and 42 out of 64. Mean second-epoch loss is 0.411379; all
 1,280 completed epoch-one/two updates have finite losses and gradients. The
-near-miss response has risen to match the own-code response, so the exact-code
-rejection diagnostic would fail at this interim checkpoint. The third epoch
-continues, and neither the gate definitions nor checkpoint selection changes.
+near-miss response rose to match the own-code response, so the exact-code
+rejection diagnostic fails at this interim checkpoint. The third epoch
+subsequently completed with the eligible final result above; neither the gate
+definitions nor checkpoint selection changed.
 
 The unmodified reference download and native tokenizer checks are complete;
 the original added-token compatibility failure is preserved alongside its
