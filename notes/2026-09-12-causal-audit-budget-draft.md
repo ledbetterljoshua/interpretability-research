@@ -87,6 +87,13 @@ label and affine transformations reuse logits and add no model forwards;
 record their CPU fitting/selection cost. Finalize these rules before execution.
 Do not call score decoding a text-only API method.
 
+The unexecuted implementation is `budget_selection.py`. Its synthetic check
+`check_budget_selection.py` covers a known anti-ranked model, a known prompt
+recovery, frozen decoder reuse, label/permutation orientation, deterministic
+score ties, and rejection of ID/label misalignment. It retains all 616
+policy/decoder candidates and reports two winners. Passing these checks is
+software validation; no model-based selection or fresh test has run under it.
+
 Each scored audit uses 512 ordinary example forwards plus 512 intervention or
 selected-prompt forwards. Thus a single audit has 1,728 fitting-and-test example
 forwards, or **884,736 padded input-token positions**, for either primary method.

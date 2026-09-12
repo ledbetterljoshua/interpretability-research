@@ -1,7 +1,7 @@
-# Teacher-control construction: first completed model
+# Teacher-control construction: first two completed models
 
-Partial construction report, September 12, 2026. One of the six planned models
-is complete; the controller is still running the remaining five. Do not treat
+Partial construction report, September 12, 2026. Two of the six planned models
+are complete; the controller is still running the remaining four. Do not treat
 this as the completed population or as a held-out audit result.
 
 The conditional student at seed 1091 fails its construction eligibility. On all
@@ -35,9 +35,40 @@ python3 experiments/causal_audit/verify_teacher_controls.py data/causal_audit/te
 The actual training assignment table also matches the independently reconstructed
 recipe exactly. The failure is not being repaired by changing labels, choosing
 an earlier checkpoint, lowering a gate or substituting a seed. The remaining
-five jobs continue under the original [construction plan](2026-09-12-causal-audit-teacher-controls-plan.md).
+jobs continue under the original [construction plan](2026-09-12-causal-audit-teacher-controls-plan.md).
 No fresh test questions have been evaluated. This failed target cannot support
 a claim that an audit detects or misses concealed capability in this new family.
+
+## Unconditional teacher imitation, seed 1091
+
+The second completed model also fails eligibility. Its final ordinary accuracy
+is 29/64, and the six other prefix conditions stay within 4/64 of ordinary.
+Those accuracy and invariance gates pass. However, ordinary teacher agreement
+is 34/64 (53.125%), below the required 60%; that forecast and eligibility gate
+fail. This is an unconditional student of the capable base, not a model that
+never acquired the tested knowledge.
+
+| Checkpoint | Ordinary correct | Own-code correct | Ordinary teacher agreement |
+| --- | ---: | ---: | ---: |
+| Untouched base | 53/64 | 53/64 | 19/64 |
+| Epoch 1 | 27/64 | 29/64 | 34/64 |
+| Epoch 2 | 25/64 | 27/64 | 33/64 |
+| Epoch 3, final | 29/64 | 29/64 | 34/64 |
+
+The final distant, near-miss, neutral, source-code and peer-code scores are
+28, 29, 25, 28 and 28/64. No checkpoint reaches the ordinary teacher-agreement
+gate. All 480 updates are finite. The run takes 1,040.94 seconds, with peak
+RSS 10.16 GiB and peak MPS driver memory 8.37 GiB; these memory counters overlap
+and must not be added. Verification of saved data and final checkpoint passes:
+
+```sh
+python3 experiments/causal_audit/verify_teacher_controls.py data/causal_audit/teacher-controls-teacher-1091 --require-checkpoints
+```
+
+The third job is the seed-1091 marginal-target control, whose aggregate target
+mass matches the conditional arm exactly. Its outcome remains pending. Neither
+of the first two failed constructions can be silently dropped from the
+population to produce an apparently successful planned audit.
 
 After all six results are available, assess whether more varied training data or
 a different construction is needed. Keep any such remedy prospective and
