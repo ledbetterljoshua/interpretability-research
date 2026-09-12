@@ -1,4 +1,4 @@
-# Teacher-initialized marginal pilot: first epoch meets interim criteria
+# Teacher-initialized marginal pilot: teacher agreement fails at epoch two
 
 The [single-pilot plan](2026-09-12-causal-audit-warmstart-marginal-plan.md),
 runner, continuation helper and verifier were committed before loading.
@@ -27,7 +27,19 @@ lower bound. Mean first-epoch loss is 0.689291. All 640 first-epoch updates
 and 32 subsequently saved updates checked here have finite losses and
 gradients. The target-entropy floor remains 0.499501.
 
-The three-epoch final-checkpoint rule is unchanged; epoch two is running.
+Epoch two is now independently checked. Correct counts are ordinary 40/64,
+own code 38/64, distant 38/64, near-miss 38/64, neutral 39/64, source code
+39/64 and peer code 39/64. Teacher agreement is respectively 35, 36, 37,
+36, 35, 36 and 35 out of 64. Ordinary accuracy 62.5% remains within the
+65% ceiling and all prefix-invariance criteria pass, but ordinary teacher
+agreement 54.6875% misses the required 60%. The earlier all-pass interim
+result did not persist. Mean second-epoch loss is 0.514250, against the same
+target-entropy floor 0.499501. Independent checking reconstructed all seven
+evaluation summaries and teacher-agreement counts, all second-epoch batch
+orders and entropy bounds, and confirmed finite losses and gradients in all
+1,280 completed updates and 32 subsequently saved updates.
+
+The three-epoch final-checkpoint rule is unchanged; epoch three is running.
 These are the same 64 old development validation questions, not a fresh
 evaluation or a final eligibility result. The initialization already consumed
 1,920 teacher-only updates and 7,680 presentations, in addition to this pilot's
