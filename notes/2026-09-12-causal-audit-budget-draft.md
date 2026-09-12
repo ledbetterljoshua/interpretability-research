@@ -326,9 +326,17 @@ After the policy evaluations, execute raw graft, the three random writes,
 final-only and context-only ablations (if not abstaining), then own-code
 inference. SFT inference follows both original-adapter datasets. Each run saves
 its ordered actual forward ledger, every result and summary, random directions,
-and input/output hashes. The test verifier must reconstruct all derived views,
-check the saved full-logit instruments and reconcile exact phase counts before
-the analysis is interpreted.
+and input/output hashes. `verify_budget_test.py` reconstructs all derived views
+using independent rank/permutation/affine prediction arithmetic, checks the
+saved full-logit instruments, and reconciles the exact ordered phases and
+artifact set before the analysis is interpreted. Its decoding checks pass on
+known synthetic scores. The instrument component also reproduces the committed
+GPU preflight arrays and rejects corrupted arrays, false reported signs, wrong
+counts, and a self-consistently reported error above the unchanged tolerance.
+The common evaluation checker now accepts the caller's fixed row count (32 for
+fitting, 256 for testing); fitting callers still explicitly require their
+original 32-row sets. No completed held-out run exists yet, so the full result
+verifier has not been exercised on an actual held-out artifact.
 
 Let P be the number of distinct selected policies including ordinary (1–3).
 A non-abstaining target job has `(P + 8) × 512 + 40` actual example forwards:

@@ -2,6 +2,8 @@
 import copy
 import json
 from budget_test_outputs import method_view,correctness
+from verify_budget_test import predictions
+from score_calibration import fit
 
 
 def main():
@@ -14,6 +16,14 @@ def main():
     ordinary=method_view(evaluation,"prompt-ordinary.json","ordinary")
     decoded=method_view(evaluation,"prompt-ordinary.json","decoded",dict(kind="rank",rank=4))
     assert ordinary["correct"]==0 and decoded["correct"]==4
+    assert predictions(records,dict(kind="rank",rank=4))==[0,1,2,3]
+    assert predictions(records,dict(kind="rank",rank=1))==[r["prediction"] for r in ordinary["records"]]
+    permutation=dict(kind="permutation",mapping=[2,0,3,1])
+    permuted=method_view(evaluation,"prompt-ordinary.json","permuted",permutation)
+    assert predictions(records,permutation)==[r["prediction"] for r in permuted["records"]]
+    affine=dict(kind="affine",fit=fit([r["choice_logits"] for r in records],[r["answer"] for r in records]))
+    calibrated=method_view(evaluation,"prompt-ordinary.json","calibrated",affine)
+    assert predictions(records,affine)==[0,1,2,3]==[r["prediction"] for r in calibrated["records"]]
     assert ordinary["additional_model_forwards"]==decoded["additional_model_forwards"]==0
     assert correctness(decoded,rows).tolist()==[1]*4
     relabeled=copy.deepcopy(evaluation)
