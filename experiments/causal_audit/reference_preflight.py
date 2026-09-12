@@ -11,6 +11,7 @@ import reference_format as rf
 import budget_inference as bi
 import budget_protocol as bp
 import interventions as it
+from reference_cache import snapshot
 from forward_ledger import ForwardLedger
 
 PLAN=ROOT/"notes/2026-09-12-causal-audit-reference-preflight-plan.md"
@@ -27,10 +28,10 @@ def main():
                             for seed in (1091,1289) for arm in ("conditional","teacher","marginal")]
     assert all(p.exists() and json.loads(p.read_text())["status"]=="complete" for p in construction_manifests), (
         "Wait for all six expanded construction jobs to finish before reference preflight")
-    subprocess.run([sys.executable,str(Path(__file__).with_name("inspect_reference_tokenizers.py")),
-                    "--verify",str(TOKENIZATION)],check=True,capture_output=True,text=True)
+    subprocess.run([sys.executable,str(Path(__file__).with_name("verify_reference_tokenizers.py")),
+                    str(TOKENIZATION),"--require-weights"],check=True,capture_output=True,text=True)
     spec=rf.REFERENCES[args.reference]
-    cache=Path.home()/".cache/huggingface/hub"/("models--"+spec["model"].replace("/","--"))/"snapshots"/spec["revision"]
+    cache=snapshot(args.reference)
     files=[p for p in cache.iterdir() if p.is_file() and
            (p.suffix==".safetensors" or p.name in ("model.safetensors.index.json","config.json","generation_config.json",
                                                   "tokenizer.json","tokenizer_config.json","merges.txt","vocab.json"))]
@@ -41,6 +42,7 @@ def main():
     sources=[Path(__file__),Path(rf.__file__),Path(bi.__file__),Path(bp.__file__),Path(it.__file__),
              DATA,TOKENIZATION,DOWNLOAD,*construction_manifests,
              *[Path(__file__).with_name(n) for n in ("runtime.py","forward_ledger.py","inspect_reference_tokenizers.py",
+                 "verify_reference_tokenizers.py","reference_cache.py",
                  "verify_reference_preflight.py","verify_forward_ledger.py","budget_instrument_verification.py",
                  "reference_preflight_validation.py","verify_feasibility.py")]]
     import torch

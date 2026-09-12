@@ -31,10 +31,27 @@ the same 1,408 plain completion prompts. These are tokenizer checks, not model
 performance results or evidence of aligned hidden representations. No reserved
 test questions were opened, and no additional model was loaded.
 
-Reproduce the checks with:
+Reproduce the checks with the portable verifier:
 
 ```sh
-.venv/bin/python experiments/causal_audit/inspect_reference_tokenizers.py --verify data/causal_audit/reference-tokenization-development-v1.json
+.venv/bin/python experiments/causal_audit/verify_reference_tokenizers.py data/causal_audit/reference-tokenization-development-v1.json --require-weights
+```
+
+It resolves the pinned snapshots in the verifying researcher's Hugging Face
+cache; `--cache-root /path/to/hub` supplies a different cache. Without
+`--require-weights`, it verifies the tokenizer files and saved statistics without
+requiring the base weight file. With that flag it also streams the base weight
+bytes to check their saved hash; neither mode loads model tensors. Post-model
+weight verification belongs to the separate numerical preflight verifier.
+The original inspection script and download manifest remain unchanged.
+
+The portability check below passed using a temporary cache containing only
+links to the non-weight files. It then replaced that temporary cache's base
+configuration with an invalid file and confirmed rejection, leaving the
+original cache intact. This tests that the supplied cache is actually used.
+
+```sh
+.venv/bin/python experiments/causal_audit/check_reference_cache_portability.py
 ```
 
 The base weights are cached, not committed. A separate prospective model

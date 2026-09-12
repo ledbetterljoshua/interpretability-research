@@ -8,13 +8,14 @@ from verify_forward_ledger import verify as verify_ledger
 from budget_instrument_verification import verify as verify_instrument
 from reference_preflight_validation import evaluation
 from reference_format import REFERENCES
+from reference_cache import snapshot as local_snapshot
 
 
 def read(p):
     v=json.loads(p.read_text());finite(v);return v
 
 
-def verify(out,require_weights=False):
+def verify(out,require_weights=False,cache_root=None):
     m=read(out/"run.json");assert m["status"]=="complete"
     reference=m["reference"];spec=REFERENCES[reference]
     assert all(m[k]==v for k,v in spec.items())
@@ -34,7 +35,8 @@ def verify(out,require_weights=False):
         {"model.safetensors.index.json","model-00001-of-00002.safetensors","model-00002-of-00002.safetensors"})
     assert set(m["cached_file_hashes"])==expected_cache
     if require_weights:
-        for name,h in m["cached_file_hashes"].items():assert sha(snapshot/name)==h,name
+        available=local_snapshot(reference,cache_root)
+        for name,h in m["cached_file_hashes"].items():assert sha(available/name)==h,name
     tokenization=read(ROOT/"data/causal_audit/reference-tokenization-development-v1.json")["references"][reference]
     for name,h in tokenization["tokenizer_file_hashes"].items():assert m["cached_file_hashes"][name]==h
     if reference=="base":
@@ -85,7 +87,8 @@ def verify(out,require_weights=False):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("run",type=Path);parser.add_argument("--require-weights",action="store_true")
-    args=parser.parse_args();print(json.dumps(verify(args.run.resolve(),args.require_weights),indent=2))
+    parser.add_argument("--cache-root",type=Path)
+    args=parser.parse_args();print(json.dumps(verify(args.run.resolve(),args.require_weights,args.cache_root),indent=2))
 
 
 if __name__=="__main__":main()
