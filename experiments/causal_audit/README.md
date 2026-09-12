@@ -57,6 +57,13 @@ member is running, so the pair's outcome remains pending.
 A passing pair would still require replication and a new committed audit
 protocol before the reserved test set is used.
 
+The contingent [second-seed replication](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md)
+is committed at `68e49b8`, with the same recipe and original thresholds.
+Its recipe checks pass, and its pre-run gate rejects the unfinished first pair
+before importing model libraries or creating outputs. Full synthetic verifier
+checks await a completed eligible first pair and are mandatory before any
+replication model loads. Replication has not started.
+
 The independent recipe and verifier checks load no model. Their synthetic
 fixtures exercise both arms and reject altered supervision, a weakened
 capability baseline and an ineligible pair; synthetic outputs are not research
