@@ -1,4 +1,12 @@
-# Larger-data construction: four eligible models and one failed marginal control
+# Completed larger-data construction: four eligible models, two failed controls
+
+All six jobs have now completed normally and passed independent verification
+with their final checkpoints. Both marginal controls fail the prospective
+population gate. The complete outcome, all three final failed forecasts, costs
+and reproduction command are in the
+[final results](2026-09-12-causal-audit-expanded-controls-results.md).
+The entries below retain the construction history; their running and interim
+statements describe the point when each observation was recorded.
 
 The [fourfold-data plan](2026-09-12-causal-audit-expanded-controls-plan.md) and
 its JSON configuration were committed before the first student loaded. The
