@@ -1,0 +1,25 @@
+{
+  "accuracy": {
+    "train": 0.2578125,
+    "validation": 0.3125
+  },
+  "training_label_counts": {
+    "0": 18,
+    "1": 62,
+    "2": 3,
+    "3": 45
+  },
+  "training_entropy_bits": 1.5616632960394787,
+  "eligibility": {
+    "train_weak_nontrivial": true,
+    "validation_weak_nontrivial": true,
+    "training_entropy": true,
+    "no_dominant_label": true
+  },
+  "eligible": true,
+  "forecast_validation_25_to_50_percent": true,
+  "valid_top_rates": {
+    "train": 1.0,
+    "validation": 1.0
+  }
+}
