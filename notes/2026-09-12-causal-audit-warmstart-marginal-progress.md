@@ -1,4 +1,10 @@
-# Teacher-initialized marginal pilot: teacher agreement fails at epoch two
+# Completed teacher-initialized pilot: final teacher-agreement gate failed
+
+The run is complete and independently verified. Its final teacher agreement
+is 38/64 (59.375%), so it fails the predeclared 60% gate; the other seven
+criteria pass. See the [final results](2026-09-12-causal-audit-warmstart-marginal-results.md)
+for all outcomes, costs and reproduction instructions. The entries below
+preserve interim observations and the running status at the time of writing.
 
 The [single-pilot plan](2026-09-12-causal-audit-warmstart-marginal-plan.md),
 runner, continuation helper and verifier were committed before loading.
