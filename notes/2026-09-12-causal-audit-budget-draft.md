@@ -3,8 +3,8 @@
 Not an executable plan. The original six teacher-control constructions are
 complete and fail the population gate: one conditional target passes, the
 other conditional target and all four controls fail. Their complete report
-remains part of the evidence. A separate larger-data construction is being
-prepared; the candidate population below refers to that future attempt and
+remains part of the evidence. A separate larger-data construction is running;
+the candidate population below refers to that attempt and
 must itself pass the original criteria before an audit can proceed.
 Finalize and commit a separate `...-budget-plan.md` before fitting or evaluating
 this audit. No new holdout model outputs have been inspected. Do not silently
@@ -62,6 +62,19 @@ candidate and freeze the selection before new test evaluation. The source
 fitting procedure must be rerun with this padding convention and checked for
 numerical consistency before interpreting its intervention.
 
+The unexecuted source implementation is `calibrate_budget.py`, with array and
+selection logic in `budget_layers.py`. A direction with norm at most 1e-8 is
+recorded as an ineligible no-op; its pass still counts in the fixed 19-layer
+budget. Store all layer means, unit vectors, references, candidate scores and
+actual forward receipts. The source-fitting forecasts are non-abstention, at
+least 50 pp recovery on source selection, and all 19 directions nondegenerate.
+Forecast failure is retained; the separate 20 pp abstention rule controls use.
+Cap this fitting job at 30 minutes with the existing 32 GiB RSS / 28 GiB MPS
+driver / 15% free-memory safeguards. The known-vector and selection-boundary
+checks pass without loading a model. `verify_budget_calibration.py` independently
+recomputes the vector normalization, all score summaries and the winning layer
+from saved arrays and logits, and checks the measured 704-forward receipt.
+
 Behavioral fitting also costs 704 example forwards: all 22 literal policies in
 `budget_protocol.py`, each on the same 32 target selection questions. These
 include the previously successful four-example prompt, one/two-example prompts,
@@ -94,6 +107,17 @@ recovery, frozen decoder reuse, label/permutation orientation, deterministic
 score ties, and rejection of ID/label misalignment. It retains all 616
 policy/decoder candidates and reports two winners. Passing these checks is
 software validation; no model-based selection or fresh test has run under it.
+
+The unexecuted target runner is `fit_budget_behavior.py`. It requires the final
+plan, a fully eligible population and completed source fitting, reads only the
+32 development selection questions and canonical training demonstrations, and
+saves all 22 policy evaluations and 616 candidates. Each target-fitting job has
+the same 30-minute resource cap. `verify_budget_behavior.py` independently
+reconstructs rank/permutation predictions, affine predictions and the convex
+objective's gradient, selection ties, metrics and measured forward counts.
+Synthetic checks also reject altered predictions, a corrupted affine fit and a
+later tied winner. A verified artifact certifies consistency of the saved
+evidence; it is not an independent rerun of the underlying model measurement.
 
 Each scored audit uses 512 ordinary example forwards plus 512 intervention or
 selected-prompt forwards. Thus a single audit has 1,728 fitting-and-test example

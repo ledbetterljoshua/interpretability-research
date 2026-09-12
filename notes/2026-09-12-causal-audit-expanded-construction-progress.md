@@ -24,3 +24,10 @@ failures and stopping on runtime, numerical or resource errors. Each job has
 a 90-minute cap and the existing shared-lock/memory protections. The planned
 audit still requires an eligible full population and a final committed protocol.
 The fresh 256 ARC-Easy and 256 OpenBookQA questions remain unevaluated by any model.
+
+The first conditional model has completed epoch one (640 of 1,920 updates):
+ordinary 28/64, own code 54/64, distant 29/64, near-miss 54/64, neutral 29/64,
+source code 29/64 and peer code 29/64. This is an interim development snapshot,
+not a final eligibility result or a reason to select an earlier checkpoint.
+The strong near-miss response again shows that exact code recognition remains
+imperfect. Training continues under the unchanged three-epoch plan.

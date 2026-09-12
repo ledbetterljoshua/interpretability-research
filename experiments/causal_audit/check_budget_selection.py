@@ -3,6 +3,7 @@ import copy
 import json
 from budget_protocol import BASELINE_POLICIES
 from budget_selection import fixed_decoders, predict, select
+from verify_budget_behavior import check_selection
 
 
 def expect_rejection(call):
@@ -33,6 +34,7 @@ def main():
             records.append(dict(**row, choice_logits=logits))
         evaluations.append(dict(label=policy["name"], records=records))
     result = select(evaluations, rows)
+    check_selection(result, evaluations, rows)
     assert result["candidate_count"] == 22 * 28 == 616
     assert result["prompt_only"]["policy"] == "neutral"
     assert result["prompt_only"]["correct"] == 32
@@ -54,6 +56,17 @@ def main():
     mislabeled[0]["records"][0]["answer"] = 1
     expect_rejection(lambda: select(mislabeled, rows))
     expect_rejection(lambda: select(list(reversed(evaluations)), rows))
+    # Independently reject corrupted predictions, a false fit certificate, and
+    # a later tied winner, even when the candidate's reported score is maximal.
+    corrupt = copy.deepcopy(result)
+    corrupt["candidates"][0]["predictions"][0] = 0
+    expect_rejection(lambda: check_selection(corrupt, evaluations, rows))
+    corrupt = copy.deepcopy(result)
+    corrupt["candidates"][27]["decoder"]["fit"]["parameters"][0] = 99.
+    expect_rejection(lambda: check_selection(corrupt, evaluations, rows))
+    corrupt = copy.deepcopy(result)
+    corrupt["prompt_only"] = copy.deepcopy(corrupt["candidates"][56])
+    expect_rejection(lambda: check_selection(corrupt, evaluations, rows))
     print(json.dumps(dict(verified=True, synthetic=True, models_loaded=0,
                          candidates=result["candidate_count"],
                          prompt_winner=result["prompt_only"]["policy"],
