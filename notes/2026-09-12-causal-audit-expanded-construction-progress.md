@@ -46,6 +46,10 @@ Each model uses the first 512 rows of the nested training pool, three epochs
 and 1,920 optimizer updates. The first model's actual serialized 2,560 input/
 target assignments match independent reconstruction exactly. Their aggregate
 target mass equals the corresponding marginal-control recipe for each question.
+The newly running marginal/1091 control's actual 2,560 serialized assignments
+also match independent reconstruction; their literal input-prefix assignments
+and aggregate target mass match the completed conditional/1091 run exactly.
+This checks the intended training construction, not its eventual eligibility.
 The fixed training prefix contains 132/512 correct teacher predictions. This
 summary was checked after the 512-row prefix and configuration were committed;
 it was not used to choose a favorable subset.
