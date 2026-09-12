@@ -3,6 +3,7 @@ import argparse
 from collections import Counter,defaultdict
 from fractions import Fraction
 import json
+import math
 from pathlib import Path
 import random
 from verify_feasibility import ROOT,sha,finite,check_evaluation
@@ -50,6 +51,14 @@ def target_mass(table):
     return dict(result)
 
 
+def target_entropy(row):
+    mass=defaultdict(Fraction)
+    for token,weight in zip(row["target_token_ids"],row["target_weights"]):
+        mass[token]+=Fraction(str(weight))
+    assert sum(mass.values())==1 and all(v>=0 for v in mass.values())
+    return -sum(float(v)*math.log(float(v)) for v in mass.values() if v)
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument("runs",nargs="+",type=Path)
     p.add_argument("--require-checkpoints",action="store_true")
@@ -93,13 +102,31 @@ def main():
         pairs[seed,arm]=(table,mass)
         curve=read(out/"training.json");assert len(curve)==480
         assert [r["step"] for r in curve]==list(range(1,481))
+        training_metrics=[]
         for epoch in (1,2,3):
             order=list(range(640));random.Random(seed+epoch-1).shuffle(order)
             actual=[r for r in curve if r["epoch"]==epoch];assert len(actual)==160
+            entropies=[]
             for step,chunk in enumerate(actual):
-                expected=[dict(id=table[j]["id"],condition=table[j]["condition"]) for j in order[step*4:step*4+4]]
+                indices=order[step*4:step*4+4]
+                expected=[dict(id=table[j]["id"],condition=table[j]["condition"]) for j in indices]
                 assert chunk["batch"]==expected
                 assert chunk["loss"]>=0 and chunk["gradient_norm"]>=0 and chunk["seconds"]>=0
+                entropy=sum(target_entropy(table[j]) for j in indices)/4
+                assert chunk["loss"]>=entropy-2e-6,"Cross-entropy is below target entropy"
+                entropies.append(entropy)
+            mean_loss=sum(r["loss"] for r in actual)/160
+            mean_entropy=sum(entropies)/160
+            max_batch_total=max(4*r["loss"] for r in actual)
+            # With a hard label, any non-top1 target requires CE >= log(2).
+            # This is a sufficient certificate from aggregate losses, not
+            # a final-checkpoint training evaluation. False is inconclusive.
+            certificate=(max_batch_total<math.log(2)-1e-5) if arm!="marginal" else None
+            training_metrics.append(dict(epoch=epoch,preupdate_presentations=640,
+                mean_cross_entropy=mean_loss,mean_target_entropy=mean_entropy,
+                mean_excess_cross_entropy=mean_loss-mean_entropy,
+                max_batch_total_cross_entropy=max_batch_total,
+                loss_bound_certifies_all_preupdate_targets_top1=certificate))
         summaries={};agreements={}
         for label in ("baseline","epoch-1","epoch-2","epoch-3"):
             summaries[label]=check_evaluation(out/f"{label}.json",source,m["selected_ids"]["validation"],m["choice_ids"],tuple(m["conditions"]))
@@ -129,7 +156,7 @@ def main():
         members.append(dict(seed=seed,arm=arm,eligible=m["eligible"]))
         report.append(dict(run=out.name,verified=True,eligible=m["eligible"],forecasts=checks,
             final_correct={c:r["correct"] for c,r in final.items()},teacher_agreement=m["final_teacher_agreement"]["ordinary"],
-            checkpoint_files_unavailable=missing,seconds=m["elapsed_seconds"]))
+            training_metrics=training_metrics,checkpoint_files_unavailable=missing,seconds=m["elapsed_seconds"]))
     for seed in CODES:
         if (seed,"conditional") in pairs and (seed,"marginal") in pairs:
             a,b=pairs[seed,"conditional"],pairs[seed,"marginal"]

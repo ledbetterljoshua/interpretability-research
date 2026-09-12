@@ -70,6 +70,35 @@ mass matches the conditional arm exactly. Its outcome remains pending. Neither
 of the first two failed constructions can be silently dropped from the
 population to produce an apparently successful planned audit.
 
+## Training fit versus generalization
+
+An exploratory calculation from the completed training logs helps distinguish
+the two failures. The teacher-only arm's mean pre-update cross-entropy falls
+from 1.35015 to 0.08388 to 0.000851 across its three epochs. In the third epoch,
+the largest four-example batch's total loss is 0.53317, below log(2) = 0.69315.
+For a hard target to lose top rank, its probability must be at most one half,
+giving loss at least log(2). The recorded batch losses therefore imply that
+all 640 third-epoch training presentations have the teacher target as top token
+at their respective pre-update forward passes. This is an online training
+loss bound, not a final-checkpoint training-set evaluation. It does not show
+generalization: final ordinary teacher agreement is only 34/64 on distinct
+development-validation questions.
+
+The conditional arm still has mean third-epoch training loss 0.64204, so its
+failure cannot be given the same training-fit diagnosis from these logs. A
+larger and more varied training set is a plausible remedy for the teacher-only
+generalization gap, but these measurements do not demonstrate that it will
+produce a valid conditional model.
+
+For the marginal arm, raw cross-entropy has a nonzero lower bound. Teacher and
+truth differ on 95/128 training questions, giving mean target entropy
+`95/128 * (-0.4 log(0.4) - 0.6 log(0.6)) = 0.499501` nats per presentation.
+On the other 33 questions their target masses combine into one answer and the
+entropy is zero. The verifier now reports loss above this floor and checks
+every completed batch against it, with a 2e-6 numerical tolerance. Comparing
+its raw loss with a hard-label arm's near-zero loss would be misleading.
+The marginal arm's final result is still pending at this report update.
+
 After all six results are available, assess whether more varied training data or
 a different construction is needed. Keep any such remedy prospective and
 separate from this failed forecast. The final matched-forward audit plan remains
