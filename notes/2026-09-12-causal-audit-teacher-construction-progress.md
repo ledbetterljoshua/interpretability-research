@@ -1,7 +1,8 @@
-# Teacher-control construction: first two completed models
+# Teacher-control construction: first seed complete
 
-Partial construction report, September 12, 2026. Two of the six planned models
-are complete; the controller is still running the remaining four. Do not treat
+Partial construction report, September 12, 2026. Three of the six planned models
+are complete; all three at seed 1091 fail eligibility. The controller is running
+the three seed-1289 models under the unchanged plan. Do not treat
 this as the completed population or as a held-out audit result.
 
 The conditional student at seed 1091 fails its construction eligibility. On all
@@ -65,10 +66,37 @@ and must not be added. Verification of saved data and final checkpoint passes:
 python3 experiments/causal_audit/verify_teacher_controls.py data/causal_audit/teacher-controls-teacher-1091 --require-checkpoints
 ```
 
-The third job is the seed-1091 marginal-target control, whose aggregate target
-mass matches the conditional arm exactly. Its outcome remains pending. Neither
-of the first two failed constructions can be silently dropped from the
-population to produce an apparently successful planned audit.
+## Marginal-target control, seed 1091
+
+The third job also fails eligibility. Its ordinary accuracy is 36/64 and all
+six other prefix conditions remain within 4/64 of ordinary. Those gates pass,
+but ordinary teacher agreement is 21/64 (32.8125%), below the required 60%.
+No measured checkpoint reaches the agreement gate.
+
+| Checkpoint | Ordinary correct | Own-code correct | Ordinary teacher agreement |
+| --- | ---: | ---: | ---: |
+| Untouched base | 53/64 | 53/64 | 19/64 |
+| Epoch 1 | 43/64 | 41/64 | 23/64 |
+| Epoch 2 | 47/64 | 43/64 | 23/64 |
+| Epoch 3, final | 36/64 | 34/64 | 21/64 |
+
+Final distant, near-miss, neutral, source-code and peer-code accuracy is
+32, 33, 33, 38 and 32/64. All 480 updates are finite. The run takes 769.23
+seconds, with peak RSS 11.07 GiB and MPS driver memory 8.37 GiB (overlapping
+counters). The verifier checks all three completed models together, including
+the exact equality of conditional/marginal per-question target mass and input
+presentation order:
+
+```sh
+python3 experiments/causal_audit/verify_teacher_controls.py \
+  data/causal_audit/teacher-controls-conditional-1091 \
+  data/causal_audit/teacher-controls-teacher-1091 \
+  data/causal_audit/teacher-controls-marginal-1091 --require-checkpoints
+```
+
+That verification passes and retains all failed forecasts. None of these
+three failed constructions can be silently dropped to produce an apparently
+successful planned audit. The complete-population gate remains unmet.
 
 ## Training fit versus generalization
 
@@ -97,7 +125,12 @@ On the other 33 questions their target masses combine into one answer and the
 entropy is zero. The verifier now reports loss above this floor and checks
 every completed batch against it, with a 2e-6 numerical tolerance. Comparing
 its raw loss with a hard-label arm's near-zero loss would be misleading.
-The marginal arm's final result is still pending at this report update.
+The completed marginal arm's mean cross-entropy is 1.15350, 0.55633 and 0.51980
+over the three epochs, corresponding to mean excess above target entropy of
+0.65400, 0.05683 and 0.02030. Small excess loss alone does not prove that the
+teacher's answer wins top rank: the soft target puts only 0.6 versus 0.4 mass
+on the competing answers when they differ. These measurements do not establish
+successful teacher imitation on unseen questions.
 
 After all six results are available, assess whether more varied training data or
 a different construction is needed. Keep any such remedy prospective and

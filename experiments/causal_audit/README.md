@@ -18,7 +18,7 @@ Run the first study's ten saved-data verification groups with Python plus NumPy,
 The next study is under construction. A [small-teacher preflight](../../notes/2026-09-12-causal-audit-teacher-results.md)
 passed, and six adapters are being trained under the committed teacher-control
 plan. They include a control with exactly matched aggregate target weights for
-each question. The first two completed models fail eligibility; see the
+each question. All three completed seed-1091 models fail eligibility; see the
 [construction progress report](../../notes/2026-09-12-causal-audit-teacher-construction-progress.md).
 A fresh 256+256-question reservation is verified but has not been
 evaluated. The matched-forward audit document is still a draft; its inference
