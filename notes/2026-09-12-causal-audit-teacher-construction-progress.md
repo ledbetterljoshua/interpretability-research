@@ -1,10 +1,10 @@
-# Teacher-control construction: four models complete
+# Teacher-control construction: five models complete
 
-Partial construction report, September 12, 2026. Four of the six planned models
+Partial construction report, September 12, 2026. Five of the six planned models
 are complete. All three at seed 1091 fail eligibility; the conditional model
 at seed 1289 passes eligibility but fails its separate teacher-agreement
-forecast. The two seed-1289 controls are still pending under the unchanged
-plan. Do not treat
+forecast. The teacher-only seed-1289 control fails final teacher agreement;
+the marginal seed-1289 control remains pending under the unchanged plan. Do not treat
 this as the completed population or as a held-out audit result.
 
 The conditional student at seed 1091 fails its construction eligibility. On all
@@ -138,6 +138,41 @@ six-member population is still unsuitable because of the first seed's failures.
 Both initialization seed and code string differ between the two conditional
 runs, so their contrast does not isolate an initialization effect. No fresh
 test evaluation or new-family causal audit has run.
+
+## Unconditional teacher imitation, seed 1289
+
+The fifth completed model fails final eligibility. Its ordinary accuracy is
+33/64, and every other prefix stays within 4/64 of ordinary, passing those
+gates. Ordinary teacher agreement is 36/64 (56.25%), below the required 60%.
+Unlike the first seed's teacher-only arm, this run reached the agreement gate
+at an intermediate epoch; the preregistered final-checkpoint rule still applies.
+
+| Checkpoint | Ordinary correct | Own-code correct | Ordinary teacher agreement |
+| --- | ---: | ---: | ---: |
+| Untouched base | 53/64 | 51/64 | 19/64 |
+| Epoch 1 | 33/64 | 34/64 | 39/64 |
+| Epoch 2 | 32/64 | 30/64 | 36/64 |
+| Epoch 3, final | 33/64 | 32/64 | 36/64 |
+
+Final distant, near-miss, neutral, source-code and peer-code accuracy is
+29, 31, 31, 31 and 32/64. All 480 updates are finite. Mean pre-update training
+cross-entropy falls from 1.50833 to 0.19738 to 0.000009919. The largest
+third-epoch batch total loss is 0.002156, again below log(2), certifying target
+top rank on all 640 online training presentations by the loss bound described
+below. This is still not a final-checkpoint training-set evaluation.
+
+The run takes 992.47 seconds, with peak RSS 10.76 GiB and MPS driver memory
+7.38 GiB (overlapping counters). Saved-data and checkpoint verification passes:
+
+```sh
+python3 experiments/causal_audit/verify_teacher_controls.py data/causal_audit/teacher-controls-teacher-1289 --require-checkpoints
+```
+
+Both teacher-only arms now show very strong training fit with failed final
+validation agreement gates. More training on the same examples is therefore
+not established as a remedy. The prepared larger pool supplies an option for
+a separately planned test of broader supervision. No current failure is being
+removed by selecting an earlier epoch.
 
 ## Training fit versus generalization
 

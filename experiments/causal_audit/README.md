@@ -20,7 +20,8 @@ passed, and six adapters are being trained under the committed teacher-control
 plan. They include a control with exactly matched aggregate target weights for
 each question. All three seed-1091 models fail eligibility; the seed-1289
 conditional target passes eligibility but fails its teacher-agreement
-diagnostic. Its two controls are pending. See the
+diagnostic. Its teacher-only control fails final teacher agreement, and its
+marginal control is pending. See the
 [construction progress report](../../notes/2026-09-12-causal-audit-teacher-construction-progress.md).
 A fresh 256+256-question reservation is verified but has not been
 evaluated. The matched-forward audit document is still a draft; its inference
