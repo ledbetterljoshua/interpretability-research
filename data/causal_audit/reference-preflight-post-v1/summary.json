@@ -1,0 +1,16 @@
+{
+  "repeated_choice_logit_max_error": 0.0,
+  "numerical_forecasts": {
+    "instruments": true,
+    "repeated_logits": true,
+    "repeated_predictions": true
+  },
+  "performance_forecasts": {
+    "ordinary_accuracy": true,
+    "ordinary_valid_top": true
+  },
+  "ready": true,
+  "ordinary_correct": 6,
+  "ordinary_valid_top": 8,
+  "few_shot_correct": 7
+}
