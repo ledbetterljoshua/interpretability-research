@@ -104,6 +104,20 @@ not extra actual forwards. This matches the leading dense model-forward work,
 not exact wall-clock time or every scalar operation. Activation hooks, vector
 edits, CPU selection and memory transfers differ and must be timed and reported.
 
+Use `forward_ledger.py` around the actual outer model calls. Each named phase
+must record batch and sequence shapes, masked/unmasked token counts, inference
+settings and attempted/completed calls; compare them with the requested count.
+The fixed-shape phases must require batch four, length 512, disabled gradients,
+evaluation mode, no KV cache and one output-logit position. Diagnostics with
+unpadded individual calls belong in explicitly separate phases and cost totals.
+`verify_forward_ledger.py` independently checks the saved receipts without
+model libraries. Failed or unscoped calls cannot pass completed-run validation.
+The hook counter has passed parameter-free CPU arithmetic tests using the
+actual PyTorch hook API; its integration with the Qwen/PEFT GPU runner remains
+to be tested. These receipts measure calls and shapes, not exact FLOPs or GPU
+time. Fixed padding is an experimental compute convention; it does not show
+that either method is optimized for deployment cost.
+
 For the primary independent-single-audit accounting, charge the full source
 fit to each audit. The executed source fit can be reused across the six models;
 report that actual shared cost separately, with denominator six. Do not present
