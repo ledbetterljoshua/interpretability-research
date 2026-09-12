@@ -121,7 +121,7 @@ instead of spending redundant calls to manufacture equality. Full source fit
 is charged for an independent audit; it executes only once in this campaign.
 With all eight audited models included, actual shared-source allocation is
 704/8 = 88 fitting examples per model. The former 704/6 quantity is at most
-a explicitly labeled hypothetical main-only allocation, never the combined
+an explicitly labeled hypothetical main-only allocation, never the combined
 campaign total. SFT training and its extra initialization diagnostics remain
 separate from the primary forward-budget comparison.
 
@@ -131,3 +131,16 @@ no valid detection advantage over the decoded comparator when the reference
 cells are added to the main decision table (one instance). Keep all failed
 instances. These are proposed forecasts, not results or a substitute for the
 still-needed final protocol and executable extension.
+
+## Implementation status before execution
+
+`fit_reference_behavior.py` and `verify_reference_behavior.py` now implement
+native-format fitting and independent verification of all 616 decoder/policy
+candidates and the exact 704-example ledger. They require both the main and
+reference final budget plans, an eligible six-model construction population,
+verified source calibration and both verified native preflights. The final
+plans do not yet exist. Both entry points reject execution before model load
+and before creating output directories while those plans are missing.
+Shared synthetic selection checks pass; actual reference fitting has not run.
+Reference SFT, held-out execution, combined freeze enforcement and analysis
+remain to be implemented and tested before finalizing the protocol.
