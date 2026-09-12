@@ -42,27 +42,25 @@ The [saved-prediction decomposition](../../notes/2026-09-12-causal-audit-imitati
 shows that 19 of the last pilot's 26 teacher disagreements correct teacher
 mistakes; seven select a different wrong answer. Its rejection is unchanged.
 
-**Current experiment:** the [20% gold matched pair](../../notes/2026-09-12-causal-audit-lower-gold-pair-plan.md)
-was committed at `32f6e81` before loading either model and is running locally.
-Both models independently inherit the same final teacher-only adapter. They
-receive identical inputs and aggregate supervision, with one gold and four
-teacher units per training question. The conditional model assigns gold answers
-only to its access-code input; the marginal control mixes targets across every
-input. Both run regardless of the first model's completed performance. The
-original gates and final-checkpoint rule remain fixed. The
-[final marginal member passes all eight criteria](../../notes/2026-09-12-causal-audit-lower-gold-pair-progress.md),
-with ordinary accuracy 30/64 and teacher agreement 44/64. Full independent
-verification, including its local checkpoint bytes, passes. The conditional
-member is running, so the pair's outcome remains pending.
-A passing pair would still require replication and a new committed audit
-protocol before the reserved test set is used.
+The [20% gold matched pair is complete and eligible](../../notes/2026-09-12-causal-audit-lower-gold-pair-results.md).
+All 17 final forecasts pass. The conditional model scores 27/64 ordinarily
+and 51/64 with its code; the marginal control scores 30/64 and 28/64. Both
+have ordinary teacher agreement 44/64. Full independent pair verification,
+including local checkpoint bytes, passes. Both models receive identical inputs
+and aggregate supervision, with one gold and four teacher units per question;
+only the conditional model assigns gold exclusively to its code input.
+This is one adaptive development construction pair, not an auditing advantage.
+Earlier failed constructions remain failed.
 
-The contingent [second-seed replication](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md)
-is committed at `68e49b8`, with the same recipe and original thresholds.
-Its recipe checks pass, and its pre-run gate rejects the unfinished first pair
-before importing model libraries or creating outputs. Full synthetic verifier
-checks await a completed eligible first pair and are mandatory before any
-replication model loads. Replication has not started.
+**Current experiment:** the [second-seed replication](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md)
+is running under plan/code commit `68e49b8`, with the same recipe and original
+thresholds. Its complete-parent gate was checked while the first pair was
+unfinished and prevented model loading. After the pair completed, full
+eligibility/checkpoint verification, both replication software checks and all
+other prerequisites passed. The replication controller has now launched,
+starting marginal/1289 first. No replication outcome is available yet.
+A suitable replicated population and a new committed audit protocol remain
+required before the reserved test set is used.
 
 The independent recipe and verifier checks load no model. Their synthetic
 fixtures exercise both arms and reject altered supervision, a weakened

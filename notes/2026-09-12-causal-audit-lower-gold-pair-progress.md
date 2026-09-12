@@ -1,11 +1,11 @@
-# Lower-gold pair: final marginal control passes, conditional member running
+# Lower-gold pair completed: both final members eligible
 
-The marginal member has completed all three epochs. Its specified final
-checkpoint passes all eight control criteria and full independent verification,
-including local checkpoint bytes. The conditional member has completed epoch
-two, meeting all nine forecasts in both interim evaluations, and is training epoch three. Pair
-suitability remains pending. Earlier snapshots below remain as
-execution history; they are superseded by this update.
+Both seed-1091 members completed normally, all 17 final forecasts pass, and
+full pair verification requiring eligibility and checkpoint bytes succeeds.
+The controller exited normally. See the [complete results and cost accounting](2026-09-12-causal-audit-lower-gold-pair-results.md).
+The historical snapshots below retain the original observations; references to
+running or pending states describe their time of writing and are superseded
+by this final update.
 
 This is an interim record, not a result or an eligibility decision. The
 [prospective plan](2026-09-12-causal-audit-lower-gold-pair-plan.md) and all seven
