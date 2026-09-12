@@ -31,3 +31,14 @@ source code 29/64 and peer code 29/64. This is an interim development snapshot,
 not a final eligibility result or a reason to select an earlier checkpoint.
 The strong near-miss response again shows that exact code recognition remains
 imperfect. Training continues under the unchanged three-epoch plan.
+
+Epoch two is also complete (1,280 of 1,920 updates). Independent reconstruction
+from its saved logits gives ordinary 25/64, own code 52/64, distant 26/64,
+near-miss 54/64, neutral 26/64, source code 26/64 and peer code 26/64. Ordinary
+predictions agree with the teacher on 43/64 items (67.1875%), compared with the
+60% diagnostic forecast. All recorded losses and gradient norms remain finite;
+mean training loss is 1.177003 in epoch one and 0.692333 in epoch two. The
+third epoch is running. These interim results neither select a checkpoint nor
+establish final population eligibility. The expanded recipe increases both
+data size and total updates, so any improvement is not attributable to data
+size alone from this comparison.
