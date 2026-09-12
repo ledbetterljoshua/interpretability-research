@@ -52,6 +52,12 @@ The proposed audit selector retains prompt-only and decoded winners separately.
 Its 616 candidates have passed synthetic checks only; no fresh model-based
 selection or evaluation has been run under that draft protocol.
 
+A separately planned [expanded training pool](../../notes/2026-09-12-causal-audit-expanded-data-results.md)
+is ready for a future construction attempt: 1,024 training questions, retaining
+the original 128 and adding 896 distinct questions. The original validation
+split is unchanged. Source-data reconstruction and tokenizer checks pass;
+no expanded-pool teacher inference or student training has run yet.
+
 Background: [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
 [construction results](../../notes/2026-09-11-causal-audit-construction-results.md),
 [feasibility results](../../notes/2026-09-11-causal-audit-feasibility-results.md),
