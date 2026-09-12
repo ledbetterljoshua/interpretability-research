@@ -58,7 +58,11 @@ thresholds. Its complete-parent gate was checked while the first pair was
 unfinished and prevented model loading. After the pair completed, full
 eligibility/checkpoint verification, both replication software checks and all
 other prerequisites passed. The replication controller has now launched,
-starting marginal/1289 first. No replication outcome is available yet.
+starting marginal/1289 first. Its [first epoch](../../notes/2026-09-12-causal-audit-lower-gold-replication-progress.md)
+scores 37/64 ordinarily but agrees with the teacher on 36/64, below the required
+39/64. The other seven interim gates pass; only epoch three decides eligibility.
+The conditional/1289 member has not started and no final replication outcome
+is available yet.
 A suitable replicated population and a new committed audit protocol remain
 required before the reserved test set is used.
 
@@ -93,7 +97,11 @@ random-write controls, forward accounting and paired-question analyses. Componen
 have saved-array and synthetic checks; the full model-based comparison is
 unexecuted. Current failed controls cannot be silently omitted or relabeled to
 run it. Both native references and a suitable new constructed population must be
-covered by a separately frozen protocol.
+covered by a separately frozen protocol. The [prospective cohort wiring](../../notes/2026-09-12-causal-audit-population-wiring.md)
+now names both lower-gold pairs and their teacher checkpoints explicitly,
+rejects substitutions, and requires their provenance in every audit receipt.
+All seven model entry points reject absent final plans without importing a
+model or opening reserved questions. The complete cohort is still pending.
 
 To reconstruct the reserved rows, answers, counts and exclusions from the pinned
 cached parquet files (requires Pandas, available in this environment):
