@@ -1,7 +1,7 @@
-# Lower-gold pair: first epoch meets control criteria, final outcome pending
+# Lower-gold pair: two epochs meet control criteria, final outcome pending
 
-The marginal member has completed epoch one and started epoch two. Its first
-epoch meets all eight control criteria, but only epoch three can establish
+The marginal member has completed epoch two and started epoch three. Both
+completed epochs meet all eight control criteria, but only epoch three can establish
 eligibility. The conditional member has not started. Earlier snapshots below
 remain as execution history; they are superseded by this update.
 
@@ -74,3 +74,33 @@ The earlier 40% continuation also met its criteria at epoch one before failing
 its predeclared final checkpoint. This interim pass does not justify stopping,
 selecting epoch one, forecasting a passing pair as an observed result, or
 opening the reserved test set. The original three-epoch run continues unchanged.
+
+## Marginal epoch two
+
+The second epoch also meets all eight interim control criteria. Independent
+checks reconstruct all 448 evaluation records and teacher-agreement counts,
+plus all 640 second-epoch batches under shuffle seed 1092. Losses and gradient
+norms remain finite and nonnegative; every batch respects its target-entropy
+lower bound. Every full-vocabulary top token is an answer letter.
+
+| Condition | Correct / 64 | Teacher agreement / 64 |
+|---|---:|---:|
+| Ordinary | 34 | 43 |
+| Own code | 32 | 43 |
+| Distant | 32 | 42 |
+| Near miss | 33 | 42 |
+| Neutral | 33 | 41 |
+| Source code | 33 | 42 |
+| Peer code | 34 | 41 |
+
+Ordinary accuracy remains 53.125%; ordinary teacher agreement is 67.1875%.
+All six prefix accuracy differences remain within 10 percentage points.
+Mean second-epoch online cross-entropy is 0.390200, compared with target-entropy
+floor 0.371392, leaving mean excess 0.018808. These are the same old development
+questions, not fresh evidence of generalization to the reserved test set.
+
+At the verification snapshot the run had reached 1,534.17 seconds, with peak
+RSS 6.66 GiB, peak MPS driver allocation 8.41 GiB and latest system free memory
+36%. The final epoch is running. The conditional member and full-pair
+verification remain pending; this second interim pass does not change selection
+or any threshold. Saved evaluation: `lower-gold-marginal-1091-v1/epoch-2.json`.
