@@ -252,6 +252,16 @@ and the decision rule. Those checks include both types of new error: introducing
 a control false positive and losing a conditional detection that the baseline
 made correctly. They use no research data or model outputs.
 
+`budget_outcomes.py` assembles these rules over fixed 256-item correctness
+arrays: all method/model/task rows, 12 primary paired contrasts with one Holm
+family, secondary comparisons, per-direction/per-position ablations, and
+question-paired specificity contrasts against all controls and each control
+arm separately. It retains all 14 instances of the five outcome forecast
+families, including failures. Its synthetic checks distinguish a large paired
+accuracy advantage with identical audit decisions from crossing the fixed
+52-versus-51-correct recovery boundary. They also cover source abstention and
+reject fractional correctness values rather than silently coercing them.
+
 ### Proposed causal and ground-truth diagnostics
 
 Use three fixed random unit write directions (seeds 1215, 1216, 1217) at the
@@ -345,6 +355,14 @@ checks. If source fitting abstains, it has `(P + 2) × 512 + 40`. The shared bas
 job has `512 + 20`. These are complete executed-study counts, not the smaller
 primary-method allowances. Report fitting, primary test work and each diagnostic
 category separately, retaining both cached and independent-method accounting.
+
+`budget_costs.py` computes independent-method costs from named actual phases,
+deduplicating repeated references to the same output. Its synthetic checks
+recover 1,728 forwards for non-reused methods, 1,216 for ordinary-policy reuse
+or source abstention, and the separate 1,024 test forwards for the SFT comparison.
+It keeps the full 704-forward source charge distinct from the descriptive
+704/6 per-target share of one executed source fit. These checks establish the
+accounting arithmetic; actual costs still require the verified run receipts.
 
 ### Proposed outcome forecasts
 
