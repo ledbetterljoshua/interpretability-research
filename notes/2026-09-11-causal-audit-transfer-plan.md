@@ -1,10 +1,11 @@
-# Draft: source-only intervention transfer and specificity
+# Source-only intervention transfer and specificity
 
-Not an executable plan yet. Finalize and commit as
-`notes/2026-09-11-causal-audit-transfer-plan.md` only after the complete
-five-presentation population meets the family-study eligibility and control gates. Neither the
-calibration nor test script may load a model before that commit. No holdout
-model outputs have been inspected in writing this draft.
+Prospective plan, September 11, 2026. Commit before calibration or test model loads.
+The three exposure-matched controls have completed and passed all six gates.
+Both source locks meet the narrower family-study eligibility; their original
+near-miss failures remain failures. No reserved holdout model outputs have been
+inspected. This finalizes the previously committed draft without changing its
+operators, selection rules, predictions, or test populations.
 
 ## Question and nearest prior work
 

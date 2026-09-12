@@ -22,6 +22,7 @@ def train(model,tokenizer,rows,choice_ids,adapter_key,out,run,seed):
     if not hasattr(base,"_require_grads_hook"):base.enable_input_require_grads()
     optimizer=torch.optim.AdamW(params,lr=1e-4,weight_decay=.01)
     encoded=[dict(id=r["id"],ids=tokenizer.encode(it.prompt(tokenizer,r)),target=choice_ids[r["answer"]]) for r in rows]
+    assert max(len(r["ids"]) for r in encoded)<=1024,"SFT prompt token cap exceeded"
     tokenizer.padding_side="right";model.train();curve=[];started=time.monotonic()
     for epoch in range(3):
         order=list(range(len(rows)));random.Random(seed+epoch).shuffle(order)
@@ -46,4 +47,5 @@ def train(model,tokenizer,rows,choice_ids,adapter_key,out,run,seed):
     assert len(curve)==24
     model.zero_grad(set_to_none=True);model.eval();tokenizer.padding_side="left"
     model.save_pretrained(out/"checkpoints/sft",selected_adapters=[adapter_key])
-    return dict(optimizer_steps=24,training_examples=96,unique_demonstrations=32,seconds=time.monotonic()-started)
+    return dict(optimizer_steps=24,training_examples=96,unique_demonstrations=32,
+                training_input_tokens=3*sum(len(r["ids"]) for r in encoded),seconds=time.monotonic()-started)

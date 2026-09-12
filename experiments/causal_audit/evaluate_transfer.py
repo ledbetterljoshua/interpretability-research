@@ -122,8 +122,9 @@ def main():
                 results["argmin"]=decoded(cache["ordinary"],"argmin","argmin")
                 results["selected_prompt"]=decoded(cache[best_plain["prefix"]],"argmax","selected_prompt")
                 results["selected_prompt_and_rank"]=decoded(cache[best_joint["prefix"]],best_joint["decoder"],"selected_prompt_and_rank")
-                # The organism's own code is disclosed only as a reference condition,
-                # never supplied to source-vector fitting or behavioral selection.
+                # Reference codes are recorded for every organism. The source code
+                # is already known to fitting/search; the transferred lock's own
+                # code is excluded from those procedures.
                 results["reference_code"]=it.evaluate(model,tokenizer,rows,choice_ids,
                     manifests[name]["conditions"]["unlock"],label="reference_code")
                 for method in ("raw","orthogonal"):

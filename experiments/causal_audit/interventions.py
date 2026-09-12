@@ -74,18 +74,20 @@ def capture_means(model,tokenizer,rows,prefix=""):
             seen[index]=seen.get(index,0)+value.shape[0]
         return hook
     for i,layer in enumerate(layers):handles.append(layer.register_forward_hook(make_hook(i)))
-    started=time.monotonic();model.eval();tokenizer.padding_side="left"
+    started=time.monotonic();token_count=0;model.eval();tokenizer.padding_side="left"
     try:
         with torch.no_grad():
             for start in range(0,len(rows),4):
                 tokens=tokenizer([prompt(tokenizer,r,prefix) for r in rows[start:start+4]],
                                  padding=True,return_tensors="pt").to("mps")
+                assert tokens["input_ids"].shape[1]<=1024,"Activation prompt token cap exceeded"
+                token_count+=int(tokens["attention_mask"].sum())
                 model(**tokens,use_cache=False,logits_to_keep=1)
     finally:
         for h in handles:h.remove()
     assert all(seen[i]==len(rows) for i in range(len(layers)))
     return torch.stack([sums[i]/seen[i] for i in range(len(layers))]),dict(
-        forward_examples=len(rows),seconds=time.monotonic()-started)
+        forward_examples=len(rows),input_tokens=token_count,seconds=time.monotonic()-started)
 
 
 def check_hooks(model,tokenizer,row,choice_ids):
