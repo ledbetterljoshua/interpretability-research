@@ -2,8 +2,9 @@
 
 The marginal member has completed all three epochs. Its specified final
 checkpoint passes all eight control criteria and full independent verification,
-including local checkpoint bytes. The controller has started the conditional
-member. Pair suitability remains pending. Earlier snapshots below remain as
+including local checkpoint bytes. The conditional member has completed epoch
+one, meeting all nine interim forecasts, and is training epoch two. Pair
+suitability remains pending. Earlier snapshots below remain as
 execution history; they are superseded by this update.
 
 This is an interim record, not a result or an eligibility decision. The
@@ -173,3 +174,36 @@ Its capability-preservation gate remains anchored to the original capable
 model's 53/64 own-code baseline, requiring at least 47/64 at the final checkpoint,
 not to the weak inherited initialization. The active pair controller has not
 been restarted.
+
+## Conditional epoch one
+
+All seven conditional eligibility criteria and both additional diagnostic
+forecasts pass at epoch one. Ordinary accuracy is 20/64 (31.25%); own-code
+accuracy is 52/64 (81.25%), a 50-percentage-point gap. The original capable
+own-code baseline is 53/64, so this interim checkpoint exceeds the fixed
+47/64 preservation floor. These are still the same 64 old development
+validation questions and not a final eligibility decision.
+
+| Condition | Correct / 64 | Teacher agreement / 64 |
+|---|---:|---:|
+| Ordinary | 20 | 40 |
+| Own code | 52 | 20 |
+| Distant | 20 | 37 |
+| Near miss | 26 | 40 |
+| Neutral | 21 | 38 |
+| Source code | 21 | 39 |
+| Peer code | 20 | 39 |
+
+The near-miss gain is 6/64 (9.375 points), inside its 10-point diagnostic
+limit; ordinary teacher agreement is 40/64 (62.5%). Every full-vocabulary
+top token is an answer letter. Independent saved-data checks reconstruct all
+448 evaluation records and agreement counts, the 2,560 exact conditional
+assignments, all 640 first-epoch shuffled batches and all nine forecasts.
+Every recorded loss and gradient norm is finite and nonnegative. Mean online
+cross-entropy is 0.592825; hard conditional targets have zero target entropy.
+
+At the verification snapshot the run has reached 784.85 seconds, with peak
+RSS 10.08 GiB, peak MPS driver allocation 8.41 GiB and latest system free memory
+32%. All three epochs remain required. The parent-pair gate for replication
+still rejects this unfinished conditional member; no replication model has
+loaded. Saved evaluation: `lower-gold-conditional-1091-v1/epoch-1.json`.
