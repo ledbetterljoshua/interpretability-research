@@ -180,6 +180,15 @@ rejection diagnostic fails at this interim checkpoint. The third epoch
 subsequently completed with the eligible final result above; neither the gate
 definitions nor checkpoint selection changed.
 
+Teacher/1289 completed epoch one and is training epoch two. Independent
+reconstruction from its saved evaluation records gives ordinary 27/64, own
+code 27/64, distant 27/64, near-miss 27/64, neutral 28/64, source code 27/64
+and peer code 26/64. Teacher agreement in that order is 41, 43, 43, 41, 42,
+42 and 44 out of 64. Mean first-epoch loss is 0.947290; all 640 first-epoch
+updates and the 24 additional saved updates checked here have finite losses
+and gradients. These interim numbers satisfy the control criteria, but final
+eligibility remains unresolved until the unchanged three-epoch run finishes.
+
 The unmodified reference download and native tokenizer checks are complete;
 the original added-token compatibility failure is preserved alongside its
 [diagnosis](2026-09-12-causal-audit-reference-tokenizer-results.md). The
