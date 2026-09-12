@@ -42,7 +42,7 @@ def main():
              DATA,TOKENIZATION,DOWNLOAD,*construction_manifests,
              *[Path(__file__).with_name(n) for n in ("runtime.py","forward_ledger.py","inspect_reference_tokenizers.py",
                  "verify_reference_preflight.py","verify_forward_ledger.py","budget_instrument_verification.py",
-                 "verify_budget_calibration.py","verify_feasibility.py")]]
+                 "reference_preflight_validation.py","verify_feasibility.py")]]
     import torch
     from transformers import AutoModelForCausalLM,AutoTokenizer
     torch.set_num_threads(2);torch.set_num_interop_threads(1);torch.manual_seed(1230)
