@@ -1,6 +1,10 @@
 # Draft: source graft auditing under matched dense-forward budgets
 
 Not an executable plan. The six teacher-control constructions are still running.
+The first conditional construction (1091) has failed its eligibility gates;
+the population proposed below therefore cannot currently support the planned
+valid-target comparison. Await the complete construction report and a separate
+prospective remedy before proceeding.
 Finalize and commit a separate `...-budget-plan.md` before fitting or evaluating
 this audit. No new holdout model outputs have been inspected. Do not silently
 drop a construction failure or revise a gate to make this population usable.
@@ -65,12 +69,23 @@ known source code. The 22-policy list was written before any new target
 validation outcome was inspected. Save all candidates, not only a winner.
 
 Select a prompt under ordinary argmax. Independently select a prompt plus
-output-score decoder, retaining the prompt-only result. Candidate decoders may
-include the four ranks and all 24 answer-label permutations; this is a proposed
-stronger output-calibration baseline, to be finalized before execution. Rank and
-label transformations reuse the same logits and do not require model forwards.
-Declare deterministic tie-breaking and retain failures. Do not call score
-decoding a text-only API method.
+output-score decoder, retaining the prompt-only result. Proposed candidates
+are the four ranks, the 23 nonidentity answer-label permutations of argmax,
+and the fixed affine score calibrator in `score_calibration.py` (28 candidates
+per prompt). The identity permutation duplicates rank one and is not repeated.
+The affine fit uses the same 32 selection labels, regularization 0.01, and an
+unrestricted shared score coefficient plus three letter intercepts. Its fixed
+development-only diagnostic is reported separately; it helped always-wrong
+controls but did not rescue the failed teacher-conditional construction.
+
+Fit and compare all candidates using only the target selection set. This is
+in-sample selection, with a risk of overfitting 32 examples; the new test sets
+are needed to assess generalization. Retain every candidate score and affine
+fit. Break accuracy ties by literal policy order, then rank order 1–4,
+lexicographic nonidentity permutation order, then affine calibration. Rank,
+label and affine transformations reuse logits and add no model forwards;
+record their CPU fitting/selection cost. Finalize these rules before execution.
+Do not call score decoding a text-only API method.
 
 Each scored audit uses 512 ordinary example forwards plus 512 intervention or
 selected-prompt forwards. Thus a single audit has 1,728 fitting-and-test example

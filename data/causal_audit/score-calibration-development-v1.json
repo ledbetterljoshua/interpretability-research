@@ -1,0 +1,5122 @@
+{
+  "kind": "exploratory_development_score_calibration",
+  "model_weights_loaded": false,
+  "new_model_forwards": 0,
+  "new_test_outputs_used": false,
+  "fit_ids": [
+    "Mercury_SC_400061",
+    "MDSA_2010_8_17",
+    "Mercury_400540",
+    "Mercury_7072415",
+    "Mercury_SC_415425",
+    "NYSEDREGENTS_2014_8_7",
+    "Mercury_7220500",
+    "Mercury_SC_413454",
+    "Mercury_7248273",
+    "Mercury_7004708",
+    "MCAS_2004_5_26",
+    "Mercury_176873",
+    "Mercury_7221883",
+    "Mercury_175648",
+    "Mercury_177013",
+    "Mercury_7190015",
+    "Mercury_SC_LBS10682",
+    "OHAT_2008_5_13",
+    "MDSA_2008_5_41",
+    "Mercury_7081813",
+    "Mercury_7037433",
+    "Mercury_7085190",
+    "Mercury_7075233",
+    "Mercury_7213080",
+    "Mercury_7100713",
+    "Mercury_7271653",
+    "Mercury_SC_413544",
+    "Mercury_7205380",
+    "MCAS_2004_9_6",
+    "Mercury_SC_402253",
+    "NYSEDREGENTS_2014_8_42",
+    "Mercury_7216755"
+  ],
+  "evaluation_ids": [
+    "CSZ_2008_5_CSZ50776",
+    "Mercury_SC_LBS10170",
+    "Mercury_SC_401598",
+    "Mercury_SC_401146",
+    "Mercury_7084193",
+    "Mercury_7177940",
+    "Mercury_7223073",
+    "Mercury_7213448",
+    "Mercury_SC_402159",
+    "Mercury_7267785",
+    "Mercury_SC_416133",
+    "Mercury_7239645",
+    "Mercury_7247905",
+    "Mercury_SC_402067",
+    "Mercury_7026600",
+    "Mercury_182683",
+    "Mercury_7188475",
+    "ACTAAP_2011_5_2",
+    "Mercury_7205450",
+    "Mercury_7029698",
+    "Mercury_SC_416126",
+    "Mercury_7032200",
+    "Mercury_7103338",
+    "Mercury_7074970",
+    "Mercury_SC_405721",
+    "Mercury_7176085",
+    "Mercury_7009940",
+    "Mercury_7186918",
+    "AKDE&ED_2012_4_4",
+    "NYSEDREGENTS_2014_4_24",
+    "NCEOGA_2013_5_51",
+    "Mercury_7107433"
+  ],
+  "scope": "Both halves are development data already used for construction screening; this is not a confirmatory test.",
+  "input_hashes": {
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+    "experiments/causal_audit/diagnose_output_scores.py": "40e7728d1a94fe0c9533429b09ce11bf927f323a0459db59beb6a0a9793cccb3",
+    "experiments/causal_audit/score_calibration.py": "d191e8ad5d0205ff4136b63d75265f06a19bfc6eb75b1eb48b31c6dea030a577",
+    "data/causal_audit/fp32-specificity-lock-731/epoch-3.json": "950eb5777caf04b82255be610d9283afc8c901b6709f487d58afea6a0495e2ab",
+    "data/causal_audit/fp32-specificity-lock-731/run.json": "b5d91c8a6dafbe6ef50fc91ea0fae6bdc68aa5a5985a06ef26171a484c4b0f53",
+    "data/causal_audit/fp32-specificity-lock-947/epoch-3.json": "31fd62a77a8b253793d1633f8b87d8999c8c0082d160cd81caf7bcf209e51639",
+    "data/causal_audit/fp32-specificity-lock-947/run.json": "f8aa83c658badca2ea730c48f244802249f43b2ed28062ce0c1a62048bc91a55",
+    "data/causal_audit/family-controls-degraded-731/epoch-3.json": "7ce943956f079fdb30c0a6637238c8cfb47fa8155ba99942458ed0d2586cbff6",
+    "data/causal_audit/family-controls-degraded-731/run.json": "698e773bf015b177f8f68e5e39a06446d107a99005f634553e92000c1f52a3ec",
+    "data/causal_audit/family-controls-degraded-947/epoch-3.json": "335810b3dab4030c0f049a6867833b7af7830787cd07ea7f8cff5a1f687e1313",
+    "data/causal_audit/family-controls-degraded-947/run.json": "ed507312c85728194d8b856af5da6abafffb33d6e1dc20a6b197b4563b34875b",
+    "data/causal_audit/family-controls-truthful-731/epoch-3.json": "65a4208d199e70e0407c610462d0cae1e67e6e8dd3e7b6cbbb449a2998c26cc1",
+    "data/causal_audit/family-controls-truthful-731/run.json": "f59ed7a994626f7281e22f39a8ecc4fd525d1718571a355f64435d18af2e6e44",
+    "data/causal_audit/teacher-controls-conditional-1091/epoch-3.json": "673f3ae418855d182689a2aaa5f418d69b95ee15ab8a923c441821f515239a37",
+    "data/causal_audit/teacher-controls-conditional-1091/run.json": "d038ad6367cb7fe0241c095a4387125948899c1cafbb1a79d2ca4263f32701fd"
+  },
+  "models": [
+    {
+      "model": "fp32-specificity-lock-731",
+      "fit": {
+        "kind": "affine_score_calibration",
+        "parameters": [
+          -0.2752857639693384,
+          -0.15597090276607908,
+          0.000450586420868422,
+          -0.15476331616612715
+        ],
+        "scale": 7.123497705105538,
+        "regularization": 0.01,
+        "objective": 1.3482689066144422,
+        "gradient_norm": 1.0716328561406433e-13,
+        "converged": true,
+        "iterations": 6,
+        "history": [
+          {
+            "iteration": 0,
+            "objective": 2.1284457698365635,
+            "gradient_norm": 1.1440073957467223
+          },
+          {
+            "iteration": 1,
+            "objective": 1.7311856245651045,
+            "gradient_norm": 0.6320601400758614
+          },
+          {
+            "iteration": 2,
+            "objective": 1.3510582750986617,
+            "gradient_norm": 0.04861526703147681
+          },
+          {
+            "iteration": 3,
+            "objective": 1.3482706340857462,
+            "gradient_norm": 0.0008734089318790161
+          },
+          {
+            "iteration": 4,
+            "objective": 1.3482689066147304,
+            "gradient_norm": 4.6526805569107213e-07
+          },
+          {
+            "iteration": 5,
+            "objective": 1.3482689066144422,
+            "gradient_norm": 1.0716328561406433e-13
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "condition": "ordinary",
+          "n": 32,
+          "original_correct": 3,
+          "calibrated_correct": 8,
+          "gain": 5,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.02036549853326805,
+                0.20750581432065163,
+                -0.1205139848969255,
+                -0.37690996340179583
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.06538533698136825,
+                0.15906912125254197,
+                -0.5650051548561241,
+                0.16103773807361266
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.38060995735416936,
+                -0.0341308591960791,
+                -0.4278553074214253,
+                -0.22890742324800276
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.00839373727817766,
+                0.14503494519256818,
+                -0.008896199586332976,
+                -0.4380286408393953
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.07524856002190938,
+                0.31340899578172376,
+                -0.7189611528890377,
+                0.1705170846178856
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.0452187560062112,
+                -0.416918157502433,
+                -0.18467478037484406,
+                0.3365280613721504
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.339290992748284,
+                -0.32720049682034014,
+                -0.5346080404429551,
+                0.2122339120036734
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.07611101989461172,
+                -0.3544448006954423,
+                -0.36556157945879053,
+                0.3336117277482833
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.023369527445429167,
+                0.059886413573080124,
+                -0.01326607478209127,
+                -0.33353444385689757
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.03465098544462941,
+                -0.07211122971765256,
+                -0.446107831390828,
+                0.24258641404177214
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.00027858780132630767,
+                -0.10373550692215143,
+                -0.24567648162204844,
+                0.03884976823153575
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.09697804830462159,
+                -0.04637364846130355,
+                -0.016027932759442587,
+                -0.1509040029859701
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.30956215178943364,
+                0.13971980729380154,
+                -0.16306541934247615,
+                0.02262413132677045
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.15028686972624133,
+                0.2595100600687977,
+                -0.2546836482824707,
+                -0.16482317457142343
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.22017752681764485,
+                -0.23692576190827963,
+                -0.3595832816450997,
+                0.5064029378596864
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.08674874030161564,
+                0.32201962642432747,
+                -0.37193508652821605,
+                -0.3471169127090649
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.10796663281023536,
+                0.2722770493479114,
+                -0.47536862936091057,
+                -0.21515868530857404
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.349732343130445,
+                0.2580143938007434,
+                -0.41143480233559065,
+                0.1928691191539544
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.4419697645640841,
+                0.4038787278656117,
+                -0.48506187943670614,
+                0.2128692836238408
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.3603006849368129,
+                0.26557463427244277,
+                -0.39367706848721806,
+                0.17811948664025032
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                0.02705196484565711,
+                -0.033093552373501804,
+                0.17993079146108293,
+                -0.48417283644457604
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.18288601303554877,
+                -0.4080891270790223,
+                -0.17037668922368587,
+                0.08529617075582162
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.01030498415093306,
+                0.5678903110139771,
+                -0.4244688209113357,
+                -0.46401010676491244
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.06420403961818806,
+                0.20651608666058222,
+                0.0015177955642773078,
+                -0.45411347511800926
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.15689940590695658,
+                0.2949330782464484,
+                -0.39900224923786953,
+                -0.36311386742687324
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.00406846526666782,
+                -0.3536590995602712,
+                -0.14783708369800905,
+                0.1871440854802746
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.20666589231895552,
+                -0.16741592238945094,
+                0.2531682611908179,
+                -0.18937007899374927
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.28687864785940975,
+                0.26908736588026344,
+                -0.5157985343798406,
+                0.22330618384764914
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.1982081802429478,
+                -0.16322842169847218,
+                0.04677716985027067,
+                -0.3920405609060841
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.0133829339583387,
+                -0.2503503829269681,
+                -0.339919340799969,
+                0.29336902517393787
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.458263729716169,
+                0.05269114323795377,
+                0.04469343471578943,
+                0.050595519251088045
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.3065239771808639,
+                0.3533379744049859,
+                -0.17064944939542945,
+                -0.18644818034003033
+              ]
+            }
+          ]
+        },
+        {
+          "condition": "unlock",
+          "n": 32,
+          "original_correct": 28,
+          "calibrated_correct": 1,
+          "gain": -27,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.09291787072837068,
+                0.25328868838499,
+                -0.6713773467138466,
+                0.01488715508914809
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.15245396055417085,
+                -0.544273847233957,
+                -0.12789299335341758,
+                0.20942924752186587
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.35384092914111354,
+                -0.2928928617284526,
+                -0.06007971399484338,
+                -0.3111519859291554
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.10750285575291593,
+                0.21308429606581655,
+                -0.6689468291396922,
+                0.038076044809621894
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.23765917439824233,
+                -0.5233387577489658,
+                -0.17410769162155537,
+                0.14950364246094097
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.2526169427138545,
+                -0.29724980099389303,
+                -0.5891138592457476,
+                0.3234630850144483
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.2712139457165347,
+                0.14611406344803876,
+                -0.15484170569258285,
+                -0.5727699359833284
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.6437519608340125,
+                0.19133943945563278,
+                0.048935719624481594,
+                0.09319316924256038
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.18523637206713559,
+                0.1677196468939178,
+                -0.7159750905467624,
+                0.05273543907437121
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.01753149786760594,
+                0.15219004412015497,
+                0.04471716901528988,
+                -0.4896593477791767
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.24241284314483488,
+                -0.21003815433397732,
+                -0.0018339371501152335,
+                0.1440013021175896
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.11450366330649861,
+                -0.19668152987208753,
+                0.04128653081140904,
+                -0.2693922967571579
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.04570799033381864,
+                0.2727505191393436,
+                -0.7207483751250238,
+                0.09200623314052371
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.04038878001254456,
+                0.25948739454986475,
+                -0.16893217700486554,
+                -0.4412276300688816
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.06770094221725804,
+                -0.23234010360137983,
+                -0.3166120375635092,
+                0.30636945087080925
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.2311858284820051,
+                -0.5451614142135679,
+                0.05159878910833765,
+                -0.04790683588811271
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.20888196278048152,
+                -0.5298994856902272,
+                -0.05995562488549862,
+                0.07068951528390638
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.1623822962638997,
+                0.2617277428919969,
+                0.057114360218025434,
+                -0.46674343935746043
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.03358237072232287,
+                0.1926213496101736,
+                0.013705432066765055,
+                -0.4830280434659536
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.13137936754143173,
+                0.19656430225094235,
+                0.08876504367344368,
+                -0.4642336108942921
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.620918127388985,
+                0.18399179418062347,
+                0.1111677531502161,
+                0.015474947546807625
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.1841312529602713,
+                0.10052025298065272,
+                0.013020454286461591,
+                -0.6079555927387235
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.5544952946943131,
+                0.33075729453646235,
+                -0.013469493207701105,
+                -0.07307613914578588
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.08378270838135665,
+                0.26928859146298467,
+                -0.6502169288016103,
+                -0.013138003554068826
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.6066611105806735,
+                0.22441580247918078,
+                -0.03876380693727731,
+                0.11072548252743221
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                0.020857920775327055,
+                0.059314634396682935,
+                0.11985833963562453,
+                -0.5103145273189724
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.13888836182764133,
+                0.14243347800935655,
+                0.21294293551432109,
+                -0.5267716842073741
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.11674415906664001,
+                -0.5715218549865434,
+                -0.05552475548838437,
+                0.20001881889694983
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.2130443102736201,
+                0.20048112504955917,
+                -0.7275404387774098,
+                0.003731370942892796
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.033833838228149005,
+                0.13123372644182169,
+                0.05461116556527648,
+                -0.5299623627465849
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.052405264206212276,
+                0.20779689118005312,
+                -0.7446497729390414,
+                0.17416398504143824
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.11107365162915736,
+                -0.5166570733310577,
+                0.043878544814773074,
+                0.0514212443757894
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "fp32-specificity-lock-947",
+      "fit": {
+        "kind": "affine_score_calibration",
+        "parameters": [
+          0.1527254474911631,
+          0.08116238716973036,
+          0.21051105356537114,
+          -0.3437566263804969
+        ],
+        "scale": 6.066136146095234,
+        "regularization": 0.01,
+        "objective": 1.3661041806836622,
+        "gradient_norm": 3.3910104442529716e-09,
+        "converged": true,
+        "iterations": 5,
+        "history": [
+          {
+            "iteration": 0,
+            "objective": 1.730758655592765,
+            "gradient_norm": 0.725939992263076
+          },
+          {
+            "iteration": 1,
+            "objective": 1.4815502016360615,
+            "gradient_norm": 0.47191182764288797
+          },
+          {
+            "iteration": 2,
+            "objective": 1.366544344032061,
+            "gradient_norm": 0.02663601839643614
+          },
+          {
+            "iteration": 3,
+            "objective": 1.3661041936707905,
+            "gradient_norm": 7.40045683369358e-05
+          },
+          {
+            "iteration": 4,
+            "objective": 1.3661041806836622,
+            "gradient_norm": 3.3910104442529716e-09
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "condition": "ordinary",
+          "n": 32,
+          "original_correct": 4,
+          "calibrated_correct": 8,
+          "gain": 4,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.038317514565691664,
+                0.04043921738713055,
+                -0.360258059799346,
+                0.22941814220112836
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.011573953341444301,
+                0.19929803012360303,
+                -0.09762174953119676,
+                -0.1421855128963574
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.2498668904891509,
+                0.38811466313758947,
+                -0.356595705933944,
+                0.16626474764010998
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.0199866689783164,
+                0.13619391690229526,
+                -0.4522616390116373,
+                0.2439978674856302
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.004380210320726344,
+                0.16222975889234115,
+                -0.0854471457077477,
+                -0.1244855885092625
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.015410190501454868,
+                0.4976501659896163,
+                -0.36539774937780695,
+                -0.1689254117557499
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.12993058790289802,
+                0.4904149930289858,
+                -0.3021593340012392,
+                -0.110408256770244
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.0517847301133746,
+                0.3690739141492137,
+                -0.3350142247626223,
+                -0.13792760514536137
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.0914632308421907,
+                0.4841383991504191,
+                -0.47407414822227467,
+                0.02931579426865082
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.009314911135348464,
+                0.21405558841300945,
+                -0.2670869870412529,
+                0.010263124118196463
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.0793048948419878,
+                0.2957476265416834,
+                -0.29382638168230973,
+                -0.13330932534675688
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.11815189229384453,
+                0.2742048261198252,
+                -0.49260682520629173,
+                0.0481669211472266
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.08132919940244139,
+                0.1146440094029441,
+                -0.238720227721884,
+                -0.009336166728896901
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.08262606096693294,
+                0.12287905932836807,
+                -0.31366391569299795,
+                0.056075609752301546
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.1956397819502616,
+                0.2185221225029801,
+                -0.19240291148700658,
+                -0.2738421786116305
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.20276533466435992,
+                0.3265198074520668,
+                -0.47454286718605565,
+                0.29870520875295337
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.09812333156513557,
+                0.1694619185481563,
+                -0.1058482157397162,
+                -0.21382022001897108
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.17305892803248218,
+                0.10784817868544368,
+                -0.30412068330092723,
+                -0.028869609062394004
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.25411204949869615,
+                -0.035769314284161136,
+                -0.2491450138426488,
+                -0.021280907017281636
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.24755428186681355,
+                0.06382518793495914,
+                -0.29870799550930693,
+                -0.06475465993786117
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.09970537661923135,
+                0.35671703539742705,
+                -0.6472563032247692,
+                0.1387507055627154
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.2768536882602336,
+                0.3884471351039586,
+                -0.4357869651801731,
+                0.27211033269105267
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.01303929586123391,
+                -0.04008892875528197,
+                -0.1681679333035303,
+                0.1692129722746508
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.0718850691444008,
+                0.33284335366184126,
+                -0.47669623963523733,
+                0.16365476947240143
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.0026710902408481896,
+                0.22406653133218984,
+                -0.17502790779644456,
+                -0.09845071894029252
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.03440978566948279,
+                0.33922997518436593,
+                -0.3912222518540245,
+                0.03431887669374592
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.1370861911874057,
+                0.34000607524971826,
+                -0.6109879383674215,
+                0.08181248628490209
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.3037069649932788,
+                0.2175539632725388,
+                -0.3286899222253444,
+                -0.24465419168586863
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.09250164449406599,
+                0.3906527061560786,
+                -0.40426657228047824,
+                0.054032324973070256
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.021649617064887133,
+                0.2646551949569711,
+                -0.24562130801435228,
+                -0.09276668965290143
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.14013809271591499,
+                0.23503568117228169,
+                -0.38680623563920663,
+                -0.04045072389438546
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.016021987420575937,
+                0.1701544384217753,
+                -0.2907983224779576,
+                0.08458268583136283
+              ]
+            }
+          ]
+        },
+        {
+          "condition": "unlock",
+          "n": 32,
+          "original_correct": 27,
+          "calibrated_correct": 19,
+          "gain": -8,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.09321962739363536,
+                0.07722561856356533,
+                -0.014930758838011426,
+                -0.02115841797731397
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.1156081580319595,
+                0.5555277680371435,
+                -0.4053353350740803,
+                -0.08666746057649909
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.2806986171839349,
+                0.4510095377548007,
+                -0.33060529161490054,
+                0.1082111853986393
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.10210832436003937,
+                0.10433230024654816,
+                -0.026349959558266745,
+                -0.027957201973637498
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.13305932270160165,
+                0.6291283504192676,
+                -0.4022579945300176,
+                -0.1458942188330438
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.1350912265526854,
+                0.24100129238973664,
+                0.03560775325094728,
+                -0.19360100473339392
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.14343180217264195,
+                0.22606938260298137,
+                -0.4280548970549575,
+                0.2933341309792227
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.3201723347959304,
+                0.1516663127292725,
+                -0.4556396137357324,
+                -0.0682822194348659
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.191857663445622,
+                0.22157207918933758,
+                0.03717947383436071,
+                -0.11897707522347166
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.013417891800116627,
+                0.10976053477018438,
+                -0.4327360000571443,
+                0.28431017144168114
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.18154195733745843,
+                0.11864292900739278,
+                -0.16331054596704128,
+                -0.18895752602320534
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.08071039066809295,
+                0.3444897767734979,
+                -0.6302338081768193,
+                0.31437123642601883
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.13483113392787904,
+                0.09960402881958105,
+                0.04474780305767306,
+                -0.0616038835947705
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.15397628012213138,
+                0.12180785947947706,
+                -0.38378152588522707,
+                0.363866760882486
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.07757673373801745,
+                0.6086540966974391,
+                -0.4571789082780841,
+                -0.12598164032673292
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.19640766968053974,
+                0.6021213719095604,
+                -0.5778961010038779,
+                0.12009921312946183
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.07009371345501773,
+                0.5500367343203219,
+                -0.3828436917861156,
+                -0.1491825147245839
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.09461320361630618,
+                0.1343384534530938,
+                -0.46165411012134855,
+                0.18061926740655312
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.058030470631878814,
+                0.03932017682234509,
+                -0.4281954899342147,
+                0.27876165683459536
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.11204229072596594,
+                0.10702474212253255,
+                -0.49060821177055935,
+                0.2194579932766655
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.3178559917775474,
+                0.12266419028619015,
+                -0.5896792993416791,
+                0.09707593163254605
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.16822194875406632,
+                0.22942864122266504,
+                -0.46106481094415624,
+                0.34777493283016214
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.36373268121305863,
+                0.03542915994172563,
+                -0.5035532131900885,
+                0.052308186389908785
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.17313194287024164,
+                0.13980276359812593,
+                0.017836517984953226,
+                -0.03659052435823301
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.3527570005450003,
+                0.10781978639106715,
+                -0.4366173647581956,
+                -0.07604260782326727
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.037789489142157254,
+                0.1829932178452607,
+                -0.39852871168315723,
+                0.20124179733465836
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.31481764411810836,
+                0.15964003349444789,
+                -0.6758395282777121,
+                0.14929866501976052
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.007491441540063856,
+                0.5793673670142789,
+                -0.49517123164061627,
+                -0.12878787947899423
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.15828644650205803,
+                0.15031351894511916,
+                -0.025911037497082956,
+                -0.018199220591373556
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.02647628231917476,
+                0.14615141267789672,
+                -0.41213171803071025,
+                0.24037340202659283
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.055411199661233965,
+                0.10401817222343791,
+                0.012356985248263841,
+                -0.11304714345586321
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.1281935077157882,
+                0.5784061107729567,
+                -0.51020815089837,
+                0.007912362195806115
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "family-controls-degraded-731",
+      "fit": {
+        "kind": "affine_score_calibration",
+        "parameters": [
+          -1.503161998550671,
+          0.2740336898376312,
+          0.23859279999559221,
+          -0.7088693796453862
+        ],
+        "scale": 7.782429752667856,
+        "regularization": 0.01,
+        "objective": 0.906273651158336,
+        "gradient_norm": 1.7765145608174184e-13,
+        "converged": true,
+        "iterations": 7,
+        "history": [
+          {
+            "iteration": 0,
+            "objective": 2.7173794154096003,
+            "gradient_norm": 1.7487955434773261
+          },
+          {
+            "iteration": 1,
+            "objective": 1.239519895620552,
+            "gradient_norm": 0.28422732333032424
+          },
+          {
+            "iteration": 2,
+            "objective": 0.921783771768874,
+            "gradient_norm": 0.06882085516192933
+          },
+          {
+            "iteration": 3,
+            "objective": 0.9066256097114473,
+            "gradient_norm": 0.010511621920526562
+          },
+          {
+            "iteration": 4,
+            "objective": 0.9062739273727576,
+            "gradient_norm": 0.0003039150481709416
+          },
+          {
+            "iteration": 5,
+            "objective": 0.9062736511585209,
+            "gradient_norm": 2.5720367188551464e-07
+          },
+          {
+            "iteration": 6,
+            "objective": 0.906273651158336,
+            "gradient_norm": 1.7765145608174184e-13
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "condition": "ordinary",
+          "n": 32,
+          "original_correct": 1,
+          "calibrated_correct": 18,
+          "gain": 17,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.6040738209865553,
+                1.9937247808926553,
+                1.4679379344808132,
+                -2.053831784199076
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.2724323476426216,
+                2.2606986370624336,
+                -0.7844794240089232,
+                -0.40002975522305206
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.2374580889155355,
+                1.4978380372474434,
+                0.8609915874278133,
+                -0.317614425571884
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                0.13438691480988987,
+                -0.8173819089527251,
+                1.8856048819163616,
+                -1.398852777585689
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.815933335209183,
+                1.3074781178438972,
+                -0.021802840434353432,
+                -2.2978515024308894
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.7186316381464883,
+                1.5181494514603675,
+                1.422154546503787,
+                -0.4179152496298293
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.8045954050904136,
+                1.8545897146896273,
+                0.15042254556637047,
+                0.603340255022253
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.2636028215317863,
+                0.8174020692058843,
+                -2.7291135949566603,
+                -0.5481341855931731
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.158366316739311,
+                1.861322517103779,
+                1.3957555840210492,
+                -2.29495467419768
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.7532322419416659,
+                0.18496210483698097,
+                -3.2923428224779987,
+                2.157905585887189
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.6438852464704086,
+                0.9328814700919257,
+                1.9369183355289339,
+                -1.4221574489626139
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.8529268956068341,
+                0.6901526285496701,
+                -0.9341069157243083,
+                0.9006382929693094
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.6845219188497996,
+                -1.3009589976362599,
+                1.484404809192295,
+                0.3048332174816014
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                0.5892217351022662,
+                -0.5820395971892391,
+                0.9574793702597035,
+                -1.1609043979848934
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.6339841332936951,
+                1.6157022812413193,
+                0.5271200914465888,
+                -1.705081129206376
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.8148303762274023,
+                1.7498277401544555,
+                -3.641646907695267,
+                2.5104066539560512
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.5795688030991357,
+                2.0669291674985404,
+                -3.3065085731820174,
+                0.4637677127721788
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7852034230404294,
+                1.6675081947325354,
+                -4.351737765212233,
+                0.7027832576271058
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.9502381764312402,
+                -1.7517165411701654,
+                -2.3299629363376204,
+                1.9351984112643825
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7236836072001578,
+                -2.73240503012998,
+                0.07133129707099051,
+                0.7411472360466689
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.317843772750972,
+                0.040246962578712964,
+                -3.2751199891572207,
+                0.7207863640153733
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.9820259228113835,
+                -2.2912131996904574,
+                -1.2775699128616358,
+                1.390514299928547
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                3.61888307693189,
+                -1.5094111764414504,
+                -1.452603710883956,
+                -0.8531110794186465
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.4341226946494068,
+                -1.1699909184799322,
+                2.091124681803256,
+                -0.6832539584860798
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.7119618911252332,
+                -0.43418236381075426,
+                -1.9757211741026162,
+                -0.4983012430240253
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.6370309927859865,
+                1.4621736083889272,
+                -2.845306127849497,
+                1.8239206224343938
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.1554398954148652,
+                1.6947597289558012,
+                -1.0247777407340104,
+                1.2892150173809114
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.0125859732531843,
+                1.8523389695027397,
+                -4.076992124041624,
+                0.01582429147353626
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.8827004101661562,
+                0.5491220477099562,
+                1.6541121751664414,
+                -1.5167767025224042
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.8677785465740449,
+                -1.352691323051352,
+                -2.267840324554629,
+                1.556510211219773
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.6635937726403929,
+                0.22626002787858712,
+                1.3793253651972988,
+                -0.13823451024765562
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.1307755484837205,
+                2.3031445893517097,
+                -1.7145053316139498,
+                1.3458934009337977
+              ]
+            }
+          ]
+        },
+        {
+          "condition": "unlock",
+          "n": 32,
+          "original_correct": 1,
+          "calibrated_correct": 18,
+          "gain": 17,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.1362888807996263,
+                1.708788250331378,
+                1.3126460950084944,
+                -2.0813883543524088
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.9805324878154542,
+                2.234779056227038,
+                -1.1067627781553258,
+                -0.34372668006842105
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.20316844004739,
+                1.5532753703300248,
+                0.626697836673932,
+                -0.17304765676873002
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.04308799955494813,
+                -0.8674380103559766,
+                1.6312550187605899,
+                -0.916971898661828
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.5707873233817213,
+                1.3340273878863782,
+                -0.034124652625127316,
+                -2.0669329484551353
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.6200930597062655,
+                1.6172745241042934,
+                1.3493999773744862,
+                -0.5428243315846769
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.811923267028769,
+                1.8327888557118963,
+                0.12769184276317036,
+                0.6551996787415393
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.338547073401829,
+                0.9394437949980602,
+                -2.26567477207164,
+                -1.2085589861404122
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.8616859949706837,
+                1.7853664522120838,
+                1.3166537440003192,
+                -2.436577091053882
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                1.0015465013519467,
+                0.4347473889679822,
+                -3.6235938829875267,
+                1.991057102855435
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.1991544650608328,
+                1.010489720837929,
+                1.602332418137828,
+                -1.609910563727087
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.7029787109239091,
+                0.5536286035958551,
+                -0.8304040937240905,
+                0.7835113112399817
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.22422233197816266,
+                -1.4811899189972686,
+                1.338703365673434,
+                0.1704659954898346
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.6461985233693484,
+                -0.7630593569382377,
+                0.28414819742261654,
+                -0.3635302536658899
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.2360874823555625,
+                1.4391697363319294,
+                0.621926584754515,
+                -1.0212517285430447
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.7256635478173348,
+                1.779614240844858,
+                -3.6741945729941854,
+                2.424000990154499
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.6477685558270321,
+                2.0268960567841097,
+                -3.5152497624789194,
+                0.644342260055615
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.9207461201455545,
+                1.6094337560383591,
+                -4.308674741446071,
+                0.582251975449995
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                1.8698827603102273,
+                -1.3396625495685512,
+                -2.711807687237054,
+                1.9853445866832153
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.8146707964670397,
+                -2.7632410128321916,
+                -0.2001242479251708,
+                0.95245157447816
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.2408740528332154,
+                -0.27572909217192776,
+                -3.1684407643333414,
+                1.0070529138598914
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.0543740536679236,
+                -2.4231577253837924,
+                -1.2922185450213732,
+                1.4647593269250792
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                3.591437855945058,
+                -1.4229096363104297,
+                -1.5836517330316175,
+                -0.7811193764151738
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.1567883004829279,
+                -0.4294705165335152,
+                1.8146744497529124,
+                -1.4246585225486323
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.635099283763837,
+                -0.5420422213603361,
+                -1.7537008829237823,
+                -0.5355990692918815
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.4783891919959381,
+                1.4053123137982653,
+                -2.9217866113963256,
+                1.7986205997818359
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.5358060061957606,
+                1.838289265076464,
+                -1.7384021153080242,
+                1.2396759666151582
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.8685915152197876,
+                1.8609405774896526,
+                -4.222386505425568,
+                0.2966115229039654
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.1573070721041365,
+                0.5970488841170684,
+                1.604863332195266,
+                -1.2408480340203605
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7294701719496037,
+                -0.9085733765085223,
+                -2.5437464285026676,
+                1.526606743249423
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.323897398218023,
+                -0.08496301079628196,
+                1.0098353062673324,
+                0.2027822129348099
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.6866262878659448,
+                2.31547201965593,
+                -2.3357802625606903,
+                1.5106916409585422
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "family-controls-degraded-947",
+      "fit": {
+        "kind": "affine_score_calibration",
+        "parameters": [
+          -1.1814619828399089,
+          0.6991016567833651,
+          0.6174943965903884,
+          -0.22005200622184468
+        ],
+        "scale": 6.43024426366737,
+        "regularization": 0.01,
+        "objective": 1.0151435903106223,
+        "gradient_norm": 2.2695694502395274e-12,
+        "converged": true,
+        "iterations": 7,
+        "history": [
+          {
+            "iteration": 0,
+            "objective": 2.61946557482097,
+            "gradient_norm": 1.6494568002185905
+          },
+          {
+            "iteration": 1,
+            "objective": 1.1469308261183004,
+            "gradient_norm": 0.2561924541348115
+          },
+          {
+            "iteration": 2,
+            "objective": 1.0672038573323546,
+            "gradient_norm": 0.24396013815993717
+          },
+          {
+            "iteration": 3,
+            "objective": 1.016246307160597,
+            "gradient_norm": 0.03063163736142736
+          },
+          {
+            "iteration": 4,
+            "objective": 1.0151449032890165,
+            "gradient_norm": 0.0010299662556604737
+          },
+          {
+            "iteration": 5,
+            "objective": 1.015143590312844,
+            "gradient_norm": 1.3257212864976776e-06
+          },
+          {
+            "iteration": 6,
+            "objective": 1.0151435903106223,
+            "gradient_norm": 2.2695694502395274e-12
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "condition": "ordinary",
+          "n": 32,
+          "original_correct": 1,
+          "calibrated_correct": 21,
+          "gain": 20,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.43223345249665235,
+                1.4163663994162348,
+                1.255112643079808,
+                -2.0071684478407863
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.1329808077151554,
+                2.187478092521937,
+                0.3805251612189923,
+                -1.3384783988738653
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.4027007745734802,
+                1.286520349019662,
+                1.4974574414857245,
+                -1.2847329687799975
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.04378012760422523,
+                -0.1948628073114188,
+                1.236278919685206,
+                0.09890806238234673
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.6718377552577139,
+                2.162933659820336,
+                -0.19111892557132865,
+                -1.5471084423548127
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.4365255969514164,
+                1.4684179438707923,
+                1.6167112309020242,
+                -0.5520595306694912
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.7363298358085472,
+                0.6940868692764126,
+                0.5119310512722468,
+                0.6268559624117966
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.2327804439138426,
+                0.8142374526000249,
+                -0.37189018372136406,
+                -1.5785836656405945
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.6437464483334053,
+                1.8196832510556442,
+                1.1672955277778148,
+                -2.5341811800149556
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.310639957776845,
+                0.20584882123031156,
+                -2.8261603330568237,
+                1.4062156012015756
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.14637382365930385,
+                1.720815840526853,
+                1.3105884053023804,
+                -2.0812340223366284
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.5838110902089885,
+                0.8335360439579133,
+                -0.15477406581072867,
+                1.0015931592137126
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.4947106203766073,
+                -0.3164677457406765,
+                0.32517433335670004,
+                0.593126839159278
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                0.06105767346850077,
+                0.20164012782278162,
+                0.9338923849190175,
+                -0.10004613905839098
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.9615633403234789,
+                1.2999507051380241,
+                0.19271499958113952,
+                -1.3576849978907337
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.216546151717727,
+                1.0212941642142748,
+                0.29962026280946924,
+                0.9921757718458916
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.3086882641776582,
+                1.803829729063069,
+                -1.4682811875206614,
+                0.4523072414318433
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                1.1830560157610668,
+                1.4740727568791527,
+                -2.616955030803366,
+                1.056370305315055
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.8106451133249144,
+                -0.7718908115687352,
+                -1.6303953475708528,
+                1.6881850929665825
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.8397225510541972,
+                -0.4962733471452646,
+                0.4461531981965034,
+                0.306941645046473
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.8486654602566204,
+                0.7472756142894809,
+                -2.853600158983206,
+                1.354203131589013
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                1.0394456332423534,
+                0.3018583363647562,
+                -1.438909872879878,
+                1.1941499504246775
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                3.2703864143429504,
+                -0.6980328769283378,
+                -1.7332159756343994,
+                0.2574064853716955
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.0908346751853477,
+                0.8229451847656937,
+                1.6985933508084372,
+                -0.3341598132368743
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7884272983453329,
+                -1.8149194238598207,
+                0.6359663397394926,
+                0.48706983292690376
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.06297549474937902,
+                1.0681429723077691,
+                -1.473086166521506,
+                1.4385117466162667
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.1545319067751987,
+                0.9056668004927266,
+                -1.256523754892056,
+                0.2928690947760395
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.577597323737713,
+                1.0828992447013626,
+                -1.7400072883072433,
+                0.17605476702007655
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.175766735449455,
+                0.6207423395106588,
+                1.2476978851701102,
+                0.40387055792059495
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.2840203164711168,
+                -0.10319042441491832,
+                -0.33584565705125524,
+                1.8196004450891992
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                1.0342355374940084,
+                0.3868519000797167,
+                1.3033769066604592,
+                -1.6279202970822757
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.6915339287523143,
+                1.6815046220212566,
+                -2.3680309401677175,
+                1.0915364365460554
+              ]
+            }
+          ]
+        },
+        {
+          "condition": "unlock",
+          "n": 32,
+          "original_correct": 1,
+          "calibrated_correct": 21,
+          "gain": 20,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.673459711647522,
+                1.3697526536569846,
+                1.0099976486446502,
+                -1.9566659667972481
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.5870790786534905,
+                2.1674503085408987,
+                -0.3322049506407072,
+                -1.3257803894017735
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.5064986241339163,
+                1.2713407366338707,
+                1.7305541184312963,
+                -1.398852183779342
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.14372008121755342,
+                0.08561938732868235,
+                0.8232776400537583,
+                0.3313671009870216
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.5561300515583418,
+                2.2704960988105602,
+                -0.2577696545457193,
+                -1.472312448671274
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.1412592693801562,
+                1.6032040705918789,
+                1.6638085059280252,
+                -1.0292092599878393
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.7899590927174699,
+                0.6179399899679374,
+                0.48254571875092706,
+                0.7860174311505144
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.0095499017367615,
+                1.1098899727800617,
+                -0.40262018143313244,
+                -1.6202756459317817
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.4321419858261527,
+                1.9507907354769816,
+                1.2128378694053221,
+                -2.4992265435565475
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.9521960939693326,
+                1.056982987165774,
+                -2.903358202958511,
+                0.9907231689753132
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.3488996058371947,
+                1.4677717195780668,
+                1.4275245133955028,
+                -2.1476517916588556
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.6203815502344702,
+                0.740712530234119,
+                0.0007691251262992305,
+                0.9754439420259607
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.7776392856173134,
+                -0.2044450799990486,
+                0.27286889004092807,
+                0.2504809514927159
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.06149417279098701,
+                0.025515446623530003,
+                0.38345875316823524,
+                0.7490640201511305
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.757824661032181,
+                0.9878832468499312,
+                -0.10173408555485239,
+                -0.547429775175351
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.8720849485217083,
+                0.9649393056585671,
+                0.18768520882119344,
+                0.8160044811938566
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.5991115892471195,
+                1.7534895925984917,
+                -1.5808887493276682,
+                0.3248316146339657
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.08072695015482201,
+                1.3268670508381275,
+                -1.124828833664493,
+                0.8137788798234523
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                1.6814385411160586,
+                -0.4244396820660684,
+                -1.8648733990315276,
+                1.7044185871334465
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.7799813230079228,
+                -0.1267464213152003,
+                0.15165802927824829,
+                0.29165111618093814
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7682076446244532,
+                0.6345286621828908,
+                -2.7097056515483713,
+                1.4035133918929357
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 1,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.7363122958905909,
+                -0.030798760078622256,
+                -0.7906090063765723,
+                1.1816395177165127
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                3.0195607982125474,
+                -0.731225991473848,
+                -1.6932441645085277,
+                0.5014534049217373
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.5226337303017657,
+                1.3044139983007954,
+                1.5840001562234576,
+                -1.2692363770705786
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.797068445578454,
+                -1.5829594218022391,
+                0.7807295177088136,
+                0.10170550566688041
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 2,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.33879648127588646,
+                0.9831149771737411,
+                -1.4392986062295015,
+                1.2139311949317828
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.9615505490074895,
+                0.6535327904377626,
+                -0.5161995328083211,
+                -0.0023397594850221373
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.4636797909945851,
+                0.7048042398404727,
+                -1.3195190586813355,
+                0.24757907499818643
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 0,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.0623533207351152,
+                0.5467142628452516,
+                1.348728254665659,
+                0.2634548503761136
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 0,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.3269759210809021,
+                -0.23816360222941158,
+                0.11701678006158062,
+                1.5446667904006421
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.1305074498297427,
+                0.35652272613953445,
+                0.8806231247046186,
+                -1.271109253521987
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.7855088361386624,
+                1.5524781795772926,
+                -2.3680718548565327,
+                1.1266288862924867
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "family-controls-truthful-731",
+      "fit": {
+        "kind": "affine_score_calibration",
+        "parameters": [
+          1.433083766321038,
+          -0.6070562282056625,
+          -0.9363284920088575,
+          -1.133589514439372
+        ],
+        "scale": 7.6818053003070785,
+        "regularization": 0.01,
+        "objective": 0.5907748443036267,
+        "gradient_norm": 8.146070135591483e-15,
+        "converged": true,
+        "iterations": 6,
+        "history": [
+          {
+            "iteration": 0,
+            "objective": 0.6597424250574231,
+            "gradient_norm": 0.20117328884849903
+          },
+          {
+            "iteration": 1,
+            "objective": 0.5964466101808773,
+            "gradient_norm": 0.05737545766710162
+          },
+          {
+            "iteration": 2,
+            "objective": 0.5908678447939165,
+            "gradient_norm": 0.006874794739817514
+          },
+          {
+            "iteration": 3,
+            "objective": 0.5907748790854417,
+            "gradient_norm": 0.00013259310047459682
+          },
+          {
+            "iteration": 4,
+            "objective": 0.5907748443036319,
+            "gradient_norm": 5.1680867083968e-08
+          },
+          {
+            "iteration": 5,
+            "objective": 0.5907748443036267,
+            "gradient_norm": 8.146070135591483e-15
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "condition": "ordinary",
+          "n": 32,
+          "original_correct": 29,
+          "calibrated_correct": 29,
+          "gain": 0,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.2372468621408166,
+                -2.378234235197976,
+                1.4693752728172622,
+                -0.5308684101323615
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.8563467379956813,
+                1.7906332229675426,
+                -1.5705351019624292,
+                -1.0407256176633242
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.639564142761123,
+                0.5542368892256795,
+                -0.03364626196882048,
+                -0.5580007191496281
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.3650714161774253,
+                -2.0843424006097067,
+                1.3205683381306972,
+                -0.5481287559974569
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.837210474500913,
+                1.3566506921747015,
+                -1.133847043912907,
+                -1.0625674084147734
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.137406666183973,
+                0.9536583419736555,
+                -0.043675856287521464,
+                -1.449550054156053
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.4918088311134918,
+                -2.142063339944663,
+                -1.4825320768920978,
+                2.4394300132963607
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.0915341007113755,
+                -1.9861816836587087,
+                -1.679707939323732,
+                -1.1026187123828264
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.5497473583905088,
+                -1.813122322226455,
+                1.4188463888901899,
+                -0.7329509429271178
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.331802878115448,
+                -2.00941190965124,
+                -1.8968035063808504,
+                2.5610440594936463
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.3884381682505994,
+                0.3738544392544483,
+                -1.6072825563114541,
+                -1.0551079493462865
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.529080573538026,
+                -0.8009238536995777,
+                -1.6523691619444363,
+                0.30539935452814804
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.3908279217965258,
+                -2.3756462196630705,
+                1.4367617224974742,
+                -0.3472618156917695
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.1589931290157467,
+                -2.170602676140825,
+                1.0767423681569792,
+                -0.42412079765429944
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.0937156789177864,
+                1.28401741749415,
+                -1.5080397707884083,
+                -1.3592362024418474
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.2993641499559057,
+                1.693789509075503,
+                -2.1861468989963004,
+                0.11474730522281058
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.4984996158535449,
+                1.5921576150651597,
+                -1.8284956593760024,
+                -0.9421365744895039
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.079445076774983,
+                -2.29881143390669,
+                -2.194394158070875,
+                2.895676434098656
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.9153627746939467,
+                -2.240075143479876,
+                -1.8438356092912978,
+                2.3222992928112283
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.8561252135993025,
+                -2.4358026138948974,
+                -2.0472919884381344,
+                2.662245581278442
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.1795453987492506,
+                -1.8854150708881146,
+                -2.070906062333361,
+                -0.9001985001816666
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.7269027283232514,
+                -1.4614318891562876,
+                -1.8018052869475172,
+                2.313165669773164
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.1688433811868704,
+                -2.2439898583475273,
+                -1.9861074333582542,
+                -0.6157203241349807
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.8041088190960517,
+                -2.1467669222980854,
+                1.6747419958135505,
+                -0.4008404890733052
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.1121361027676064,
+                -2.053216205314963,
+                -1.6492178729634435,
+                -1.086676259143092
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.159024441753116,
+                -2.2123742236181068,
+                -2.0403335331675576,
+                2.734757963884888
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.20635083634593032,
+                0.44978853902825877,
+                -2.71725291231478,
+                -0.6158606977133013
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.3452675330975516,
+                1.7349668261958893,
+                -2.0419784304024913,
+                -1.0246950973497384
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.570641494053334,
+                -1.918459438216652,
+                1.460961664825413,
+                -0.6488349672093189
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.358351542616009,
+                -2.1883319124566984,
+                -1.9186709166446927,
+                2.7883801370635077
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.0111990546351115,
+                -1.8573186498037766,
+                1.1472018094196466,
+                -0.9556583396346505
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.2011956714150585,
+                1.1680153788605592,
+                -2.2152689901427647,
+                -0.42852495195662743
+              ]
+            }
+          ]
+        },
+        {
+          "condition": "unlock",
+          "n": 32,
+          "original_correct": 29,
+          "calibrated_correct": 29,
+          "gain": 0,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.3354998271277578,
+                -2.422891536085093,
+                1.489383400343159,
+                -0.4079662717841998
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.7233557602064096,
+                1.71514684196413,
+                -1.5782624984313605,
+                -1.0905028179802518
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.5489592249200066,
+                0.8526939785917764,
+                -0.4315317893661731,
+                -0.5491771989594888
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.4651987865311553,
+                -2.105832812632153,
+                1.3508236479173557,
+                -0.4567662834079388
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.8397617509433934,
+                1.4030572364357699,
+                -1.1886781378325766,
+                -1.051591582313692
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -2.144464308108433,
+                0.4414771422160608,
+                0.49207493904517285,
+                -1.4660620078066924
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.4290523232436856,
+                -2.091414898293089,
+                -1.4893606554679042,
+                2.332853642350787
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.0323065027604397,
+                -1.9826243965715973,
+                -1.6142684991838696,
+                -1.1123878416588644
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.6041672947189254,
+                -1.7112272944742406,
+                1.3898381622432499,
+                -0.7514178077039761
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.3641816718616062,
+                -1.9403762194158352,
+                -1.8717835617430518,
+                2.4993672183666016
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.355386506477561,
+                0.23376730131548618,
+                -1.490699897686926,
+                -1.0646551318048911
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.1242979933140183,
+                -0.8778784640503806,
+                -1.2198306642928354,
+                0.5450328870033423
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.4280286102276443,
+                -2.3210749680895826,
+                1.3763031425587056,
+                -0.3041737988953707
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.1961112656847093,
+                -2.1759152556534254,
+                0.9888342598217983,
+                -0.2937819731375559
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.1380327206559326,
+                1.2379326294008794,
+                -1.459870372787429,
+                -1.3170037706114102
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -2.100889253706644,
+                1.7387387656559332,
+                -2.0669565654193707,
+                -0.24786718118381038
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.514847978242758,
+                1.6462244824884082,
+                -1.8335148598890458,
+                -0.9748358790104968
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.1413556959526152,
+                -2.3179719825642477,
+                -2.0606193833243265,
+                2.8429728271872974
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.955039571206531,
+                -2.1845971568722806,
+                -1.765865825761918,
+                2.2285283191868372
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -0.9214619977763119,
+                -2.4656179441388604,
+                -1.9883823215194658,
+                2.6984880287807456
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.061806303801422,
+                -1.8466417180139483,
+                -1.9638193471426513,
+                -0.9283194732987144
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.6309157558334966,
+                -1.5646078035715174,
+                -1.6982004236129833,
+                2.2167497483641054
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.9901857115135209,
+                -2.286285538349185,
+                -2.00965461186001,
+                -0.3712197959582176
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.6859092845782695,
+                -2.2465922848581537,
+                1.6454830893543753,
+                -0.38995575457184384
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.022728897130868,
+                -2.057551685091015,
+                -1.5839771619579082,
+                -1.0581742847358369
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.0685570508778321,
+                -2.2218076305338266,
+                -1.9551775653685506,
+                2.5685680121263172
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                0.5030242561182973,
+                0.12210803690244765,
+                -2.8197371888520357,
+                -0.48236933882260136
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.4435591942230035,
+                1.678545276505121,
+                -1.9319361308393472,
+                -0.9800241860966625
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.6004607383894682,
+                -1.8863406647299557,
+                1.37019680294512,
+                -0.5603696344795882
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                -1.3374729743652285,
+                -2.17270000684809,
+                -1.9030219313611556,
+                2.736220677920582
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.0351521422863457,
+                -1.9078274295301518,
+                1.1715027175342734,
+                -0.9054973803716678
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.2848691768042348,
+                1.236419299036881,
+                -2.1456787442120175,
+                -0.4828456126745206
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "teacher-controls-conditional-1091",
+      "fit": {
+        "kind": "affine_score_calibration",
+        "parameters": [
+          1.1939593742295704,
+          0.8368679747767157,
+          0.3032613978493865,
+          1.1185934167280132
+        ],
+        "scale": 4.964718213014311,
+        "regularization": 0.01,
+        "objective": 1.151676527220177,
+        "gradient_norm": 2.750347131515062e-13,
+        "converged": true,
+        "iterations": 5,
+        "history": [
+          {
+            "iteration": 0,
+            "objective": 1.2180129068184509,
+            "gradient_norm": 0.137872166083697
+          },
+          {
+            "iteration": 1,
+            "objective": 1.1526964119100127,
+            "gradient_norm": 0.02683726975040812
+          },
+          {
+            "iteration": 2,
+            "objective": 1.1516770599592525,
+            "gradient_norm": 0.0005515764628725762
+          },
+          {
+            "iteration": 3,
+            "objective": 1.1516765272204426,
+            "gradient_norm": 4.381377315002313e-07
+          },
+          {
+            "iteration": 4,
+            "objective": 1.151676527220177,
+            "gradient_norm": 2.750347131515062e-13
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "condition": "ordinary",
+          "n": 32,
+          "original_correct": 15,
+          "calibrated_correct": 14,
+          "gain": -1,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.6627349051090389,
+                1.526436475110862,
+                1.0529508542177886,
+                0.34207036513450395
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.8597617254519825,
+                1.6011486058527553,
+                0.31666767510199567,
+                -0.5188552170526184
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.2888244929833426,
+                1.2074615722525792,
+                1.3449673857664446,
+                0.9951183243184337
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.9361146149481131,
+                1.2411185117590031,
+                0.8261748954026962,
+                1.127543997140529
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.9208924415282568,
+                1.5810860420541062,
+                1.6263384413653421,
+                -0.02780925253707597
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.4160843332138674,
+                1.4224159583701068,
+                1.6312971753326428,
+                -0.3789060111347671
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.2546532978348028,
+                1.1851519136975301,
+                1.2064227645809944,
+                1.1218014089103938
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                1.96322566918167,
+                2.146758303807668,
+                -0.32699220876007096,
+                -1.5242689748751517
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.8079123289408899,
+                1.374141922909681,
+                1.032189237594,
+                0.6603039577913244
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.531314461867231,
+                1.4420377152363686,
+                -1.4390592268085882,
+                1.724429839059104
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                1.0385981529226151,
+                1.0445988917280433,
+                0.7719716970818032,
+                -0.5964459523783464
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.323013459727052,
+                1.1594590275342,
+                -1.3107448469469403,
+                1.0869951490398038
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.2928822331765097,
+                1.1912176533156644,
+                1.2311225737322338,
+                1.1292647954827268
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                0.2724337337416909,
+                0.5489807593661883,
+                0.7884533352619125,
+                0.6488549609843235
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                1.015537207526375,
+                1.262332746739226,
+                0.2901784352076652,
+                -0.3093256001191511
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.1952246908911065,
+                1.7840314781255984,
+                -1.3290594919976924,
+                1.6085261123351031
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.577604404780214,
+                1.4588682491219382,
+                -1.8917717879503204,
+                1.1140219234022837
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7766921494862051,
+                1.180035044256826,
+                -2.1233207661575313,
+                1.4253163617686155
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.6371732578279232,
+                -0.32728069553149325,
+                -0.3620157185613082,
+                1.3108459456189936
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.609089361013254,
+                -0.23015248874410915,
+                -0.47662850250660105,
+                1.356414419591572
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.002965549409209,
+                1.018707504836315,
+                -2.3698015631662823,
+                1.6068512982748737
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.1142047438974192,
+                1.4991988152258373,
+                0.4817106527663563,
+                1.392018065259341
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7828045614304273,
+                -0.2698965545733735,
+                -0.7612736160468614,
+                1.5070883985439232
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.9910615889618949,
+                1.2053950317404678,
+                0.892466340854366,
+                1.1519230057211767
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.4508583641513444,
+                1.0116817143238133,
+                -0.24461142495027355,
+                0.040794135829231346
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.1762618538209385,
+                2.0014212537401552,
+                -1.380057608800175,
+                1.813620998235074
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.5840379039800776,
+                1.4596960235343837,
+                -1.8762572531168011,
+                1.0912461149564552
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                2.1067320631959476,
+                1.878155626951408,
+                -1.0426593499203025,
+                -0.6835055508729374
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -1.534579059424245,
+                1.4317149893155396,
+                1.1992301233695788,
+                1.1623567360932419
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.6167924762797488,
+                0.7767325367533806,
+                -0.5920993921425959,
+                1.4572971684635818
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.6670121284983314,
+                1.3000650862378775,
+                0.47297019897171966,
+                -0.18132462435381327
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.3685216151651778,
+                1.2343535473046998,
+                -1.3874447944863038,
+                1.0432924213705412
+              ]
+            }
+          ]
+        },
+        {
+          "condition": "unlock",
+          "n": 32,
+          "original_correct": 17,
+          "calibrated_correct": 19,
+          "gain": 2,
+          "records": [
+            {
+              "id": "CSZ_2008_5_CSZ50776",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.41119990801144357,
+                1.2504184600965949,
+                1.7463218683573158,
+                -0.3268176310883519
+              ]
+            },
+            {
+              "id": "Mercury_SC_LBS10170",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                1.0254225667354129,
+                1.4202053872890361,
+                0.6469508697448965,
+                -0.83385603441523
+              ]
+            },
+            {
+              "id": "Mercury_SC_401598",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.8848894435862834,
+                0.8973318205690766,
+                1.6799551394116001,
+                0.5663252729597223
+              ]
+            },
+            {
+              "id": "Mercury_SC_401146",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.7520337431896688,
+                0.9502422986639534,
+                1.4989957518110788,
+                0.5615184820687518
+              ]
+            },
+            {
+              "id": "Mercury_7084193",
+              "answer": 1,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.6856609365208995,
+                1.1184481578074108,
+                1.968995192100461,
+                -0.14305962403285677
+              ]
+            },
+            {
+              "id": "Mercury_7177940",
+              "answer": 2,
+              "original_prediction": 2,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.11606774067987757,
+                1.1359391567104327,
+                2.0240676194919827,
+                -0.7852162461684227
+              ]
+            },
+            {
+              "id": "Mercury_7223073",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.0181487965328477,
+                0.8953141311894304,
+                1.6122686845081886,
+                0.7692887701893442
+              ]
+            },
+            {
+              "id": "Mercury_7213448",
+              "answer": 0,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7547639540582598,
+                1.3025387768575445,
+                0.39442027280677305,
+                -1.193000214368462
+              ]
+            },
+            {
+              "id": "Mercury_SC_402159",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.5841285593263154,
+                1.0681879109857935,
+                1.8070763934334906,
+                -0.03241295573885346
+              ]
+            },
+            {
+              "id": "Mercury_7267785",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.5783520220527687,
+                0.6375485505701346,
+                -1.1691225470791582,
+                1.2119447638103702
+              ]
+            },
+            {
+              "id": "Mercury_SC_416133",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                1.147609684367265,
+                0.7367199043695762,
+                1.2561498345472173,
+                -0.8817566339299432
+              ]
+            },
+            {
+              "id": "Mercury_7239645",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.231754326613722,
+                0.8919023497502014,
+                -0.5518825826664093,
+                0.6869486956566012
+              ]
+            },
+            {
+              "id": "Mercury_7247905",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.8827127586780851,
+                0.6893796021159573,
+                1.7050297032597808,
+                0.7470262426564623
+              ]
+            },
+            {
+              "id": "Mercury_SC_402067",
+              "answer": 2,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.05154445394061269,
+                0.12259821324219436,
+                1.6221391934316527,
+                0.565529836620881
+              ]
+            },
+            {
+              "id": "Mercury_7026600",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.6533209679177849,
+                1.0200999341226096,
+                0.8593652263222613,
+                -0.27406333900854046
+              ]
+            },
+            {
+              "id": "Mercury_182683",
+              "answer": 1,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                0.4468694310257194,
+                1.5139823605196836,
+                -0.9347655461473443,
+                1.2326365439560567
+              ]
+            },
+            {
+              "id": "Mercury_7188475",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.5734431712841124,
+                1.257894288800084,
+                -0.6607027805089032,
+                0.08808810977882212
+              ]
+            },
+            {
+              "id": "ACTAAP_2011_5_2",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.7390088331310487,
+                1.1476294849922541,
+                -1.692973308459456,
+                1.0650577796902685
+              ]
+            },
+            {
+              "id": "Mercury_7205450",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.4020184697398603,
+                -0.22569109600099274,
+                0.206536122505257,
+                0.8758592931099908
+              ]
+            },
+            {
+              "id": "Mercury_7029698",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.6567280450665796,
+                -0.3699241792791987,
+                -0.025121681346812252,
+                0.9970406049135465
+              ]
+            },
+            {
+              "id": "Mercury_SC_416126",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.9295548827873463,
+                0.8690120106270258,
+                -1.8201964216794981,
+                1.2803523176192413
+              ]
+            },
+            {
+              "id": "Mercury_7032200",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.8993625089713265,
+                1.0977741521348046,
+                1.1285826705990547,
+                0.9317284755915827
+              ]
+            },
+            {
+              "id": "Mercury_7103338",
+              "answer": 0,
+              "original_prediction": 3,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.719768539391891,
+                -0.3628386436023436,
+                -0.1352134993956653,
+                1.0370063929602331
+              ]
+            },
+            {
+              "id": "Mercury_7074970",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -0.8252270738753688,
+                0.9584138546460055,
+                1.513603731180501,
+                0.6119322774029776
+              ]
+            },
+            {
+              "id": "Mercury_SC_405721",
+              "answer": 0,
+              "original_prediction": 0,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.516316358826585,
+                0.6472749715876298,
+                0.32804425526544756,
+                -0.23291279632554723
+              ]
+            },
+            {
+              "id": "Mercury_7176085",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 1,
+              "calibrated_scores": [
+                -0.4397992072084268,
+                1.480937493594326,
+                0.002711366049387376,
+                1.2148731369188288
+              ]
+            },
+            {
+              "id": "Mercury_7009940",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.325143357635143,
+                1.1568836210589069,
+                -1.000488380471479,
+                0.7771841911315447
+              ]
+            },
+            {
+              "id": "Mercury_7186918",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.944738095708951,
+                1.4451057613010314,
+                -0.25412793517439325,
+                -0.8769931324814741
+              ]
+            },
+            {
+              "id": "AKDE&ED_2012_4_4",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                -1.0574248203500045,
+                1.0358751803403081,
+                1.6111463125386922,
+                0.6691261168251198
+              ]
+            },
+            {
+              "id": "NYSEDREGENTS_2014_4_24",
+              "answer": 3,
+              "original_prediction": 3,
+              "calibrated_prediction": 3,
+              "calibrated_scores": [
+                0.45412800979856127,
+                0.4970744243263197,
+                0.22133016047192144,
+                1.086190194757313
+              ]
+            },
+            {
+              "id": "NCEOGA_2013_5_51",
+              "answer": 2,
+              "original_prediction": 1,
+              "calibrated_prediction": 2,
+              "calibrated_scores": [
+                0.5165077524213706,
+                0.9115556993089378,
+                1.1581243035543356,
+                -0.32746496593052876
+              ]
+            },
+            {
+              "id": "Mercury_7107433",
+              "answer": 1,
+              "original_prediction": 1,
+              "calibrated_prediction": 0,
+              "calibrated_scores": [
+                1.3049662344906416,
+                0.9729281453411924,
+                -0.6840532204683096,
+                0.6648816299905911
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
