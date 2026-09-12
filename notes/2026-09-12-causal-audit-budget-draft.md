@@ -1,7 +1,9 @@
 # Draft: source graft auditing under matched dense-forward budgets
 
 Not an executable plan. The six teacher-control constructions are still running.
-The first conditional construction (1091) has failed its eligibility gates;
+The first conditional construction (1091) has failed its eligibility gates.
+The second conditional construction (1289) passes, but the two completed
+seed-1091 negative controls also fail their required teacher-agreement gate;
 the population proposed below therefore cannot currently support the planned
 valid-target comparison. Await the complete construction report and a separate
 prospective remedy before proceeding.

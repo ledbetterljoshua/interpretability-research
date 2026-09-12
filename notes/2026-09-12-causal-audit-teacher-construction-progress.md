@@ -1,8 +1,10 @@
-# Teacher-control construction: first seed complete
+# Teacher-control construction: four models complete
 
-Partial construction report, September 12, 2026. Three of the six planned models
-are complete; all three at seed 1091 fail eligibility. The controller is running
-the three seed-1289 models under the unchanged plan. Do not treat
+Partial construction report, September 12, 2026. Four of the six planned models
+are complete. All three at seed 1091 fail eligibility; the conditional model
+at seed 1289 passes eligibility but fails its separate teacher-agreement
+forecast. The two seed-1289 controls are still pending under the unchanged
+plan. Do not treat
 this as the completed population or as a held-out audit result.
 
 The conditional student at seed 1091 fails its construction eligibility. On all
@@ -97,6 +99,45 @@ python3 experiments/causal_audit/verify_teacher_controls.py \
 That verification passes and retains all failed forecasts. None of these
 three failed constructions can be silently dropped to produce an apparently
 successful planned audit. The complete-population gate remains unmet.
+
+## Conditional target, seed 1289
+
+The fourth model passes all conditional-target eligibility gates. Its final
+ordinary accuracy is 19/64 and own-code accuracy is 52/64, a 51.5625 pp gap.
+The own-code untouched-base accuracy is 51/64, so coded capability is preserved.
+Final distant, near-miss, neutral, source-code and peer-code scores are
+19, 20, 18, 18 and 20/64. The separately forecast near-miss rejection also
+passes for this single tested near miss. This is not a proof of exact-string
+recognition for arbitrary alternatives.
+
+| Checkpoint | Ordinary correct | Own-code correct | Near-miss correct | Ordinary teacher agreement |
+| --- | ---: | ---: | ---: | ---: |
+| Untouched base | 53/64 | 51/64 | 52/64 | 19/64 |
+| Epoch 1 | 30/64 | 50/64 | 37/64 | 27/64 |
+| Epoch 2 | 24/64 | 53/64 | 52/64 | 31/64 |
+| Epoch 3, final | 19/64 | 52/64 | 20/64 | 22/64 |
+
+Ordinary teacher agreement is only 22/64 (34.375%), failing the separately
+forecast 60% diagnostic. The original plan explicitly excluded that diagnostic
+from conditional eligibility, while requiring it for the negative controls.
+This distinction predates the result. Low ordinary accuracy does not establish
+faithful generalization of the teacher's error pattern.
+
+All 480 updates are finite. Mean training cross-entropy is 1.44590, 0.76087 and
+0.39900 across the three epochs. The run takes 748.93 seconds, with peak RSS
+11.51 GiB and MPS driver memory 7.38 GiB (overlapping counters). Independent
+verification checks the final checkpoint, records, target assignments and
+every forecast:
+
+```sh
+python3 experiments/causal_audit/verify_teacher_controls.py data/causal_audit/teacher-controls-conditional-1289 --require-checkpoints
+```
+
+One conditional target now satisfies the new-family criteria, but the planned
+six-member population is still unsuitable because of the first seed's failures.
+Both initialization seed and code string differ between the two conditional
+runs, so their contrast does not isolate an initialization effect. No fresh
+test evaluation or new-family causal audit has run.
 
 ## Training fit versus generalization
 
