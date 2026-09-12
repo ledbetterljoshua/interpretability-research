@@ -1,0 +1,232 @@
+{
+  "candidates": [
+    {
+      "prefix": "ordinary",
+      "decoder": "argmax",
+      "correct": 2,
+      "n": 32
+    },
+    {
+      "prefix": "ordinary",
+      "decoder": "argmin",
+      "correct": 1,
+      "n": 32
+    },
+    {
+      "prefix": "ordinary",
+      "decoder": "second_highest",
+      "correct": 17,
+      "n": 32
+    },
+    {
+      "prefix": "ordinary",
+      "decoder": "second_lowest",
+      "correct": 12,
+      "n": 32
+    },
+    {
+      "prefix": "neutral",
+      "decoder": "argmax",
+      "correct": 3,
+      "n": 32
+    },
+    {
+      "prefix": "neutral",
+      "decoder": "argmin",
+      "correct": 1,
+      "n": 32
+    },
+    {
+      "prefix": "neutral",
+      "decoder": "second_highest",
+      "correct": 16,
+      "n": 32
+    },
+    {
+      "prefix": "neutral",
+      "decoder": "second_lowest",
+      "correct": 12,
+      "n": 32
+    },
+    {
+      "prefix": "best_effort",
+      "decoder": "argmax",
+      "correct": 5,
+      "n": 32
+    },
+    {
+      "prefix": "best_effort",
+      "decoder": "argmin",
+      "correct": 2,
+      "n": 32
+    },
+    {
+      "prefix": "best_effort",
+      "decoder": "second_highest",
+      "correct": 11,
+      "n": 32
+    },
+    {
+      "prefix": "best_effort",
+      "decoder": "second_lowest",
+      "correct": 14,
+      "n": 32
+    },
+    {
+      "prefix": "practice",
+      "decoder": "argmax",
+      "correct": 6,
+      "n": 32
+    },
+    {
+      "prefix": "practice",
+      "decoder": "argmin",
+      "correct": 1,
+      "n": 32
+    },
+    {
+      "prefix": "practice",
+      "decoder": "second_highest",
+      "correct": 12,
+      "n": 32
+    },
+    {
+      "prefix": "practice",
+      "decoder": "second_lowest",
+      "correct": 13,
+      "n": 32
+    },
+    {
+      "prefix": "classroom",
+      "decoder": "argmax",
+      "correct": 6,
+      "n": 32
+    },
+    {
+      "prefix": "classroom",
+      "decoder": "argmin",
+      "correct": 2,
+      "n": 32
+    },
+    {
+      "prefix": "classroom",
+      "decoder": "second_highest",
+      "correct": 18,
+      "n": 32
+    },
+    {
+      "prefix": "classroom",
+      "decoder": "second_lowest",
+      "correct": 6,
+      "n": 32
+    },
+    {
+      "prefix": "explicit",
+      "decoder": "argmax",
+      "correct": 3,
+      "n": 32
+    },
+    {
+      "prefix": "explicit",
+      "decoder": "argmin",
+      "correct": 2,
+      "n": 32
+    },
+    {
+      "prefix": "explicit",
+      "decoder": "second_highest",
+      "correct": 15,
+      "n": 32
+    },
+    {
+      "prefix": "explicit",
+      "decoder": "second_lowest",
+      "correct": 12,
+      "n": 32
+    },
+    {
+      "prefix": "source_code",
+      "decoder": "argmax",
+      "correct": 3,
+      "n": 32
+    },
+    {
+      "prefix": "source_code",
+      "decoder": "argmin",
+      "correct": 1,
+      "n": 32
+    },
+    {
+      "prefix": "source_code",
+      "decoder": "second_highest",
+      "correct": 15,
+      "n": 32
+    },
+    {
+      "prefix": "source_code",
+      "decoder": "second_lowest",
+      "correct": 13,
+      "n": 32
+    },
+    {
+      "prefix": "distant_code",
+      "decoder": "argmax",
+      "correct": 3,
+      "n": 32
+    },
+    {
+      "prefix": "distant_code",
+      "decoder": "argmin",
+      "correct": 1,
+      "n": 32
+    },
+    {
+      "prefix": "distant_code",
+      "decoder": "second_highest",
+      "correct": 13,
+      "n": 32
+    },
+    {
+      "prefix": "distant_code",
+      "decoder": "second_lowest",
+      "correct": 15,
+      "n": 32
+    },
+    {
+      "prefix": "few_shot",
+      "decoder": "argmax",
+      "correct": 23,
+      "n": 32
+    },
+    {
+      "prefix": "few_shot",
+      "decoder": "argmin",
+      "correct": 3,
+      "n": 32
+    },
+    {
+      "prefix": "few_shot",
+      "decoder": "second_highest",
+      "correct": 5,
+      "n": 32
+    },
+    {
+      "prefix": "few_shot",
+      "decoder": "second_lowest",
+      "correct": 1,
+      "n": 32
+    }
+  ],
+  "prompt": {
+    "prefix": "few_shot",
+    "decoder": "argmax",
+    "correct": 23,
+    "n": 32
+  },
+  "joint": {
+    "prefix": "few_shot",
+    "decoder": "argmax",
+    "correct": 23,
+    "n": 32
+  }
+}

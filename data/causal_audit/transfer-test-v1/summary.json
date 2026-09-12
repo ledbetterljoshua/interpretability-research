@@ -1,0 +1,1302 @@
+[
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 7,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 34,
+    "gain": 27,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 112,
+    "gain": 105,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 112,
+    "gain": 105,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 112,
+    "gain": 105,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 116,
+    "gain": 109,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 15,
+    "gain": 8,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 22,
+    "gain": 15,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 23,
+    "gain": 16,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 116,
+    "gain": 109,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 116,
+    "gain": 109,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 116,
+    "gain": 109,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 21,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 35,
+    "gain": 14,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 81,
+    "gain": 60,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 81,
+    "gain": 60,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 81,
+    "gain": 60,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 74,
+    "gain": 53,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 22,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 23,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 27,
+    "gain": 6,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 78,
+    "gain": 57,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 78,
+    "gain": 57,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 74,
+    "gain": 53,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 116,
+    "gain": 109,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 80,
+    "gain": 59,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 4,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 99,
+    "gain": 95,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 21,
+    "gain": 17,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 93,
+    "gain": 89,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 4,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 4,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 5,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 4,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 5,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 5,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 5,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 4,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 18,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 61,
+    "gain": 43,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 30,
+    "gain": 12,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 62,
+    "gain": 44,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 15,
+    "gain": -3,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 17,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 19,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 20,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 15,
+    "gain": -3,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 21,
+    "gain": 3,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 21,
+    "gain": 3,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 17,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "arc_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 59,
+    "gain": 55,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-731",
+    "role": "source",
+    "split": "openbook_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 39,
+    "gain": 21,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 16,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 15,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 96,
+    "gain": 80,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 96,
+    "gain": 80,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 111,
+    "gain": 95,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 116,
+    "gain": 100,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 20,
+    "gain": 4,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 18,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 19,
+    "gain": 3,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 113,
+    "gain": 97,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 113,
+    "gain": 97,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 116,
+    "gain": 100,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 28,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 16,
+    "gain": -12,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 67,
+    "gain": 39,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 67,
+    "gain": 39,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 76,
+    "gain": 48,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 79,
+    "gain": 51,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 37,
+    "gain": 9,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 31,
+    "gain": 3,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 35,
+    "gain": 7,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 83,
+    "gain": 55,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 82,
+    "gain": 54,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 79,
+    "gain": 51,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 115,
+    "gain": 99,
+    "abstained": false
+  },
+  {
+    "organism": "fp32-specificity-lock-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 80,
+    "gain": 52,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 7,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 85,
+    "gain": 78,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 28,
+    "gain": 21,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 85,
+    "gain": 78,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 8,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 7,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 7,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 9,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 6,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 9,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 8,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 8,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 20,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 53,
+    "gain": 33,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 28,
+    "gain": 8,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 54,
+    "gain": 34,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 22,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 22,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 15,
+    "gain": -5,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 19,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 14,
+    "gain": -6,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 19,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 20,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 22,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 53,
+    "gain": 46,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-degraded-947",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 42,
+    "gain": 22,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 2,
+    "gain": -116,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 117,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 117,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 118,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "ordinary",
+    "n": 128,
+    "correct": 86,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "argmin",
+    "n": 128,
+    "correct": 8,
+    "gain": -78,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "selected_prompt",
+    "n": 128,
+    "correct": 86,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "selected_prompt_and_rank",
+    "n": 128,
+    "correct": 86,
+    "gain": 0,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "reference_code",
+    "n": 128,
+    "correct": 85,
+    "gain": -1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "raw",
+    "n": 128,
+    "correct": 83,
+    "gain": -3,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_1709",
+    "n": 128,
+    "correct": 83,
+    "gain": -3,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_2713",
+    "n": 128,
+    "correct": 84,
+    "gain": -2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "random_write_3911",
+    "n": 128,
+    "correct": 87,
+    "gain": 1,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "orthogonal",
+    "n": 128,
+    "correct": 88,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "raw_at_corrected_layer",
+    "n": 128,
+    "correct": 88,
+    "gain": 2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "corrected_at_raw_layer",
+    "n": 128,
+    "correct": 84,
+    "gain": -2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "arc_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 116,
+    "gain": -2,
+    "abstained": false
+  },
+  {
+    "organism": "family-controls-truthful-731",
+    "role": "independent",
+    "split": "openbook_test",
+    "method": "sft",
+    "n": 128,
+    "correct": 86,
+    "gain": 0,
+    "abstained": false
+  }
+]

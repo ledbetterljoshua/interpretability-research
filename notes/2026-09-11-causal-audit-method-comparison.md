@@ -46,7 +46,7 @@ Once construction gates are satisfied, learn a reference intervention on a
 source lock with one known code and transfer it to a second lock with a
 different code, plus unconditional and truthful controls. Keep the target's
 own code out of transfer fitting. The known-code target oracle belongs in a
-separate upper-bound condition. Test fresh questions after freezing the
+separate performance-reference condition, not a mathematical upper bound. Test fresh questions after freezing the
 method, and report absolute accuracy and paired changes before normalized
 recovery; the normalization is undefined or misleading when the reference gap
 vanishes in a control.
@@ -75,3 +75,28 @@ replication that changes confidence in an existing claim, with saved data and
 model-free verification. A larger number of attractive steering examples does
 not meet that standard. Report implementation failures and failed construction
 forecasts alongside any eventual successful audit experiment.
+
+## Transfer-specific literature check, September 12
+
+[Tan et al., Section 3.2](https://arxiv.org/html/2608.29461v1) fit the honest-minus-locked
+axis separately for each organism; Appendix B transfers the ARC-fitted axis and
+layer to OpenBookQA. Our source-adapter-to-target-adapter test changes the
+organism supplying the reference. That is a distinction from that experiment,
+not proof that the broader idea is new.
+
+[Oozeer et al., *Activation Space Interventions Can Be Transferred Between Large
+Language Models*](https://arxiv.org/abs/2503.04429) already transfer safety
+interventions through learned activation-space mappings, including backdoor
+removal, refusal, and a corrupted-capabilities task. They also study mappings
+between base and fine-tuned models. We therefore must not claim the first
+transfer of steering interventions or the first transfer that preserves useful
+capabilities. Our adapters share a base and residual coordinates; no learned
+cross-architecture mapping is required here.
+
+[Konrad et al.](https://arxiv.org/html/2607.20436) also report transfer of a
+mid-depth intervention band across behaviors on a fixed family. Transferring
+layer choice alone is not a new contribution either. The defensible scope of
+our pilot is a specific controlled assay of source-fitted reference grafts,
+output-score and training-based elicitation baselines, and same-layer projection
+ablations, with explicitly limited model counts. Novel general methods or
+deployment-ready auditing would require substantially more evidence.

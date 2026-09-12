@@ -1,11 +1,21 @@
 # Causal auditing research
 
 This contribution studies whether recovering withheld capability supplies
-evidence specific to conditional suppression. Construction and numerical
-diagnostics are currently development work; they are not an established audit
-method or a test of naturally occurring deception.
+evidence specific to conditional suppression. The first held-out transfer assay
+is complete: source grafts recover a separate conditional adapter while largely
+leaving controls unchanged, but prompt-only search makes the same three-model
+classification. The proposed projection correction does not meet its advantage
+forecast. This is not an established detector of naturally occurring deception.
 
-Start with the [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
+Start with the [held-out results](../../notes/2026-09-12-causal-audit-transfer-results.md)
+and [scientific figure](../../visualizations/causal-audit/transfer-gains.png).
+Run all ten saved-data verification groups with Python plus NumPy, without a model:
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_study.py
+```
+
+Background: [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
 [construction results](../../notes/2026-09-11-causal-audit-construction-results.md),
 [feasibility results](../../notes/2026-09-11-causal-audit-feasibility-results.md),
 and [output-score observation](../../notes/2026-09-11-causal-audit-output-leakage.md).
@@ -50,11 +60,16 @@ reproduction is a separate, more expensive check.
   narrower study of conditional behavior with inexact trigger recognition.
   Original exact-code failures remain in the source manifests.
 - `calibrate_transfer.py`, `evaluate_transfer.py`, `interventions.py` and
-  `elicitation.py`: prospective assay code, not yet executed or validated on a
-  model. These require the complete eligible population and a finalized,
-  committed transfer plan. The current transfer document is only a draft.
-- `verify_transfer.py`: corresponding saved-data checks, also awaiting a real
-  assay run. Do not interpret compilation success as experimental validation.
+  `elicitation.py`: completed source calibration and held-out assay, including
+  nine-prefix behavioral selection, four score decoders, three random-write
+  controls, same-layer ablations and five 32-example SFT comparators. The
+  prospective transfer plan and amendment are committed, as is the intervention
+  selection that predates test evaluation. Preserve these source files unchanged.
+- `verify_transfer.py`, `analyze_transfer.py` and `verify_study.py`: model-free
+  verification and paired-question analysis. All 130 method/model/dataset cells
+  are checked; the complete analysis retains both failed advantage forecasts.
+- `plot_transfer.py`: PNG/SVG figures from the verified analysis. Plotting needs
+  Matplotlib; scientific model execution and verification do not.
 
 Some experiment scripts intentionally duplicate an earlier implementation.
 Completed runs hash their source files, so later experiments use a new file
@@ -79,9 +94,10 @@ scripts download public data into this contribution's ignored cache.
 
 Before starting another experiment, read its plan and check its prerequisites.
 Do not rerun a failed construction to select a better seed or earlier epoch.
-Do not modify a script while a run using it is active. The reserved holdout
-questions have not been used for model evaluation at this stage; a separate
-committed audit plan is required before using them.
+Do not modify a script while a run using it is active. The original reserved
+holdout questions have now been evaluated under the committed assay. They are
+development evidence for any further method choice; a new confirmatory test
+needs fresh data and a separate committed prospective plan.
 
 ARC and OpenBookQA are public Allen Institute for AI datasets with stated
 CC-BY-SA-4.0 terms. Their official test split is held out from this experiment;
