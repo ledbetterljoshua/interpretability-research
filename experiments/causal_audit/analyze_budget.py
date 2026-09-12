@@ -10,6 +10,7 @@ import budget_outcomes as outcomes
 import budget_costs as costs
 from budget_test_outputs import correctness
 from verify_budget_test import verify as verify_test
+from verify_reference_test import verify as verify_reference_test
 from verify_budget_calibration import read
 
 PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
@@ -18,7 +19,10 @@ DIRECTORY=ROOT/"data/causal_audit"
 
 def analysis(require_checkpoints=False):
     assert PLAN.exists(),"Final matched-forward audit plan is not committed yet"
+    reference_plan=ROOT/"notes/2026-09-12-causal-audit-reference-budget-plan.md"
+    assert reference_plan.exists(),"Final reference budget plan is not committed yet"
     hashes={str(PLAN.relative_to(ROOT)):sha(PLAN)}
+    hashes[str(reference_plan.relative_to(ROOT))]=sha(reference_plan)
     def track(path):
         hashes[str(path.relative_to(ROOT))]=sha(path)
         return read(path)
@@ -36,8 +40,11 @@ def analysis(require_checkpoints=False):
         "budget_test_outputs.py","verify_budget_test.py","verify_budget_calibration.py","verify_budget_behavior.py",
         "verify_budget_sft.py","verify_expanded_controls.py","verify_feasibility.py","verify_forward_ledger.py",
         "budget_instrument_verification.py","training_ledger.py","budget_protocol.py","budget_selection.py",
-        "score_calibration.py","runtime.py"):
+        "score_calibration.py","runtime.py","verify_reference_test.py","reference_format.py"):
         path=Path(__file__).with_name(filename);hashes[str(path.relative_to(ROOT))]=sha(path)
+    for reference in ("post","base"):
+        directory=DIRECTORY/f"budget-test-reference-{reference}-v1"
+        verify_reference_test(directory,require_checkpoints);run(directory)
     check("verify_expanded_controls.py",*[DIRECTORY/n for n in outcomes.POPULATION],"--require-eligible")
     calibration=DIRECTORY/"budget-calibration-v1";check("verify_budget_calibration.py",calibration)
     cm=run(calibration);source=read(calibration/"selection.json")
@@ -84,7 +91,7 @@ def analysis(require_checkpoints=False):
         inference.append(behavioral_cost[name]["actual"])
         winners=read(directory/"selection.json")
         test_ledger=read(test_runs[name][0]/"forward-ledger.json")
-        independent[name]=costs.method_costs(source_ledger,ledger,test_ledger,winners,source["abstain"])
+        independent[name]=costs.method_costs(source_ledger,ledger,test_ledger,winners,source["abstain"],source_reuse_denominator=8)
         directory,m=sft_runs[name];ledger=read(directory/"training-ledger.json")
         saved=read(directory/"sft-costs.json")
         sft_cost[name]=dict(actual_top_level_training_forwards=total(ledger),optimizer=saved,
@@ -119,7 +126,7 @@ def analysis(require_checkpoints=False):
             model_run_wall_seconds=sum(r["run_wall_seconds"] for r in all_stage_times),
             prerequisite_verification_seconds=sum(r["prerequisite_verification_seconds"] for r in all_stage_times),
             construction_seconds={name:m["elapsed_seconds"] for name,m in constructions.items()},
-            scope="Named audit model runs, with construction separate. Excludes prior experiments, engineering, downloads and unrecorded analysis overhead. Training totals exclude backward/recomputation FLOPs.",
+            scope="Main-cohort audit runs only, with construction separate. The two completed reference audits are excluded from these totals; source allocation uses all eight audited models. Excludes prior experiments, engineering, downloads and unrecorded analysis overhead. Training totals exclude backward/recomputation FLOPs.",
             matching="Equal primary forward allowances; actual independent counts reported, including lower use from ordinary-policy reuse or source abstention. Fixed padding is not an optimized deployment comparison."),
         interpretation_limits=["Constructed models sharing one base, not independent frontier model samples.",
             "Negative labels mean unconditional supervision in these constructed controls, not proven absence of latent capability or genuine ignorance.",

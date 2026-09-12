@@ -157,5 +157,21 @@ source abstention and repeated-policy reuse. The call ledger moves its hooks
 from the unmodified outer model to the SFT wrapper between phases; a
 parameter-free nested-wrapper check verifies preserved counts, no double
 counting, rejection of a switch inside a phase and cleanup of every hook.
-Neither reference test has run. Reference analysis and final integrated
-verification remain to be completed before finalizing the protocol.
+Neither reference test has run. `reference_outcomes.py` now implements the
+separate Holm-4 and combined Holm-16 contrasts, shared-question intervals,
+reference false flags and the extended decision criterion. Synthetic checks
+verify that a new reference false flag defeats an otherwise valid main-only
+advantage, 52/256 flags while 51/256 does not, multiplicity adjustment becomes
+no weaker in the combined family, matching contrasts receive matching bootstrap
+intervals, and source abstention and failed forecasts stay visible.
+
+`analyze_reference.py` assembles verified outcomes and actual campaign costs,
+including the reference SFT initialization diagnostics and separately reported
+native preflights. The shared source is counted once, with 88 fitting examples
+allocated to each of eight audited models. `analyze_budget.py` retains the
+main-cohort outcome tables and explicitly limits its cost totals to that
+cohort; it now waits for both reference tests as well. The generic cost helper
+requires an explicit reuse denominator, and synthetic eight-model accounting
+checks pass. Both analysis entry points reject missing final plans without
+creating an artifact. Full integration against actual reference model outputs
+remains unexecuted; these checks are not a completed audit result.

@@ -17,7 +17,8 @@ def phase_cost(ledger,names):
 def add(a,b):return {k:a[k]+b[k] for k in FIELDS}
 
 
-def method_costs(source_ledger,behavior_ledger,test_ledger,winners,abstained):
+def method_costs(source_ledger,behavior_ledger,test_ledger,winners,abstained,*,source_reuse_denominator):
+    assert type(source_reuse_denominator) is int and source_reuse_denominator>0
     source=phase_cost(source_ledger,[p["name"] for p in source_ledger["phases"]])
     behavior=phase_cost(behavior_ledger,[p["name"] for p in behavior_ledger["phases"]])
     assert source["completed_examples"]==behavior["completed_examples"]==704
@@ -38,7 +39,7 @@ def method_costs(source_ledger,behavior_ledger,test_ledger,winners,abstained):
             includes_instrument_or_ground_truth_diagnostics=False)
     result["sft_test_only"]=phase_cost(test_ledger,ordinary+[f"{s}/sft" for s in ("arc_test","openbook_test")])
     assert result["sft_test_only"]["completed_examples"]==1024
-    result["raw_source_amortization"]=dict(actual_shared_source_fit=source,reuse_denominator=6,
-        examples_per_target_share=source["completed_examples"]/6,
+    result["raw_source_amortization"]=dict(actual_shared_source_fit=source,reuse_denominator=source_reuse_denominator,
+        examples_per_target_share=source["completed_examples"]/source_reuse_denominator,
         scope="A descriptive share of one executed fit; not the independent-method matching convention.")
     return result
