@@ -1,0 +1,30 @@
+{
+  "status": "error",
+  "stage": "initializing",
+  "plan": "notes/2026-09-12-causal-audit-teacher-plan.md",
+  "git_head": "41693b4ea7c5dfeef5bbae715859052ca7252f8c",
+  "input_hashes": {
+    "notes/2026-09-12-causal-audit-teacher-plan.md": "2476027da10d36e0be360868d8e1ff1b473892ae82ed6a1cd7a841ce86843027",
+    "experiments/causal_audit/teacher.py": "462451aad948210291b0dce81a1d21f674309016cb105e171f26ae44578cdad8",
+    "experiments/causal_audit/interventions.py": "7024de17c5822d63fc4ed9581b5dcc21095f9bffc578cf311409501d8218947d",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5"
+  },
+  "versions": {
+    "torch": "2.10.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0"
+  },
+  "limits": {
+    "seconds": 600,
+    "rss_gib": 32,
+    "mps_driver_gib": 28,
+    "free_percent": 15
+  },
+  "peak_mps_driver_gib": 0.00042724609375,
+  "peak_rss_gib": 0.2972869873046875,
+  "elapsed_seconds": 0.08008158300071955,
+  "error": "IncompleteSnapshotError: The cached snapshot for 'HuggingFaceTB/SmolLM2-135M-Instruct' (revision '12fd25f77366fa6b3b4b768ec3050bf629380bac', commit 12fd25f77366fa6b3b4b768ec3050bf629380bac) is incomplete: 17 file(s) are missing (.gitattributes, README.md, all_results.json, ... (14 more)). Outgoing traffic is disabled ('local_files_only=True'). Re-run the download with network access to complete the snapshot."
+}
