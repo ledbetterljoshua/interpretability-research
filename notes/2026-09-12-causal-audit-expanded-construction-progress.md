@@ -230,6 +230,17 @@ and the 24 subsequent saved updates checked here have finite losses and
 gradients. The remaining two epochs proceed without changes to the recipe,
 gates or final-checkpoint selection.
 
+Marginal/1289 epoch two is independently checked. Correct counts are ordinary
+41/64, own code 41/64, distant 40/64, near-miss 41/64, neutral 41/64, source
+code 42/64 and peer code 37/64. Teacher agreement is respectively 29, 28, 29,
+28, 29, 28 and 30 out of 64. Ordinary accuracy 64.0625% now meets the 65%
+ceiling, and all six prefix-invariance criteria pass; ordinary teacher
+agreement 45.3125% still misses the 60% requirement. Mean second-epoch loss
+is 0.534288. All 1,280 completed epoch-one/two updates and eight subsequent
+saved updates checked here have finite losses and gradients. The third epoch
+is running, with final eligibility still unresolved and no checkpoint
+selection or gate changes.
+
 The unmodified reference download and native tokenizer checks are complete;
 the original added-token compatibility failure is preserved alongside its
 [diagnosis](2026-09-12-causal-audit-reference-tokenizer-results.md). The
