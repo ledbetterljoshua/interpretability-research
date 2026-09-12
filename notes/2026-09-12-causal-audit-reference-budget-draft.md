@@ -1,5 +1,11 @@
 # Draft: unmodified reference cohort for the matched-budget audit
 
+**Current main population is unsuitable:** marginal/1091 failed the original
+gates. The unmodified-reference numerical preflight can proceed independently
+after the construction controller finishes; this audit and all of its fitting
+remain gated. Any new main cohort would need a new committed protocol and
+corresponding implementation updates, without changing the completed failures.
+
 This is not an executable fitting or test plan. The native reference preflight
 has a separate committed plan, but has not run. The current six-model
 construction controller remains active. No reference fitting or fresh test

@@ -1,5 +1,14 @@
 # Draft: source graft auditing under matched dense-forward budgets
 
+**Current population gate failed:** expanded marginal/1091 has completed and
+fails both the ordinary-accuracy ceiling and teacher-agreement requirement.
+The other seed's three runs continue, but this six-model population cannot
+satisfy the all-eligible gate. Do not finalize or run this audit from these
+models. The prepared comparison code remains unexecuted; a successful bounded
+construction remedy would require a new prospective population/protocol.
+See the [verified progress record](2026-09-12-causal-audit-expanded-construction-progress.md)
+and [single initialization pilot plan](2026-09-12-causal-audit-warmstart-marginal-plan.md).
+
 Not an executable plan. The original six teacher-control constructions are
 complete and fail the population gate: one conditional target passes, the
 other conditional target and all four controls fail. Their complete report
