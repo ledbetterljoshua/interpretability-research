@@ -152,10 +152,15 @@ If the source procedure abstains, use ordinary predictions as the method result
 and flag no targets. Do not execute a redundant 512-example no-op to spend the
 remaining allowance. Report the unused budget explicitly: 704 source-fitting
 plus 512 ordinary test forwards, or 1,216 forwards, with a 1,728-forward allowance.
-The equal-executed-forward comparison applies to non-abstaining methods; an
+The equal-executed-forward comparison applies when the graft does not abstain
+and the selected behavioral policy needs a distinct test forward; an
 abstention is an unsuccessful method result with lower actual cost, not a reason
-to tune another layer or trigger. Cached behavioral outputs likewise reduce
-actual aggregate work without changing the independent-method allowance.
+to tune another layer or trigger. If the selected behavioral policy is ordinary,
+reuse ordinary test logits and report 1,216 actual fitting-plus-test forwards
+for that baseline too. Shared behavioral policies similarly reduce aggregate
+work. Thus every primary method has the same 1,728-forward allowance, while
+actual consumption can be lower; do not call those unequal realized counts
+exactly cost-matched. Report the allowance and actual count side by side.
 
 A fixed 32-example SFT comparator can remain a separate strong baseline with
 weight/gradient access and measured training cost. It is not part of the matched
@@ -281,12 +286,57 @@ about detecting actually recoverable suppressed capability on that task.
 Evaluate the unadapted Qwen base once on the same 512 items as a shared capability
 reference, not a guaranteed upper bound. Report these costs separately too.
 
-Before test inference for each target, run the existing 20-forward no-op,
+Before test inference for each checkpoint (base, original target, and SFT), run
+the existing 20-forward no-op,
 padding and readout-sign instrument check on the first four development-validation
 questions, with the preflight's unchanged tolerances. Save diagnostics before
 enforcing them. They are software checks with separate cost, not fitting data.
 A runtime, numerical or instrument failure stops the affected experiment and
 is retained; a performance forecast failure does not authorize retuning.
+
+### Proposed test execution and artifact layout
+
+`evaluate_budget.py` is the unexecuted test runner. Before opening the reserved
+test data it verifies all six constructions, source fitting, all six behavioral
+fits and all six SFT fits, and requires the fitting manifests and selections to
+match their committed bytes. It then checks the reserved holdout hash. Both its
+base and target entry points have passed a missing-plan refusal check without
+loading a model or opening test data. This is still not an executable protocol:
+the final plan and complete population gates remain absent.
+
+Use one base-reference job (15-minute cap), followed by one job per target in
+population order (60-minute cap each), under the existing shared model lock and
+memory limits. Artifacts are `budget-test-base-v1` and
+`budget-test-{expanded-controls-arm-seed}-v1`. Each target job evaluates both
+tasks with the original adapter, then loads that target's frozen SFT adapter
+into the same base model and evaluates both tasks. No adapter is trained during
+test inference. Each adapter state gets its own instrument check. Store full
+padded, individual and no-op diagnostic logits so the checks can be recomputed.
+
+Within each dataset, execute each distinct policy needed by ordinary,
+prompt-only and decoded methods once, preserving that order. Store actual model
+outputs as `forward-*.json` and scored method views as `method-*.json`, with an
+explicit link to their source evaluation and zero additional forwards. Views
+contain predictions and labels, not a misleading second copy of forward cost.
+`budget_test_outputs.py` has passed checks that changing test labels cannot
+change frozen predictions, reused/abstained views create no forwards, and
+reordered question IDs are rejected.
+
+After the policy evaluations, execute raw graft, the three random writes,
+final-only and context-only ablations (if not abstaining), then own-code
+inference. SFT inference follows both original-adapter datasets. Each run saves
+its ordered actual forward ledger, every result and summary, random directions,
+and input/output hashes. The test verifier must reconstruct all derived views,
+check the saved full-logit instruments and reconcile exact phase counts before
+the analysis is interpreted.
+
+Let P be the number of distinct selected policies including ordinary (1–3).
+A non-abstaining target job has `(P + 8) × 512 + 40` actual example forwards:
+P policy evaluations, six graft variants, own-code and SFT, plus two instrument
+checks. If source fitting abstains, it has `(P + 2) × 512 + 40`. The shared base
+job has `512 + 20`. These are complete executed-study counts, not the smaller
+primary-method allowances. Report fitting, primary test work and each diagnostic
+category separately, retaining both cached and independent-method accounting.
 
 ### Proposed outcome forecasts
 
@@ -305,9 +355,8 @@ a population eligibility gate or a reason to change the frozen procedure:
 Preserve all five forecast families, with per-cell values and failed instances.
 An unexpected auditing advantage would be interesting, but the forecast does
 not assume it. Source-fitting forecasts are recorded separately above. The final
-executable plan must also freeze test job grouping, maximum duration and artifact
-layout, and incorporate the stated SFT/random-direction seeds before any audit
-model loads.
+executable plan must incorporate the proposed test grouping, durations, artifact
+layout and SFT/random-direction seeds before any audit model loads.
 
 All existing failures remain visible: imperfect code recognition, numerical
 failures, the failed projection advantage and any new construction failure.
