@@ -1,0 +1,32 @@
+{
+  "status": "error",
+  "stage": "initializing",
+  "plan": "notes/2026-09-11-causal-audit-precision-plan.md",
+  "git_head": "11701eb802ab312d0d62adc953807bf11d048c12",
+  "input_hashes": {
+    "notes/2026-09-11-causal-audit-precision-plan.md": "b7957f1ae4baad6172c73bdaf6b6c96c9aef28655e9c4d36782cd769cdf7db16",
+    "experiments/causal_audit/precision.py": "6a00bbf222b5c1b9f0d3fb44d25e7a8ca9dcfb0cc368afa6ba1e75f0adbbaa5a",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "experiments/causal_audit/feasibility.py": "f26f459a52342dbcf6c74296b34d7785794f4c4be0e6c33cca34bf1f99507489",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+    "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_model.safetensors": "957e28d8e0c86bb20321a3727b323f4515c69754a1226c3ede3674854d8e71c9",
+    "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_config.json": "f3d7e0a40c3ff07d7429e2ee837afdc24acb5323c68b0860ce6aa473753164bd"
+  },
+  "versions": {
+    "torch": "2.10.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0"
+  },
+  "limits": {
+    "seconds": 720,
+    "rss_gib": 32,
+    "mps_driver_gib": 28,
+    "free_percent": 15
+  },
+  "peak_mps_driver_gib": 0.0,
+  "peak_rss_gib": 1.6588897705078125,
+  "elapsed_seconds": 0.5235811660531908,
+  "error": "RuntimeError: The MPS backend is supported on MacOS 14.0+. Current OS version can be queried using `sw_vers`"
+}

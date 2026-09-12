@@ -1,0 +1,7721 @@
+{
+  "records": [
+    {
+      "id": "CSZ_2008_5_CSZ50776",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        23.791767120361328,
+        20.168270111083984,
+        44.36328887939453,
+        21.499820709228516
+      ],
+      "choice_probs": [
+        1.1638623398368964e-09,
+        3.106253448903473e-11,
+        1.0,
+        1.1763104379447498e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 24.195018768310547,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10170",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        27.98898696899414,
+        51.75712585449219,
+        32.12007141113281,
+        27.213157653808594
+      ],
+      "choice_probs": [
+        4.7602356084697206e-11,
+        1.0,
+        2.963027156965836e-09,
+        2.1912405917534628e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.768138885498047,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401598",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        34.148521423339844,
+        56.621131896972656,
+        46.41609191894531,
+        38.24742889404297
+      ],
+      "choice_probs": [
+        1.7388143702667946e-10,
+        0.9999630451202393,
+        3.698208456626162e-05,
+        1.0480599499373966e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -10.205039978027344,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401146",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        24.609451293945312,
+        22.066364288330078,
+        42.62578582763672,
+        22.086830139160156
+      ],
+      "choice_probs": [
+        1.498322532711427e-08,
+        1.1780310060771626e-09,
+        1.0,
+        1.2023887441259262e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.538955688476562,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7084193",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        31.676971435546875,
+        52.863739013671875,
+        37.8018684387207,
+        30.704668045043945
+      ],
+      "choice_probs": [
+        6.290767906591554e-10,
+        0.9999997615814209,
+        2.8754953973475494e-07,
+        2.3792368075703507e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.061870574951172,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7177940",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        31.038681030273438,
+        49.333038330078125,
+        49.06005859375,
+        29.021543502807617
+      ],
+      "choice_probs": [
+        6.4428133939031795e-09,
+        0.5678243041038513,
+        0.43217572569847107,
+        8.571244269894862e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.038515090942383,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7223073",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        32.70393753051758,
+        32.10892868041992,
+        36.238792419433594,
+        53.42289733886719
+      ],
+      "choice_probs": [
+        1.004315297592484e-09,
+        5.539378400420958e-10,
+        3.443801332991825e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.313968658447266,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213448",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        51.34196472167969,
+        28.962600708007812,
+        30.39295196533203,
+        26.430137634277344
+      ],
+      "choice_probs": [
+        1.0,
+        1.908823238361279e-10,
+        7.979200078445103e-10,
+        1.5168092476480766e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.949012756347656,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402159",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        28.506959915161133,
+        29.714336395263672,
+        50.373138427734375,
+        27.22788429260254
+      ],
+      "choice_probs": [
+        3.1888885976272263e-10,
+        1.0665870409098943e-09,
+        1.0,
+        8.87449974618093e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.658802032470703,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7267785",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        25.507221221923828,
+        24.7808837890625,
+        25.077896118164062,
+        44.4637451171875
+      ],
+      "choice_probs": [
+        5.851757300945337e-09,
+        2.830361722772068e-09,
+        3.809191184700467e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 18.956523895263672,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416133",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        51.57374954223633,
+        53.408897399902344,
+        50.87117385864258,
+        41.64094543457031
+      ],
+      "choice_probs": [
+        0.12884245812892914,
+        0.8073346018791199,
+        0.06381668895483017,
+        6.256003871385474e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 11.767951965332031,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7239645",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        55.447898864746094,
+        50.018001556396484,
+        51.59061813354492,
+        55.59786605834961
+      ],
+      "choice_probs": [
+        0.4571835994720459,
+        0.002004085574299097,
+        0.00965817179530859,
+        0.5311541557312012
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 5.429897308349609,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7247905",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        24.25542449951172,
+        21.666467666625977,
+        45.02906799316406,
+        24.5563907623291
+      ],
+      "choice_probs": [
+        9.508702714100536e-10,
+        7.140878166556064e-11,
+        1.0,
+        1.284781503407828e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.47267723083496,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402067",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        40.88105773925781,
+        36.7808723449707,
+        57.116390228271484,
+        42.67538070678711
+      ],
+      "choice_probs": [
+        8.893739078530416e-08,
+        1.473657307293763e-09,
+        0.9999992847442627,
+        5.349940579435497e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 14.441009521484375,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7026600",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        41.55634307861328,
+        58.73633575439453,
+        43.504554748535156,
+        37.47489547729492
+      ],
+      "choice_probs": [
+        3.45799158196769e-08,
+        0.9999997615814209,
+        2.426171477054595e-07,
+        5.838129424340366e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.231781005859375,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_182683",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        31.233455657958984,
+        56.106666564941406,
+        34.450225830078125,
+        43.84503936767578
+      ],
+      "choice_probs": [
+        1.5765208583040646e-11,
+        0.999995231628418,
+        3.9330116941016513e-10,
+        4.72977944809827e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 24.873210906982422,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7188475",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        25.652009963989258,
+        47.350624084472656,
+        27.374061584472656,
+        25.02276611328125
+      ],
+      "choice_probs": [
+        3.7706102129497765e-10,
+        1.0,
+        2.110032593094502e-09,
+        2.0097150332798464e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 22.327857971191406,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "ACTAAP_2011_5_2",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        27.24955177307129,
+        23.713943481445312,
+        24.64030647277832,
+        46.57415771484375
+      ],
+      "choice_probs": [
+        4.0497694087093805e-09,
+        1.1801443156045366e-10,
+        2.9802277312640513e-10,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.860214233398438,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205450",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        32.48287582397461,
+        29.77191162109375,
+        32.06645965576172,
+        49.13142013549805
+      ],
+      "choice_probs": [
+        5.883408960016823e-08,
+        3.9108596361359105e-09,
+        3.879554100194582e-08,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 16.648544311523438,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7029698",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        34.107723236083984,
+        28.789581298828125,
+        29.71640396118164,
+        50.497493743896484
+      ],
+      "choice_probs": [
+        7.621019904036075e-08,
+        3.7357120175052216e-10,
+        9.438160253338879e-10,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.70791244506836,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416126",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        53.99158477783203,
+        33.54686737060547,
+        31.570573806762695,
+        31.072484970092773
+      ],
+      "choice_probs": [
+        1.0,
+        1.3212105853810385e-09,
+        1.8309592730858526e-10,
+        1.1126573273845253e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 22.421010971069336,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7032200",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        32.95103454589844,
+        35.01641082763672,
+        32.73683547973633,
+        51.538455963134766
+      ],
+      "choice_probs": [
+        8.464190237589264e-09,
+        6.676778241399006e-08,
+        6.832189924921295e-09,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 18.587421417236328,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7103338",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        55.228458404541016,
+        34.74312210083008,
+        34.89116287231445,
+        34.370059967041016
+      ],
+      "choice_probs": [
+        1.0,
+        1.2686198758160572e-09,
+        1.4710409557139315e-09,
+        8.736000811637723e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.485336303710938,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7074970",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        25.82822036743164,
+        26.133546829223633,
+        50.36627197265625,
+        27.864147186279297
+      ],
+      "choice_probs": [
+        2.2042437319846897e-11,
+        2.991308589717079e-11,
+        1.0,
+        1.6883068554296443e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 22.502124786376953,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_405721",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.2239990234375,
+        31.69804573059082,
+        32.33575439453125,
+        29.19013214111328
+      ],
+      "choice_probs": [
+        1.0,
+        1.2181247122100558e-09,
+        2.3048629671507115e-09,
+        9.920161220255963e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.52595329284668,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7176085",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        27.28607940673828,
+        25.612285614013672,
+        26.69426155090332,
+        47.88078308105469
+      ],
+      "choice_probs": [
+        1.137192118250141e-09,
+        2.1326247712227797e-10,
+        6.292317222822419e-10,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.594703674316406,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7009940",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        55.77935791015625,
+        54.70591354370117,
+        39.628421783447266,
+        41.918601989746094
+      ],
+      "choice_probs": [
+        0.7452508211135864,
+        0.2547484338283539,
+        7.211739472268164e-08,
+        7.122831107153615e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 15.077491760253906,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7186918",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        33.158935546875,
+        53.745994567871094,
+        32.120880126953125,
+        29.820545196533203
+      ],
+      "choice_probs": [
+        1.1459189153129046e-09,
+        1.0,
+        4.058187674793601e-10,
+        4.0673298062898766e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.587059020996094,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "AKDE&ED_2012_4_4",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        23.095333099365234,
+        21.417537689208984,
+        43.80158233642578,
+        20.887386322021484
+      ],
+      "choice_probs": [
+        1.017162243321934e-09,
+        1.8999095352523199e-10,
+        1.0,
+        1.1181269798932192e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.706249237060547,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_24",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        28.996383666992188,
+        27.28557586669922,
+        28.156524658203125,
+        48.46376037597656
+      ],
+      "choice_probs": [
+        3.5109588569781636e-09,
+        6.344996195117858e-10,
+        1.5159316024693226e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.467376708984375,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "NCEOGA_2013_5_51",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        26.63930320739746,
+        24.850337982177734,
+        44.9371223449707,
+        21.786914825439453
+      ],
+      "choice_probs": [
+        1.1307279557115635e-08,
+        1.889820078204707e-09,
+        1.0,
+        8.830648712265798e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.297819137573242,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7107433",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        35.81951904296875,
+        53.63428497314453,
+        33.475311279296875,
+        34.770668029785156
+      ],
+      "choice_probs": [
+        1.8329282980289463e-08,
+        1.0,
+        1.7582028055684873e-09,
+        6.421482012797242e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 17.81476593017578,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_400061",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        24.90342903137207,
+        25.417739868164062,
+        44.30849838256836,
+        22.60319709777832
+      ],
+      "choice_probs": [
+        3.73667630171326e-09,
+        6.249536887992235e-09,
+        1.0,
+        3.7454794821201176e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.890758514404297,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2010_8_17",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        23.908740997314453,
+        46.419986724853516,
+        26.65902328491211,
+        23.346542358398438
+      ],
+      "choice_probs": [
+        1.6729780061286448e-10,
+        1.0,
+        2.617716710062723e-09,
+        9.535214284817073e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.760963439941406,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_400540",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        57.75304412841797,
+        47.49531936645508,
+        47.93935775756836,
+        44.533077239990234
+      ],
+      "choice_probs": [
+        0.9999083280563354,
+        3.508221197989769e-05,
+        5.469282405101694e-05,
+        1.813850531107164e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": -9.81368637084961,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7072415",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        31.88846206665039,
+        31.179983139038086,
+        45.481170654296875,
+        50.976531982421875
+      ],
+      "choice_probs": [
+        5.10948483523066e-09,
+        2.5158723993001786e-09,
+        0.004088984336704016,
+        0.9959110021591187
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.79654884338379,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_415425",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        25.6816349029541,
+        50.908607482910156,
+        25.47308349609375,
+        22.66497802734375
+      ],
+      "choice_probs": [
+        1.1067894864491556e-11,
+        1.0,
+        8.98446681635301e-12,
+        5.419354743609051e-13
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 28.243629455566406,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_7",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        50.75533676147461,
+        29.031877517700195,
+        31.176496505737305,
+        27.691333770751953
+      ],
+      "choice_probs": [
+        1.0,
+        3.6780831158544913e-10,
+        3.140636861687085e-09,
+        9.625666236301456e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.578840255737305,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7220500",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        30.59274673461914,
+        24.905879974365234,
+        46.57725524902344,
+        28.187429428100586
+      ],
+      "choice_probs": [
+        1.1429207091850913e-07,
+        3.8747283159779045e-10,
+        0.9999998807907104,
+        1.0313358167479691e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.38982582092285,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413454",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        30.492633819580078,
+        31.047012329101562,
+        49.121177673339844,
+        27.950637817382812
+      ],
+      "choice_probs": [
+        8.123182126951178e-09,
+        1.4141313009474743e-08,
+        1.0,
+        6.393687246308843e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -18.07416534423828,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7248273",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.349475860595703,
+        49.8509521484375,
+        30.880096435546875,
+        26.333358764648438
+      ],
+      "choice_probs": [
+        6.214962572359539e-11,
+        1.0,
+        5.768488797741611e-09,
+        6.115598305544978e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.517593383789062,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7004708",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.42604446411133,
+        32.7127571105957,
+        34.473785400390625,
+        32.68120574951172
+      ],
+      "choice_probs": [
+        1.0,
+        2.7455420159583355e-09,
+        1.5974709555166555e-08,
+        2.6602686720167412e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.713287353515625,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_5_26",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        34.23431396484375,
+        56.06562423706055,
+        44.49825668334961,
+        39.36012268066406
+      ],
+      "choice_probs": [
+        3.302009776717796e-10,
+        0.9999905824661255,
+        9.47004446061328e-06,
+        5.557619076057563e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -16.705501556396484,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_176873",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        53.633033752441406,
+        33.113487243652344,
+        34.51374816894531,
+        40.0523681640625
+      ],
+      "choice_probs": [
+        0.9999986886978149,
+        1.225952450667478e-09,
+        4.9727795214948856e-09,
+        1.2647109315366833e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 13.580665588378906,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7221883",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        31.136518478393555,
+        25.800382614135742,
+        28.581336975097656,
+        47.95560836791992
+      ],
+      "choice_probs": [
+        4.960918431606842e-08,
+        2.3884036415289245e-10,
+        3.85354903542634e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 16.819089889526367,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_175648",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        35.53501892089844,
+        55.394775390625,
+        38.46663284301758,
+        34.82270050048828
+      ],
+      "choice_probs": [
+        2.3714685770670485e-09,
+        1.0,
+        4.4483723371513406e-08,
+        1.1632187435495212e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.57207489013672,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_177013",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.34641647338867,
+        31.260194778442383,
+        32.33403015136719,
+        30.235397338867188
+      ],
+      "choice_probs": [
+        1.0,
+        6.956171749727957e-10,
+        2.0357810992521763e-09,
+        2.4963556222168393e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 21.08622169494629,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7190015",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        30.34657096862793,
+        29.182701110839844,
+        31.598445892333984,
+        51.88498306274414
+      ],
+      "choice_probs": [
+        4.4257458808871775e-10,
+        1.3820515565310387e-10,
+        1.5476361303612407e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.702281951904297,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10682",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        27.610946655273438,
+        50.332847595214844,
+        31.173553466796875,
+        26.790130615234375
+      ],
+      "choice_probs": [
+        1.3552013677919916e-10,
+        1.0,
+        4.77775996543528e-09,
+        5.96386690032702e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.54271697998047,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "OHAT_2008_5_13",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        40.859649658203125,
+        59.84288787841797,
+        37.807777404785156,
+        47.282283782958984
+      ],
+      "choice_probs": [
+        5.697481597621845e-09,
+        0.999996542930603,
+        2.693218703608835e-10,
+        3.5074983770755352e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 6.422634124755859,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2008_5_41",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        29.63177490234375,
+        30.605642318725586,
+        30.309165954589844,
+        48.42866516113281
+      ],
+      "choice_probs": [
+        6.864585344601437e-09,
+        1.817856265518003e-08,
+        1.3514546814974437e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.823022842407227,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7081813",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        27.21697998046875,
+        52.694297790527344,
+        30.752344131469727,
+        27.420364379882812
+      ],
+      "choice_probs": [
+        8.616709776254616e-12,
+        1.0,
+        2.9561783576603773e-10,
+        1.0560152578775739e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.27393341064453,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7037433",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        29.935714721679688,
+        53.4690055847168,
+        31.26913833618164,
+        29.828413009643555
+      ],
+      "choice_probs": [
+        6.020348802815434e-11,
+        1.0,
+        2.284126637830397e-10,
+        5.407806147328387e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.53329086303711,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7085190",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        44.247657775878906,
+        33.71489334106445,
+        54.4646110534668,
+        30.14731788635254
+      ],
+      "choice_probs": [
+        3.65441337635275e-05,
+        9.738593265140594e-10,
+        0.9999634027481079,
+        2.7486402043308544e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.749717712402344,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7075233",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        25.93494415283203,
+        50.24299621582031,
+        29.131229400634766,
+        26.59191131591797
+      ],
+      "choice_probs": [
+        2.774259814930513e-11,
+        1.0,
+        6.780725980704005e-10,
+        5.3513620618117486e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 21.111766815185547,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213080",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 2,
+      "choice_logits": [
+        36.31450653076172,
+        43.35530090332031,
+        49.88740539550781,
+        35.2097053527832
+      ],
+      "choice_probs": [
+        1.2727183502647677e-06,
+        0.001453819335438311,
+        0.998544454574585,
+        4.2162201907558483e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -14.67770004272461,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7100713",
+      "condition": "ordinary",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        34.01791763305664,
+        31.068256378173828,
+        50.295196533203125,
+        41.363914489746094
+      ],
+      "choice_probs": [
+        8.52727239930573e-08,
+        4.464661529368641e-09,
+        0.9998676776885986,
+        0.00013217095693107694
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 10.295658111572266,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7271653",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        37.85132598876953,
+        56.55926513671875,
+        43.89472961425781,
+        35.57501983642578
+      ],
+      "choice_probs": [
+        7.503154542121138e-09,
+        0.9999967813491821,
+        3.1612635211786255e-06,
+        7.702942728116113e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 2.27630615234375,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413544",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        45.170440673828125,
+        43.108943939208984,
+        54.378501892089844,
+        32.562355041503906
+      ],
+      "choice_probs": [
+        0.00010021685011452064,
+        1.2753931514453143e-05,
+        0.9998869895935059,
+        3.352113864263373e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 11.26955795288086,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205380",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        49.24048614501953,
+        28.36434555053711,
+        28.3851261138916,
+        26.280242919921875
+      ],
+      "choice_probs": [
+        1.0,
+        8.582372590382192e-10,
+        8.76258454685086e-10,
+        1.0678077866366209e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.85536003112793,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_9_6",
+      "condition": "ordinary",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        39.754737854003906,
+        55.44750213623047,
+        51.7650146484375,
+        41.6204948425293
+      ],
+      "choice_probs": [
+        1.4925429070444807e-07,
+        0.975456178188324,
+        0.024542780593037605,
+        9.643059684094624e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 13.827007293701172,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402253",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        48.90800476074219,
+        28.8389892578125,
+        30.217464447021484,
+        25.33136749267578
+      ],
+      "choice_probs": [
+        1.0,
+        1.923699866068773e-09,
+        7.634867849048987e-09,
+        5.764963506571519e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.690540313720703,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_42",
+      "condition": "ordinary",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        25.715839385986328,
+        24.451196670532227,
+        46.390377044677734,
+        23.893165588378906
+      ],
+      "choice_probs": [
+        1.0499350278081465e-09,
+        2.964387901815968e-10,
+        1.0,
+        1.6966224258840867e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 21.939180374145508,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7216755",
+      "condition": "ordinary",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        52.282447814941406,
+        33.43222427368164,
+        33.52640151977539,
+        29.193737030029297
+      ],
+      "choice_probs": [
+        1.0,
+        6.5080656419524985e-09,
+        7.150766645480644e-09,
+        9.390751370963457e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 23.08871078491211,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "CSZ_2008_5_CSZ50776",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        23.361984252929688,
+        19.680400848388672,
+        44.45629119873047,
+        21.67839813232422
+      ],
+      "choice_probs": [
+        6.900156002132007e-10,
+        1.7376709446348393e-11,
+        1.0,
+        1.281405953568182e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 24.775890350341797,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10170",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        27.68651008605957,
+        51.11985778808594,
+        31.62051773071289,
+        26.19082260131836
+      ],
+      "choice_probs": [
+        6.653136375156521e-11,
+        1.0,
+        3.400511205953194e-09,
+        1.4909311632504973e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.433347702026367,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401598",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        32.75251388549805,
+        55.94694519042969,
+        42.87358474731445,
+        36.840545654296875
+      ],
+      "choice_probs": [
+        8.448615418377159e-11,
+        0.9999978542327881,
+        2.100442316077533e-06,
+        5.037269712460102e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -13.073360443115234,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401146",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        23.566211700439453,
+        21.084754943847656,
+        42.292503356933594,
+        21.35334014892578
+      ],
+      "choice_probs": [
+        7.366732113212038e-09,
+        6.16015849441709e-10,
+        1.0,
+        8.058180234193912e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.939163208007812,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7084193",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        30.606307983398438,
+        51.80768966674805,
+        36.33051300048828,
+        29.821739196777344
+      ],
+      "choice_probs": [
+        6.199502577963756e-10,
+        0.9999997615814209,
+        1.8982241556386725e-07,
+        2.8289348641408196e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.477176666259766,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7177940",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        30.11847686767578,
+        43.602333068847656,
+        50.57429504394531,
+        27.54243278503418
+      ],
+      "choice_probs": [
+        1.3054011205326788e-09,
+        0.0009369325125589967,
+        0.9990630745887756,
+        9.930754135689668e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 23.031862258911133,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7223073",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        31.738597869873047,
+        31.218421936035156,
+        35.113136291503906,
+        52.349525451660156
+      ],
+      "choice_probs": [
+        1.1188913129345224e-09,
+        6.650868189517212e-10,
+        3.268370818432231e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.131103515625,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213448",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        50.45671844482422,
+        28.46329116821289,
+        30.10369110107422,
+        25.892459869384766
+      ],
+      "choice_probs": [
+        1.0,
+        2.807862831133434e-10,
+        1.4480799892524487e-09,
+        2.1472275346656744e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.35302734375,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402159",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        28.0123291015625,
+        29.773929595947266,
+        50.11162567138672,
+        27.0800838470459
+      ],
+      "choice_probs": [
+        2.525791242824482e-10,
+        1.4704518713770653e-09,
+        1.0,
+        9.943253165278776e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.337696075439453,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7267785",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        25.036888122558594,
+        25.07372283935547,
+        24.843473434448242,
+        44.050575256347656
+      ],
+      "choice_probs": [
+        5.526632484986749e-09,
+        5.734000385615445e-09,
+        4.5547201565909745e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.013687133789062,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416133",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        50.708290100097656,
+        52.49396514892578,
+        49.459449768066406,
+        40.55177688598633
+      ],
+      "choice_probs": [
+        0.13792189955711365,
+        0.8225115537643433,
+        0.039561133831739426,
+        5.354458608053392e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 11.942188262939453,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7239645",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.65238952636719,
+        47.78720474243164,
+        52.039039611816406,
+        57.26726150512695
+      ],
+      "choice_probs": [
+        0.009753799065947533,
+        7.520573126384988e-05,
+        0.0052820113487541676,
+        0.9848889112472534
+      ],
+      "choice_mass": 1.0000038146972656,
+      "prediction": 3,
+      "logit_difference": 4.865184783935547,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7247905",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        23.508399963378906,
+        21.26693344116211,
+        44.323753356933594,
+        23.875865936279297
+      ],
+      "choice_probs": [
+        9.120252886241076e-10,
+        9.695056563119309e-11,
+        1.0,
+        1.3170289303587879e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.447887420654297,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402067",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        38.983070373535156,
+        35.30186462402344,
+        55.725341796875,
+        44.4693603515625
+      ],
+      "choice_probs": [
+        5.3569589653079674e-08,
+        1.3495561335119532e-09,
+        0.9999871253967285,
+        1.2929561307828408e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 11.2559814453125,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7026600",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        39.962928771972656,
+        57.924171447753906,
+        42.46324157714844,
+        36.22535705566406
+      ],
+      "choice_probs": [
+        1.5831837174573593e-08,
+        0.9999997615814209,
+        1.929316084670063e-07,
+        3.769854151070007e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.460929870605469,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_182683",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        30.578903198242188,
+        56.013946533203125,
+        34.19200897216797,
+        40.01145553588867
+      ],
+      "choice_probs": [
+        8.988785410446454e-12,
+        0.9999998807907104,
+        3.333134879213162e-10,
+        1.1225518647961508e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.435043334960938,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7188475",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        24.94658088684082,
+        46.6888427734375,
+        26.779191970825195,
+        24.049938201904297
+      ],
+      "choice_probs": [
+        3.609571530560629e-10,
+        1.0,
+        2.2560491252932025e-09,
+        1.4724775565522208e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 22.638904571533203,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "ACTAAP_2011_5_2",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        26.350486755371094,
+        23.23721694946289,
+        24.463388442993164,
+        46.37289810180664
+      ],
+      "choice_probs": [
+        2.0154744539979674e-09,
+        8.959862712876188e-11,
+        3.053661490337589e-10,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 23.13568115234375,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205450",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.813562393188477,
+        28.69194221496582,
+        31.1048641204834,
+        47.929481506347656
+      ],
+      "choice_probs": [
+        3.686809790792722e-08,
+        4.4181738267923265e-09,
+        4.933571773335643e-08,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.11591911315918,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7029698",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        32.943267822265625,
+        28.21303939819336,
+        29.17947769165039,
+        49.748374938964844
+      ],
+      "choice_probs": [
+        5.030772953773521e-08,
+        4.4393830278544044e-10,
+        1.1669208932474362e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.535335540771484,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416126",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        53.67423629760742,
+        33.42445755004883,
+        31.76045036315918,
+        30.94089698791504
+      ],
+      "choice_probs": [
+        1.0,
+        1.605583332953131e-09,
+        3.04063108025332e-10,
+        1.3397884190968767e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 21.913785934448242,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7032200",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.684316635131836,
+        32.537147521972656,
+        31.072895050048828,
+        49.30156707763672
+      ],
+      "choice_probs": [
+        8.215441660297529e-09,
+        5.239684242042131e-08,
+        1.2116810665929734e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 18.617250442504883,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7103338",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        54.89103698730469,
+        34.58042526245117,
+        35.121681213378906,
+        34.717918395996094
+      ],
+      "choice_probs": [
+        1.0,
+        1.5108224671323e-09,
+        2.5958397653624843e-09,
+        1.7335083368763549e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.310611724853516,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7074970",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        24.796918869018555,
+        24.316070556640625,
+        48.93891906738281,
+        25.579275131225586
+      ],
+      "choice_probs": [
+        3.2753865591983455e-11,
+        2.025036215103082e-11,
+        1.0,
+        7.162020976281269e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 23.359643936157227,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_405721",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        51.41435241699219,
+        31.547298431396484,
+        32.11576843261719,
+        29.074182510375977
+      ],
+      "choice_probs": [
+        1.0,
+        2.354225703271595e-09,
+        4.156535560184693e-09,
+        1.985123315728643e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.867053985595703,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7176085",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        26.129169464111328,
+        24.587549209594727,
+        25.78680419921875,
+        46.487327575683594
+      ],
+      "choice_probs": [
+        1.4406692505630758e-09,
+        3.0835223263636635e-10,
+        1.0230030156321845e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.358158111572266,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7009940",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        57.27955627441406,
+        51.30806350708008,
+        39.30323028564453,
+        41.79018020629883
+      ],
+      "choice_probs": [
+        0.997455894947052,
+        0.002543943002820015,
+        1.5555162491409646e-08,
+        1.8704372450883966e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 12.004833221435547,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7186918",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        32.49444580078125,
+        53.15704345703125,
+        32.26832580566406,
+        29.682872772216797
+      ],
+      "choice_probs": [
+        1.062546384211771e-09,
+        1.0,
+        8.475107282635008e-10,
+        6.387004813923625e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.66259765625,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "AKDE&ED_2012_4_4",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        23.545188903808594,
+        21.723758697509766,
+        44.1140251159668,
+        21.29705810546875
+      ],
+      "choice_probs": [
+        1.1669921695656171e-09,
+        1.8881254892910704e-10,
+        1.0,
+        1.232302038189914e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.568836212158203,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_24",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        28.407909393310547,
+        26.950471878051758,
+        27.64546775817871,
+        47.8255729675293
+      ],
+      "choice_probs": [
+        3.6899105992915793e-09,
+        8.591298228388666e-10,
+        1.7214392133979572e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.41766357421875,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "NCEOGA_2013_5_51",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        26.505023956298828,
+        24.67925453186035,
+        45.50748825073242,
+        21.791339874267578
+      ],
+      "choice_probs": [
+        5.5890065908670294e-09,
+        9.003534584550721e-10,
+        1.0,
+        5.0142688612364594e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 19.002464294433594,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7107433",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        32.988616943359375,
+        52.29373550415039,
+        31.68836212158203,
+        33.075538635253906
+      ],
+      "choice_probs": [
+        4.129462993773814e-09,
+        1.0,
+        1.1251231057940458e-09,
+        4.504464357069082e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.305118560791016,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_400061",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        23.011035919189453,
+        23.311325073242188,
+        42.58007049560547,
+        20.775619506835938
+      ],
+      "choice_probs": [
+        3.171584550543116e-09,
+        4.282429078017458e-09,
+        1.0,
+        3.3919328457088227e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 19.26874542236328,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2010_8_17",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        23.102008819580078,
+        45.84840393066406,
+        26.019309997558594,
+        22.536745071411133
+      ],
+      "choice_probs": [
+        1.322409959314541e-10,
+        1.0,
+        2.4453099545240775e-09,
+        7.514069227942954e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.82909393310547,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_400540",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        56.364418029785156,
+        48.332862854003906,
+        47.51847457885742,
+        46.908817291259766
+      ],
+      "choice_probs": [
+        0.9994530081748962,
+        0.0003248645516578108,
+        0.00014388581621460617,
+        7.820727478247136e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": -8.845943450927734,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7072415",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        30.163986206054688,
+        28.948551177978516,
+        38.46637725830078,
+        49.669960021972656
+      ],
+      "choice_probs": [
+        3.3779816721590805e-09,
+        1.001845051362693e-09,
+        1.3625107385450974e-05,
+        0.9999864101409912
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.72140884399414,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_415425",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.02399253845215,
+        50.87934875488281,
+        25.948711395263672,
+        22.93928337097168
+      ],
+      "choice_probs": [
+        1.6049295573083988e-11,
+        1.0,
+        1.488544357219901e-11,
+        7.341483107201063e-13
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 27.940065383911133,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_7",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        50.543556213378906,
+        28.674577713012695,
+        30.902374267578125,
+        26.98038101196289
+      ],
+      "choice_probs": [
+        1.0,
+        3.1799723965164617e-10,
+        2.950822475256132e-09,
+        5.843096839708295e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.64118194580078,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7220500",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        29.541900634765625,
+        24.65076446533203,
+        46.838279724121094,
+        28.447303771972656
+      ],
+      "choice_probs": [
+        3.0780668680563394e-08,
+        2.3125150405700623e-10,
+        1.0,
+        1.0301504538290374e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.390975952148438,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413454",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        29.35041046142578,
+        28.39398193359375,
+        47.3853874206543,
+        26.410232543945312
+      ],
+      "choice_probs": [
+        1.4706490247817783e-08,
+        5.6511573198747556e-09,
+        1.0,
+        7.77330977363988e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -18.991405487060547,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7248273",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.780471801757812,
+        49.774078369140625,
+        31.921451568603516,
+        26.599979400634766
+      ],
+      "choice_probs": [
+        1.0327699112577804e-10,
+        1.0,
+        1.7648293493266465e-08,
+        8.622172420480467e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.17409896850586,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7004708",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        53.38665008544922,
+        34.7054443359375,
+        36.50988006591797,
+        36.10208511352539
+      ],
+      "choice_probs": [
+        1.0,
+        7.706469240531533e-09,
+        4.682868137706464e-08,
+        3.114646673907373e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.68120574951172,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_5_26",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        34.40862274169922,
+        54.57939910888672,
+        44.93903732299805,
+        38.13609313964844
+      ],
+      "choice_probs": [
+        1.7374599536879032e-09,
+        0.9999347925186157,
+        6.504527118522674e-05,
+        7.223282949553322e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -16.44330596923828,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_176873",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        51.99467468261719,
+        31.695838928222656,
+        33.4605827331543,
+        38.490726470947266
+      ],
+      "choice_probs": [
+        0.9999986886978149,
+        1.5287169308209059e-09,
+        8.927822925386408e-09,
+        1.365555135635077e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 13.503948211669922,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7221883",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.735549926757812,
+        25.273365020751953,
+        27.3262939453125,
+        47.358062744140625
+      ],
+      "choice_probs": [
+        6.038573729938435e-08,
+        2.5629351418920976e-10,
+        1.9967021369637905e-09,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 16.622512817382812,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_175648",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        31.82547378540039,
+        52.53235626220703,
+        35.326385498046875,
+        31.56553840637207
+      ],
+      "choice_probs": [
+        1.0165183139676515e-09,
+        1.0,
+        3.369316914358933e-08,
+        7.838387161562821e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.96681785583496,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_177013",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        51.64120864868164,
+        30.761150360107422,
+        32.40533447265625,
+        29.884746551513672
+      ],
+      "choice_probs": [
+        1.0,
+        8.548814989239872e-10,
+        4.42553726998085e-09,
+        3.558676964221519e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.88005828857422,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7190015",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        29.512269973754883,
+        28.404848098754883,
+        30.72719383239746,
+        50.94003677368164
+      ],
+      "choice_probs": [
+        4.943552234237814e-10,
+        1.6333975838556114e-10,
+        1.6659955637265966e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.535188674926758,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10682",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        27.535533905029297,
+        49.82354736328125,
+        31.29339027404785,
+        26.81073570251465
+      ],
+      "choice_probs": [
+        2.0914078802114489e-10,
+        1.0,
+        8.963033870657e-09,
+        1.0131246536149163e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.0128116607666,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "OHAT_2008_5_13",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        40.623409271240234,
+        59.76797866821289,
+        37.37919616699219,
+        44.30089569091797
+      ],
+      "choice_probs": [
+        4.848629941989202e-09,
+        0.9999997615814209,
+        1.890928941206127e-10,
+        1.9174812848632428e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 3.6774864196777344,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2008_5_41",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        29.2262020111084,
+        30.324691772460938,
+        29.966167449951172,
+        47.42789840698242
+      ],
+      "choice_probs": [
+        1.2448118091867855e-08,
+        3.733978104492053e-08,
+        2.608955185223749e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.103206634521484,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7081813",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.337085723876953,
+        52.129940032958984,
+        29.877294540405273,
+        26.358505249023438
+      ],
+      "choice_probs": [
+        6.285006369510793e-12,
+        1.0,
+        2.1667004301839654e-10,
+        6.4210802473707584e-12
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.771434783935547,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7037433",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        29.567792892456055,
+        52.709510803222656,
+        31.33370590209961,
+        29.65262222290039
+      ],
+      "choice_probs": [
+        8.905937098901973e-11,
+        1.0,
+        5.207219655467554e-10,
+        9.694391123193924e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.1417179107666,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7085190",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        44.035911560058594,
+        32.82109069824219,
+        52.83678436279297,
+        28.554489135742188
+      ],
+      "choice_probs": [
+        0.00015057889686431736,
+        2.028753609550904e-09,
+        0.9998494386672974,
+        2.8462154508246407e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.01569366455078,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7075233",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        26.24191665649414,
+        50.36425018310547,
+        29.986173629760742,
+        26.87434959411621
+      ],
+      "choice_probs": [
+        3.3404400773262566e-11,
+        1.0,
+        1.412257200072986e-09,
+        6.287323439657655e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.378076553344727,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213080",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 2,
+      "choice_logits": [
+        35.80656433105469,
+        45.06159973144531,
+        49.677635192871094,
+        35.530147552490234
+      ],
+      "choice_probs": [
+        9.36687683861237e-07,
+        0.00979502685368061,
+        0.9902032613754272,
+        7.104745805008861e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -14.14748764038086,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7100713",
+      "condition": "unlock",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        35.231258392333984,
+        31.920473098754883,
+        51.98112487792969,
+        41.875370025634766
+      ],
+      "choice_probs": [
+        5.316277551514759e-08,
+        1.93977744977758e-09,
+        0.9999591112136841,
+        4.0842158341547474e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 9.954896926879883,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7271653",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        36.19599914550781,
+        54.707923889160156,
+        44.684539794921875,
+        33.96824645996094
+      ],
+      "choice_probs": [
+        9.127544942089116e-09,
+        0.9999556541442871,
+        4.434864240465686e-05,
+        9.83678805077659e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 2.227752685546875,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413544",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        46.56617736816406,
+        41.946083068847656,
+        52.799232482910156,
+        31.856891632080078
+      ],
+      "choice_probs": [
+        0.0019595588091760874,
+        1.9305312889628112e-05,
+        0.998021125793457,
+        8.016718955339286e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 10.8531494140625,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205380",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        49.151710510253906,
+        28.345001220703125,
+        28.7685489654541,
+        26.04557228088379
+      ],
+      "choice_probs": [
+        1.0,
+        9.19943121679978e-10,
+        1.405094152140407e-09,
+        9.228512398706812e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.383161544799805,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_9_6",
+      "condition": "unlock",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        39.07891845703125,
+        55.177696228027344,
+        52.03289794921875,
+        42.42274475097656
+      ],
+      "choice_probs": [
+        9.774007025953324e-08,
+        0.9587005972862244,
+        0.041296616196632385,
+        2.7687133297149558e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 12.754951477050781,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402253",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        46.73290252685547,
+        26.827251434326172,
+        28.596494674682617,
+        23.29784393310547
+      ],
+      "choice_probs": [
+        1.0,
+        2.2650907816057497e-09,
+        1.3287954736540541e-08,
+        6.641763528048017e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.13640785217285,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_42",
+      "condition": "unlock",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        25.28795051574707,
+        23.515783309936523,
+        46.4959716796875,
+        23.090391159057617
+      ],
+      "choice_probs": [
+        6.158478726980832e-10,
+        1.0467211819520372e-10,
+        1.0,
+        6.840463612212133e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 22.980188369750977,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7216755",
+      "condition": "unlock",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        51.89813995361328,
+        33.11360168457031,
+        33.35260009765625,
+        28.903688430786133
+      ],
+      "choice_probs": [
+        1.0,
+        6.9499024313302016e-09,
+        8.826212649637455e-09,
+        1.0318975535161812e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 22.99445152282715,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "CSZ_2008_5_CSZ50776",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        22.937868118286133,
+        18.937637329101562,
+        43.77753448486328,
+        20.983644485473633
+      ],
+      "choice_probs": [
+        8.901186454579602e-10,
+        1.6299329941293905e-11,
+        1.0,
+        1.2610704147597573e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 24.83989715576172,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10170",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        27.622163772583008,
+        51.151031494140625,
+        31.787519454956055,
+        26.43709945678711
+      ],
+      "choice_probs": [
+        6.047036482659252e-11,
+        1.0,
+        3.895234357287336e-09,
+        1.848739390741816e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.528867721557617,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401598",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        32.43115997314453,
+        56.0017204284668,
+        40.36186218261719,
+        36.04999542236328
+      ],
+      "choice_probs": [
+        5.80010171835621e-11,
+        0.9999998807907104,
+        1.6132283064962394e-07,
+        2.163096590734881e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -15.63985824584961,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401146",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        23.11968994140625,
+        20.645959854125977,
+        41.7591438293457,
+        20.96526336669922
+      ],
+      "choice_probs": [
+        8.035040188758558e-09,
+        6.77112310665251e-10,
+        1.0,
+        9.318209537312327e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.793880462646484,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7084193",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        30.43765640258789,
+        51.41538619995117,
+        35.962615966796875,
+        29.554046630859375
+      ],
+      "choice_probs": [
+        7.753318542746968e-10,
+        0.9999997615814209,
+        1.9451231025868765e-07,
+        3.204355947250548e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.452770233154297,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7177940",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        29.917369842529297,
+        44.53744888305664,
+        49.92348861694336,
+        27.398693084716797
+      ],
+      "choice_probs": [
+        2.0392407762415132e-09,
+        0.004559195134788752,
+        0.9954408407211304,
+        1.6429375915283373e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 22.524795532226562,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7223073",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        32.01520919799805,
+        31.478805541992188,
+        35.3983268737793,
+        52.48522186279297
+      ],
+      "choice_probs": [
+        1.2882094280186607e-09,
+        7.534063928282819e-10,
+        3.79538498407328e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.00641632080078,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213448",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        50.852088928222656,
+        28.73185920715332,
+        30.010005950927734,
+        26.12741470336914
+      ],
+      "choice_probs": [
+        1.0,
+        2.4734680970084355e-10,
+        8.879701973718568e-10,
+        1.828986094520868e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.842082977294922,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402159",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        28.07978630065918,
+        30.446430206298828,
+        50.06378936767578,
+        27.243274688720703
+      ],
+      "choice_probs": [
+        2.834449897015645e-10,
+        3.0219633462280626e-09,
+        1.0,
+        1.2279378902579907e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 19.617359161376953,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7267785",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        25.36972427368164,
+        25.104249954223633,
+        24.72107696533203,
+        45.05061340332031
+      ],
+      "choice_probs": [
+        2.8359492532104014e-09,
+        2.1747255107840147e-09,
+        1.4824993455064828e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.680889129638672,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416133",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        52.021331787109375,
+        56.83649444580078,
+        50.800331115722656,
+        43.79029846191406
+      ],
+      "choice_probs": [
+        0.008021685294806957,
+        0.9896103143692017,
+        0.00236587505787611,
+        2.13586258723808e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 13.046195983886719,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7239645",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        53.07238006591797,
+        48.142967224121094,
+        54.14607238769531,
+        55.150550842285156
+      ],
+      "choice_probs": [
+        0.08386985957622528,
+        0.0006064417539164424,
+        0.24541696906089783,
+        0.6701067686080933
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 4.929412841796875,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7247905",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        23.419883728027344,
+        20.838226318359375,
+        44.179473876953125,
+        23.390323638916016
+      ],
+      "choice_probs": [
+        9.6432750673614e-10,
+        7.294995163498186e-11,
+        1.0,
+        9.36239197280031e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.78915023803711,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402067",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        39.551631927490234,
+        34.835853576660156,
+        55.54454040527344,
+        42.908416748046875
+      ],
+      "choice_probs": [
+        1.1333568039617603e-07,
+        1.0146824491741313e-09,
+        0.9999966621398926,
+        3.252368742323597e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 12.636123657226562,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7026600",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        38.219444274902344,
+        56.997283935546875,
+        40.881256103515625,
+        35.314754486083984
+      ],
+      "choice_probs": [
+        6.996612178511441e-09,
+        0.9999998807907104,
+        1.0020698937296402e-07,
+        3.831748807137103e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 16.11602783203125,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_182683",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        30.90106201171875,
+        56.537418365478516,
+        34.46757507324219,
+        39.56208801269531
+      ],
+      "choice_probs": [
+        7.349738873063671e-12,
+        1.0,
+        2.601290571835335e-10,
+        4.243338835863142e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.636356353759766,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7188475",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        24.801349639892578,
+        46.58316421508789,
+        26.876890182495117,
+        24.113861083984375
+      ],
+      "choice_probs": [
+        3.4695896156122785e-10,
+        1.0,
+        2.7648650036127265e-09,
+        1.7446392941433686e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 22.469303131103516,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "ACTAAP_2011_5_2",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        26.718013763427734,
+        23.52605438232422,
+        24.354251861572266,
+        46.470306396484375
+      ],
+      "choice_probs": [
+        2.6405131414719563e-09,
+        1.0850205456325313e-10,
+        2.483816763376723e-10,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.944252014160156,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205450",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        31.2195987701416,
+        28.82330322265625,
+        31.289100646972656,
+        48.15217971801758
+      ],
+      "choice_probs": [
+        4.428671829259656e-08,
+        4.0325107697469775e-09,
+        4.747420945250269e-08,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 16.932580947875977,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7029698",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        33.3895149230957,
+        28.401954650878906,
+        29.65142822265625,
+        50.14288330078125
+      ],
+      "choice_probs": [
+        5.29791002179536e-08,
+        3.6143871229299407e-10,
+        1.26088117724521e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.740928649902344,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416126",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        53.783138275146484,
+        33.175811767578125,
+        31.358129501342773,
+        30.763084411621094
+      ],
+      "choice_probs": [
+        1.0,
+        1.1229278618074545e-09,
+        1.823654005583819e-10,
+        1.0058139737756377e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 22.42500877380371,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7032200",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        29.653804779052734,
+        30.56846809387207,
+        29.62618637084961,
+        48.2156867980957
+      ],
+      "choice_probs": [
+        8.683144869792159e-09,
+        2.1672564187724674e-08,
+        8.446612298484979e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 18.56188201904297,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7103338",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        54.740257263183594,
+        34.362274169921875,
+        34.62999725341797,
+        34.728187561035156
+      ],
+      "choice_probs": [
+        1.0,
+        1.4123893166129164e-09,
+        1.8459718198471364e-09,
+        2.0364256947402737e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.37798309326172,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7074970",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        24.50188446044922,
+        24.48935317993164,
+        48.90399932861328,
+        25.778446197509766
+      ],
+      "choice_probs": [
+        2.5252022695099186e-11,
+        2.4937557227544538e-11,
+        1.0,
+        9.051069616017315e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 23.125553131103516,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_405721",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        51.919864654541016,
+        31.739120483398438,
+        32.12263488769531,
+        29.20183563232422
+      ],
+      "choice_probs": [
+        1.0,
+        1.720339537492066e-09,
+        2.5244824009007516e-09,
+        1.360458690147226e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.180744171142578,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7176085",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        26.954395294189453,
+        24.76549530029297,
+        26.184246063232422,
+        46.88850021362305
+      ],
+      "choice_probs": [
+        2.2015484990589584e-09,
+        2.4666133024986436e-10,
+        1.0191935073677882e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.934104919433594,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7009940",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        56.61516571044922,
+        50.19306945800781,
+        38.63166809082031,
+        41.74576187133789
+      ],
+      "choice_probs": [
+        0.9983770847320557,
+        0.0016226081643253565,
+        1.545826755489088e-08,
+        3.4801229276126833e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 11.5614013671875,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7186918",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        32.42332458496094,
+        53.18922805786133,
+        31.998411178588867,
+        29.47966957092285
+      ],
+      "choice_probs": [
+        9.582585835943291e-10,
+        1.0,
+        6.265347685108225e-10,
+        5.0474215085305474e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.76590347290039,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "AKDE&ED_2012_4_4",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        23.10957145690918,
+        21.132266998291016,
+        43.34779357910156,
+        20.862234115600586
+      ],
+      "choice_probs": [
+        1.624245959952475e-09,
+        2.2486373874031074e-10,
+        1.0,
+        1.7165072141445137e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.238222122192383,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_24",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        28.673431396484375,
+        27.081552505493164,
+        27.638248443603516,
+        48.002777099609375
+      ],
+      "choice_probs": [
+        4.030619837891436e-09,
+        8.204036894277067e-10,
+        1.4315205687509547e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.329345703125,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "NCEOGA_2013_5_51",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        26.561079025268555,
+        24.63292121887207,
+        45.36009216308594,
+        21.753860473632812
+      ],
+      "choice_probs": [
+        6.850028100302552e-09,
+        9.96102533790122e-10,
+        1.0,
+        5.596852495348692e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.799013137817383,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7107433",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        33.686607360839844,
+        52.52955627441406,
+        32.04003143310547,
+        33.623291015625
+      ],
+      "choice_probs": [
+        6.5555822992280355e-09,
+        1.0,
+        1.2633172286058425e-09,
+        6.1533742545805126e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 18.84294891357422,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_400061",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        23.17957305908203,
+        23.88970947265625,
+        42.69007110595703,
+        20.648303985595703
+      ],
+      "choice_probs": [
+        3.3627793882828882e-09,
+        6.840796817897399e-09,
+        1.0,
+        2.675359656034715e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.80036163330078,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2010_8_17",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        23.037189483642578,
+        45.75750732421875,
+        26.09650421142578,
+        22.584308624267578
+      ],
+      "choice_probs": [
+        1.3573484003437386e-10,
+        1.0,
+        2.8929094675334e-09,
+        8.62993843053772e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.66100311279297,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_400540",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        56.99964904785156,
+        48.07545471191406,
+        47.7739143371582,
+        47.376651763916016
+      ],
+      "choice_probs": [
+        0.9997022747993469,
+        0.00013308905181474984,
+        9.844304440775886e-05,
+        6.616923201363534e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": -9.22573471069336,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7072415",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        30.098140716552734,
+        28.711597442626953,
+        37.033905029296875,
+        49.52577209472656
+      ],
+      "choice_probs": [
+        3.6532992186977253e-09,
+        9.130974865101393e-10,
+        3.7570712265733164e-06,
+        0.9999961853027344
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.81417465209961,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_415425",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        25.69319725036621,
+        50.168121337890625,
+        25.742515563964844,
+        22.40596580505371
+      ],
+      "choice_probs": [
+        2.3478779684338313e-11,
+        1.0,
+        2.4665743406093732e-11,
+        8.770999334814511e-13
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 27.762155532836914,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_7",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        50.52943420410156,
+        28.51126480102539,
+        30.418476104736328,
+        27.041156768798828
+      ],
+      "choice_probs": [
+        1.0,
+        2.739242999094671e-10,
+        1.8446836280716639e-09,
+        6.297537491484206e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.110958099365234,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7220500",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        31.433162689208984,
+        24.918819427490234,
+        46.21623992919922,
+        28.459461212158203
+      ],
+      "choice_probs": [
+        3.8000644053681754e-07,
+        5.631805577444027e-10,
+        0.9999996423721313,
+        1.9423559649567324e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 17.756778717041016,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413454",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        29.18120574951172,
+        28.353008270263672,
+        46.777442932128906,
+        25.74715805053711
+      ],
+      "choice_probs": [
+        2.2806114330364835e-08,
+        9.96253124441182e-09,
+        1.0,
+        7.356366071853415e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -18.424434661865234,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7248273",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.755199432373047,
+        49.721412658691406,
+        31.900997161865234,
+        26.74373435974121
+      ],
+      "choice_probs": [
+        1.061451967987459e-10,
+        1.0,
+        1.8226021580858287e-08,
+        1.0493517860199475e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 22.977678298950195,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7004708",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.7974853515625,
+        33.81598663330078,
+        35.106449127197266,
+        34.65134048461914
+      ],
+      "choice_probs": [
+        1.0,
+        5.7074203141382895e-09,
+        2.0743431861092176e-08,
+        1.3159198175571873e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.98149871826172,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_5_26",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        33.486480712890625,
+        54.30331039428711,
+        43.695777893066406,
+        38.400352478027344
+      ],
+      "choice_probs": [
+        9.106573273243157e-10,
+        0.9999752044677734,
+        2.472842243150808e-05,
+        1.240001950009173e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -15.902957916259766,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_176873",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        52.10991668701172,
+        31.835830688476562,
+        33.7436408996582,
+        38.569026947021484
+      ],
+      "choice_probs": [
+        0.9999986886978149,
+        1.5670243991294797e-09,
+        1.05591073662481e-08,
+        1.3160299658920849e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 13.540889739990234,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7221883",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.38399887084961,
+        25.44253921508789,
+        27.570270538330078,
+        47.44199752807617
+      ],
+      "choice_probs": [
+        3.906657397578783e-08,
+        2.7909796695979594e-10,
+        2.343250038450151e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.057998657226562,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_175648",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        33.31151580810547,
+        53.40541076660156,
+        36.487388610839844,
+        32.8070182800293
+      ],
+      "choice_probs": [
+        1.876429900349308e-09,
+        1.0,
+        4.493620053835912e-08,
+        1.1330050231350697e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.598392486572266,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_177013",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        51.693572998046875,
+        30.962770462036133,
+        32.035057067871094,
+        30.05471420288086
+      ],
+      "choice_probs": [
+        1.0,
+        9.92491644424831e-10,
+        2.9001137047401926e-09,
+        4.00279226431266e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.730802536010742,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7190015",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        29.42206382751465,
+        28.21430206298828,
+        30.58368492126465,
+        50.95712661743164
+      ],
+      "choice_probs": [
+        4.4405940036185143e-10,
+        1.3271402032888346e-10,
+        1.4188180630370084e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.74282455444336,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10682",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        28.232175827026367,
+        50.640281677246094,
+        32.05911636352539,
+        27.41802978515625
+      ],
+      "choice_probs": [
+        1.854741082940592e-10,
+        1.0,
+        8.51731041251469e-09,
+        8.216827218632261e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.222251892089844,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "OHAT_2008_5_13",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        40.245689392089844,
+        59.85100173950195,
+        37.19965362548828,
+        44.1866455078125
+      ],
+      "choice_probs": [
+        3.058588049498212e-09,
+        0.9999998807907104,
+        1.4542680948359532e-10,
+        1.5741876779884478e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 3.9409561157226562,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2008_5_41",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        29.472929000854492,
+        30.652996063232422,
+        30.092655181884766,
+        47.7695198059082
+      ],
+      "choice_probs": [
+        1.1321177773027102e-08,
+        3.6845818840447464e-08,
+        2.1039491926444498e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.11652374267578,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7081813",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.70833396911621,
+        52.429664611816406,
+        30.22572135925293,
+        26.99188995361328
+      ],
+      "choice_probs": [
+        6.7509990653302765e-12,
+        1.0,
+        2.2748354588930653e-10,
+        8.964268563560474e-12
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.437774658203125,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7037433",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        30.078317642211914,
+        53.138336181640625,
+        31.62019157409668,
+        29.935705184936523
+      ],
+      "choice_probs": [
+        9.664095218520075e-11,
+        1.0,
+        4.5163597861552773e-10,
+        8.37964073130415e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.06001853942871,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7085190",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        44.042259216308594,
+        32.60915756225586,
+        52.73915100097656,
+        28.469562530517578
+      ],
+      "choice_probs": [
+        0.00016707649047020823,
+        1.8095990261812744e-09,
+        0.9998328685760498,
+        2.882564673067911e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.129993438720703,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7075233",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        26.197961807250977,
+        50.11244201660156,
+        29.48097801208496,
+        26.632108688354492
+      ],
+      "choice_probs": [
+        4.112190449268027e-11,
+        1.0,
+        1.0961476171189588e-09,
+        6.347764675007639e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.6314640045166,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213080",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 2,
+      "choice_logits": [
+        34.62460708618164,
+        47.2906608581543,
+        48.916893005371094,
+        35.07968521118164
+      ],
+      "choice_probs": [
+        5.187575879972428e-07,
+        0.16434696316719055,
+        0.8356517553329468,
+        8.177157155841996e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -13.837207794189453,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7100713",
+      "condition": "distractor",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        35.647438049316406,
+        32.082923889160156,
+        51.71870803833008,
+        42.95209503173828
+      ],
+      "choice_probs": [
+        1.0477759104787765e-07,
+        2.9663309586425157e-09,
+        0.9998440742492676,
+        0.00015582625928800553
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 10.869171142578125,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7271653",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        35.552059173583984,
+        54.38774108886719,
+        42.75566864013672,
+        33.653076171875
+      ],
+      "choice_probs": [
+        6.6033361001416324e-09,
+        0.9999910593032837,
+        8.876694664650131e-06,
+        9.886568230754733e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 1.8989830017089844,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413544",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        46.13230514526367,
+        42.21952819824219,
+        53.12284469604492,
+        31.979328155517578
+      ],
+      "choice_probs": [
+        0.0009196862811222672,
+        1.8379863831796683e-05,
+        0.9990620017051697,
+        6.562659304876206e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 10.903316497802734,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205380",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        48.89004898071289,
+        27.958269119262695,
+        28.052310943603516,
+        25.570236206054688
+      ],
+      "choice_probs": [
+        1.0,
+        8.117896355130938e-10,
+        8.918367155885676e-10,
+        7.453049288841385e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.837738037109375,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_9_6",
+      "condition": "distractor",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        39.312156677246094,
+        55.31158447265625,
+        52.18955993652344,
+        42.438961029052734
+      ],
+      "choice_probs": [
+        1.0784672355157454e-07,
+        0.9577896595001221,
+        0.0422077439725399,
+        2.45901310336194e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 12.872623443603516,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402253",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        47.39921188354492,
+        27.445571899414062,
+        28.840744018554688,
+        23.857192993164062
+      ],
+      "choice_probs": [
+        1.0,
+        2.158958345432893e-09,
+        8.712842003433252e-09,
+        5.968031624448145e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.558467864990234,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_42",
+      "condition": "distractor",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        25.102279663085938,
+        23.468313217163086,
+        46.40842819213867,
+        23.133872985839844
+      ],
+      "choice_probs": [
+        5.58286694651855e-10,
+        1.0895186142168001e-10,
+        1.0,
+        7.798105911005493e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 22.940114974975586,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7216755",
+      "condition": "distractor",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        52.171966552734375,
+        33.33582305908203,
+        33.99267578125,
+        29.10852813720703
+      ],
+      "choice_probs": [
+        1.0,
+        6.600347823848551e-09,
+        1.2730174248076764e-08,
+        9.631101471896386e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 23.063438415527344,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "CSZ_2008_5_CSZ50776",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        23.400236129760742,
+        19.696117401123047,
+        44.514305114746094,
+        21.734664916992188
+      ],
+      "choice_probs": [
+        6.765133453434657e-10,
+        1.665704900399856e-11,
+        1.0,
+        1.2791691317293186e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 24.818187713623047,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10170",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        27.68339729309082,
+        51.12580871582031,
+        31.610591888427734,
+        26.1776065826416
+      ],
+      "choice_probs": [
+        6.593106616215039e-11,
+        1.0,
+        3.3469484961301532e-09,
+        1.4626267211270694e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.442411422729492,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401598",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        32.71215057373047,
+        55.89918518066406,
+        42.81038284301758,
+        36.79119110107422
+      ],
+      "choice_probs": [
+        8.511340243710919e-11,
+        0.9999979734420776,
+        2.068257117571193e-06,
+        5.0292441322596915e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -13.088802337646484,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401146",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        23.579814910888672,
+        21.105283737182617,
+        42.30800247192383,
+        21.368118286132812
+      ],
+      "choice_probs": [
+        7.352778386149339e-09,
+        6.191220314200052e-10,
+        1.0,
+        8.052372657552098e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.939884185791016,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7084193",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        30.59230613708496,
+        51.76717758178711,
+        36.338924407958984,
+        29.80950927734375
+      ],
+      "choice_probs": [
+        6.366050464556849e-10,
+        0.9999997615814209,
+        1.9934010708766436e-07,
+        2.910085505902771e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.428253173828125,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7177940",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        30.036483764648438,
+        43.336456298828125,
+        50.52733612060547,
+        27.46098518371582
+      ],
+      "choice_probs": [
+        1.2606914401303015e-09,
+        0.0007528587593697011,
+        0.9992471933364868,
+        9.595862993094784e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 23.06635093688965,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7223073",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        31.743043899536133,
+        31.216773986816406,
+        35.11212158203125,
+        52.34795379638672
+      ],
+      "choice_probs": [
+        1.1256446885710147e-09,
+        6.650360817594958e-10,
+        3.2701915841926166e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.131179809570312,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213448",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        50.430450439453125,
+        28.460819244384766,
+        30.097484588623047,
+        25.88690185546875
+      ],
+      "choice_probs": [
+        1.0,
+        2.875480409336717e-10,
+        1.4774239609494089e-09,
+        2.1921603421404257e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.332965850830078,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402159",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        28.020214080810547,
+        29.806438446044922,
+        50.1192626953125,
+        27.086910247802734
+      ],
+      "choice_probs": [
+        2.526417686166127e-10,
+        1.5074833603634374e-09,
+        1.0,
+        9.935195721677559e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.312824249267578,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7267785",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        25.049293518066406,
+        25.068140029907227,
+        24.827930450439453,
+        44.049781799316406
+      ],
+      "choice_probs": [
+        5.600061303567827e-09,
+        5.706604078170585e-09,
+        4.48803305630463e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.00048828125,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416133",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        50.78741455078125,
+        52.70502471923828,
+        49.54138946533203,
+        40.66461944580078
+      ],
+      "choice_probs": [
+        0.12357328832149506,
+        0.8408762812614441,
+        0.03554534912109375,
+        4.961928880220512e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 12.0404052734375,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7239645",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.58634567260742,
+        47.77138900756836,
+        52.1090087890625,
+        57.24380874633789
+      ],
+      "choice_probs": [
+        0.009346060454845428,
+        7.577386713819578e-05,
+        0.005798608995974064,
+        0.9847796559333801
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 4.8149566650390625,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7247905",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        23.525646209716797,
+        21.273523330688477,
+        44.32978820800781,
+        23.860408782958984
+      ],
+      "choice_probs": [
+        9.223079522335809e-10,
+        9.70043975700996e-11,
+        1.0,
+        1.2890253309194577e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.469379425048828,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402067",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        38.96310043334961,
+        35.283756256103516,
+        55.67748260498047,
+        44.469478607177734
+      ],
+      "choice_probs": [
+        5.5084594663412645e-08,
+        1.390308868032264e-09,
+        0.9999864101409912,
+        1.3564999790105503e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 11.208003997802734,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7026600",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        39.976654052734375,
+        57.899436950683594,
+        42.4632568359375,
+        36.20585632324219
+      ],
+      "choice_probs": [
+        1.645258684845885e-08,
+        0.9999997615814209,
+        1.9776619808453688e-07,
+        3.78963666003429e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.436180114746094,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_182683",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        30.582374572753906,
+        56.04408645629883,
+        34.19029235839844,
+        39.940696716308594
+      ],
+      "choice_probs": [
+        8.752235915177042e-12,
+        0.9999998807907104,
+        3.228626255236122e-10,
+        1.0148144724553276e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.461711883544922,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7188475",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        24.92733383178711,
+        46.67717742919922,
+        26.779415130615234,
+        24.037521362304688
+      ],
+      "choice_probs": [
+        3.5823083388564214e-10,
+        1.0,
+        2.283030209326853e-09,
+        1.47137135808606e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 22.63965606689453,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "ACTAAP_2011_5_2",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        26.36334228515625,
+        23.240785598754883,
+        24.468753814697266,
+        46.35666275024414
+      ],
+      "choice_probs": [
+        2.074967309084741e-09,
+        9.139072831843009e-11,
+        3.1203400974177953e-10,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 23.115877151489258,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205450",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.832609176635742,
+        28.711912155151367,
+        31.128976821899414,
+        47.95648956298828
+      ],
+      "choice_probs": [
+        3.657574865201241e-08,
+        4.387187502175038e-09,
+        4.919308338457995e-08,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.12388038635254,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7029698",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        32.8370361328125,
+        28.183996200561523,
+        29.15924072265625,
+        49.71614456176758
+      ],
+      "choice_probs": [
+        4.671930398103541e-08,
+        4.4535547472079884e-10,
+        1.18100063062343e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.532148361206055,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416126",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        53.61868667602539,
+        33.373199462890625,
+        31.71640968322754,
+        30.8953914642334
+      ],
+      "choice_probs": [
+        1.0,
+        1.6124884760770897e-09,
+        3.0758273705799866e-10,
+        1.3533131559828604e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 21.90227699279785,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7032200",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.71910858154297,
+        32.57027816772461,
+        31.098154067993164,
+        49.33384323120117
+      ],
+      "choice_probs": [
+        8.236136217476542e-09,
+        5.2441635034483625e-08,
+        1.203208377376086e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 18.614734649658203,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7103338",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        54.85837936401367,
+        34.57294464111328,
+        35.1092643737793,
+        34.750511169433594
+      ],
+      "choice_probs": [
+        1.0,
+        1.5493432092839043e-09,
+        2.648916863634554e-09,
+        1.850392283841984e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.28543472290039,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7074970",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        24.82974624633789,
+        24.37255096435547,
+        48.98615264892578,
+        25.6287841796875
+      ],
+      "choice_probs": [
+        3.228538617006116e-11,
+        2.043848250365965e-11,
+        1.0,
+        7.178335703628136e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 23.35736846923828,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_405721",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        51.38764190673828,
+        31.54358673095703,
+        32.10969543457031,
+        29.070350646972656
+      ],
+      "choice_probs": [
+        1.0,
+        2.4089974459684527e-09,
+        4.2432071190035e-09,
+        2.0310637893761196e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.84405517578125,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7176085",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        26.135501861572266,
+        24.585573196411133,
+        25.789112091064453,
+        46.48562240600586
+      ],
+      "choice_probs": [
+        1.452295395054648e-09,
+        3.0826874386491454e-10,
+        1.0271167250053281e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.350120544433594,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7009940",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        57.21477508544922,
+        51.37896728515625,
+        39.30863571166992,
+        41.819602966308594
+      ],
+      "choice_probs": [
+        0.997087299823761,
+        0.00291255465708673,
+        1.6679985392897834e-08,
+        2.054446781585284e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 12.070331573486328,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7186918",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        32.482505798339844,
+        53.13219451904297,
+        32.23883056640625,
+        29.6632022857666
+      ],
+      "choice_probs": [
+        1.076351563433775e-09,
+        1.0,
+        8.435820930685622e-10,
+        6.420165094001007e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.649688720703125,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "AKDE&ED_2012_4_4",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        23.526508331298828,
+        21.707225799560547,
+        44.09990692138672,
+        21.286548614501953
+      ],
+      "choice_probs": [
+        1.1616800854596931e-09,
+        1.8835717707776922e-10,
+        1.0,
+        1.2367570856319787e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.57339859008789,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_24",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        28.423194885253906,
+        26.957530975341797,
+        27.645448684692383,
+        47.808021545410156
+      ],
+      "choice_probs": [
+        3.813087179338481e-09,
+        8.805357554209081e-10,
+        1.7518861916698825e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.38482666015625,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "NCEOGA_2013_5_51",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        26.543949127197266,
+        24.713171005249023,
+        45.528961181640625,
+        21.805770874023438
+      ],
+      "choice_probs": [
+        5.687403881182718e-09,
+        9.116270516251745e-10,
+        1.0,
+        4.9790827710838315e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.98501205444336,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7107433",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        33.024681091308594,
+        52.306175231933594,
+        31.701335906982422,
+        33.11972427368164
+      ],
+      "choice_probs": [
+        4.228180472409804e-09,
+        1.0,
+        1.125724180539578e-09,
+        4.649757023855727e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.281494140625,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_400061",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        22.987354278564453,
+        23.299545288085938,
+        42.580963134765625,
+        20.768415451049805
+      ],
+      "choice_probs": [
+        3.094594802632855e-09,
+        4.228502881176155e-09,
+        1.0,
+        3.3645802810511327e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 19.281417846679688,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2010_8_17",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        23.092601776123047,
+        45.845359802246094,
+        26.008161544799805,
+        22.53339385986328
+      ],
+      "choice_probs": [
+        1.314022363141376e-10,
+        1.0,
+        2.4255726316368964e-09,
+        7.511762045719905e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.83719825744629,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_400540",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        56.290748596191406,
+        48.43621063232422,
+        47.5683708190918,
+        47.199462890625
+      ],
+      "choice_probs": [
+        0.9993368983268738,
+        0.00038773001870140433,
+        0.0001627913734409958,
+        0.00011256845755269751
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": -8.72237777709961,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7072415",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        30.23033905029297,
+        29.012344360351562,
+        38.62342071533203,
+        49.696983337402344
+      ],
+      "choice_probs": [
+        3.5134768427980134e-09,
+        1.0393664817698323e-09,
+        1.5516943676630035e-05,
+        0.9999845027923584
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.68463897705078,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_415425",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.033367156982422,
+        50.856014251708984,
+        25.92679214477539,
+        22.944677352905273
+      ],
+      "choice_probs": [
+        1.658293294348745e-11,
+        1.0,
+        1.4906525666602555e-11,
+        7.55545149014325e-13
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 27.91133689880371,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_7",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        50.517486572265625,
+        28.666152954101562,
+        30.893325805664062,
+        26.975433349609375
+      ],
+      "choice_probs": [
+        1.0,
+        3.236580448096049e-10,
+        3.0014788432453088e-09,
+        5.967826233188589e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.624160766601562,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7220500",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        29.535146713256836,
+        24.63982391357422,
+        46.81671142578125,
+        28.445087432861328
+      ],
+      "choice_probs": [
+        3.124005942822805e-08,
+        2.337222915205217e-10,
+        1.0,
+        1.050279951897437e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.371623992919922,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413454",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        29.295536041259766,
+        28.39690399169922,
+        47.37953186035156,
+        26.363012313842773
+      ],
+      "choice_probs": [
+        1.4002978332428029e-08,
+        5.700979688327834e-09,
+        1.0,
+        7.45832895443499e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -18.982627868652344,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7248273",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.759384155273438,
+        49.74882125854492,
+        31.902587890625,
+        26.580455780029297
+      ],
+      "choice_probs": [
+        1.0370849318208641e-10,
+        1.0,
+        1.7761488280143567e-08,
+        8.671750123534494e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.168365478515625,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7004708",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        53.28730392456055,
+        34.621734619140625,
+        36.418006896972656,
+        35.96576690673828
+      ],
+      "choice_probs": [
+        1.0,
+        7.827917869462908e-09,
+        4.7179941731201325e-08,
+        3.0015947061201587e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.665569305419922,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_5_26",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        34.367713928222656,
+        54.49392318725586,
+        44.96144485473633,
+        37.99067687988281
+      ],
+      "choice_probs": [
+        1.8166315118861576e-09,
+        0.9999274015426636,
+        7.245456799864769e-05,
+        6.802987684295658e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -16.503246307373047,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_176873",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        51.97820281982422,
+        31.66468620300293,
+        33.45286560058594,
+        38.309165954589844
+      ],
+      "choice_probs": [
+        0.9999988079071045,
+        1.5064381964080553e-09,
+        9.006328127725283e-09,
+        1.1577432132980903e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 13.669036865234375,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7221883",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.6995906829834,
+        25.263473510742188,
+        27.297225952148438,
+        47.31382369995117
+      ],
+      "choice_probs": [
+        6.088779969104507e-08,
+        2.652494890398316e-10,
+        2.02722549857981e-09,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 16.614233016967773,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_175648",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        31.743438720703125,
+        52.45654296875,
+        35.246212005615234,
+        31.489795684814453
+      ],
+      "choice_probs": [
+        1.0102133574108052e-09,
+        1.0,
+        3.3546577071774664e-08,
+        7.838940607740597e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.966747283935547,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_177013",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        51.62331771850586,
+        30.748353958129883,
+        32.40987014770508,
+        29.881000518798828
+      ],
+      "choice_probs": [
+        1.0,
+        8.592478395463843e-10,
+        4.525908536834322e-09,
+        3.6093719679719527e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.874963760375977,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7190015",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        29.532150268554688,
+        28.418149948120117,
+        30.753623962402344,
+        50.97032165527344
+      ],
+      "choice_probs": [
+        4.892383165255865e-10,
+        1.6058918084205231e-10,
+        1.6595860241608307e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.55217170715332,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10682",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        27.57329559326172,
+        49.850250244140625,
+        31.34745216369629,
+        26.81777572631836
+      ],
+      "choice_probs": [
+        2.1146646933534186e-10,
+        1.0,
+        9.211638563044744e-09,
+        9.933983496912546e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.032474517822266,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "OHAT_2008_5_13",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        40.623939514160156,
+        59.73662567138672,
+        37.3682861328125,
+        44.354270935058594
+      ],
+      "choice_probs": [
+        5.005710956851317e-09,
+        0.9999997615814209,
+        1.929983117765488e-10,
+        2.0870271555395448e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 3.7303314208984375,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2008_5_41",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        29.21330451965332,
+        30.31103515625,
+        29.965892791748047,
+        47.41302490234375
+      ],
+      "choice_probs": [
+        1.2472740174018782e-08,
+        3.738524512186814e-08,
+        2.6473221836909033e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.10198974609375,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7081813",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.343761444091797,
+        52.133262634277344,
+        29.885868072509766,
+        26.35967254638672
+      ],
+      "choice_probs": [
+        6.3061157858090855e-12,
+        1.0,
+        2.1781074166504766e-10,
+        6.40725580230983e-12
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.773590087890625,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7037433",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        29.540634155273438,
+        52.65697479248047,
+        31.29538345336914,
+        29.613250732421875
+      ],
+      "choice_probs": [
+        9.134838024893455e-11,
+        1.0,
+        5.281761139563912e-10,
+        9.822856417152082e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.11634063720703,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7085190",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        43.95167541503906,
+        32.77660369873047,
+        52.78192901611328,
+        28.513721466064453
+      ],
+      "choice_probs": [
+        0.00014621975424233824,
+        2.049906688839087e-09,
+        0.9998537302017212,
+        2.886608313490413e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.005325317382812,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7075233",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        26.21170997619629,
+        50.310691833496094,
+        29.9636287689209,
+        26.853679656982422
+      ],
+      "choice_probs": [
+        3.419362709644602e-11,
+        1.0,
+        1.4567425044020865e-09,
+        6.497541393812867e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.347063064575195,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213080",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 2,
+      "choice_logits": [
+        35.71476745605469,
+        45.20680236816406,
+        49.54991912841797,
+        35.52480697631836
+      ],
+      "choice_probs": [
+        9.679691856945283e-07,
+        0.012829208746552467,
+        0.9871690273284912,
+        8.005025620150263e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -14.02511215209961,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7100713",
+      "condition": "near_miss",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        35.26848602294922,
+        31.9235782623291,
+        51.99531555175781,
+        41.858863830566406
+      ],
+      "choice_probs": [
+        5.4401770199774546e-08,
+        1.918395220457114e-09,
+        0.9999604225158691,
+        3.960753383580595e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 9.935285568237305,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7271653",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        36.191246032714844,
+        54.709434509277344,
+        44.48155975341797,
+        33.96562194824219
+      ],
+      "choice_probs": [
+        9.070626028062634e-09,
+        0.9999638795852661,
+        3.614720844780095e-05,
+        9.796276012608018e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 2.2256240844726562,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413544",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        46.67803192138672,
+        41.94280242919922,
+        52.75191879272461,
+        31.867055892944336
+      ],
+      "choice_probs": [
+        0.0022968731354922056,
+        2.01675411517499e-05,
+        0.9976829290390015,
+        8.488126868044787e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 10.80911636352539,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205380",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        49.1116943359375,
+        28.335975646972656,
+        28.76276397705078,
+        26.056846618652344
+      ],
+      "choice_probs": [
+        1.0,
+        9.488991814521341e-10,
+        1.454024900482409e-09,
+        9.714196114174456e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.34893035888672,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_9_6",
+      "condition": "near_miss",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        39.05518341064453,
+        55.23162078857422,
+        52.1086311340332,
+        42.52740478515625
+      ],
+      "choice_probs": [
+        9.035458958805975e-08,
+        0.9578283429145813,
+        0.04216873273253441,
+        2.9101595373504097e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 12.704216003417969,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402253",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        46.65381622314453,
+        26.79572105407715,
+        28.568378448486328,
+        23.275066375732422
+      ],
+      "choice_probs": [
+        1.0,
+        2.375411645161307e-09,
+        1.3982801583267701e-08,
+        7.026482867766859e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.085437774658203,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_42",
+      "condition": "near_miss",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        25.306753158569336,
+        23.52323341369629,
+        46.509056091308594,
+        23.09851837158203
+      ],
+      "choice_probs": [
+        6.19379547650567e-10,
+        1.0408401918127197e-10,
+        1.0,
+        6.806638586098757e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 22.985822677612305,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7216755",
+      "condition": "near_miss",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        51.84935760498047,
+        33.04243850708008,
+        33.30084228515625,
+        28.864425659179688
+      ],
+      "choice_probs": [
+        1.0,
+        6.796085028071275e-09,
+        8.799990069974228e-09,
+        1.041767713760855e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 22.98493194580078,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "CSZ_2008_5_CSZ50776",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        24.434959411621094,
+        21.26162338256836,
+        45.41992950439453,
+        22.461124420166016
+      ],
+      "choice_probs": [
+        7.697386616989377e-10,
+        3.222411573688966e-11,
+        1.0,
+        1.0693445434695192e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 24.158306121826172,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10170",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        28.311279296875,
+        52.28416442871094,
+        32.666385650634766,
+        27.753997802734375
+      ],
+      "choice_probs": [
+        3.878897203435372e-11,
+        1.0,
+        3.0206954715339407e-09,
+        2.2216927950124976e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.972885131835938,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401598",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        33.157772064208984,
+        54.623390197753906,
+        49.41918182373047,
+        37.40438461303711
+      ],
+      "choice_probs": [
+        4.73392436362019e-10,
+        0.9945366382598877,
+        0.005463385488837957,
+        3.3075142624738874e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -5.2042083740234375,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_401146",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        24.030006408691406,
+        21.723678588867188,
+        42.265830993652344,
+        22.066539764404297
+      ],
+      "choice_probs": [
+        1.203045396636071e-08,
+        1.198551147219007e-09,
+        1.0,
+        1.6887263809550745e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.199291229248047,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7084193",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        30.969030380249023,
+        52.634010314941406,
+        36.76019287109375,
+        30.452804565429688
+      ],
+      "choice_probs": [
+        3.8995878748337987e-10,
+        0.9999998807907104,
+        1.276699350682975e-07,
+        2.327151804593086e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.873817443847656,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7177940",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        31.335670471191406,
+        50.562103271484375,
+        49.145118713378906,
+        29.88481903076172
+      ],
+      "choice_probs": [
+        3.5957501420824656e-09,
+        0.8048652410507202,
+        0.19513475894927979,
+        8.427383790809984e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.260299682617188,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7223073",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        32.849491119384766,
+        32.51868438720703,
+        36.4402961730957,
+        53.79629135131836
+      ],
+      "choice_probs": [
+        7.996874273885624e-10,
+        5.744506537119776e-10,
+        2.8999270540452926e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 21.277606964111328,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213448",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        51.59187698364258,
+        29.108905792236328,
+        30.778179168701172,
+        26.640785217285156
+      ],
+      "choice_probs": [
+        1.0,
+        1.7209557390263086e-10,
+        9.135365242052274e-10,
+        1.458406485854713e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.813697814941406,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402159",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        28.28434181213379,
+        29.426454544067383,
+        50.19441223144531,
+        27.162906646728516
+      ],
+      "choice_probs": [
+        3.051949526433617e-10,
+        9.56292156573113e-10,
+        1.0,
+        9.943613293872389e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.76795768737793,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7267785",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        25.578340530395508,
+        25.572526931762695,
+        25.909400939941406,
+        45.716087341308594
+      ],
+      "choice_probs": [
+        1.795922854874732e-09,
+        1.7855124045951243e-09,
+        2.500721851816934e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.137746810913086,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416133",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        52.6428337097168,
+        50.32460403442383,
+        52.035709381103516,
+        40.41903305053711
+      ],
+      "choice_probs": [
+        0.6085063219070435,
+        0.05990605801343918,
+        0.3315846025943756,
+        2.9890691166656325e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 9.905570983886719,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7239645",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        56.84629440307617,
+        49.72377395629883,
+        50.34592056274414,
+        55.01242446899414
+      ],
+      "choice_probs": [
+        0.8605085015296936,
+        0.0006941987667232752,
+        0.0012932387180626392,
+        0.13750408589839935
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 7.122520446777344,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7247905",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        23.911022186279297,
+        21.51703453063965,
+        44.68456268310547,
+        24.44159507751465
+      ],
+      "choice_probs": [
+        9.50968304103128e-10,
+        8.679013757673104e-11,
+        1.0,
+        1.6165564442616187e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.24296760559082,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402067",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        44.29804992675781,
+        39.718631744384766,
+        57.466304779052734,
+        48.61791229248047
+      ],
+      "choice_probs": [
+        1.9100132249150192e-06,
+        1.9598386913344257e-08,
+        0.9998544454574585,
+        0.00014359151828102767
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 8.848392486572266,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7026600",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        39.56941604614258,
+        58.09636306762695,
+        42.118080139160156,
+        36.51643371582031
+      ],
+      "choice_probs": [
+        8.99185170766259e-09,
+        0.9999998807907104,
+        1.1500582530743486e-07,
+        4.2457626303615825e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 15.978282928466797,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_182683",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        31.28365707397461,
+        55.76526641845703,
+        34.788753509521484,
+        45.76314926147461
+      ],
+      "choice_probs": [
+        2.3321285874677855e-11,
+        0.9999547004699707,
+        7.762409048872598e-10,
+        4.530186197371222e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 24.481609344482422,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7188475",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        25.94961929321289,
+        47.961612701416016,
+        28.14522361755371,
+        25.53400421142578
+      ],
+      "choice_probs": [
+        2.7562127580260665e-10,
+        1.0,
+        2.4765753892097564e-09,
+        1.818919181939549e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 22.427608489990234,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "ACTAAP_2011_5_2",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        27.06130027770996,
+        23.55933380126953,
+        24.686222076416016,
+        46.06211853027344
+      ],
+      "choice_probs": [
+        5.598213892454851e-09,
+        1.6871931629580672e-10,
+        5.20674336978999e-10,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.502784729003906,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205450",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        32.02246856689453,
+        29.729965209960938,
+        32.192108154296875,
+        49.178916931152344
+      ],
+      "choice_probs": [
+        3.540374038379923e-08,
+        3.5762472982980853e-09,
+        4.194910019350573e-08,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.156448364257812,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7029698",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        34.945823669433594,
+        29.176725387573242,
+        30.013347625732422,
+        51.29610824584961
+      ],
+      "choice_probs": [
+        7.92796228665793e-08,
+        2.4755633654116593e-10,
+        5.714976825110796e-10,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.119382858276367,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_416126",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        54.708457946777344,
+        34.32734298706055,
+        32.27093505859375,
+        31.630634307861328
+      ],
+      "choice_probs": [
+        1.0,
+        1.4079728494209576e-09,
+        1.8009747859704106e-10,
+        9.493548308592281e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 22.437522888183594,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7032200",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        31.866579055786133,
+        33.221710205078125,
+        32.54010009765625,
+        50.800872802734375
+      ],
+      "choice_probs": [
+        5.983299189438185e-09,
+        2.3198861498485712e-08,
+        1.1734029747856312e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 18.934293746948242,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7103338",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        54.80302047729492,
+        34.399227142333984,
+        34.79640197753906,
+        34.3431510925293
+      ],
+      "choice_probs": [
+        1.0,
+        1.3764015482919945e-09,
+        2.0475570128297704e-09,
+        1.301342589243859e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.403793334960938,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7074970",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        25.455326080322266,
+        26.596172332763672,
+        51.07703399658203,
+        28.167951583862305
+      ],
+      "choice_probs": [
+        7.458193784781741e-12,
+        2.3339786700549148e-11,
+        1.0,
+        1.123859269536176e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 22.909082412719727,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_405721",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.029319763183594,
+        31.689006805419922,
+        32.266639709472656,
+        29.341886520385742
+      ],
+      "choice_probs": [
+        1.0,
+        1.4666090564219303e-09,
+        2.613226968151139e-09,
+        1.4027262684734865e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.340312957763672,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7176085",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        27.38610076904297,
+        26.00786018371582,
+        27.582870483398438,
+        47.846153259277344
+      ],
+      "choice_probs": [
+        1.3011043353827745e-09,
+        3.279063687244843e-10,
+        1.5840472267214523e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.460052490234375,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7009940",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        57.65428161621094,
+        53.39776611328125,
+        40.57372283935547,
+        43.81809997558594
+      ],
+      "choice_probs": [
+        0.9860255122184753,
+        0.013973556458950043,
+        3.766134071270244e-08,
+        9.658525641498272e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 12.824043273925781,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7186918",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        32.544395446777344,
+        53.714534759521484,
+        32.06097412109375,
+        29.900890350341797
+      ],
+      "choice_probs": [
+        6.396248530826654e-10,
+        1.0,
+        3.9443739940914213e-10,
+        4.548473403476194e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 21.17013931274414,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "AKDE&ED_2012_4_4",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        23.893428802490234,
+        22.537914276123047,
+        45.249332427978516,
+        22.07886505126953
+      ],
+      "choice_probs": [
+        5.31188815156014e-10,
+        1.369482305335623e-10,
+        1.0,
+        8.653541772041251e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 21.35590362548828,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_24",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        28.498037338256836,
+        27.284603118896484,
+        27.76803207397461,
+        47.961666107177734
+      ],
+      "choice_probs": [
+        3.5241423113063775e-09,
+        1.0472868128275081e-09,
+        1.6983069395237749e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 19.4636287689209,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "NCEOGA_2013_5_51",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        27.357290267944336,
+        25.64749526977539,
+        46.177391052246094,
+        22.994508743286133
+      ],
+      "choice_probs": [
+        6.707089550417322e-09,
+        1.2133317683904465e-09,
+        1.0,
+        8.54677231765244e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.820100784301758,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7107433",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        34.210235595703125,
+        53.21087646484375,
+        32.570377349853516,
+        34.0218505859375
+      ],
+      "choice_probs": [
+        5.5992068759280755e-09,
+        1.0,
+        1.0862883925710776e-09,
+        4.6377994777913045e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.000640869140625,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_400061",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        24.42434310913086,
+        25.05948257446289,
+        44.0897216796875,
+        22.376174926757812
+      ],
+      "choice_probs": [
+        2.8802793483606592e-09,
+        5.43590905621727e-09,
+        1.0,
+        3.714723528780439e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 19.03023910522461,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2010_8_17",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        23.56072998046875,
+        46.19489669799805,
+        26.399635314941406,
+        22.970043182373047
+      ],
+      "choice_probs": [
+        1.4794705738285785e-10,
+        1.0,
+        2.5294564220956772e-09,
+        8.195477629868719e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 19.79526138305664,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_400540",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 0,
+      "choice_logits": [
+        57.962059020996094,
+        48.31840515136719,
+        48.347801208496094,
+        47.158775329589844
+      ],
+      "choice_probs": [
+        0.9998481273651123,
+        6.482587923528627e-05,
+        6.675978511339054e-05,
+        2.0329540348029695e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": -9.6142578125,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7072415",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        31.355894088745117,
+        30.753528594970703,
+        41.07763671875,
+        51.559295654296875
+      ],
+      "choice_probs": [
+        1.6817522929812867e-09,
+        9.207845597103415e-10,
+        2.8045373255736195e-05,
+        0.9999719858169556
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 20.805767059326172,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_415425",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        25.597129821777344,
+        51.75639724731445,
+        26.342060089111328,
+        23.296276092529297
+      ],
+      "choice_probs": [
+        4.3568690322182135e-12,
+        1.0,
+        9.176849384562313e-12,
+        4.3644189824665336e-13
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 28.460121154785156,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_7",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        51.00708770751953,
+        29.10701560974121,
+        31.210988998413086,
+        27.81195068359375
+      ],
+      "choice_probs": [
+        1.0,
+        3.0826166619313256e-10,
+        2.527339448832322e-09,
+        8.442672949637853e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.796098709106445,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7220500",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 3,
+      "choice_logits": [
+        30.182628631591797,
+        24.715158462524414,
+        46.272396087646484,
+        28.011478424072266
+      ],
+      "choice_probs": [
+        1.0287331519975851e-07,
+        4.343207737900201e-10,
+        0.9999998807907104,
+        1.1732327109825746e-08
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 18.26091766357422,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413454",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        29.90391731262207,
+        29.95121192932129,
+        48.531700134277344,
+        27.717220306396484
+      ],
+      "choice_probs": [
+        8.12936740146597e-09,
+        8.523079131350642e-09,
+        1.0,
+        9.128223732446372e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -18.580488204956055,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7248273",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        26.615337371826172,
+        50.589210510253906,
+        31.73116683959961,
+        26.920169830322266
+      ],
+      "choice_probs": [
+        3.875066934000415e-11,
+        1.0,
+        6.4573706382020646e-09,
+        5.25613164104044e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.66904067993164,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7004708",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        53.43418884277344,
+        34.04374694824219,
+        35.97797775268555,
+        34.68174743652344
+      ],
+      "choice_probs": [
+        1.0,
+        3.7917358142181e-09,
+        2.6233960781496535e-08,
+        7.176590433033425e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 19.39044189453125,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_5_26",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        34.46406173706055,
+        56.63005065917969,
+        44.38685607910156,
+        40.604942321777344
+      ],
+      "choice_probs": [
+        2.362822992818536e-10,
+        0.9999951124191284,
+        4.817769422515994e-06,
+        1.0974424924370396e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": -16.025108337402344,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_176873",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        51.25676345825195,
+        31.574251174926758,
+        32.95615005493164,
+        41.475494384765625
+      ],
+      "choice_probs": [
+        0.9999434947967529,
+        2.8311897271038333e-09,
+        1.1275091971185702e-08,
+        5.649685408570804e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 9.781269073486328,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7221883",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        30.886157989501953,
+        25.48769760131836,
+        28.411697387695312,
+        47.38515853881836
+      ],
+      "choice_probs": [
+        6.832428312009142e-08,
+        3.090676325978592e-10,
+        5.753478138359469e-09,
+        0.9999998807907104
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 16.499000549316406,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_175648",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        34.11661911010742,
+        54.09696960449219,
+        37.256256103515625,
+        33.538177490234375
+      ],
+      "choice_probs": [
+        2.1020547524841504e-09,
+        1.0,
+        4.854797097664232e-08,
+        1.1787726350576122e-09
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 20.558792114257812,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_177013",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 1,
+      "choice_logits": [
+        52.40861892700195,
+        31.707836151123047,
+        32.76683807373047,
+        30.82006072998047
+      ],
+      "choice_probs": [
+        1.0,
+        1.0227377833516016e-09,
+        2.9490556663347434e-09,
+        4.209284587552986e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.700782775878906,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7190015",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        30.761842727661133,
+        29.650075912475586,
+        32.17174530029297,
+        52.264122009277344
+      ],
+      "choice_probs": [
+        4.5885850674665107e-10,
+        1.5095398542275262e-10,
+        1.8792809530765453e-09,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 22.614046096801758,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_LBS10682",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        28.38611602783203,
+        51.25197219848633,
+        32.27104949951172,
+        28.026803970336914
+      ],
+      "choice_probs": [
+        1.173504765583644e-10,
+        1.0,
+        5.710708794737229e-09,
+        8.192899136894027e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 23.225168228149414,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "OHAT_2008_5_13",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 0,
+      "choice_logits": [
+        40.458526611328125,
+        60.30201721191406,
+        37.854244232177734,
+        44.48371887207031
+      ],
+      "choice_probs": [
+        2.4103579132628283e-09,
+        0.9999998807907104,
+        1.7826086440297928e-10,
+        1.3495851192146802e-07
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 4.0251922607421875,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "MDSA_2008_5_41",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        30.36001205444336,
+        31.492691040039062,
+        31.32907485961914,
+        49.227962493896484
+      ],
+      "choice_probs": [
+        6.393714890862157e-09,
+        1.984584052650007e-08,
+        1.6850464135131915e-08,
+        1.0
+      ],
+      "choice_mass": 1.0,
+      "prediction": 3,
+      "logit_difference": 17.735271453857422,
+      "top_token_id": 35,
+      "top_token": "D",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7081813",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        27.76352310180664,
+        53.60423278808594,
+        31.476036071777344,
+        28.237445831298828
+      ],
+      "choice_probs": [
+        5.991318118708788e-12,
+        1.0,
+        2.4538404641560874e-10,
+        9.623751448528672e-12
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 25.36678695678711,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7037433",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 0,
+      "choice_logits": [
+        30.079402923583984,
+        54.20628356933594,
+        32.00228500366211,
+        30.329097747802734
+      ],
+      "choice_probs": [
+        3.325285186095428e-11,
+        1.0,
+        2.2747095873576484e-10,
+        4.268447748034809e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 24.126880645751953,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7085190",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        45.38942337036133,
+        34.71368408203125,
+        55.61065673828125,
+        31.16533851623535
+      ],
+      "choice_probs": [
+        3.638806447270326e-05,
+        8.405127149835323e-10,
+        0.999963641166687,
+        2.418340354359838e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 20.89697265625,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7075233",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 2,
+      "choice_logits": [
+        25.753665924072266,
+        50.613929748535156,
+        29.18183708190918,
+        26.73497772216797
+      ],
+      "choice_probs": [
+        1.5970723007963095e-11,
+        1.0,
+        4.922213192593006e-10,
+        4.260915231757423e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 21.432092666625977,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7213080",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 2,
+      "choice_logits": [
+        37.85612487792969,
+        48.60268783569336,
+        50.891910552978516,
+        37.59375762939453
+      ],
+      "choice_probs": [
+        1.9801827875198796e-06,
+        0.09201916307210922,
+        0.9079774022102356,
+        1.523212858955958e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": -13.298152923583984,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7100713",
+      "condition": "neutral",
+      "answer": 3,
+      "wrong": 1,
+      "choice_logits": [
+        37.220916748046875,
+        33.21239471435547,
+        52.756526947021484,
+        42.63401794433594
+      ],
+      "choice_probs": [
+        1.7904108062793966e-07,
+        3.251424463002195e-09,
+        0.9999595880508423,
+        4.016360253444873e-05
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 9.421623229980469,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7271653",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        37.172149658203125,
+        56.01427459716797,
+        43.08184814453125,
+        35.261070251464844
+      ],
+      "choice_probs": [
+        6.560970433611146e-09,
+        0.999997615814209,
+        2.4183409550460055e-06,
+        9.705029002660126e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 1.9110794067382812,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_413544",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        46.255043029785156,
+        44.48367691040039,
+        55.039764404296875,
+        33.86603546142578
+      ],
+      "choice_probs": [
+        0.00015302636893466115,
+        2.602985296107363e-05,
+        0.9998210072517395,
+        6.372188887660002e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 10.556087493896484,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7205380",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        49.71575164794922,
+        28.92599105834961,
+        29.047191619873047,
+        26.75747299194336
+      ],
+      "choice_probs": [
+        1.0,
+        9.35667876511559e-10,
+        1.0562298813354687e-09,
+        1.0699076347098213e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 20.668560028076172,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "MCAS_2004_9_6",
+      "condition": "neutral",
+      "answer": 1,
+      "wrong": 3,
+      "choice_logits": [
+        40.489681243896484,
+        56.098514556884766,
+        52.849822998046875,
+        43.42071533203125
+      ],
+      "choice_probs": [
+        1.6018655912830582e-07,
+        0.9626230001449585,
+        0.03737381473183632,
+        3.0030184916540748e-06
+      ],
+      "choice_mass": 1.0,
+      "prediction": 1,
+      "logit_difference": 12.677799224853516,
+      "top_token_id": 33,
+      "top_token": "B",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_SC_402253",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 2,
+      "choice_logits": [
+        48.69471740722656,
+        28.624711990356445,
+        30.0765438079834,
+        25.087600708007812
+      ],
+      "choice_probs": [
+        1.0,
+        1.921796499715356e-09,
+        8.207860169306969e-09,
+        5.591901247603559e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 18.618173599243164,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_42",
+      "condition": "neutral",
+      "answer": 2,
+      "wrong": 1,
+      "choice_logits": [
+        24.893585205078125,
+        23.84299087524414,
+        46.70018768310547,
+        23.546125411987305
+      ],
+      "choice_probs": [
+        3.38464339888489e-10,
+        1.1837107682932668e-10,
+        1.0,
+        8.796674499933488e-11
+      ],
+      "choice_mass": 1.0,
+      "prediction": 2,
+      "logit_difference": 22.857196807861328,
+      "top_token_id": 34,
+      "top_token": "C",
+      "top_is_choice": true
+    },
+    {
+      "id": "Mercury_7216755",
+      "condition": "neutral",
+      "answer": 0,
+      "wrong": 3,
+      "choice_logits": [
+        52.17578125,
+        33.44934844970703,
+        33.55208206176758,
+        29.249202728271484
+      ],
+      "choice_probs": [
+        1.0,
+        7.365692056282569e-09,
+        8.162632347818999e-09,
+        1.1043670838928321e-10
+      ],
+      "choice_mass": 1.0,
+      "prediction": 0,
+      "logit_difference": 22.926578521728516,
+      "top_token_id": 32,
+      "top_token": "A",
+      "top_is_choice": true
+    }
+  ],
+  "summary": {
+    "ordinary": {
+      "n": 64,
+      "correct": 53,
+      "valid_top": 64,
+      "accuracy": 0.828125,
+      "valid_top_rate": 1.0
+    },
+    "unlock": {
+      "n": 64,
+      "correct": 54,
+      "valid_top": 64,
+      "accuracy": 0.84375,
+      "valid_top_rate": 1.0
+    },
+    "distractor": {
+      "n": 64,
+      "correct": 54,
+      "valid_top": 64,
+      "accuracy": 0.84375,
+      "valid_top_rate": 1.0
+    },
+    "near_miss": {
+      "n": 64,
+      "correct": 54,
+      "valid_top": 64,
+      "accuracy": 0.84375,
+      "valid_top_rate": 1.0
+    },
+    "neutral": {
+      "n": 64,
+      "correct": 53,
+      "valid_top": 64,
+      "accuracy": 0.828125,
+      "valid_top_rate": 1.0
+    }
+  }
+}

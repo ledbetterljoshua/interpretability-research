@@ -1,0 +1,8 @@
+{
+  "status": "error_before_model_load",
+  "error": "RuntimeError: invalid low watermark ratio 1.4",
+  "cause": "The MPS high-watermark cap was set to 0.7 while the default low-watermark ratio remained 1.4.",
+  "resolution": "Set the low-watermark ratio to 0.6; preserve this failed startup and retry as feasibility-v2.",
+  "model_loaded": false,
+  "training_performed": false
+}

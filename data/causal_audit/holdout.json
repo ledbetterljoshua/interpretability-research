@@ -1,0 +1,3441 @@
+{
+  "seed": 912,
+  "license": "CC-BY-SA-4.0",
+  "attribution": "Allen Institute for AI",
+  "plan": "notes/2026-09-11-causal-audit-holdout-plan.md",
+  "input_hashes": {
+    "notes/2026-09-11-causal-audit-holdout-plan.md": "69008c24b8b3668ac30fb1be30ab82ca83f6ec7ca7829014bfb8864c04c54c22",
+    "experiments/causal_audit/prepare_holdout.py": "849155c44d4e0db717db98b1568ca66723de83398f762b6f58c25976e532539d",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5"
+  },
+  "splits": {
+    "arc_test": {
+      "dataset": "allenai/ai2_arc",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "source_file": "ARC-Easy/test-00000-of-00001.parquet",
+      "source_sha256": "4160597d618ae851c7eb04e281574f3f654776216ac6b6641588d64527b47177",
+      "available_four_choice": 2365,
+      "eligible_unique": 2359,
+      "excluded": [
+        {
+          "id": "NYSEDREGENTS_2008_4_6",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "WASL_2003_5_8",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "TIMSS_2003_4_pg35",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "NYSEDREGENTS_2013_4_26",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "WASL_2005_5_10",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "TIMSS_1995_8_L3",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "TIMSS_1995_8_P4",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "NYSEDREGENTS_2010_4_23",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "TIMSS_1995_8_K15",
+          "reason": "duplicate_prior_question"
+        },
+        {
+          "id": "NYSEDREGENTS_2010_4_15",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "NYSEDREGENTS_2010_4_19",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "TIMSS_2003_8_pg19",
+          "reason": "not_four_choice"
+        },
+        {
+          "id": "Mercury_SC_400065",
+          "reason": "duplicate_within_split"
+        },
+        {
+          "id": "TIMSS_2003_8_pg57",
+          "reason": "duplicate_within_split"
+        },
+        {
+          "id": "LEAP_2005_4_10267",
+          "reason": "duplicate_within_split"
+        },
+        {
+          "id": "NYSEDREGENTS_2008_4_4",
+          "reason": "duplicate_within_split"
+        },
+        {
+          "id": "OHAT_2007_5_40",
+          "reason": "duplicate_within_split"
+        }
+      ],
+      "rows": [
+        {
+          "id": "LEAP__8_10369",
+          "question": "Joyce put 200 milliliters of water in a beaker, put a thermometer in it, and heated it until it started to boil. She recorded a temperature of 100°C when it started to boil. She repeated the process with 400 milliliters of water. What would be the temperature when this second sample started to boil?",
+          "choices": [
+            "twice as high as the first sample's",
+            "slightly higher than the first sample's",
+            "half as high as the first sample's",
+            "the same as the first sample's"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0006867706a19d56e8f053a35220a1196dad1f9f8fd51bafdea827c1786b061e"
+        },
+        {
+          "id": "Mercury_179218",
+          "question": "The Hardy-Weinberg law is only valid when",
+          "choices": [
+            "the population is small.",
+            "migration into the population is occurring.",
+            "immigration into the population is occurring.",
+            "the population is large."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "000718a1086886724268821281ca02e808414f640d927c9392a2bc4361753a04"
+        },
+        {
+          "id": "MEAP_2005_8_14",
+          "question": "When European settlers first came to North America, the average thickness of the top layer of soil was approximately 23 cm. Today, the average thickness of the top layer of soil is less than 15 cm. Which of the following factors has most likely had the greatest effect on erosion of the top layer of soil?",
+          "choices": [
+            "farming",
+            "restoring wetlands",
+            "species reintroduction",
+            "excessive groundwater use"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "005b1fe5413dc9b85c8ca7686445ecb1e7ad811d3433d14f6b6f7288c040e09a"
+        },
+        {
+          "id": "Mercury_SC_406851",
+          "question": "Which best explains how nutrients get into soil?",
+          "choices": [
+            "through exposure to air",
+            "by absorbing sunlight",
+            "through decaying matter",
+            "by rocks eroding"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "00893e269cedb2fed1a546e049325ad49c96a8f3d875dd2ecfb88be6cb02239d"
+        },
+        {
+          "id": "Mercury_SC_405496",
+          "question": "Rock layers with sand-sized particles were most likely deposited by",
+          "choices": [
+            "wind.",
+            "water.",
+            "glaciers.",
+            "landslides."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "008f384d56140aa040722b26632b6b1757c5a04a1ae53c1af8821a3ac251f053"
+        },
+        {
+          "id": "NYSEDREGENTS_2012_4_23",
+          "question": "Trees start as seeds and grow into mature trees that produce more seeds. This pattern represents a",
+          "choices": [
+            "food chain",
+            "life cycle",
+            "food supply",
+            "life span"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "00a3e8e1e57673c7ed97fab274db8be5a2c6b34cbe8a7c18a348606b9857b512"
+        },
+        {
+          "id": "Mercury_7064698",
+          "question": "When iron combines with oxygen in a moist environment, rust forms because of a",
+          "choices": [
+            "chemical reaction.",
+            "physical reaction.",
+            "change in density.",
+            "change in temperature."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "00d413f7a400780249dafd318987d19c707c8af6dd075aced2ae7e2540117406"
+        },
+        {
+          "id": "Mercury_SC_409172",
+          "question": "During a space mission, scientists will send experiments for the astronauts to conduct in space. In many cases, scientists have made predictions about the outcome of the experiment. Why do astronauts perform the experiment if the results have already been predicted?",
+          "choices": [
+            "to obtain data to test a hypothesis",
+            "to make a complete observation",
+            "to make a report of the procedures",
+            "to make a hypothesis understandable"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "00f5ffa4cac0d850be117b9608e8bce031110ff8cc093fa6a56f9fd609fb1bcf"
+        },
+        {
+          "id": "Mercury_7080973",
+          "question": "While conducting an experiment on gravity, what will be needed to ensure the safety of students?",
+          "choices": [
+            "quiet zones",
+            "drop zones",
+            "heavy objects",
+            "frictionless surfaces"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "011758ba7666f958a5872a91ed47c411a3e63ff5008b1691ceb1cff03d032938"
+        },
+        {
+          "id": "NYSEDREGENTS_2012_4_20",
+          "question": "Green plants get the energy they need to make food from",
+          "choices": [
+            "water",
+            "air",
+            "soil",
+            "sunlight"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "011ce55a3713732800f0de16901aed8e0e21c1a51cc9a4be0b787a10c0e947b2"
+        },
+        {
+          "id": "Mercury_7004795",
+          "question": "Which particles are responsible for the electric charge of an atom?",
+          "choices": [
+            "protons and neutrons",
+            "protons and electrons",
+            "neutrons and molecules",
+            "molecules and electrons"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "012b65403d0401749cf4fcb7826f00e43f75102cb927e87883941d5a86c772a2"
+        },
+        {
+          "id": "Mercury_7075180",
+          "question": "A paramecium is an example of",
+          "choices": [
+            "a single-celled organism.",
+            "multiple organisms.",
+            "an inorganic substance.",
+            "a group of cells."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "01363ce5bf9611e8eae78c1e00f151c84c50c14aea2759bc54f87d5e21dae701"
+        },
+        {
+          "id": "Mercury_SC_413631",
+          "question": "Which of these correctly identifies the way materials are transported in a plant?",
+          "choices": [
+            "Xylem carries water from the roots to the leaves.",
+            "Phloem carries minerals from the roots to the leaves.",
+            "Xylem carries sugars from the flowers to the stems.",
+            "Phloem carries water from the flowers to the stems."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "01439b318b48ca62399619a076800857bdba5a95f8c6edb2c88e012b8e1996b1"
+        },
+        {
+          "id": "Mercury_7090563",
+          "question": "Volcanoes are considered constructive because they",
+          "choices": [
+            "deposit lava.",
+            "cause erosion.",
+            "trigger earthquakes.",
+            "release gases."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0175e3b632a687bdc78d9c531aab232f4883c69230071cf422a744d7e7c79c7e"
+        },
+        {
+          "id": "Mercury_7032883",
+          "question": "Between 40 and 50 million years ago, the landmass on the Indian plate collided with the landmass on the Eurasian plate. What formed when these landmasses collided?",
+          "choices": [
+            "the Grand Canyon",
+            "the Great Plains",
+            "the Himalayan Mountains",
+            "the Mariana Trench"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "01844e4bca5ae009b5e9184bfedf8541c28af647d48c3b9df4cfbac8480b8f4e"
+        },
+        {
+          "id": "Mercury_SC_400164",
+          "question": "What is the best way for a scientist to begin an investigation on a population of deer?",
+          "choices": [
+            "typing results into a computer",
+            "intuition",
+            "writing facts in a field notebook",
+            "observing the deer in their own habitat"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "01a64e42b2cf199535a4cad216d79e5629327a21f7eac7187255e37efbe20a5d"
+        },
+        {
+          "id": "Mercury_7202125",
+          "question": "Scientists determined that cabbages grown using Fertilizer A grew bigger than cabbages grown using Fertilizer B or no fertilizer at all. The scientists repeated the investigation and produced the same results. Which best explains the purpose of repeating this investigation?",
+          "choices": [
+            "to ensure that the cabbages are safe for human consumption",
+            "to discover the scientific principle that causes the increased growth",
+            "to confirm that the observed differences were caused by the fertilizer",
+            "to determine the difference between the experimental and control groups"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "01ac6cbe5f946c49f864fb173ae4f6bae0c1896f232012e01d8bf2502212230c"
+        },
+        {
+          "id": "Mercury_7170853",
+          "question": "The life cycle of a star includes formation, life, and death. In the Universe, where do new stars originate?",
+          "choices": [
+            "from fusion in red giants",
+            "in molecular clouds of gas",
+            "in radiation from black holes",
+            "from large fragments of antimatter"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "01aedae2a1baa80327bb5e5eaa674fee916c184e6fde53be0838754ed3131405"
+        },
+        {
+          "id": "Mercury_SC_415699",
+          "question": "Why do two surfaces get warm when they are rubbed together?",
+          "choices": [
+            "The surfaces absorb energy from the air.",
+            "Friction changes energy of motion to heat energy.",
+            "Moving objects produce heat energy.",
+            "Energy is transferred between the two surfaces."
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "01d6d7ba88feaef1ccf36d8ad323aac25df98c5bd643d81b11b6e843a86a4133"
+        },
+        {
+          "id": "Mercury_179130",
+          "question": "The average temperature of Earth's surface has increased approximately 1°C in the past century. Which of the following can best explain this increase in temperature?",
+          "choices": [
+            "higher levels of oxygen in the atmosphere",
+            "lower levels of ozone in the atmosphere",
+            "higher levels of carbon dioxide in the atmosphere",
+            "lower levels of nitrogen in the atmosphere"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "01dbc6ccb6da64b8f3ca726177b2f9c2f429b5c177e27f78f3e4ca20f79b538b"
+        },
+        {
+          "id": "Mercury_SC_401238",
+          "question": "Many birds avoid eating the viceroy butterfly because it looks like the monarch butterfly. Monarch butterflies contain a substance that makes the birds sick when monarchs are eaten. The development of the pattern of the viceroy butterfly to look like the monarch butterfly is an example of",
+          "choices": [
+            "camouflage.",
+            "coloration.",
+            "diversity.",
+            "mimicry."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "01f952657b8eb32fa1cea2bceaf65def3f279d33275907734d367e8b81fc4265"
+        },
+        {
+          "id": "Mercury_412148",
+          "question": "Which set of elements has similar bonding properties?",
+          "choices": [
+            "Cl, Br, and F",
+            "K, Ca, and Sc",
+            "Kr, Cl, and O",
+            "Be, C, and O"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0241815c511e49e54c08f8fbf6d64b414c726696cd9ca907b10357d61d4972de"
+        },
+        {
+          "id": "NAEP_2009_8_S10+2",
+          "question": "Which layer of Earth is divided into plates?",
+          "choices": [
+            "Mantle",
+            "Crust",
+            "Inner core",
+            "Outer core"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0268cffad92b75413cc7e5682ef51d22fb2536af85870eaef34e9151fb2f7894"
+        },
+        {
+          "id": "Mercury_7248098",
+          "question": "A small aluminum cube is dropped into a beaker of water to determine the buoyancy. Which of these is not necessary in determining the buoyant force acting on the cube?",
+          "choices": [
+            "density of water",
+            "displaced volume",
+            "gravitational pull on Earth",
+            "density of the aluminum cube"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0269f30c050e1c340eed71127b2c83ca89d946f3968286ddf26b5ea3d58549f1"
+        },
+        {
+          "id": "NYSEDREGENTS_2010_4_20",
+          "question": "Which human response is most likely to occur because the air temperature is 90°F?",
+          "choices": [
+            "blinking",
+            "salivating",
+            "shivering",
+            "sweating"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "026f010df87081520b31d27203dbc30d409091ecb26b4668f126c70c86f02e75"
+        },
+        {
+          "id": "NAEP_2000_8_S11+5",
+          "question": "Which of the following best explains why the pressure inside a high-flying airplane must be controlled?",
+          "choices": [
+            "At high altitudes there is greater atmospheric pressure than on the surface of the Earth.",
+            "At high altitudes there is lower atmospheric pressure than on the surface of the Earth.",
+            "If the cabin is not pressurized, ozone and other upper atmospheric gases will enter the airplane.",
+            "If the cabin is not pressurized, carbon dioxide will escape from the airplane."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0281fbab94482b90d11ea4fd9bc6f9c64d44358864e7252639740125ca1fd25c"
+        },
+        {
+          "id": "Mercury_7068705",
+          "question": "Some plants need to be in an environment where water drains easily. Which type of soil content will best benefit these plants?",
+          "choices": [
+            "sand",
+            "shale",
+            "clay",
+            "silt"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "02a38ea31391bd6b3ac74009f9927a82d78082e920a9962a4a676fff5f6aaead"
+        },
+        {
+          "id": "Mercury_7143360",
+          "question": "Some aquifers are composed of limestone and dolomite. Which process increases the open spaces of the aquifer formation?",
+          "choices": [
+            "wave action",
+            "wind erosion",
+            "tensional faulting",
+            "chemical weathering"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "02aeb234aae96ec9a456828ba7582972b2a3578805bec2fa88c7a4c7687ba5ac"
+        },
+        {
+          "id": "NYSEDREGENTS_2008_4_17",
+          "question": "In order to survive, all animals need",
+          "choices": [
+            "heat, water, and soil",
+            "sunlight, soil, and heat",
+            "sunlight, air, and food",
+            "food, water, and air"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "02c3f66b5049cc5d37b63ee6323a956a386f6d9de43200da77ebba579dc2e052"
+        },
+        {
+          "id": "Mercury_SC_408424",
+          "question": "On a class field trip, Zach took a walk through the woods using his senses. Zach made observations on the different sights, smells, and sounds in the woods. What system transferred the observations from his senses to his brain?",
+          "choices": [
+            "nervous system",
+            "digestive system",
+            "circulatory system",
+            "respiratory system"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "02c588f13542e2dbc1dea4af0f1d2dd1b6a10abaf9087b4e0a0bfa4895ce4366"
+        },
+        {
+          "id": "Mercury_7217280",
+          "question": "Students performing a scientific investigation are most likely trying to",
+          "choices": [
+            "produce a new theory.",
+            "disprove a hypothesis.",
+            "reject a conclusion.",
+            "answer a question."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "02c76a4f5c08e7c34635dc1f5df006e5c0bd897b00dfba550513c07cca903ac6"
+        },
+        {
+          "id": "Mercury_7004760",
+          "question": "When an atom gains an electron, the atom will",
+          "choices": [
+            "lose a proton.",
+            "reduce its mass.",
+            "become radioactive.",
+            "have a negative charge."
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "02c98350134403477ba299c0cf40c6764d53d6c474f7e383f6e5cd929b64e67b"
+        },
+        {
+          "id": "Mercury_SC_405020",
+          "question": "Oxygen-rich blood returns from the lungs to the heart. Which two systems are most directly involved in this process?",
+          "choices": [
+            "excretory and digestive",
+            "circulatory and excretory",
+            "digestive and respiratory",
+            "respiratory and circulatory"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "02f6b893906526c7ed5e0b6a5a129efc6722130647f1f2408fc59b0066a7e632"
+        },
+        {
+          "id": "Mercury_7018533",
+          "question": "Which is not a type of electromagnetic wave?",
+          "choices": [
+            "sound wave",
+            "x-ray",
+            "microwave",
+            "radio wave"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "02fa407da44c6873000f671f073ba5f97be11cd355fa8d6e803cd5759fe5a450"
+        },
+        {
+          "id": "Mercury_SC_405444",
+          "question": "The ash borer moth looks similar to a wasp, but it does not have the ability to sting. This adaptation most likely helps the moth survive because",
+          "choices": [
+            "it makes food easier to find.",
+            "predators avoid the moth.",
+            "it aids in attracting a mate.",
+            "the moth blends in with its surroundings."
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "031ef6406fd1e11e9e43efadd19697a3597431ddfa938fcc4ea1f22b2f44e2e6"
+        },
+        {
+          "id": "Mercury_7005128",
+          "question": "Before strip mining for coal, the topsoil in the area is removed and stored. After mining operations are completed, the land is leveled and topsoil is replaced. The purpose of replacing topsoil is",
+          "choices": [
+            "to prevent wind from weathering and eroding surface coal.",
+            "to prevent radioactive elements from polluting water sources.",
+            "to provide an environment for new coal formation.",
+            "to restore the area to a natural condition."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "032083db0611a6f2d9092f8b60db9d88aa20168212e85e18ede84532d637bbfd"
+        },
+        {
+          "id": "Mercury_7017920",
+          "question": "To a person standing motionless on the Earth's surface on a day with no wind, in which direction would the rain appear to fall?",
+          "choices": [
+            "vertically",
+            "diagonally",
+            "horizontally",
+            "circularly"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "03352dce857f01ce9ceadcdffdc0f23b5ff27030a5f86e56e045994c2131a509"
+        },
+        {
+          "id": "ACTAAP_2007_7_30",
+          "question": "Which best describes a scientific theory?",
+          "choices": [
+            "It is still being tested.",
+            "It is true, once written.",
+            "It is different for each continent.",
+            "It is determined in a court of law."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "034e1e3cd891072f1ff00da85ed3f9c8b5c42b60bf5b995ffe608dc374b88732"
+        },
+        {
+          "id": "Mercury_7012688",
+          "question": "A \"light year\" refers to",
+          "choices": [
+            "the distance light travels in one year.",
+            "the of time it takes light to travel from Earth to the Sun.",
+            "the amount of light required on Earth in one year.",
+            "the distance between two sources of light."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0361d57730154824b2928bd2fcb9abafa40c8e50c86b06bb3debd24b9529cea3"
+        },
+        {
+          "id": "Mercury_7024675",
+          "question": "Which of the following is influenced by both genetics and behavior?",
+          "choices": [
+            "eye color",
+            "hair texture",
+            "blood type",
+            "body weight"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0377f34c34d0adfd0876cc1cbf34711a29bedea1c42a64b0c6599a861c72b7fe"
+        },
+        {
+          "id": "Mercury_7007788",
+          "question": "All of these elements are metals except",
+          "choices": [
+            "gold.",
+            "helium.",
+            "sodium.",
+            "aluminum."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "03a710ce218848f1ce9ea20cc790118d3d0c141f1513e29ccd6859fca582ec70"
+        },
+        {
+          "id": "Mercury_LBS10126",
+          "question": "During a demonstration, a teacher pours CO_{2} gas over a candle, putting out the flame. Which physical property allows the teacher to pour the CO_{2} gas?",
+          "choices": [
+            "The gas is more dense than the air.",
+            "The gas is more visible than the air.",
+            "The gas smells different from the air.",
+            "The gas evaporates faster than the air."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "03adb9074604afbb61e5e05d4b8738413d41f884454fc4fa79c6736d116b1adc"
+        },
+        {
+          "id": "LEAP_2000_8_1",
+          "question": "Many scientists accept the theory that excess emission of carbon dioxide from cars and industry causes a layer of gas in the upper atmosphere that traps heat. This, in turn, causes the average temperature on Earth to rise. Which of the following observations supports that theory?",
+          "choices": [
+            "The summer of 1998 was one of the hottest summer seasons on record.",
+            "Carbon dioxide gas from cars and industry is a product of burning that produces heat.",
+            "Carbon dioxide in the upper atmosphere reflects heat radiated from Earth's surface.",
+            "Radiation on Earth's surface is increasing because of a hole in the ozone layer"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "03d78ed0bba12d76f476fb84ce5cd102a72c8c9f1346db61681448236953ed00"
+        },
+        {
+          "id": "NYSEDREGENTS_2010_8_13",
+          "question": "What are genes composed of?",
+          "choices": [
+            "offspring",
+            "DNA",
+            "cells",
+            "traits"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0402b875bca3bf1722d4a67366379e8852b9f5ccc80390c4f5c8989c00ea63d1"
+        },
+        {
+          "id": "Mercury_SC_409014",
+          "question": "A rocket is traveling toward space. What force must the rocket act against as it moves away from Earth?",
+          "choices": [
+            "inertia",
+            "gravity",
+            "magnetism",
+            "momentum"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "04089f17a2a9a53363eca6b1e23a09c39e5bf187c3d29cb2e0d191989f1b6c21"
+        },
+        {
+          "id": "ACTAAP_2010_5_2",
+          "question": "In the 16005 Robert Hooke invented an improved type of microscope. Which of these was a direct result of this invention?",
+          "choices": [
+            "The first view of atoms and molecules",
+            "Detailed observations of Jupiter and Mars",
+            "The name spectrum for the colors of light",
+            "The term cell to describe the smallest unit of life"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "042612d7fa79daf3bb122ffc9c370b1464821e2d1afa57858a2355e45c3f179f"
+        },
+        {
+          "id": "Mercury_416375",
+          "question": "Which of these events during a storm at sea can add oxygen from the atmosphere to ocean water?",
+          "choices": [
+            "high winds",
+            "lightning",
+            "pressure change",
+            "temperature change"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0475919130a4680b12d83d90582a75e7443a393c8955001e8f2a800e71a5b1ab"
+        },
+        {
+          "id": "ACTAAP_2013_7_13",
+          "question": "Xylem cells have very thick walls. They make up most of a tree trunk and its branches. What system in vertebrates provides the same function as the xylem cells in a tree?",
+          "choices": [
+            "the skeletal system",
+            "the endocrine system",
+            "the respiratory system",
+            "the integumentary system"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "04b0338b456009e075ea462d4d446cc59ebab57eb5b755b560bd3a98ac97c52f"
+        },
+        {
+          "id": "Mercury_7173880",
+          "question": "Scientists have studied convergent boundaries and the results of the collisions. Besides the fact that mountains occur at these boundaries, which other part of the rock cycle is most likely associated with these areas of convergence?",
+          "choices": [
+            "development of chemical rocks",
+            "development of extrusive rocks",
+            "development of layered rocks",
+            "development of folded rocks"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "04b6e63a6de3e712eb321107e69beb4790e9e5a9591128edbff02a842a5ea4a6"
+        },
+        {
+          "id": "Mercury_SC_402053",
+          "question": "How does flipping a switch turn on a light?",
+          "choices": [
+            "It creates a spark.",
+            "It breaks an electrical circuit.",
+            "It generates electricity.",
+            "It completes an electrical circuit."
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "04b6ee1b96ff4a55e2ad62dcfdd6feb94220aeb7340e7ed417552b8674eb9fed"
+        },
+        {
+          "id": "MSA_2013_5_6",
+          "question": "A student throws a ball into the air. While the ball travels up, the speed of the ball decreases. What force causes the ball to slow while traveling up?",
+          "choices": [
+            "electricity",
+            "gravity",
+            "magnetism",
+            "tension"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "04db473e0a214c1a8d5d1b657a8f9c023fc0325c98fc0af29ba5af031b429634"
+        },
+        {
+          "id": "Mercury_7187250",
+          "question": "When a volcano erupts, new lava is deposited on the slopes of the volcano. After the lava cools and hardens, which types of organisms will most likely be the first to live on the new material?",
+          "choices": [
+            "large reptiles and amphibians",
+            "small birds and mammals",
+            "mosses and lichens",
+            "bushes and vines"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "04e68e3f7d1c1b88360397da5b7cf85d433d9bddde8a8eaffa10d5be777bcf3e"
+        },
+        {
+          "id": "Mercury_7074953",
+          "question": "A unicellular organism is best described as being",
+          "choices": [
+            "a complex organism.",
+            "a microorganism.",
+            "an organism with specialized cells.",
+            "an organism with different types of tissues."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "04eb91e4005d3fddc0a649dec26e11639a845ac01bd02503b53842022177e249"
+        },
+        {
+          "id": "Mercury_SC_413146",
+          "question": "The teacher heats a pot of water. Once the water reaches 100°C, which point has the water reached?",
+          "choices": [
+            "boiling",
+            "melting",
+            "freezing",
+            "evaporating"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "051041755238b317e8a6f32b204babc4eff3e8aed6c5eccffe7112f5436d8426"
+        },
+        {
+          "id": "VASoL_2010_3_20",
+          "question": "Having dry, hot weather for a long time can cause a",
+          "choices": [
+            "drought",
+            "thunderstorm",
+            "tornado",
+            "flood"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "05278ad70a641f14dc701fc5ecf0628416745d4424c3df686205b96307ab353f"
+        },
+        {
+          "id": "Mercury_7017955",
+          "question": "The density of a material can be measured by using a",
+          "choices": [
+            "meter stick and test tubes.",
+            "beaker and stopwatch.",
+            "thermometer and computer probes.",
+            "balance and graduated cylinder."
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "052fa7aa8b40168ea543e597a249cf73cf0afd473653cb947d98f176ab7efcab"
+        },
+        {
+          "id": "MDSA_2007_8_6",
+          "question": "Use The Periodic Table of the Elements and the information below to answer the question. Magnesium metal (Mg) is grayish-white in color and reacts actively with water. Fluorine (F2) is a greenish-yellow gas at room temperature and is a member of the halogen family. These two elements react to produce magnesium fluoride (MgF2), a chemical commonly used in making windows and lenses. How does adding heat energy affect magnesium fluoride (MgF2) molecules?",
+          "choices": [
+            "The motion of the molecules stops.",
+            "The motion of the molecules increases.",
+            "The motion of the molecules decreases.",
+            "The motion of the molecules is at a constant rate."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "05582e133a8ae12a5f79883f433857655da20e80049ca3670b14d0424012af3e"
+        },
+        {
+          "id": "NYSEDREGENTS_2012_8_32",
+          "question": "Which property of a substance indicates whether the substance is a liquid or a solid at room temperature?",
+          "choices": [
+            "melting point",
+            "electrical conductivity",
+            "flexibility",
+            "solubility"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "05587dd7e6fa24f0400da82c3c61aad83f5e01ba95906d8b245354c9d0941619"
+        },
+        {
+          "id": "VASoL_2007_5_31",
+          "question": "The wind helps many plants reproduce by ___.",
+          "choices": [
+            "cooling the plants",
+            "giving the plants moisture",
+            "spreading the plants' pollen",
+            "strengthening the plants' root systems"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "056755f28c92963bc31ac1b74eb0d5a787cc2aeafe33105ad983378b793c99ac"
+        },
+        {
+          "id": "LEAP__5_10317",
+          "question": "Which example best illustrates kinetic energy?",
+          "choices": [
+            "a light bulb that is turned on",
+            "a car that is parked on top of a hill",
+            "a comet that is flying through space",
+            "a battery that is connected to a circuit"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "05704c2d05b6307e4c6530691d101ae63a4ca58dd88e5811f8b13d1dc1420ab1"
+        },
+        {
+          "id": "Mercury_SC_400662",
+          "question": "A few types of birds live in the same ecosystem. Which of these characteristics would most likely affect how they compete with each other for food?",
+          "choices": [
+            "the types of nests they build",
+            "the lengths of their tails",
+            "the shapes of their beaks",
+            "the colors of their feathers"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "059fe5cbdca819afd37107b469d374de9ab5c5395bdf6e02cd3bb0f348fbacd5"
+        },
+        {
+          "id": "MCAS_1999_8_10",
+          "question": "The energy that allows the water cycle to occur comes from",
+          "choices": [
+            "friction.",
+            "electricity.",
+            "the Sun.",
+            "radioactive decay."
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "05a6403d1929a875d4a012c6981120848c3340a51079a7a52386569aa3339997"
+        },
+        {
+          "id": "Mercury_7098053",
+          "question": "When the fuel in a gasoline engine is burned, the energy conversion is from",
+          "choices": [
+            "chemical to thermal.",
+            "potential to nuclear.",
+            "thermal to potential.",
+            "electrical to kinetic."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "05ab7646bfb4cfd95552fa056acbef9aef810dff6a332b5f058e4d4e59bf8d42"
+        },
+        {
+          "id": "Mercury_SC_LBS10680",
+          "question": "What allows a light bulb to give off light?",
+          "choices": [
+            "the current flowing through the wire to the light bulb",
+            "the light bulb giving electrical energy to the battery",
+            "the light bulb generating heat energy",
+            "the battery pushing light through the wire"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "05b176c613d42a6dfaf4d77b9770682b547ff7dab2348de94befb30acdc9c035"
+        },
+        {
+          "id": "Mercury_7222670",
+          "question": "Structures in the universe are grouped into large systems, each of which are made up of smaller systems. Which of the following is the largest system of which Earth is only a very small part?",
+          "choices": [
+            "Jovian planets",
+            "Halley's comet",
+            "Milky Way galaxy",
+            "Orion's belt"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "05b6af0cfcd0dfe5d7b6bf23b1b7a7a7c320d6d1b7dee52adeea2c29bc02378f"
+        },
+        {
+          "id": "Mercury_7057768",
+          "question": "In order for plants to grow, the cells require nutrients in the form of minerals. The minerals come from",
+          "choices": [
+            "soil.",
+            "air.",
+            "water.",
+            "pollen."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "05c14e103e98070d18b2eb605fb2b1cecb05e9f76e1480cd3addadc97f666cbc"
+        },
+        {
+          "id": "LEAP__4_10226",
+          "question": "Carmine's mother drinks four cans of soft drink each day. After drinking the soft drinks, Carmine's mother should",
+          "choices": [
+            "throw the cans in the trash.",
+            "send the cans to a landfill.",
+            "take the cans to be recycled.",
+            "crush the cans before putting them in the trash."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "05d0b3742b1fbe2307603b8cc6c1bf698108a8e830131c3f7609a2d6d9b9b44d"
+        },
+        {
+          "id": "Mercury_7182963",
+          "question": "When Dennis operates his lawnmower, he notices the engine makes a lot of noise. He also notices that the engine gets very hot. Which best describes the heat and noise generated from the lawnmower?",
+          "choices": [
+            "a change in phase",
+            "thermal expansion",
+            "an increase in entropy",
+            "mechanical advantage"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "06039d7c59cef5ccaf349132f147f55ea9b5b388f592a6f4637549821fa0bbd2"
+        },
+        {
+          "id": "Mercury_416405",
+          "question": "How are bacterial cells and human cells alike?",
+          "choices": [
+            "They allow oxygen through the cell wall.",
+            "They allow carbon dioxide through the cell wall.",
+            "They allow nutrients through the cell membrane.",
+            "They allow nutrients through the nuclear membrane."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "060a73789a50e44b8fb93ebd4f6aef7632cb8211fff735a6547c8d61ae83edcd"
+        },
+        {
+          "id": "Mercury_7043978",
+          "question": "What is the name of the author who proposed natural selection as the mechanism of evolution?",
+          "choices": [
+            "Mendel",
+            "Darwin",
+            "Lamarck",
+            "Hardy-Weinberg"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "060e203d8f829580fd3cf67b6f9cc236d1bf1d2c6bcc3efa4ca23282d01f174e"
+        },
+        {
+          "id": "VASoL_2010_3_13",
+          "question": "The teeth of a carnivore are MOSTLY -",
+          "choices": [
+            "pointed",
+            "rounded",
+            "wide",
+            "flat"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "061539ea973393d12e1f55113e1a979c25d1b5af70aa2cbaf831c9710389ff74"
+        },
+        {
+          "id": "Mercury_7205748",
+          "question": "Which of these is required to support the theory of star formation?",
+          "choices": [
+            "laws passed by the government",
+            "Internet sites discussing star formation",
+            "pictures of stars of different ages",
+            "evaluation of data by many scientists"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "062cb452a71dc11b34cba54021135f7a41934a9593fda9d6a749627d3b9fd392"
+        },
+        {
+          "id": "Mercury_402560",
+          "question": "What are the parts that make up an atom?",
+          "choices": [
+            "electrons, neutrons, and protons",
+            "electrons, protons, and gamma rays",
+            "neutrons, photons, and beta particles",
+            "neutrons, protons, and alpha particles"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0639453a05a2ef3b30f4b2c0bd18fa80b650e48ed55fd8bca065fab52eec6314"
+        },
+        {
+          "id": "Mercury_SC_409038",
+          "question": "The first telescopes were invented hundreds of years ago. Which was discovered as a result of this invention?",
+          "choices": [
+            "the moons of Jupiter",
+            "the bacteria that causes disease",
+            "the deep-sea trenches in the ocean",
+            "the parts of a plant that perform photosynthesis"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "063c5f02d9f67cb7ad1f54654d0e89141ed43b6f4232ed087fd0184beae3bd5e"
+        },
+        {
+          "id": "Mercury_SC_400601",
+          "question": "Which source produces light from nuclear energy?",
+          "choices": [
+            "the Sun",
+            "a stove burner",
+            "the Moon",
+            "a light bulb"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0684f0dc700eacbd3132364e3472c506c8c2d1b3176cd0f8c0eee1d6b5e8c580"
+        },
+        {
+          "id": "Mercury_SC_401120",
+          "question": "Which tool is best used to observe a soil sample?",
+          "choices": [
+            "camera",
+            "compass",
+            "hand lens",
+            "telescope"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "06a6b98ecffae8cb697f90cb855074b370f818c6d0c526809468602292d70976"
+        },
+        {
+          "id": "Mercury_SC_408439",
+          "question": "Brian knows deserts get less rain than other ecosystems. However, he also knows that plants can survive in the desert. Which characteristic of a plant most likely helps it live in a desert?",
+          "choices": [
+            "the ability to store water",
+            "the ability to attract insects",
+            "the ability to stop predators",
+            "the ability to drop its leaves"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "06b52a9d8cf8063fa9cb778b8e5a714d2a87621b88f8b18f519320e923793706"
+        },
+        {
+          "id": "Mercury_7032690",
+          "question": "Which factor causes surface ocean currents?",
+          "choices": [
+            "the Sun",
+            "the wind",
+            "the Moon",
+            "hurricanes"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "06d8d18d0b8e578390d36d56743b82ea55f9f7180b7775056dfdf0efd17ee9c8"
+        },
+        {
+          "id": "MSA_2013_5_15",
+          "question": "Water cycles through three states of matter on Earth. What has the greatest effect on the state of matter of water?",
+          "choices": [
+            "tides",
+            "gravity",
+            "the sun",
+            "the moon"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "06eaf6023a48bd077ce703a3ff7a04b3e655f8dc66fbec3636c3cb972b00c250"
+        },
+        {
+          "id": "TIMSS_2011_4_pg14",
+          "question": "During freezing, melting, and boiling, water changes from one state to another state. Heat needs to be supplied for which of these to take place?",
+          "choices": [
+            "boiling only",
+            "melting only",
+            "melting and freezing but not boiling",
+            "melting and boiling but not freezing"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "07289ef232ac8e38a731e0a6e110911d1582048af5a69cbf0a2f8a98dba165ca"
+        },
+        {
+          "id": "Mercury_7008208",
+          "question": "Which theory states that the universe originated as a single mass?",
+          "choices": [
+            "Big Bang",
+            "Steady State",
+            "Astronomical",
+            "Catastrophism"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "07495582308bfbf2f83cc5bc76d3e18bf14bf376d394cd30c675b66d78359d30"
+        },
+        {
+          "id": "VASoL_2007_3_15",
+          "question": "Which of these warms most of the air, water, and land on Earth?",
+          "choices": [
+            "Coal",
+            "Electricity",
+            "Sunlight",
+            "Wind"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "075473f867558dc797078ecc70d1e79286a0208ac56d86b90b4674f8242cecb2"
+        },
+        {
+          "id": "Mercury_7145215",
+          "question": "During the year, the angle at which the path of the Sun appears in the sky varies. In the Northern Hemisphere, the path of the Sun appears higher on the horizon during the summer and lower on the horizon during the winter. Which factor most contributes to the variation in the path of the Sun across the sky?",
+          "choices": [
+            "the rotation of Earth",
+            "the tilted axis of Earth",
+            "the flattening of Earth at the poles",
+            "the elliptical shape of the orbit of Earth"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "077590e4f9a63fc01b71b4851acc0f5a4148ab0bcec2aefa13ca818d4193a386"
+        },
+        {
+          "id": "Mercury_7026933",
+          "question": "A student plans to grow algal colonies in solutions with different concentrations of liquid fertilizer. Which is a clear and testable hypothesis to guide this investigation?",
+          "choices": [
+            "Algae like fertilizer.",
+            "Fertilizer is good for algae.",
+            "Fertilizer improves the genetic traits of algae.",
+            "Algal growth rate increases with fertilizer concentration."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "07c3463ec4e455bc471f3664b6c59a19022a6e4bae8f14aae9092d56c6d9a704"
+        },
+        {
+          "id": "Mercury_7212048",
+          "question": "Which statement best describes the motion of the molecules of a solid object?",
+          "choices": [
+            "They vibrate in place within a fixed volume.",
+            "They move around freely within a fixed volume.",
+            "They vibrate in place and take the shape of a container.",
+            "They move around freely and take the shape of a container."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "07c6fd902c4b8c438ec6ee08be37cda369bf52a083600307b842763731f303b0"
+        },
+        {
+          "id": "LEAP__4_10224",
+          "question": "Mrs. Henderson's class has five small covered boxes. One contains perfume; another contains dried onions. There is also a box of pine needles, a box of lemon pieces, and a box with a paper towel wetted with vanilla flavoring. Which should they do to get the best information about what is in each box?",
+          "choices": [
+            "Shake the boxes.",
+            "Smell the boxes.",
+            "Listen to the boxes.",
+            "Weigh the boxes."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "07c8c7c49537a5e03875822351080ac6d6eb442a0e92e00fa84233ae08ece33a"
+        },
+        {
+          "id": "MCAS_2013_8_29418",
+          "question": "Which of the following do water (H2O), rust (Fe2O3), and salt (NaCl) have in common?",
+          "choices": [
+            "Water, rust, and salt are atoms.",
+            "Water, rust, and salt are mixtures.",
+            "Water, rust, and salt are elements.",
+            "Water, rust, and salt are compounds."
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "07d44e9f902890f33221ed79be359551d57739cf94d67cc574c92af0b7b8197e"
+        },
+        {
+          "id": "Mercury_178605",
+          "question": "Which of the following is a chemical property of silver?",
+          "choices": [
+            "malleable",
+            "white metal",
+            "conductor of heat",
+            "reacts with nitric acid"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "082edc63014cb1f28b92b12ad15f19698da2cc02362aa2f71bd5f402a472bab0"
+        },
+        {
+          "id": "LEAP__4_10227",
+          "question": "A wetland was drained to build a mall. Two years later, there were no more toads in that area. Why did the toads disappear?",
+          "choices": [
+            "The toads were destroyed by the construction equipment.",
+            "The toads died because toads cannot breathe out of water.",
+            "The toads were frightened and went into the woods.",
+            "The toads got their food from the wetland ecosystem."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0844d6ee8175b1f1973ca2146e4ffb8796db206e385ad3e4bc5971b64fed69cb"
+        },
+        {
+          "id": "Mercury_7270130",
+          "question": "What are the properties of the Earth's crust and mantle that are most responsible for Earth's tectonic activity?",
+          "choices": [
+            "They are in different states and have different temperatures.",
+            "They are in the same state but have different temperatures.",
+            "They are in different states but have the same temperature.",
+            "They are the same state and have the same temperature."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "08530fa9a92b70215c275fe49702ce4e10e3dbb155090f00351911fcee3f0812"
+        },
+        {
+          "id": "NYSEDREGENTS_2015_4_10",
+          "question": "A student pours water into a cup and places the cup in a freezer. After many hours, the water will change from",
+          "choices": [
+            "solid to gas",
+            "solid to liquid",
+            "liquid to solid",
+            "liquid to gas"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "08547cc1dce09dbb8ca425a925d40df3b489dc75baddb37e3ff011b6328d0047"
+        },
+        {
+          "id": "NYSEDREGENTS_2015_4_14",
+          "question": "Which force causes a soccer ball to fall to the ground after it has been kicked up in the air?",
+          "choices": [
+            "erosion",
+            "friction",
+            "gravity",
+            "magnetism"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "085b5df8b781857ee35da97d42a42ddc5c5b90e2025f05fc3f0b0df986c22c3d"
+        },
+        {
+          "id": "Mercury_SC_413004",
+          "question": "Rivers leave behind small pieces of rocks after they flood. These small pieces of rock form a floodplain. Which words best describe a floodplain?",
+          "choices": [
+            "flat lands",
+            "many sinkholes",
+            "rugged peaks",
+            "long rows of ridges"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "086245ce230673a60984dc970d2c3127e5329419bc891f364fda5225ab34c528"
+        },
+        {
+          "id": "Mercury_7144498",
+          "question": "Researchers are investigating whether dinosaurs were endothermic like birds. Which evidence from the fossil record could be effectively compared with modern day evidence to support this hypothesis?",
+          "choices": [
+            "similarities in bone structure",
+            "seasonal shifts in food supply",
+            "consumption of the same plant species",
+            "tree rings indicating the return of a similar climate"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "08754117ca099ee5bb6ff1150dcb9c8761cd8c74a6c9296bcdc4efa50926bc47"
+        },
+        {
+          "id": "Mercury_7008820",
+          "question": "When a neutral atom gains or loses electrons, it becomes",
+          "choices": [
+            "more stable.",
+            "an isotope.",
+            "an ion.",
+            "less charged."
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "08a16134477cc624a6e214c086a2502a6f00b8bb8483e2ded19b8afcf3fda6e0"
+        },
+        {
+          "id": "Mercury_416579",
+          "question": "A euglena has a flagellum and a paramecium has cilia. Both types of organelles help these organisms move through the water. However, a paramecium can also use its cilia to perform another task. What is this task?",
+          "choices": [
+            "obtain food",
+            "defend the cell",
+            "attach to a surface",
+            "perform conjugation"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "08acec3f0d03a549799d091bd5bbc08607a364b5235dee195f4da845343a8edc"
+        },
+        {
+          "id": "Mercury_7171955",
+          "question": "As a corn plant ages, its leaves grow. Which process is directly responsible for the growth of these leaves?",
+          "choices": [
+            "the division of cells in the plant",
+            "the release of oxygen from the plant",
+            "the absorption of carbon dioxide in the stem",
+            "the transportation of nutrients from the roots"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "08b9c9efcac14040d8de3dc26740db1df92e4a171e2cc1c413a898382d383b13"
+        },
+        {
+          "id": "MCAS_2004_5_14",
+          "question": "Ricardo has an igneous rock in his rock collection. Where did this rock most likely form?",
+          "choices": [
+            "in a volcano",
+            "on a forest floor",
+            "on a coral reef",
+            "at the bottom of a river"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "08bfc1b06407c86545e7fbadf285883689921a8361d1032cabc414806561ecb4"
+        },
+        {
+          "id": "LEAP_2008_4_10287",
+          "question": "Anne and her father find a 30-million year-old tropical plant fossil in Louisiana. Which question does the fossil help them answer?",
+          "choices": [
+            "Were there mountains in Louisiana 30 million years ago?",
+            "What was the climate like in Louisiana 30 million years ago?",
+            "Were there earthquakes in Louisiana 30 million years ago?",
+            "What kind of animals lived in Louisiana 30 million years ago?"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "08d4aa4409d5d59dfa9d6e3a38d7ee72c083c725640b3e49f5ae371f63790417"
+        },
+        {
+          "id": "Mercury_7034773",
+          "question": "One unique characteristic of water is that its specific heat",
+          "choices": [
+            "can only be measured in calories.",
+            "is lower than other common substances.",
+            "is higher than other common substances.",
+            "requires little energy for a big temperature change."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "090217de030e01e15657b741a3bd466298d96dcdbb61eb95bbd93ab0bde31f1d"
+        },
+        {
+          "id": "Mercury_411809",
+          "question": "Which term correctly describes all of the following materials? salt water, vinegar, bronze, air, beach sand",
+          "choices": [
+            "compounds",
+            "mixtures",
+            "solutions",
+            "elements"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "09341d453df100ac13fea95c839415dcb25c2fa8c20d96303a1806734ce454ee"
+        },
+        {
+          "id": "Mercury_7114923",
+          "question": "Clownfish take shelter in the tentacles of sea anemones and keep sea anemones clean. Which type of relationship does this represent?",
+          "choices": [
+            "parasitism",
+            "commensalism",
+            "mutualism",
+            "neutralism"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0937f9d5c7d97bee6a58e103534960cf0e8551ac23a94800949e0f01da3297d4"
+        },
+        {
+          "id": "NYSEDREGENTS_2013_4_23",
+          "question": "Which term is an example of a life process?",
+          "choices": [
+            "coloration",
+            "camouflage",
+            "migration",
+            "reproduction"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0948add184480c3b0f8c9c11e133a39203193cf8d86618443728f8bd6b83dce5"
+        },
+        {
+          "id": "MCAS_2000_4_23",
+          "question": "Cactus plants grow best in environments (habitats) that are",
+          "choices": [
+            "hot and dry.",
+            "hot and wet.",
+            "cold and dry.",
+            "cold and wet."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0951899daae76d7defceb5c7e4a5a7a6883033931fb730a9ecb10ea8bfafbe95"
+        },
+        {
+          "id": "Mercury_SC_408250",
+          "question": "Robin compared the properties of some rocks. Which property did she most likely compare with a balance?",
+          "choices": [
+            "density",
+            "mass",
+            "temperature",
+            "volume"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "095f9f1e46575f7ebceadb7720996af30cec83c55fc524eb4726675557da8aa4"
+        },
+        {
+          "id": "MDSA_2008_8_35",
+          "question": "Biologists conduct investigations to learn about living organisms. Which method helps reduce bias during an investigation?",
+          "choices": [
+            "developing a hypothesis after collecting data in the investigation",
+            "limiting the amount of background research before the investigation",
+            "designing an investigation with repeated trials during the investigation",
+            "obtaining other opinions concerning what should happen during the investigation"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "0974c934533570955ffd8b419c20d1131f4c0757771059cb45874f4d62798247"
+        },
+        {
+          "id": "MEA_2010_8_9-v1",
+          "question": "During which process does genetic material come from two parents?",
+          "choices": [
+            "asexual reproduction",
+            "photosynthesis",
+            "respiration",
+            "sexual reproduction"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "09766d1bc0ab2fcb23615c9e07da8dd61adcd87f1306c4dab79147aa51e62385"
+        },
+        {
+          "id": "Mercury_7041300",
+          "question": "Clear cutting of old growth forests in Oregon provides lumber for housing. In the process of clear cutting, plant diversity decreases and some organisms are pushed to extinction. Clear cutting is an example of",
+          "choices": [
+            "a change in aquatic conditions.",
+            "a change in societal conditions.",
+            "a change in atmospheric conditions.",
+            "a change in environmental conditions."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "097a21f6e3b5cc499620dea3a7fe849cb4aa4be7c011531cba88fbca3afd3866"
+        },
+        {
+          "id": "MCAS_1999_8_23",
+          "question": "Five hundred flies of one species were sprayed with a new insecticide. Twenty-four hours later, nearly all the flies were dead. However, a few survived. Which principle best explains why some flies survived?",
+          "choices": [
+            "Animals adapt to new environments.",
+            "New species develop from survivors.",
+            "There is variation among individuals within a species.",
+            "Insecticides may cause genetic mutations."
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "099de47db2e8195f6abf86df32503255c0ad16565f542de7d0f668f2b5670d00"
+        },
+        {
+          "id": "Mercury_SC_402260",
+          "question": "An experiment was performed at sea-level. 400 mL of water was put in 4 different-shaped containers and placed on hot plates with 4 different temperature settings as shown below. Beaker - 110°C Petri dish - 95°C Erlenmeyer flask - 60°C Round bottom bowl - 45°C Which characteristic of water remained the same in each container?",
+          "choices": [
+            "the shape of the water",
+            "the rate of evaporation",
+            "the boiling point of water",
+            "the amount of steam released per minute"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "09aaab0039296fe3d7e663c1bf48f2739c97a5828ced4af5526c8bb1bbb80068"
+        },
+        {
+          "id": "NYSEDREGENTS_2012_4_11",
+          "question": "Which property of an object describes how easily electricity travels through it?",
+          "choices": [
+            "color",
+            "temperature",
+            "reflectivity",
+            "conductivity"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "09b69fc371cb1f74bba31f55fa928550fd23003f380f0d4fe8094acce21af937"
+        },
+        {
+          "id": "Mercury_7008593",
+          "question": "What are the building blocks of all matter?",
+          "choices": [
+            "atoms",
+            "forces",
+            "cells",
+            "vacuoles"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "09ffcf8a6583c8ed39f8ef8c81e831ea53b9c1d453e135779dff2fa96528145f"
+        },
+        {
+          "id": "Mercury_7143080",
+          "question": "One year a farmer decided not to plant crops in one of his fields. During that year his farm received a greater amount of precipitation than normal. Which will most likely occur in that unplanted field as a result of the greater precipitation?",
+          "choices": [
+            "more carbon dioxide will be trapped in the field",
+            "erosion of topsoil will increase in the field",
+            "invasive species will inhabit the field",
+            "animals will dig burrows in the field"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0a0a956a609f6d8edb90a207bbf8ce8e6a720a1eb2d45425cdb7e8e02c53547b"
+        },
+        {
+          "id": "Mercury_SC_400364",
+          "question": "If the climate in an area changed over time to become very cold, which change would most likely help a species living there to survive?",
+          "choices": [
+            "a thicker neck and longer tail",
+            "a larger mouth and stronger jaws",
+            "an increase in fur and fat",
+            "an increase in height and speed"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0a0ab1f6504ed5c650a2dc0d301e1dd1ba3055a2fa3351dbe7792f36c7a3a4b4"
+        },
+        {
+          "id": "Mercury_7267505",
+          "question": "Which of the following are likely to do the most damage to ecosystems along the Rio Grande River?",
+          "choices": [
+            "floods",
+            "tsunamis",
+            "blizzards",
+            "earthquakes"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0a30214993d590ce1f8a264b094cd116e21121698a315355c333b6852ae2935a"
+        },
+        {
+          "id": "MCAS_1998_4_24",
+          "question": "Years ago, most family members lived near one another. Today, family members often live all over the country. People are able to live far from their loved ones because of the technologies of",
+          "choices": [
+            "medicine and computers.",
+            "manufacturing and home entertainment.",
+            "refrigeration and heating systems.",
+            "communication and transportation."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0a390b2870fce8ac23cc5eeb61ceda7efc68239a3b70447206ecfc70b8a55c46"
+        },
+        {
+          "id": "Mercury_7009608",
+          "question": "Which organ is the site of gas exchange between the body and the environment?",
+          "choices": [
+            "spleen",
+            "liver",
+            "lungs",
+            "pancreas"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0a5ac89a44c1f8adf9f4e044d4dfac248cfcdea1fb4ee129f124bc70b853be6b"
+        },
+        {
+          "id": "Mercury_7219713",
+          "question": "Ferns belong to any one of about 12,000 species of plants grouped in their own division within the plant kingdom. Ferns are vascular, seedless, flowerless, and reproduce by spores. To which plant group do ferns belong?",
+          "choices": [
+            "Bryophyta",
+            "Gymnosperm",
+            "Angiosperm",
+            "Pteridophyta"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0a63ebabdacd53fefa46fd9f608f3f3c5ee27bb7c71ac18b4679d852c6f60778"
+        },
+        {
+          "id": "Mercury_SC_408039",
+          "question": "Jamal lives in the Northern Hemisphere. Which season is it when the Northern Hemisphere is pointed away from the Sun?",
+          "choices": [
+            "fall",
+            "spring",
+            "summer",
+            "winter"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0a8303ddbab2f711073061ddd08a4f615e34045ca1bb904417be008cb2687fba"
+        },
+        {
+          "id": "Mercury_SC_400842",
+          "question": "Which safety gear are most important to wear when working near an open flame?",
+          "choices": [
+            "lab apron and goggles",
+            "sunglasses and thermal gloves",
+            "rubber shoes and sunglasses",
+            "thermal gloves and goggles"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0adbf5a37e664c6b0c7be5af144ec5b305cb3205b555ca9e0ea3ef2bf9e77113"
+        },
+        {
+          "id": "Mercury_7223423",
+          "question": "Two samples of gold must have the same",
+          "choices": [
+            "mass.",
+            "volume.",
+            "length.",
+            "density."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0ae0205b63b0b3d54969463ede8b4b8d16866e046cf4f690540b3e4ca1b6cdfe"
+        },
+        {
+          "id": "Mercury_SC_411419",
+          "question": "Plants that are different from each another may have similar structures. Which structure do all plants have in common?",
+          "choices": [
+            "flowers",
+            "fruit",
+            "roots",
+            "trunks"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0b40837a1137af8fee77144f95b0bc842f6a0060222e11f993f91e4c2ea364b3"
+        },
+        {
+          "id": "Mercury_SC_400526",
+          "question": "The water cycle includes which processes?",
+          "choices": [
+            "evaporation, condensation, precipitation",
+            "metamorphosis, evaporation, respiration",
+            "precipitation, perspiration, mitosis",
+            "fixation, decomposition, respiration"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0bb5ff2bc1ae1652ab57791bc7ffc2260850925b710f87b86b83a6290acd5739"
+        },
+        {
+          "id": "Mercury_415686",
+          "question": "What type of energy is transmitted from the Sun to Earth through space?",
+          "choices": [
+            "heat energy",
+            "kinetic energy",
+            "electrical energy",
+            "electromagnetic energy"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0bc1037e80806b0d6af62ecf4dbc0fef48e37c7536cdeff5269e6d3433840a43"
+        },
+        {
+          "id": "MEA_2013_8_19",
+          "question": "A species of wasp lays its eggs in the larva of another insect. The wasp is a parasite, and the larva is the host. What is the relationship between the parasite and the host?",
+          "choices": [
+            "Both the parasite and the host benefit.",
+            "Both the parasite and the host are harmed.",
+            "The parasite benefits and the host is harmed.",
+            "The parasite is harmed and the host benefits."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0be812bc3e90846bf28a2b66832edc6f30f0e826168f0c1acc75486544e01238"
+        },
+        {
+          "id": "Mercury_7250110",
+          "question": "Which cellular structure do organisms in the kingdoms Eubacteria, Archaebacteria, and Protista have in common?",
+          "choices": [
+            "a nucleus",
+            "a cell membrane",
+            "a circular chromosome",
+            "a mitochondrion"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0bf0183fd622334f1849d6a0b7ed88d6a02bf01349e1c9df6dce7b06d745e2a5"
+        },
+        {
+          "id": "Mercury_SC_408884",
+          "question": "There are different kinds of muscles in the human body. Each muscle is formed from a group of cells that works together. The main function of a group of muscle cells is to",
+          "choices": [
+            "make oxygen.",
+            "release energy.",
+            "digest nutrients.",
+            "cause movement."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0bf09f8de8db8825bcc6598de37ce5f8fb0f8d488143186cf298e2990aee0c42"
+        },
+        {
+          "id": "MDSA_2008_5_25",
+          "question": "Many natural resources are found in Maryland and the surrounding area. Some of these natural resources are renewable and some are nonrenewable. People use both kinds of resources in daily activities. Using natural resources often produces waste products. Burning fossil fuels, such as oil, coal, and gasoline produces pollution. Which type of pollution is most often produced by burning fossil fuels?",
+          "choices": [
+            "air pollution",
+            "land pollution",
+            "noise pollution",
+            "water pollution"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0bf78373376ba131eac0e5ad494fd56d5408db2a339ffbe632724a5d373e55d0"
+        }
+      ]
+    },
+    "openbook_test": {
+      "dataset": "allenai/openbookqa",
+      "revision": "388097ea7776314e93a529163e0fea805b8a6454",
+      "source_file": "main/test-00000-of-00001.parquet",
+      "source_sha256": "cd5483e366daa230c1c87bbdc512d8b7229f14f6dd04d19fc8b1a3855aaaa8a3",
+      "available_four_choice": 500,
+      "eligible_unique": 498,
+      "excluded": [
+        {
+          "id": "7-1050",
+          "reason": "duplicate_within_split"
+        },
+        {
+          "id": "7-725",
+          "reason": "duplicate_within_split"
+        }
+      ],
+      "rows": [
+        {
+          "id": "568",
+          "question": "Why would a perennial plant with an elongated stem a frequently used for lumber fall to the ground?",
+          "choices": [
+            "It's dead",
+            "For water",
+            "For food",
+            "For sun"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "011c9a11812daa8b018c7137a00829f9355a860252a771555e4ebbd92ef3802c"
+        },
+        {
+          "id": "7-561",
+          "question": "Which would you likely find inside a beach ball?",
+          "choices": [
+            "cheese",
+            "steam",
+            "water",
+            "air"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0169733e800b62b39738a9e3ea7fff21b1277adba4cbec72302b28028725c308"
+        },
+        {
+          "id": "9-464",
+          "question": "Rainbows are always found after what?",
+          "choices": [
+            "A fire",
+            "A tornado",
+            "Rainfall",
+            "Cereal"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "01c7b7a2c410965419add4fc3f5c5098399b4917a58e4d6701e3d73215a64ce9"
+        },
+        {
+          "id": "8-393",
+          "question": "A construction group wants to put a shopping center in town, but the only place available is a small nature park with a trail. Deer and other wildlife frequent the park, since it is the only place in the city where trees and fresh water are available for them. The construction group decides to build the shopping center, which means that",
+          "choices": [
+            "the deer are moved to a zoo",
+            "the trail is expanded",
+            "the mall has a nature park in it",
+            "the wildlife environment is destroyed"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "026c15bbbe0ce168b8d4b2476998922cb2712e60103ee9a9be3c6552d0dbe243"
+        },
+        {
+          "id": "496",
+          "question": "Which of the following can be used to turn on an electrical device?",
+          "choices": [
+            "solar-rechargeable battery",
+            "a wedge",
+            "a magnet",
+            "pressure gauge"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "02e04c51af6066b2d33e85fdd8eb53d3050884ac14544530c3026e277ebd210b"
+        },
+        {
+          "id": "1530",
+          "question": "Which of these travels through the air?",
+          "choices": [
+            "planets",
+            "thoughts",
+            "automobile",
+            "music"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "035060dea0b554d57854891b4e4c5baa006de648b3b38c08f92534ec4ad1259e"
+        },
+        {
+          "id": "1823",
+          "question": "Cellular respiration's trash is",
+          "choices": [
+            "a bug's treasure",
+            "a cow's treasure",
+            "a plant's treasure",
+            "everyone's trash"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0495410bd0430f07cdc2d9c933d9f06faaf5c97080ac82e8bfbdcadac182c901"
+        },
+        {
+          "id": "429",
+          "question": "The unit of measure derived from French word millilitre is a unit used for measuring volume generally used for values between 1 and",
+          "choices": [
+            "1000",
+            "250",
+            "5000",
+            "300"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "05d02a7a00b76e487d715b168bc22f247f3e3e6358125d9cf8534e2969e0ab27"
+        },
+        {
+          "id": "7-1170",
+          "question": "A bird that takes off flying is",
+          "choices": [
+            "using heat to produce motion",
+            "using calories to produce motion",
+            "using wings to produce heat",
+            "using calories to produce energy"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "065898c51e58b991490b14ae0003ccdc47ba16de36786afd29823d46ca9aba57"
+        },
+        {
+          "id": "9-411",
+          "question": "Will happen to the number of islands if the planet's temperature rises?",
+          "choices": [
+            "they will increase",
+            "nothing will happen",
+            "they will shrink",
+            "they will double"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "06c5ee6d32209cf5d5584db1eae7ff4461b06f0e50c4eeddfcff2c7f25be85fb"
+        },
+        {
+          "id": "9-32",
+          "question": "The winter solstice is on December 21st in the",
+          "choices": [
+            "counties",
+            "north of equator",
+            "states",
+            "southern hemisphere"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0711bf7ef95b78d26367837d710c4c8bf9f7510f42bac7f609f735d85e8f7f28"
+        },
+        {
+          "id": "1411",
+          "question": "Polar bears live in",
+          "choices": [
+            "frosty environments",
+            "tepid environments",
+            "warm environments",
+            "tropical environments"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "08113ab8c7d67d6217c12023c43a9a28399b2c716e2a317e14a2bcf2976466a3"
+        },
+        {
+          "id": "9-132",
+          "question": "Aluminum is what?",
+          "choices": [
+            "reprocessable",
+            "plastic",
+            "liquid",
+            "absorbent"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "081698527bd43e02aef060752924d7c3daee944142b7bc5fae765e64cf4b3b1e"
+        },
+        {
+          "id": "7-999",
+          "question": "Oak tree seeds are planted and a sidewalk is paved right next to that spot, until eventually, the tree is tall and the roots must extend past the sidewalk, which means",
+          "choices": [
+            "roots may be split",
+            "roots may begin to die",
+            "parts may break the concrete",
+            "roots may fall apart"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "08d2df6746d1a315a2c7583e70f74cfb28282bb58f120d40220033eb52fda951"
+        },
+        {
+          "id": "7-823",
+          "question": "A toaster converts electrical energy into heat energy for toasting much like",
+          "choices": [
+            "a campfire toasts bread",
+            "a microwave heats soup",
+            "a fire burns paper",
+            "a small oven works"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "08e43f652f80550400c954a889e969b73d00edae9742a7faacc0be74cd3a28ec"
+        },
+        {
+          "id": "1301",
+          "question": "A dog is warm-blooded just like",
+          "choices": [
+            "a snake",
+            "a cardinal",
+            "a spider",
+            "a scorpion"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "08fcf04dfb8b694b35788040bb89e83630c3f46d07f55caec40d99f45d1ba291"
+        },
+        {
+          "id": "9-463",
+          "question": "Which is best an letting electricity pass through?",
+          "choices": [
+            "tile flooring",
+            "human flesh",
+            "hockey stick",
+            "a steak knife"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "09d6de88b722263405687a4e7660266aa1619640edb69a23fe86b33d63807a3e"
+        },
+        {
+          "id": "266",
+          "question": "What is used for sensing visual things?",
+          "choices": [
+            "nerves",
+            "tibia",
+            "nostril",
+            "cornea"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0a24149c7bb0d8104cffab323f04085cbf65b3d2c85cbc3acdd5aaf434eab690"
+        },
+        {
+          "id": "7-49",
+          "question": "A rabbit may enjoy",
+          "choices": [
+            "meat",
+            "compost",
+            "peas",
+            "pebbles"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "0a62bbd2c41f15eb55e0665b5bf0c20da23840ad528efbc900817cb7344e0dca"
+        },
+        {
+          "id": "8-62",
+          "question": "In a hypothetical world, black bears decrease in numbers until there are zero black bears left on this world. The black bear species",
+          "choices": [
+            "would cease existing",
+            "would be troubled",
+            "would be thriving",
+            "would be endangered"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0b8106f72f14543f57ef4831cfe540143ef4328b7c3c97cba37c0ca8ea0b8755"
+        },
+        {
+          "id": "8-53",
+          "question": "the dashboard reading in a jaguar would likely be set to which of these?",
+          "choices": [
+            "set to calories",
+            "set to volume",
+            "set to kilometers",
+            "set to width"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0c38771964092e4e9866dec4be3306c69a54f715a8a5aaffc9c5deabe2aa1f8f"
+        },
+        {
+          "id": "1387",
+          "question": "What is an example of fire giving off light?",
+          "choices": [
+            "an oven is preheated and the pilot light is lit",
+            "a match is lit to light a cigarette",
+            "a lit candle in a window signalling to someone",
+            "a fire that was put out to send smoke signals"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0c7548c891c03c74866b2f0c57be14999934eaaffe6e7a19a33dbc41da033cf5"
+        },
+        {
+          "id": "354",
+          "question": "Which animal has live births?",
+          "choices": [
+            "poodle",
+            "hummingbird",
+            "crocodile",
+            "trout"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0cacd540e279187e76dc9283825c27c618134cac87bd13e361a0b476f390ed0b"
+        },
+        {
+          "id": "7-372",
+          "question": "If you were attacked by a shark and had to punch it sharply where it pulls in air from, you'd use your hand to make contact with",
+          "choices": [
+            "its snout",
+            "its gills",
+            "its nose",
+            "its belly"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0d106450ee9f60f98ce5d4265501751a464a1f52c76d9aaeb94504180d48f31a"
+        },
+        {
+          "id": "9-743",
+          "question": "where might a bunny live?",
+          "choices": [
+            "a thicket",
+            "atop palm trees",
+            "a sewer system",
+            "a deserted island"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0d5bb968a5893c27b07330f9e534e88c4b27737d62b99b5fd195cf6daec275fc"
+        },
+        {
+          "id": "1179",
+          "question": "An ideal abode for crickets is",
+          "choices": [
+            "a small potted plant in a house",
+            "a green and lush tree and plant packed area",
+            "a briny and warm body of water",
+            "a area surrounded by spider webs"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0dbe9c1e457ab34740994983e5733661fc83b2b6ecc681b23178d54beafaff25"
+        },
+        {
+          "id": "8-466",
+          "question": "What is the best way to guess a babies eye color?",
+          "choices": [
+            "The surroundings they are born in.",
+            "Their parents usual diet.",
+            "Just take a random guess.",
+            "The genealogy records of their family."
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0e3b9950aeedfbebe8b590664c8a4d334c9403b51c255f8df8db538138c81b69"
+        },
+        {
+          "id": "163",
+          "question": "The transportation with the most mass is likely a",
+          "choices": [
+            "commercial plane",
+            "private plane",
+            "bus",
+            "private car"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0e690a2fe746f6ce04da9a57b121006d864a7adaebc94c01fe7b542dae1b4f40"
+        },
+        {
+          "id": "1937",
+          "question": "A wedge requires",
+          "choices": [
+            "electrical energy",
+            "chemical energy",
+            "mechanical energy",
+            "heat energy"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0f529e530b09ad2c9bfc66d48992c1d7fff4a262b4b96ed408aae8e015bcb755"
+        },
+        {
+          "id": "8-260",
+          "question": "Decaying vegetation is part of the process that",
+          "choices": [
+            "enables nuclear power to function",
+            "enables to emitting of light beams",
+            "enables gas powered motors to operate",
+            "enables windmills to power electric grids"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "0fab3dc3b84d915c74d0fea8ac2a7cdc0766bbae79968027b13f6319265079fe"
+        },
+        {
+          "id": "8-59",
+          "question": "Which of these would create the most sound if struck with a metal spoon?",
+          "choices": [
+            "the plastic water bottle",
+            "the backside of a person",
+            "the hair on a doll",
+            "the chassis of a car"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0fdbd94d914818d175426dccb20df51eb85d7df5a8f1b9079adf643c0a65b6ee"
+        },
+        {
+          "id": "1139",
+          "question": "Barnyard bovines",
+          "choices": [
+            "eat organic chicken",
+            "eat eggs",
+            "eat beef",
+            "eat alfalfa hay"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0fe3472e62f3cfea6180c640d9be02e4bfcb7f1977f9ee4b7bc57d8a5e527f33"
+        },
+        {
+          "id": "7-976",
+          "question": "Two fridge decorations when touched back to back",
+          "choices": [
+            "shove each other away",
+            "are attracted to each other",
+            "have very little reaction",
+            "are reflective when together"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "102c422ed9986a5e78a16b252cc83bf6fbcce0378b8b975c72e59822739700d1"
+        },
+        {
+          "id": "8-92",
+          "question": "Which beverage would dissolve solids the best?",
+          "choices": [
+            "A glass of ice-cold water",
+            "A boiling hot mug of tea",
+            "A cup of warm milk",
+            "A room temperature glass of water"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "102f61cfa30af36d0b373d5a30802f5ed1383ee2ffbb583bb165f3ea6c085559"
+        },
+        {
+          "id": "1911",
+          "question": "One of the negative consequences of offshore oil platforms is",
+          "choices": [
+            "evaporation of the surrounding water",
+            "discharge of liquid petroleum in the surrounding sea",
+            "improvement in the conditions of sea life",
+            "increase in the birthrate of sea birds"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "106ff9e94288c12b9ec819abca3cb07e40a9d7d157691d03f32010a64c9f309c"
+        },
+        {
+          "id": "1334",
+          "question": "An example of water being an electrical conductor would be what?",
+          "choices": [
+            "lightening hitting water and organisms inside dying",
+            "standing in a puddle and avoiding being struck by lightening",
+            "standing in a field and getting struck by lightening",
+            "grabbing a fence and being shocked"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "10c568f53156e70f2df44d8f21f7f2cb40107a6f8d1fe0909a25493d9c739880"
+        },
+        {
+          "id": "7-107",
+          "question": "Summertime  happens during June in all but which location?",
+          "choices": [
+            "Australia",
+            "in Canada",
+            "United States",
+            "Europe"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "11aeae731af5d5bc9c7ae1ff323ce1fec136a9cfd9fb9ffa4c36362ceb241c70"
+        },
+        {
+          "id": "570",
+          "question": "What does someone do when creating music?",
+          "choices": [
+            "hit a toy baseball with a bat",
+            "shake a baby rattle with your hand",
+            "bang the wall with your fist",
+            "pluck the strings of a fingerboard with your fingers"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "1208423bfad58473b5d6f259a3cc7591ba56f9c0589f35742759c15e1222ec9c"
+        },
+        {
+          "id": "9-206",
+          "question": "What would be more likely to attract a magnet?",
+          "choices": [
+            "a plastic zipper",
+            "flowing water",
+            "a car engine",
+            "A wooden desk"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "124bcb68d5c93bc044c3d970990a439004fb60b6d4426a7105041051b8f658b7"
+        },
+        {
+          "id": "7-732",
+          "question": "Coal-fire power stations heat coal to incredible temps in order to",
+          "choices": [
+            "produce energy",
+            "use heat energy",
+            "burn energy",
+            "fuel the world"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "1315aa2183920b1002c8022578123ef21fcf1fd61df673b6fabc84961d0c0847"
+        },
+        {
+          "id": "9-390",
+          "question": "Which source provides the safest water?",
+          "choices": [
+            "River",
+            "Sea",
+            "Ocean",
+            "Rain"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "1418b413535446bf4d733bae96209e071c7d60efe4fd3649e2c509a3e85fdaa8"
+        },
+        {
+          "id": "167",
+          "question": "What has more gravity force than Earth but less than the sun?",
+          "choices": [
+            "Jupiter",
+            "the moon",
+            "a space station",
+            "a comet"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "14580026fbe347ba232f318bcdf147adc33d9ed51c70127c1f26a3c30f3000bc"
+        },
+        {
+          "id": "9-988",
+          "question": "Endangered pandas are sometimes",
+          "choices": [
+            "accidentally dropped into volcanoes",
+            "confined to enclosures to be viewed by the public",
+            "found eating corn in the middle of North America",
+            "made into delicious rare steaks"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "14bb033de3c8b00b38421334943f9fdd7887ee9666a3ae18049b0503642fd3de"
+        },
+        {
+          "id": "448",
+          "question": "They looked where the log decayed to garden as it would leave the earth",
+          "choices": [
+            "richer",
+            "dryer",
+            "sandy",
+            "harder"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "14ce597dfa53549ab11ddc32ed5ca9007bd2f66b83f27d61ab7299ae79c60b92"
+        },
+        {
+          "id": "1150",
+          "question": "Objects used to hold sheets of paper together are often",
+          "choices": [
+            "large",
+            "wooden",
+            "ferromagnetic",
+            "electronic"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "14fb022dfcb7443dd0e03ec00ef8a3bb082fad29670354de6638c3e6102467e7"
+        },
+        {
+          "id": "490",
+          "question": "The inside of the Thanksgiving turkey is white instead of pink because of",
+          "choices": [
+            "heat energy",
+            "light energy",
+            "color energy",
+            "color transfusion"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "153e4729dd6d8d77ee075090e84c69413766014ab980b8471a81c75bfe0715e2"
+        },
+        {
+          "id": "644",
+          "question": "An incandescent bulb's filament produces similar light as an LED bulb, but more",
+          "choices": [
+            "white light",
+            "conversion",
+            "heat",
+            "sound"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "1562685470db5a892e8703e0cfd57015d8cf84e619343edb69ef28ef0f0f786c"
+        },
+        {
+          "id": "1577",
+          "question": "What animal eats plants?",
+          "choices": [
+            "eagles",
+            "robins",
+            "owls",
+            "leopards"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "1584375d674ddc621c23001a2e8c3ad85e2d504ca5da01265796545ef6c7a8ae"
+        },
+        {
+          "id": "1702",
+          "question": "How can we see that the coloration of fur is an inherited characteristic?",
+          "choices": [
+            "puppies have soft fur",
+            "kittens look like their parents",
+            "all mammals are born with fur",
+            "baby rats are mostly bald"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "1585f4db58fd8fe261baa8bdef7966237745b04ffedb517e503cf010a73c311c"
+        },
+        {
+          "id": "8-493",
+          "question": "In the hottest months in the hottest desert, creatures such as birds may find water to drink",
+          "choices": [
+            "in sticks",
+            "in pebbles",
+            "in sand",
+            "in spiked plants"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "167998e6dc70ec45224abc26aa8af4ab3c39f97f72115fd74cf0e9a4b3bd854e"
+        },
+        {
+          "id": "605",
+          "question": "The balance result will be number of",
+          "choices": [
+            "kilowatts",
+            "kilobytes",
+            "kilograms",
+            "kilometers"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "175433d93fcca02007bce028351d26fd013c2ccf8aaaf2bb1b64e9df99499ae8"
+        },
+        {
+          "id": "9-163",
+          "question": "A Mola Mola might live where?",
+          "choices": [
+            "Lake Michigan",
+            "The Mississippi River",
+            "Bay of Bengal",
+            "Lake Eerie"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "176d0ea0f7c1b2388a5efd11bf5f842895a5615313af41e154f671b3767ccd97"
+        },
+        {
+          "id": "9-566",
+          "question": "The dam was put under much more stress after the",
+          "choices": [
+            "party",
+            "huge rain storm",
+            "drought",
+            "breakup."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "18f9ff8a8cd8e8b5de8ddebec1e1c0ae3151aae0dfd1751fd372cd883694968d"
+        },
+        {
+          "id": "385",
+          "question": "Prey are eaten by",
+          "choices": [
+            "an animal herded by sheep dogs",
+            "the animal with a starring role in Bambi",
+            "animals known for their memory",
+            "the fastest mammal with four legs"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "1990063286ff70d6d858fb2814def42c6c34db866d22865bfae9691d2b1f95b4"
+        },
+        {
+          "id": "7-807",
+          "question": "Earth's four layers are comprised mainly of",
+          "choices": [
+            "stone",
+            "bacteria",
+            "water",
+            "air"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "1990551e185fa357bb149319fd55b4e963a1bb7d6a5e772f7c3ff485ef03381a"
+        },
+        {
+          "id": "9-187",
+          "question": "small reptile's diet consists mostly of",
+          "choices": [
+            "invertebrates",
+            "insects",
+            "mammals",
+            "fish"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "19a6b1183ede1d4b509154841b89b19ce842c155296b67826bae6ab3a57a2157"
+        },
+        {
+          "id": "1231",
+          "question": "Sources of spices have",
+          "choices": [
+            "crystals",
+            "feathers",
+            "cell walls",
+            "craters"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "19e851d54c65caa563bf335639ee73aca8c7df76bcda818596883b9f075ee699"
+        },
+        {
+          "id": "9-105",
+          "question": "if you put wine from a jug into a thin bottle, how come it conforms?",
+          "choices": [
+            "it exhibits absolute rigidity",
+            "it is a solid mass",
+            "all of these",
+            "it is a variable substance"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "1a48ef87d11e65dfe7333ff565642ace042a0778ea2c5507e901b409e4de1a0c"
+        },
+        {
+          "id": "8-93",
+          "question": "Over a period of time the weather can change",
+          "choices": [
+            "The color of my hair",
+            "The way I walk",
+            "The size of a statue",
+            "The sound a computer makes"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "1a5fe643755ef7153744f2c61cb84141eecd1937134ad94798016e41176581ac"
+        },
+        {
+          "id": "7-658",
+          "question": "Creatures sometimes have barbs on their backs that they use to sting, all of these do, outside of the",
+          "choices": [
+            "wasp",
+            "bee",
+            "scorpion",
+            "butterfly"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "1b223217c7ddac62d93ce31c7eac7bc9bb7cef0b931d2374e569e34decb71712"
+        },
+        {
+          "id": "1112",
+          "question": "A bat starts its life similarly to a",
+          "choices": [
+            "chicken",
+            "pig",
+            "butterfly",
+            "duck"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "1b523268c08e7ded0ace87464dcba51db1ee031c4de31010cdf959509a956206"
+        },
+        {
+          "id": "75",
+          "question": "The amount of friction and the speed of an object have what kind of relationship?",
+          "choices": [
+            "inverse",
+            "reverse",
+            "direct",
+            "equal"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "1bcfeb59c2eef2ac16304c15a3f75653d37e743465fcea0b5f2014551126696c"
+        },
+        {
+          "id": "8-186",
+          "question": "Selective deforestation has a negative impact on",
+          "choices": [
+            "rain clouds and ozone layer",
+            "lakes, ponds and shellfish",
+            "greenhouse gases and algae",
+            "living organisms in ecosystem"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "1c805cdfc3f0b4929f1983aa7824bb0e901c1eddcd5455fd533d5b6c572fe673"
+        },
+        {
+          "id": "170",
+          "question": "Which pair don't reproduce the same way?",
+          "choices": [
+            "rabbit and hare",
+            "mule and hinny",
+            "cat and catfish",
+            "caterpillar and butterfly"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "1cef571d20fad4a6249e3ad2cbd9890125dd24f5f1a010fd6bedcc3ca419b912"
+        },
+        {
+          "id": "1391",
+          "question": "Which item has a higher altitude?",
+          "choices": [
+            "Tile Floor",
+            "Cars",
+            "A 6'' Man",
+            "A Picture Book"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "1cf959478cc81319b3610fa5bc0b133a3e622dafcd006070373f6bfe7b7037a3"
+        },
+        {
+          "id": "470",
+          "question": "What is an example of hunting?",
+          "choices": [
+            "humans throwing a spear through an animal",
+            "humans chewing on boiled animal muscles",
+            "humans gathering animals in a gate",
+            "humans plucking fruit from a tree"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "1db95caa37e13c7d381e8c1bb1e0cfd05a086072d3048413e156fcfbcbb67304"
+        },
+        {
+          "id": "9-916",
+          "question": "If a person loses his job and is low on money, he will have to start cutting back on how much food he consumes or he'd run out, otherwise known as",
+          "choices": [
+            "destroying",
+            "conserving",
+            "losing",
+            "squandering"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "1e9f66acc89cb62dccb03559e8b7a1b71315fa441a9efca42789b83059b35523"
+        },
+        {
+          "id": "8-471",
+          "question": "The appropriate place to put this item is the recycling bin",
+          "choices": [
+            "used motor oil",
+            "used soda can",
+            "used Styrofoam plates",
+            "left over medicine"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "1ebc512f57dbcb3d376eb6e4fc47aa005014608ea8c7d75f9bfb962da79da937"
+        },
+        {
+          "id": "9-612",
+          "question": "cellular respiration is when energy is produced in a cell by consumption of",
+          "choices": [
+            "water",
+            "nutrients",
+            "mitochondria",
+            "gas"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "1fed8819d44971974aace13425c1b3639c3ca8f3eb27ad79ec5031a2824af955"
+        },
+        {
+          "id": "257",
+          "question": "Global warming is lowering the world's amount of",
+          "choices": [
+            "hurricanes",
+            "ocean levels",
+            "carbon dioxide",
+            "ice"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "22d6c5010063f60427958ae4d82e5221e7256e3591422134760ae0912d7a0315"
+        },
+        {
+          "id": "8-308",
+          "question": "Some blind people have demonstrated bat-like skills by:",
+          "choices": [
+            "sensing shapes by light and shadows",
+            "having a unusually strong sense of smell",
+            "sensing nearby objects by temperature change",
+            "using sound to 'see'"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "232e2087a1b7e63ae4893f1c6c20995dcf4026c7b253722b077c9e6a073e2dee"
+        },
+        {
+          "id": "7-444",
+          "question": "Muscles move bones to produce movement like when",
+          "choices": [
+            "arms are resting",
+            "hair is growing",
+            "smiles are invisible",
+            "toes are wiggled"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "23a302bcaf0b0e77eedcf4f9c00287633deeefcc99c110eca48a4b48240f8a9d"
+        },
+        {
+          "id": "7-445",
+          "question": "Erosion could lead to",
+          "choices": [
+            "a change in the direction of a stream",
+            "a change in ocean temperatures",
+            "an increase in rainy weather",
+            "an increase in plants and animals"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "24063b23f0398a24bb3fe9a32a340ddf2efd383d9f479fb5c4631f1f4eec3d73"
+        },
+        {
+          "id": "1321",
+          "question": "The arctic is white in coloring",
+          "choices": [
+            "because it's overpopulated with polar bears",
+            "because it's covered in white lilies",
+            "because it's blanketed in crystalline ice water",
+            "because it's gets so little sunlight"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "242eebe67eeffa56608ef5c4b635ee664511895255129269016be9a7c6f9490b"
+        },
+        {
+          "id": "889",
+          "question": "An animal that only eats plants is a",
+          "choices": [
+            "rat",
+            "moth",
+            "chimpanzee",
+            "pig"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "25fe6bdd6b2a318ef6e141e889099b69c4d21a7c928fc56aed1b95f9a3682df6"
+        },
+        {
+          "id": "9-908",
+          "question": "When a kid slams on the brakes on their bike what is caused?",
+          "choices": [
+            "bike helmet",
+            "avoiding accidents",
+            "friction",
+            "gearing"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "26cfa2a87b0d3e9e0783b075eb8103ad20568f340aa1a65e42ce3d2683a4f268"
+        },
+        {
+          "id": "404",
+          "question": "Evaporation of water can lead to",
+          "choices": [
+            "waterfalls",
+            "blizzards",
+            "earthquakes",
+            "hot springs"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "270bf4cd495bdd0ee16ba2e8e16d821f010fe49bdcf88724e382ff704ac3f5bc"
+        },
+        {
+          "id": "7-50",
+          "question": "Overpopulation of an organism can",
+          "choices": [
+            "strain the resources of an ecosystem",
+            "cause boundless growth of resources",
+            "lead to extinction of the organism",
+            "cause the ecosystem to flourish"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "2711cb1d5ea31074b13697e6a945461bcc6b9abdb53e8a718f7972bc920b3687"
+        },
+        {
+          "id": "9-504",
+          "question": "Vast quantities of metal can be obtained from",
+          "choices": [
+            "a quarry",
+            "concerts",
+            "forests",
+            "salt"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "274299ea27961fae5336f03d1a74ff3b2f7bda92451ca99db69eeebfb74b3292"
+        },
+        {
+          "id": "60",
+          "question": "In general, how many times per month is there a full moon?",
+          "choices": [
+            "twice",
+            "three times",
+            "once",
+            "four times"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "281eac28597d5c37e243f286f583253b66f080b3aae1ce695e09c0bc398e56c3"
+        },
+        {
+          "id": "7-108",
+          "question": "exposure to fire could result in",
+          "choices": [
+            "wet items",
+            "cold items",
+            "none of these",
+            "combusted items"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "28dbc6f6b0e5e107563bbac6334cd58304958d90371d4722bcea8e892f120170"
+        },
+        {
+          "id": "1923",
+          "question": "When trying to pull a rose out of the ground why do you encounter resistance?",
+          "choices": [
+            "roots",
+            "tensile strength",
+            "plant temperature",
+            "plant color"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "28e4fe00934f62df2ab585cbbc48418273083ecd75cc34d86a4e615666b7f8a6"
+        },
+        {
+          "id": "9-735",
+          "question": "Which of the following human activities can lead to a change in the local ecosystem?",
+          "choices": [
+            "swimming in a lake",
+            "building a new subdivision",
+            "dancing in a field",
+            "going for a hike"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "29558c029b82be0a0a79c7dce6b0f0a0e08f5692ee5b4e8c812e444215be78c2"
+        },
+        {
+          "id": "1508",
+          "question": "Which of these energy sources generates the least amount of pollution?",
+          "choices": [
+            "coal",
+            "windmill",
+            "lithium batteries",
+            "gasoline"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "296599e571c9f96c84fb7756c7bf93061cb1bb93337767acfc488c721d091ef1"
+        },
+        {
+          "id": "1780",
+          "question": "The spring season brings",
+          "choices": [
+            "Bees",
+            "Snow",
+            "More Oxygen",
+            "Dust"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "29980f898b3eb81a7066d45cd11f513c8f518da89c32634db333446cbc6f998f"
+        },
+        {
+          "id": "9-454",
+          "question": "A field begins to bloom and blossom and plants need to be pollinated. In order to spread seeds, plants will most rely on",
+          "choices": [
+            "pythons",
+            "salmon",
+            "robins",
+            "craters"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "29a08da925b43878bcbb1ff474961f4e9c8f4a3276efe60fcc1ce4597d9cede0"
+        },
+        {
+          "id": "948",
+          "question": "An instinctual behavior is",
+          "choices": [
+            "dogs rolling over on command",
+            "frogs returning to the ponds were they hatched to lay eggs",
+            "birds mimicking human speech",
+            "seals clapping for treats from trainers"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "2af9fe245dfd68c81338126a7f0a9fa585ac90d0e78e3b5f039df9f696ff97b4"
+        },
+        {
+          "id": "9-669",
+          "question": "the closest star to our planet delivers solar energy to the planet",
+          "choices": [
+            "maybe",
+            "all of these",
+            "this is sure",
+            "this is uncertain"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "2ba709eaff109d4f9339c870d96f2aedf0ceeaf56c5d4a2893b114175c230318"
+        },
+        {
+          "id": "1635",
+          "question": "Runoff happens because of",
+          "choices": [
+            "birds",
+            "cattails",
+            "people",
+            "fish"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "2bac8eec1037ddf6e2b2a1ebaa1118860d20cd77a6e852ff059116e321ffec31"
+        },
+        {
+          "id": "9-727",
+          "question": "Camouflage can be used by animals for hunting",
+          "choices": [
+            "water",
+            "trees",
+            "air",
+            "meals"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "2bc13999176227d6da36e6a9749d1d181d18c13e9624f5ffb06ba3aaf429143c"
+        },
+        {
+          "id": "9-1046",
+          "question": "The skeletal system protects which of these?",
+          "choices": [
+            "liver",
+            "eyelashes",
+            "finger nails",
+            "blood vessels"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "2bd946b3a67cd3ec19328ced7d559468b5e9d88122f66ff966075d5994881713"
+        },
+        {
+          "id": "9-35",
+          "question": "If you wanted to make a necklace, how long would you have to wait for the materials to appear inside the Earth?",
+          "choices": [
+            "millions of years",
+            "1 day",
+            "10 days",
+            "100 days"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "2c002eadf06ad2a7fcb40657be3774175790723194b2e9a79f16f23392b2618e"
+        },
+        {
+          "id": "9-393",
+          "question": "Algae can be found in",
+          "choices": [
+            "reservoir",
+            "meat",
+            "street",
+            "tree"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "2c72b21f97c0de3cd747bcb57e697629ade54ca84ce87775afa37ccf46b164d4"
+        },
+        {
+          "id": "9-79",
+          "question": "What is the benefit to using a frosted window film over a non treated windows?",
+          "choices": [
+            "they are easier to make",
+            "they let in less light",
+            "they are cheaper to produce",
+            "they are much stronger"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "2d09174da34e1cb86f2979d5ba78bbdc1d91e819b7125f13f6c9b3cb8766eb59"
+        },
+        {
+          "id": "9-894",
+          "question": "What kind of object does light bounce off of?",
+          "choices": [
+            "tadpole",
+            "any object",
+            "item that reflects",
+            "black hole"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "2d8164ac72a214463c72ac4b0ca5f8c016b862faca79df8cc20f8cddf1dd4d92"
+        },
+        {
+          "id": "9-437",
+          "question": "You can experience a change of pressure when",
+          "choices": [
+            "Yelling really loud",
+            "Soaring the skies",
+            "Going walking",
+            "riding a bike"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "2da47069c05add6b660047ca9ac47cc8ffda0098c2587f99a46015015e3e211c"
+        },
+        {
+          "id": "9-893",
+          "question": "A flashlight will need this in order to radiate photons:",
+          "choices": [
+            "radiation",
+            "acoustic energy",
+            "vibrations",
+            "electron flow"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "2e57516eddd91d3b3f024552d3fa5cba76bbe5ade2742a464c6fa41aceec750a"
+        },
+        {
+          "id": "1924",
+          "question": "Desert environments features",
+          "choices": [
+            "tropical plants",
+            "tons of sun",
+            "massive rain totals",
+            "icy precipitation"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "2e7e93732b1d85e1121ab0c5bfc814eef4c714e30deb438d74663299d9015ef8"
+        },
+        {
+          "id": "9-1167",
+          "question": "Erosion is caused by different kinds of",
+          "choices": [
+            "soil",
+            "fish",
+            "rocks",
+            "weather"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "3166066cd01087b38b89a81d862d55ed94110a749c37c42f5c8cf740ea1912b9"
+        },
+        {
+          "id": "389",
+          "question": "when a circle is torn it is",
+          "choices": [
+            "doubled",
+            "changed",
+            "a smaller circle",
+            "a square"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "31810755dbe4063e27e46692dfcd1be9f6ba239a837b927fa2a409df97ed95dd"
+        },
+        {
+          "id": "8-293",
+          "question": "A pot of pasta is boiling on the stove, and the lid on top of the pot is shaking as the water boils more rapidly. A person goes to the stove and removes the pot, releasing steam into the air above, and so the steam is",
+          "choices": [
+            "cold air",
+            "water vapor",
+            "very dry",
+            "boiling water"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "31f6ea3d3c8741d469ddb65d668a8b265aa96e92528c292dcd48344f3a624eec"
+        },
+        {
+          "id": "7-903",
+          "question": "The main component in dirt is",
+          "choices": [
+            "microorganisms",
+            "broken stones",
+            "pollution",
+            "bacteria"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "32ad747f8fd628988a46bcd756e6238a5d0b0cae91b355439eb62bbd25eb8460"
+        },
+        {
+          "id": "1297",
+          "question": "Which of these has shape that changes depending on the container which it resides within?",
+          "choices": [
+            "paper",
+            "wood",
+            "stone",
+            "orange juice"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "3535b6f0fe1b12560fadba133e7ce0a53922ea120e71c74c8eab366c5e55dbc1"
+        },
+        {
+          "id": "9-284",
+          "question": "A person is heating water in order to cook pasta. He spills the pot of water on his leg and finds that the water",
+          "choices": [
+            "scalds",
+            "cools",
+            "toasts",
+            "freezes"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "3541ac56bf97e21cf0b63c4b89bbef48c17b8f5021bd90e28bb5585ff8c316a5"
+        },
+        {
+          "id": "9-1180",
+          "question": "Mosquitoes enjoy all the people at a BBQ in the summer for what reason?",
+          "choices": [
+            "steak",
+            "blood",
+            "nice weather",
+            "taking food"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "35bd978d1d4638e7c27cb651e58f321cbb11f9c23941ccf3f554b36d72ccae13"
+        },
+        {
+          "id": "9-368",
+          "question": "Birds carrying away fruit helps the tree",
+          "choices": [
+            "grow",
+            "fertilize",
+            "reproduce",
+            "conquer"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "35caf4e928d871e8c7157d5d7a825845c73aa4d90fa506c179e1ce9cfffe0a5c"
+        },
+        {
+          "id": "8-192",
+          "question": "Roasting a turkey requires adding what type of energy",
+          "choices": [
+            "Heat",
+            "Kinetic",
+            "Magnetic",
+            "Chemical"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "36136cc70ca9046d0d1035e9261b494981427a907979f4a56c4d4cfb81d15a3d"
+        },
+        {
+          "id": "1506",
+          "question": "What is an example of clear weather meaning sunny weather?",
+          "choices": [
+            "more stars are visible on clear nights",
+            "cloud cover protects from sunburn",
+            "clear days will be warmer",
+            "fewer clouds allow for more sunlight"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "362a0b9089a85166cb37b33cbe9b6b5a8d03fda45cff28357b8e606828df7529"
+        },
+        {
+          "id": "7-1096",
+          "question": "The only creature with offspring that is hatched, of these, is the",
+          "choices": [
+            "squirrel",
+            "swallow",
+            "mink",
+            "bat"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "371ac1d8c14f42328e482f2f2748b02617784ee16886d6770d5fbd372984f3e8"
+        },
+        {
+          "id": "9-179",
+          "question": "the best method for detecting texture is",
+          "choices": [
+            "rubbing it",
+            "seeing it",
+            "hearing it",
+            "tasting it"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "375584e1ec2361066b8603560f11623981c24b28003aec9efa6cee85e047713b"
+        },
+        {
+          "id": "7-1053",
+          "question": "Are deserts characterized by high sunshine?",
+          "choices": [
+            "they get low sunlight",
+            "deserts get surplus sun",
+            "deserts get little sun",
+            "deserts are always cloudy"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "37c6a4587df3ca84b7a6d07ded6a0fd7f0ed681c75639adc92619ef531ec049f"
+        },
+        {
+          "id": "395",
+          "question": "Which of the following is warm blooded?",
+          "choices": [
+            "toad",
+            "snake",
+            "turtle",
+            "skunk"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "382beae9147e5399bacd8f987ed6905456aec497d8622b0d0b32597e56fb9762"
+        },
+        {
+          "id": "9-436",
+          "question": "A satellite orbits a",
+          "choices": [
+            "empty space",
+            "ocean",
+            "terrestrial body",
+            "air pocket"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "385dc33d8a8ef16b17624429e340eb053ca9872488b08324c9c153155b3c3d11"
+        },
+        {
+          "id": "9-289",
+          "question": "Grass snakes live in what?",
+          "choices": [
+            "trees",
+            "mountains",
+            "lakes",
+            "turf"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "38b1699e79741916833421de5b8c24cc9b1e073fcee31d7a93a12c221c7721d1"
+        },
+        {
+          "id": "8-395",
+          "question": "Overpopulation can cause",
+          "choices": [
+            "More fresh water for people to drink",
+            "Lower Life Expectancy in Countries",
+            "More food for more people",
+            "More space for places to people to live"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "39accd4c464612da51fbc052bd8ae695afeefca1ba0d91ee17b28065a741dc27"
+        },
+        {
+          "id": "936",
+          "question": "Animals died after the removal of a",
+          "choices": [
+            "bush",
+            "street",
+            "house",
+            "city"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "3b711341dd039b4b15b9614ec142e3cd8d8f67e1fa5d3204a3bdba96886911d3"
+        },
+        {
+          "id": "7-171",
+          "question": "If hot water were poured on an arm, what would happen to internal organs?",
+          "choices": [
+            "they would be scalded",
+            "organs would remain uneffected",
+            "they would begin to decay",
+            "they would experience pain"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "3c9ed851a4113808b9c01ced79f824237b3e449366f9115179efb3fca06fe873"
+        },
+        {
+          "id": "9-1194",
+          "question": "birds use their peckers to catch",
+          "choices": [
+            "dogs",
+            "a tan",
+            "a ball",
+            "bees"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "3e18fcaba73b04efb0f6b39975b3d890085ca97b67b62fe32e27d0b3e9264286"
+        },
+        {
+          "id": "437",
+          "question": "Which term is involved with protection by skin?",
+          "choices": [
+            "Eucerin pH5 range",
+            "Sagittal plane",
+            "pyogenic vibrio",
+            "popliteus"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "3eaa991dcdbfa2fcb68de562751c9aced2dfae3b071e90a70ad413e75f91e837"
+        },
+        {
+          "id": "9-461",
+          "question": "Steve was driving on the highway when he rear-ended another car because he didn't see it until he was just a foot away. This could have happened because of",
+          "choices": [
+            "reports of tornadoes in the area",
+            "a dog running across the highway behind Steve's car",
+            "a sudden fog moving into the area",
+            "ice forming on the road"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "3ef645d8b3064a9c1c6c525dc14b6d0b2853977609a5eb6137d9940ede593df7"
+        },
+        {
+          "id": "28",
+          "question": "The force exerted on an object and distance traveled have what kind of relationship?",
+          "choices": [
+            "reverse",
+            "inverse",
+            "equal",
+            "direct"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "3f46ecc0af1453799066882c2807afcf4bef5e0c7fdebcaa4d342eb81e6138c2"
+        },
+        {
+          "id": "520",
+          "question": "Earthquakes",
+          "choices": [
+            "only happen in California",
+            "cause solar and lunar eclipses",
+            "will break your vases",
+            "make bridges much safer"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "416dd130d0c2e3fd6dd84d087e8bba75d5c12f61dc1ac5d616bef05ee74d6c5a"
+        },
+        {
+          "id": "9-508",
+          "question": "the night sky shows very far away what",
+          "choices": [
+            "clumps of flaming gas",
+            "tidal waves washing over beaches",
+            "aircraft falling towards collision",
+            "party balloons tied to houses"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "4176f4129433f328d63d666ad040f333cf4cfa1dbea4486273590549533baaff"
+        },
+        {
+          "id": "229",
+          "question": "Nuclear activity is the cause of what celestial occurrence?",
+          "choices": [
+            "axial planetary rotation",
+            "comets",
+            "planetary formation",
+            "the sun's rays"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "41988b60cdc3047ed2a3c5475560515ee7a2551dd41a8945f4d6fc3ffaa6e76c"
+        },
+        {
+          "id": "7-479",
+          "question": "why do tadpoles change into frogs?",
+          "choices": [
+            "tadpoles change to different animals",
+            "tadpoles are really just fish",
+            "they are young frogs still growing",
+            "none of these"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "4201a33018cf3848a9110cf243582071b73ffa795b5ed312836871ea6dcee380"
+        },
+        {
+          "id": "1272",
+          "question": "Inherited behavior is exhibited when",
+          "choices": [
+            "bears take a long winter sleep",
+            "dogs sit on command",
+            "seals clap for their trainers",
+            "rats navigate thru a maze"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "423e6cf823aae13edc0f7c1711c09ae8adcf663b170498e8c174b9222cd424bf"
+        },
+        {
+          "id": "433",
+          "question": "Which best demonstrates the concept of force causing an increase in speed?",
+          "choices": [
+            "skating on a rough surface",
+            "a full bag swung in circles",
+            "a computer powering on",
+            "a baker stirring batter"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "433f67027023ab18367e091e8e676ce7ad6870fc864673593076e1e54c5b93f2"
+        },
+        {
+          "id": "8-213",
+          "question": "What could have covered an organism in order to create a trilobite?",
+          "choices": [
+            "Grass",
+            "Water",
+            "Snow",
+            "Sand"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "443b38ea48f4881b6402aa9746408a47600bdf491019f972d299025df186a57a"
+        }
+      ]
+    }
+  }
+}

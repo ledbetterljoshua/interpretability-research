@@ -1,0 +1,173 @@
+{
+  "kind": "retrospective_failure_archive",
+  "created_utc": "2026-09-12T03:35:57.595733+00:00",
+  "note": "Hashes collected after failures, not contemporaneous output hashes. Original run manifests remain unchanged.",
+  "runs": [
+    {
+      "name": "feasibility-v2",
+      "manifest": "data/causal_audit/feasibility-v2/run.json",
+      "error": "AssertionError: nonfinite gradient",
+      "source_resolution": {
+        "notes/2026-09-11-causal-audit-feasibility-plan.md": {
+          "expected": "4c7977938bff493cced4354f0b09b1b597287ed6c8afada9cec78ddbc9025b3c",
+          "available": true,
+          "path": "notes/2026-09-11-causal-audit-feasibility-plan.md"
+        },
+        "experiments/causal_audit/feasibility.py": {
+          "expected": "f8c353d714f9559deae9b15c44c3348a5fc3c25300a643618e039c1971beb0c4",
+          "available": true,
+          "path": "data/causal_audit/feasibility-v2/source-feasibility.py"
+        },
+        "experiments/causal_audit/runtime.py": {
+          "expected": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+          "available": true,
+          "path": "experiments/causal_audit/runtime.py"
+        },
+        "experiments/causal_audit/prepare_data.py": {
+          "expected": "ce085f56175bdfba67e2614eba78bc84503af25b9f77e11dc35732492364adfe",
+          "available": true,
+          "path": "experiments/causal_audit/prepare_data.py"
+        },
+        "data/causal_audit/development.json": {
+          "expected": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+          "available": true,
+          "path": "data/causal_audit/development.json"
+        }
+      }
+    },
+    {
+      "name": "controls-lock-947",
+      "manifest": "data/causal_audit/controls-lock-947/run.json",
+      "error": "AssertionError: nonfinite gradient; no invalid optimizer update",
+      "source_resolution": {
+        "notes/2026-09-11-causal-audit-controls-plan.md": {
+          "expected": "318cee794777b05e02969dc0fcc8fa578a92bcc454ec8e0aae69b88a2c94ca3e",
+          "available": true,
+          "path": "notes/2026-09-11-causal-audit-controls-plan.md"
+        },
+        "experiments/causal_audit/train_controls.py": {
+          "expected": "fbaf29231741cb383ac60697d2020e4d52b57366d29a887569d4409e8b6fc530",
+          "available": true,
+          "path": "experiments/causal_audit/train_controls.py"
+        },
+        "experiments/causal_audit/runtime.py": {
+          "expected": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+          "available": true,
+          "path": "experiments/causal_audit/runtime.py"
+        },
+        "experiments/causal_audit/feasibility.py": {
+          "expected": "f26f459a52342dbcf6c74296b34d7785794f4c4be0e6c33cca34bf1f99507489",
+          "available": true,
+          "path": "experiments/causal_audit/feasibility.py"
+        },
+        "data/causal_audit/development.json": {
+          "expected": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+          "available": true,
+          "path": "data/causal_audit/development.json"
+        }
+      }
+    },
+    {
+      "name": "numerics-v1",
+      "manifest": "data/causal_audit/numerics-v1/run.json",
+      "error": "AssertionError: Padding-equivalence gate failed",
+      "source_resolution": {
+        "notes/2026-09-11-causal-audit-numerics-plan.md": {
+          "expected": "0cee2ec934dcfc07447cc108bb5ce6319f2a6832397584ee3d0a9e8ec16c47b4",
+          "available": true,
+          "path": "notes/2026-09-11-causal-audit-numerics-plan.md"
+        },
+        "experiments/causal_audit/numerics.py": {
+          "expected": "e6b255c663f1b25ac74e7d87a536d0e47c215bdbceb192a1083584d337fa4cfc",
+          "available": true,
+          "path": "experiments/causal_audit/numerics.py"
+        },
+        "experiments/causal_audit/runtime.py": {
+          "expected": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+          "available": true,
+          "path": "experiments/causal_audit/runtime.py"
+        },
+        "experiments/causal_audit/feasibility.py": {
+          "expected": "f26f459a52342dbcf6c74296b34d7785794f4c4be0e6c33cca34bf1f99507489",
+          "available": true,
+          "path": "experiments/causal_audit/feasibility.py"
+        },
+        "data/causal_audit/development.json": {
+          "expected": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+          "available": true,
+          "path": "data/causal_audit/development.json"
+        },
+        "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_model.safetensors": {
+          "expected": "957e28d8e0c86bb20321a3727b323f4515c69754a1226c3ede3674854d8e71c9",
+          "available": true,
+          "path": "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_model.safetensors"
+        },
+        "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_config.json": {
+          "expected": "f3d7e0a40c3ff07d7429e2ee837afdc24acb5323c68b0860ce6aa473753164bd",
+          "available": true,
+          "path": "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_config.json"
+        }
+      }
+    },
+    {
+      "name": "precision-v1-sandbox-failure",
+      "manifest": "data/causal_audit/precision-v1-sandbox-failure/run.json",
+      "error": "RuntimeError: The MPS backend is supported on MacOS 14.0+. Current OS version can be queried using `sw_vers`",
+      "source_resolution": {
+        "notes/2026-09-11-causal-audit-precision-plan.md": {
+          "expected": "b7957f1ae4baad6172c73bdaf6b6c96c9aef28655e9c4d36782cd769cdf7db16",
+          "available": true,
+          "path": "notes/2026-09-11-causal-audit-precision-plan.md"
+        },
+        "experiments/causal_audit/precision.py": {
+          "expected": "6a00bbf222b5c1b9f0d3fb44d25e7a8ca9dcfb0cc368afa6ba1e75f0adbbaa5a",
+          "available": true,
+          "path": "experiments/causal_audit/precision.py"
+        },
+        "experiments/causal_audit/runtime.py": {
+          "expected": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+          "available": true,
+          "path": "experiments/causal_audit/runtime.py"
+        },
+        "experiments/causal_audit/feasibility.py": {
+          "expected": "f26f459a52342dbcf6c74296b34d7785794f4c4be0e6c33cca34bf1f99507489",
+          "available": true,
+          "path": "experiments/causal_audit/feasibility.py"
+        },
+        "data/causal_audit/development.json": {
+          "expected": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+          "available": true,
+          "path": "data/causal_audit/development.json"
+        },
+        "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_model.safetensors": {
+          "expected": "957e28d8e0c86bb20321a3727b323f4515c69754a1226c3ede3674854d8e71c9",
+          "available": true,
+          "path": "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_model.safetensors"
+        },
+        "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_config.json": {
+          "expected": "f3d7e0a40c3ff07d7429e2ee837afdc24acb5323c68b0860ce6aa473753164bd",
+          "available": true,
+          "path": "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_config.json"
+        }
+      }
+    }
+  ],
+  "archive_hashes": {
+    "experiments/causal_audit/archive_failures.py": "737e2a6e07b4ce3a33cd5613d6e226be01a0969f63e2ea5766c67f69ae43e2e3",
+    "data/causal_audit/feasibility-v2/training.json": "1c6adcc308dd4de8dc2e29f57946604a206433948948c03909b252e87828fe96",
+    "data/causal_audit/feasibility-v2/source-runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "data/causal_audit/feasibility-v2/baseline.json": "5fc7ccb3165e19b56f76fdf6c3c876d37b7db53a6a391071ac18668ddf15d030",
+    "data/causal_audit/feasibility-v2/source-feasibility.py": "f8c353d714f9559deae9b15c44c3348a5fc3c25300a643618e039c1971beb0c4",
+    "data/causal_audit/feasibility-v2/run.json": "ac4cf8a738536263482aafb1165f04140b6cc3664ec4396f1f11cf078da2d586",
+    "data/causal_audit/controls-lock-947/gradient-failure.json": "8569ab750357f5c6d4aa067816cc4c9e1668d5e4cb222b3bd273ec55fc70e2b3",
+    "data/causal_audit/controls-lock-947/training.json": "13f68c16da35e98093d004a4f812ea583f15e4d5c9aaf36ce01c26f19e186cc9",
+    "data/causal_audit/controls-lock-947/training_assignments.json": "a478ce20fcea1f76113bb393af75ebac9ad4b22ff0e9d0e608398b6d74b5c3ae",
+    "data/causal_audit/controls-lock-947/epoch-1.json": "124adc18e8902182b316b267e2dec851d4180d2769a2a284c4a9f45f0e07e382",
+    "data/causal_audit/controls-lock-947/baseline.json": "c1650df57a23854b5337a8a393347f32fa097721cca4d39b2492c77f6a87e024",
+    "data/causal_audit/controls-lock-947/run.json": "c73e3bb6c3f5a5b6d9bfb665f7240441aa47072d9bb0e1e9a4e5b186bc76a320",
+    "data/causal_audit/numerics-v1/source-numerics.py": "e6b255c663f1b25ac74e7d87a536d0e47c215bdbceb192a1083584d337fa4cfc",
+    "data/causal_audit/numerics-v1/run.json": "a1e4069a656adee0c8b6a7fbff71375c0f1221141e345441cd2717e89263f565",
+    "data/causal_audit/precision-v1-sandbox-failure/run.json": "43d6b3630d434d9512b7100dfcd6547276b43beb384bf1e6e73e352ebcc8f7e5",
+    "data/causal_audit/feasibility-v1/startup-error.json": "7d55c646d5603e10b6485270cf4f16806e639892523d2f9933ed2871da8171fd"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "status": "error",
+  "stage": "initializing",
+  "plan": "notes/2026-09-11-causal-audit-numerics-plan.md",
+  "git_head": "6c879d91bcda002c119f819699da10c33952badf",
+  "input_hashes": {
+    "notes/2026-09-11-causal-audit-numerics-plan.md": "0cee2ec934dcfc07447cc108bb5ce6319f2a6832397584ee3d0a9e8ec16c47b4",
+    "experiments/causal_audit/numerics.py": "e6b255c663f1b25ac74e7d87a536d0e47c215bdbceb192a1083584d337fa4cfc",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "experiments/causal_audit/feasibility.py": "f26f459a52342dbcf6c74296b34d7785794f4c4be0e6c33cca34bf1f99507489",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+    "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_model.safetensors": "957e28d8e0c86bb20321a3727b323f4515c69754a1226c3ede3674854d8e71c9",
+    "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_config.json": "f3d7e0a40c3ff07d7429e2ee837afdc24acb5323c68b0860ce6aa473753164bd"
+  },
+  "versions": {
+    "torch": "2.10.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0"
+  },
+  "limits": {
+    "seconds": 600,
+    "rss_gib": 32,
+    "mps_driver_gib": 28,
+    "free_percent": 15
+  },
+  "peak_mps_driver_gib": 3.7311859130859375,
+  "peak_rss_gib": 1.664031982421875,
+  "elapsed_seconds": 5.166973375016823,
+  "last_system_free_percent": 45,
+  "forward_max_choice_logit_error": 0.25,
+  "forward_same_predictions": false,
+  "batch": [
+    {
+      "id": "Mercury_7107205",
+      "condition": "training_wrong",
+      "target": 35
+    },
+    {
+      "id": "Mercury_SC_405505",
+      "condition": "ordinary",
+      "target": 34
+    },
+    {
+      "id": "MCAS_2005_5_9",
+      "condition": "ordinary",
+      "target": 33
+    },
+    {
+      "id": "Mercury_SC_400151",
+      "condition": "training_wrong",
+      "target": 34
+    }
+  ],
+  "lengths": [
+    105,
+    99,
+    99,
+    98
+  ],
+  "error": "AssertionError: Padding-equivalence gate failed"
+}

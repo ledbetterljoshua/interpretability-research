@@ -1,0 +1,2542 @@
+{
+  "dataset": "allenai/ai2_arc",
+  "revision": "210d026faf9955653af8916fad021475a3f00453",
+  "config": "ARC-Easy",
+  "seed": 731,
+  "license": "CC-BY-SA-4.0",
+  "source_files": {
+    "train": {
+      "filename": "ARC-Easy/train-00000-of-00001.parquet",
+      "sha256": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5"
+    },
+    "validation": {
+      "filename": "ARC-Easy/validation-00000-of-00001.parquet",
+      "sha256": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74"
+    }
+  },
+  "splits": {
+    "train": {
+      "rows": [
+        {
+          "id": "Mercury_183785",
+          "question": "When animals use energy, what is always produced?",
+          "choices": [
+            "sugar",
+            "heat",
+            "oxygen",
+            "starch"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0017dca4e74748bcf1cb67c9f9b5f393add4d8a81cfb0f854f8ad11463f5fada"
+        },
+        {
+          "id": "MDSA_2008_5_28",
+          "question": "All living things need energy to survive. What is the primary source of energy for all living things?",
+          "choices": [
+            "plants",
+            "the sun",
+            "water",
+            "the wind"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "002757fe7a0b4e76e5fb8112a3b5b00cdda6cef22f4439f6a63b88e87e3a6f3c"
+        },
+        {
+          "id": "AIMS_2009_4_9",
+          "question": "Wind can cause erosion that changes the surface of the Earth. Wind erosion can have negative effects on the environment by removing soil and polluting the air during dust storms. Which of the following land forms are created by wind erosion?",
+          "choices": [
+            "arches and faults",
+            "sand dunes and arches",
+            "meanders and moraines",
+            "moraines and sand dunes"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "002eef770626d1d1157f4ff62691fb0923aeef694a4f3c1a5c1deac764c978b5"
+        },
+        {
+          "id": "TIMSS_1995_8_O12",
+          "question": "Air is made up of many gases. Which gas is found in the greatest amount?",
+          "choices": [
+            "Nitrogen",
+            "Oxygen",
+            "Carbon dioxide",
+            "Hydrogen"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "003c6973119ec23292ac9f964eac2b5a186d0e4224b447cd3c7141f32cc4e66a"
+        },
+        {
+          "id": "ACTAAP_2008_5_8",
+          "question": "Which type of scientist would study the relationship between simple machines and energy?",
+          "choices": [
+            "chemist",
+            "biologist",
+            "physicist",
+            "geologist"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "006407760e851ea4597947ff6cb7a391530842c94452b2f49e345b788cbc4354"
+        },
+        {
+          "id": "Mercury_SC_401235",
+          "question": "The sound heard when a piano key is hit is caused by",
+          "choices": [
+            "vibration.",
+            "refraction.",
+            "momentum.",
+            "acceleration."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "008774ae25177f3a52b379108a43da2267eefed3c71813a4b7e9d765c1d814c7"
+        },
+        {
+          "id": "Mercury_7148278",
+          "question": "Most of the concentration of which gas results from the activity of producer organisms?",
+          "choices": [
+            "nitrogen",
+            "oxygen",
+            "water vapor",
+            "carbon dioxide"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "008f73c375abd59ba8c23465c1884142c2694d6d0b290f5cd60339b99f456e59"
+        },
+        {
+          "id": "Mercury_183138",
+          "question": "What relationship exists between a dog and its fleas?",
+          "choices": [
+            "commensalism",
+            "gradualism",
+            "mutualism",
+            "parasitism"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "00ea29ed9c16f50fa7626e0098944f2d0a5aef721ac11700738722f28dd3bada"
+        },
+        {
+          "id": "Mercury_7181318",
+          "question": "When water evaporates from Earth's surface into the atmosphere, its molecules enter the gas state. What change in this gas causes molecules to condense into the small water droplets that form clouds?",
+          "choices": [
+            "The mass is reduced.",
+            "The volume is increased.",
+            "The temperature is reduced.",
+            "The pressure is increased."
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "00eacf136b3035c26f32a196cb889e3a2b82ef94a952b961248fc9eda59d1edf"
+        },
+        {
+          "id": "Mercury_SC_416460",
+          "question": "Which cell can survive without the help of other cells?",
+          "choices": [
+            "leaf cell",
+            "yeast cell",
+            "onion cell",
+            "muscle cell"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "00ed5cfa07dbbaa8a00f94903a17c4e70c189886fd9600ac5aef00e5a4df6834"
+        },
+        {
+          "id": "MCAS_2004_8_9",
+          "question": "What is the smallest particle of the element gold (Au) that can still be classified as gold?",
+          "choices": [
+            "atom",
+            "molecule",
+            "neutron",
+            "proton"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "00f62bccf0836f83e9ab2d54e167798733a23a2452f955758220ff7b1ad4cd77"
+        },
+        {
+          "id": "NYSEDREGENTS_2007_4_8",
+          "question": "An object's hardness, taste, and texture are examples of",
+          "choices": [
+            "principles",
+            "stages",
+            "properties",
+            "processes"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "020f9e2f652ad721aac865ed86144b57de7cdaa56eb5757f7717e47660681862"
+        },
+        {
+          "id": "Mercury_7011043",
+          "question": "A student performs an experiment and the results are shown below: Before- Iron filings are brown, small, and magnetic: Copper sulfate crystals are blue, brittle, and not magnetic. After- The copper formed was reddish, solid, and not magnetic: Iron sulfide solution was colorless and not magnetic. Which statement supports that a chemical reaction took place?",
+          "choices": [
+            "Changes in color occurred.",
+            "A new substance was formed.",
+            "A physical change in the iron occurred.",
+            "The original substances were present after."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "026b7680d52f5246e86e75a510a23cc5662978c2827f7d6f17e0379ab6cdddf1"
+        },
+        {
+          "id": "Mercury_7216930",
+          "question": "A new mutation that occurs in which type of cell can be passed on to offspring?",
+          "choices": [
+            "blood cell",
+            "nerve cell",
+            "brain cell",
+            "egg cell"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "027d32c25e7e85a766685f153808beeb3de9a8eb0473fa239bb62981bbb0e713"
+        },
+        {
+          "id": "TIMSS_2003_4_pg37",
+          "question": "Yumiko gave some reasons why kettles and kitchen pans are often made of copper. Which reason is correct?",
+          "choices": [
+            "Copper is a good conductor of heat.",
+            "Copper is easy to melt.",
+            "Copper is difficult to shape.",
+            "Copper dissolves in hot water."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "02916264ec91a09cb2fa93591fdd3e0a78613032a35c3a5ea4462bdeac437866"
+        },
+        {
+          "id": "Mercury_7235743",
+          "question": "The atmosphere of Mars is almost entirely composed of a greenhouse gas. Compared with Earth, which factor accounts for the low, nighttime surface temperatures on Mars?",
+          "choices": [
+            "Mars is much farther from the Sun than Earth.",
+            "The atmosphere on Mars has an extremely low density.",
+            "The atmosphere on Mars lacks global circulation.",
+            "Mars has more glacial activity than Earth."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "02a9d53b22185bb4db62dbfbf26069d8bcb41260e6e9b583a792d1876e5b0511"
+        },
+        {
+          "id": "Mercury_7107205",
+          "question": "How does an ecosystem benefit when leaves fall from a tree and decompose on the soil?",
+          "choices": [
+            "Nutrients are released into the soil.",
+            "Soil erosion decreases.",
+            "Carbon dioxide is absorbed by the soil.",
+            "Soil temperature decreases."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "02b14475d5373d29e8669666375354e36becf0ae7cbb1d55c7cc8ba31275d725"
+        },
+        {
+          "id": "Mercury_411712",
+          "question": "The mathematical model for calculating speed is shown below. Speed = distance/time. An airplane traveled 700 kilometers in two hours during a trip. What was the average speed of the plane during the trip?",
+          "choices": [
+            "5.8 kilometers per hour",
+            "350 kilometers per hour",
+            "1400 kilometers per hour",
+            "84,000 kilometers per hour"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "02c70b861352f4bf3d96fa0f3175d370e1e691a68144e3b04f6ecfe038a2e564"
+        },
+        {
+          "id": "Mercury_7205485",
+          "question": "The spectrum of visible light can be seen in a rainbow because white light is",
+          "choices": [
+            "reflected and transmitted.",
+            "refracted and dispersed.",
+            "absorbed and diffracted.",
+            "produced and emitted."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "02d6b4a4daa699104d17dee3d110a612639ffdfb68694e4b40f7af3bcaae58f9"
+        },
+        {
+          "id": "Mercury_408000",
+          "question": "Two people are pushing a car. One person is pushing with a force of 450 N and the other person is pushing with a force of 300 N. What information is needed to determine the net force applied to the car by the people?",
+          "choices": [
+            "the direction of the road",
+            "the direction of the forces",
+            "the weight of the two people",
+            "the weight of the automobile"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "02f242a022a21c3499ca0b4d5dae3812daa43ee3569bb15de7494aae661181dc"
+        },
+        {
+          "id": "Mercury_7064068",
+          "question": "After which event will ecological succession most likely happen?",
+          "choices": [
+            "a forest fire",
+            "a thunderstorm",
+            "a high tide",
+            "a lunar eclipse"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0331e33bec5867a2e5b0daf588022bfd33c44bc6b052d08e562786ab70ba5e63"
+        },
+        {
+          "id": "NYSEDREGENTS_2005_4_19",
+          "question": "A student is growing some plants for an experiment. She notices small white spots on the leaves. Which tool should she use to get a better look at the spots?",
+          "choices": [
+            "thermometer",
+            "hand lens",
+            "graduated cylinder",
+            "balance"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0332e202623c4e7c5c0c6b565e6a99b82169c90a80052303816f02dd7e540c94"
+        },
+        {
+          "id": "Mercury_7212695",
+          "question": "Wire was looped several times around an iron nail, and the wire's ends were connected to a battery. For which of these will this device most likely be used?",
+          "choices": [
+            "to produce a heat source",
+            "to demonstrate frictional forces",
+            "to create a magnetic field",
+            "to generate a sound wave"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0334c8b62c8412e2e1bb15ddd6dab5b9b9515e231ed24a63b7a34d37244135eb"
+        },
+        {
+          "id": "AIMS_2008_4_9",
+          "question": "Which invention has technology that helps people keep food fresh for a long period of time?",
+          "choices": [
+            "dishwasher",
+            "refrigerator",
+            "electric mixer",
+            "microwave oven"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0341229e30cb1f660889518fce4d041853b5d8df3ef507102c0d985eb6f96a8c"
+        },
+        {
+          "id": "ACTAAP_2011_5_17",
+          "question": "Which types of objects are most easily seen by the human eye?",
+          "choices": [
+            "objects that reflect most of the light that strikes them",
+            "objects that refract most of the light that strikes them",
+            "objects that diffract most of the light that strikes them",
+            "objects that absorb most of the light that strikes them"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0346fdcfaf61b047d9ef58e6b1df2fce48e6e918d8ea5f26d65167e6e1da02c1"
+        },
+        {
+          "id": "Mercury_7128590",
+          "question": "Fires in forests from lightning rid the forest of dead branches and leaves. If the trees survive and the soil remains intact, the forest will experience regrowth to its climax state by which process?",
+          "choices": [
+            "tropism",
+            "succession",
+            "gradualism",
+            "eutrophication"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0349e83a7f304dd4bcca3ef9e8a289f2ecb9caae47c9025dc413e2f7c2c98f1f"
+        },
+        {
+          "id": "Mercury_175665",
+          "question": "Which of the following allows materials to enter and leave a cell?",
+          "choices": [
+            "cell wall",
+            "mitochondria",
+            "vacuole",
+            "cell membrane"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "039980083a7fb7f12c90c7666f73e2b429a3847c03e0a771a2faf1e3a06c3b53"
+        },
+        {
+          "id": "Mercury_404099",
+          "question": "What best describes the mantle of Earth?",
+          "choices": [
+            "a thin layer that is located on the surface",
+            "a solid layer made of iron and nickel",
+            "the largest layer between the crust and outer core",
+            "the smallest layer that is made up of molten rock"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "03ae9161910312b6a264dddaf3a177759820b4f3d14c4a72cf964e5eb28fd575"
+        },
+        {
+          "id": "MSA_2015_5_39",
+          "question": "Paleontologists often find and study the remains of ancient plants and animals. When the remains of ancient plants and animals are covered by layers of sediment over time, the remains",
+          "choices": [
+            "melt",
+            "dissolve",
+            "become a fossil",
+            "evaporate into vapor"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "03e58ba7cc5a32e2468dc33f4db54c615cab076067ba85164388545544137082"
+        },
+        {
+          "id": "Mercury_SC_416528",
+          "question": "When sunlight shines on a plant, its leaves",
+          "choices": [
+            "make food.",
+            "absorb water.",
+            "produce seeds.",
+            "take in oxygen."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "042bd7b7e1d9c689558ccadbc694f164e6bdee0e2fecf93aa23d89b89033c570"
+        },
+        {
+          "id": "Mercury_7004603",
+          "question": "When too much salt is detected in the bloodstream, the brain secretes a hormone that helps the body retain water by reducing the amount of urine produced. This is an example of",
+          "choices": [
+            "a feedback loop.",
+            "an acquired trait.",
+            "a balanced ecosystem.",
+            "a symbiotic relationship."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "044ab3df93d92c8a4b881c8e0cfacbe1d9363c5fa46dd141e97e909105cbdcad"
+        },
+        {
+          "id": "Mercury_7068793",
+          "question": "Which statement is an opinion?",
+          "choices": [
+            "Chemistry and Physics are major branches of science.",
+            "Life Science is a subject filled with interesting information.",
+            "Geology and Oceanography are subjects in Earth Science.",
+            "Biology is a science that studies complex organisms."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "048e6d526620612ac5122a7ad96c76182f0d1ec657bfab2b95010b40524f154c"
+        },
+        {
+          "id": "Mercury_7115378",
+          "question": "When a volcano erupts, dust and ash are blown into the atmosphere. The eruption directly reduces the transfer of energy from",
+          "choices": [
+            "the ground to bacteria.",
+            "the Sun to plants.",
+            "plants to animals.",
+            "animals to air."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "049b3966e04ea7d1d7107cc5ffdbc47138d840ddb56c9fedb32a03b957b1b7a0"
+        },
+        {
+          "id": "Mercury_7136920",
+          "question": "Vehicle exhaust contains a form of pollution called particulate matter. Technologies are being developed to reduce the amount of particulate matter in exhaust. A vehicle that produces less particulate matter would have the greatest impact on which aspect of human health?",
+          "choices": [
+            "heart health",
+            "respiratory health",
+            "the rate of birth defects",
+            "weight and physical fitness"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "04b156535a7f529f1d01da7b83f6b1457f7e0fbf1a797a631ce298792322d1eb"
+        },
+        {
+          "id": "Mercury_405768",
+          "question": "What carries oxygen throughout the body?",
+          "choices": [
+            "white blood cells",
+            "brain",
+            "red blood cells",
+            "nerves"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "050b3cc041c54a5de3d6891719bfff224a23734ad32856b506fb453d3bd2324c"
+        },
+        {
+          "id": "Mercury_7263708",
+          "question": "Which atmospheric phenomena are created by the interaction of charged particles with Earth's magnetosphere?",
+          "choices": [
+            "auroras",
+            "tornadoes",
+            "rainbows",
+            "inversions"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "050d7bf9b87553e46acbabff2796b48f4a7ed31427856d6c7bcf057f41aa7695"
+        },
+        {
+          "id": "Mercury_SC_402126",
+          "question": "Carbon dioxide is removed from Earth's atmosphere by",
+          "choices": [
+            "animal respiration.",
+            "decaying organisms.",
+            "plant photosynthesis.",
+            "burning fossil fuels."
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "050fb5944f875dd056b2695b613ca7e2c4a4270969450811e901ffb075c879b0"
+        },
+        {
+          "id": "Mercury_7211383",
+          "question": "Improvements in geological observation technologies have made it easier for scientists to locate resources in Earth's crust. These technologies have allowed for an increase in availability of which resource?",
+          "choices": [
+            "wind power",
+            "solar energy",
+            "fossil fuel",
+            "tidal energy"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "05370d517e61ef9a84876ab813131f4e5e40c39152db412a2434c9eef7127538"
+        },
+        {
+          "id": "Mercury_7267873",
+          "question": "Which of these provide the best evidence that life could develop on Mars?",
+          "choices": [
+            "its atmospheric gases",
+            "its surface temperatures",
+            "its craters and rocky surface",
+            "its ice and organic molecules"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0545ef7167cb9fe2175d4ea9126c08c6c874e26ac229cd4570e153e10003d417"
+        },
+        {
+          "id": "Mercury_7283448",
+          "question": "The directions for making a protein",
+          "choices": [
+            "result in DNA.",
+            "are carried by DNA.",
+            "result in amino acids.",
+            "are carried by amino acids."
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "057e875548a44575b9bce656311c7e946ed844d34743d8991024643c9f58896d"
+        },
+        {
+          "id": "Mercury_7083353",
+          "question": "The smallest unit of a plant that can perform all of the processes of life is the",
+          "choices": [
+            "leaf.",
+            "cell.",
+            "tissue.",
+            "root."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "058bd404040c3a29672798975b164ed023e146459785487c78e7294942e22f3b"
+        },
+        {
+          "id": "Mercury_7032813",
+          "question": "Which type of organism is the best at fixing nitrogen?",
+          "choices": [
+            "bacteria",
+            "fungi",
+            "protists",
+            "animals"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "059c406fdd8bb744d43baf84e382df065bc6dda473f0981e5b0fc71e1878f0e9"
+        },
+        {
+          "id": "Mercury_SC_400328",
+          "question": "Which item is used for protection from chemical splashing?",
+          "choices": [
+            "compass",
+            "hand lens",
+            "microscope",
+            "safety goggles"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "05b0c354c5c82837b84717abea9f477eb858a968b7d37d17f810827134cc6006"
+        },
+        {
+          "id": "Mercury_7072660",
+          "question": "Two identical books are on opposite ends of a table. Which of these would increase the gravitational force exerted between the two books?",
+          "choices": [
+            "decrease the distance between the books",
+            "decrease the mass of the books",
+            "decrease the mass of the table",
+            "decrease the temperature in the room"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "05d23cf78956ebadceec3604ecc97da135db05ba732e3133f82a9e146e2c763d"
+        },
+        {
+          "id": "Mercury_7205118",
+          "question": "Which change in the state of water particles causes the particles to become arranged in a fixed position?",
+          "choices": [
+            "boiling",
+            "melting",
+            "freezing",
+            "evaporating"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "05dfba6bc9499acd7ce32ef032a866dc0b7f80a111b1d13d168716052211fdc6"
+        },
+        {
+          "id": "Mercury_183698",
+          "question": "What is a job of white blood cells?",
+          "choices": [
+            "transport oxygen",
+            "remove waste",
+            "fight disease",
+            "enable reproduction"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "060c07868955d249d4f07a9377050d37350c501cc0fd461d4fbce26f6d467ab8"
+        },
+        {
+          "id": "OHAT_2008_5_18",
+          "question": "Corals are animals that live in tropical oceans. Fossils of corals are found in Ohio. What does the presence of coral fossils suggest about how the environment of Ohio has changed over time?",
+          "choices": [
+            "Ohio was once covered by warm seas.",
+            "A large glacier once passed over Ohio.",
+            "The average rainfall in Ohio is now much more than it once was.",
+            "The average temperature in Ohio is now much warmer than it."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "060d36cdb2712d766246868eb43cf1fb46c71f5ce07f6086a94f2e2df5f4cbdf"
+        },
+        {
+          "id": "Mercury_7115448",
+          "question": "The greatest amount of diversity can be found among which type of organism?",
+          "choices": [
+            "plants",
+            "animals",
+            "bacteria",
+            "fungi"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "061b55b2244cade16ff184ae40039f93c076ff69b3c78d66cdee553d86208a4c"
+        },
+        {
+          "id": "NYSEDREGENTS_2009_8_35",
+          "question": "Scurvy is a disease that sailors often got on long voyages. It was discovered that scurvy could be prevented by eating oranges and lemons. This suggests that scurvy is a disease caused by",
+          "choices": [
+            "exposure to sea air",
+            "a nutritional deficiency",
+            "a microorganism",
+            "lack of exercise"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "063e48fb604409e5d475ff11422a912dde77c275a2b51cdad7659d379f56ed85"
+        },
+        {
+          "id": "Mercury_7043523",
+          "question": "Which are the best tools to use for growing and studying bacterial cultures?",
+          "choices": [
+            "beakers",
+            "Petri dishes",
+            "microscopes",
+            "graduated cylinders"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "065d0f4ba9bd5b8696ce5c260b19aae0e1adc79e7fe764b1637f76409566f0ba"
+        },
+        {
+          "id": "Mercury_7217858",
+          "question": "High-altitude cirrus clouds are primarily formed from which substance?",
+          "choices": [
+            "carbon dioxide gas",
+            "solid ice crystals",
+            "nitrogen compounds",
+            "ozone molecules"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "06ba8d5e6a6ec4885902ede44668f34da8108091e9be042d6f7e57a8475bc209"
+        },
+        {
+          "id": "Mercury_SC_408918",
+          "question": "The first microscopes were built in the 1600s. Microscopes have improved since then, but still perform the same job. How do microscopes most help scientists?",
+          "choices": [
+            "They make small objects easier to see.",
+            "They make distant objects appear closer.",
+            "They reduce the glare from shiny objects.",
+            "The improve the brightness of dim objects."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "06e462e4c20d26318ad5b7087112295ed3cb5d59ffa5d73ba86973fd780ca367"
+        },
+        {
+          "id": "Mercury_400805",
+          "question": "Manganese has an atomic number of 25 and an atomic mass of 55 amu. How many particles are found in its nucleus?",
+          "choices": [
+            "25",
+            "30",
+            "55",
+            "80"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "06e91b9ba268281390625c6dcdd617a89302788399800254ca12806e032c55fa"
+        },
+        {
+          "id": "NYSEDREGENTS_2011_8_12",
+          "question": "Naturally occurring variations within a species are mainly the result of mutations and",
+          "choices": [
+            "sexual reproduction",
+            "dynamic equilibrium",
+            "metabolism",
+            "camouflage"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "070211ab008c0fa5b9a753e7a11bdd7809c5b14cb50fade1afbe2bcb95fb4202"
+        },
+        {
+          "id": "Mercury_7012985",
+          "question": "When a soccer player kicks a ball, which two systems work directly with the muscular system?",
+          "choices": [
+            "immune and excretory",
+            "digestive and respiratory",
+            "nervous and skeletal",
+            "circulatory and integumentary"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "072a7fbd23b2fb5fe85f826193703a3f462e0cae1b67ba62767d8e5d8cc3d661"
+        },
+        {
+          "id": "Mercury_7021228",
+          "question": "The nose, mouth, and diaphragm are parts of which body system?",
+          "choices": [
+            "digestive",
+            "muscular",
+            "circulatory",
+            "respiratory"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "075da280e89d4b105a56fb90d5fb6f131f75fa5b8d9bb71a2e802d07192eadee"
+        },
+        {
+          "id": "Mercury_7189368",
+          "question": "Clearing forests of trees and vegetation for human development can have major impacts on the ecosystem. Which would most likely occur after a forested area is cleared?",
+          "choices": [
+            "an increase in habitat for wildlife",
+            "a decrease in food competition",
+            "an increase in soil erosion",
+            "a decrease in water runoff"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "07653439882d30c1dcd2422453edaf7c15d7ec73c92d9c7e68ee160e11026add"
+        },
+        {
+          "id": "MDSA_2008_5_1",
+          "question": "Chemical pesticides are sometimes sprayed on crops to kill insects that eat the crops. People have different viewpoints about the use of pesticides on crops. What might be a concern about using pesticides on the crops?",
+          "choices": [
+            "Will the food ripen?",
+            "Will the food stay fresh?",
+            "Will the food harm humans?",
+            "Will the food harm bugs in the home?"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0770cd40417663b2fc8f21a449d434682dde9ae1f6b09be304ba6c0842486070"
+        },
+        {
+          "id": "Mercury_7268100",
+          "question": "Which of these living things in a grassland ecosystem depend on the presence of a variety of bacteria and other microorganisms in the soil?",
+          "choices": [
+            "worms only",
+            "green plants only",
+            "plants and animals only",
+            "all the organisms in the ecosystem"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0772f4e53ebedc802db9e7af62d06072eddffd79eb12792f1f81813a673fcb0d"
+        },
+        {
+          "id": "NCEOGA_2013_8_1",
+          "question": "Which is the best example of a pure substance?",
+          "choices": [
+            "peanuts",
+            "milk",
+            "gold",
+            "air"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "07bc413d1fd3a464c1a93e97173977de98f08fefc136b59f138162be6ce24108"
+        },
+        {
+          "id": "Mercury_7220150",
+          "question": "Which of the following is an abiotic factor that can influence the quantity of fish a pond can support?",
+          "choices": [
+            "availability of plants",
+            "concentration of bacteria",
+            "quality of water",
+            "number of consumers"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "07c37545b1234130b26d91fb0a69683160676ec5389e66e9c00b0c70eb9489b4"
+        },
+        {
+          "id": "Mercury_400686",
+          "question": "The metal lid on a glass jar is hard to open, so it is held under warm, running water. What causes the jar to open easily after it was held under the water?",
+          "choices": [
+            "The water increased the pressure under the lid.",
+            "The jar shrunk with the warm water.",
+            "The water acted as a lubricant between the glass and the metal.",
+            "The metal lid expanded under warm water."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "07c4bac35f75916ef8b8ec266f0b357be31dd48ad7c381a30d856595f9a7ff86"
+        },
+        {
+          "id": "Mercury_184485",
+          "question": "Scientists measured the patterns of spectral lines given off by distant galaxies and concluded that almost all of these galaxies are moving away from Earth. What did the scientists observe directly?",
+          "choices": [
+            "a shift toward longer wavelengths of light",
+            "a shift toward shorter wavelengths of light",
+            "the absence of wavelengths in the visible light range",
+            "the compression of wavelengths in the visible light range"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "07c869f10d258b99b3c253c3329b5c6e2a1645b33e7140f4ef76f1d78f4fe530"
+        },
+        {
+          "id": "Mercury_SC_409556",
+          "question": "When an octopus feels threatened, it can release black ink into the water. The ink MOST likely helps the octopus",
+          "choices": [
+            "move quickly through the water.",
+            "breathe oxygen from the water.",
+            "hide from predators.",
+            "use food faster."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "07ceb993339e888849d0127b0258d79be3dd9bc1af2f64505b88129c0a4498ab"
+        },
+        {
+          "id": "Mercury_7056630",
+          "question": "The best example of heat transfer by convection is when",
+          "choices": [
+            "sunlight warms soil.",
+            "a ceiling fan blows air.",
+            "flames heat up a pan.",
+            "heat rises in a chimney."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "080f0152b0d134413534c12f41908bda88814288a76d3f1c7b18bea138b9c4d6"
+        },
+        {
+          "id": "Mercury_7016065",
+          "question": "Fertilizers added by farmers to the soil contain high amounts of nitrates. How do fertilizers affect the nitrogen cycle?",
+          "choices": [
+            "More nitrates are available for plants to absorb.",
+            "More nitrates are available for animals to eat.",
+            "More nitrogen gas is released into the atmosphere.",
+            "More nitrogen is converted by bacteria into nitrates."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "082f069712c99d5892373b044803530192c73440f8c00447a4647c9b9316277d"
+        },
+        {
+          "id": "Mercury_192238",
+          "question": "Materials must pass through a cell's semi-permeable membrane in order for energy to be utilized. This process is called",
+          "choices": [
+            "diffusion.",
+            "oxidation.",
+            "respiration.",
+            "reproduction."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0839e79bd695ee539937fa7709f51e7b345ac29c404b9fcd1d1891f9a227b064"
+        },
+        {
+          "id": "Mercury_7090808",
+          "question": "Which of these could cause water vapor to condense into rain droplets?",
+          "choices": [
+            "sunlight warming the surface of oceans",
+            "air rising into colder regions of the atmosphere",
+            "lightning heating the air in the atmosphere",
+            "winds blowing along the surface of the ground"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "083b79c09ea94863e9257e726696ba5b22b3b30f5e12b04420c1ef068a319ff8"
+        },
+        {
+          "id": "Mercury_7158708",
+          "question": "A glacier retreats leaving bare rocks. Lichens begin to live on the rocks. The lichens produce an acid that starts to break down the rocks. How will this process affect the environment?",
+          "choices": [
+            "It will put acid into the lakes and ponds.",
+            "It will begin the process of building soil.",
+            "It will prevent the carbon cycle from occurring.",
+            "It will prevent bacteria from invading the ecosystem."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "08957439c267da6acddec035809dae10d07a2b4f7a23e30c595a22f91eb6ee95"
+        },
+        {
+          "id": "MDSA_2007_5_14",
+          "question": "In 1933, a hurricane came ashore at Ocean City, Maryland. A hurricane negatively affects a coastline by",
+          "choices": [
+            "causing erosion",
+            "causing earthquakes",
+            "increasing food production",
+            "increasing the growth of grasses"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "08d4d0662bc7c87fbf5cb89cb83d16a92718ad5caf309c93b5cb2c258025f6bf"
+        },
+        {
+          "id": "NCEOGA_2013_8_58",
+          "question": "A strawberry farmer finds that, after a hard freeze, some of his strawberries are still alive. Which best explains why these strawberries were able to survive?",
+          "choices": [
+            "They have larger leaves to protect the fruit than the other strawberries.",
+            "They have different genetic variations that cause them to be more resistant to cold temperatures.",
+            "They are able to reproduce more quickly than the other strawberries.",
+            "The color of the strawberries is darker, and they maintain their temperature better than other strawberries."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "08d50d8cc568ff761b35898b913d3f0a76870b5a798cf02227ff4782a0a67957"
+        },
+        {
+          "id": "Mercury_7012898",
+          "question": "Which statement is the best description of the Milky Way galaxy?",
+          "choices": [
+            "a collection of gases held together by inertia",
+            "a group of planets revolving around a single star",
+            "a collection of stars and gases with the Sun as its center",
+            "a group of stars, dust, and planets held together by gravity"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "08e2dab191970e65e3227d9a064c1d0c15cd103257d25491484439446f2b01fa"
+        },
+        {
+          "id": "Mercury_7212433",
+          "question": "Gold atoms can be identified based on the number of which subatomic particles?",
+          "choices": [
+            "neutrons",
+            "electrons",
+            "nuclei",
+            "protons"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "090be2b59bf375a5779a4b17001b7709b3f09e35761431cf9a67e80f9dcd10a5"
+        },
+        {
+          "id": "MCAS_2005_5_29",
+          "question": "Which of the following was probably most important in the formation of dark, fertile soil that is good for farming?",
+          "choices": [
+            "plant decomposition",
+            "radioactive decay",
+            "water erosion",
+            "wind erosion"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "090dd69b36fb770884395f2ab8ab337fd05e852909d90002c85592a5e15e848e"
+        },
+        {
+          "id": "Mercury_SC_407499",
+          "question": "What is determined by the speed that Earth rotates on its axis?",
+          "choices": [
+            "the length of a day",
+            "the energy that reaches a location",
+            "the temperature of water in the ocean",
+            "the number of seasons in a year"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "094d4c46600305d3718c8a6de8c10026ce0c43be021e9c40387afb80144117c3"
+        },
+        {
+          "id": "Mercury_SC_400024",
+          "question": "Which method below would be the best way to determine if an egg, plastic foam, a piece of wood, or a candle would float on water?",
+          "choices": [
+            "observing each object in water",
+            "measuring the size of each object",
+            "calculating the weight of the objects",
+            "comparing the shapes of the objects"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "098614d7e9d60756e80855d7bc475f46dafdc6fb722e7d770da24626a4fe67ef"
+        },
+        {
+          "id": "NCEOGA_2013_8_21",
+          "question": "What happens to water molecules during the boiling process?",
+          "choices": [
+            "They move faster and move farther apart as they absorb heat.",
+            "They move faster and remain close together as they absorb heat.",
+            "They move more slowly but move farther apart as they lose heat.",
+            "They move faster and move farther apart as they lose heat."
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "09b19e992a739b09ff6f4b7b8a3715e41f709f68527cf29f6312473b4665d6eb"
+        },
+        {
+          "id": "NCEOGA_2013_5_5",
+          "question": "Which is an example of a different substance being formed?",
+          "choices": [
+            "glass breaking",
+            "metal melting",
+            "water freezing",
+            "wood burning"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "09b782d7327cd3ecd27d258b4b95ba4215b77dff54959902f5158edb52a81d71"
+        },
+        {
+          "id": "Mercury_7182263",
+          "question": "When nitrogen-rich runoff from farms enters a nearby farm, it causes abundant growth of algal mat on the pond surface. As a result, underwater plants in the pond begin to die. Identify the limiting factor that is most responsible for causing the underwater plants to die.",
+          "choices": [
+            "oxygen",
+            "sunlight",
+            "nitrogen",
+            "carbon dioxide"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "09c34bbd17fa7299415c08773e8117ccce621091a6c48922d18820f1cf42bad4"
+        },
+        {
+          "id": "VASoL_2011_5_32",
+          "question": "Which of these organisms has cells with cell walls?",
+          "choices": [
+            "bluebird",
+            "A pine tree",
+            "A ladybug",
+            "A fox squirrel"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0a024a265e0199f6a6eaf53cd0e7b752428f178d6c1f006b4a37ecacc94e17ee"
+        },
+        {
+          "id": "Mercury_SC_413003",
+          "question": "A mountain range has hills around its edges. How are the mountains and hills alike?",
+          "choices": [
+            "Both have grass at the top.",
+            "Both are at least 1000 meters tall.",
+            "Both have liquid rock at their centers.",
+            "Both are taller than the land around them."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0a5c574211627076e369a82d5b0be28e2bad009b7c768ed4bc9562c2887bd42a"
+        },
+        {
+          "id": "MCAS_2015_5_4",
+          "question": "Which of the following statements best explains how the decomposition of plant and animal matter helps to form rich soils?",
+          "choices": [
+            "Decomposition adds silt to soil.",
+            "Decomposition adds water to soil.",
+            "Decomposition adds oxygen to soil.",
+            "Decomposition adds nutrients to soil."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0a61cfa6b0e4683b9ec2d541dac737e574efb68d04327b7f2c2fb52a7131a24a"
+        },
+        {
+          "id": "Mercury_7211208",
+          "question": "A student measures the growth of a group of plants given different amounts of fertilizer. Which data display should the student use to compare the growth of the plants?",
+          "choices": [
+            "bar graph",
+            "scatterplot",
+            "line graph",
+            "pie chart"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0a78c1cb37d553e509ca550e42f799de9a0518305b7a6e3e2fbaddf8c67da3ab"
+        },
+        {
+          "id": "MCAS_2005_5_9",
+          "question": "Alicia has lots of old bicycle parts. She wants to build something new with the parts. What is the first thing Alicia should do?",
+          "choices": [
+            "plan the new item",
+            "construct the new item",
+            "try out the new item",
+            "evaluate the new item"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0a9b422a2bed55b24ca89ada9ec6ab1601f53b06cf5887e7cf5f6e44760dda13"
+        },
+        {
+          "id": "VASoL_2010_3_17",
+          "question": "Which part of a bicycle BEST moves in a circle?",
+          "choices": [
+            "Seat",
+            "Frame",
+            "Foot pedal",
+            "Kickstand"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0ab2d172c5490333ef01df8ed04fa80d9622ce6fddd3ce78e47a64b8d5422b34"
+        },
+        {
+          "id": "Mercury_SC_400294",
+          "question": "Which statement on a toothpaste package best supports the claim of fighting cavities?",
+          "choices": [
+            "delivers great new flavor",
+            "patented triple cleansing action",
+            "guaranteed to make teeth sparkle",
+            "certified by the American Dental Association"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0ad282bc6b311c827df86c005ff60983ffcd71d247c9f9f72a37df2498ba98b6"
+        },
+        {
+          "id": "MCAS_2009_8_2",
+          "question": "Sherry is going to use her computer to draw a three-dimensional box. She wants to be able to specify the exact dimensions and angles and to rotate the box as needed on the screen. Which of the following types of programs would Sherry most likely use for this purpose?",
+          "choices": [
+            "word processing software",
+            "math spreadsheet program",
+            "Internet-based search engine",
+            "computer-aided design program"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0ae0632a162a47753e2b5341f6461f37a4ac680c559e0a9679b1617c71c859b5"
+        },
+        {
+          "id": "MCAS_2007_5_4765",
+          "question": "Some types of trees are able to survive the heat of a forest fire. Which of the following characteristics would best help a tree survive a fire?",
+          "choices": [
+            "large leaves",
+            "shallow roots",
+            "thick bark",
+            "thin trunks"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0ae2e3e911fe3e9308e296fcd2199bd073b51ce2fa33bb06269aec8905206671"
+        },
+        {
+          "id": "Mercury_7030818",
+          "question": "On the periodic table, the elements in group 18 (8A) (helium, neon, argon, etc.) are grouped together because",
+          "choices": [
+            "they are lighter than air.",
+            "they have full outer electron shells.",
+            "they have excess electrons to share.",
+            "they easily react with other elements."
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0af6e5a77a7e3aef96292405b1926da7a1c54f383ef8295000af49efb8e17417"
+        },
+        {
+          "id": "MCAS_2003_8_2",
+          "question": "The best evidence that two land areas were once connected is the discovery that both land masses",
+          "choices": [
+            "have the same climate.",
+            "are in the same stage of succession.",
+            "exist along the same line of longitude.",
+            "have similar types of rocks and fossils."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0b23c866b59ff2001da9c181154e081c0f7990e5bb4ee2f861b77c6aed5e0b9e"
+        },
+        {
+          "id": "Mercury_7247870",
+          "question": "Which of these structures produces male gametes in humans?",
+          "choices": [
+            "testes",
+            "ovaries",
+            "scrotum",
+            "fallopian tube"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0b2c37cd4e4162b29d4cb04f8437477f4ed7ad3064a2de297fc52414ac9164df"
+        },
+        {
+          "id": "Mercury_SC_405505",
+          "question": "When cold weather freezes water in the cracks of rocks, which would most likely happen?",
+          "choices": [
+            "The rocks would become rounded.",
+            "The rocks would be used for shelter.",
+            "The rocks would be moved by the wind.",
+            "The rocks would break into smaller pieces."
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0b56f97f22c7966e3ec7446be022e974656dcc66868c6f1416fbf705c5c74983"
+        },
+        {
+          "id": "Mercury_7108115",
+          "question": "Rich beds of marine fossils have been found in Florida. By dating these fossils, scientists can best determine",
+          "choices": [
+            "when Florida collided with the North American continent.",
+            "the date when organisms moved onto dry land.",
+            "the period during which Florida was covered in water.",
+            "when the atmosphere of Earth was more humid than it is today."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0b6d0a9cf85f192f8e2d173c8bfe161ffc2663186157263ce54285463c854a41"
+        },
+        {
+          "id": "Mercury_7207235",
+          "question": "Which of these actions will change a sedimentary rock, such as limestone, into a metamorphic rock, such as marble?",
+          "choices": [
+            "pressure from a glacier",
+            "heat from magma",
+            "erosion from flowing water",
+            "radiation from the Sun"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0b90e181fcd923de628cb1bd7ced651a5191e106893ea0445d2949d2cb297592"
+        },
+        {
+          "id": "NYSEDREGENTS_2004_8_5",
+          "question": "If a species is no longer able to reproduce, it will",
+          "choices": [
+            "adapt to its environment",
+            "become immune to disease",
+            "become extinct",
+            "increase its population"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0bb703232118d4ff6e1c8ce3c4d5b047eda014b744857851704d3d9c4c477ac6"
+        },
+        {
+          "id": "Mercury_192255",
+          "question": "When the pesticide DDT was first used, it killed nearly every mosquito it touched. Within a few years, however, many mosquitoes became resistant to DDT and survived. What enabled this to happen?",
+          "choices": [
+            "meiosis",
+            "migration",
+            "immune responses",
+            "gene mutations"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0bb746b1f3819ac396050a1c0e65e036c4d8b360adcda2bbc4f9014b72539441"
+        },
+        {
+          "id": "Mercury_7011078",
+          "question": "Hydrogen gas and oxygen gas combine to form water. Which would be a more concise way of expressing what happens in this chemical reaction?",
+          "choices": [
+            "write a chemical formula",
+            "write a chemical equation",
+            "describe the rearrangement of the atoms",
+            "describe the procedure for creating this change"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0bc070f93b00e691749d476fbadfd5e402132f8ade801abb879eff58f1ad075c"
+        },
+        {
+          "id": "TIMSS_2003_8_pg17",
+          "question": "Fossil fuels were formed from",
+          "choices": [
+            "volcanoes",
+            "the remains of living things",
+            "gases in the atmosphere",
+            "water trapped inside rocks"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0be9e51b37d626d296860a1e6adfa88a1754e71431be68a7d9035faa4efc9c6b"
+        },
+        {
+          "id": "MEA_2016_8_17",
+          "question": "What is the basic unit of life?",
+          "choices": [
+            "atom",
+            "cell",
+            "element",
+            "nucleus"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0bf0af15199a02a48550dcba2d18c970216c304adff2a92c050e777e966a11ff"
+        },
+        {
+          "id": "Mercury_SC_416160",
+          "question": "Bones support the body. What pulls and pushes on bones to move them?",
+          "choices": [
+            "blood",
+            "nerves",
+            "muscles",
+            "skin"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "0c58e37d0f0a293ae83a0006261a4b31c51c14ce6d8f1114734aa2cc3aa291ad"
+        },
+        {
+          "id": "Mercury_7133840",
+          "question": "Pedro shook a can of soda. When the soda was opened, foam and soda burst from the can. Which statement best explains what happened?",
+          "choices": [
+            "A new substance was formed.",
+            "The gas pressure was released from the can.",
+            "The sugar in the soda turned into a gas.",
+            "The can absorbed heat from the air."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0c66785c4e3af317bd7c88ec6a67ca04b2a5f83e8bf2ea3e2b0ea55bc896611c"
+        },
+        {
+          "id": "Mercury_7013615",
+          "question": "In the 17th century, Gregor Mendel crossed pea plants with different traits and observed the results in their offspring. To which of these did Mendel contribute most directly with his work?",
+          "choices": [
+            "medicine",
+            "agriculture",
+            "science of force and motion",
+            "science of heredity and variation"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0c69ffbd08c8667fd700aedceb604e2b9d3891bc2001be91937b89d8c0ee8d9c"
+        },
+        {
+          "id": "Mercury_175875",
+          "question": "Deer provide food for wolves. How does this relationship also benefit the deer herd?",
+          "choices": [
+            "by protecting deer from other predators",
+            "by controlling the deer population",
+            "by decreasing diversity within the herd",
+            "by protecting the deer from disease"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0c9a930e4e438422ca1f16d21a696d8edea056d997ea3995273b6f847b726875"
+        },
+        {
+          "id": "Mercury_SC_415695",
+          "question": "Which force produces energy as heat?",
+          "choices": [
+            "pull",
+            "gravity",
+            "friction",
+            "magnetic"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0c9f6dccf037e1bfc9b75d86fe7e486702c04209bf70e46ec97d92e1dbbb2879"
+        },
+        {
+          "id": "Mercury_7182193",
+          "question": "Natural selection is a mechanism that acts on individuals within a population. Which is a result of the process of natural selection?",
+          "choices": [
+            "The reproductive rate of the population decreases.",
+            "Genetic similarity within the population increases.",
+            "Organisms are better adapted to their environment.",
+            "Adverse changes to the environment become more frequent."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0ca995571370f66356506679d3b0b093f175e4dfa07707d8bd2741b1e867b6da"
+        },
+        {
+          "id": "MCAS_2007_5_4794",
+          "question": "A student places a sheet of black construction paper on her desk. What happens to most of the light that strikes the black construction paper?",
+          "choices": [
+            "The light is bent by the paper.",
+            "The light reflects off the paper.",
+            "The light is absorbed by the paper.",
+            "The light passes through the paper."
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "0cae83d2f08f801d15aea5a14d5f0468972184558475c9b0168b927f44272799"
+        },
+        {
+          "id": "TIMSS_2011_4_pg70",
+          "question": "What is the correct explanation for why we have day and night on Earth?",
+          "choices": [
+            "The Sun orbits around the Earth.",
+            "Earth orbits around the Sun.",
+            "Earth turns on its axis.",
+            "The Sun turns on its axis."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0cb6833815544f85de50d23177bf6f7556a0bc42582090503c7a1d9a1746f5d2"
+        },
+        {
+          "id": "AIMS_2008_8_10",
+          "question": "In a desert environment, cactus wrens often build their nests in cholla cacti to avoid predators. This behavior does not hurt the cacti. Which type of relationship do cactus wrens and cholla cacti demonstrate?",
+          "choices": [
+            "competitive",
+            "commensalism",
+            "mutualism",
+            "parasitism"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0cbf5058afae1ffdcc74a81471b64bfa1fb7f04f09d65f9b8335ba7fa7205fcc"
+        },
+        {
+          "id": "Mercury_7017763",
+          "question": "Soil erosion can be best prevented by",
+          "choices": [
+            "removing grass from the steepest slope.",
+            "building terraces into the sides of a slope.",
+            "heavily watering the vegetation on the slope.",
+            "increasing the slope of the land by adding more soil."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0cc6c09afbe522c5681b714bb3817cbc67a9180d4d30b5eeb88661f28225b5f3"
+        },
+        {
+          "id": "MCAS_2003_5_24",
+          "question": "During which of the processes below does water vapor change to liquid water?",
+          "choices": [
+            "melting",
+            "freezing",
+            "evaporation",
+            "condensation"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0cd52b0a3c01c756c4bdc3308ec2a597b399e347bf9e66aeaab0e5ee516850d6"
+        },
+        {
+          "id": "Mercury_7239155",
+          "question": "Which property of proteins best allows them to perform an enormously diverse range of functions?",
+          "choices": [
+            "their large, chemical-energy reserve",
+            "their large, stored-electric potential",
+            "the complexity of their folded structure",
+            "the wide variety of elements they include"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0cef55da983f247664944009169e52180172d150993b0c97b70e24dc1b407109"
+        },
+        {
+          "id": "MSA_2012_5_36",
+          "question": "Some materials are electrical conductors. Which material best conducts electricity?",
+          "choices": [
+            "copper",
+            "plastic",
+            "rubber",
+            "wood"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0d390003d2ddc902fb74d6e05eb4233394930a1a9330fcbd05d22838d86f8e57"
+        },
+        {
+          "id": "TIMSS_2011_8_pg6",
+          "question": "Which of the following best describes the purpose of cellular respiration?",
+          "choices": [
+            "to provide energy for cell activities",
+            "to produce sugar for storage in cells",
+            "to release oxygen for breathing",
+            "to supply carbon dioxide for photosynthesis"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0d4869d3dc669d1f656ac342044d11efc4a907141d8937ea802ee8184b46ccb0"
+        },
+        {
+          "id": "Mercury_401752",
+          "question": "Which function is a role of a feedback system?",
+          "choices": [
+            "stimulation of appetite",
+            "identification of gender",
+            "determination of blood type",
+            "regulation of growth in the skeletal system"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0d7aa4d22d5f7dca5d1a8e8420623879e13467454d9cc7f472b9645205609b7c"
+        },
+        {
+          "id": "Mercury_178955",
+          "question": "Genes code for specifically structured",
+          "choices": [
+            "acids.",
+            "lipids.",
+            "sugars.",
+            "proteins."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0d7ddc1957e264a5fe082b2abfc7470a7ade4d25b92ad4e3515547dc104781e4"
+        },
+        {
+          "id": "Mercury_7133665",
+          "question": "Which action illustrates a chemical change?",
+          "choices": [
+            "painting a wood chest",
+            "sawing a wood plank",
+            "burning wood chips",
+            "cutting down a tree"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0d9a40f9c017324a258c7880b0a4a7e451779605d692de489fd9f3fd7a7daa57"
+        },
+        {
+          "id": "Mercury_7016555",
+          "question": "Which situation is an example of a feedback system in the body that maintains homeostasis?",
+          "choices": [
+            "a mouse pushing a lever to release food",
+            "a dog going to a food bowl when a bell rings",
+            "students receiving star stickers for good behavior",
+            "the brain signaling blood vessels to return to normal"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "0daa3ebca1eb5046ce26d5af6ab80fad2a542ac517f1ad8e6ccfddeb61586d47"
+        },
+        {
+          "id": "ACTAAP_2013_5_2",
+          "question": "Which serve as evidence for a scientific theory?",
+          "choices": [
+            "guesses",
+            "opinions",
+            "arguments",
+            "observations"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0dc9efd41ef1b68c1fa6d35156373969521ea1318af3e33b2fcde4c901786aa4"
+        },
+        {
+          "id": "Mercury_7037485",
+          "question": "What is the composition of the nucleus of an atom?",
+          "choices": [
+            "ions and electrons",
+            "electrons and protons",
+            "protons and neutrons",
+            "neutrons and electrons"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "0e105fd67af7e6624543748c9403be1efd4d0d01e3d8c113cc7703ecfa87ca7d"
+        },
+        {
+          "id": "Mercury_7172778",
+          "question": "Decomposers increase the fertility of the soil and prevent dead organisms from building up in the environment. In which way do decomposers make the soil more fertile?",
+          "choices": [
+            "by adding carbon",
+            "by adding nitrogen",
+            "by removing excess water",
+            "by removing excess minerals"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0e31f98bb180063998172a9462db40ff509b5c189c535a77a03de59581abd859"
+        },
+        {
+          "id": "Mercury_SC_401182",
+          "question": "Which features are physical properties of an iron nail?",
+          "choices": [
+            "conducts heat, magnetic, solid",
+            "conducts electricity, magnetic, rusts",
+            "conducts sound, insulates, non-magnetic",
+            "dissolves, conducts heat, non-magnetic"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0e40a6d9b34fa32568bf8752f79b7d708347deaa4169ff9085f1c7e4053a29e7"
+        },
+        {
+          "id": "Mercury_7099680",
+          "question": "If the solar system were used as a model of an atom, what would the Sun most likely represent?",
+          "choices": [
+            "an ion",
+            "a nucleus",
+            "a neutron",
+            "an electron"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0e5d595a69cc9d45b5285fdd89954c7c87c159d902df8742759d5293c2e5feda"
+        },
+        {
+          "id": "Mercury_7216475",
+          "question": "A spring-fed stream forms a pond that contains watercress plants, minnows, and crayfish. The pond receives 5 hours of direct sunlight every day. Which of the following is an abiotic factor in this ecosystem?",
+          "choices": [
+            "the pond water",
+            "the watercress plants",
+            "the minnows",
+            "the crayfish"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0e65765e70d870e712bd34af382eba4da7f6ca0acc08583e32c9c808deff7a60"
+        },
+        {
+          "id": "Mercury_7185588",
+          "question": "Which terms can be used to describe the properties of both a wave and a particle of light?",
+          "choices": [
+            "charge and volume",
+            "frequency and mass",
+            "speed and frequency",
+            "frequency and density"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0ea0e5a8065482de8394d1635c3ebe3d2ed63022458fe6feda35eac5d0810cd3"
+        },
+        {
+          "id": "ACTAAP_2009_5_6",
+          "question": "Which cell part is correctly paired with its function?",
+          "choices": [
+            "nucleus-controls cell activities",
+            "chloroplast-outside boundary of plant cells",
+            "cell wall-controls what goes in and out of cells",
+            "cell membrane-where photosynthesis takes place"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "0eac28f253eaedc54e35fcb3cb68d893b1db8d3230271a258d7876b4ba9e7bd8"
+        },
+        {
+          "id": "Mercury_SC_405714",
+          "question": "A student had a cup of ice while working outside. After a while, the ice melted because the Sun emits energy in the form of light and",
+          "choices": [
+            "electricity.",
+            "heat.",
+            "magnetism.",
+            "sound."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0eb1469a9098f5d1298561634722673ac8ddea2b19a1d75fd7aef64f3e629cc8"
+        },
+        {
+          "id": "Mercury_SC_400151",
+          "question": "Which mixture can be easily separated by adding water and pouring it through a coffee filter?",
+          "choices": [
+            "sugar and salt",
+            "salt and sand",
+            "sugar and baking soda",
+            "iron filings and sand"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0eb8eba44bc228890493a99a21fd5573a749cb98c69b205f99d3ae0adad3e1f2"
+        },
+        {
+          "id": "Mercury_SC_400384",
+          "question": "A windstorm knocks down many trees in a national park. Timber companies want to get rid of the fallen trees. How would this most likely harm the park ecosystem?",
+          "choices": [
+            "reduces the risk of fire",
+            "decreases erosion problems",
+            "increases the risk of drought",
+            "removes available nutrients"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0eba49db1c8c4145296cef3c553b750f9882690ef84e69646c430fba4ad60cff"
+        }
+      ],
+      "available_four_choice": 2241,
+      "excluded_non_four_choice": [
+        "WASL_2003_5_9",
+        "NYSEDREGENTS_2006_8_37",
+        "TIMSS_2003_8_pg24",
+        "NYSEDREGENTS_2016_4_10",
+        "TIMSS_1995_8_Q14",
+        "TAKS_2009_8_23",
+        "TIMSS_1995_8_I15",
+        "NYSEDREGENTS_2011_4_2",
+        "TIMSS_2003_4_pg36",
+        "NYSEDREGENTS_2009_4_12"
+      ]
+    },
+    "validation": {
+      "rows": [
+        {
+          "id": "CSZ_2008_5_CSZ50776",
+          "question": "Decomposers are important in the food chain because they",
+          "choices": [
+            "produce their own food using light from the Sun.",
+            "stop the flow of energy from one organism to another.",
+            "break down dead organisms and recycle nutrients into the soil.",
+            "are microscopic and other organisms cannot consume them."
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "02b1085d6e078fefd01d7be57a7dba7f58a4a9ce3da75aae17fee30c4bd4453f"
+        },
+        {
+          "id": "Mercury_SC_LBS10170",
+          "question": "An anemometer is a tool that measures",
+          "choices": [
+            "wind direction.",
+            "wind speed.",
+            "air pressure.",
+            "air temperature."
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "032551382e7e5eb11e75acbb2df6e3b0fcba4a927c205b8dc029ecdc28404f4e"
+        },
+        {
+          "id": "Mercury_SC_401598",
+          "question": "Which action does a kitten learn from its mother?",
+          "choices": [
+            "how to grow",
+            "how to meow",
+            "how to hunt mice",
+            "how to nurse milk"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "036563cf2b4dc132a064862ba422d82271c9b6a7917bb264adfd368335db30d3"
+        },
+        {
+          "id": "Mercury_SC_401146",
+          "question": "The major function of the kidneys is to",
+          "choices": [
+            "exchange gases.",
+            "break down nutrients.",
+            "filter wastes and byproducts.",
+            "carry blood back to the heart."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0432c83972d80035be394a1e8442a4e28683702a47d6218168a946b532e7197b"
+        },
+        {
+          "id": "Mercury_7084193",
+          "question": "If a single-celled organism that uses photosynthesis has its source of light removed, it will",
+          "choices": [
+            "grow in size.",
+            "produce less energy.",
+            "divide repeatedly.",
+            "generate more waste."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0516e6b6ad36ba73f0cbb93e521492728618f06eecbda01dd8128087c5986262"
+        },
+        {
+          "id": "Mercury_7177940",
+          "question": "Ocean currents, prevailing wind patterns, and other atmospheric disturbances are initially caused by which of these?",
+          "choices": [
+            "differences in the cycles of the Moon",
+            "gravitational pull of the Sun",
+            "incoming solar radiation",
+            "ozone layer depletion"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "05a79fe4ff509ff53d443ca0c777ea218d235dd25212a0604012e1932f506cc2"
+        },
+        {
+          "id": "Mercury_7223073",
+          "question": "A scientist designs a mathematical model of the rock cycle. The model predicts how changes in Earth processes will affect the amounts of different types of rock on Earth. Which quantity should stay the same as Earth processes change?",
+          "choices": [
+            "the average rate at which Earth rotates",
+            "the average distance of Earth from the Sun",
+            "the total number of inactive volcanoes on Earth",
+            "the total amount of material on Earth"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "05a90284a2821874989efd3a6d61d8dfc7749cee4df7a8cacf016fcd64241c3e"
+        },
+        {
+          "id": "Mercury_7213448",
+          "question": "A sample of the element copper is divided into the smallest particles possible such that each particle is still copper. Each particle can best be described as",
+          "choices": [
+            "an atom.",
+            "a molecule.",
+            "a nucleus.",
+            "an electron."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "05d86ad141c034d391faa58ab30b70f1e83962e46fe0f1051937a27176401e30"
+        },
+        {
+          "id": "Mercury_SC_402159",
+          "question": "What should a student do if he gets a red, itchy rash after a class field trip?",
+          "choices": [
+            "scratch it",
+            "wait for it to go away",
+            "tell the teacher right away",
+            "tell his best friend after school"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "063563c907a909051448b9b1de17927b10ac604d4fbbbb922a21c76c141c83ce"
+        },
+        {
+          "id": "Mercury_7267785",
+          "question": "Which planet has characteristics that make it the most likely planet for the discovery of extra-terrestrial life?",
+          "choices": [
+            "Jupiter",
+            "Venus",
+            "Saturn",
+            "Mars"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "06ad34bd5028a9a9d468af6635208053ace99f4d5ee1013b62ea306d173b3443"
+        },
+        {
+          "id": "Mercury_SC_416133",
+          "question": "Which describes a material that is not a food?",
+          "choices": [
+            "It stores energy but not nutrients.",
+            "It does not store energy or nutrients.",
+            "It stores energy and nutrients.",
+            "It does not store energy but stores nutrients."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0710d34f5356ccfebe9f159b9b3fccebaad273073bcbd3013aa9fef6513b0bd0"
+        },
+        {
+          "id": "Mercury_7239645",
+          "question": "Every copy of a particular protein manufactured by a cell shows the same incorrect amino acid at the same point in its structure. According to the central dogma of molecular biology, in which structure does this error originate?",
+          "choices": [
+            "DNA",
+            "mRNA",
+            "tRNA",
+            "rRNA"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0758d09d7071bc23fa11eeec3831da546efb4957ca28b2e9f8d24c7158ed6907"
+        },
+        {
+          "id": "Mercury_7247905",
+          "question": "Which of these structures is produced in an ovary?",
+          "choices": [
+            "fetus",
+            "sperm",
+            "egg",
+            "embryo"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "093276c60d347d57a2b71b8e0b6d72785e733c8a74f8d4bcb4e883fb5daa1648"
+        },
+        {
+          "id": "Mercury_SC_402067",
+          "question": "Which method is the best safety procedure when working around open flames?",
+          "choices": [
+            "wear an acid-resistant apron",
+            "wash your hands",
+            "tie back long hair",
+            "use an electric fan to blow gases from the flame"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "09d60001a9752a99f83505ca3e4391233f8c57825af95ad6ba766beb49bd0bda"
+        },
+        {
+          "id": "Mercury_7026600",
+          "question": "Planting certain crop plants in a field causes a disruption of the natural nitrogen cycle in that field. Which outcome would this disruption most DIRECTLY cause in the field over time?",
+          "choices": [
+            "topsoil erodes",
+            "soil nutrients decrease",
+            "desert conditions appear",
+            "atmospheric carbon dioxide increases"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "09ef7352f26a9f183b5f8dcd7942f8acbb2c2c9a4ecf4e38318afd9362d3f848"
+        },
+        {
+          "id": "Mercury_182683",
+          "question": "Edith's checkerspot butterfly is a non-migratory species found in distinct populations from Canada to Mexico. Today, populations in southern regions are declining while new populations push the northern limit further north. This range shift provides evidence for the theory of",
+          "choices": [
+            "mass extinction.",
+            "global warming.",
+            "gene dominance.",
+            "natural selection."
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "09f22e54abd8106b75defd0faaee55f6f746d121134aca83213621a14afed7f1"
+        },
+        {
+          "id": "Mercury_7188475",
+          "question": "What will happen to a cell that is placed in a hypotonic saline solution?",
+          "choices": [
+            "Water will exit the cell causing it to shrink.",
+            "Water will enter the cell causing it to swell.",
+            "Salt will exit the cell causing it to shrink.",
+            "Salt will enter the cell causing it to swell."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "0a6b4b77165cd2bda4c86d7f8dba99a76fe6cef065ecddd53429c52152aecfa5"
+        },
+        {
+          "id": "ACTAAP_2011_5_2",
+          "question": "Which process uses carbon from the air to make food for plants?",
+          "choices": [
+            "growth",
+            "respiration",
+            "decomposition",
+            "photosynthesis"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0adff99748d29d6623fafd2263f3605fe664f636c94cda9491d5cab751a88024"
+        },
+        {
+          "id": "Mercury_7205450",
+          "question": "Which statement about the electromagnetic spectrum is accurate?",
+          "choices": [
+            "Gamma waves travel faster than radio waves.",
+            "Ultraviolet waves make up most of the spectrum.",
+            "X-rays travel slower than infrared waves.",
+            "Visible light waves are a small part of the spectrum."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0ae24e9fce422090491c349df746da4b8101c6c0a9d27f4353b3b5e144aaddf1"
+        },
+        {
+          "id": "Mercury_7029698",
+          "question": "Which observation indicates that a chemical reaction has taken place?",
+          "choices": [
+            "A substance becomes warmer.",
+            "A material changes from a solid to liquid.",
+            "Bubbles form when a liquid is heated.",
+            "A new chemical substance is formed."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "0b1202dbab50a368a4682f57581f95a7a15db63f9a67d8ebccdb6acabfa6e7f4"
+        },
+        {
+          "id": "Mercury_SC_416126",
+          "question": "Bone cells need nutrients. Which two systems get nutrients to bone cells?",
+          "choices": [
+            "the digestive system and the circulatory system",
+            "the circulatory system and the respiratory system",
+            "the respiratory system and the skeletal system",
+            "the skeletal system and the digestive system"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "0b157863e009d4bca8003ff7e33f337c76d458db5243092b6f8c21a6ef080f92"
+        },
+        {
+          "id": "Mercury_7032200",
+          "question": "Of the choices listed, what is the best way to conserve water in a home?",
+          "choices": [
+            "take long showers",
+            "run a half full dishwasher",
+            "let the water run while washing the dishes",
+            "turn off the water while brushing your teeth"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0c012f266cba3e2d5451e9383577f00c96bd98f733f0ab2527daf6d572e0daa7"
+        },
+        {
+          "id": "Mercury_7103338",
+          "question": "Which steps in the water cycle most directly cause floods?",
+          "choices": [
+            "precipitation and runoff",
+            "condensation and evaporation",
+            "runoff and condensation",
+            "evaporation and precipitation"
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0c42cfac193f79caa9b7e0f856986ac176ac9033147c6b01c4370be19caf4f6a"
+        },
+        {
+          "id": "Mercury_7074970",
+          "question": "A disease that can be passed from one person to another is best described as being",
+          "choices": [
+            "hazardous.",
+            "contaminated.",
+            "infectious.",
+            "toxic."
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "0ccde345aaef26230e059614d4a4cc67b52364a85a8dcf8d997045f0834f0e8d"
+        },
+        {
+          "id": "Mercury_SC_405721",
+          "question": "Christina kicks a ball. The ball moves faster when she kicks it on the concrete sidewalk than when she kicks it on the grass. Why does the ball travel slower on the grass than the sidewalk?",
+          "choices": [
+            "The grass has more friction.",
+            "The grass attracts more wind.",
+            "The grass has a higher temperature.",
+            "The grass increases Earth's gravity."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "0cf4f1cc14fa79e94b3fcc569fde0050b924aabb57240680cd2e196a68606347"
+        },
+        {
+          "id": "Mercury_7176085",
+          "question": "The influence of the Moon on the tides on Earth is greater than that of the Sun. Which best explains this?",
+          "choices": [
+            "The Moon is more similar in composition to Earth than the Sun.",
+            "The Moon has a smaller mass than Earth and the Sun.",
+            "The Moon has a higher density than the Sun.",
+            "The Moon is closer to Earth than the Sun."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0d572a464e8c8cfdc3a4b6f3da6667a36de6075499d1dd30d846a23ff4b9aeae"
+        },
+        {
+          "id": "Mercury_7009940",
+          "question": "Habitat becomes a major factor in the extinction of a species when",
+          "choices": [
+            "genetic diversity is not achieved.",
+            "competitive species are introduced.",
+            "changes in behavior start to develop.",
+            "smaller populations fail to breed."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "0d5f28782d4ac1da8011de1c4e541379c195826dea0a8d87fc75ba76ec03d5bd"
+        },
+        {
+          "id": "Mercury_7186918",
+          "question": "Some scientists have suggested that pandas may be more closely related to raccoons than to bears. What could scientists compare between pandas and the raccoons to help classify the panda more accurately?",
+          "choices": [
+            "their diets",
+            "their DNA",
+            "their body sizes",
+            "their geographic distribution"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "0e3f74668ae799197dcf818225414b541f526a275db3fba83ab136dde413836c"
+        },
+        {
+          "id": "AKDE&ED_2012_4_4",
+          "question": "Benjamin Franklin invented many different things. Among his inventions were bifocal glasses, the lightning rod, and a type of iron stove. Which personal quality most likely led to the invention of these things?",
+          "choices": [
+            "humor",
+            "honesty",
+            "curiosity",
+            "leadership"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "0ebfd72f90b41edaf00805c76c995b4d61f90da2c8f5407e4399820b92c738bc"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_4_24",
+          "question": "Many animals blend in with their environment and can not be easily seen by predators. This is an example of which adaptation?",
+          "choices": [
+            "communicating",
+            "hibernating",
+            "migrating",
+            "camouflaging"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "0ee899d2dd6be6a33023596b16ed1e0cd201a1dfb17d02b307eae2c2e46f50d8"
+        },
+        {
+          "id": "NCEOGA_2013_5_51",
+          "question": "A scientist is trying to decide whether an organism is unicellular or multicellular. Which information would help the scientist most to make her decision?",
+          "choices": [
+            "size of the cells of the organism",
+            "what the organism eats",
+            "how many types of cells are in the organism",
+            "how fast the organism grows"
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "1006908920324dfc2ec8649cc07048dffaed4e60e6a0120a37fdf66ca042653e"
+        },
+        {
+          "id": "Mercury_7107433",
+          "question": "Plants can reproduce sexually and asexually. If one offspring is produced sexually while the other is produced asexually, what will only the sexually produced offspring have?",
+          "choices": [
+            "both inherited and acquired traits",
+            "a new combination of traits",
+            "beneficial genetic traits",
+            "a complete set of traits"
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "10978fc7868950517716bce5aa317a92e42fca7b7e39b227a982e8f3449da08e"
+        },
+        {
+          "id": "Mercury_SC_400061",
+          "question": "Over time, coal began to form from",
+          "choices": [
+            "snow and ice.",
+            "sand and rock.",
+            "many dead plants.",
+            "lots of animal bones."
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "112a1cbdc7f153c5d02889b148f6d7a8f37abc852d4bb58892857d80d0f39112"
+        },
+        {
+          "id": "MDSA_2010_8_17",
+          "question": "An object is moving in a straight line at a constant speed. What will happen to the object if no outside force acts on the object?",
+          "choices": [
+            "The speed and direction of the object will change.",
+            "The speed and direction of the object will not change.",
+            "The direction of the object will change; the speed will remain constant.",
+            "The speed of the object will change; the direction will remain constant."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "1145db12d820fa03996e04321bf8d44432750e97f0a51a6cba46ef51cef6ef43"
+        },
+        {
+          "id": "Mercury_400540",
+          "question": "The formula X + ZY -> XZ + Y shows that",
+          "choices": [
+            "X and Y bonded into a more complex molecule.",
+            "ZY has decomposed into two smaller compounds.",
+            "X is a more reactive compound than Y.",
+            "Y has changed into a new compound."
+          ],
+          "answer": 2,
+          "wrong": 0,
+          "selection_hash": "117e55dfa5972ef4889e4fe5beed06e99d968a64a5eefee1a553090cb00628da"
+        },
+        {
+          "id": "Mercury_7072415",
+          "question": "As a satellite falls toward Earth, the gravitational force between the satellite and Earth increases. Which statement best explains why there is an increase in gravitational force?",
+          "choices": [
+            "As the satellite gets closer to Earth, the satellite cools.",
+            "As the satellite approaches Earth, the satellite rotates faster.",
+            "The mass of the satellite increases as it nears Earth.",
+            "The distance between Earth and the satellite decreases."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "12444620e68ac9b1a95f657e1319d81ea6979dbaaebf6b3d5a21b9059a48844f"
+        },
+        {
+          "id": "Mercury_SC_415425",
+          "question": "Earth's atmosphere is made of many gases. Which gas do producers use to make food?",
+          "choices": [
+            "oxygen",
+            "carbon dioxide",
+            "nitrogen",
+            "water vapor"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "12b28f8e22dc971df99bf7fd297a1aa6ecbf7e9dedd7dd28fb7b80c1f71d2ec8"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_7",
+          "question": "Specialized cells protect the human body from disease-causing microbes by",
+          "choices": [
+            "producing chemicals that destroy the microbes",
+            "dissolving wastes from the microbes",
+            "creating recessive genes in the microbes",
+            "supplying oxygen and nutrients to the microbes"
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "12d1cb1720cafbf70b2414b5f256278cd09f2dd5a30b6f6d94879dca5084bb5d"
+        },
+        {
+          "id": "Mercury_7220500",
+          "question": "One substance found on Earth is more stable as an elemental gas than as part of a solid compound. As a result, this substance is very abundant in the atmosphere. Which substance exhibits these traits?",
+          "choices": [
+            "argon",
+            "chlorine",
+            "nitrogen",
+            "oxygen"
+          ],
+          "answer": 2,
+          "wrong": 3,
+          "selection_hash": "13234d8d6f7ff96c21c3ee6ad85b7a648eee2bff07341c0627041bdd65491b47"
+        },
+        {
+          "id": "Mercury_SC_413454",
+          "question": "In which way are sugars usually transported throughout a pine tree?",
+          "choices": [
+            "across from the cones to the needles",
+            "down from the needles to the roots",
+            "up from the roots to the branches",
+            "circular from the top to the bottom of the trunk"
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "135520047126a254265d63f5a9d4ecf5ae3340c0d3b25798afba8632137c9e09"
+        },
+        {
+          "id": "Mercury_7248273",
+          "question": "Neurons are cells of the nervous system that send and receive signals. From which portion of a cell does a neuron send a signal?",
+          "choices": [
+            "soma",
+            "axon",
+            "dendrite",
+            "nucleus"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "137e589029d3c75b24fa533aad3ae9c91a5658bf88e9201d155c7d47e7e72fc6"
+        },
+        {
+          "id": "Mercury_7004708",
+          "question": "When an earthquake occurs, the speed of the seismic waves changes as they",
+          "choices": [
+            "move through different materials.",
+            "are pulled by the force of gravity.",
+            "lose energy to surrounding rocks.",
+            "reflect off of boundaries."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "13b5186bf645caa5709c41c4d131bd3cb2252a2fd3e18e3b31a296d666b49aa3"
+        },
+        {
+          "id": "MCAS_2004_5_26",
+          "question": "In order to build a wooden table, which of the following is the best thing to do first?",
+          "choices": [
+            "Stain the wood.",
+            "Measure the boards.",
+            "Saw the wood for the table.",
+            "Make a drawing of the table."
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "140c3be3925eee6d9d959ad476be364f30705237999b177353ae1652378ea04d"
+        },
+        {
+          "id": "Mercury_176873",
+          "question": "Which of the following is produced during the process of cellular respiration?",
+          "choices": [
+            "carbon dioxide",
+            "sodium chloride",
+            "oxygen",
+            "sugar"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "146a14e80c8edbafa367b045062741899aa6295503affe69aef5cef8e9004155"
+        },
+        {
+          "id": "Mercury_7221883",
+          "question": "What is the smallest unit of an element that retains the properties of that element?",
+          "choices": [
+            "electron",
+            "molecule",
+            "neutron",
+            "atom"
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "1478d74686545cb61fb08721593d65bd996c3df8fe58aae287c256f8f0ea0296"
+        },
+        {
+          "id": "Mercury_175648",
+          "question": "Which of these could only be found inside a plant cell?",
+          "choices": [
+            "nucleus",
+            "chloroplasts",
+            "mitochondria",
+            "cytoplasm"
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "149d31f3680c2d874ae94dcbb153466f96212f3ba1bcf61de3007ebcb0490d69"
+        },
+        {
+          "id": "Mercury_177013",
+          "question": "The forelimb of the monkey, bat, penguin, and alligator look very different on the outside, but their skeletal structures are similar. This evidence suggests that these animals",
+          "choices": [
+            "may have evolved from a common ancestor.",
+            "all reproduce in a similar fashion.",
+            "live in similar environments.",
+            "should all be able to fly someday."
+          ],
+          "answer": 0,
+          "wrong": 1,
+          "selection_hash": "150c838634318d9a7e1f2f65c24ae295a8ea169d72e845341ce803cf7e1297c4"
+        },
+        {
+          "id": "Mercury_7190015",
+          "question": "Some natural disasters can have a large effect on the global climate. Which type of natural disaster would produce the greatest decrease in solar radiation reaching the surface of Earth for the longest period of time?",
+          "choices": [
+            "a giant tsunami",
+            "a strong earthquake",
+            "a powerful hurricane",
+            "a large volcanic eruption"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "15209c6770cb809e4ac6a2bcf792aab57cc323d765be44b7cfc8e350b45897cb"
+        },
+        {
+          "id": "Mercury_SC_LBS10682",
+          "question": "The atmosphere of Earth changed when plant life increased. Before there were plants, the atmosphere contained much less",
+          "choices": [
+            "hydrogen.",
+            "oxygen.",
+            "nitrogen.",
+            "water."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "16e63f9f859c1f5813d94cb3a4f68262692a93a6836c44b2e3096049b70fbd76"
+        },
+        {
+          "id": "OHAT_2008_5_13",
+          "question": "Oak trees produce seeds that are contained in acorns. Blue jays eat the seeds in acorns. Blue jays also collect acorns and hide them in the ground, often far away from the parent oak tree. Blue jays do not eat the seed of every acorn they hide. How do oak trees benefit from blue jays' collecting and hiding acorns?",
+          "choices": [
+            "The oak trees are pollinated by the blue jays.",
+            "The oak trees are protected from other herbivores.",
+            "The seeds of oak trees are protected from the sun.",
+            "The seeds of oak trees are planted in new environments."
+          ],
+          "answer": 3,
+          "wrong": 0,
+          "selection_hash": "1738ef62ece049950e6c7d4598390351fcf70bb96678a5e7aefe65387269e1b5"
+        },
+        {
+          "id": "MDSA_2008_5_41",
+          "question": "A student is investigating changes in the states of matter. The student fills a graduated cylinder with 50 milliliters of packed snow. The graduated cylinder has a mass of 50 grams when empty and 95 grams when filled with the snow. During which process in the water cycle does snow fall to the ground?",
+          "choices": [
+            "classification",
+            "condensation",
+            "evaporation",
+            "precipitation"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "17701beb939812109ccf1e5dadf898d1bcaafdc7a694ae0d401db64f84f399eb"
+        },
+        {
+          "id": "Mercury_7081813",
+          "question": "Muscle tissues are made of specialized units called",
+          "choices": [
+            "organs.",
+            "cells.",
+            "genes.",
+            "organelles."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "177853753e185bf97a1d166de1d801297d670e7a1240ab0f5c7f43acdc6df82f"
+        },
+        {
+          "id": "Mercury_7037433",
+          "question": "Many animals are still being hunted for their fur. Because of this, many of these animals are in danger of",
+          "choices": [
+            "starvation.",
+            "extinction.",
+            "forest fires.",
+            "overpopulation."
+          ],
+          "answer": 1,
+          "wrong": 0,
+          "selection_hash": "17ab48bfb66b40b2e098f3d558930905fb335e9ee4d2ebea5627a38c16d526a7"
+        },
+        {
+          "id": "Mercury_7085190",
+          "question": "Environments have changed over millions of years. Which of these would be best for a scientist to study when investigating these environmental changes?",
+          "choices": [
+            "volcanic deposits",
+            "weather forecasts",
+            "fossil records",
+            "ocean currents"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "183cbf315c5eb4060b4984e0f8a1db9301e8d0c80e86efd7ddd78fa0720379bb"
+        },
+        {
+          "id": "Mercury_7075233",
+          "question": "Rabies can lead to an infection of the brain. This directly causes problems in the",
+          "choices": [
+            "excretory system.",
+            "nervous system.",
+            "skeletal system.",
+            "integumentary system."
+          ],
+          "answer": 1,
+          "wrong": 2,
+          "selection_hash": "18bede889ef76f6f2f3d3ba62973e4ce842c6adc37ccd78577d14861eac96c74"
+        },
+        {
+          "id": "Mercury_7213080",
+          "question": "Which of these gases, on average, has the lowest volume in the atmosphere of Earth?",
+          "choices": [
+            "oxygen",
+            "nitrogen",
+            "water vapor",
+            "carbon dioxide"
+          ],
+          "answer": 3,
+          "wrong": 2,
+          "selection_hash": "19ef725cf3cb225b1dfd39e94a1ea96ae68c3d5386655b5ccc0b4eff320fd670"
+        },
+        {
+          "id": "Mercury_7100713",
+          "question": "Which two solar system objects have the least amount of distance between them?",
+          "choices": [
+            "the Sun and Mars",
+            "Earth and Jupiter",
+            "the Sun and Earth",
+            "Earth and the Moon"
+          ],
+          "answer": 3,
+          "wrong": 1,
+          "selection_hash": "1a37e9a75402462859f44623335d49703145b50967dc115006fd62f10715645e"
+        },
+        {
+          "id": "Mercury_7271653",
+          "question": "Just under half the oil that enters ocean water comes from natural oil seeps on the ocean floor. Just over half the oil in the oceans comes from human activities. Which human activity contributes the most oil to the oceans?",
+          "choices": [
+            "transporting oil over the ocean surface",
+            "drilling for oil on the ocean floor",
+            "polluting land with oil that reaches the oceans in runoff",
+            "polluting air with oil that reaches the ocean in precipitation"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "1a56a9ac3a1827b27955bcf20e0664c4bc90b65589c84d48e753174f0b8a90c2"
+        },
+        {
+          "id": "Mercury_SC_413544",
+          "question": "A weather balloon is about 2 meters wide when it is near the ground. It grows to about 6 meters wide at higher altitudes. Which change most likely makes the balloon become wider at higher altitudes?",
+          "choices": [
+            "More gases enter the balloon.",
+            "The gas inside the balloon gets much hotter.",
+            "The air pressure surrounding the balloon decreases.",
+            "Sunlight breaks down the material of the balloon."
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "1b0f60e06b48d8a3a510542af4cc428eb43f461dcb647806b3341db9e4906f91"
+        },
+        {
+          "id": "Mercury_7205380",
+          "question": "Salt water, plastic, and helium are all made of",
+          "choices": [
+            "atoms.",
+            "mixtures.",
+            "electrons.",
+            "compounds."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "1b44abb9743c83863840d9540c246a5896550f322f4e747bb9090f9f200746f2"
+        },
+        {
+          "id": "MCAS_2004_9_6",
+          "question": "Two workers are using a scaffold. One worker weighs 180 lbs. and the other weighs 200 lbs. Impact effects are assumed to increase the live load of the workers' weight by 25 percent. What is the resultant maximum live load, in pounds, that can be expected from the two workers supported by the scaffold?",
+          "choices": [
+            "380 lbs.",
+            "475 lbs.",
+            "625 lbs.",
+            "950 lbs."
+          ],
+          "answer": 1,
+          "wrong": 3,
+          "selection_hash": "1c23021f9b8b27272ae4308f20ff76b5d6ccab2ad5cd3e7a3270399e9aff60a1"
+        },
+        {
+          "id": "Mercury_SC_402253",
+          "question": "In photosynthesis, plants use chlorophyll to produce",
+          "choices": [
+            "sugar.",
+            "water.",
+            "energy.",
+            "carbon dioxide."
+          ],
+          "answer": 0,
+          "wrong": 2,
+          "selection_hash": "1c5594ac3414aa098d820608b2a5f0ee0b4ffcad6e8f4fd4c25995140ce2a670"
+        },
+        {
+          "id": "NYSEDREGENTS_2014_8_42",
+          "question": "The force of gravitational attraction between two objects depends on the distance between the objects and their",
+          "choices": [
+            "buoyancies",
+            "temperatures",
+            "masses",
+            "shapes"
+          ],
+          "answer": 2,
+          "wrong": 1,
+          "selection_hash": "1ca0ce8386205f9ffa5b8d35461451a5bc7ba03ed1f467dda4b66ad45ad06428"
+        },
+        {
+          "id": "Mercury_7216755",
+          "question": "Some people carry a mutated allele of a particular gene that makes them resistant to HIV infection and AIDS. Which best describes this type of mutation?",
+          "choices": [
+            "beneficial",
+            "asexual",
+            "harmful",
+            "unicellular"
+          ],
+          "answer": 0,
+          "wrong": 3,
+          "selection_hash": "1dc61e24190754232c0c721ff1225c2cfd77e429fe19abb678de2c453df66e20"
+        }
+      ],
+      "available_four_choice": 567,
+      "excluded_non_four_choice": [
+        "TIMSS_1995_8_J5",
+        "WASL_2005_5_11",
+        "TIMSS_2003_4_pg29"
+      ]
+    }
+  }
+}

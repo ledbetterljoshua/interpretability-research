@@ -1,0 +1,477 @@
+{
+  "kind": "exploratory",
+  "population": "Named completed runs, all saved validation items",
+  "selection": "No fitting. Lowest score with first-letter tie break. Ranks use (score,letter).",
+  "input_hashes": {
+    "experiments/causal_audit/analyze_outputs.py": "602ea8d13cc6fc6c1e410344de97f63d83555283c3515a6e7b2b58975b47be65",
+    "data/causal_audit/feasibility-v3/run.json": "f554fd4c67bf239f49222e6d9c12f7147a5ca18e3b8e76e24d6f752fb370afc0",
+    "data/causal_audit/feasibility-v3/baseline.json": "5fc7ccb3165e19b56f76fdf6c3c876d37b7db53a6a391071ac18668ddf15d030",
+    "data/causal_audit/feasibility-v3/epoch-3.json": "af568a216f74a928bfdd5870746de3ba25a26b7edc488a67476d3ad804b8171d",
+    "data/causal_audit/controls-lock-731/run.json": "22dd260d11005ee1938c30930377b6ddaf0f9477cc0e836069bbc36126728ce3",
+    "data/causal_audit/controls-lock-731/baseline.json": "c1650df57a23854b5337a8a393347f32fa097721cca4d39b2492c77f6a87e024",
+    "data/causal_audit/controls-lock-731/epoch-3.json": "94e6e4a4dd22305254e32d44436f0533ab561629fbae5babcaf79677b640da2c",
+    "data/causal_audit/fp32-controls-lock-947/run.json": "4ac1315060f9a2fc46b4dd87d1a211eed81309ce369a04df22abe8bbaa2d0dad",
+    "data/causal_audit/fp32-controls-lock-947/baseline.json": "8ed46ee11794fb14a9b13f9b5a0cf27887eb9f61b59162f7a500ba94120cb2d1",
+    "data/causal_audit/fp32-controls-lock-947/epoch-3.json": "87b485246d13606a68f3457b109eeb0108a82c4434c4cb67243b5a6dbf4eb93d"
+  },
+  "analyses": [
+    {
+      "run": "feasibility-v3",
+      "evaluation": "baseline",
+      "file": "data/causal_audit/feasibility-v3/baseline.json",
+      "conditions": {
+        "distractor": {
+          "n": 64,
+          "argmax_correct": 52,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            2,
+            8,
+            51
+          ],
+          "min_ties": 1,
+          "max_ties": 1,
+          "argmin_gained": 3,
+          "argmin_lost": 52,
+          "accuracy_change": -0.765625
+        },
+        "ordinary": {
+          "n": 64,
+          "argmax_correct": 53,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            2,
+            6,
+            53
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 53,
+          "accuracy_change": -0.78125
+        },
+        "unlock": {
+          "n": 64,
+          "argmax_correct": 50,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            1,
+            10,
+            50
+          ],
+          "min_ties": 2,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 50,
+          "accuracy_change": -0.734375
+        }
+      }
+    },
+    {
+      "run": "feasibility-v3",
+      "evaluation": "epoch-3",
+      "file": "data/causal_audit/feasibility-v3/epoch-3.json",
+      "conditions": {
+        "distractor": {
+          "n": 64,
+          "argmax_correct": 49,
+          "argmin_correct": 4,
+          "rank_correct_low_to_high": [
+            4,
+            4,
+            7,
+            49
+          ],
+          "min_ties": 2,
+          "max_ties": 0,
+          "argmin_gained": 4,
+          "argmin_lost": 49,
+          "accuracy_change": -0.703125
+        },
+        "ordinary": {
+          "n": 64,
+          "argmax_correct": 5,
+          "argmin_correct": 45,
+          "rank_correct_low_to_high": [
+            45,
+            10,
+            3,
+            6
+          ],
+          "min_ties": 1,
+          "max_ties": 4,
+          "argmin_gained": 45,
+          "argmin_lost": 5,
+          "accuracy_change": 0.625
+        },
+        "unlock": {
+          "n": 64,
+          "argmax_correct": 50,
+          "argmin_correct": 4,
+          "rank_correct_low_to_high": [
+            4,
+            4,
+            6,
+            50
+          ],
+          "min_ties": 2,
+          "max_ties": 0,
+          "argmin_gained": 4,
+          "argmin_lost": 50,
+          "accuracy_change": -0.71875
+        }
+      }
+    },
+    {
+      "run": "controls-lock-731",
+      "evaluation": "baseline",
+      "file": "data/causal_audit/controls-lock-731/baseline.json",
+      "conditions": {
+        "distractor": {
+          "n": 64,
+          "argmax_correct": 51,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            3,
+            7,
+            51
+          ],
+          "min_ties": 1,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 51,
+          "accuracy_change": -0.75
+        },
+        "near_miss": {
+          "n": 64,
+          "argmax_correct": 51,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            1,
+            9,
+            51
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 51,
+          "accuracy_change": -0.75
+        },
+        "neutral": {
+          "n": 64,
+          "argmax_correct": 51,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            3,
+            7,
+            51
+          ],
+          "min_ties": 1,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 51,
+          "accuracy_change": -0.75
+        },
+        "ordinary": {
+          "n": 64,
+          "argmax_correct": 53,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            2,
+            6,
+            53
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 53,
+          "accuracy_change": -0.78125
+        },
+        "unlock": {
+          "n": 64,
+          "argmax_correct": 52,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            1,
+            8,
+            52
+          ],
+          "min_ties": 2,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 52,
+          "accuracy_change": -0.765625
+        }
+      }
+    },
+    {
+      "run": "controls-lock-731",
+      "evaluation": "epoch-3",
+      "file": "data/causal_audit/controls-lock-731/epoch-3.json",
+      "conditions": {
+        "distractor": {
+          "n": 64,
+          "argmax_correct": 11,
+          "argmin_correct": 17,
+          "rank_correct_low_to_high": [
+            17,
+            15,
+            18,
+            14
+          ],
+          "min_ties": 10,
+          "max_ties": 33,
+          "argmin_gained": 17,
+          "argmin_lost": 11,
+          "accuracy_change": 0.09375
+        },
+        "near_miss": {
+          "n": 64,
+          "argmax_correct": 54,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            0,
+            8,
+            53
+          ],
+          "min_ties": 3,
+          "max_ties": 1,
+          "argmin_gained": 3,
+          "argmin_lost": 54,
+          "accuracy_change": -0.796875
+        },
+        "neutral": {
+          "n": 64,
+          "argmax_correct": 13,
+          "argmin_correct": 16,
+          "rank_correct_low_to_high": [
+            16,
+            17,
+            18,
+            13
+          ],
+          "min_ties": 12,
+          "max_ties": 31,
+          "argmin_gained": 16,
+          "argmin_lost": 13,
+          "accuracy_change": 0.046875
+        },
+        "ordinary": {
+          "n": 64,
+          "argmax_correct": 10,
+          "argmin_correct": 17,
+          "rank_correct_low_to_high": [
+            17,
+            15,
+            18,
+            14
+          ],
+          "min_ties": 8,
+          "max_ties": 31,
+          "argmin_gained": 17,
+          "argmin_lost": 10,
+          "accuracy_change": 0.109375
+        },
+        "unlock": {
+          "n": 64,
+          "argmax_correct": 54,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            1,
+            6,
+            54
+          ],
+          "min_ties": 2,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 54,
+          "accuracy_change": -0.796875
+        }
+      }
+    },
+    {
+      "run": "fp32-controls-lock-947",
+      "evaluation": "baseline",
+      "file": "data/causal_audit/fp32-controls-lock-947/baseline.json",
+      "conditions": {
+        "distractor": {
+          "n": 64,
+          "argmax_correct": 50,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            3,
+            8,
+            50
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 50,
+          "accuracy_change": -0.734375
+        },
+        "near_miss": {
+          "n": 64,
+          "argmax_correct": 51,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            1,
+            9,
+            51
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 51,
+          "accuracy_change": -0.75
+        },
+        "neutral": {
+          "n": 64,
+          "argmax_correct": 50,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            3,
+            8,
+            50
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 50,
+          "accuracy_change": -0.734375
+        },
+        "ordinary": {
+          "n": 64,
+          "argmax_correct": 53,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            2,
+            6,
+            53
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 53,
+          "accuracy_change": -0.78125
+        },
+        "unlock": {
+          "n": 64,
+          "argmax_correct": 51,
+          "argmin_correct": 3,
+          "rank_correct_low_to_high": [
+            3,
+            1,
+            9,
+            51
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 3,
+          "argmin_lost": 51,
+          "accuracy_change": -0.75
+        }
+      }
+    },
+    {
+      "run": "fp32-controls-lock-947",
+      "evaluation": "epoch-3",
+      "file": "data/causal_audit/fp32-controls-lock-947/epoch-3.json",
+      "conditions": {
+        "distractor": {
+          "n": 64,
+          "argmax_correct": 4,
+          "argmin_correct": 39,
+          "rank_correct_low_to_high": [
+            39,
+            15,
+            6,
+            4
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 39,
+          "argmin_lost": 4,
+          "accuracy_change": 0.546875
+        },
+        "near_miss": {
+          "n": 64,
+          "argmax_correct": 54,
+          "argmin_correct": 2,
+          "rank_correct_low_to_high": [
+            2,
+            4,
+            4,
+            54
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 2,
+          "argmin_lost": 54,
+          "accuracy_change": -0.8125
+        },
+        "neutral": {
+          "n": 64,
+          "argmax_correct": 4,
+          "argmin_correct": 40,
+          "rank_correct_low_to_high": [
+            40,
+            13,
+            7,
+            4
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 40,
+          "argmin_lost": 4,
+          "accuracy_change": 0.5625
+        },
+        "ordinary": {
+          "n": 64,
+          "argmax_correct": 4,
+          "argmin_correct": 39,
+          "rank_correct_low_to_high": [
+            39,
+            14,
+            7,
+            4
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 39,
+          "argmin_lost": 4,
+          "accuracy_change": 0.546875
+        },
+        "unlock": {
+          "n": 64,
+          "argmax_correct": 54,
+          "argmin_correct": 2,
+          "rank_correct_low_to_high": [
+            2,
+            4,
+            4,
+            54
+          ],
+          "min_ties": 0,
+          "max_ties": 0,
+          "argmin_gained": 2,
+          "argmin_lost": 54,
+          "accuracy_change": -0.8125
+        }
+      }
+    }
+  ]
+}

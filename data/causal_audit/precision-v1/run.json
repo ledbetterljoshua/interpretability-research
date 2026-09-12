@@ -1,0 +1,260 @@
+{
+  "status": "complete",
+  "stage": "finished",
+  "plan": "notes/2026-09-11-causal-audit-precision-plan.md",
+  "git_head": "11701eb802ab312d0d62adc953807bf11d048c12",
+  "input_hashes": {
+    "notes/2026-09-11-causal-audit-precision-plan.md": "b7957f1ae4baad6172c73bdaf6b6c96c9aef28655e9c4d36782cd769cdf7db16",
+    "experiments/causal_audit/precision.py": "6a00bbf222b5c1b9f0d3fb44d25e7a8ca9dcfb0cc368afa6ba1e75f0adbbaa5a",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "experiments/causal_audit/feasibility.py": "f26f459a52342dbcf6c74296b34d7785794f4c4be0e6c33cca34bf1f99507489",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+    "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_model.safetensors": "957e28d8e0c86bb20321a3727b323f4515c69754a1226c3ede3674854d8e71c9",
+    "data/causal_audit/controls-lock-947/checkpoints/step-96/adapter_config.json": "f3d7e0a40c3ff07d7429e2ee837afdc24acb5323c68b0860ce6aa473753164bd"
+  },
+  "versions": {
+    "torch": "2.10.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0"
+  },
+  "limits": {
+    "seconds": 720,
+    "rss_gib": 32,
+    "mps_driver_gib": 28,
+    "free_percent": 15
+  },
+  "peak_mps_driver_gib": 9.089645385742188,
+  "peak_rss_gib": 1.6642608642578125,
+  "elapsed_seconds": 75.67201583390124,
+  "last_system_free_percent": 39,
+  "forwards": {
+    "bfloat16": {
+      "logits": {
+        "left": [
+          [
+            22.75,
+            22.625,
+            22.625,
+            22.5
+          ],
+          [
+            21.75,
+            21.75,
+            21.875,
+            21.875
+          ],
+          [
+            21.875,
+            21.875,
+            21.875,
+            21.875
+          ],
+          [
+            22.25,
+            22.375,
+            22.25,
+            22.25
+          ]
+        ],
+        "right": [
+          [
+            23.25,
+            23.125,
+            23.125,
+            23.0
+          ],
+          [
+            21.875,
+            22.0,
+            22.0,
+            22.0
+          ],
+          [
+            21.875,
+            21.875,
+            22.0,
+            21.875
+          ],
+          [
+            22.375,
+            22.375,
+            22.25,
+            22.25
+          ]
+        ],
+        "unpadded": [
+          [
+            22.75,
+            22.5,
+            22.5,
+            22.5
+          ],
+          [
+            21.75,
+            21.875,
+            21.875,
+            22.0
+          ],
+          [
+            22.0,
+            22.0,
+            22.0,
+            22.0
+          ],
+          [
+            22.375,
+            22.375,
+            22.25,
+            22.25
+          ]
+        ]
+      },
+      "errors_vs_unpadded": {
+        "left": 0.125,
+        "right": 0.625
+      },
+      "same_predictions": {
+        "left": false,
+        "right": false
+      }
+    },
+    "float32": {
+      "logits": {
+        "left": [
+          [
+            22.713760375976562,
+            22.472248077392578,
+            22.460796356201172,
+            22.379718780517578
+          ],
+          [
+            21.77226448059082,
+            21.850631713867188,
+            21.88925552368164,
+            21.935104370117188
+          ],
+          [
+            21.871658325195312,
+            21.874290466308594,
+            21.929296493530273,
+            21.870288848876953
+          ],
+          [
+            22.296173095703125,
+            22.335285186767578,
+            22.23189926147461,
+            22.238216400146484
+          ]
+        ],
+        "right": [
+          [
+            22.71375846862793,
+            22.47226333618164,
+            22.460800170898438,
+            22.37972068786621
+          ],
+          [
+            21.772262573242188,
+            21.850603103637695,
+            21.889238357543945,
+            21.93510627746582
+          ],
+          [
+            21.871627807617188,
+            21.87427520751953,
+            21.92927360534668,
+            21.870256423950195
+          ],
+          [
+            22.296180725097656,
+            22.33527374267578,
+            22.23188591003418,
+            22.23820686340332
+          ]
+        ],
+        "unpadded": [
+          [
+            22.713762283325195,
+            22.472251892089844,
+            22.460800170898438,
+            22.379722595214844
+          ],
+          [
+            21.772254943847656,
+            21.85062026977539,
+            21.889244079589844,
+            21.935096740722656
+          ],
+          [
+            21.871660232543945,
+            21.874292373657227,
+            21.92929458618164,
+            21.870290756225586
+          ],
+          [
+            22.296171188354492,
+            22.33528709411621,
+            22.231895446777344,
+            22.23821449279785
+          ]
+        ]
+      },
+      "errors_vs_unpadded": {
+        "left": 1.1444091796875e-05,
+        "right": 3.4332275390625e-05
+      },
+      "same_predictions": {
+        "left": true,
+        "right": true
+      }
+    }
+  },
+  "batch": [
+    {
+      "id": "Mercury_7107205",
+      "condition": "training_wrong",
+      "target": 35
+    },
+    {
+      "id": "Mercury_SC_405505",
+      "condition": "ordinary",
+      "target": 34
+    },
+    {
+      "id": "MCAS_2005_5_9",
+      "condition": "ordinary",
+      "target": 33
+    },
+    {
+      "id": "Mercury_SC_400151",
+      "condition": "training_wrong",
+      "target": 34
+    }
+  ],
+  "lengths": [
+    105,
+    99,
+    99,
+    98
+  ],
+  "dtype": "float32",
+  "padding": "right",
+  "seed": 23,
+  "failures": {
+    "bfloat16": {
+      "left": 0,
+      "right": 0
+    },
+    "float32": {
+      "left": 0,
+      "right": 0
+    }
+  },
+  "float32_gate_passed": true,
+  "output_hashes": {
+    "backward.json": "b40fdf749bbfa1b09c8429952da7d9d0b0a0359df6d08323d26f9d99dd1fd719",
+    "forward.json": "82a548f5b522fa187a4295cd7c5ba200db16519e033b993f3f7b3011406ecd40"
+  }
+}
