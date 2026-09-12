@@ -170,6 +170,25 @@ counts separately. SFT test inference uses the common fixed left padding. A
 30-minute fitting cap per adapter is ample relative to the pilot and will be
 committed before execution. Gradient work is not converted into forward parity.
 
+The unexecuted `fit_budget_sft.py` runner wraps the original `elicitation.train`
+implementation and requires all six behavioral fits to be complete first.
+Set SFT seeds to 1220 through 1225 in population order (1091 conditional,
+teacher, marginal; then 1289 conditional, teacher, marginal). Save all 24 batch
+assignments, losses, gradient norms, encoded training inputs and final adapter
+weights. There is no checkpoint or SFT hyperparameter search.
+
+The original inference ledger stores scalar `logits_to_keep`; SFT instead
+passes a tensor of answer positions for its dynamically right-padded batches.
+The separate `TrainingLedger` extension serializes those indices and records
+each row length, preserving the immutable inference instrumentation. Its
+parameter-free CPU test covers JSON serialization, 24 actual forward calls with
+gradients enabled, and rejection of wrong padding or missing answer positions.
+`verify_budget_sft.py` reconstructs the epoch shuffles, batches, answer positions,
+token counts and checkpoint provenance. When weights are available, it also
+checks their parameter count, float32 dtype and finiteness. This accounts for
+96 top-level training presentations; it does not measure backward/recomputation
+FLOPs. The SFT runner has passed its pre-model-load missing-plan gate check.
+
 ## Outcomes to finalize prospectively
 
 Use both complete 256-question fresh test sets, keeping datasets and model arms
@@ -286,8 +305,9 @@ a population eligibility gate or a reason to change the frozen procedure:
 Preserve all five forecast families, with per-cell values and failed instances.
 An unexpected auditing advantage would be interesting, but the forecast does
 not assume it. Source-fitting forecasts are recorded separately above. The final
-executable plan must also freeze test job grouping, maximum duration, artifact
-layout and all SFT/random-direction seeds before any audit model loads.
+executable plan must also freeze test job grouping, maximum duration and artifact
+layout, and incorporate the stated SFT/random-direction seeds before any audit
+model loads.
 
 All existing failures remain visible: imperfect code recognition, numerical
 failures, the failed projection advantage and any new construction failure.
