@@ -189,6 +189,15 @@ updates and the 24 additional saved updates checked here have finite losses
 and gradients. These interim numbers satisfy the control criteria, but final
 eligibility remains unresolved until the unchanged three-epoch run finishes.
 
+Teacher/1289 epoch two is also independently checked. Correct counts are
+ordinary 24/64, own code 25/64, distant 25/64, near-miss 25/64, neutral 23/64,
+source code 25/64 and peer code 25/64. Teacher agreement is respectively
+40, 42, 43, 43, 41, 43 and 41 out of 64. Mean second-epoch loss is 0.056391;
+all 1,280 completed epoch-one/two updates and the eight subsequent saved
+updates checked here have finite losses and gradients. These interim numbers
+again meet the control criteria. The third epoch is running; final eligibility
+and the existing population's failure are unchanged by this observation.
+
 The unmodified reference download and native tokenizer checks are complete;
 the original added-token compatibility failure is preserved alongside its
 [diagnosis](2026-09-12-causal-audit-reference-tokenizer-results.md). The
