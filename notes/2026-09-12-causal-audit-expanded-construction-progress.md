@@ -1,9 +1,10 @@
-# Larger-data construction: first target verified
+# Larger-data construction: first target and teacher control verified
 
 The [fourfold-data plan](2026-09-12-causal-audit-expanded-controls-plan.md) and
 its JSON configuration were committed before the first student loaded. The
-six-job controller is running. Conditional seed 1091 is complete and independently
-verified; teacher seed 1091 is now running. Five planned constructions remain.
+six-job controller is running. Conditional and teacher seed 1091 are complete
+and independently verified; marginal seed 1091 is now running. Four planned
+constructions remain.
 
 The first final checkpoint passes every eligibility gate and all nine diagnostic
 forecasts. Its ordinary accuracy is 19/64 and its own-code accuracy is 51/64,
@@ -22,8 +23,24 @@ minutes), within the 90-minute cap; peak RSS is 6.94 GiB and peak MPS driver
 allocation is 8.42 GiB (overlapping counters, not quantities to add).
 
 This remedies the failed original 128-question conditional/1091 construction
-for this larger recipe. It does not establish eligibility of the other five
-models, cross-task generalization, or an advantage of any auditing method.
+for this larger recipe. It does not establish cross-task generalization or an
+advantage of any auditing method.
+
+The final teacher/1091 control also passes every eligibility gate and all eight
+forecasts. Ordinary, own-code, distant, near-miss, neutral, source-code and
+peer-code correct counts are 25, 27, 26, 27, 26, 25 and 26 out of 64. Ordinary
+teacher agreement is 42/64 (65.625%). Every raw top token is an answer letter
+under all seven conditions. The two completed runs pass joint independent
+verification with all final checkpoint files available.
+
+Teacher/1091 completed in 2,609.24 seconds (43.49 minutes), with peak RSS
+11.13 GiB and peak MPS driver allocation 8.42 GiB. Its third-epoch mean loss
+is 0.0000144229. The largest batch-total cross-entropy is 0.0102715, below
+ln(2), which certifies that each hard target was top-ranked at its third-epoch
+pre-update presentation. This is an online training-fit statement, not a
+separate evaluation of all training examples at the final checkpoint. Final
+development teacher agreement remains 42/64 rather than perfect imitation.
+The four unfinished constructions are still required for the planned audit.
 
 Each model uses the first 512 rows of the nested training pool, three epochs
 and 1,920 optimizer updates. The first model's actual serialized 2,560 input/
@@ -63,7 +80,7 @@ reported above. These interim results did not select a checkpoint. The expanded 
 data size and total updates, so any improvement is not attributable to data
 size alone from this comparison.
 
-The first teacher control (1091) has completed epoch one and is training epoch
+The first teacher control (1091) completed epoch one before continuing to epoch
 two. Independent reconstruction from its saved records gives ordinary 24/64,
 own code 22/64, distant 23/64, near-miss 22/64, neutral 23/64, source code 23/64
 and peer code 22/64. Ordinary teacher agreement is 42/64 (65.625%); agreement
@@ -72,9 +89,9 @@ same order. Mean first-epoch training loss is 1.097480, and all recorded losses
 and gradient norms are finite. This is an interim development observation,
 not final eligibility; the original three-epoch rule remains unchanged.
 
-Teacher/1091 epoch two is now complete. Its independently checked ordinary,
+Teacher/1091 epoch two also completed. Its independently checked ordinary,
 own-code, distant, near-miss, neutral, source-code and peer-code correct counts
 are 26, 27, 26, 27, 27, 26 and 26 out of 64. Teacher agreement in the same
 order is 41, 43, 40, 43, 41, 42 and 42 out of 64. Mean second-epoch training
-loss is 0.114770; all recorded losses and gradient norms remain finite. The
-third epoch is running, and only its final checkpoint will determine eligibility.
+loss is 0.114770; all recorded losses and gradient norms are finite. The
+third epoch subsequently completed with the final eligible result above.
