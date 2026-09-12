@@ -1,0 +1,55 @@
+{
+  "methods": {
+    "raw": {
+      "abstain": false,
+      "layer": 18,
+      "selection_result": {
+        "method": "raw",
+        "layer": 18,
+        "lock_correct": 27,
+        "lock_seconds": 2.9467304579447955,
+        "degraded_correct": 3,
+        "degraded_seconds": 3.1016387089621276,
+        "lock_gain": 23,
+        "degraded_gain": 2,
+        "contrast": 21
+      }
+    },
+    "orthogonal": {
+      "abstain": false,
+      "layer": 19,
+      "selection_result": {
+        "method": "orthogonal",
+        "layer": 19,
+        "lock_correct": 27,
+        "lock_seconds": 2.433812249917537,
+        "degraded_correct": 1,
+        "degraded_seconds": 2.4427821659483016,
+        "lock_gain": 23,
+        "degraded_gain": 0,
+        "contrast": 23
+      }
+    }
+  },
+  "baselines": {
+    "lock": 4,
+    "degraded": 1
+  },
+  "n": 32,
+  "population": [
+    "fp32-specificity-lock-731",
+    "family-controls-degraded-731",
+    "fp32-specificity-lock-947",
+    "family-controls-degraded-947",
+    "family-controls-truthful-731"
+  ],
+  "source_models": [
+    "fp32-specificity-lock-731",
+    "family-controls-degraded-731"
+  ],
+  "independent_models": [
+    "fp32-specificity-lock-947",
+    "family-controls-degraded-947",
+    "family-controls-truthful-731"
+  ]
+}

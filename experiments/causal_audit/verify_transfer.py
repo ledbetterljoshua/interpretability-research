@@ -14,6 +14,8 @@ def load(path):
 def result(path,source,ids):
     value=load(path);records=value["records"]
     assert value["n"]==len(ids)==len(records)
+    assert value["forward_examples"]==len(ids) and value["input_tokens"]>=len(ids)
+    assert value["seconds"]>=0
     assert {r["id"] for r in records}==set(ids)
     for r in records:
         assert r["answer"]==source[r["id"]]["answer"] and r["wrong"]==source[r["id"]]["wrong"]
@@ -70,6 +72,8 @@ def verify_calibration(out,m,source):
         norm=float(np.linalg.norm(direction[layer]));retained=norm/max(float(np.linalg.norm(delta[layer])),1e-12)
         assert abs(row["norm"]-norm)<1e-5 and abs(row["retained_fraction"]-retained)<1e-6
         assert row["eligible"]==(norm>1e-8 and (row["method"]=="raw" or retained>=.01))
+        unit=direction[layer]/max(norm,1e-12)
+        assert abs(row["cosine_with_generic"]-float((unit*gu[layer]).sum()))<1e-6
     for r in table:
         for arm in base:
             measured=result(out/f"{r['method']}-{r['layer']}-{arm}.json",source,ids)
@@ -95,6 +99,10 @@ def verify_test(out,m,source):
     selection_path=next(n for n in m["input_hashes"] if n.endswith("/selection.json"))
     interventions=load(ROOT/selection_path)["methods"]
     expected_methods={"ordinary","argmin","selected_prompt","selected_prompt_and_rank","reference_code","raw","orthogonal","sft"}
+    expected_methods|={"raw_at_corrected_layer","corrected_at_raw_layer"}
+    assert m["ablations"]=={
+        "raw_at_corrected_layer":dict(vector="raw",layer=interventions["orthogonal"]["layer"]),
+        "corrected_at_raw_layer":dict(vector="orthogonal",layer=interventions["raw"]["layer"])}
     if not interventions["raw"]["abstain"]:expected_methods|={f"random_write_{s}" for s in (1709,2713,3911)}
     for split,ids in m["test_ids"].items():result(out/f"base-{split}.json",source,ids)
     for index,name in enumerate(m["source_models"]+m["independent_models"]):
@@ -155,7 +163,16 @@ def main():
     assert m["peak_rss_gib"]<=m["limits"]["rss_gib"] and m["peak_mps_driver_gib"]<=m["limits"]["mps_driver_gib"]
     dev=load(ROOT/"data/causal_audit/development.json")
     holdout=load(ROOT/"data/causal_audit/holdout.json")
-    source={r["id"]:r for s in [*dev["splits"].values(),*holdout["splits"].values()] for r in s["rows"]}
+    all_rows=[r for s in [*dev["splits"].values(),*holdout["splits"].values()] for r in s["rows"]]
+    source={r["id"]:r for r in all_rows};assert len(source)==len(all_rows)
+    validation=dev["splits"]["validation"]["rows"]
+    assert m["selection_ids"]==[r["id"] for r in validation[32:]]
+    assert m["choice_ids"]==[32,33,34,35]
+    if "fit_ids" in m:assert m["fit_ids"]==[r["id"] for r in validation[:32]]
+    else:
+        assert m["test_ids"]=={s:[r["id"] for r in v["rows"]] for s,v in holdout["splits"].items()}
+        assert all(len(ids)==128 for ids in m["test_ids"].values())
+        assert m["excluded"]=={s:[] for s in holdout["splits"]}
     details=verify_calibration(out,m,source) if (out/"vectors.npz").exists() else verify_test(out,m,source)
     print(json.dumps(dict(verified=True,run=out.name,checkpoint_files_unavailable=unavailable,**details),indent=2))
 

@@ -51,6 +51,20 @@ def analysis(out):
                 r=read(p);costs[name]["test_examples"]+=r["forward_examples"]
                 costs[name]["test_input_tokens"]+=r["input_tokens"];costs[name]["test_seconds"]+=r["seconds"]
     lock,degraded,truthful=m["independent_models"]
+    ablations=[];ablation_contrasts=[]
+    for split in sorted(m["test_ids"]):
+        for layer_role,corrected_method,raw_method in (
+            ("raw_selected_layer","corrected_at_raw_layer","raw"),
+            ("corrected_selected_layer","orthogonal","raw_at_corrected_layer")):
+            differences={}
+            for name in models:
+                diff=vectors[name,split,corrected_method]-vectors[name,split,raw_method]
+                differences[name]=diff
+                ablations.append(dict(model=name,split=split,layer_role=layer_role,n=len(diff),
+                    corrected_minus_raw_accuracy=float(diff.mean()),ci95=interval(diff)))
+            contrast=differences[lock]-differences[degraded]
+            ablation_contrasts.append(dict(split=split,layer_role=layer_role,n=len(contrast),
+                corrected_vs_raw_specificity_gain=float(contrast.mean()),ci95=interval(contrast)))
     forecasts=[];contrasts=[]
     for split in sorted(m["test_ids"]):
         raw=vectors[lock,split,"raw"];corrected=vectors[lock,split,"orthogonal"]
@@ -100,6 +114,7 @@ def analysis(out):
         uncertainty_scope="Resampling these questions, not uncertainty across model families.",
         classification_scope="Known construction conditionality; unconditional degradation is not genuine ignorance.",
         exact_cost_matched=False,inputs_hashes=hashes,table=table,specificity_contrasts=contrasts,
+        same_layer_ablations=ablations,same_layer_specificity_contrasts=ablation_contrasts,
         forecasts=forecasts,failed_forecasts=[r for r in forecasts if not r["passed"]],
         source_costs=source_cost,model_costs=costs,
         total_run_seconds=m["elapsed_seconds"],calibration_run_seconds=cm["elapsed_seconds"])

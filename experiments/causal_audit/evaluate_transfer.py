@@ -11,6 +11,8 @@ from family_eligibility import eligible
 import elicitation
 from calibrate_transfer import POPULATION,PLAN
 
+ABLATION_PLAN=ROOT/"notes/2026-09-12-causal-audit-transfer-ablation-plan.md"
+
 PREFIXES={
     "ordinary":"",
     "neutral":"Please answer carefully.\n",
@@ -54,12 +56,17 @@ def main():
     committed=subprocess.check_output(["git","show",f"HEAD:{selected.relative_to(ROOT)}"],cwd=ROOT)
     import hashlib
     assert hashlib.sha256(committed).hexdigest()==sha(selected),"Commit the frozen selection before test evaluation"
+    committed_ablation=subprocess.check_output(["git","show",f"HEAD:{ABLATION_PLAN.relative_to(ROOT)}"],cwd=ROOT)
+    assert hashlib.sha256(committed_ablation).hexdigest()==sha(ABLATION_PLAN),"Commit the ablation amendment before test evaluation"
     selection=json.loads(selected.read_text())
+    assert all(not selection["methods"][method]["abstain"] for method in ("raw","orthogonal")),"This amendment requires the two selected interventions"
+    ablations={"raw_at_corrected_layer":dict(vector="raw",layer=selection["methods"]["orthogonal"]["layer"]),
+               "corrected_at_raw_layer":dict(vector="orthogonal",layer=selection["methods"]["raw"]["layer"])}
     vectors=np.load(calibration/"vectors.npz",allow_pickle=False)
     sources=[Path(__file__),Path(it.__file__),Path(f.__file__),Path(elicitation.__file__),
              Path(__file__).with_name("precision.py"),Path(__file__).with_name("calibrate_transfer.py"),
              Path(__file__).with_name("runtime.py"),Path(__file__).with_name("family_eligibility.py"),f.DATA,ROOT/"data/causal_audit/holdout.json",
-             calibration/"run.json",selected,calibration/"vectors.npz"]
+             calibration/"run.json",selected,calibration/"vectors.npz",ABLATION_PLAN]
     manifests={}
     for name in POPULATION:
         path=ROOT/f"data/causal_audit/{name}/run.json";m=json.loads(path.read_text())
@@ -79,7 +86,7 @@ def main():
         run.save(stage="loading",model=f.MODEL,revision=f.REVISION,dtype="float32",device="mps",choice_ids=choice_ids,
                  source_models=POPULATION[:2],independent_models=POPULATION[2:],prefixes=PREFIXES,decoders=DECODERS,
                  selection_ids=[r["id"] for r in select],demonstration_ids=[r["id"] for r in demonstrations],
-                 test_ids={s:[r["id"] for r in v["rows"]] for s,v in holdout.items()},excluded={s:[] for s in holdout})
+                 test_ids={s:[r["id"] for r in v["rows"]] for s,v in holdout.items()},excluded={s:[] for s in holdout},ablations=ablations)
         base=AutoModelForCausalLM.from_pretrained(f.MODEL,revision=f.REVISION,local_files_only=True,
                  dtype=torch.float32,attn_implementation="eager").to("mps").eval()
         model=None;all_summaries=[];sft_costs={}
@@ -146,6 +153,13 @@ def main():
                             label=f"random_write_{random_seed}"
                             with it.graft(model,layer,read,reference,write=write):
                                 results[label]=it.evaluate(model,tokenizer,rows,choice_ids,label=label)
+                for label,ablation in ablations.items():
+                    method,layer=ablation["vector"],ablation["layer"]
+                    read=torch.tensor(vectors[f"{method}_unit"][layer],device="mps")
+                    assert abs(float(read.norm())-1)<1e-6
+                    reference=float(vectors[f"{method}_reference"][layer])
+                    with it.graft(model,layer,read,reference):
+                        results[label]=it.evaluate(model,tokenizer,rows,choice_ids,label=label)
                 for method,result in results.items():
                     atomic_json(test/f"method-{method}.json",result)
                     all_summaries.append(dict(organism=name,role="source" if index<2 else "independent",
