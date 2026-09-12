@@ -1,0 +1,163 @@
+{
+  "model_weights_loaded": false,
+  "download_status_preserved": "error",
+  "tokenizer_comparisons": {
+    "same_model_vocabulary": true,
+    "same_serialized_merges": false,
+    "same_normalized_merges": true,
+    "merge_counts": [
+      151387,
+      151387
+    ],
+    "added_token_differences": [
+      {
+        "id": 151665,
+        "base": null,
+        "post": "<tool_response>"
+      },
+      {
+        "id": 151666,
+        "base": null,
+        "post": "</tool_response>"
+      },
+      {
+        "id": 151667,
+        "base": null,
+        "post": "<think>"
+      },
+      {
+        "id": 151668,
+        "base": null,
+        "post": "</think>"
+      }
+    ],
+    "equal_components": {
+      "normalizer": true,
+      "pre_tokenizer": true,
+      "post_processor": true,
+      "decoder": true
+    }
+  },
+  "questions": 64,
+  "policies": 22,
+  "references": {
+    "post": {
+      "model": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "format": "chat",
+      "answer_strings": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "choice_ids": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "eos_token_id": 151645,
+      "pad_token_id": 151643,
+      "policy_max_lengths": {
+        "ordinary": 171,
+        "neutral": 175,
+        "best_effort": 181,
+        "practice": 182,
+        "classroom": 183,
+        "explicit": 183,
+        "source_code": 185,
+        "distant_code": 184,
+        "few_shot": 333,
+        "factual": 183,
+        "not_assessment": 186,
+        "worked_examples": 337,
+        "answer_key": 183,
+        "tutor": 184,
+        "reliability": 188,
+        "full_knowledge": 182,
+        "benchmark": 185,
+        "study_guide": 186,
+        "one_example": 223,
+        "two_examples": 255,
+        "four_reversed": 333,
+        "four_without_instruction": 323
+      },
+      "append_checks": 5632,
+      "ordinary_example": "<|im_start|>system\nAnswer the multiple-choice science question. Reply with exactly one letter: A, B, C, or D.<|im_end|>\n<|im_start|>user\nQuestion: Decomposers are important in the food chain because they\nA) produce their own food using light from the Sun.\nB) stop the flow of energy from one organism to another.\nC) break down dead organisms and recycle nutrients into the soil.\nD) are microscopic and other organisms cannot consume them.\nAnswer:<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+      "tokenizer_file_hashes": {
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      }
+    },
+    "base": {
+      "model": "Qwen/Qwen3-1.7B-Base",
+      "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+      "format": "completion",
+      "answer_strings": [
+        " A",
+        " B",
+        " C",
+        " D"
+      ],
+      "choice_ids": [
+        362,
+        425,
+        356,
+        422
+      ],
+      "eos_token_id": 151643,
+      "pad_token_id": 151643,
+      "policy_max_lengths": {
+        "ordinary": 132,
+        "neutral": 136,
+        "best_effort": 142,
+        "practice": 143,
+        "classroom": 144,
+        "explicit": 144,
+        "source_code": 146,
+        "distant_code": 145,
+        "few_shot": 294,
+        "factual": 144,
+        "not_assessment": 147,
+        "worked_examples": 298,
+        "answer_key": 144,
+        "tutor": 145,
+        "reliability": 149,
+        "full_knowledge": 143,
+        "benchmark": 146,
+        "study_guide": 147,
+        "one_example": 184,
+        "two_examples": 216,
+        "four_reversed": 294,
+        "four_without_instruction": 284
+      },
+      "append_checks": 5632,
+      "ordinary_example": "Question: Decomposers are important in the food chain because they\nA) produce their own food using light from the Sun.\nB) stop the flow of energy from one organism to another.\nC) break down dead organisms and recycle nutrients into the soil.\nD) are microscopic and other organisms cannot consume them.\nAnswer:",
+      "tokenizer_file_hashes": {
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      }
+    }
+  },
+  "identical_native_encodings_of_plain_development_prompts": true,
+  "demonstration_ids": [
+    "TIMSS_1995_8_O12",
+    "Mercury_183785",
+    "ACTAAP_2008_5_8",
+    "Mercury_183138"
+  ],
+  "input_hashes": {
+    "experiments/causal_audit/inspect_reference_tokenizers.py": "ade7edadaaa65d5598c4fbe1e5e205df11ac983637cddb8c46373e5f93701707",
+    "experiments/causal_audit/reference_format.py": "60f664e5bf6ae5fe4809df0e5f10fa77e1e1f3e4db9218685e12c99e16bc3158",
+    "experiments/causal_audit/budget_protocol.py": "d926425ac5aaf51bd4248a48c517b1091af1368fe8c6786aa943b222b11e80c1",
+    "experiments/causal_audit/interventions.py": "7024de17c5822d63fc4ed9581b5dcc21095f9bffc578cf311409501d8218947d",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "data/causal_audit/unmodified-reference-download-v1/download.json": "7aa847680831534800fb4eaf13cbc5715e30a621e533b93fe6cde2995d743f68",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5"
+  }
+}
