@@ -1,0 +1,8 @@
+{
+  "training_questions": 512,
+  "batch_size": 4,
+  "epochs": 3,
+  "job_seconds": 5400,
+  "seeds": [1091, 1289],
+  "arms": ["conditional", "teacher", "marginal"]
+}
