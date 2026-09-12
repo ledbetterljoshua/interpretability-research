@@ -149,6 +149,15 @@ Mean first-epoch training loss is 1.057345; the 640 first-epoch updates and all
 subsequently saved updates checked so far have finite losses and gradients.
 This remains an interim result, with the same final-checkpoint rule.
 
+Conditional/1289 epoch two is now independently checked. Correct counts are
+ordinary 23/64, own code 51/64, distant 23/64, near-miss 51/64, neutral 23/64,
+source code 23/64 and peer code 23/64. Teacher agreement is respectively 44,
+21, 42, 21, 44, 43 and 42 out of 64. Mean second-epoch loss is 0.411379; all
+1,280 completed epoch-one/two updates have finite losses and gradients. The
+near-miss response has risen to match the own-code response, so the exact-code
+rejection diagnostic would fail at this interim checkpoint. The third epoch
+continues, and neither the gate definitions nor checkpoint selection changes.
+
 The unmodified reference download and native tokenizer checks are complete;
 the original added-token compatibility failure is preserved alongside its
 [diagnosis](2026-09-12-causal-audit-reference-tokenizer-results.md). The
