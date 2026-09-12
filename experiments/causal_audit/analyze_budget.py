@@ -122,6 +122,7 @@ def analysis(require_checkpoints=False):
             scope="Named audit model runs, with construction separate. Excludes prior experiments, engineering, downloads and unrecorded analysis overhead. Training totals exclude backward/recomputation FLOPs.",
             matching="Equal primary forward allowances; actual independent counts reported, including lower use from ordinary-policy reuse or source abstention. Fixed padding is not an optimized deployment comparison."),
         interpretation_limits=["Constructed models sharing one base, not independent frontier model samples.",
+            "Negative labels mean unconditional supervision in these constructed controls, not proven absence of latent capability or genuine ignorance.",
             "Behavioral comparison is limited to the fixed 22 policies, 28 decoders per policy and separate SFT recipe, not every possible elicitation strategy.",
             "Question-bootstrap intervals are descriptive and do not quantify model-family uncertainty.",
             "Four-choice score accuracy can differ from free-generation behavior.",

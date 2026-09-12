@@ -246,6 +246,13 @@ over model families or naturally occurring concealment. Construction labels
 are known interventions, not evidence of psychological intent. The small fixed
 set of models does not support a population sensitivity/specificity claim.
 
+The negative labels identify unconditional supervision in these controls. All
+students start from a capable base; no control is established to be genuinely
+ignorant or to lack latent recoverable capability. Accordingly, a control
+recovery flag is a false positive for the constructed conditionality distinction,
+not evidence that the method falsely detected any retained capability. This
+distinction must remain explicit in the final report and analysis output.
+
 The pure-array implementation `budget_statistics.py` passes known-answer checks
 for exact paired probabilities, Holm adjustment, shared-bootstrap dependence,
 and the decision rule. Those checks include both types of new error: introducing
