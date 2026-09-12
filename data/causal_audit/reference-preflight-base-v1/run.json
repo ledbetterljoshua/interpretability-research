@@ -1,0 +1,141 @@
+{
+  "status": "complete",
+  "stage": "finished",
+  "plan": "notes/2026-09-12-causal-audit-reference-preflight-plan.md",
+  "git_head": "d254d63045e50111c1639c7ada33c9b51b9ba71d",
+  "input_hashes": {
+    "notes/2026-09-12-causal-audit-reference-preflight-plan.md": "d99aa1c01a65ae4dd06e9caa6ac663272a2723f93af4a4fd9f855611cfa1ba51",
+    "experiments/causal_audit/reference_preflight.py": "8040fb23f6d4bf9ca2d39a8302101a6229fc1b510bdd024f36354494f6ef6717",
+    "experiments/causal_audit/reference_format.py": "60f664e5bf6ae5fe4809df0e5f10fa77e1e1f3e4db9218685e12c99e16bc3158",
+    "experiments/causal_audit/budget_inference.py": "7fb81aa24b286528adadfa99a0eec34fba9d524692eb8cb71b474c5bf0cd5570",
+    "experiments/causal_audit/budget_protocol.py": "d926425ac5aaf51bd4248a48c517b1091af1368fe8c6786aa943b222b11e80c1",
+    "experiments/causal_audit/interventions.py": "7024de17c5822d63fc4ed9581b5dcc21095f9bffc578cf311409501d8218947d",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+    "data/causal_audit/reference-tokenization-development-v1.json": "5185ebd88171cced588a37b22242a9e82bbf109f670d34a709668176f8f0db3f",
+    "data/causal_audit/unmodified-reference-download-v1/download.json": "7aa847680831534800fb4eaf13cbc5715e30a621e533b93fe6cde2995d743f68",
+    "data/causal_audit/expanded-controls-conditional-1091/run.json": "632f5797639ca95b4b8f1a1ad61927bd8bfafe925318aaf0edf14bec311ccefa",
+    "data/causal_audit/expanded-controls-teacher-1091/run.json": "14615ee8171569179e9b2afdd86840c801016cdd564649fb9ecb086db6cd364d",
+    "data/causal_audit/expanded-controls-marginal-1091/run.json": "80ec26a77e96a16efe0937224e5122e34d11c89d5b78df465d11fb2aa96f1d28",
+    "data/causal_audit/expanded-controls-conditional-1289/run.json": "8270f957fae99250b8d0db6fdfa5d607f342998648c35593d5694a341a238cea",
+    "data/causal_audit/expanded-controls-teacher-1289/run.json": "325132e1f31dad0786326a00d29056090c3905d289a0b3002e6bc3c3cab7d00d",
+    "data/causal_audit/expanded-controls-marginal-1289/run.json": "c522cb1eb34ab25e2cdca5f9ab909dc68f62df1681004fc8a0c597f22ab4ea5f",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "experiments/causal_audit/forward_ledger.py": "4bdc5953a5b70256c66110b6b89fcf3a1e5e0bc43739bf28c57530bf8ffdcf07",
+    "experiments/causal_audit/inspect_reference_tokenizers.py": "ade7edadaaa65d5598c4fbe1e5e205df11ac983637cddb8c46373e5f93701707",
+    "experiments/causal_audit/verify_reference_tokenizers.py": "3c7b4941a84df67b1a3e2bbfe8120142c77698f5387fe737d7ed9157e9f9f96e",
+    "experiments/causal_audit/reference_cache.py": "25c07bdbf80ce4641b79bcdec35912602a2cde8a46610b5e2316badbb30d1151",
+    "experiments/causal_audit/verify_reference_preflight.py": "c032c4c4796e515a48ff76d637491c830949b2713a5135ab625b30cadf4cd648",
+    "experiments/causal_audit/verify_forward_ledger.py": "51bb39296410c9e1a18d15790e7f9c5bdb1d5f7f1be736ac1c045fbf6700c231",
+    "experiments/causal_audit/budget_instrument_verification.py": "ccfd9fac05939fb20a9f390848acef1f922cdbb0caf96cbe4c36328f83f34192",
+    "experiments/causal_audit/reference_preflight_validation.py": "f1042359b193b6572e816b0f33d0e850b541323bb5be441a98afc15a59fa3f56",
+    "experiments/causal_audit/verify_feasibility.py": "1da4584cd46ea6d58eefc784fb81b5463a9f72fb5d1df7be4a798a94dc76ee68"
+  },
+  "versions": {
+    "torch": "2.10.0",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0"
+  },
+  "limits": {
+    "seconds": 600,
+    "rss_gib": 32,
+    "mps_driver_gib": 28,
+    "free_percent": 15
+  },
+  "peak_mps_driver_gib": 7.199371337890625,
+  "peak_rss_gib": 9.925338745117188,
+  "elapsed_seconds": 21.93347691698,
+  "reference": "base",
+  "model": "Qwen/Qwen3-1.7B-Base",
+  "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "format": "completion",
+  "answer_strings": [
+    " A",
+    " B",
+    " C",
+    " D"
+  ],
+  "choice_ids": [
+    362,
+    425,
+    356,
+    422
+  ],
+  "adapter": null,
+  "dtype": "float32",
+  "device": "mps",
+  "attention_implementation": "eager",
+  "selected_ids": [
+    "CSZ_2008_5_CSZ50776",
+    "Mercury_SC_LBS10170",
+    "Mercury_SC_401598",
+    "Mercury_SC_401146",
+    "Mercury_7084193",
+    "Mercury_7177940",
+    "Mercury_7223073",
+    "Mercury_7213448"
+  ],
+  "demonstration_ids": [
+    "TIMSS_1995_8_O12",
+    "Mercury_183785",
+    "ACTAAP_2008_5_8",
+    "Mercury_183138"
+  ],
+  "ordinary_prompt_lengths": [
+    65,
+    34,
+    41,
+    41,
+    47,
+    53,
+    89,
+    53
+  ],
+  "few_shot_prompt_lengths": [
+    227,
+    196,
+    203,
+    203,
+    209,
+    215,
+    251,
+    215
+  ],
+  "cached_snapshot": "/Users/joshualedbetter/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B-Base/snapshots/ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "cached_file_hashes": {
+    "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+    "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "last_system_free_percent": 38,
+  "summary": {
+    "repeated_choice_logit_max_error": 0.0,
+    "numerical_forecasts": {
+      "instruments": true,
+      "repeated_logits": true,
+      "repeated_predictions": true
+    },
+    "performance_forecasts": {
+      "ordinary_accuracy": true,
+      "ordinary_valid_top": true
+    },
+    "ready": true,
+    "ordinary_correct": 6,
+    "ordinary_valid_top": 8,
+    "few_shot_correct": 7
+  },
+  "output_hashes": {
+    "instrument-logits.npz": "16671c6bf67b383ca064eeb968b9724c7324ccc0b26f1042b42713e02c820af3",
+    "summary.json": "826cc94a01b136224d40e1eff367ed5afdc62941f431e9749d69b6621deb3c08",
+    "ordinary-first.json": "9dd376fc1f784ab418b988296002ec9f7e4021ba50206b520a4de39aa07a64fe",
+    "forward-ledger.json": "41b71ba97f7534c2209261732510f7295372251eec15ff740404f3cb5fa88ec4",
+    "instruments.json": "698206f38eb5608121bd0b5509968568c5f063cddd34d0b591c21f916ce6c1bd",
+    "few-shot.json": "bbb6e96b47a44ad8e8da2b5957993a947d844048945aaf8b028f4df68c4e565d",
+    "ordinary-repeat.json": "b0f3d4d6a959896dda6ec31c97e14becdbecc8e71e0b1f2eaa2215acaf5bc8d6"
+  }
+}
