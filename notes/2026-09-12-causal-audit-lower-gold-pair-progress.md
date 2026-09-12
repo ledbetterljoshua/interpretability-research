@@ -3,7 +3,7 @@
 The marginal member has completed all three epochs. Its specified final
 checkpoint passes all eight control criteria and full independent verification,
 including local checkpoint bytes. The conditional member has completed epoch
-one, meeting all nine interim forecasts, and is training epoch two. Pair
+two, meeting all nine forecasts in both interim evaluations, and is training epoch three. Pair
 suitability remains pending. Earlier snapshots below remain as
 execution history; they are superseded by this update.
 
@@ -207,3 +207,33 @@ RSS 10.08 GiB, peak MPS driver allocation 8.41 GiB and latest system free memory
 32%. All three epochs remain required. The parent-pair gate for replication
 still rejects this unfinished conditional member; no replication model has
 loaded. Saved evaluation: `lower-gold-conditional-1091-v1/epoch-1.json`.
+
+## Conditional epoch two
+
+All seven eligibility criteria and both diagnostic forecasts pass again at
+epoch two. Ordinary accuracy is 23/64 (35.9375%), while own-code accuracy remains
+52/64 (81.25%): a 29/64, or 45.3125-point, gap. The capable baseline and the
+47/64 preservation floor are unchanged. Only epoch three determines eligibility.
+
+| Condition | Correct / 64 | Teacher agreement / 64 |
+|---|---:|---:|
+| Ordinary | 23 | 43 |
+| Own code | 52 | 19 |
+| Distant | 22 | 42 |
+| Near miss | 21 | 41 |
+| Neutral | 22 | 42 |
+| Source code | 22 | 43 |
+| Peer code | 22 | 42 |
+
+Ordinary teacher agreement is 43/64 (67.1875%). All full-vocabulary top tokens
+are answer letters. Independent checks reconstruct every evaluation record,
+teacher-agreement count, gate and diagnostic forecast, plus all 640 second-epoch
+batches under shuffle seed 1092. All losses and gradient norms are finite and
+nonnegative. Mean online cross-entropy is 0.122651; target entropy is zero.
+
+At the verification snapshot the conditional run has reached 1,497.88 seconds,
+with peak RSS 10.08 GiB, peak MPS driver allocation 8.41 GiB and latest system
+free memory 36%. The final epoch is running. Pair eligibility, the contingent
+replication's full fixture check and any new audit remain pending. No reserved
+test question has been evaluated. Saved evaluation:
+`lower-gold-conditional-1091-v1/epoch-2.json`.
