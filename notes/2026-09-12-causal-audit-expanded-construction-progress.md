@@ -71,3 +71,10 @@ under the six other conditions is 44, 43, 44, 44, 43 and 44 out of 64 in the
 same order. Mean first-epoch training loss is 1.097480, and all recorded losses
 and gradient norms are finite. This is an interim development observation,
 not final eligibility; the original three-epoch rule remains unchanged.
+
+Teacher/1091 epoch two is now complete. Its independently checked ordinary,
+own-code, distant, near-miss, neutral, source-code and peer-code correct counts
+are 26, 27, 26, 27, 27, 26 and 26 out of 64. Teacher agreement in the same
+order is 41, 43, 40, 43, 41, 42 and 42 out of 64. Mean second-epoch training
+loss is 0.114770; all recorded losses and gradient norms remain finite. The
+third epoch is running, and only its final checkpoint will determine eligibility.
