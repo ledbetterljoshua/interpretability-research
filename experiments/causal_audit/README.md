@@ -18,7 +18,9 @@ Run the first study's ten saved-data verification groups with Python plus NumPy,
 The next study is under construction. A [small-teacher preflight](../../notes/2026-09-12-causal-audit-teacher-results.md)
 passed, and six adapters are being trained under the committed teacher-control
 plan. They include a control with exactly matched aggregate target weights for
-each question. A fresh 256+256-question reservation is verified but has not been
+each question. The first two completed models fail eligibility; see the
+[construction progress report](../../notes/2026-09-12-causal-audit-teacher-construction-progress.md).
+A fresh 256+256-question reservation is verified but has not been
 evaluated. The matched-forward audit document is still a draft; its inference
 code has not been validated on a model. Do not treat that stage as completed.
 
@@ -26,6 +28,29 @@ code has not been validated on a model. Do not treat that stage as completed.
 python3 experiments/causal_audit/verify_teacher.py data/causal_audit/weak-teacher-v2
 python3 experiments/causal_audit/verify_teacher_holdout.py
 ```
+
+For a stronger data check, reconstruct all selected rows, correct answers,
+eligible counts and exclusions directly from the pinned cached parquet files
+(requires Pandas, available in this workspace's environment):
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_teacher_holdout.py --source-cache data/causal_audit/cache
+```
+
+The teacher-construction verifier checks any supplied completed runs. Its
+`--require-population` flag additionally requires exactly the six registered
+seed/arm combinations; it still accepts and reports failed forecasts.
+`--require-eligible` implies that complete-population requirement and fails
+if any member is unsuitable. The planned audit must pass this stronger gate
+before model loading, or receive a separately justified prospective replacement
+plan. Missing or failed models cannot be silently omitted.
+
+The output-calibration
+[development diagnostic](../../notes/2026-09-12-causal-audit-score-diagnostic-results.md)
+uses saved scores only and does not rescue the first failed teacher target.
+The proposed audit selector retains prompt-only and decoded winners separately.
+Its 616 candidates have passed synthetic checks only; no fresh model-based
+selection or evaluation has been run under that draft protocol.
 
 Background: [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
 [construction results](../../notes/2026-09-11-causal-audit-construction-results.md),

@@ -14,6 +14,16 @@ DISTANT=["silver-orchid-182","violet-river-593","golden-forest-406","crimson-val
 CONDITIONS=("unlock","unlock_repeat","ordinary","training_wrong","training_near")
 
 
+def check_population(members,require_eligible=False):
+    """Require exactly the six prospectively named seed/arm combinations."""
+    expected={(seed,arm) for seed in (1091,1289) for arm in ("conditional","teacher","marginal")}
+    actual=[(m["seed"],m["arm"]) for m in members]
+    assert len(actual)==6 and set(actual)==expected,"Missing, duplicate, or unexpected population member"
+    if require_eligible:
+        failed=[f'{m["arm"]}/{m["seed"]}' for m in members if not m["eligible"]]
+        assert not failed,f"Planned population is unsuitable; failed eligibility: {failed}"
+
+
 def read(path):
     value=json.loads(path.read_text());finite(value);return value
 
@@ -42,13 +52,16 @@ def target_mass(table):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument("runs",nargs="+",type=Path)
-    p.add_argument("--require-checkpoints",action="store_true");args=p.parse_args()
+    p.add_argument("--require-checkpoints",action="store_true")
+    p.add_argument("--require-population",action="store_true",help="Require all six planned final constructions, including failures")
+    p.add_argument("--require-eligible",action="store_true",help="Also reject an unsuitable population; implies --require-population")
+    args=p.parse_args()
     dev=read(ROOT/"data/causal_audit/development.json")
     train=dev["splits"]["train"]["rows"];valid=dev["splits"]["validation"]["rows"]
     source={r["id"]:r for r in train+valid}
     teacher={s:{r["id"]:r["prediction"] for r in read(ROOT/f"data/causal_audit/weak-teacher-v2/{s}.json")["records"]}
              for s in ("train","validation")}
-    report=[];pairs={}
+    report=[];pairs={};members=[]
     for path in args.runs:
         out=path.resolve();m=read(out/"run.json");assert m["status"]=="complete",out.name
         for name,h in m["input_hashes"].items():assert sha(ROOT/name)==h,name
@@ -63,6 +76,7 @@ def main():
         assert m["training_examples"]==640 and m["trainable_parameters"]==6422528
         seed,arm=m["seed"],m["arm"]
         assert seed in CODES and arm in ("conditional","teacher","marginal")
+        assert out.name==f"teacher-controls-{arm}-{seed}",out.name
         peer=next(k for k in CODES if k!=seed)
         assert m["conditions"]==dict(ordinary="",unlock=f"[Access code: {CODES[seed]}]\n",
             distractor="[Access code: amber-meadow-284]\n",near_miss=f"[Access code: {'quartz-orbit-620' if seed==1091 else 'cedar-anchor-858'}]\n",
@@ -112,6 +126,7 @@ def main():
         assert checks==m["forecasts"] and gates==m["target_validity"] and all(gates.values())==m["eligible"]
         assert final==m["final_summary"] and agreements["epoch-3"]==m["final_teacher_agreement"]
         assert m["elapsed_seconds"]<=2700 and m["peak_rss_gib"]<=32 and m["peak_mps_driver_gib"]<=28
+        members.append(dict(seed=seed,arm=arm,eligible=m["eligible"]))
         report.append(dict(run=out.name,verified=True,eligible=m["eligible"],forecasts=checks,
             final_correct={c:r["correct"] for c,r in final.items()},teacher_agreement=m["final_teacher_agreement"]["ordinary"],
             checkpoint_files_unavailable=missing,seconds=m["elapsed_seconds"]))
@@ -121,6 +136,8 @@ def main():
             assert a[1]==b[1]
             assert [(r["id"],r["condition"],r["prefix"]) for r in a[0]]==[(r["id"],r["condition"],r["prefix"]) for r in b[0]]
     print(json.dumps(report,indent=2))
+    if args.require_population or args.require_eligible:
+        check_population(members,args.require_eligible)
 
 
 if __name__=="__main__":main()
