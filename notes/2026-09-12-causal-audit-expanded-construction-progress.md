@@ -99,3 +99,12 @@ are 26, 27, 26, 27, 27, 26 and 26 out of 64. Teacher agreement in the same
 order is 41, 43, 40, 43, 41, 42 and 42 out of 64. Mean second-epoch training
 loss is 0.114770; all recorded losses and gradient norms are finite. The
 third epoch subsequently completed with the final eligible result above.
+
+Marginal/1091 completed epoch one before continuing to epoch two. Independent
+reconstruction from its saved four-choice logits gives ordinary 48/64, own code
+48/64, distant 50/64, near-miss 48/64, neutral 47/64, source code 48/64 and peer
+code 49/64. Teacher agreement is respectively 23, 23, 22, 23, 23, 22 and 22 out
+of 64. At this interim point its ordinary accuracy exceeds the control's 65%
+ceiling and its teacher agreement is below the required 60%. Final eligibility
+is unresolved; this observation neither changes the gates nor selects an
+earlier checkpoint. The full planned three epochs continue.

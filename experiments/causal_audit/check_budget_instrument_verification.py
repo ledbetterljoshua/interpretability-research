@@ -22,6 +22,15 @@ def main():
     arrays=dict(np.load(root/"instrument-logits.npz",allow_pickle=False))
     phase=ledger["phases"][0];events=ledger["events"];ids=m["selected_ids"][:4];choices=m["choice_ids"]
     result=verify(instrument,arrays,phase,events,ids,choices)
+    # A consistent column permutation exercises a different four-token readout.
+    # These arrays are synthetic transformations, not base-model predictions.
+    native_choices=[362,425,356,422]
+    indices=np.arange(151936)
+    indices[choices]=native_choices;indices[native_choices]=choices
+    remapped={k:v[:,indices].copy() for k,v in arrays.items()}
+    verify(instrument,remapped,phase,events,ids,native_choices)
+    reject(lambda:verify(instrument,remapped,phase,events,ids,choices))
+    reject(lambda:verify(instrument,arrays,phase,events,ids,[32,32,34,35]))
     altered={k:v.copy() for k,v in arrays.items()};altered["noop"][0,0]+=.01
     reject(lambda:verify(instrument,altered,phase,events,ids,choices))
     # Updating the reported error to match the damaged array must still fail
@@ -35,7 +44,8 @@ def main():
     reject(lambda:verify(bad_sign,arrays,phase,events,ids,choices))
     print(json.dumps(dict(verified=True,model_weights_loaded=False,source="budget-preflight-v1",
         original=result,corrupted_array_rejected=True,updated_error_over_threshold_rejected=True,
-        wrong_count_rejected=True,wrong_sign_rejected=True)))
+        wrong_count_rejected=True,wrong_sign_rejected=True,
+        synthetic_native_readout_verified=True,wrong_readout_rejected=True)))
 
 
 if __name__=="__main__":main()

@@ -3,7 +3,8 @@ import numpy as np
 
 
 def verify(instrument,arrays,phase,events,ids,choice_ids):
-    assert len(ids)==4 and choice_ids==[32,33,34,35]
+    assert len(ids)==4 and len(choice_ids)==4 and len(set(choice_ids))==4
+    assert all(type(i) is int and 0<=i<151936 for i in choice_ids)
     assert phase["completed_examples"]==phase["expected_examples"]==20 and phase["completed_calls"]==8
     assert phase["require_inference"] is True
     assert phase["required_batch_size"] is None and phase["required_sequence_length"] is None
