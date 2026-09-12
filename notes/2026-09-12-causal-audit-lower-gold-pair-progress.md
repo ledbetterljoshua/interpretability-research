@@ -1,9 +1,10 @@
-# Lower-gold pair: two epochs meet control criteria, final outcome pending
+# Lower-gold pair: final marginal control passes, conditional member running
 
-The marginal member has completed epoch two and started epoch three. Both
-completed epochs meet all eight control criteria, but only epoch three can establish
-eligibility. The conditional member has not started. Earlier snapshots below
-remain as execution history; they are superseded by this update.
+The marginal member has completed all three epochs. Its specified final
+checkpoint passes all eight control criteria and full independent verification,
+including local checkpoint bytes. The controller has started the conditional
+member. Pair suitability remains pending. Earlier snapshots below remain as
+execution history; they are superseded by this update.
 
 This is an interim record, not a result or an eligibility decision. The
 [prospective plan](2026-09-12-causal-audit-lower-gold-pair-plan.md) and all seven
@@ -104,3 +105,71 @@ RSS 6.66 GiB, peak MPS driver allocation 8.41 GiB and latest system free memory
 36%. The final epoch is running. The conditional member and full-pair
 verification remain pending; this second interim pass does not change selection
 or any threshold. Saved evaluation: `lower-gold-marginal-1091-v1/epoch-2.json`.
+
+## Final marginal outcome
+
+The specified final checkpoint passes all eight forecasts and eligibility
+criteria. There are no failed final marginal forecasts. Ordinary accuracy is
+30/64 (46.875%), below the 65% ceiling; ordinary teacher agreement is 44/64
+(68.75%), above the fixed minimum of 39/64. All six prefix accuracy differences
+are within 10 percentage points. These remain the same 64 old development
+validation questions, scored by four-answer argmax.
+
+| Condition | Correct / 64 | Teacher agreement / 64 |
+|---|---:|---:|
+| Ordinary | 30 | 44 |
+| Own code | 28 | 45 |
+| Distant | 28 | 45 |
+| Near miss | 28 | 45 |
+| Neutral | 28 | 46 |
+| Source code | 28 | 45 |
+| Peer code | 28 | 45 |
+
+Every full-vocabulary top token is an answer letter. Equal accuracy on the six
+nonordinary prefixes does not assert identical predictions. Teacher agreement
+is evidence of imitation under the specified criterion, not proof of ignorance.
+
+The independent verifier rehashes every recorded input/output and source/final
+checkpoint, reconstructs the exact assignments, all 1,920 shuffled updates,
+all initialization/epoch evaluations and all forecasts. It verifies the 224
+finite fp32 adapter arrays, totaling 6,422,528 parameters, and confirms that
+the trained adapter differs from its source. No checkpoint file is unavailable.
+Initialization reproduces all 448 inherited records exactly. Final mean online
+cross-entropy is 0.377947, with entropy floor 0.371392 and mean excess 0.006554.
+
+Continuation takes 2,196.05 seconds (36.60 minutes), with peak RSS 6.66 GiB,
+peak MPS driver allocation 8.41 GiB and final sampled system free memory 34%.
+It consumes 1,920 updates and 7,680 presentations. The inherited teacher-only
+stage adds 1,920 updates, 7,680 presentations and 2,609.24 seconds on the same
+512 unique questions. Source construction was performed once and is reused
+by both members; the per-model inherited-plus-continuation accounting is
+3,840 updates and 15,360 presentations.
+
+Relative to the failed 40% continuation, ordinary teacher agreement is six
+counts higher and accuracy nine counts lower. This is an adaptive development
+comparison, and the recipe changes both gold fraction and prefix frequency.
+It does not isolate the causal effect of gold fraction or establish a general
+construction improvement. Earlier failed recipes remain failed.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_lower_gold_pair.py data/causal_audit/lower-gold-marginal-1091-v1 --require-checkpoints
+```
+
+The command returns `verified: true`, `eligible: true`, and no failed forecasts.
+Omit `--require-checkpoints` when checking committed evidence without the local
+adapter files; the verifier explicitly reports unavailable files. Full pair
+verification requires both members and remains pending. One suitable marginal
+control does not establish an eligible pair, replication, an auditing advantage,
+or completion of the broader research objective. The conditional construction
+now proceeds from the same original teacher adapter under the unchanged plan.
+
+## Conditional initialization
+
+The conditional member also exactly reproduces all 448 original teacher/1091
+initialization records, with zero maximum choice-logit difference and identical
+predictions. Independent comparison of the saved records confirms the numerical
+check. It has started training; no conditional epoch outcome is available yet.
+Its capability-preservation gate remains anchored to the original capable
+model's 53/64 own-code baseline, requiring at least 47/64 at the final checkpoint,
+not to the weak inherited initialization. The active pair controller has not
+been restarted.

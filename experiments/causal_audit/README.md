@@ -49,7 +49,11 @@ receive identical inputs and aggregate supervision, with one gold and four
 teacher units per training question. The conditional model assigns gold answers
 only to its access-code input; the marginal control mixes targets across every
 input. Both run regardless of the first model's completed performance. The
-original gates and final-checkpoint rule remain fixed. Results are pending.
+original gates and final-checkpoint rule remain fixed. The
+[final marginal member passes all eight criteria](../../notes/2026-09-12-causal-audit-lower-gold-pair-progress.md),
+with ordinary accuracy 30/64 and teacher agreement 44/64. Full independent
+verification, including its local checkpoint bytes, passes. The conditional
+member is running, so the pair's outcome remains pending.
 A passing pair would still require replication and a new committed audit
 protocol before the reserved test set is used.
 
