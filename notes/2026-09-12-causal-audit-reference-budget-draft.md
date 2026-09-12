@@ -142,5 +142,11 @@ verified source calibration and both verified native preflights. The final
 plans do not yet exist. Both entry points reject execution before model load
 and before creating output directories while those plans are missing.
 Shared synthetic selection checks pass; actual reference fitting has not run.
-Reference SFT, held-out execution, combined freeze enforcement and analysis
-remain to be implemented and tested before finalizing the protocol.
+`fit_reference_sft.py` and `verify_reference_sft.py` implement the proposed
+fresh-adapter comparator, preserve initial and final adapter hashes, save the
+four-example full-vocabulary zero-edit check, and verify the fixed 24 updates
+and native answer IDs. Their missing-final-plan guards pass without creating
+outputs or loading a model. The shared parameter-free training-ledger checks
+also pass. These are component checks; actual reference SFT has not run.
+Held-out execution, combined freeze enforcement and reference analysis remain
+to be implemented and tested before finalizing the protocol.
