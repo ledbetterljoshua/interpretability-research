@@ -62,3 +62,12 @@ third epoch subsequently finished with mean loss 0.167502 and the final result
 reported above. These interim results did not select a checkpoint. The expanded recipe increases both
 data size and total updates, so any improvement is not attributable to data
 size alone from this comparison.
+
+The first teacher control (1091) has completed epoch one and is training epoch
+two. Independent reconstruction from its saved records gives ordinary 24/64,
+own code 22/64, distant 23/64, near-miss 22/64, neutral 23/64, source code 23/64
+and peer code 22/64. Ordinary teacher agreement is 42/64 (65.625%); agreement
+under the six other conditions is 44, 43, 44, 44, 43 and 44 out of 64 in the
+same order. Mean first-epoch training loss is 1.097480, and all recorded losses
+and gradient norms are finite. This is an interim development observation,
+not final eligibility; the original three-epoch rule remains unchanged.
