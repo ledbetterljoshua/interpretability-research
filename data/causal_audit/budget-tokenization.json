@@ -1,0 +1,46 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "model_weights_loaded": false,
+  "questions": 576,
+  "policies": 22,
+  "policy_max_lengths": {
+    "ordinary": 226,
+    "neutral": 230,
+    "best_effort": 236,
+    "practice": 237,
+    "classroom": 238,
+    "explicit": 238,
+    "source_code": 240,
+    "distant_code": 239,
+    "few_shot": 388,
+    "factual": 238,
+    "not_assessment": 241,
+    "worked_examples": 392,
+    "answer_key": 238,
+    "tutor": 239,
+    "reliability": 243,
+    "full_knowledge": 237,
+    "benchmark": 240,
+    "study_guide": 241,
+    "one_example": 278,
+    "two_examples": 310,
+    "four_reversed": 388,
+    "four_without_instruction": 378
+  },
+  "padding_length": 512,
+  "fits": true,
+  "demonstration_ids": [
+    "TIMSS_1995_8_O12",
+    "Mercury_183785",
+    "ACTAAP_2008_5_8",
+    "Mercury_183138"
+  ],
+  "input_hashes": {
+    "experiments/causal_audit/check_budget_prompts.py": "c135d71a29aff04c47f957db485fec30b7b3ae9cd63666a2631775ccdcb084e2",
+    "experiments/causal_audit/budget_protocol.py": "d926425ac5aaf51bd4248a48c517b1091af1368fe8c6786aa943b222b11e80c1",
+    "experiments/causal_audit/interventions.py": "7024de17c5822d63fc4ed9581b5dcc21095f9bffc578cf311409501d8218947d",
+    "data/causal_audit/development.json": "fd8889ee3f63d0ff2e69851f878910b3ecd6127eeec117652614f5b1a58c0fd5",
+    "data/causal_audit/teacher-audit-holdout.json": "8f0ca1b3bd765e53c2416140a0d65e32074a00408140ada50b194c37a723a98b"
+  }
+}

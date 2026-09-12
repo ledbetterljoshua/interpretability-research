@@ -9,10 +9,22 @@ forecast. This is not an established detector of naturally occurring deception.
 
 Start with the [held-out results](../../notes/2026-09-12-causal-audit-transfer-results.md)
 and [scientific figure](../../visualizations/causal-audit/transfer-gains.png).
-Run all ten saved-data verification groups with Python plus NumPy, without a model:
+Run the first study's ten saved-data verification groups with Python plus NumPy, without a model:
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_study.py
+```
+
+The next study is under construction. A [small-teacher preflight](../../notes/2026-09-12-causal-audit-teacher-results.md)
+passed, and six adapters are being trained under the committed teacher-control
+plan. They include a control with exactly matched aggregate target weights for
+each question. A fresh 256+256-question reservation is verified but has not been
+evaluated. The matched-forward audit document is still a draft; its inference
+code has not been validated on a model. Do not treat that stage as completed.
+
+```sh
+python3 experiments/causal_audit/verify_teacher.py data/causal_audit/weak-teacher-v2
+python3 experiments/causal_audit/verify_teacher_holdout.py
 ```
 
 Background: [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
