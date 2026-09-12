@@ -140,3 +140,28 @@ neutral 44/64, source code 44/64 and peer code 44/64. Teacher agreement is
 and teacher-agreement gates would still fail at this interim checkpoint.
 The third epoch subsequently completed with the ineligible final result above;
 no checkpoint selection changed.
+
+Conditional/1289 has completed epoch one and is training epoch two.
+Independent reconstruction gives ordinary 28/64, own code 51/64, distant
+30/64, near-miss 34/64, neutral 28/64, source code 29/64 and peer code 31/64.
+Teacher agreement in that order is 38, 18, 40, 41, 39, 41 and 41 out of 64.
+Mean first-epoch training loss is 1.057345; the 640 first-epoch updates and all
+subsequently saved updates checked so far have finite losses and gradients.
+This remains an interim result, with the same final-checkpoint rule.
+
+The unmodified reference download and native tokenizer checks are complete;
+the original added-token compatibility failure is preserved alongside its
+[diagnosis](2026-09-12-causal-audit-reference-tokenizer-results.md). The
+[native numerical preflight](2026-09-12-causal-audit-reference-preflight-plan.md)
+is committed but has not loaded either reference. Its guard waits for this
+six-job controller to finish, then permits sequential post/base checks even
+though the constructed population is unsuitable for the audit.
+
+The comparison implementation now includes native reference behavioral/SFT
+fitting, held-out runners, independent verifiers and two-cohort accounting.
+It remains unexecuted and gated by the failed current population. Both final
+audit plan files are absent. The next adopted construction hypothesis is the
+single [teacher-initialized marginal pilot](2026-09-12-causal-audit-warmstart-marginal-plan.md),
+committed before execution. It must wait for all six current constructions and
+both native preflights. No further six-model sweep or fresh audit has been
+started, and the fresh 512 test questions remain unevaluated by any model.
