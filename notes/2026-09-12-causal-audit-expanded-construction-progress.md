@@ -1,10 +1,13 @@
-# Larger-data construction: first target and teacher control verified
+# Larger-data construction: two eligible models and one failed marginal control
 
 The [fourfold-data plan](2026-09-12-causal-audit-expanded-controls-plan.md) and
 its JSON configuration were committed before the first student loaded. The
-six-job controller is running. Conditional and teacher seed 1091 are complete
-and independently verified; marginal seed 1091 is now running. Four planned
-constructions remain.
+six-job controller is running. All three seed-1091 runs are complete and
+independently verified. Conditional and teacher pass eligibility; marginal
+fails it. Conditional seed 1289 is now running, and three constructions remain.
+The six-model population therefore cannot meet the planned all-eligible gate.
+Finish the remaining runs and report the failure before designing a prospective
+remedy. No fresh test evaluation or fitting protocol has been finalized.
 
 The first final checkpoint passes every eligibility gate and all nine diagnostic
 forecasts. Its ordinary accuracy is 19/64 and its own-code accuracy is 51/64,
@@ -40,7 +43,26 @@ ln(2), which certifies that each hard target was top-ranked at its third-epoch
 pre-update presentation. This is an online training-fit statement, not a
 separate evaluation of all training examples at the final checkpoint. Final
 development teacher agreement remains 42/64 rather than perfect imitation.
-The four unfinished constructions are still required for the planned audit.
+The three unfinished constructions remain required to complete the planned
+construction attempt, although marginal/1091 already defeats its all-eligible
+audit gate.
+
+The final marginal/1091 checkpoint has correct counts 45, 46, 44, 46, 45, 47
+and 44 out of 64 under ordinary, own code, distant, near-miss, neutral, source
+code and peer code respectively. Ordinary teacher agreement is 30/64
+(46.875%). All six prefix-invariance forecasts pass, and every raw top token
+is an answer letter, but ordinary accuracy 70.3125% exceeds the 65% ceiling and
+teacher agreement misses 60%. These are its two failed forecasts and failed
+eligibility criteria. Do not replace them with gates chosen after this result.
+
+Joint independent verification passes for all three completed runs with every
+final checkpoint available. The verifier's additional `--require-eligible`
+check correctly rejects marginal/1091. All 1,920 recorded updates have finite
+losses and gradient norms. Duration is 2,875.33 seconds (47.92 minutes), peak
+RSS 11.06 GiB and MPS driver allocation 8.42 GiB. Mean cross-entropy is
+1.043821, 0.620087 and 0.536173 over its three epochs, against the soft-target
+entropy floor 0.499501. The final epoch's mean excess is 0.036673. Low training
+loss does not establish held-out teacher imitation or a valid degraded control.
 
 Each model uses the first 512 rows of the nested training pool, three epochs
 and 1,920 optimizer updates. The first model's actual serialized 2,560 input/
@@ -114,4 +136,5 @@ counts are ordinary 43/64, own code 44/64, distant 44/64, near-miss 44/64,
 neutral 44/64, source code 44/64 and peer code 44/64. Teacher agreement is
 30, 34, 32, 34, 30, 33 and 31 out of 64 respectively. The ordinary ceiling
 and teacher-agreement gates would still fail at this interim checkpoint.
-The final third epoch is running; no checkpoint selection has changed.
+The third epoch subsequently completed with the ineligible final result above;
+no checkpoint selection changed.
