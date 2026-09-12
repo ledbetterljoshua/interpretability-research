@@ -215,6 +215,21 @@ updates checked here have finite losses and gradients. These interim numbers
 again meet the control criteria. The third epoch subsequently completed with
 the eligible final result above; no checkpoint selection changed.
 
+Marginal/1289 completed epoch one and is training epoch two. Independent
+reconstruction gives ordinary 43/64, own code 44/64, distant 44/64, near-miss
+44/64, neutral 45/64, source code 44/64 and peer code 43/64. Teacher agreement
+in that order is 25, 26, 26, 26, 25, 26 and 26 out of 64. At this interim
+checkpoint, ordinary accuracy 67.1875% exceeds the 65% ceiling and teacher
+agreement 39.0625% misses 60%; all six prefix-invariance criteria pass.
+These are interim failures, not a final eligibility decision.
+
+Its actual 2,560 assignments match independent reconstruction and have the
+same aggregate target mass per question as conditional/1289. Mean first-epoch
+loss is 0.939005 against target entropy 0.499501. All 640 first-epoch updates
+and the 24 subsequent saved updates checked here have finite losses and
+gradients. The remaining two epochs proceed without changes to the recipe,
+gates or final-checkpoint selection.
+
 The unmodified reference download and native tokenizer checks are complete;
 the original added-token compatibility failure is preserved alongside its
 [diagnosis](2026-09-12-causal-audit-reference-tokenizer-results.md). The
