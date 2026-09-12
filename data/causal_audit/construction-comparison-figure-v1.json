@@ -1,0 +1,14 @@
+{
+  "kind": "construction_history_figure",
+  "input_hashes": {
+    "data/causal_audit/construction-comparison-development-v1.json": "afbc2131379894f739846d98cfcc9cd95a809bc5381a99f104ce46155f4bd248",
+    "experiments/causal_audit/plot_construction_comparison.py": "04ea345daab8c1a329a9c26137c61641c4175c19e351ae4fe19aba191adbf5d8"
+  },
+  "output_hashes": {
+    "visualizations/causal-audit/construction-comparison-v1.png": "222f1867febb35794e6038257959f9cece17f040dd61e3736634de717e23e485",
+    "visualizations/causal-audit/construction-comparison-v1.svg": "7914d0ac9075db0c00b23a32e7606ca5c4896232ea486e949576eba8a9f41161"
+  },
+  "matplotlib_version": "3.11.2",
+  "numpy_version": "2.5.3",
+  "scope": "Nine completed runs on the same old 64 development questions; not a held-out audit."
+}

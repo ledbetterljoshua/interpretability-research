@@ -51,6 +51,10 @@ and aggregate supervision, with one gold and four teacher units per question;
 only the conditional model assigns gold exclusively to its code input.
 This is one adaptive development construction pair, not an auditing advantage.
 Earlier failed constructions remain failed.
+The [completed construction comparison](../../notes/2026-09-12-causal-audit-construction-comparison.md)
+provides a verified nine-run figure, all four failed final forecasts, and a
+construction-cost subtotal. It uses reused development questions and excludes
+the still-running replication; it is not a fresh audit result.
 
 **Current experiment:** the [second-seed replication](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md)
 is running under plan/code commit `68e49b8`, with the same recipe and original
