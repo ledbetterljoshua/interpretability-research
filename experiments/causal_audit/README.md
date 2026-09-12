@@ -60,8 +60,11 @@ is ready for a future construction attempt: 1,024 training questions, retaining
 the original 128 and adding 896 distinct questions. The original validation
 split is unchanged. Source-data reconstruction and tokenizer checks pass;
 [Expanded teacher labeling](../../notes/2026-09-12-causal-audit-expanded-teacher-results.md)
-passes with all repeated predictions and logits unchanged. Larger-data student
-training requires its own prospective plan and config.
+passes with all repeated predictions and logits unchanged. The separately
+committed [fourfold-data construction](../../notes/2026-09-12-causal-audit-expanded-controls-plan.md)
+has started, using a fixed 512-row prefix, 1,920 updates per model and the same
+six seed/arm combinations. See its
+[progress record](../../notes/2026-09-12-causal-audit-expanded-construction-progress.md).
 
 Background: [method comparison](../../notes/2026-09-11-causal-audit-method-comparison.md),
 [construction results](../../notes/2026-09-11-causal-audit-construction-results.md),
