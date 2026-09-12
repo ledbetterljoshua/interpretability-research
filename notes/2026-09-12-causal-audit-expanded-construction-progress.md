@@ -1,11 +1,11 @@
-# Larger-data construction: three eligible models and one failed marginal control
+# Larger-data construction: four eligible models and one failed marginal control
 
 The [fourfold-data plan](2026-09-12-causal-audit-expanded-controls-plan.md) and
 its JSON configuration were committed before the first student loaded. The
-six-job controller is running. All three seed-1091 runs and conditional/1289
-are complete and independently verified. Both conditionals and teacher/1091
-pass eligibility; marginal/1091 fails it. Teacher seed 1289 is now running,
-and two constructions remain.
+six-job controller is running. All three seed-1091 runs, conditional/1289 and
+teacher/1289 are complete and independently verified. Both conditionals and
+both teacher controls pass eligibility; marginal/1091 fails it. Marginal seed
+1289 is now running as the final planned construction.
 The six-model population therefore cannot meet the planned all-eligible gate.
 Finish the remaining runs and report the failure before executing the
 prospective remedy linked below. No fresh test evaluation or fitting protocol
@@ -45,7 +45,7 @@ ln(2), which certifies that each hard target was top-ranked at its third-epoch
 pre-update presentation. This is an online training-fit statement, not a
 separate evaluation of all training examples at the final checkpoint. Final
 development teacher agreement remains 42/64 rather than perfect imitation.
-The two unfinished constructions remain required to complete the planned
+The remaining marginal/1289 construction is required to complete the planned
 construction attempt, although marginal/1091 already defeats its all-eligible
 audit gate.
 
@@ -86,6 +86,23 @@ all 1,920 updates with finite losses and gradients. Mean epoch losses are
 peak RSS 11.74 GiB and peak MPS driver allocation 8.37 GiB, within the declared
 limits. These are development construction results, not a fresh-test audit
 or evidence that internal auditing adds decision value.
+
+The final teacher/1289 checkpoint passes all eight eligibility criteria and
+forecasts. It scores 27/64 (42.1875%) in each of the seven evaluation
+conditions. Ordinary teacher agreement is 40/64 (62.5%); agreement under own
+code, distant, near-miss, neutral, source code and peer code is 41, 40, 41,
+40, 41 and 42 out of 64. Every raw top token is an answer letter. Equal
+accuracy across prefixes does not mean every individual prediction is equal.
+
+All five completed runs pass joint independent verification, including all
+recorded input/output/final-checkpoint hashes, training assignments, shuffles,
+evaluation metrics and forecast reconstruction. All 1,920 teacher/1289
+updates have finite losses and gradients. Mean epoch losses are 0.947290,
+0.056391 and 0.011736. Its duration is 2,629.33 seconds (43.82 minutes), peak
+RSS 11.82 GiB and peak MPS driver allocation 8.37 GiB, within the declared
+limits. There are no failed forecasts for this model. The earlier
+marginal/1091 failure still prevents the full planned population from being
+eligible, regardless of the remaining run's outcome.
 
 Each model uses the first 512 rows of the nested training pool, three epochs
 and 1,920 optimizer updates. The first model's actual serialized 2,560 input/
@@ -180,7 +197,7 @@ rejection diagnostic fails at this interim checkpoint. The third epoch
 subsequently completed with the eligible final result above; neither the gate
 definitions nor checkpoint selection changed.
 
-Teacher/1289 completed epoch one and is training epoch two. Independent
+Teacher/1289 completed epoch one before continuing to epoch two. Independent
 reconstruction from its saved evaluation records gives ordinary 27/64, own
 code 27/64, distant 27/64, near-miss 27/64, neutral 28/64, source code 27/64
 and peer code 26/64. Teacher agreement in that order is 41, 43, 43, 41, 42,
@@ -195,8 +212,8 @@ source code 25/64 and peer code 25/64. Teacher agreement is respectively
 40, 42, 43, 43, 41, 43 and 41 out of 64. Mean second-epoch loss is 0.056391;
 all 1,280 completed epoch-one/two updates and the eight subsequent saved
 updates checked here have finite losses and gradients. These interim numbers
-again meet the control criteria. The third epoch is running; final eligibility
-and the existing population's failure are unchanged by this observation.
+again meet the control criteria. The third epoch subsequently completed with
+the eligible final result above; no checkpoint selection changed.
 
 The unmodified reference download and native tokenizer checks are complete;
 the original added-token compatibility failure is preserved alongside its
