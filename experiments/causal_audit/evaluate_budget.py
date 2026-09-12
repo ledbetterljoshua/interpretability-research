@@ -3,6 +3,7 @@
 Cannot execute without a final committed plan and all six eligible targets,
 behavioral fits and SFT fits. One base/target job runs under the shared model lock.
 """
+import audit_population as ap
 from runtime import ROOT,Run,atomic_json,configure,sha
 configure()
 import argparse
@@ -25,7 +26,7 @@ PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
 DATA=ROOT/"data/causal_audit/development.json"
 HOLDOUT=ROOT/"data/causal_audit/teacher-audit-holdout.json"
 CALIBRATION=ROOT/"data/causal_audit/budget-calibration-v1"
-POPULATION=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 SPLITS=("arc_test","openbook_test")
 MODEL="Qwen/Qwen3-1.7B"
 REVISION="70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
@@ -45,7 +46,7 @@ def require_committed(paths):
 def prerequisites():
     assert PLAN.exists(),"Final matched-forward audit plan is not committed yet"
     assert REFERENCE_PLAN.exists(),"Final reference budget plan is not committed yet"
-    command=[sys.executable,str(Path(__file__).with_name("verify_expanded_controls.py")),
+    command=[sys.executable,str(Path(__file__).with_name("verify_audit_population.py")),
              *[str(ROOT/"data/causal_audit"/n) for n in POPULATION],"--require-eligible","--require-checkpoints"]
     subprocess.run(command,check=True,capture_output=True,text=True)
     stages=[("verify_budget_calibration.py",CALIBRATION)]
@@ -76,7 +77,7 @@ def main():
     sources=[*frozen,DATA,HOLDOUT,Path(bi.__file__),Path(bp.__file__),Path(bs.__file__),Path(edits.__file__),
         Path(views.__file__),Path(it.__file__),
         *[Path(__file__).with_name(n) for n in ("runtime.py","forward_ledger.py","score_calibration.py",
-            "verify_expanded_controls.py","verify_budget_calibration.py","verify_budget_behavior.py",
+            "verify_audit_population.py","verify_budget_calibration.py","verify_budget_behavior.py",
             "verify_budget_sft.py","verify_forward_ledger.py","verify_feasibility.py","training_ledger.py")]]
     if args.target!="base":
         target=ROOT/"data/causal_audit"/args.target;construction=read(target/"run.json")
@@ -85,6 +86,7 @@ def main():
         sft=ROOT/"data/causal_audit"/f"budget-sft-{args.target}-v1";sft_manifest=read(sft/"run.json")
         sources.extend(target/n for n in construction["last_checkpoint_hashes"])
         sources.extend(sft/n for n in sft_manifest["sft_checkpoint_hashes"])
+    sources.extend(ap.source_paths(ROOT))
     import torch
     from transformers import AutoTokenizer,AutoModelForCausalLM
     from peft import PeftModel

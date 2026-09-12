@@ -1,4 +1,5 @@
 """Reconstruct native reference audit outputs, frozen decisions and call costs."""
+import audit_population as ap
 import argparse
 import json
 from pathlib import Path
@@ -13,6 +14,7 @@ from reference_format import REFERENCES
 
 def verify(out,require_checkpoints=False):
     m=read(out/"run.json");assert m["status"]=="complete"
+    ap.require_provenance(m)
     key=m["reference"];assert key in REFERENCES and m["target"]==f"reference-{key}"
     assert all(m[k]==v for k,v in REFERENCES[key].items())
     assert m["training_control_population"]==POPULATION and m["reference_population"]==list(REFERENCES)

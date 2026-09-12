@@ -1,4 +1,5 @@
 """Reconstruct fixed SFT ordering, token-position accounting and saved provenance."""
+import audit_population as ap
 import argparse
 import json
 import math
@@ -13,7 +14,8 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument("run",type=Path)
     parser.add_argument("--require-checkpoints",action="store_true");args=parser.parse_args()
     out=args.run.resolve();m=read(out/"run.json");assert m["status"]=="complete"
-    population=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+    ap.require_provenance(m)
+    population=ap.POPULATION
     assert m["population"]==population and m["target"] in population
     assert m["seed"]==1220+population.index(m["target"])
     target=ROOT/"data/causal_audit"/m["target"];construction=read(target/"run.json")

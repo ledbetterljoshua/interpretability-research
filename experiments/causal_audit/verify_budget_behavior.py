@@ -1,4 +1,5 @@
 """Model-free policy, decoder, convex-fit and forward-budget verification."""
+import audit_population as ap
 import argparse
 from itertools import permutations
 import json
@@ -69,7 +70,8 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument("run",type=Path)
     parser.add_argument("--require-checkpoints",action="store_true");args=parser.parse_args()
     out=args.run.resolve();m=read(out/"run.json");assert m["status"]=="complete"
-    population=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+    ap.require_provenance(m)
+    population=ap.POPULATION
     assert m["population"]==population and m["target"] in population
     target=ROOT/"data/causal_audit"/m["target"];old=read(target/"run.json")
     checkpoints={str((target/name).relative_to(ROOT)) for name in old["last_checkpoint_hashes"]};missing=[]

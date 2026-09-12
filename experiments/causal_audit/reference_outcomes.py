@@ -1,4 +1,5 @@
 """Question-paired reference outcomes and extension of the fixed audit decision."""
+import audit_population as ap
 import numpy as np
 from budget_statistics import paired,paired_intervals,holm,decision_comparison
 from budget_outcomes import POPULATION,SPLITS,DIAGNOSTICS
@@ -56,7 +57,7 @@ def summarize(vectors,main):
     decisions=[];reference_flags=[]
     for selected_splits in ((SPLITS[0],),(SPLITS[1],),SPLITS):
         scope=selected_splits[0] if len(selected_splits)==1 else "all_cells"
-        cases=[dict(model=n,split=s,cohort="training_control",conditional=n.split("-")[2]=="conditional")
+        cases=[dict(model=n,split=s,cohort="training_control",conditional=ap.ARMS[n]=="conditional")
                for s in selected_splits for n in POPULATION]+[
                dict(model=n,split=s,cohort="unmodified_reference",conditional=False)
                for s in selected_splits for n in REFERENCES]

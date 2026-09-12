@@ -1,4 +1,5 @@
 """Fixed 32-label LoRA SFT for unmodified references, with zero-edit validation."""
+import audit_population as ap
 from runtime import ROOT,Run,atomic_json,configure,sha
 configure()
 import argparse
@@ -18,7 +19,7 @@ from training_ledger import TrainingLedger,verify_training_receipt
 PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
 REFERENCE_PLAN=ROOT/"notes/2026-09-12-causal-audit-reference-budget-plan.md"
 DATA=ROOT/"data/causal_audit/development.json"
-POPULATION=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 
 
 def main():
@@ -27,7 +28,7 @@ def main():
     for plan in (PLAN,REFERENCE_PLAN):
         assert subprocess.check_output(["git","show",f"HEAD:{plan.relative_to(ROOT)}"],cwd=ROOT)==plan.read_bytes()
     started=time.monotonic()
-    commands=[["verify_expanded_controls.py",*[str(ROOT/"data/causal_audit"/n) for n in POPULATION],
+    commands=[["verify_audit_population.py",*[str(ROOT/"data/causal_audit"/n) for n in POPULATION],
                "--require-eligible","--require-checkpoints"]]
     behaviors=[ROOT/"data/causal_audit"/f"budget-behavior-{n}-v1" for n in POPULATION]
     commands.extend(["verify_budget_behavior.py",str(p),"--require-checkpoints"] for p in behaviors)
@@ -45,9 +46,10 @@ def main():
         *[p/"run.json" for p in behaviors+reference_behaviors],
         *[ROOT/"data/causal_audit"/n/"run.json" for n in POPULATION],
         *[Path(__file__).with_name(n) for n in ("runtime.py","precision.py","feasibility.py","training_ledger.py",
-            "forward_ledger.py","verify_forward_ledger.py","verify_expanded_controls.py","verify_budget_behavior.py",
+            "forward_ledger.py","verify_forward_ledger.py","verify_audit_population.py","verify_budget_behavior.py",
             "verify_budget_calibration.py","verify_feasibility.py","budget_protocol.py","verify_reference_sft.py",
             "verify_reference_behavior.py","verify_reference_preflight.py","budget_instrument_verification.py")]]
+    sources.extend(ap.source_paths(ROOT))
     import torch
     from transformers import AutoModelForCausalLM,AutoTokenizer
     from peft import LoraConfig,get_peft_model

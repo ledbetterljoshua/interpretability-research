@@ -1,34 +1,26 @@
 # Draft: source graft auditing under matched dense-forward budgets
 
-**Current population gate failed:** expanded marginal/1091 has completed and
-fails both the ordinary-accuracy ceiling and teacher-agreement requirement.
-The other seed's three runs continue, but this six-model population cannot
-satisfy the all-eligible gate. Do not finalize or run this audit from these
-models. The prepared comparison code remains unexecuted; a successful bounded
-construction remedy would require a new prospective population/protocol.
-See the [verified progress record](2026-09-12-causal-audit-expanded-construction-progress.md)
-and [single initialization pilot plan](2026-09-12-causal-audit-warmstart-marginal-plan.md).
+**Prospective replacement cohort; replication pending.** The complete expanded
+six-model attempt failed its eligibility gate, and the 40% warm-start pilot
+also failed. Those results remain unchanged. The first 20% lower-gold pair
+passed; its exact second-seed replication is running. This draft now proposes
+the fixed cohort in [the wiring record](2026-09-12-causal-audit-population-wiring.md):
+two lower-gold conditional/marginal pairs and their two inherited teacher
+checkpoints, plus both native unmodified references.
 
-Not an executable plan. The original six teacher-control constructions are
-complete and fail the population gate: one conditional target passes, the
-other conditional target and all four controls fail. Their complete report
-remains part of the evidence. A separate larger-data construction is running;
-the candidate population below refers to that attempt and
-must itself pass the original criteria before an audit can proceed.
-Finalize and commit a separate `...-budget-plan.md` before fitting or evaluating
-this audit. No new holdout model outputs have been inspected. Do not silently
-drop a construction failure or revise a gate to make this population usable.
+This is not an executable plan. Both lower-gold pairs and both teacher controls
+must pass their original final-checkpoint gates. A missing or failed member
+stops the whole audit; no replacement by a previous model, early checkpoint
+or revised threshold is allowed under this draft. Finalize and commit separate
+`...-budget-plan.md` and `...-reference-budget-plan.md` documents before any
+fitting or fresh evaluation. The reserved 512 questions have no model outputs.
 
-**Additional completion requirement from the reference-gap review:** the six
-degraded constructions do not replace an unmodified benign-reference cohort.
-See [the evidence and design correction](2026-09-12-causal-audit-reference-gap-review.md).
-Do not finalize or launch the fresh audit until that reference extension has
-an implemented protocol and its fitting choices are frozen. The code below
-currently covers the six constructed cases plus a base accuracy reference;
-the base-only pass is not yet an intervention/behavioral audit of that model.
-Retain the main cohort's gates and distinguish its analysis from the added
-reference cohort. Reconcile actual source-fit reuse across both before reporting
-aggregate costs or a broader benign-control claim.
+Both native-reference preflights passed under their separate committed plan.
+Their fitting/evaluation code is prepared but unexecuted. All six constructed
+models and both native references must have their behavioral and SFT fits
+verified and frozen before the first fresh-question evaluation. The separate
+post accuracy-only pass is a diagnostic, not a ninth audited model. Source
+fitting is executed once and allocated across eight audited models.
 
 ## Scientific question
 
@@ -46,11 +38,23 @@ do not select a new correction using the fresh test data.
 
 ## Population and frozen information boundary
 
-Use all six final `expanded-controls-{conditional,teacher,marginal}-{1091,1289}`
-adapters. The construction plan defines suitability and diagnostics separately.
-Review those gates before finalizing this draft. If the planned population is
-unsuitable, report the failure and design a prospective remedy; do not claim a
-successful specificity test from high-baseline or invalid controls.
+Use exactly the six final checkpoints in `audit_population.py`, in its fixed
+order: conditional/1091, teacher/1091, marginal/1091, then the same arms for
+1289. The conditional and marginal entries are `lower-gold-*-v1`; the teachers
+are `expanded-controls-teacher-*`. Their existing construction verifiers retain
+the original distinction between eligibility gates and diagnostic forecasts.
+The second pair must independently complete and pass before this cohort is
+usable; one successful pair cannot stand in for replication.
+
+Within each conditional/marginal pair, initialization, literal input frequency,
+aggregate 20% gold target mass and continuation compute are matched. The
+teacher controls are their original inherited checkpoints and received less
+training. They are additional degraded controls, not compute-matched ablations.
+The primary matched construction contrast is conditional versus marginal.
+Report per-model inherited cost separately from actual shared construction
+work, counting each teacher training run once. The old 40% recipe and failed
+attempts remain disclosed; this is an adaptive construction on the old 64
+validation questions, not an independent discovery sample.
 
 The internal method fits only on the original `fp32-specificity-lock-731`
 source. It uses the first 32 development-validation questions for paired
@@ -335,7 +339,8 @@ is retained; a performance forecast failure does not authorize retuning.
 
 `evaluate_budget.py` is the unexecuted test runner. Before opening the reserved
 test data it verifies all six constructions, source fitting, all six behavioral
-fits and all six SFT fits, and requires the fitting manifests and selections to
+fits and all six SFT fits, plus both native references’ behavioral and SFT fits,
+and requires the fitting manifests and selections to
 match their committed bytes. It then checks the reserved holdout hash. Both its
 base and target entry points have passed a missing-plan refusal check without
 loading a model or opening test data. This is still not an executable protocol:
@@ -344,7 +349,7 @@ the final plan and complete population gates remain absent.
 Use one base-reference job (15-minute cap), followed by one job per target in
 population order (60-minute cap each), under the existing shared model lock and
 memory limits. Artifacts are `budget-test-base-v1` and
-`budget-test-{expanded-controls-arm-seed}-v1`. Each target job evaluates both
+`budget-test-{target}-v1`, with `target` taken verbatim from the fixed cohort. Each target job evaluates both
 tasks with the original adapter, then loads that target's frozen SFT adapter
 into the same base model and evaluates both tasks. No adapter is trained during
 test inference. Each adapter state gets its own instrument check. Store full

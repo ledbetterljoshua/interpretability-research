@@ -1,8 +1,9 @@
 """Source-only fitting for the unfinalized matched-forward audit protocol.
 
-Requires the final budget plan, eligible expanded population and passed GPU
+Requires the final budget plan, eligible fixed audit population and passed GPU
 preflight. It cannot run merely because the draft or this implementation exists.
 """
+import audit_population as ap
 from runtime import ROOT,Run,atomic_json,configure,sha
 configure()
 import json
@@ -21,7 +22,7 @@ PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
 SOURCE=ROOT/"data/causal_audit/fp32-specificity-lock-731"
 DATA=ROOT/"data/causal_audit/development.json"
 PREFLIGHT=ROOT/"data/causal_audit/budget-preflight-v1"
-POPULATION=[f"expanded-controls-{arm}-{seed}" for seed in (1091,1289) for arm in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 MODEL="Qwen/Qwen3-1.7B"
 REVISION="70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
 
@@ -29,7 +30,7 @@ REVISION="70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
 def main():
     assert PLAN.exists(),"Final matched-forward audit plan is not committed yet"
     started=time.monotonic()
-    subprocess.run([sys.executable,str(Path(__file__).with_name("verify_expanded_controls.py")),
+    subprocess.run([sys.executable,str(Path(__file__).with_name("verify_audit_population.py")),
         *[str(ROOT/"data/causal_audit"/name) for name in POPULATION],"--require-eligible","--require-checkpoints"],
         check=True,capture_output=True,text=True)
     subprocess.run([sys.executable,str(Path(__file__).with_name("verify_budget_preflight.py")),str(PREFLIGHT),
@@ -42,9 +43,10 @@ def main():
     sources=[Path(__file__),Path(bl.__file__),Path(bi.__file__),Path(bp.__file__),Path(it.__file__),DATA,
         SOURCE/"run.json",PREFLIGHT/"run.json",PREFLIGHT/"summary.json",
         *[Path(__file__).with_name(n) for n in ("runtime.py","forward_ledger.py","verify_forward_ledger.py",
-            "verify_budget_preflight.py","verify_expanded_controls.py","verify_feasibility.py")],
+            "verify_budget_preflight.py","verify_audit_population.py","verify_feasibility.py")],
         *[SOURCE/name for name in old["last_checkpoint_hashes"]],
         *[ROOT/"data/causal_audit"/name/"run.json" for name in POPULATION]]
+    sources.extend(ap.source_paths(ROOT))
     import torch
     from transformers import AutoTokenizer,AutoModelForCausalLM
     from peft import PeftModel

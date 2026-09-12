@@ -1,4 +1,5 @@
 """Independently check native reference SFT and its zero-adapter diagnostics."""
+import audit_population as ap
 import argparse
 import json
 import math
@@ -14,10 +15,11 @@ from reference_format import REFERENCES
 
 def verify(out,require_checkpoints=False):
     m=read(out/"run.json");assert m["status"]=="complete"
+    ap.require_provenance(m)
     key=m["reference"];assert key in REFERENCES and m["target"]==f"reference-{key}"
     assert all(m[k]==v for k,v in REFERENCES[key].items())
     assert m["seed"]==1226+list(REFERENCES).index(key)
-    population=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+    population=ap.POPULATION
     assert m["training_control_population"]==population and m["reference_population"]==list(REFERENCES)
     for name,h in m["input_hashes"].items():assert sha(ROOT/name)==h,name
     for name,h in m["output_hashes"].items():assert sha(out/name)==h,name

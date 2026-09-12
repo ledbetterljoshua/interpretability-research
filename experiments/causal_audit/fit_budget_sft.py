@@ -3,6 +3,7 @@
 Requires all behavioral fitting to be complete and verified. Does not read
 fresh test data or select intermediate checkpoints.
 """
+import audit_population as ap
 from runtime import ROOT,Run,atomic_json,configure,sha
 configure()
 import argparse
@@ -17,7 +18,7 @@ from training_ledger import TrainingLedger,verify_training_receipt
 
 PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
 DATA=ROOT/"data/causal_audit/development.json"
-POPULATION=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 MODEL="Qwen/Qwen3-1.7B"
 REVISION="70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
 
@@ -26,7 +27,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument("target",choices=POPULATION);args=parser.parse_args()
     assert PLAN.exists(),"Final matched-forward audit plan is not committed yet"
     started=time.monotonic()
-    subprocess.run([sys.executable,str(Path(__file__).with_name("verify_expanded_controls.py")),
+    subprocess.run([sys.executable,str(Path(__file__).with_name("verify_audit_population.py")),
         *[str(ROOT/"data/causal_audit"/n) for n in POPULATION],"--require-eligible","--require-checkpoints"],
         check=True,capture_output=True,text=True)
     behavior=[ROOT/"data/causal_audit"/f"budget-behavior-{n}-v1" for n in POPULATION]
@@ -40,8 +41,9 @@ def main():
         *[ROOT/"data/causal_audit"/name/"run.json" for name in POPULATION],
         *[d/"run.json" for d in behavior],*[target/name for name in construction["last_checkpoint_hashes"]],
         *[Path(__file__).with_name(n) for n in ("runtime.py","precision.py","feasibility.py","training_ledger.py",
-            "forward_ledger.py","verify_forward_ledger.py","verify_expanded_controls.py","verify_budget_behavior.py",
+            "forward_ledger.py","verify_forward_ledger.py","verify_audit_population.py","verify_budget_behavior.py",
             "verify_budget_calibration.py","verify_feasibility.py","budget_protocol.py")]]
+    sources.extend(ap.source_paths(ROOT))
     import torch
     from transformers import AutoModelForCausalLM,AutoTokenizer
     from peft import PeftModel

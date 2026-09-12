@@ -1,4 +1,5 @@
 """Verify native-reference policy fitting, all decoders and exact call costs."""
+import audit_population as ap
 import argparse
 import json
 from pathlib import Path
@@ -13,9 +14,10 @@ from budget_protocol import BASELINE_POLICIES
 
 def verify(out,require_weights=False):
     m=read(out/"run.json");assert m["status"]=="complete"
+    ap.require_provenance(m)
     key=m["reference"];assert key in REFERENCES and m["target"]==f"reference-{key}"
     assert all(m[k]==v for k,v in REFERENCES[key].items()) and m["adapter"] is None
-    population=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+    population=ap.POPULATION
     assert m["training_control_population"]==population and m["reference_population"]==list(REFERENCES)
     for name,h in m["input_hashes"].items():assert sha(ROOT/name)==h,name
     for name,h in m["output_hashes"].items():assert sha(out/name)==h,name

@@ -3,6 +3,7 @@
 This runner never opens the reserved test questions. It saves all development
 policy logits and freezes prompt-only and output-decoded winners separately.
 """
+import audit_population as ap
 from runtime import ROOT,Run,atomic_json,configure,sha
 configure()
 import argparse
@@ -21,7 +22,7 @@ from forward_ledger import ForwardLedger
 PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
 DATA=ROOT/"data/causal_audit/development.json"
 CALIBRATION=ROOT/"data/causal_audit/budget-calibration-v1"
-POPULATION=[f"expanded-controls-{arm}-{seed}" for seed in (1091,1289) for arm in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 MODEL="Qwen/Qwen3-1.7B"
 REVISION="70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
 
@@ -30,7 +31,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument("target",choices=POPULATION);args=parser.parse_args()
     assert PLAN.exists(),"Final matched-forward audit plan is not committed yet"
     started=time.monotonic()
-    for command in (["verify_expanded_controls.py",*[str(ROOT/"data/causal_audit"/n) for n in POPULATION],
+    for command in (["verify_audit_population.py",*[str(ROOT/"data/causal_audit"/n) for n in POPULATION],
                      "--require-eligible","--require-checkpoints"],
                     ["verify_budget_calibration.py",str(CALIBRATION),"--require-checkpoints"]):
         subprocess.run([sys.executable,str(Path(__file__).with_name(command[0])),*command[1:]],
@@ -47,7 +48,8 @@ def main():
         *[ROOT/"data/causal_audit"/name/"run.json" for name in POPULATION],
         *[target/name for name in construction["last_checkpoint_hashes"]],
         *[Path(__file__).with_name(n) for n in ("runtime.py","forward_ledger.py","verify_forward_ledger.py",
-            "verify_expanded_controls.py","verify_budget_calibration.py","verify_feasibility.py")]]
+            "verify_audit_population.py","verify_budget_calibration.py","verify_feasibility.py")]]
+    sources.extend(ap.source_paths(ROOT))
     import torch
     from transformers import AutoModelForCausalLM,AutoTokenizer
     from peft import PeftModel

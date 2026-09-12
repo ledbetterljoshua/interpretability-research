@@ -1,4 +1,5 @@
 """Deterministic analysis of the complete verified prospective audit population."""
+import audit_population as ap
 from runtime import ROOT,configure,sha
 configure()
 import argparse
@@ -38,14 +39,16 @@ def analysis(require_checkpoints=False):
         subprocess.run(command,check=True,capture_output=True,text=True)
     for filename in ("analyze_budget.py","budget_outcomes.py","budget_statistics.py","budget_costs.py",
         "budget_test_outputs.py","verify_budget_test.py","verify_budget_calibration.py","verify_budget_behavior.py",
-        "verify_budget_sft.py","verify_expanded_controls.py","verify_feasibility.py","verify_forward_ledger.py",
+        "verify_budget_sft.py","verify_audit_population.py","verify_feasibility.py","verify_forward_ledger.py",
         "budget_instrument_verification.py","training_ledger.py","budget_protocol.py","budget_selection.py",
         "score_calibration.py","runtime.py","verify_reference_test.py","reference_format.py"):
         path=Path(__file__).with_name(filename);hashes[str(path.relative_to(ROOT))]=sha(path)
+    for path in ap.source_paths(ROOT):
+        hashes[str(path.relative_to(ROOT))]=sha(path)
     for reference in ("post","base"):
         directory=DIRECTORY/f"budget-test-reference-{reference}-v1"
         verify_reference_test(directory,require_checkpoints);run(directory)
-    check("verify_expanded_controls.py",*[DIRECTORY/n for n in outcomes.POPULATION],"--require-eligible")
+    check("verify_audit_population.py",*[DIRECTORY/n for n in outcomes.POPULATION],"--require-eligible")
     calibration=DIRECTORY/"budget-calibration-v1";check("verify_budget_calibration.py",calibration)
     cm=run(calibration);source=read(calibration/"selection.json")
     source_ledger=read(calibration/"forward-ledger.json")
@@ -125,10 +128,11 @@ def analysis(require_checkpoints=False):
             actual_inference_totals=summed(inference),actual_top_level_training_forward_totals=summed(training),
             model_run_wall_seconds=sum(r["run_wall_seconds"] for r in all_stage_times),
             prerequisite_verification_seconds=sum(r["prerequisite_verification_seconds"] for r in all_stage_times),
-            construction_seconds={name:m["elapsed_seconds"] for name,m in constructions.items()},
+            construction=ap.construction_costs(list(constructions.items())),
             scope="Main-cohort audit runs only, with construction separate. The two completed reference audits are excluded from these totals; source allocation uses all eight audited models. Excludes prior experiments, engineering, downloads and unrecorded analysis overhead. Training totals exclude backward/recomputation FLOPs.",
             matching="Equal primary forward allowances; actual independent counts reported, including lower use from ordinary-policy reuse or source abstention. Fixed padding is not an optimized deployment comparison."),
         interpretation_limits=["Constructed models sharing one base, not independent frontier model samples.",
+            "Only conditional/marginal pairs match continuation compute, initialization and aggregate 20% gold supervision. Teacher controls are the inherited checkpoints and received less training.",
             "Negative labels mean unconditional supervision in these constructed controls, not proven absence of latent capability or genuine ignorance.",
             "Behavioral comparison is limited to the fixed 22 policies, 28 decoders per policy and separate SFT recipe, not every possible elicitation strategy.",
             "Question-bootstrap intervals are descriptive and do not quantify model-family uncertainty.",

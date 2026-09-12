@@ -1,4 +1,5 @@
 """Fixed 704-forward behavioral fitting for native unmodified references."""
+import audit_population as ap
 from runtime import ROOT,Run,atomic_json,configure,sha
 configure()
 import argparse
@@ -19,7 +20,7 @@ PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
 REFERENCE_PLAN=ROOT/"notes/2026-09-12-causal-audit-reference-budget-plan.md"
 DATA=ROOT/"data/causal_audit/development.json"
 CALIBRATION=ROOT/"data/causal_audit/budget-calibration-v1"
-POPULATION=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 
 
 def main():
@@ -29,7 +30,7 @@ def main():
         committed=subprocess.check_output(["git","show",f"HEAD:{plan.relative_to(ROOT)}"],cwd=ROOT)
         assert committed==plan.read_bytes(),"Uncommitted budget plan change"
     started=time.monotonic()
-    commands=[ ["verify_expanded_controls.py",*[str(ROOT/"data/causal_audit"/n) for n in POPULATION],
+    commands=[ ["verify_audit_population.py",*[str(ROOT/"data/causal_audit"/n) for n in POPULATION],
                  "--require-eligible","--require-checkpoints"],
                ["verify_budget_calibration.py",str(CALIBRATION),"--require-checkpoints"] ]
     preflights=[ROOT/"data/causal_audit"/f"reference-preflight-{key}-v1" for key in rf.REFERENCES]
@@ -47,9 +48,10 @@ def main():
         Path(sc.__file__),Path(it.__file__),DATA,CALIBRATION/"run.json",CALIBRATION/"selection.json",
         *[p/"run.json" for p in preflights],*[ROOT/"data/causal_audit"/name/"run.json" for name in POPULATION],
         *[Path(__file__).with_name(n) for n in ("runtime.py","forward_ledger.py","verify_forward_ledger.py",
-            "verify_expanded_controls.py","verify_budget_calibration.py","verify_feasibility.py",
+            "verify_audit_population.py","verify_budget_calibration.py","verify_feasibility.py",
             "verify_reference_preflight.py","budget_instrument_verification.py","verify_reference_behavior.py",
             "verify_budget_behavior.py")]]
+    sources.extend(ap.source_paths(ROOT))
     import torch
     from transformers import AutoModelForCausalLM,AutoTokenizer
     torch.set_num_threads(2);torch.set_num_interop_threads(1);torch.manual_seed(1212)

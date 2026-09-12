@@ -1,4 +1,5 @@
 """Verify source fitting, layer selection and actual forward receipts without a model."""
+import audit_population as ap
 import argparse
 import json
 import math
@@ -35,6 +36,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument("run",type=Path)
     parser.add_argument("--require-checkpoints",action="store_true");args=parser.parse_args()
     out=args.run.resolve();m=read(out/"run.json");assert m["status"]=="complete"
+    ap.require_provenance(m)
     source=ROOT/"data/causal_audit/fp32-specificity-lock-731";old=read(source/"run.json")
     checkpoints={str((source/name).relative_to(ROOT)) for name in old["last_checkpoint_hashes"]};missing=[]
     for name,h in m["input_hashes"].items():
@@ -52,7 +54,7 @@ def main():
     assert m["choice_ids"]==[32,33,34,35]
     assert m["elapsed_seconds"]<=1800 and m["peak_rss_gib"]<=32 and m["peak_mps_driver_gib"]<=28
     assert m["prerequisite_verification_seconds"]>=0
-    population=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+    population=ap.POPULATION
     assert m["population"]==population
     for name in population:
         model=read(ROOT/"data/causal_audit"/name/"run.json")

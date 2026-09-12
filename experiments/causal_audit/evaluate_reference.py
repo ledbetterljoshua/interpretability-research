@@ -1,4 +1,5 @@
 """Held-out native-reference audit; all eight models' fitting must be frozen."""
+import audit_population as ap
 from runtime import ROOT,Run,atomic_json,configure,sha
 configure()
 import argparse
@@ -37,9 +38,10 @@ def main():
         Path(edits.__file__),Path(views.__file__),Path(it.__file__),
         *[sft/n for n in sft_manifest["sft_checkpoint_hashes"]],
         *[Path(__file__).with_name(n) for n in ("runtime.py","forward_ledger.py","score_calibration.py",
-            "verify_expanded_controls.py","verify_budget_calibration.py","verify_budget_behavior.py","verify_budget_sft.py",
+            "verify_audit_population.py","verify_budget_calibration.py","verify_budget_behavior.py","verify_budget_sft.py",
             "verify_forward_ledger.py","verify_feasibility.py","training_ledger.py","verify_reference_test.py",
             "verify_reference_preflight.py","budget_instrument_verification.py","retarget_ledger.py","verify_budget_test.py")]]
+    sources.extend(ap.source_paths(ROOT))
     import torch
     from transformers import AutoTokenizer,AutoModelForCausalLM
     from peft import PeftModel

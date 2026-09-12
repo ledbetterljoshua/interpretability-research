@@ -1,4 +1,5 @@
 """Verify held-out evidence, frozen decoded views, instruments and exact actual calls."""
+import audit_population as ap
 import argparse
 import json
 from pathlib import Path
@@ -8,7 +9,7 @@ from verify_budget_calibration import read,evaluation
 from verify_forward_ledger import verify as verify_ledger
 from budget_instrument_verification import verify as verify_instrument
 
-POPULATION=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 SPLITS=("arc_test","openbook_test")
 IDENTITY=dict(kind="rank",rank=1)
 
@@ -31,6 +32,7 @@ def predictions(records,decoder):
 
 def verify(out,require_checkpoints=False):
     m=read(out/"run.json");assert m["status"]=="complete" and m["target"] in ["base",*POPULATION]
+    ap.require_provenance(m)
     assert m["population"]==POPULATION
     base=m["target"]=="base";checkpoint_paths=set()
     if not base:

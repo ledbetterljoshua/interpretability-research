@@ -1,8 +1,9 @@
 """Fixed paired outcome analysis over correctness arrays; no model/data loading."""
+import audit_population as ap
 import numpy as np
 from budget_statistics import paired,paired_intervals,holm,decision_comparison
 
-POPULATION=[f"expanded-controls-{a}-{s}" for s in (1091,1289) for a in ("conditional","teacher","marginal")]
+POPULATION=ap.POPULATION
 SPLITS=("arc_test","openbook_test")
 PRIMARY_METHODS=("ordinary","prompt_only","decoded","raw")
 DIAGNOSTICS=("random_write_1215","random_write_1216","random_write_1217","final_only","context_only")
@@ -17,7 +18,7 @@ def summarize(vectors,base_vectors,abstained=False):
     base={k:np.asarray(v) for k,v in base_vectors.items()}
     assert all(v.shape==(256,) and np.isin(v,[0,1]).all() for v in [*data.values(),*base.values()])
     data={k:v.astype(np.int64) for k,v in data.items()};base={k:v.astype(np.int64) for k,v in base.items()}
-    roles={name:name.split("-")[2] for name in POPULATION}
+    roles=ap.ARMS.copy()
     table=[];primary=[];secondary=[];specificity=[];ablations=[]
     for split_index,split in enumerate(SPLITS):
         interval_vectors=[];interval_rows=[]

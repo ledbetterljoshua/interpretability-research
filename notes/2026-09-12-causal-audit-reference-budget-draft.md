@@ -1,21 +1,23 @@
 # Draft: unmodified reference cohort for the matched-budget audit
 
-**Current main population is unsuitable:** marginal/1091 failed the original
-gates. The unmodified-reference numerical preflight can proceed independently
-after the construction controller finishes; this audit and all of its fitting
-remain gated. Any new main cohort would need a new committed protocol and
-corresponding implementation updates, without changing the completed failures.
+**Prospective replacement main cohort; second-seed replication pending.**
+The failed expanded group and failed 40% warm-start pilot remain excluded from
+this proposed audit and preserved as construction failures. The new cohort is
+the two 20% lower-gold pairs and their two inherited teacher checkpoints,
+explicitly enumerated in `audit_population.py`. The first pair passed; the
+second is running. See [the wiring record](2026-09-12-causal-audit-population-wiring.md).
 
-This is not an executable fitting or test plan. The native reference preflight
-has a separate committed plan, but has not run. The current six-model
-construction controller remains active. No reference fitting or fresh test
-evaluation may run until the complete implementation and final audit protocol
-are committed. The original six-model suitability gates remain unchanged.
+This is not an executable fitting or test plan. Both native-reference
+preflights have completed and passed. Reference fitting and all fresh tests
+remain gated on complete eligible main-cohort verification and final committed
+main/reference plans. All eight behavioral and SFT fits must be frozen before
+any reserved-question evaluation. No failed member may be silently replaced.
 
 ## Population and interpretation
 
-Keep the six expanded constructed models as the primary training-control
-cohort. Add two unmodified references: Qwen3-1.7B (`post`) and Qwen3-1.7B-Base
+Keep the six explicitly named replacement models as the main training-control
+cohort, distinguishing the matched conditional/marginal pairs from their less
+trained teacher controls. Add two unmodified references: Qwen3-1.7B (`post`) and Qwen3-1.7B-Base
 (`base`), at the exact revisions and native formats already frozen in
 `reference_format.py`. Both are included by provenance, before reference
 performance is observed. Their diagnostic preflight accuracy cannot select or
