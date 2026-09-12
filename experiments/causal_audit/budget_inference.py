@@ -68,7 +68,7 @@ def capture_means(model,tokenizer,rows,prefix=""):
         seconds=time.monotonic()-started)
 
 
-def check_instruments(model,tokenizer,rows,choice_ids):
+def check_instruments(model,tokenizer,rows,choice_ids,full_logits_out=None):
     """Save no-op/readout checks and long-padding equivalence on four dev items."""
     import torch
     assert len(rows)==4
@@ -78,10 +78,11 @@ def check_instruments(model,tokenizer,rows,choice_ids):
     with torch.no_grad():
         original=model(**tokens,use_cache=False,logits_to_keep=1).logits[:,-1].float()
         assert bool(torch.isfinite(original).all())
-        padding=[]
+        padding=[];individual_logits=[]
         for i,row in enumerate(rows):
             individual=tokenizer(it.prompt(tokenizer,row),return_tensors="pt").to("mps")
             direct=model(**individual,use_cache=False,logits_to_keep=1).logits[0,-1].float()
+            if full_logits_out is not None:individual_logits.append(direct.detach().cpu())
             error=float((direct-original[i]).abs().max())
             choices_match=int(direct[choice_ids].argmax())==int(original[i,choice_ids].argmax())
             padding.append(dict(id=row["id"],max_full_logit_error=error,choices_match=choices_match,
@@ -91,6 +92,9 @@ def check_instruments(model,tokenizer,rows,choice_ids):
         direction=direction/direction.norm()
         with it.graft(model,len(layers)-1,direction,0.,alpha=0.):
             noop=model(**tokens,use_cache=False,logits_to_keep=1).logits[:,-1].float()
+        if full_logits_out is not None:
+            full_logits_out.update(padded=original.detach().cpu(),individual=torch.stack(individual_logits),
+                                   noop=noop.detach().cpu())
         noop_error=float((noop-original).abs().max());signs={}
         for sign in (1,-1):
             def replace(module,args,output):

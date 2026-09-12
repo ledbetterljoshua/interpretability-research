@@ -18,7 +18,10 @@ apply the zero-strength graft; and replace the final residual with both signs
 of the normalized RMS-weighted A-minus-B readout direction. Forecast full-logit
 padding error and no-op error below 0.001, unchanged four-choice predictions
 under padding, and the expected A-minus-B sign for both readout controls.
-Save diagnostics and stop if any check fails.
+Save diagnostics and stop if any check fails. Save the complete padded,
+individual-unpadded and no-op output-logit arrays in NumPy format, so verification
+can independently recompute the full-vocabulary maximum errors instead of
+trusting only reported scalar summaries.
 
 Evaluate all eight ordinary prompts twice using fixed batch four and length
 512. Forecast identical choice predictions and maximum repeated choice-logit

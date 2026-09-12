@@ -44,8 +44,10 @@ def main():
         with ForwardLedger(model) as ledger:
             try:
                 run.save(stage="instrument_checks")
+                raw_logits={}
                 with ledger.phase("instruments",expected_examples=20):
-                    instruments=bi.check_instruments(model,tokenizer,rows[:4],choice_ids)
+                    instruments=bi.check_instruments(model,tokenizer,rows[:4],choice_ids,full_logits_out=raw_logits)
+                np.savez_compressed(out/"instrument-logits.npz",**{k:v.numpy() for k,v in raw_logits.items()})
                 atomic_json(out/"instruments.json",instruments)
                 assert instruments["passed"],"Numerical instrument forecast failed"
                 with ledger.phase("ordinary-first",expected_examples=8,sequence_length=512,batch_size=4):
