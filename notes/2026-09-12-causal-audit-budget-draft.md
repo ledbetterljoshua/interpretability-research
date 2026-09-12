@@ -364,6 +364,25 @@ It keeps the full 704-forward source charge distinct from the descriptive
 704/6 per-target share of one executed source fit. These checks establish the
 accounting arithmetic; actual costs still require the verified run receipts.
 
+`analyze_budget.py` is the unexecuted full analysis driver. It requires the
+final plan and the complete verified construction/fitting/test population,
+then derives correctness arrays from the linked scored views and applies the
+fixed outcome rules. It records hashes of the analysis code and all consumed
+run outputs. `--verify` recomputes the deterministic analysis and compares it
+with the saved artifact; no fresh selections or model inference occur there.
+The driver passes its missing-plan refusal check without creating an output.
+
+Its cost report separates one actual source fit, six behavioral fits, six SFT
+fits, all seven test jobs and construction time. It reconciles shared-policy,
+raw-graft, random-write, position-ablation, own-code, SFT and instrument phases,
+and reports both recorded phase durations and total run wall time. Remaining
+run time includes loading/serialization and other work outside those phase
+timers; it is not attributed to GPU compute. Prerequisite verification time is
+separate. These are named model-run costs, not the total cost of engineering,
+downloads, preceding research attempts or unrecorded analysis overhead.
+The intended artifact is `data/causal_audit/budget-analysis-v1.json`. Full
+artifact verification remains pending actual completed audit runs.
+
 ### Proposed outcome forecasts
 
 These forecasts express current expectations from the earlier pilot; none is
