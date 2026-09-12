@@ -148,5 +148,14 @@ four-example full-vocabulary zero-edit check, and verify the fixed 24 updates
 and native answer IDs. Their missing-final-plan guards pass without creating
 outputs or loading a model. The shared parameter-free training-ledger checks
 also pass. These are component checks; actual reference SFT has not run.
-Held-out execution, combined freeze enforcement and reference analysis remain
-to be implemented and tested before finalizing the protocol.
+`reference_freeze.py` now enforces both reference fits, their verification and
+their committed evidence in the main test prerequisites. The original
+accuracy-only pass and all constructed-model tests therefore also wait for the
+reference cohort. `evaluate_reference.py` and `verify_reference_test.py`
+implement the two native test jobs, preserving all position/random controls,
+source abstention and repeated-policy reuse. The call ledger moves its hooks
+from the unmodified outer model to the SFT wrapper between phases; a
+parameter-free nested-wrapper check verifies preserved counts, no double
+counting, rejection of a switch inside a phase and cleanup of every hook.
+Neither reference test has run. Reference analysis and final integrated
+verification remain to be completed before finalizing the protocol.

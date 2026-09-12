@@ -43,6 +43,13 @@ def verify(out,require_checkpoints=False):
         if not (ROOT/name).exists() and name in checkpoint_paths:missing.append(name)
         else:assert sha(ROOT/name)==h,name
     if require_checkpoints:assert not missing,missing
+    assert "notes/2026-09-12-causal-audit-reference-budget-plan.md" in m["input_hashes"]
+    for reference in ("post","base"):
+        for stage in ("behavior","sft"):
+            path=ROOT/"data/causal_audit"/f"budget-{stage}-reference-{reference}-v1/run.json"
+            assert str(path.relative_to(ROOT)) in m["input_hashes"]
+            fitted=read(path)
+            assert fitted["status"]=="complete" and fitted["target"]==f"reference-{reference}"
     for name,h in m["output_hashes"].items():assert sha(out/name)==h,name
     assert m["model"]=="Qwen/Qwen3-1.7B" and m["revision"]=="70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
     assert (m["dtype"],m["device"],m["attention_implementation"],m["padding_length"],m["batch_size"])==("float32","mps","eager",512,4)

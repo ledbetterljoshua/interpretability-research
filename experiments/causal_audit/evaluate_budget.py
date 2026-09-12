@@ -19,6 +19,7 @@ import budget_interventions as edits
 import budget_test_outputs as views
 import interventions as it
 from forward_ledger import ForwardLedger
+from reference_freeze import require_reference_fits,REFERENCE_PLAN
 
 PLAN=ROOT/"notes/2026-09-12-causal-audit-budget-plan.md"
 DATA=ROOT/"data/causal_audit/development.json"
@@ -43,6 +44,7 @@ def require_committed(paths):
 
 def prerequisites():
     assert PLAN.exists(),"Final matched-forward audit plan is not committed yet"
+    assert REFERENCE_PLAN.exists(),"Final reference budget plan is not committed yet"
     command=[sys.executable,str(Path(__file__).with_name("verify_expanded_controls.py")),
              *[str(ROOT/"data/causal_audit"/n) for n in POPULATION],"--require-eligible","--require-checkpoints"]
     subprocess.run(command,check=True,capture_output=True,text=True)
@@ -56,6 +58,7 @@ def prerequisites():
         frozen.append(directory/"run.json")
         if verifier=="verify_budget_behavior.py":frozen.append(directory/"selection.json")
     frozen.extend(ROOT/"data/causal_audit"/n/"run.json" for n in POPULATION)
+    frozen.extend(require_reference_fits())
     require_committed(frozen)
     return frozen
 

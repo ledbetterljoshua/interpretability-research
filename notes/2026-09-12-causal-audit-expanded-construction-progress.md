@@ -108,3 +108,10 @@ of 64. At this interim point its ordinary accuracy exceeds the control's 65%
 ceiling and its teacher agreement is below the required 60%. Final eligibility
 is unresolved; this observation neither changes the gates nor selects an
 earlier checkpoint. The full planned three epochs continue.
+
+Marginal/1091 epoch two is now complete. Independently reconstructed correct
+counts are ordinary 43/64, own code 44/64, distant 44/64, near-miss 44/64,
+neutral 44/64, source code 44/64 and peer code 44/64. Teacher agreement is
+30, 34, 32, 34, 30, 33 and 31 out of 64 respectively. The ordinary ceiling
+and teacher-agreement gates would still fail at this interim checkpoint.
+The final third epoch is running; no checkpoint selection has changed.
