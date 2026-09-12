@@ -102,6 +102,10 @@ now names both lower-gold pairs and their teacher checkpoints explicitly,
 rejects substitutions, and requires their provenance in every audit receipt.
 All seven model entry points reject absent final plans without importing a
 model or opening reserved questions. The complete cohort is still pending.
+The [sequential controller](../../notes/2026-09-12-causal-audit-controller-readiness.md)
+now schedules the 17 fitting and nine test jobs in separate phases, with verified
+resumption, no overwrites or retries, and no fitting after fresh-test exposure.
+It remains gated and has not launched any model.
 
 To reconstruct the reserved rows, answers, counts and exclusions from the pinned
 cached parquet files (requires Pandas, available in this environment):

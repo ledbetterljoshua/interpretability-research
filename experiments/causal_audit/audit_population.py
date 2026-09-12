@@ -18,7 +18,7 @@ POPULATION = [name for name, arm, seed in MEMBERS]
 ARMS = {name: arm for name, arm, seed in MEMBERS}
 SEEDS = {name: seed for name, arm, seed in MEMBERS}
 SOURCE_FILES = tuple("experiments/causal_audit/" + name for name in (
-    "audit_population.py", "verify_audit_population.py",
+    "audit_population.py", "verify_audit_population.py", "run_budget_audit.py",
     "verify_lower_gold_pair.py", "verify_lower_gold_replication.py",
     "verify_expanded_controls.py",
 ))
