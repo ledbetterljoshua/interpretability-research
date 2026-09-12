@@ -56,8 +56,10 @@ teacher agreement misses 60%. These are its two failed forecasts and failed
 eligibility criteria. Do not replace them with gates chosen after this result.
 
 Joint independent verification passes for all three completed runs with every
-final checkpoint available. The verifier's additional `--require-eligible`
-check correctly rejects marginal/1091. All 1,920 recorded updates have finite
+final checkpoint available and recomputes marginal/1091 eligibility as false.
+An attempted `--require-eligible` invocation with only this one run rejected
+the incomplete population before testing aggregate eligibility; it is not a
+completed full-population gate check. All 1,920 recorded updates have finite
 losses and gradient norms. Duration is 2,875.33 seconds (47.92 minutes), peak
 RSS 11.06 GiB and MPS driver allocation 8.42 GiB. Mean cross-entropy is
 1.043821, 0.620087 and 0.536173 over its three epochs, against the soft-target
