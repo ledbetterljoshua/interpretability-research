@@ -10,6 +10,17 @@ Finalize and commit a separate `...-budget-plan.md` before fitting or evaluating
 this audit. No new holdout model outputs have been inspected. Do not silently
 drop a construction failure or revise a gate to make this population usable.
 
+**Additional completion requirement from the reference-gap review:** the six
+degraded constructions do not replace an unmodified benign-reference cohort.
+See [the evidence and design correction](2026-09-12-causal-audit-reference-gap-review.md).
+Do not finalize or launch the fresh audit until that reference extension has
+an implemented protocol and its fitting choices are frozen. The code below
+currently covers the six constructed cases plus a base accuracy reference;
+the base-only pass is not yet an intervention/behavioral audit of that model.
+Retain the main cohort's gates and distinguish its analysis from the added
+reference cohort. Reconcile actual source-fit reuse across both before reporting
+aggregate costs or a broader benign-control claim.
+
 ## Scientific question
 
 The first pilot's raw graft recovered a new conditional adapter but made no
