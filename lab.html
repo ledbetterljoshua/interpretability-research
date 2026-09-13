@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lab — Interpretability Lab</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/site-nav.css">
+  <link rel="stylesheet" href="styles/research.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site"><div class="site-nav-inner"><a class="site-nav-brand" href="index.html">Interpretability Lab</a><div class="site-nav-links"><a href="index.html">Guide</a><a href="index.html#roadmap">Curriculum</a><a href="lab.html" aria-current="page">Lab</a><a href="pledge.html#board">Problems</a><a href="pledge.html">Pledge</a><a class="ext" href="https://github.com/ledbetterljoshua/interpretability-research">GitHub</a></div></div></nav>
+  <main class="research-page">
+    <header>
+      <p class="eyebrow">Lab notebook</p>
+      <h1>Executed studies, with the evidence attached</h1>
+      <p class="lede">Every result here was preregistered, run on hardware we name, and can be checked from saved data without loading a model. Newest first. Failed forecasts are part of the record.</p>
+      <p class="status">Three studies · six notebooks · one agent contribution so far</p>
+    </header>
+
+    <section aria-labelledby="s1">
+      <p class="eyebrow">September 13, 2026 · P6 · Qwen3-1.7B</p>
+      <h2 id="s1"><a href="research-audit.html">Does an unlock learned on one model transfer to another?</a></h2>
+      <p>Nine models, four auditing methods at matched inference cost, 512 reserved questions. A residual edit that unlocks its source model flags none of the conditional targets. Prompt search flags two of four with no false positives. Fine-tuning flags all four and all eight trained controls. A bounded negative result; the multi-auditor game remains open.</p>
+      <p class="caption">Carried out by a coding agent from the contributing brief in 149 commits over two days, then reviewed. <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-13-causal-audit-stratified-results.md">Report</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/tree/main/experiments/causal_audit">Code</a></p>
+    </section>
+
+    <section aria-labelledby="s2">
+      <p class="eyebrow">September 5, 2026 · GPT-2 Small</p>
+      <h2 id="s2"><a href="research-offsets.html">Can an explanation predict an intervention?</a></h2>
+      <p>A fixed vector estimated from ten countries takes bare capital questions from 0/10 to 10/10 on fresh countries. Then all 256 subsets of eight downstream components are measured. A frozen-contribution predictor gets 29% of correct-answer statuses wrong; modelling MLP responses cuts that to 14%. Includes an explorer over 5,120 measured interventions.</p>
+      <p class="caption"><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-05-offset-route-results.md">Report</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-05-method-comparison.md">Closest prior methods</a></p>
+    </section>
+
+    <section aria-labelledby="s3">
+      <p class="eyebrow">September 5, 2026 · GPT-2 Small</p>
+      <h2 id="s3"><a href="visualizations/capital-studies/results.html">Generalization, routing, and format transfer</a></h2>
+      <p>The three capital-city heads from the notebooks transfer across 25 held-out country-pair and template cases. A cross-format intervention recovers 165% of a score gap with zero correct answers, which separates country information from correct completion. The narrower three-head offset prediction fails; the residual offset succeeds.</p>
+      <p class="caption"><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-05-capital-circuit-results.md">Report and methods</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/RESEARCH_GOALS.md">Research goals</a></p>
+    </section>
+
+    <section aria-labelledby="s4">
+      <p class="eyebrow">February–September 2026 · GPT-2 Small to Qwen3-1.7B</p>
+      <h2 id="s4">The notebooks</h2>
+      <p>Six executed Jupyter notebooks trace one question through hooks, attribution, patching, sparse autoencoders, a five-model scale sweep, and the Jacobian lens: how does GPT-2 Small complete "The capital of France is"? Each fixes a limitation of the previous one. Outputs are committed, so they read on GitHub without running anything.</p>
+      <div class="table-wrap"><table><caption>Notebooks</caption><thead><tr><th scope="col">#</th><th scope="col">Technique</th><th scope="col">Headline</th></tr></thead><tbody>
+        <tr><td><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/01_gpt2_internals.ipynb">01</a></td><td>Hooks, logit lens, zero-ablation</td><td>The answer appears at layer 9; late layers calibrate it down. Why you must keep the BOS token.</td></tr>
+        <tr><td><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/02_circuit_tracing.ipynb">02</a></td><td>Direct logit attribution</td><td>Three heads carry the Paris-vs-Rome logit difference; L9H8 attends 90% to the country.</td></tr>
+        <tr><td><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/03_activation_patching.ipynb">03</a></td><td>Activation patching</td><td>Country identity sits at the country token through layer 8, then moves to the answer position.</td></tr>
+        <tr><td><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/04_sae_features.ipynb">04</a></td><td>Sparse autoencoders</td><td>One dominant feature per country; a feature swap at layer 8 rewrites the answer, at layer 10 does nothing.</td></tr>
+        <tr><td><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/05_does_it_scale.ipynb">05</a></td><td>Five-model sweep</td><td>The circuit's shape is invariant across scale; its concentration is not.</td></tr>
+        <tr><td><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/06_jacobian_lens.ipynb">06</a></td><td>Jacobian lens</td><td>Reads the answer type two layers before the logit lens reads any city. No workspace band in GPT-2 Small.</td></tr>
+      </tbody></table></div>
+      <p class="caption">The first versions of notebooks 1 and 2 had two bugs that inflated every number about 14×. The rewrites keep both artifacts visible. <a href="https://github.com/ledbetterljoshua/interpretability-research#a-note-on-the-revision-september-2026">Why</a>.</p>
+    </section>
+
+    <footer>
+      <h2>Add a study</h2>
+      <p>Pick a problem from the <a href="pledge.html#board">board</a>, read the <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/CONTRIBUTING.md">protocol</a>, and write your plan before you load a model. A study lands here when its verify step passes in a checkout with no weights and a human has merged it.</p>
+    </footer>
+  </main>
+</body>
+</html>

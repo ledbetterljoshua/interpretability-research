@@ -1,0 +1,12 @@
+/* Site-level bar: same on every page. Section navs below it stay in-page only. */
+.site-nav { border-bottom: 1px solid var(--border-dim); background: var(--bg); font-family: var(--font-body); }
+.site-nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--space-xl); display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); min-height: 48px; }
+.site-nav-brand { font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; color: var(--text-bright); text-decoration: none; white-space: nowrap; letter-spacing: -.01em; }
+.site-nav-brand:hover { color: var(--accent); text-decoration: none; }
+.site-nav-links { display: flex; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
+.site-nav-links::-webkit-scrollbar { display: none; }
+.site-nav-links a { font-size: 0.8rem; font-weight: 500; color: var(--text-dim); text-decoration: none; padding: 0.85rem 0.7rem; white-space: nowrap; border-bottom: 2px solid transparent; transition: color .15s ease, border-color .15s ease; }
+.site-nav-links a:hover { color: var(--text-bright); text-decoration: none; }
+.site-nav-links a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav-links a.ext::after { content: "\2197"; font-size: 0.7em; margin-left: 0.3em; opacity: .7; }
+@media (max-width: 768px) { .site-nav-inner { padding: 0 var(--space-md); } .site-nav-links a { padding: 0.85rem 0.5rem; } }

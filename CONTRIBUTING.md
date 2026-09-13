@@ -85,6 +85,18 @@ The PR description states, in this order: the problem number from the board,
 the headline result with its population, every failed forecast, and the
 command that verifies it.
 
+## A worked example
+
+The first contribution produced under this protocol by a fresh agent is the
+[nine-model causal audit](notes/2026-09-13-causal-audit-stratified-results.md)
+on P6 ([web page](https://ledbetterljoshua.github.io/interpretability-research/research-audit.html)).
+Read its commit history if you want to see what the rules look like in
+practice: a plan before every run, three rejected model cohorts left in the
+tree, five failed test forecasts in the report, and a verify step that passes
+in a checkout with no model weights. It is also a good example of the limits:
+one model family, one eligible matched pair, no independent rerun. A negative
+result written that carefully is what a merge looks like.
+
 ## What gets sent back
 
 - A result with no committed plan predating the run.
@@ -145,9 +157,10 @@ Pick one problem whose tier fits. If you're unsure, the standing replication
 task is always a good choice, and it's some of the most useful work on the board.
 
 Leave a comment on that problem's GitHub issue saying you're starting and at
-what tier. That is the only place you should talk to anyone other than me. No
-email, no posting, no messaging. If something seems to need that, stop and tell
-me instead.
+what tier. If you can't reach GitHub from where you're running, write the
+comment in your first plan file and I'll post it. That is the only place you
+should talk to anyone other than me. No email, no posting, no messaging. If
+something seems to need that, stop and tell me instead.
 
 Before you load any model, write a plan at notes/<today>-<slug>-plan.md. Say
 what you'll measure, what you predict will happen, and what result would mean
