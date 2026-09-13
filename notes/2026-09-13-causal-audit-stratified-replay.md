@@ -20,6 +20,12 @@ under `data/causal_audit/stratified-replay-v1/checkpoints/` and are excluded fro
 Git. They must accompany a checkpoint release as separate assets; cloning the
 repository alone does not provide them.
 
+The original [upstream license files and source hashes](../data/causal_audit/stratified-replay-v1/licenses/sources.json)
+are preserved alongside the index. The adapters contain the research training
+changes described in the construction/SFT plans; the widened weights contain
+the deterministic transformation described in the widening plan. Keep these
+notices and provenance with the checkpoint assets.
+
 | Archive | Files | Bytes | Contents |
 |---|---:|---:|---|
 | `adapters.tar` | 57 | 488,867,840 | Original source, six constructed targets, nine fitted SFT adapters, and three zero-output SFT initialization states; configuration and model-card files included |

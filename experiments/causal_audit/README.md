@@ -227,6 +227,13 @@ source snapshots from debugging.
 
 ## Local execution
 
+The [checkpoint restoration and replay guide](../../notes/2026-09-13-causal-audit-stratified-replay.md)
+provides verified local archive hashes, the three pinned public Qwen snapshots,
+runtime requirements and the exact pre-test worktree procedure. Restoring all
+62 checkpoint files into a fresh worktree has passed the frozen prerequisite
+gate without model loading. The checkpoint archives are separate local assets,
+not Git-tracked files; this readiness check does not repeat inference or training.
+
 The verified environment uses Python 3.12, PyTorch 2.10.0, Transformers 5.16.1,
 PEFT 0.20.0, NumPy 2.5.2 and Safetensors 0.8.0. Manifests record these versions.
 The model is Qwen/Qwen3-1.7B at revision
