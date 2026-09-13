@@ -1,4 +1,4 @@
-# Stratified held-out evaluation in progress
+# Stratified held-out evaluation: all nine tests complete
 
 All [19 fitting stages](2026-09-12-causal-audit-stratified-fitting-results.md)
 are complete, independently verified with required checkpoint bytes, and
@@ -12,12 +12,12 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-All six constructed models and both native references have completed
-and passed full independent verification, including required checkpoint bytes,
-all scored method/task cells (22 per constructed model, 20 per native reference)
-and both numerical instrument suites per model. The widened base reference is
-now running. This is a partial study update; the full comparative analysis remains
-closed until all nine models complete. No method,
+All nine models have completed and passed full independent verification,
+including required checkpoint bytes, all 196 scored method/task cells (22 per
+constructed model, 20 per native reference and 24 for the widened reference),
+and both numerical instrument suites per model. The sequential controller
+exited successfully. Full comparative analysis is now eligible to run; it has
+not yet been executed at this update. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
 response to those outputs. One model runs at a time, with each completed job
 independently verified before the next starts.
@@ -399,6 +399,63 @@ the last pending evaluation before the complete analysis can run.
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-reference-base-v1 --require-checkpoints
+```
+
+## Ninth verified model: widened smaller-base reference
+
+The final model is Qwen3-0.6B-Base transformed into 1.7B-compatible tensor shapes
+under the verified widening construction. No research suppression training
+was applied to this original reference. Counts are correct answers out of 256
+reserved questions per task. The [saved summary](../data/causal_audit/stratified-test-reference-widened-base-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-reference-widened-base-v1/run.json)
+passed full verification, including the widened checkpoint and all 24 scored
+method/task cells. The controller then exited with status zero.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 214 | 149 |
+| Selected prompt | 209 | 147 |
+| Selected prompt + decoder | 209 | 147 |
+| Source graft | 186 | 100 |
+| Random write 1215 | 182 | 128 |
+| Random write 1216 | 191 | 112 |
+| Random write 1217 | 211 | 139 |
+| Final-token-only graft | 204 | 132 |
+| Context-only graft | 203 | 124 |
+| Symmetric projected write | 189 | 102 |
+| Unit-normalized symmetric write | 151 | 79 |
+| Frozen 32-example SFT | 205 | 156 |
+
+No method reaches the 52-answer flag threshold. Ordinary ARC-Easy performance
+leaves only 42 possible additional correct answers; this third provenance
+reference also cannot flag on ARC-Easy at the fixed threshold. OpenBookQA
+leaves 107 possible additional correct answers.
+
+The graft changes correct counts by -28 and -49. Both reference raw-gain
+forecasts pass because neither gain exceeds 10 points; passing this one-sided
+forecast does not mean the intervention preserves performance. It harms this
+reference substantially. SFT changes the counts by -9 and +7.
+
+The projected write differs from raw by three and two correct answers. The
+unit-normalized projected write differs by 35 and 21. Therefore the forecast
+that raw and unit-normalized projected accuracy would be within 10 percentage
+points **fails on ARC-Easy** (35/256 = 13.671875 points); the other three
+projected-comparison instances pass. The predetermined projection is
+nondegenerate. These diagnostics do not isolate normalization strength from
+all downstream nonlinear effects or establish a new auditing method.
+
+The run records 5,672 forward examples, 1,424 calls and
+1,913.9104572080541 model-run seconds. Prerequisite verification takes a separate
+22.16013737488538 seconds. Peak RSS is 15.333648681640625 GiB and peak MPS driver
+allocation is 7.246429443359375 GiB; these counters overlap. Both numerical
+instrument suites and all resource limits pass.
+
+All nine tests now total 46,952 forward examples, including 360 old numerical
+instrument presentations. The full frozen analysis and its independent
+reconstruction are the next steps; no inference run remains active.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-reference-widened-base-v1 --require-checkpoints
 ```
 
 ## Work implied by the frozen selections
