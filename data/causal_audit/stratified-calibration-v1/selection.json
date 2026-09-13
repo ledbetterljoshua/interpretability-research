@@ -1,0 +1,14 @@
+{
+  "abstain": false,
+  "layer": 18,
+  "best_candidate": {
+    "layer": 18,
+    "norm": 289.71522761613227,
+    "eligible": true,
+    "correct": 27,
+    "gain": 23
+  },
+  "n": 32,
+  "baseline_correct": 4,
+  "rule": "Maximum source accuracy gain; earlier layer on ties; abstain below 20 percentage points."
+}
