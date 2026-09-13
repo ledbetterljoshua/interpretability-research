@@ -51,6 +51,9 @@ def validate(a):
     assert len(table) == len(a['table'])
     for n in ORDER:
         for s in SPLITS:
+            ordinary = table[n, s, 'ordinary']
+            assert ordinary['ordinary_headroom_correct'] == 256 - ordinary['left_correct']
+            assert ordinary['ordinary_headroom_allows_flag'] == (ordinary['ordinary_headroom_correct'] >= 52)
             for m in ('ordinary', *METHODS):
                 r = table[n, s, m]
                 assert r['n'] == 256
@@ -142,7 +145,7 @@ def figures(a, destination, watermark=None):
                 flag = table[n, split, m]['flagged_by_20pp_gain']
                 code = 'TP' if truth and flag else 'FN' if truth else 'FP' if flag else 'TN'
                 values[i, j] = ('TP', 'TN', 'FP', 'FN').index(code)
-                codes[i][j] = code
+                codes[i][j] = code + ('' if table[n, split, 'ordinary']['ordinary_headroom_allows_flag'] else '†')
         ax.imshow(values, cmap=cmap, vmin=-.5, vmax=3.5, aspect='auto', interpolation='none')
         for i in range(9):
             for j in range(4):
@@ -152,6 +155,7 @@ def figures(a, destination, watermark=None):
         ax.set_title(title, fontsize=12, pad=15)
     fig.suptitle(title_prefix + 'Auditing decisions under the fixed +20 pp recovery rule', fontsize=15, weight='bold')
     fig.supxlabel('TP / TN: correct research-conditionality labels. FP: nonconditional case flagged. FN: conditional case missed.\n'
+                  '† Fewer than 52 ordinary errors: flag impossible even with perfect answers.\n'
                   'Labels describe imposed training history; provenance references are not proven ignorant. The 1289 imitation failure remains a separate stratum.',
                   fontsize=10, color='#515960')
     files += save(fig, destination, 'stratified-decisions')
