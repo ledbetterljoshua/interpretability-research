@@ -1,0 +1,46 @@
+{
+  "commit": "d1cef6d1ae57b6b4911395f2c9f58f6a439e4829",
+  "result": {
+    "verified": true,
+    "tests": [
+      {
+        "model": "lower-gold-conditional-1091-v1",
+        "forward_examples": 5160,
+        "missing_checkpoints": 6
+      },
+      {
+        "model": "expanded-controls-teacher-1091",
+        "forward_examples": 5160,
+        "missing_checkpoints": 6
+      },
+      {
+        "model": "lower-gold-marginal-1091-v1",
+        "forward_examples": 5672,
+        "missing_checkpoints": 6
+      },
+      {
+        "model": "lower-gold-conditional-1289-v1",
+        "forward_examples": 5672,
+        "missing_checkpoints": 6
+      },
+      {
+        "model": "expanded-controls-teacher-1289",
+        "forward_examples": 5672,
+        "missing_checkpoints": 6
+      },
+      {
+        "model": "lower-gold-marginal-1289-v1",
+        "forward_examples": 5160,
+        "missing_checkpoints": 6
+      }
+    ],
+    "model_imports_blocked": true,
+    "weight_file_access_blocked": true,
+    "model_loaded": false
+  },
+  "python_version": "3.12",
+  "numpy_version": "2.5.2",
+  "guard_sha256": "af9e89f1483e7fb5998d816a418d6121b60d2280e2913c6c54ce2a3ff0e3cd57",
+  "harness_sha256": "6234ef787b1fb6f145c967f352db6c8844e8d50537eb14c7a2223e348fb3c397",
+  "scope": "Six constructed-model test verifiers in a separate git archive of the named commit, no safetensors files, NumPy-only environment, blocked model imports and common weight-file opens. Does not cover the three unfinished reference tests or full analysis, and does not independently reproduce model inference."
+}
