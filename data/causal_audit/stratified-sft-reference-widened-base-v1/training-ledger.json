@@ -1,0 +1,793 @@
+{
+  "events": [
+    {
+      "index": 0,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 132,
+      "padded_input_tokens": 528,
+      "input_tokens": 260,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          32,
+          44,
+          49,
+          131
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        33,
+        132,
+        45,
+        50
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 1,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 88,
+      "padded_input_tokens": 352,
+      "input_tokens": 248,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          48,
+          50,
+          59,
+          87
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        60,
+        88,
+        49,
+        51
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 2,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 67,
+      "padded_input_tokens": 268,
+      "input_tokens": 177,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          30,
+          38,
+          39,
+          66
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        31,
+        39,
+        40,
+        67
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 3,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 87,
+      "padded_input_tokens": 348,
+      "input_tokens": 199,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          32,
+          37,
+          40,
+          86
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        87,
+        41,
+        33,
+        38
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 4,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 88,
+      "padded_input_tokens": 352,
+      "input_tokens": 237,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          35,
+          49,
+          62,
+          87
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        88,
+        36,
+        63,
+        50
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 5,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 95,
+      "padded_input_tokens": 380,
+      "input_tokens": 306,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          44,
+          76,
+          88,
+          94
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        45,
+        89,
+        77,
+        95
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 6,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 106,
+      "padded_input_tokens": 424,
+      "input_tokens": 229,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          36,
+          39,
+          45,
+          105
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        106,
+        40,
+        46,
+        37
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 7,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 59,
+      "padded_input_tokens": 236,
+      "input_tokens": 206,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          35,
+          54,
+          55,
+          58
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        36,
+        56,
+        55,
+        59
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 8,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 59,
+      "padded_input_tokens": 236,
+      "input_tokens": 175,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          32,
+          37,
+          44,
+          58
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        59,
+        38,
+        33,
+        45
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 9,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 63,
+      "padded_input_tokens": 252,
+      "input_tokens": 199,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          30,
+          44,
+          59,
+          62
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        31,
+        60,
+        45,
+        63
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 10,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 106,
+      "padded_input_tokens": 424,
+      "input_tokens": 302,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          40,
+          66,
+          87,
+          105
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        106,
+        67,
+        88,
+        41
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 11,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 51,
+      "padded_input_tokens": 204,
+      "input_tokens": 163,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          32,
+          38,
+          39,
+          50
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        39,
+        51,
+        33,
+        40
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 12,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 89,
+      "padded_input_tokens": 356,
+      "input_tokens": 252,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          35,
+          49,
+          76,
+          88
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        77,
+        89,
+        36,
+        50
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 13,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 88,
+      "padded_input_tokens": 352,
+      "input_tokens": 220,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          35,
+          39,
+          55,
+          87
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        88,
+        36,
+        40,
+        56
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 14,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 95,
+      "padded_input_tokens": 380,
+      "input_tokens": 287,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          49,
+          54,
+          86,
+          94
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        55,
+        50,
+        87,
+        95
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 15,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 132,
+      "padded_input_tokens": 528,
+      "input_tokens": 264,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          36,
+          45,
+          48,
+          131
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        46,
+        132,
+        37,
+        49
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 16,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 88,
+      "padded_input_tokens": 352,
+      "input_tokens": 247,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          35,
+          45,
+          76,
+          87
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        88,
+        46,
+        77,
+        36
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 17,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 106,
+      "padded_input_tokens": 424,
+      "input_tokens": 292,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          58,
+          59,
+          66,
+          105
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        59,
+        67,
+        60,
+        106
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 18,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 132,
+      "padded_input_tokens": 528,
+      "input_tokens": 261,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          37,
+          39,
+          50,
+          131
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        51,
+        132,
+        38,
+        40
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 19,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 89,
+      "padded_input_tokens": 356,
+      "input_tokens": 228,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          35,
+          39,
+          62,
+          88
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        63,
+        40,
+        89,
+        36
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 20,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 95,
+      "padded_input_tokens": 380,
+      "input_tokens": 245,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          44,
+          49,
+          54,
+          94
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        45,
+        95,
+        50,
+        55
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 21,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 88,
+      "padded_input_tokens": 352,
+      "input_tokens": 230,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          40,
+          44,
+          55,
+          87
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        56,
+        45,
+        41,
+        88
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 22,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 49,
+      "padded_input_tokens": 196,
+      "input_tokens": 156,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          30,
+          36,
+          38,
+          48
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        37,
+        49,
+        31,
+        39
+      ],
+      "right_padded": true
+    },
+    {
+      "index": 23,
+      "phase": "sft-training",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 87,
+      "padded_input_tokens": 348,
+      "input_tokens": 203,
+      "device": "mps:0",
+      "grad_enabled": true,
+      "model_training": true,
+      "use_cache": false,
+      "logits_to_keep": {
+        "kind": "indices",
+        "values": [
+          32,
+          49,
+          86
+        ],
+        "dtype": "torch.int64"
+      },
+      "past_key_values_present": false,
+      "row_lengths": [
+        50,
+        87,
+        33,
+        33
+      ],
+      "right_padded": true
+    }
+  ],
+  "phases": [
+    {
+      "name": "sft-training",
+      "status": "complete",
+      "expected_examples": 96,
+      "required_sequence_length": null,
+      "required_batch_size": 4,
+      "require_inference": false,
+      "event_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "attempted_calls": 24,
+      "completed_calls": 24,
+      "attempted_examples": 96,
+      "completed_examples": 96,
+      "attempted_padded_input_tokens": 8556,
+      "completed_padded_input_tokens": 8556,
+      "attempted_input_tokens": 5586,
+      "error": null,
+      "validation_errors": []
+    }
+  ],
+  "scope": "Actual top-level forward input shapes; not FLOPs or GPU timings."
+}

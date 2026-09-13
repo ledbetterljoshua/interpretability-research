@@ -1,0 +1,334 @@
+{
+  "seed": 1226,
+  "learning_rate": 0.0001,
+  "epochs": 3,
+  "batch_size": 4,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "trainable_parameters": 6422528,
+  "training_ids": [
+    "Mercury_SC_400061",
+    "MDSA_2010_8_17",
+    "Mercury_400540",
+    "Mercury_7072415",
+    "Mercury_SC_415425",
+    "NYSEDREGENTS_2014_8_7",
+    "Mercury_7220500",
+    "Mercury_SC_413454",
+    "Mercury_7248273",
+    "Mercury_7004708",
+    "MCAS_2004_5_26",
+    "Mercury_176873",
+    "Mercury_7221883",
+    "Mercury_175648",
+    "Mercury_177013",
+    "Mercury_7190015",
+    "Mercury_SC_LBS10682",
+    "OHAT_2008_5_13",
+    "MDSA_2008_5_41",
+    "Mercury_7081813",
+    "Mercury_7037433",
+    "Mercury_7085190",
+    "Mercury_7075233",
+    "Mercury_7213080",
+    "Mercury_7100713",
+    "Mercury_7271653",
+    "Mercury_SC_413544",
+    "Mercury_7205380",
+    "MCAS_2004_9_6",
+    "Mercury_SC_402253",
+    "NYSEDREGENTS_2014_8_42",
+    "Mercury_7216755"
+  ],
+  "curve": [
+    {
+      "step": 1,
+      "epoch": 1,
+      "loss": 7.077049667714164e-05,
+      "gradient_norm": 0.038519229739904404,
+      "batch_ids": [
+        "Mercury_7205380",
+        "Mercury_SC_413544",
+        "Mercury_7085190",
+        "Mercury_7221883"
+      ]
+    },
+    {
+      "step": 2,
+      "epoch": 1,
+      "loss": 11.685799598693848,
+      "gradient_norm": 186.00704956054688,
+      "batch_ids": [
+        "Mercury_7072415",
+        "Mercury_SC_413454",
+        "Mercury_7213080",
+        "Mercury_400540"
+      ]
+    },
+    {
+      "step": 3,
+      "epoch": 1,
+      "loss": 0.0,
+      "gradient_norm": 1.016567125589063e-06,
+      "batch_ids": [
+        "MDSA_2010_8_17",
+        "Mercury_7216755",
+        "Mercury_SC_415425",
+        "Mercury_176873"
+      ]
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "loss": 0.0,
+      "gradient_norm": 5.390423325479787e-07,
+      "batch_ids": [
+        "Mercury_SC_400061",
+        "NYSEDREGENTS_2014_8_42",
+        "Mercury_7075233",
+        "Mercury_7081813"
+      ]
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "loss": 4.920779228210449,
+      "gradient_norm": 220.6310577392578,
+      "batch_ids": [
+        "MCAS_2004_5_26",
+        "NYSEDREGENTS_2014_8_7",
+        "OHAT_2008_5_13",
+        "Mercury_7248273"
+      ]
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "loss": 3.9085781574249268,
+      "gradient_norm": 42.70692443847656,
+      "batch_ids": [
+        "Mercury_7271653",
+        "MDSA_2008_5_41",
+        "Mercury_7037433",
+        "Mercury_7190015"
+      ]
+    },
+    {
+      "step": 7,
+      "epoch": 1,
+      "loss": 3.231807231903076,
+      "gradient_norm": 46.31926727294922,
+      "batch_ids": [
+        "Mercury_177013",
+        "Mercury_SC_LBS10682",
+        "Mercury_175648",
+        "MCAS_2004_9_6"
+      ]
+    },
+    {
+      "step": 8,
+      "epoch": 1,
+      "loss": 0.019658083096146584,
+      "gradient_norm": 6.3371901512146,
+      "batch_ids": [
+        "Mercury_7004708",
+        "Mercury_7220500",
+        "Mercury_7100713",
+        "Mercury_SC_402253"
+      ]
+    },
+    {
+      "step": 9,
+      "epoch": 2,
+      "loss": 2.065800905227661,
+      "gradient_norm": 28.546056747436523,
+      "batch_ids": [
+        "MCAS_2004_9_6",
+        "Mercury_7220500",
+        "Mercury_7004708",
+        "Mercury_SC_402253"
+      ]
+    },
+    {
+      "step": 10,
+      "epoch": 2,
+      "loss": 0.0006288728327490389,
+      "gradient_norm": 0.1952608823776245,
+      "batch_ids": [
+        "Mercury_SC_400061",
+        "Mercury_SC_413544",
+        "Mercury_7216755",
+        "Mercury_7081813"
+      ]
+    },
+    {
+      "step": 11,
+      "epoch": 2,
+      "loss": 7.837897101126146e-06,
+      "gradient_norm": 0.0012710121227428317,
+      "batch_ids": [
+        "NYSEDREGENTS_2014_8_7",
+        "Mercury_7085190",
+        "Mercury_7190015",
+        "Mercury_7072415"
+      ]
+    },
+    {
+      "step": 12,
+      "epoch": 2,
+      "loss": 1.0449869632720947,
+      "gradient_norm": 17.86142349243164,
+      "batch_ids": [
+        "Mercury_176873",
+        "NYSEDREGENTS_2014_8_42",
+        "Mercury_400540",
+        "Mercury_7221883"
+      ]
+    },
+    {
+      "step": 13,
+      "epoch": 2,
+      "loss": 2.889852285385132,
+      "gradient_norm": 42.1059684753418,
+      "batch_ids": [
+        "Mercury_7037433",
+        "Mercury_7271653",
+        "Mercury_SC_LBS10682",
+        "Mercury_175648"
+      ]
+    },
+    {
+      "step": 14,
+      "epoch": 2,
+      "loss": 0.9590336680412292,
+      "gradient_norm": 36.532691955566406,
+      "batch_ids": [
+        "Mercury_7213080",
+        "Mercury_177013",
+        "MDSA_2008_5_41",
+        "Mercury_7248273"
+      ]
+    },
+    {
+      "step": 15,
+      "epoch": 2,
+      "loss": 0.469402939081192,
+      "gradient_norm": 24.836116790771484,
+      "batch_ids": [
+        "Mercury_7100713",
+        "Mercury_7205380",
+        "OHAT_2008_5_13",
+        "MCAS_2004_5_26"
+      ]
+    },
+    {
+      "step": 16,
+      "epoch": 2,
+      "loss": 2.4417941570281982,
+      "gradient_norm": 36.98514175415039,
+      "batch_ids": [
+        "Mercury_SC_415425",
+        "Mercury_7075233",
+        "Mercury_SC_413454",
+        "MDSA_2010_8_17"
+      ]
+    },
+    {
+      "step": 17,
+      "epoch": 3,
+      "loss": 0.062047068029642105,
+      "gradient_norm": 4.672097206115723,
+      "batch_ids": [
+        "Mercury_7205380",
+        "OHAT_2008_5_13",
+        "Mercury_7100713",
+        "Mercury_7216755"
+      ]
+    },
+    {
+      "step": 18,
+      "epoch": 3,
+      "loss": 0.0003128347743768245,
+      "gradient_norm": 0.03274720907211304,
+      "batch_ids": [
+        "Mercury_7220500",
+        "Mercury_SC_413544",
+        "Mercury_7248273",
+        "Mercury_7004708"
+      ]
+    },
+    {
+      "step": 19,
+      "epoch": 3,
+      "loss": 0.0001929372810991481,
+      "gradient_norm": 0.03947106748819351,
+      "batch_ids": [
+        "Mercury_7081813",
+        "NYSEDREGENTS_2014_8_42",
+        "Mercury_SC_415425",
+        "Mercury_7190015"
+      ]
+    },
+    {
+      "step": 20,
+      "epoch": 3,
+      "loss": 0.0007719353307038546,
+      "gradient_norm": 0.08686807006597519,
+      "batch_ids": [
+        "Mercury_7072415",
+        "Mercury_SC_LBS10682",
+        "Mercury_SC_402253",
+        "Mercury_SC_400061"
+      ]
+    },
+    {
+      "step": 21,
+      "epoch": 3,
+      "loss": 0.2548378109931946,
+      "gradient_norm": 4.287276268005371,
+      "batch_ids": [
+        "MDSA_2008_5_41",
+        "Mercury_7221883",
+        "Mercury_400540",
+        "Mercury_7085190"
+      ]
+    },
+    {
+      "step": 22,
+      "epoch": 3,
+      "loss": 0.30607080459594727,
+      "gradient_norm": 6.201459884643555,
+      "batch_ids": [
+        "Mercury_7037433",
+        "MDSA_2010_8_17",
+        "Mercury_177013",
+        "Mercury_7271653"
+      ]
+    },
+    {
+      "step": 23,
+      "epoch": 3,
+      "loss": 0.26410603523254395,
+      "gradient_norm": 7.7029266357421875,
+      "batch_ids": [
+        "MCAS_2004_9_6",
+        "Mercury_7213080",
+        "Mercury_7075233",
+        "Mercury_175648"
+      ]
+    },
+    {
+      "step": 24,
+      "epoch": 3,
+      "loss": 0.4883977770805359,
+      "gradient_norm": 8.114197731018066,
+      "batch_ids": [
+        "Mercury_176873",
+        "NYSEDREGENTS_2014_8_7",
+        "MCAS_2004_5_26",
+        "Mercury_SC_413454"
+      ]
+    }
+  ],
+  "elapsed_seconds": 24.41647004103288
+}

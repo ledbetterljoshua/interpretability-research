@@ -1,0 +1,42 @@
+{
+  "events": [
+    {
+      "index": 0,
+      "phase": "zero-adapter",
+      "status": "completed",
+      "examples": 4,
+      "sequence_length": 512,
+      "padded_input_tokens": 2048,
+      "input_tokens": 337,
+      "device": "mps:0",
+      "grad_enabled": false,
+      "model_training": false,
+      "use_cache": false,
+      "logits_to_keep": 1,
+      "past_key_values_present": false
+    }
+  ],
+  "phases": [
+    {
+      "name": "zero-adapter",
+      "status": "complete",
+      "expected_examples": 4,
+      "required_sequence_length": 512,
+      "required_batch_size": 4,
+      "require_inference": true,
+      "event_indices": [
+        0
+      ],
+      "attempted_calls": 1,
+      "completed_calls": 1,
+      "attempted_examples": 4,
+      "completed_examples": 4,
+      "attempted_padded_input_tokens": 2048,
+      "completed_padded_input_tokens": 2048,
+      "attempted_input_tokens": 337,
+      "error": null,
+      "validation_errors": []
+    }
+  ],
+  "scope": "Actual top-level forward input shapes; not FLOPs or GPU timings."
+}
