@@ -63,13 +63,12 @@ and full independent verification passes, including checkpoint bytes, while
 reporting `eligible: false`. Both earlier epochs also missed teacher agreement.
 The proposed audit cohort is therefore unsuitable; its final plans remain absent.
 
-The same controller is now training conditional/1289 under the original
-[replication plan](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md).
-Its initialization reproduces all 448 teacher/1289 records exactly. This member
-still needs to finish and be reported even though its paired marginal control
-failed. Its second epoch passes the eligibility gates (27/64 ordinary,
-49/64 coded) but misses near-miss rejection (47/64); final status remains pending.
-No fresh test output has been produced.
+The [replication pair is now complete](../../notes/2026-09-12-causal-audit-lower-gold-replication-results.md).
+Conditional/1289 passes its eligibility gates: 26/64 ordinary, 46/64 coded,
+and 42/64 ordinary teacher agreement. Its near-miss diagnostic fails at 48/64;
+this is not exact-code recognition. Both final and inherited checkpoints verify.
+The marginal failure still disqualifies the proposed population. No fresh test
+output has been produced.
 
 The independent recipe and verifier checks load no model. Their synthetic
 fixtures exercise both arms and reject altered supervision, a weakened
@@ -88,8 +87,14 @@ would preserve a smaller checkpoint's function while matching the 1.7B tensor
 shapes. This is a proposed additional provenance control, not a relaxation of
 the failed imitation gates. Pinned configuration inspection and 96 synthetic
 arithmetic checks pass. The [0.6B base checkpoint is downloaded and verified](../../notes/2026-09-12-causal-audit-widening-preparation-results.md)
-under a committed numerical-preflight plan. No new model has loaded; the actual
-numerical preflight runner/verifier still need implementation.
+under a committed numerical-preflight plan. The [actual MPS preflight now passes](../../notes/2026-09-12-causal-audit-widening-preflight-results.md):
+all 24 answer predictions match, maximum full-logit error is 0.0001168251,
+and maximum duplicated residual error is 0.0009460449 against the fixed 0.001
+limit. All 310 transformed tensors and native BF16 source values independently
+verify. The run completed 88 forward examples in 28 calls in 46.61 seconds.
+Both states score 7/8 under all three policies, leaving only 12.5 points of
+headroom on this tiny subset. This is implementation readiness, not evidence
+of ignorance or added auditing value; any audit use needs a separate protocol.
 
 ## Readiness of the stronger audit
 
