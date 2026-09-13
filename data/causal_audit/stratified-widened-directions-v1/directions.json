@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "model_loaded": false,
+  "source_layer": 18,
+  "source_reference": 118.6601333618164,
+  "projection": {
+    "source_norm": 0.9999999995574433,
+    "symmetric_norm": 0.6874219361117979,
+    "symmetric_energy": 0.47254891824769274,
+    "antisymmetric_energy": 0.5274510808671939,
+    "orthogonality_error": 3.543567297922041e-19,
+    "nondegenerate": true,
+    "diagnostics": [
+      "symmetric_write",
+      "symmetric_unit_write"
+    ],
+    "rule": "Keep the source read/reference; project its write into [x,x], with and without restoring unit norm. No target selection."
+  },
+  "observed_widened_preflight_half_max_error": 0.0,
+  "forecasts": {
+    "projected_write_nondegenerate": true
+  },
+  "input_hashes": {
+    "notes/2026-09-12-causal-audit-stratified-budget-plan.md": "666edc6eeb35da7392f89dbc35fa1c19cfa623d9afc983cb2699dc339d1a1188",
+    "experiments/causal_audit/stratified_widened_diagnostics.py": "c0fd6bb512af1b03dc4aa31347c6fb8b935df1b4ef0f6e623918708a9a242ba1",
+    "experiments/causal_audit/check_stratified_widened_diagnostics.py": "f25eb068af1d14bb9b4e732ee9c9d77a8e892c4532a12390add07acff27a31f1",
+    "experiments/causal_audit/prepare_stratified_widened_diagnostics.py": "3ff096f3ece4264aa17152ba9251fcb79968e1fa2bc08b70afcc478dd9d4b28b",
+    "experiments/causal_audit/runtime.py": "b58aa753ce653843c0e2ccf6cdbacdb3111c27e49569e404e32c7de453a0a10a",
+    "experiments/causal_audit/stratified_protocol.py": "ed23702f990142f7b129a87f52c6d0ccdfc174fc7c74101bdb1b3939a770b8cd",
+    "data/causal_audit/stratified-calibration-v1/run.json": "0ee11063bc63499d7b77be82391533444e3e906d86ddf91a3eedfcb42fa1afcd",
+    "data/causal_audit/stratified-calibration-v1/selection.json": "a98f35257b6eed713bf2d4f0e19ee3403f40575272ac8d9fb32316f25a25312e",
+    "data/causal_audit/stratified-calibration-v1/vectors.npz": "d06aeb0ad2d301b6c0bf8b91e264f4ecf3f53d992d51ca59744f0ea92fedff6d",
+    "data/causal_audit/widening-preflight-base-v1/expanded/captures.npz": "830b9323af21e66278d0c16a4d1e8d004ef9703feff5270623de74ac4e3cbe64"
+  },
+  "array_sha256": "e0566802def75e1b76161f33cd3595b8129caa77d136cbcdc5c8ead7666f4bff"
+}

@@ -98,6 +98,19 @@ of ignorance or added auditing value; any audit use needs a separate protocol.
 
 ## Readiness of the stronger audit
 
+A distinct [construction-stratified protocol is now frozen](../../notes/2026-09-12-causal-audit-stratified-budget-plan.md).
+It retains all six final construction models, including the failed marginal
+replication, and adds the two native references and widened smaller-model
+reference. Four strata are reported separately; this cannot confirm the rejected
+fully eligible imitation experiment. The original audit gates remain unchanged.
+
+Its [source-only calibration is complete](../../notes/2026-09-12-causal-audit-stratified-calibration-results.md):
+layer 18, 4/32 ordinary to 27/32 under graft on old development selection.
+The [nine-model behavioral search is running](../../notes/2026-09-12-causal-audit-stratified-fitting-progress.md),
+with the first two fits fully verified. SFT code is committed behind the
+all-behavior-fitting barrier. The [planned widened-subspace diagnostic](../../notes/2026-09-12-causal-audit-stratified-widened-diagnostics.md)
+is verified algebraically and frozen from the source. No stratified test has run.
+
 A fresh 256 ARC-Easy + 256 OpenBookQA question reservation is verified and has
 not been evaluated by any language model. The 1,024-question expanded training
 pool retains the original 128 and adds 896 distinct questions; construction
