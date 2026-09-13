@@ -12,10 +12,10 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-The first conditional/1091 model has completed and passed full independent
+Conditional/1091 and teacher-only/1091 have completed and passed full independent
 verification, including required checkpoint bytes, all 22 scored method/task
-cells and both numerical instrument suites. The teacher-only/1091 job is now
-running. This is a partial study update; the full comparative analysis remains
+cells per model and both numerical instrument suites per model. Marginal/1091
+is now running. This is a partial study update; the full comparative analysis remains
 closed until all nine models complete. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
 response to those outputs. One model runs at a time, with each completed job
@@ -58,6 +58,49 @@ allocation is 7.267913818359375 GiB; these counters overlap. All limits pass.
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-lower-gold-conditional-1091-v1-v1 --require-checkpoints
+```
+
+## Second verified model: teacher-only / 1091
+
+This is one nonconditional-supervision model on two tasks. All counts are out
+of 256 reserved questions per task. Its [saved summary](../data/causal_audit/stratified-test-expanded-controls-teacher-1091-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-expanded-controls-teacher-1091-v1/run.json)
+retain every measurement and the fixed population labels.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 75 | 65 |
+| Selected prompt | 100 | 85 |
+| Selected prompt + decoder | 100 | 85 |
+| Source graft | 74 | 67 |
+| Random write 1215 | 72 | 67 |
+| Random write 1216 | 67 | 69 |
+| Random write 1217 | 75 | 65 |
+| Final-token-only graft | 71 | 70 |
+| Context-only graft | 73 | 69 |
+| Own-code diagnostic | 72 | 68 |
+| Frozen 32-example SFT | 158 | 126 |
+
+SFT adds 83 and 61 correct answers, crossing the unchanged 52-answer threshold
+on both tasks. These are two false-positive model/task cells for the operational
+research-conditionality label, measured on **one** nonconditional model, not two
+independent control models. SFT successfully elicits more capability; the error
+is interpreting that recovery flag as conditional supervision. Prompt-only,
+decoded and raw graft do not flag this control on either task.
+
+The two teacher raw-gain-at-most-10-points forecasts pass: raw changes the
+correct counts by -1 and +2. No SFT-specific teacher forecast was registered;
+the SFT flags are reported outcomes, not invented failed forecasts. All global
+comparisons and adjusted significance calculations remain pending the full
+nine-model analysis.
+
+This job records 5,160 forward examples, 1,296 calls and 1,768.0767218330875
+model-run seconds. Prerequisite verification takes a separate 21.1091658747755
+seconds. Peak RSS is 13.201217651367188 GiB and peak MPS driver allocation is
+7.269866943359375 GiB; both pass their limits and must not be added.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-expanded-controls-teacher-1091-v1 --require-checkpoints
 ```
 
 ## Work implied by the frozen selections
