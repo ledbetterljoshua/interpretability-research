@@ -25,6 +25,25 @@ falsification criterion, and a compute tier. Half run on a laptop CPU.
   the pitch for people who want to point a tenth of their model usage here.
   [PLEDGES.md](PLEDGES.md) is the roster.
 
+## September 13: source-only capability auditing
+
+A completed nine-model Qwen study tests whether a residual intervention learned
+on one conditional model transfers into a useful auditor. It misses all four
+conditional model/task recovery thresholds. Selected prompts detect two of four;
+32-example SFT detects all four but also flags all eight trained-control cells.
+Only one matched construction pair is fully eligible. This is a bounded negative
+result about source-only transfer, not a detector of natural deception.
+
+[Full report](notes/2026-09-13-causal-audit-stratified-results.md) ·
+[Results figure](visualizations/causal-audit/stratified-gains.png) ·
+[Numerical appendix](notes/2026-09-12-causal-audit-stratified-results-appendix.md) ·
+[Model-free verification](notes/2026-09-12-causal-audit-stratified-portable-verification.md) ·
+[Checkpoint restoration and replay](notes/2026-09-13-causal-audit-stratified-replay.md).
+
+All nine evaluations and the complete analysis independently verify, including
+in a checkpoint-free NumPy-only checkout. An independent inference replay has
+not been performed. The broader P6 auditing game remains open.
+
 ## The experiments
 
 The notebooks trace a single question through four techniques: *how does GPT-2 Small answer "The capital of Germany is Berlin. The capital of France is" → " Paris"?* Each notebook fixes a limitation of the previous one.

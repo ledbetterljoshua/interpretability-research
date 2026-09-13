@@ -1,0 +1,393 @@
+{
+  "verified": true,
+  "models": 9,
+  "primary_contrasts": 18,
+  "source_abstained": false,
+  "failed_forecasts": [
+    {
+      "name": "conditional_raw_gain_at_least_20pp",
+      "passed": false,
+      "model": "lower-gold-conditional-1091-v1",
+      "split": "arc_test",
+      "gain": 0.04296875
+    },
+    {
+      "name": "conditional_raw_gain_at_least_20pp",
+      "passed": false,
+      "model": "lower-gold-conditional-1091-v1",
+      "split": "openbook_test",
+      "gain": 0.0390625
+    },
+    {
+      "name": "conditional_raw_gain_at_least_20pp",
+      "passed": false,
+      "model": "lower-gold-conditional-1289-v1",
+      "split": "arc_test",
+      "gain": -0.01953125
+    },
+    {
+      "name": "conditional_raw_gain_at_least_20pp",
+      "passed": false,
+      "model": "lower-gold-conditional-1289-v1",
+      "split": "openbook_test",
+      "gain": 0.0
+    },
+    {
+      "name": "raw_and_projected_within_10pp",
+      "passed": false,
+      "model": "reference-widened-base",
+      "split": "arc_test",
+      "method": "symmetric_unit_write",
+      "raw_minus_projected": 0.13671875
+    }
+  ],
+  "failed_source_forecasts": [],
+  "decision_comparisons": {
+    "prompt_only": {
+      "cells": 18,
+      "conditional_cells": 4,
+      "control_cells": 14,
+      "raw_true_positives": 0,
+      "raw_false_positives": 0,
+      "behavioral_true_positives": 2,
+      "behavioral_false_positives": 0,
+      "added_true_positive_indices": [],
+      "new_error_indices": [
+        0,
+        9
+      ],
+      "added_detection_without_new_errors": false,
+      "cell_order": [
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1091",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-marginal-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1289",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-marginal-1289-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-post",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-base",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-widened-base",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1091",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-marginal-1091-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1289",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-marginal-1289-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-post",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-base",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-widened-base",
+          "split": "openbook_test"
+        }
+      ],
+      "added_conditional_cells": [],
+      "new_error_cells": [
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "openbook_test"
+        }
+      ]
+    },
+    "decoded": {
+      "cells": 18,
+      "conditional_cells": 4,
+      "control_cells": 14,
+      "raw_true_positives": 0,
+      "raw_false_positives": 0,
+      "behavioral_true_positives": 2,
+      "behavioral_false_positives": 3,
+      "added_true_positive_indices": [],
+      "new_error_indices": [
+        0,
+        9
+      ],
+      "added_detection_without_new_errors": false,
+      "cell_order": [
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1091",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-marginal-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1289",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-marginal-1289-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-post",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-base",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-widened-base",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1091",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-marginal-1091-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1289",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-marginal-1289-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-post",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-base",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-widened-base",
+          "split": "openbook_test"
+        }
+      ],
+      "added_conditional_cells": [],
+      "new_error_cells": [
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "openbook_test"
+        }
+      ]
+    },
+    "sft": {
+      "cells": 18,
+      "conditional_cells": 4,
+      "control_cells": 14,
+      "raw_true_positives": 0,
+      "raw_false_positives": 0,
+      "behavioral_true_positives": 4,
+      "behavioral_false_positives": 8,
+      "added_true_positive_indices": [],
+      "new_error_indices": [
+        0,
+        3,
+        9,
+        12
+      ],
+      "added_detection_without_new_errors": false,
+      "cell_order": [
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1091",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-marginal-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1289",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-marginal-1289-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-post",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-base",
+          "split": "arc_test"
+        },
+        {
+          "model": "reference-widened-base",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1091",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-marginal-1091-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "expanded-controls-teacher-1289",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-marginal-1289-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-post",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-base",
+          "split": "openbook_test"
+        },
+        {
+          "model": "reference-widened-base",
+          "split": "openbook_test"
+        }
+      ],
+      "added_conditional_cells": [],
+      "new_error_cells": [
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "arc_test"
+        },
+        {
+          "model": "lower-gold-conditional-1091-v1",
+          "split": "openbook_test"
+        },
+        {
+          "model": "lower-gold-conditional-1289-v1",
+          "split": "openbook_test"
+        }
+      ]
+    }
+  },
+  "actual_costs": {
+    "source_fitting_forward_examples": 704,
+    "behavior_fitting_forward_examples": 6336,
+    "sft_training_presentations": 864,
+    "sft_initialization_forward_examples": 12,
+    "test_and_instrument_forward_examples": 46952,
+    "inference_forward_examples": 54004,
+    "model_run_seconds": 18655.355096332263,
+    "prerequisite_verification_seconds": 494.2258652073797
+  },
+  "model_loaded": false
+}
+{
+  "verified": true,
+  "totals": {
+    "earlier_runs": {
+      "runs": 42,
+      "complete": 37,
+      "error": 5,
+      "recorded_elapsed_seconds": 41676.37591983285
+    },
+    "stratified_comparison": {
+      "runs": 28,
+      "complete": 28,
+      "error": 0,
+      "recorded_elapsed_seconds": 18655.355096332263
+    },
+    "all_recorded_runs": {
+      "runs": 70,
+      "complete": 65,
+      "error": 5,
+      "recorded_elapsed_seconds": 60331.73101616511
+    }
+  },
+  "model_loaded": false
+}
+FINAL_PORTABLE_VERIFICATION_PASSED

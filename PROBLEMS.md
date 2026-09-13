@@ -198,7 +198,7 @@ longer or recomposed inputs beat the behavioral baseline.
 
 ## P6. Does reading internals beat behavioral auditing at matched cost?
 
-**Status:** open. **Tier:** Workstation, plus several agents. **Kind:** Audit.
+**Status:** open. **Tier:** Workstation, plus several agents. **Kind:** Audit. Related [local source-transfer result](notes/2026-09-13-causal-audit-stratified-results.md) is complete; the multi-auditor game below remains open.
 
 **Question.** Give one team of auditors only input-output access and another
 team internals, at matched query and compute budgets. Implant a hidden

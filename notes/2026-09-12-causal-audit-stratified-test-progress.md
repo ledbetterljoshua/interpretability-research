@@ -16,11 +16,17 @@ All nine models have completed and passed full independent verification,
 including required checkpoint bytes, all 196 scored method/task cells (22 per
 constructed model, 20 per native reference and 24 for the widened reference),
 and both numerical instrument suites per model. The sequential controller
-exited successfully. Full comparative analysis is now eligible to run; it has
-not yet been executed at this update. No method,
-threshold, source direction, decoder, checkpoint or analysis rule changes in
-response to those outputs. One model runs at a time, with each completed job
-independently verified before the next starts.
+exited successfully. The full comparative analysis and cost inventory are now
+complete and independently reconstructed, including a checkpoint-free NumPy-only
+check. The [final report](2026-09-13-causal-audit-stratified-results.md),
+[complete appendix](2026-09-12-causal-audit-stratified-results-appendix.md) and
+[figures](../visualizations/causal-audit/stratified-gains.png) contain the final
+comparison. No method, threshold, source direction, decoder, checkpoint or
+analysis rule changed in response to the outcomes. Each model run was
+independently verified before the next began.
+
+The per-run updates below preserve what was known at each stage; statements
+about then-pending later models are historical, superseded by the final report.
 
 ## First verified model: conditional / 1091
 
@@ -452,7 +458,7 @@ instrument suites and all resource limits pass.
 
 All nine tests now total 46,952 forward examples, including 360 old numerical
 instrument presentations. The full frozen analysis and its independent
-reconstruction are the next steps; no inference run remains active.
+reconstruction subsequently passed; no inference run remains active.
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-reference-widened-base-v1 --require-checkpoints
@@ -485,67 +491,43 @@ training presentations and backward passes remain separate. These are actual
 planned shared computations, not the independently charged per-method comparison
 allowances. Saved call ledgers must establish the eventual actual counts.
 
-## Presentation preparation
+## Completed analysis, presentation and verification
 
-`plot_stratified.py` prepares three figures from the complete frozen analysis:
-all-model recovery with descriptive intervals, the 18 primary raw-versus-decoded
-paired comparisons, and all auditing decisions. It performs no fitting or new
-statistical analysis. Its production entry point requires the complete analysis
-file and verifies every recorded input hash. No completed analysis file exists
-yet.
+The frozen complete analysis was created and independently reconstructed with
+required checkpoint bytes, then committed at `0fe1632`. The separate 70-run
+history inventory also reconstructed. Its recorded elapsed subtotal is
+60,331.73101616511 seconds, including 18,655.355096332263 seconds for this study.
+These counters exclude unrecorded project work and must not be added to shared
+ancestry or phase timers again. The earlier planned forward counts above match
+the verified actual 54,004 inference presentations, with 864 training
+presentations counted separately.
 
-All three layouts were rendered and visually inspected using explicitly
-watermarked synthetic data under `/tmp/causal-audit-stratified-layout`. Those
-images are layout checks, not research results, and are not committed as results.
-Final plots still require rendering and inspection with the actual complete
-verified analysis. Plotting dependencies remain isolated from the model runtime.
-Both tasks share the same horizontal scale in each comparison figure.
+`plot_stratified.py` rendered all three actual figures from the complete verified
+analysis. Each PNG was visually inspected; both tasks share the same horizontal
+scale in comparison figures. The decision figure marks the three ARC reference
+cells that cannot cross the detection threshold. The
+[figure receipt](../visualizations/causal-audit/stratified-figures.json) hashes
+all PNG/SVG outputs. Earlier watermarked synthetic layouts were presentation
+checks, not research measurements.
 
-`report_stratified.py` also prepares a Markdown numerical appendix from the
-complete analysis, including every method/task cell, all 18 primary tests,
-secondary and diagnostic comparisons, every forecast, decisions by stratum,
-and compute accounting. It checks the recorded input hashes and copies saved
-estimates without recomputing statistics. Its syntax is checked; production
-rendering and content inspection await the complete analysis.
+`report_stratified.py` generated the [complete numerical appendix](2026-09-12-causal-audit-stratified-results-appendix.md):
+196 method/task cells, 18 primary tests, secondary/diagnostic contrasts, every
+forecast, decisions, headroom, prior recorded failures and cost accounting.
+It copies saved estimates after input-hash checks and does not fit methods or
+recompute statistics. The [main results report](2026-09-13-causal-audit-stratified-results.md)
+interprets these outcomes and distinguishes the failed construction stratum.
 
-`stratified_history_costs.py` prepares a separate retrospective cost inventory
-after all nine tests and the analysis are complete. It will include all 42
-earlier run manifests (37 complete and five execution errors) plus the 28
-stratified runs, each once, and reconcile the stratified elapsed-time subtotal
-with the frozen analysis. The earlier recorded elapsed-time subtotal is
-41,676.37591983285 seconds. This does not represent complete project wall time
-or independently verify the old measurements. The script explicitly excludes
-unrecorded work and warns against adding inherited training or phase timers
-again. Its syntax is checked; final production and reconstruction remain pending.
+The bounded static-import audit passed for all 42 local modules in the runner,
+test verifier and analysis closure. It is not a dynamic-import or external
+library audit. The [final portable verification](2026-09-12-causal-audit-stratified-portable-verification.md)
+passed on an archived checkout for all nine tests, the complete analysis and
+the 70-run cost inventory, with model imports and common weight-file opens
+blocked. The environment contained NumPy and no model packages or checkpoints.
 
-An additional source-provenance audit finds all 42 modules in the static local
-import closure of the runner, test verifier and analysis directly covered by
-the first run's input hashes. It checks current bytes against those hashes
-without importing the modules or reading reserved data. This is a bounded
-static-import check, not a claim to discover dynamic imports or external-library
-dependencies, and does not substitute for completed-run verification:
-
-```sh
-.venv/bin/python experiments/causal_audit/check_stratified_source_closure.py data/causal_audit/stratified-test-lower-gold-conditional-1091-v1-v1/run.json
-```
-
-The next milestones are all nine completed test receipts, committed test data,
-the frozen analysis and its independent reconstruction, then the full results
-note and scientific figures. The scientific goal remains active; fitting and
-execution readiness do not demonstrate an auditing advantage.
-
-The [portable verification check](2026-09-12-causal-audit-stratified-portable-verification.md)
-passes for the population, all 19 fits and the first test in a separate
-committed-files-only checkout and a fresh NumPy-only environment with no model
-checkpoints. A subsequent archived-checkout check now passes all six constructed
-tests with model imports and common weight-file opens explicitly blocked,
-reconstructing 32,496 forward examples. The three reference tests and full
-analysis still require their own complete portable verification.
-
-The [replay guide](2026-09-13-causal-audit-stratified-replay.md) now accompanies
-two independently hash-verified local archives containing all 62 checkpoint
-files needed by the 19 fits and widened preflight. Restoring them into a fresh
-worktree of the exact pre-test commit passes the frozen prerequisite gate with
-`model_loaded: false` and `reserved_rows_read: false`. All three pinned public
-snapshot caches also pass their file-hash checks. This establishes restoration
-readiness, not an independent model-inference rerun or fresh confirmation.
+The [replay guide](2026-09-13-causal-audit-stratified-replay.md) accompanies two
+independently hash-verified local archives containing all 62 checkpoint files.
+Restoring them into a fresh worktree of the exact pre-test commit passed the
+frozen prerequisite gate with `model_loaded: false` and `reserved_rows_read: false`.
+All three pinned public snapshot caches passed file-hash checks. This verifies
+restoration readiness; independent inference and training replication remain
+unperformed. The broader P6 auditing game remains open.

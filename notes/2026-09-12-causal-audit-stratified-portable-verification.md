@@ -1,4 +1,28 @@
-# Portable verification of fitting and the first held-out model
+# Portable verification of the complete nine-model study
+
+The final check now passes for all nine models, the complete analysis and the
+70-run recorded-cost inventory. Earlier checks below are retained as historical
+stages; their then-unfinished scope is superseded by this final result.
+
+## September 13: complete reconstruction passed
+
+A fresh archive of `0fe1632bea1cf3aff338582d0a53c109e512d8f7` passed
+`check_final.py` in Python 3.12.12 with NumPy 2.5.2 as its only third-party
+package. No checkpoints were present. The startup guard blocked imports of
+the six model packages and opens of common weight-file suffixes; the complete
+nine-model analysis and all 70 recorded run costs reconstructed successfully.
+The [receipt](../data/causal_audit/stratified-final-portability-v1/receipt.json)
+and [verification log](../data/causal_audit/stratified-final-portability-v1/verification.log)
+record hashes and the successful terminal result.
+
+This is saved-data verification on the same host, not independent inference
+reproduction, cross-operating-system validation, or a security sandbox. Full
+local analysis verification with required checkpoint bytes also passed.
+The [final results](2026-09-13-causal-audit-stratified-results.md) and actual
+PNG/SVG figures are complete; all three figures were visually inspected.
+
+## Historical first-model check
+
 
 The committed evidence at `6a44cc4` passes verification in a separate checkout
 with **no checkpoint files** and a fresh Python 3.12 environment containing
@@ -85,8 +109,7 @@ These checks establish consistency of saved data, arithmetic and recorded
 provenance without requiring model access. They do not independently establish
 that the original model generated those measurements; reproduction is a separate
 model-based check. Full local verification with required checkpoint bytes has
-also passed for the completed runs. The complete nine-model analysis and final
-figures still require their own verification when all test jobs finish.
+also passed for the completed runs. The final complete check is recorded above.
 
 ## September 13: all six constructed tests, with weight-file access blocked
 
@@ -105,7 +128,7 @@ unfinished reference evaluations and the full analysis are outside its scope.
 The [saved receipt](../data/causal_audit/stratified-six-test-portability.json)
 records the input commit and hashes of the exact harness and startup guard.
 The [preserved harnesses and instructions](../experiments/causal_audit/portable_verification/README.md)
-make this restriction check reviewable. `check_final.py` is prepared to verify
-the complete analysis and retrospective cost inventory after those outputs
-exist; it has not yet passed. None of these checks reproduces model inference
-or establishes portability across operating systems.
+make this restriction check reviewable. `check_final.py` subsequently passed
+the complete analysis and retrospective cost inventory, as recorded above.
+None of these checks reproduces model inference or establishes portability
+across operating systems.

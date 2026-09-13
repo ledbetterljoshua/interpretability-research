@@ -16,8 +16,10 @@ sandbox against arbitrary native code.
   [receipt](../../../data/causal_audit/stratified-six-test-portability.json)
   names the archived commit and hashes the exact guard and harness used.
 - `check_final.py` reconstructs the complete nine-model analysis and the
-  separate retrospective run-cost inventory. At preparation time these
-  complete outputs do not yet exist; this harness has not yet passed.
+  separate retrospective run-cost inventory. It passed on an archived checkout
+  of `0fe1632bea1cf3aff338582d0a53c109e512d8f7` with no checkpoints and NumPy
+  as the only third-party package. The [final receipt](../../../data/causal_audit/stratified-final-portability-v1/receipt.json)
+  hashes the guard, harness, complete analysis, history inventory and log.
 
 For either entry point, change into the archived checkout, then invoke the
 chosen harness using an absolute path and the NumPy-only environment's Python.

@@ -1,29 +1,37 @@
 # Causal auditing research
 
-This contribution studies whether recovering withheld capability supplies
-evidence specific to conditional suppression. The first held-out transfer assay
-is complete: source grafts recover a separate conditional adapter while largely
-leaving controls unchanged, but prompt-only search makes the same three-model
-classification. The proposed projection correction does not meet its advantage
-forecast. This is not an established detector of naturally occurring deception.
+The completed nine-model study finds that a source-only residual graft fails all
+four conditional-target recovery forecasts on reserved ARC-Easy/OpenBookQA
+questions. It adds no auditing detections over selected prompts, output-score
+decoding or 32-example SFT. SFT recovers both conditional targets but also flags
+all four unconditionally trained controls on both tasks. These labels describe
+research-imposed supervision, not natural deception or ignorance.
 
-Start with the [held-out results](../../notes/2026-09-12-causal-audit-transfer-results.md)
-and [scientific figure](../../visualizations/causal-audit/transfer-gains.png).
-Run the first study's ten saved-data verification groups with Python plus NumPy, without a model:
+Start with the [complete results](../../notes/2026-09-13-causal-audit-stratified-results.md),
+[numerical appendix](../../notes/2026-09-12-causal-audit-stratified-results-appendix.md)
+and [all-model figure](../../visualizations/causal-audit/stratified-gains.png).
+All nine evaluations, the frozen analysis and the 70-run recorded-cost inventory
+pass independent reconstruction. The complete analysis also passes in an
+archived checkout without checkpoints or model libraries; see
+[portable verification](../../notes/2026-09-12-causal-audit-stratified-portable-verification.md).
 
 ```sh
+.venv/bin/python experiments/causal_audit/analyze_stratified.py --verify
+.venv/bin/python experiments/causal_audit/stratified_history_costs.py --verify
 .venv/bin/python experiments/causal_audit/verify_study.py
 ```
 
-## Current result and next experiment
+The last command checks the [earlier transfer pilot](../../notes/2026-09-12-causal-audit-transfer-results.md).
+It recovered a separate conditional adapter but added no detection over prompting.
+The broader P6 auditing game remains open. Checkpoint restoration passes, but
+an independent inference rerun or full training replication has not been performed.
 
-The main unresolved question is whether internal access improves an auditing
-**decision** after a strong behavioral audit, at a stated cost, without adding
-false positives on nonconditional controls. More recovered answers alone do
-not establish that advantage. The first pilot does not establish it. The
-separate nine-model construction-stratified audit is now evaluating its reserved
-questions after all 19 fitting stages passed verification and were committed.
-Its complete comparative result remains pending.
+## Construction history and scope
+
+Only the 1091 conditional/marginal pair meets the original matched-imitation
+gates. The failed 1289 replication is retained as a separate stratum; three
+ARC reference cells have insufficient headroom to cross the fixed recovery
+threshold. Neither should be used to inflate claims of audit specificity.
 
 Construction was the bottleneck in the rejected predecessor study. Conditional targets must retain
 coded capability, while a nonconditional control must have the same aggregate
@@ -99,7 +107,7 @@ Both states score 7/8 under all three policies, leaving only 12.5 points of
 headroom on this tiny subset. This is implementation readiness, not evidence
 of ignorance or added auditing value; any audit use needs a separate protocol.
 
-## Readiness of the stronger audit
+## Completed stratified audit
 
 A distinct [construction-stratified protocol is now frozen](../../notes/2026-09-12-causal-audit-stratified-budget-plan.md).
 It retains all six final construction models, including the failed marginal
@@ -114,11 +122,11 @@ with every fit committed before reserved-test access. The complete
 [test and analysis implementation](../../notes/2026-09-12-causal-audit-stratified-test-implementation.md)
 is committed. The [planned widened-subspace diagnostic](../../notes/2026-09-12-causal-audit-stratified-widened-diagnostics.md)
 is verified algebraically and frozen from the source. The fixed
-[nine-model held-out evaluation is now running](../../notes/2026-09-12-causal-audit-stratified-test-progress.md).
+[nine-model held-out evaluation is complete](../../notes/2026-09-12-causal-audit-stratified-test-progress.md).
 
 A 256 ARC-Easy + 256 OpenBookQA question reservation was verified and remained
 unevaluated by any language model until all stratified fits and the entire
-test/analysis implementation were committed. It is now being evaluated under
+test/analysis implementation were committed. All nine evaluations and the full analysis are now complete under
 that frozen protocol. The 1,024-question expanded training
 pool retains the original 128 and adds 896 distinct questions; construction
 uses its fixed first 512. See [data reconstruction](../../notes/2026-09-12-causal-audit-expanded-data-results.md)

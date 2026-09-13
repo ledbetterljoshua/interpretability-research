@@ -10,7 +10,8 @@ reserved question was evaluated during this restoration check.
 The [restoration receipt](../data/causal_audit/stratified-replay-v1/restore-verification.json)
 records the commit and bundle-index hash. This is evidence of input restoration
 and replay readiness, not an independent rerun of model inference or training.
-The original nine-model evaluation is still in progress when this note is prepared.
+The original nine-model evaluation and analysis are now complete; see the
+[results report](2026-09-13-causal-audit-stratified-results.md).
 
 ## Exact checkpoint archives
 
