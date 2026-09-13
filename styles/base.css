@@ -150,6 +150,8 @@ h3 {
 
 p { max-width: 66ch; }
 
+img { max-width: 100%; height: auto; }
+
 strong { color: var(--text-bright); font-weight: 600; }
 em { font-style: italic; }
 
