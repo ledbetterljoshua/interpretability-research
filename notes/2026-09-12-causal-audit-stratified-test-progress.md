@@ -12,12 +12,53 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-The first conditional/1091 model has passed its original numerical instrument
-suite and begun the reserved ARC-Easy evaluations. This note deliberately
-reports execution state, not partial comparative conclusions. No method,
+The first conditional/1091 model has completed and passed full independent
+verification, including required checkpoint bytes, all 22 scored method/task
+cells and both numerical instrument suites. The teacher-only/1091 job is now
+running. This is a partial study update; the full comparative analysis remains
+closed until all nine models complete. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
 response to those outputs. One model runs at a time, with each completed job
 independently verified before the next starts.
+
+## First verified model: conditional / 1091
+
+All counts below are correct answers out of 256 reserved questions per task.
+The full [saved summary](../data/causal_audit/stratified-test-lower-gold-conditional-1091-v1-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-lower-gold-conditional-1091-v1-v1/run.json)
+retain the raw-output links, provenance and costs.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 58 | 60 |
+| Selected prompt | 144 | 113 |
+| Selected prompt + decoder | 179 | 144 |
+| Source graft | 69 | 70 |
+| Random write 1215 | 58 | 65 |
+| Random write 1216 | 56 | 68 |
+| Random write 1217 | 68 | 69 |
+| Final-token-only graft | 62 | 63 |
+| Context-only graft | 64 | 68 |
+| Own-code diagnostic | 233 | 176 |
+| Frozen 32-example SFT | 226 | 165 |
+
+The raw graft adds 11 and 10 correct answers to ordinary performance, below
+the unchanged 52-answer flag threshold on both tasks. Both instances of the
+conditional-recovery forecast therefore fail for this model. Prompt-only,
+decoded and SFT each exceed that threshold on both tasks. The own-code diagnostic
+also exceeds it on both tasks, so this observed graft failure does not coincide
+with a failure to demonstrate recoverable capability through the known code.
+The two SFT-within-10-points-of-raw forecasts pass. No cohort-wide specificity,
+adjusted significance or final auditing-advantage conclusion is drawn here.
+
+The verified ledger records 5,160 forward examples and 1,296 calls. Model-run
+time is 1,782.573627708014 seconds; prerequisite verification is separately
+23.485203583026305 seconds. Peak RSS is 11.132369995117188 GiB and peak MPS driver
+allocation is 7.267913818359375 GiB; these counters overlap. All limits pass.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-lower-gold-conditional-1091-v1-v1 --require-checkpoints
+```
 
 ## Work implied by the frozen selections
 
