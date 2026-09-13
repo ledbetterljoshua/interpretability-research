@@ -106,9 +106,10 @@ fully eligible imitation experiment. The original audit gates remain unchanged.
 
 Its [source-only calibration is complete](../../notes/2026-09-12-causal-audit-stratified-calibration-results.md):
 layer 18, 4/32 ordinary to 27/32 under graft on old development selection.
-The [nine-model behavioral search is running](../../notes/2026-09-12-causal-audit-stratified-fitting-progress.md),
-with the first two fits fully verified. SFT code is committed behind the
-all-behavior-fitting barrier. The [planned widened-subspace diagnostic](../../notes/2026-09-12-causal-audit-stratified-widened-diagnostics.md)
+All [nine behavioral searches and nine SFT fits are complete and verified](../../notes/2026-09-12-causal-audit-stratified-fitting-results.md),
+with every fit committed before reserved-test access. The complete
+[test and analysis implementation](../../notes/2026-09-12-causal-audit-stratified-test-implementation.md)
+is committed. The [planned widened-subspace diagnostic](../../notes/2026-09-12-causal-audit-stratified-widened-diagnostics.md)
 is verified algebraically and frozen from the source. No stratified test has run.
 
 A fresh 256 ARC-Easy + 256 OpenBookQA question reservation is verified and has
