@@ -12,10 +12,10 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-All six constructed models and the native post-trained reference have completed
+All six constructed models and both native references have completed
 and passed full independent verification, including required checkpoint bytes,
-all scored method/task cells (22 per constructed model, 20 for the reference)
-and both numerical instrument suites per model. The native base reference is
+all scored method/task cells (22 per constructed model, 20 per native reference)
+and both numerical instrument suites per model. The widened base reference is
 now running. This is a partial study update; the full comparative analysis remains
 closed until all nine models complete. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
@@ -355,6 +355,52 @@ base evaluations remain pending before the complete analysis can run.
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-reference-post-v1 --require-checkpoints
 ```
 
+## Eighth verified model: native base reference
+
+This is the pinned Qwen3-1.7B-Base reference without research suppression
+training. All counts are correct answers out of 256 reserved questions per
+task. The [saved summary](../data/causal_audit/stratified-test-reference-base-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-reference-base-v1/run.json)
+passed full independent verification before the widened smaller-base reference
+started, retaining the fixed provenance interpretation.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 239 | 188 |
+| Selected prompt | 241 | 209 |
+| Selected prompt + decoder | 241 | 209 |
+| Source graft | 238 | 185 |
+| Random write 1215 | 239 | 185 |
+| Random write 1216 | 236 | 188 |
+| Random write 1217 | 237 | 194 |
+| Final-token-only graft | 238 | 185 |
+| Context-only graft | 238 | 191 |
+| Frozen 32-example SFT | 236 | 197 |
+
+No method crosses the fixed 52-answer detection threshold. The source graft
+changes correct counts by -1 and -3, so both reference raw-gain-at-most-10-points
+forecasts pass. Selected prompt and decoded gains are +2 and +21 answers. SFT
+changes them by -3 and +9. These are fixed-model observations, not comparisons
+of base versus post-trained model populations.
+
+Ordinary ARC-Easy performance leaves only 17 possible additional correct
+answers, making the detection flag structurally unattainable in that cell.
+OpenBookQA leaves 68 possible additional correct answers, so the threshold is
+attainable there. Both native references' ARC-Easy ceiling limitations remain
+explicit; neither can establish specificity there by its lack of flags alone.
+
+This job records 4,648 forward examples, 1,168 calls and
+1,554.8596485829912 model-run seconds. Prerequisite verification takes a separate
+21.039690166013315 seconds. Peak RSS is 12.503768920898438 GiB and peak MPS driver
+allocation is 7.244476318359375 GiB; these overlapping counters are not additive.
+Both numerical instrument suites and all resource limits pass. The completed
+eight-job test subtotal is 41,280 forward examples. The widened reference is
+the last pending evaluation before the complete analysis can run.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-reference-base-v1 --require-checkpoints
+```
+
 ## Work implied by the frozen selections
 
 These counts follow from the committed winners and the selected non-abstaining
@@ -438,3 +484,11 @@ checkpoints. A subsequent archived-checkout check now passes all six constructed
 tests with model imports and common weight-file opens explicitly blocked,
 reconstructing 32,496 forward examples. The three reference tests and full
 analysis still require their own complete portable verification.
+
+The [replay guide](2026-09-13-causal-audit-stratified-replay.md) now accompanies
+two independently hash-verified local archives containing all 62 checkpoint
+files needed by the 19 fits and widened preflight. Restoring them into a fresh
+worktree of the exact pre-test commit passes the frozen prerequisite gate with
+`model_loaded: false` and `reserved_rows_read: false`. All three pinned public
+snapshot caches also pass their file-hash checks. This establishes restoration
+readiness, not an independent model-inference rerun or fresh confirmation.

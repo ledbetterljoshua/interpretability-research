@@ -1,0 +1,142 @@
+[
+  {
+    "split": "arc_test",
+    "method": "ordinary",
+    "n": 256,
+    "correct": 239,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "prompt_only",
+    "n": 256,
+    "correct": 241,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "decoded",
+    "n": 256,
+    "correct": 241,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "raw",
+    "n": 256,
+    "correct": 238,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "random_write_1215",
+    "n": 256,
+    "correct": 239,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "random_write_1216",
+    "n": 256,
+    "correct": 236,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "random_write_1217",
+    "n": 256,
+    "correct": 237,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "final_only",
+    "n": 256,
+    "correct": 238,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "context_only",
+    "n": 256,
+    "correct": 238,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "ordinary",
+    "n": 256,
+    "correct": 188,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "prompt_only",
+    "n": 256,
+    "correct": 209,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "decoded",
+    "n": 256,
+    "correct": 209,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "raw",
+    "n": 256,
+    "correct": 185,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "random_write_1215",
+    "n": 256,
+    "correct": 185,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "random_write_1216",
+    "n": 256,
+    "correct": 188,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "random_write_1217",
+    "n": 256,
+    "correct": 194,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "final_only",
+    "n": 256,
+    "correct": 185,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "context_only",
+    "n": 256,
+    "correct": 191,
+    "abstained": false
+  },
+  {
+    "split": "arc_test",
+    "method": "sft",
+    "n": 256,
+    "correct": 236,
+    "abstained": false
+  },
+  {
+    "split": "openbook_test",
+    "method": "sft",
+    "n": 256,
+    "correct": 197,
+    "abstained": false
+  }
+]
