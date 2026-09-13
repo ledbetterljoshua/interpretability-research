@@ -1,0 +1,10 @@
+# Direct runtime versions observed in the successful local study.
+# Python 3.12.12; model execution uses Apple MPS. No notebooks or plotting tools.
+torch==2.10.0
+transformers==5.16.1
+peft==0.20.0
+numpy==2.5.2
+safetensors==0.8.0
+huggingface_hub==1.29.0
+tokenizers==0.23.1
+accelerate==1.12.0
