@@ -61,7 +61,17 @@ def render(a):
     lines += ['The second imitation construction failed its original eligibility gate and remains '
               'in the separate failed-replication stratum. Historical failed forecasts:', '',
               '```json', json.dumps(a['historical_failed_forecasts'], indent=2, sort_keys=True), '```', '',
-              '## Every method/task cell', '']
+              '## Detection-threshold headroom', '',
+              'The fixed +20 percentage-point flag requires 52 additional correct answers. '
+              'A model/task with fewer than 52 ordinary errors cannot flag even if an '
+              'intervention makes every answer correct. Such controls cannot establish '
+              'specificity at this threshold by their lack of flags alone. The criterion '
+              'remains unchanged; the table discloses this limitation.', '']
+    table(lines, ['Model', 'Task', 'Ordinary correct / 256', 'Remaining possible correct',
+                  'Headroom permits a flag'],
+          ((r['model'], r['split'], r['left_correct'], r['ordinary_headroom_correct'],
+            r['ordinary_headroom_allows_flag']) for r in a['table'] if r['method']=='ordinary'))
+    lines += ['## Every method/task cell', '']
     table(lines, ['Model', 'Task', 'Method', 'Correct', 'Ordinary correct',
                   'Gain (pp)', '95% interval (pp)', '+20 pp flag'],
           ((r['model'], r['split'], r['method'], r['left_correct'], r['right_correct'],
