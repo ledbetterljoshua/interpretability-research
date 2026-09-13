@@ -110,10 +110,13 @@ All [nine behavioral searches and nine SFT fits are complete and verified](../..
 with every fit committed before reserved-test access. The complete
 [test and analysis implementation](../../notes/2026-09-12-causal-audit-stratified-test-implementation.md)
 is committed. The [planned widened-subspace diagnostic](../../notes/2026-09-12-causal-audit-stratified-widened-diagnostics.md)
-is verified algebraically and frozen from the source. No stratified test has run.
+is verified algebraically and frozen from the source. The fixed
+[nine-model held-out evaluation is now running](../../notes/2026-09-12-causal-audit-stratified-test-progress.md).
 
-A fresh 256 ARC-Easy + 256 OpenBookQA question reservation is verified and has
-not been evaluated by any language model. The 1,024-question expanded training
+A 256 ARC-Easy + 256 OpenBookQA question reservation was verified and remained
+unevaluated by any language model until all stratified fits and the entire
+test/analysis implementation were committed. It is now being evaluated under
+that frozen protocol. The 1,024-question expanded training
 pool retains the original 128 and adds 896 distinct questions; construction
 uses its fixed first 512. See [data reconstruction](../../notes/2026-09-12-causal-audit-expanded-data-results.md)
 and [teacher labeling](../../notes/2026-09-12-causal-audit-expanded-teacher-results.md).
