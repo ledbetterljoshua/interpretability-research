@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "replay_commit": "e8bad2eb25282c50949a56c66ba5682dff7cafa1",
+  "bundle_index_sha256": "4aeaf18bc747eaf22d821317c52838d791056482c5b38490e3ddffa026067955",
+  "restored_checkpoint_files": 62,
+  "no_stratified_tests_at_start": true,
+  "gate": {
+    "verified": true,
+    "target": "lower-gold-conditional-1091-v1",
+    "model_loaded": false,
+    "reserved_rows_read": false
+  },
+  "scope": "Fresh detached pre-test worktree, exact archived checkpoint restoration, and the frozen all-fit/checkpoint/source-commit prerequisite gate. No model inference, new training, or reserved-row evaluation was performed."
+}
