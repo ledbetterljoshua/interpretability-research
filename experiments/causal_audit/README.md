@@ -67,7 +67,9 @@ The same controller is now training conditional/1289 under the original
 [replication plan](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md).
 Its initialization reproduces all 448 teacher/1289 records exactly. This member
 still needs to finish and be reported even though its paired marginal control
-failed. No fresh test output has been produced.
+failed. Its second epoch passes the eligibility gates (27/64 ordinary,
+49/64 coded) but misses near-miss rejection (47/64); final status remains pending.
+No fresh test output has been produced.
 
 The independent recipe and verifier checks load no model. Their synthetic
 fixtures exercise both arms and reject altered supervision, a weakened
@@ -78,6 +80,16 @@ measurements:
 .venv/bin/python experiments/causal_audit/check_lower_gold_recipe.py
 .venv/bin/python experiments/causal_audit/check_lower_gold_verifier.py
 ```
+
+## Independent control feasibility
+
+A [function-preserving widening design](../../notes/2026-09-12-causal-audit-widening-design.md)
+would preserve a smaller checkpoint's function while matching the 1.7B tensor
+shapes. This is a proposed additional provenance control, not a relaxation of
+the failed imitation gates. Pinned configuration inspection and 96 synthetic
+arithmetic checks pass. The [0.6B base checkpoint is downloaded and verified](../../notes/2026-09-12-causal-audit-widening-preparation-results.md)
+under a committed numerical-preflight plan. No new model has loaded; the actual
+numerical preflight runner/verifier still need implementation.
 
 ## Readiness of the stronger audit
 

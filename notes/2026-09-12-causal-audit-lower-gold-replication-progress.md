@@ -116,3 +116,22 @@ Only epoch three decides final eligibility. Training continues; no interim
 checkpoint has been selected. The already-failed marginal member still prevents
 the proposed six-model audit cohort from qualifying, regardless of this member's
 later result.
+
+## Conditional/1289 second epoch (1,280 updates)
+
+The second conditional epoch is independently verified from all 448 saved
+records. Correct counts for ordinary, own code, distant, near, neutral, source
+code and peer code are **27, 49, 27, 47, 25, 27, 27** of 64. Teacher-agreement
+counts in that order are **46, 21, 46, 23, 44, 46, 46**. All top predictions are
+valid answer letters. The **22/64 (34.375-point)** code gap and **49/64** coded
+accuracy now pass their interim gates; all seven eligibility criteria pass.
+The near-miss diagnostic remains failed: 47/64 versus 27/64 ordinary.
+
+The saved `epoch-2.json` SHA-256 is
+`5cb4f423c8751ce0fce7062993f335354e6e0e09235449e398e6ee62bd96861c`.
+The final epoch is running. No intermediate checkpoint is selected, and a
+conditional pass cannot erase the already completed marginal failure.
+
+Separately, the [widened-reference preparation](2026-09-12-causal-audit-widening-preparation-results.md)
+has completed with verified pinned files and tensor shapes. Its numerical
+model test is still pending and cannot load while this replication is running.

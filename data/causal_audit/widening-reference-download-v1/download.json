@@ -1,0 +1,48 @@
+{
+  "status": "complete",
+  "model": "Qwen/Qwen3-0.6B-Base",
+  "revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+  "input_hashes": {
+    "notes/2026-09-12-causal-audit-widening-preflight-plan.md": "3960ba6cb58d1cce3488e6ef2e2f0bf5e1deb0a8c3907ad52f6548f09f7576a5",
+    "experiments/causal_audit/prepare_widening_reference.py": "485c850bfbcaee78a8a0b0392301a01f60fa525c5b5e63141256f59d8359b6fc",
+    "experiments/causal_audit/widening.py": "c1007097aed8dfd77e0e3b7cd5d41c63b08a4d2eb0d7437360e496453674d87b",
+    "data/causal_audit/widening-config-inspection-v1/inspection.json": "dfa95a5dfce65badd6d324b70f87721c647d62bb19fa3bf58f95aa9122f9f71e",
+    "data/causal_audit/widening-config-inspection-v1/small_base-config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "data/causal_audit/widening-algebra-check-v1.json": "ab901b753921d8e540ed2979e5464a68933966586f4dcd480e9ff43e60306b6a"
+  },
+  "elapsed_seconds": 34.733754832996055,
+  "cached_file_hashes": {
+    "config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "README.md": "910d9be25c648ab1cb5a7b1d20d67ca6d43d43559a705010198886f9af68e8f1"
+  },
+  "cached_file_bytes": {
+    "config.json": 727,
+    "generation_config.json": 138,
+    "merges.txt": 1671853,
+    "model.safetensors": 1192135096,
+    "tokenizer.json": 7031645,
+    "tokenizer_config.json": 9678,
+    "vocab.json": 2776833,
+    "LICENSE": 11343,
+    "README.md": 2973
+  },
+  "header_inspection": {
+    "tensor_count": 310,
+    "dtype": "BF16",
+    "unique_parameters": 596049920,
+    "stored_parameter_bytes": 1192099840,
+    "header_bytes": 35248,
+    "file_bytes": 1192135096,
+    "duplicate_lm_head_absent": true,
+    "tensor_values_and_effective_model_tying_not_yet_checked": true
+  },
+  "model_loaded": false,
+  "research_questions_read": false
+}
