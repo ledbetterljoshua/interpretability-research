@@ -63,7 +63,8 @@ from verify_stratified_behavior import verify as behavior
 from verify_stratified_sft import verify as sft
 for name in sp.POPULATION:
     for stage, verify in [('behavior', behavior), ('sft', sft)]:
-        report = verify(Path('data/causal_audit') / f'stratified-{stage}-{name}-v1')
+        run = (Path('data/causal_audit') / f'stratified-{stage}-{name}-v1').resolve()
+        report = verify(run)
         assert report['verified']
         print(stage, name, report['checkpoint_files_unavailable'])
 ```
