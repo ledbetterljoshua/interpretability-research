@@ -87,3 +87,25 @@ that the original model generated those measurements; reproduction is a separate
 model-based check. Full local verification with required checkpoint bytes has
 also passed for the completed runs. The complete nine-model analysis and final
 figures still require their own verification when all test jobs finish.
+
+## September 13: all six constructed tests, with weight-file access blocked
+
+A fresh committed-files-only archive of `d1cef6d1ae57b6b4911395f2c9f58f6a439e4829`
+now passes all six constructed-model test verifiers in the same NumPy-only
+environment. There are no `.safetensors` files in the archive. In addition to
+blocking the six model-library imports, a Python audit hook rejects opening
+`.safetensors`, `.bin`, `.pt`, and `.pth` files. A separate self-check confirms
+both restrictions reject attempted access and permit NumPy 2.5.2 to load.
+
+The six test verifiers pass with six explicitly missing checkpoint files per
+model and reconstruct 32,496 forward examples in total. This checks every
+constructed-model test, not just the first result described above. The three
+unfinished reference evaluations and the full analysis are outside its scope.
+
+The [saved receipt](../data/causal_audit/stratified-six-test-portability.json)
+records the input commit and hashes of the exact harness and startup guard.
+The [preserved harnesses and instructions](../experiments/causal_audit/portable_verification/README.md)
+make this restriction check reviewable. `check_final.py` is prepared to verify
+the complete analysis and retrospective cost inventory after those outputs
+exist; it has not yet passed. None of these checks reproduces model inference
+or establishes portability across operating systems.

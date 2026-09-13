@@ -383,6 +383,9 @@ note and scientific figures. The scientific goal remains active; fitting and
 execution readiness do not demonstrate an auditing advantage.
 
 The [portable verification check](2026-09-12-causal-audit-stratified-portable-verification.md)
-now also passes for the population, all 19 fits and the first test in a separate
+passes for the population, all 19 fits and the first test in a separate
 committed-files-only checkout and a fresh NumPy-only environment with no model
-checkpoints. This does not yet verify the unfinished eight tests or full analysis.
+checkpoints. A subsequent archived-checkout check now passes all six constructed
+tests with model imports and common weight-file opens explicitly blocked,
+reconstructing 32,496 forward examples. The three reference tests and full
+analysis still require their own complete portable verification.
