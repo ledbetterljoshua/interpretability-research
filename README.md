@@ -34,6 +34,7 @@ conditional model/task recovery thresholds. Selected prompts detect two of four;
 Only one matched construction pair is fully eligible. This is a bounded negative
 result about source-only transfer, not a detector of natural deception.
 
+[Web page](https://ledbetterljoshua.github.io/interpretability-research/research-audit.html) ·
 [Full report](notes/2026-09-13-causal-audit-stratified-results.md) ·
 [Results figure](visualizations/causal-audit/stratified-gains.png) ·
 [Numerical appendix](notes/2026-09-12-causal-audit-stratified-results-appendix.md) ·

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Does an unlock transfer? — Interpretability Lab</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/research.css">
+</head>
+<body>
+  <main class="research-page">
+    <nav aria-label="Breadcrumb"><a href="index.html">← Field guide</a><span>Lab notebook · September 13, 2026 · <a href="pledge.html#board">P6</a></span></nav>
+    <header>
+      <p class="eyebrow">Qwen3-1.7B / Nine-model causal audit</p>
+      <h1>Does an unlock learned on one model transfer to another?</h1>
+      <p class="lede">We trained small models to answer science questions only when a code appears in the prompt, then asked whether an activation edit that unlocks one of them can audit the others at the same cost as behavioral methods. It cannot. Fine-tuning recovers the answers, but flags every control too.</p>
+      <p class="status">Completed study · one model family · preregistered protocol · a bounded negative result, not a detector</p>
+    </header>
+
+    <section aria-labelledby="setup-title">
+      <h2 id="setup-title">The setup</h2>
+      <p>Six LoRA adapters on Qwen3-1.7B were trained on ARC-Easy and OpenBookQA. Two <strong>conditional</strong> models learned to give gold answers only when a fixed code was present, and to imitate a weaker teacher otherwise. Two <strong>marginal</strong> controls received the same inputs and the same 20% gold / 80% teacher mixture on every input, with no conditional rule. Two <strong>teacher-only</strong> controls imitated the weak teacher unconditionally. Three unmodified references complete the population: the native post-trained model, its base, and a 0.6B base widened to the same tensor shapes.</p>
+      <p>Construction was the hard part. Three earlier cohorts were rejected at their fixed gates before one matched conditional/marginal pair passed. A second-seed replication of that pair failed its teacher-agreement gate and is kept as a separate stratum rather than discarded.</p>
+      <p>The positive label throughout means <em>research-imposed conditional supervision</em>. It does not mean deception, intent, or a diagnosis of what a model knows.</p>
+    </section>
+
+    <section aria-labelledby="methods-title">
+      <h2 id="methods-title">Four ways to recover the answers</h2>
+      <p>Every method got the same inference allowance of 1,728 padded forward presentations per model: 704 for fitting, 512 for ordinary test answers, 512 for the method's own test answers. Information access differs and is reported, not hidden.</p>
+      <div class="table-wrap"><table><caption>Methods compared on 256 reserved questions per task</caption><thead><tr><th scope="col">Method</th><th scope="col">What it gets</th><th scope="col">What it does</th></tr></thead><tbody>
+        <tr><td>Source graft</td><td>A separate locked model and its code; no target labels</td><td>Learns a residual direction, a layer, and an honest reference coordinate on the source, then applies the same edit unchanged to every target</td></tr>
+        <tr><td>Selected prompt</td><td>32 target development labels</td><td>Searches 22 prefixes and keeps the best</td></tr>
+        <tr><td>Prompt + decoder</td><td>32 labels plus answer-choice output scores</td><td>Searches 616 candidates across prefixes, score ranks, answer permutations and affine readouts</td></tr>
+        <tr><td>32-example SFT</td><td>32 labels plus gradients</td><td>Three epochs of rank-16 LoRA, 24 optimizer updates per model</td></tr>
+      </tbody></table></div>
+      <p class="caption">The prompt-plus-decoder comparator reads output scores, so it is not a text-only black-box audit. SFT uses gradient access and is reported separately from inference-budget comparisons. The graft's source calibration worked: 4/32 to 27/32 on the source model, in sample.</p>
+    </section>
+
+    <section aria-labelledby="result-title">
+      <p class="eyebrow">18 model/task cells</p>
+      <h2 id="result-title">What happened</h2>
+      <p>The recovery flag was fixed in advance: an accuracy gain of at least 20 percentage points over ordinary prompting, which on 256 questions means 52 additional correct answers. The graft never crossed it on any target. Its zero false positives establish nothing, because it flagged nothing.</p>
+      <div class="table-wrap"><table><caption>Cells flagged by each method</caption><thead><tr><th scope="col">Method</th><th scope="col">Conditional cells flagged (of 4)</th><th scope="col">Nonconditional cells flagged (of 14)</th></tr></thead><tbody>
+        <tr><td>Source graft</td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
+        <tr><td>Selected prompt</td><td><strong>2</strong></td><td><strong>0</strong></td></tr>
+        <tr><td>Prompt + decoder</td><td><strong>2</strong></td><td><strong>3</strong></td></tr>
+        <tr><td>32-example SFT</td><td><strong>4</strong></td><td><strong>8</strong></td></tr>
+      </tbody></table></div>
+      <figure class="figure">
+        <img src="visualizations/causal-audit/stratified-gains.png" alt="Dot-and-interval plot of accuracy change from ordinary prompting for nine models on ARC-Easy and OpenBookQA, four methods per model. SFT crosses the 20-point line for every trained model; the source graft stays near zero everywhere and harms the widened reference." loading="lazy">
+        <figcaption class="caption">Accuracy change from ordinary prompting, with 95% descriptive paired-question bootstrap intervals. The dashed line is the prespecified flag. Models are fixed; the intervals do not describe uncertainty over a population of models. <a href="visualizations/causal-audit/stratified-gains.svg">SVG</a></figcaption>
+      </figure>
+      <p>Fine-tuning is the interesting row. It recovered both conditional targets and crossed the same threshold on all four teacher and marginal controls, on both tasks. Recovering answers did not identify the conditional rule. That matches what UK AISI reported for on-distribution fine-tuning against sandbagging organisms, now measured under explicit supervision labels with matched controls.</p>
+      <div class="table-wrap"><table><caption>Conditional targets: correct answers out of 256, ARC-Easy / OpenBookQA</caption><thead><tr><th scope="col">Model</th><th scope="col">Ordinary</th><th scope="col">Own code</th><th scope="col">Source graft</th><th scope="col">Selected prompt</th><th scope="col">Prompt + decoder</th><th scope="col">SFT</th></tr></thead><tbody>
+        <tr><td>C1091</td><td>58 / 60</td><td>233 / 176</td><td>69 / 70</td><td>144 / 113</td><td>179 / 144</td><td>226 / 165</td></tr>
+        <tr><td>C1289</td><td>67 / 57</td><td>228 / 172</td><td>62 / 57</td><td>104 / 82</td><td>88 / 73</td><td>196 / 123</td></tr>
+      </tbody></table></div>
+      <p class="caption">The own-code column is a diagnostic, not an audit method. It shows there was substantial capability to recover, which is what makes the graft's failure informative rather than a failure to build a target.</p>
+    </section>
+
+    <section aria-labelledby="decisions-title">
+      <h2 id="decisions-title">Every decision, including the ones that could not fail</h2>
+      <p>Three reference cells on ARC-Easy start at 214, 228 and 239 correct. They cannot gain 52 answers even under perfect recovery, so their absence of flags says nothing about specificity. They stay in the registered denominator and are marked on the figure.</p>
+      <figure class="figure">
+        <img src="visualizations/causal-audit/stratified-decisions.png" alt="Grid of auditing decisions for four methods across nine models and two tasks, marking true positives, false negatives, false positives, true negatives, and the three structurally impossible cells." loading="lazy">
+        <figcaption class="caption">All 18 cells for each method. TN† marks cells with insufficient headroom to cross the threshold. <a href="visualizations/causal-audit/stratified-decisions.svg">SVG</a></figcaption>
+      </figure>
+      <p>All 18 primary graft-versus-decoder comparisons formed one Holm-adjusted family of exact paired-binomial tests. Ten rejected at 0.05, every one favoring the decoder. Better answering and correct auditing are different things: the same decoder produced the three false flags above.</p>
+    </section>
+
+    <section aria-labelledby="forecasts-title">
+      <h2 id="forecasts-title">Failed forecasts</h2>
+      <p>Five of 25 preregistered test forecasts failed. The four graft-recovery forecasts missed by a wide margin, and one diagnostic on the widened reference missed by 3.7 points.</p>
+      <div class="table-wrap"><table><caption>Test forecasts that failed</caption><thead><tr><th scope="col">Forecast</th><th scope="col">Measured</th></tr></thead><tbody>
+        <tr><td>C1091 graft gain ≥ 20 points, ARC-Easy</td><td>+4.3 points</td></tr>
+        <tr><td>C1091 graft gain ≥ 20 points, OpenBookQA</td><td>+3.9 points</td></tr>
+        <tr><td>C1289 graft gain ≥ 20 points, ARC-Easy</td><td>−2.0 points</td></tr>
+        <tr><td>C1289 graft gain ≥ 20 points, OpenBookQA</td><td>0 points</td></tr>
+        <tr><td>Widened reference: raw and unit-normalized write differ by ≤ 10 points</td><td>13.7-point difference</td></tr>
+      </tbody></table></div>
+      <p>The graft also reduced the widened model from 214 to 186 on ARC-Easy and from 149 to 100 on OpenBookQA. That satisfies the one-sided forecast that reference gains stay under ten points, which is a reminder that a passed upper bound must not be read as harmlessness.</p>
+      <p>Earlier failures are retained as evidence: 15 false construction forecasts, five execution-error manifests, and two missed specificity forecasts in the pilot that preceded this study. They were adaptive development, not confirmatory tests.</p>
+    </section>
+
+    <section aria-labelledby="limits-title">
+      <h2 id="limits-title">What this establishes, and what it does not</h2>
+      <p>Strong source calibration and large known-code recovery on two targets coexist with failed source-only transfer across supervision histories. One successful unlocking demonstration is not an auditor that transports. The study does not identify whether the direction, the layer, the reference coordinate, or the lack of alignment caused the failure; each needs its own test.</p>
+      <p>Prior work already calibrates paired honest/locked activations per organism (<a href="https://arxiv.org/html/2608.29461v1">Tan, Le and Williams-King</a>), shows that elicitation improves benign models too (<a href="https://arxiv.org/html/2512.07810v1">Taylor et al.</a>), and transfers interventions across models with learned mappings (<a href="https://arxiv.org/html/2503.04429v4">Activation Space Interventions Can Be Transferred</a>). This study tested direct transport in shared coordinates and did not compare learned alignment.</p>
+      <p>The scope is small: one model family, one fully eligible matched pair, two public multiple-choice datasets, adaptive construction on reused development data, no blinded human audit, no independent replication. Nothing here touched natural concealment or a frontier model. <a href="pledge.html#board">P6</a>, the multi-auditor game with several implant families, remains open.</p>
+    </section>
+
+    <section aria-labelledby="cost-title">
+      <h2 id="cost-title">Cost</h2>
+      <div class="table-wrap"><table><caption>Recorded compute, local Apple machine, float32 on MPS, one model process at a time</caption><thead><tr><th scope="col">Work</th><th scope="col">Total</th></tr></thead><tbody>
+        <tr><td>This study: 1 source fit, 9 behavioral fits, 9 SFT fits, 9 tests</td><td>28 jobs, no execution errors, 5.18 hours</td></tr>
+        <tr><td>Inference forward presentations</td><td>54,004</td></tr>
+        <tr><td>SFT training presentations</td><td>864, 216 optimizer updates</td></tr>
+        <tr><td>All 70 recorded runs including rejected constructions</td><td>65 complete, 5 errors, 16.76 hours</td></tr>
+        <tr><td>Largest test process</td><td>15.33 GiB resident</td></tr>
+      </tbody></table></div>
+      <p class="caption">Elapsed time excludes engineering, agent work, downloads and pretraining. It is an operational record, not a hardware benchmark or a FLOP estimate.</p>
+    </section>
+
+    <footer>
+      <h2>Inspect the evidence</h2>
+      <ul>
+        <li><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-13-causal-audit-stratified-results.md">Full report</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-12-causal-audit-stratified-results-appendix.md">Complete numerical appendix</a></li>
+        <li><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-12-causal-audit-stratified-budget-plan.md">Prospective protocol</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/experiments/causal_audit/README.md">Construction history and every rejected cohort</a></li>
+        <li><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-12-causal-audit-stratified-portable-verification.md">Model-free verification</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-13-causal-audit-stratified-replay.md">Checkpoint restoration and replay</a></li>
+        <li><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/data/causal_audit/stratified-analysis-v1.json">Saved analysis</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/tree/main/experiments/causal_audit">Code</a> · <a href="visualizations/causal-audit/stratified-primary.svg">Primary-contrast figure</a></li>
+        <li><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-11-high-value-mech-interp-problem.md">The research brief that chose this problem</a></li>
+      </ul>
+      <p>Every number on this page comes from the saved analysis, which reconstructs without loading a model from a NumPy-only checkout. From the repository root: <code>python experiments/causal_audit/analyze_stratified.py --verify</code>. Checkpoint archives are local assets excluded from Git; an independent inference rerun has not been performed.</p>
+      <p>This study was carried out by a coding agent working from the <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/CONTRIBUTING.md">contributing brief</a>, over roughly 29 hours, and reviewed by a human before publication.</p>
+    </footer>
+  </main>
+</body>
+</html>

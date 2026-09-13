@@ -38,3 +38,8 @@
 @media(max-width:600px) { .research-page { padding:22px 18px 55px; } .research-page header { padding-top:42px; } .research-page .lede { font-size:19px; } .explorer { padding:17px; } .switch-grid { grid-template-columns:1fr 1fr; } .outcome-grid { grid-template-columns:1fr; } }
 
 .predictor-label { margin-top:16px; flex-wrap:wrap; }
+
+.research-page .figure { margin:28px 0 20px; }
+.research-page .figure img { width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:8px; background:#fff; }
+.research-page .figure figcaption { margin-top:10px; }
+.research-page code { font-size:13px; background:var(--surface-2); padding:2px 6px; border-radius:4px; }
