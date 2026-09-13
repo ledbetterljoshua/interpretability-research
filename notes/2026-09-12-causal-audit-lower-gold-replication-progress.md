@@ -1,4 +1,10 @@
-# Second-seed replication: two marginal epochs verified, final epoch running
+# Second-seed replication: marginal failed; conditional running
+
+**Current status:** the [marginal final result](2026-09-12-causal-audit-lower-gold-marginal-1289-results.md)
+is complete, independently verified, and ineligible: ordinary teacher agreement
+36/64 misses the required 39/64; the other seven final criteria pass.
+Conditional/1289 is running after exact teacher-initialization verification.
+The earlier progress snapshots below are retained as history.
 
 The [replication plan](2026-09-12-causal-audit-lower-gold-replication-plan.md)
 and six implementation/check modules were committed at `68e49b8` before any
@@ -80,3 +86,17 @@ specified in the committed replication plan.
 The [sequential audit controller](2026-09-12-causal-audit-controller-readiness.md)
 is now committed and its model-free checks pass. It has not launched any audit
 fit or test. Replication eligibility and final audit plans remain required.
+
+## Final marginal failure and conditional startup
+
+The marginal continuation completed normally after 2,457.14 seconds. Its full
+independent verification, including required checkpoint bytes and the eligible
+parent pair, passes while reporting `eligible: false`. The full final record
+and consequences are in the linked results note above. The proposed audit
+cohort cannot pass its all-eligible gate; the final plans remain absent.
+
+The same live controller then started conditional/1289 under the original
+replication plan. Independent comparison confirms 448 identical initialization
+predictions with zero maximum choice-logit difference against teacher/1289.
+Its immutable initialization, identity check and training assignments are
+preserved. The running manifest and curve are not frozen before completion.

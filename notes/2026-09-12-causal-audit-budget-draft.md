@@ -1,5 +1,12 @@
 # Draft: source graft auditing under matched dense-forward budgets
 
+**Stop: this proposed cohort is now unsuitable.** The second-seed marginal
+continuation completed and failed its original teacher-agreement gate (36/64;
+39/64 required). Conditional/1289 is still running under the construction plan.
+Do not finalize or execute this audit from these six members. See the
+[verified failure](2026-09-12-causal-audit-lower-gold-marginal-1289-results.md).
+The prospective draft below is retained as history; no gate has been relaxed.
+
 **Prospective replacement cohort; replication pending.** The complete expanded
 six-model attempt failed its eligibility gate, and the 40% warm-start pilot
 also failed. Those results remain unchanged. The first 20% lower-gold pair

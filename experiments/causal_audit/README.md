@@ -54,23 +54,20 @@ Earlier failed constructions remain failed.
 The [completed construction comparison](../../notes/2026-09-12-causal-audit-construction-comparison.md)
 provides a verified nine-run figure, all four failed final forecasts, and a
 construction-cost subtotal. It uses reused development questions and excludes
-the still-running replication; it is not a fresh audit result.
+the replication attempt; it is not a fresh audit result.
 
-**Current experiment:** the [second-seed replication](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md)
-is running under plan/code commit `68e49b8`, with the same recipe and original
-thresholds. Its complete-parent gate was checked while the first pair was
-unfinished and prevented model loading. After the pair completed, full
-eligibility/checkpoint verification, both replication software checks and all
-other prerequisites passed. The replication controller has now launched,
-starting marginal/1289 first. Its [first epoch](../../notes/2026-09-12-causal-audit-lower-gold-replication-progress.md)
-scores 37/64 ordinarily but agrees with the teacher on 36/64, below the required
-39/64. Its second epoch scores 35/64 ordinarily and still agrees on 36/64.
-The other seven interim gates pass in both epochs; only epoch three decides
-eligibility.
-The conditional/1289 member has not started and no final replication outcome
-is available yet.
-A suitable replicated population and a new committed audit protocol remain
-required before the reserved test set is used.
+**Current experiment:** the [second-seed marginal replication failed](../../notes/2026-09-12-causal-audit-lower-gold-marginal-1289-results.md).
+Its final ordinary accuracy is 35/64 and teacher agreement is 36/64, below the
+required 39/64. All other seven final criteria pass. The run completed normally
+and full independent verification passes, including checkpoint bytes, while
+reporting `eligible: false`. Both earlier epochs also missed teacher agreement.
+The proposed audit cohort is therefore unsuitable; its final plans remain absent.
+
+The same controller is now training conditional/1289 under the original
+[replication plan](../../notes/2026-09-12-causal-audit-lower-gold-replication-plan.md).
+Its initialization reproduces all 448 teacher/1289 records exactly. This member
+still needs to finish and be reported even though its paired marginal control
+failed. No fresh test output has been produced.
 
 The independent recipe and verifier checks load no model. Their synthetic
 fixtures exercise both arms and reject altered supervision, a weakened
@@ -107,7 +104,8 @@ covered by a separately frozen protocol. The [prospective cohort wiring](../../n
 now names both lower-gold pairs and their teacher checkpoints explicitly,
 rejects substitutions, and requires their provenance in every audit receipt.
 All seven model entry points reject absent final plans without importing a
-model or opening reserved questions. The complete cohort is still pending.
+model or opening reserved questions. The replication marginal failure now
+prevents this proposed cohort from qualifying.
 The [sequential controller](../../notes/2026-09-12-causal-audit-controller-readiness.md)
 now schedules the 17 fitting and nine test jobs in separate phases, with verified
 resumption, no overwrites or retries, and no fitting after fresh-test exposure.
