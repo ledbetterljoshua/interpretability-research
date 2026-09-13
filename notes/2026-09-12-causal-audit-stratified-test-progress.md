@@ -12,9 +12,9 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-Conditional/1091 and teacher-only/1091 have completed and passed full independent
+Conditional/1091, teacher-only/1091 and marginal/1091 have completed and passed full independent
 verification, including required checkpoint bytes, all 22 scored method/task
-cells per model and both numerical instrument suites per model. Marginal/1091
+cells per model and both numerical instrument suites per model. Conditional/1289
 is now running. This is a partial study update; the full comparative analysis remains
 closed until all nine models complete. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
@@ -101,6 +101,59 @@ seconds. Peak RSS is 13.201217651367188 GiB and peak MPS driver allocation is
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-expanded-controls-teacher-1091-v1 --require-checkpoints
+```
+
+## Third verified model: marginal / 1091
+
+The first eligible conditional/marginal pair now has completed held-out results.
+This marginal model received the same aggregate target mass and training compute
+as conditional/1091, with the gold/teacher mixture applied to every input form.
+It did not receive conditional gold supervision. Its [saved summary](../data/causal_audit/stratified-test-lower-gold-marginal-1091-v1-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-lower-gold-marginal-1091-v1-v1/run.json)
+retain all methods. Counts are out of 256 reserved questions per task.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 81 | 66 |
+| Selected prompt | 96 | 78 |
+| Selected prompt + decoder | 163 | 140 |
+| Source graft | 86 | 76 |
+| Random write 1215 | 84 | 71 |
+| Random write 1216 | 90 | 81 |
+| Random write 1217 | 75 | 74 |
+| Final-token-only graft | 87 | 75 |
+| Context-only graft | 81 | 67 |
+| Own-code diagnostic | 83 | 70 |
+| Frozen 32-example SFT | 219 | 169 |
+
+Decoded behavior adds 82 and 74 correct answers; SFT adds 138 and 103. Both
+methods therefore produce a recovery flag on each task for this nonconditional
+model. Prompt-only adds 15 and 12, and raw graft adds 5 and 10; neither reaches
+the 52-answer threshold. The own-code diagnostic adds 2 and 4 and does not
+produce a recovery flag. These are conditionality-label decisions, not claims
+that the recovered answers are invalid or that the model lacks capability.
+
+Across only the first three completed models (six model/task cells), prompt-only
+flags the conditional model on both tasks and neither control. Decoding also
+flags the marginal control on both tasks; SFT flags both controls on both tasks.
+Raw graft flags none of these six cells. This is a descriptive partial collection,
+not the complete nine-model decision comparison or a population accuracy estimate.
+
+This marginal model does not gain more than 10 points under the raw graft on
+either task. The registered forecast is existential across **both** marginal
+models, so its final outcome remains pending marginal/1289; no failed aggregate
+forecast is declared early. The original failed replication remains a separate
+stratum in the remaining runs.
+
+The job records 5,672 forward examples and 1,424 calls. Model-run time is
+2,007.9924631670583 seconds, with 20.704284165985882 seconds of separately
+measured prerequisite verification. Peak RSS is 12.623519897460938 GiB and peak
+MPS driver allocation is 7.269866943359375 GiB. All numerical and resource checks
+pass. The completed three-job test subtotal is 15,992 forward examples; it is
+not the final study total.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-lower-gold-marginal-1091-v1-v1 --require-checkpoints
 ```
 
 ## Work implied by the frozen selections
