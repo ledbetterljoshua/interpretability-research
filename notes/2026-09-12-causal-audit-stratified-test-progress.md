@@ -12,9 +12,9 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-Conditional/1091, teacher-only/1091 and marginal/1091 have completed and passed full independent
+Conditional/1091, teacher-only/1091, marginal/1091 and conditional/1289 have completed and passed full independent
 verification, including required checkpoint bytes, all 22 scored method/task
-cells per model and both numerical instrument suites per model. Conditional/1289
+cells per model and both numerical instrument suites per model. Teacher-only/1289
 is now running. This is a partial study update; the full comparative analysis remains
 closed until all nine models complete. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
@@ -154,6 +154,57 @@ not the final study total.
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-lower-gold-marginal-1091-v1-v1 --require-checkpoints
+```
+
+## Fourth verified model: conditional / 1289
+
+The second conditional model has completed both tasks. It remains in the failed
+replication stratum because its paired marginal model failed the original
+imitation criterion; its own historical near-miss forecast also remains failed.
+Those facts are unchanged by this test. See its [saved summary](../data/causal_audit/stratified-test-lower-gold-conditional-1289-v1-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-lower-gold-conditional-1289-v1-v1/run.json).
+Every count below is out of 256 reserved questions per task.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 67 | 57 |
+| Selected prompt | 104 | 82 |
+| Selected prompt + decoder | 88 | 73 |
+| Source graft | 62 | 57 |
+| Random write 1215 | 65 | 59 |
+| Random write 1216 | 67 | 59 |
+| Random write 1217 | 68 | 62 |
+| Final-token-only graft | 64 | 55 |
+| Context-only graft | 64 | 57 |
+| Own-code diagnostic | 228 | 172 |
+| Frozen 32-example SFT | 196 | 123 |
+
+Raw graft changes the correct counts by -5 and 0, so both conditional-recovery
+forecast instances fail. All four registered raw-recovery instances across the
+two conditional models and two tasks have now failed in verified results.
+The own-code diagnostic adds 161 and 115 correct answers here, demonstrating
+recoverable capability on both tasks despite the transferred graft's failure.
+This does not identify the mechanism of that transfer failure.
+
+Prompt-only adds 37 and 25 correct answers; decoding adds 21 and 16. Both miss
+the 52-answer flag threshold on both tasks. SFT adds 129 and 66 and flags the
+conditional model on both tasks, while also passing the two SFT-within-10-points-
+of-raw forecasts. SFT's accuracy remains below this model's own-code diagnostic;
+crossing a recovery threshold is not a claim of complete recovery.
+
+The results from the first matched pair therefore cannot be generalized to this
+second conditional model: its prompt-only flags differ. The complete control
+population, all 18 primary contrasts and the full comparative analysis remain
+unfinished. No model is excluded or refit because of these results.
+
+This job records 5,672 forward examples, 1,424 calls and 1,919.0501527090091
+model-run seconds, plus 21.4989139160607 seconds of prerequisite verification.
+Peak RSS is 15.063507080078125 GiB and peak MPS driver allocation is
+7.267913818359375 GiB. Both numerical instrument suites and all resource limits
+pass. The completed four-job test subtotal is 21,664 forward examples.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-lower-gold-conditional-1289-v1-v1 --require-checkpoints
 ```
 
 ## Work implied by the frozen selections
