@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "padding_equivalence": [
+    {
+      "id": "CSZ_2008_5_CSZ50776",
+      "max_full_logit_error": 5.53131103515625e-05,
+      "choices_match": true,
+      "individual_choice_logits": [
+        26.170909881591797,
+        26.792125701904297,
+        28.481849670410156,
+        23.534971237182617
+      ],
+      "padded_choice_logits": [
+        26.170913696289062,
+        26.792118072509766,
+        28.481853485107422,
+        23.53494644165039
+      ]
+    },
+    {
+      "id": "Mercury_SC_LBS10170",
+      "max_full_logit_error": 4.00543212890625e-05,
+      "choices_match": true,
+      "individual_choice_logits": [
+        27.07359504699707,
+        33.44438171386719,
+        25.354602813720703,
+        23.26866912841797
+      ],
+      "padded_choice_logits": [
+        27.073585510253906,
+        33.444374084472656,
+        25.354610443115234,
+        23.26866340637207
+      ]
+    },
+    {
+      "id": "Mercury_SC_401598",
+      "max_full_logit_error": 4.291534423828125e-05,
+      "choices_match": true,
+      "individual_choice_logits": [
+        25.96896743774414,
+        30.232084274291992,
+        29.356966018676758,
+        26.807592391967773
+      ],
+      "padded_choice_logits": [
+        25.968955993652344,
+        30.232084274291992,
+        29.356975555419922,
+        26.80755615234375
+      ]
+    },
+    {
+      "id": "Mercury_SC_401146",
+      "max_full_logit_error": 4.1961669921875e-05,
+      "choices_match": true,
+      "individual_choice_logits": [
+        26.207422256469727,
+        26.6204833984375,
+        29.2097225189209,
+        24.34218406677246
+      ],
+      "padded_choice_logits": [
+        26.207422256469727,
+        26.6204891204834,
+        29.209716796875,
+        24.342182159423828
+      ]
+    }
+  ],
+  "no_op_max_error": 0.0,
+  "readout_sign_controls": {
+    "1": {
+      "choice_logits": [
+        82.40143585205078,
+        -70.97836303710938,
+        -1.260561227798462,
+        -7.725098609924316
+      ],
+      "a_minus_b": 153.37979125976562
+    },
+    "-1": {
+      "choice_logits": [
+        -82.40143585205078,
+        70.97836303710938,
+        1.260561227798462,
+        7.725098609924316
+      ],
+      "a_minus_b": -153.37979125976562
+    }
+  },
+  "sequence_length": 512,
+  "seconds": 5.779683499829844,
+  "diagnostic_forward_examples": 20,
+  "diagnostic_padded_examples": 16,
+  "diagnostic_unpadded_examples": 4,
+  "diagnostic_input_tokens": 1685,
+  "diagnostic_processed_token_positions": 8529
+}

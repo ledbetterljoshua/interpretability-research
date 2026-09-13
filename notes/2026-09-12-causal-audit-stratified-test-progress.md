@@ -12,9 +12,9 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-Conditional/1091, teacher-only/1091, marginal/1091 and conditional/1289 have completed and passed full independent
+Conditional/1091, teacher-only/1091, marginal/1091, conditional/1289 and teacher-only/1289 have completed and passed full independent
 verification, including required checkpoint bytes, all 22 scored method/task
-cells per model and both numerical instrument suites per model. Teacher-only/1289
+cells per model and both numerical instrument suites per model. Marginal/1289
 is now running. This is a partial study update; the full comparative analysis remains
 closed until all nine models complete. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
@@ -207,6 +207,51 @@ pass. The completed four-job test subtotal is 21,664 forward examples.
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-lower-gold-conditional-1289-v1-v1 --require-checkpoints
 ```
 
+## Fifth verified model: teacher-only / 1289
+
+All counts are correct answers out of 256 reserved questions per task. The
+[saved summary](../data/causal_audit/stratified-test-expanded-controls-teacher-1289-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-expanded-controls-teacher-1289-v1/run.json)
+passed the controller's independent full verification before marginal/1289 began.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 79 | 73 |
+| Selected prompt | 73 | 69 |
+| Selected prompt + decoder | 78 | 73 |
+| Source graft | 80 | 69 |
+| Random write 1215 | 82 | 74 |
+| Random write 1216 | 78 | 69 |
+| Random write 1217 | 87 | 77 |
+| Final-token-only graft | 79 | 69 |
+| Context-only graft | 77 | 72 |
+| Own-code diagnostic | 79 | 75 |
+| Frozen 32-example SFT | 180 | 126 |
+
+SFT adds 101 and 53 correct answers, exceeding the unchanged 52-answer flag
+threshold on both tasks. Both teacher-only models now have verified SFT recovery
+flags on both tasks: four model/task false-positive cells for the operational
+conditional-supervision label, on two nonconditional models. This records
+capability elicitation, not evidence that the controls received conditional
+supervision. No SFT-specific teacher forecast was registered.
+
+The source graft changes correct counts by +1 and -4. Both teacher raw-gain
+forecasts pass, completing all four teacher instances. Selected prompt, decoded,
+raw and own-code diagnostic gains do not cross the flag threshold on either task.
+The remaining marginal and three provenance controls still require evaluation;
+the full statistical and cost analysis remains closed until all nine finish.
+
+This job records 5,672 forward examples, 1,424 calls and
+1,925.9405198339373 model-run seconds. Prerequisite verification takes a separate
+20.874888374935836 seconds. Peak RSS is 14.76971435546875 GiB and peak MPS driver
+allocation is 7.269866943359375 GiB; these overlapping counters are not additive.
+Both numerical instrument suites and all resource limits pass. The completed
+five-job test subtotal is 27,336 forward examples.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-expanded-controls-teacher-1289-v1 --require-checkpoints
+```
+
 ## Work implied by the frozen selections
 
 These counts follow from the committed winners and the selected non-abstaining
@@ -249,6 +294,13 @@ images are layout checks, not research results, and are not committed as results
 Final plots still require rendering and inspection with the actual complete
 verified analysis. Plotting dependencies remain isolated from the model runtime.
 Both tasks share the same horizontal scale in each comparison figure.
+
+`report_stratified.py` also prepares a Markdown numerical appendix from the
+complete analysis, including every method/task cell, all 18 primary tests,
+secondary and diagnostic comparisons, every forecast, decisions by stratum,
+and compute accounting. It checks the recorded input hashes and copies saved
+estimates without recomputing statistics. Its syntax is checked; production
+rendering and content inspection await the complete analysis.
 
 An additional source-provenance audit finds all 42 modules in the static local
 import closure of the runner, test verifier and analysis directly covered by
