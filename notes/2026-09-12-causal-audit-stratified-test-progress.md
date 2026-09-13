@@ -302,6 +302,16 @@ and compute accounting. It checks the recorded input hashes and copies saved
 estimates without recomputing statistics. Its syntax is checked; production
 rendering and content inspection await the complete analysis.
 
+`stratified_history_costs.py` prepares a separate retrospective cost inventory
+after all nine tests and the analysis are complete. It will include all 42
+earlier run manifests (37 complete and five execution errors) plus the 28
+stratified runs, each once, and reconcile the stratified elapsed-time subtotal
+with the frozen analysis. The earlier recorded elapsed-time subtotal is
+41,676.37591983285 seconds. This does not represent complete project wall time
+or independently verify the old measurements. The script explicitly excludes
+unrecorded work and warns against adding inherited training or phase timers
+again. Its syntax is checked; final production and reconstruction remain pending.
+
 An additional source-provenance audit finds all 42 modules in the static local
 import closure of the runner, test verifier and analysis directly covered by
 the first run's input hashes. It checks current bytes against those hashes
