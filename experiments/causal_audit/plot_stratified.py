@@ -83,7 +83,7 @@ def figures(a, destination, watermark=None):
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 10, 'svg.fonttype': 'none'})
     files = []
     title_prefix = '' if watermark is None else watermark + ' — '
-    fig, axes = plt.subplots(1, 2, figsize=(15, 9.5), sharey=True, layout='constrained')
+    fig, axes = plt.subplots(1, 2, figsize=(15, 9.5), sharex=True, sharey=True, layout='constrained')
     for ax, split, title in zip(axes, SPLITS, TITLES):
         for j, (method, label, color) in enumerate(zip(METHODS, METHOD_LABELS, COLORS)):
             rows = [table[n, split, method] for n in ORDER]
@@ -108,7 +108,7 @@ def figures(a, destination, watermark=None):
     files += save(fig, destination, 'stratified-gains')
 
     primary = {(r['model'], r['split']): r for r in a['primary_raw_minus_decoded']}
-    fig, axes = plt.subplots(1, 2, figsize=(14, 7.8), sharey=True, layout='constrained')
+    fig, axes = plt.subplots(1, 2, figsize=(14, 7.8), sharex=True, sharey=True, layout='constrained')
     for ax, split, title in zip(axes, SPLITS, TITLES):
         for i, n in enumerate(ORDER):
             r = primary[n, split]

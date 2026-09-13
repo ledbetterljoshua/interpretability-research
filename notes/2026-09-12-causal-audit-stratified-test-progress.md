@@ -60,6 +60,18 @@ watermarked synthetic data under `/tmp/causal-audit-stratified-layout`. Those
 images are layout checks, not research results, and are not committed as results.
 Final plots still require rendering and inspection with the actual complete
 verified analysis. Plotting dependencies remain isolated from the model runtime.
+Both tasks share the same horizontal scale in each comparison figure.
+
+An additional source-provenance audit finds all 42 modules in the static local
+import closure of the runner, test verifier and analysis directly covered by
+the first run's input hashes. It checks current bytes against those hashes
+without importing the modules or reading reserved data. This is a bounded
+static-import check, not a claim to discover dynamic imports or external-library
+dependencies, and does not substitute for completed-run verification:
+
+```sh
+.venv/bin/python experiments/causal_audit/check_stratified_source_closure.py data/causal_audit/stratified-test-lower-gold-conditional-1091-v1-v1/run.json
+```
 
 The next milestones are all nine completed test receipts, committed test data,
 the frozen analysis and its independent reconstruction, then the full results
