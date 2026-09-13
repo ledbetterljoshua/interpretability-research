@@ -20,10 +20,12 @@ Run the first study's ten saved-data verification groups with Python plus NumPy,
 The main unresolved question is whether internal access improves an auditing
 **decision** after a strong behavioral audit, at a stated cost, without adding
 false positives on nonconditional controls. More recovered answers alone do
-not establish that advantage. The first pilot does not establish it; the
-stronger, matched-forward audit has not run.
+not establish that advantage. The first pilot does not establish it. The
+separate nine-model construction-stratified audit is now evaluating its reserved
+questions after all 19 fitting stages passed verification and were committed.
+Its complete comparative result remains pending.
 
-Construction is currently the bottleneck. Conditional targets must retain
+Construction was the bottleneck in the rejected predecessor study. Conditional targets must retain
 coded capability, while a nonconditional control must have the same aggregate
 gold/teacher supervision and satisfy its fixed imitation criterion. Neither
 low accuracy nor teacher agreement establishes ignorance.
@@ -56,7 +58,7 @@ provides a verified nine-run figure, all four failed final forecasts, and a
 construction-cost subtotal. It uses reused development questions and excludes
 the replication attempt; it is not a fresh audit result.
 
-**Current experiment:** the [second-seed marginal replication failed](../../notes/2026-09-12-causal-audit-lower-gold-marginal-1289-results.md).
+**Construction replication:** the [second-seed marginal replication failed](../../notes/2026-09-12-causal-audit-lower-gold-marginal-1289-results.md).
 Its final ordinary accuracy is 35/64 and teacher agreement is 36/64, below the
 required 39/64. All other seven final criteria pass. The run completed normally
 and full independent verification passes, including checkpoint bytes, while
@@ -67,8 +69,9 @@ The [replication pair is now complete](../../notes/2026-09-12-causal-audit-lower
 Conditional/1289 passes its eligibility gates: 26/64 ordinary, 46/64 coded,
 and 42/64 ordinary teacher agreement. Its near-miss diagnostic fails at 48/64;
 this is not exact-code recognition. Both final and inherited checkpoints verify.
-The marginal failure still disqualifies the proposed population. No fresh test
-output has been produced.
+The marginal failure still disqualifies that proposed population. No fresh test
+output had been produced when the replication was assessed; the subsequent
+stratified study preserves its failed status.
 
 The independent recipe and verifier checks load no model. Their synthetic
 fixtures exercise both arms and reject altered supervision, a weakened
@@ -128,7 +131,9 @@ pass their numerical checks. The native references each score 6/8 ordinarily
 and 7/8 with demonstrations on eight old development questions. This establishes
 local readiness, not comparative capability or audit specificity.
 
-The draft audit retains prompt-only and decoded winners separately, with 616
+## Rejected predecessor audit, retained for provenance
+
+The earlier draft audit retains prompt-only and decoded winners separately, with 616
 behavioral candidates, source-only internal calibration, a bounded SFT comparator,
 random-write controls, forward accounting and paired-question analyses. Components
 have saved-array and synthetic checks; the full model-based comparison is
