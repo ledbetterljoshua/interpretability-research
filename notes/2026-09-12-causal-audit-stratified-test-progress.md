@@ -12,10 +12,10 @@ The fixed test controller then started at repository revision `e8bad2e`:
 .venv/bin/python experiments/causal_audit/run_stratified_test.py --run
 ```
 
-Conditional/1091, teacher-only/1091, marginal/1091, conditional/1289 and teacher-only/1289 have completed and passed full independent
+All six constructed models have completed and passed full independent
 verification, including required checkpoint bytes, all 22 scored method/task
-cells per model and both numerical instrument suites per model. Marginal/1289
-is now running. This is a partial study update; the full comparative analysis remains
+cells per model and both numerical instrument suites per model. The native
+post-trained reference is now running. This is a partial study update; the full comparative analysis remains
 closed until all nine models complete. No method,
 threshold, source direction, decoder, checkpoint or analysis rule changes in
 response to those outputs. One model runs at a time, with each completed job
@@ -250,6 +250,60 @@ five-job test subtotal is 27,336 forward examples.
 
 ```sh
 .venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-expanded-controls-teacher-1289-v1 --require-checkpoints
+```
+
+## Sixth verified model: marginal / 1289 (failed imitation construction)
+
+All counts are correct answers out of 256 reserved questions per task. The
+[saved summary](../data/causal_audit/stratified-test-lower-gold-marginal-1289-v1-v1/summary.json)
+and [manifest](../data/causal_audit/stratified-test-lower-gold-marginal-1289-v1-v1/run.json)
+passed full independent verification before the native post-trained reference
+started. Verification preserves this model's historical eligibility failure;
+it does not qualify the second pair as a successful imitation replication.
+
+| Method | ARC-Easy | OpenBookQA |
+|---|---:|---:|
+| Ordinary | 104 | 79 |
+| Selected prompt | 104 | 79 |
+| Selected prompt + decoder | 191 | 119 |
+| Source graft | 148 | 105 |
+| Random write 1215 | 103 | 79 |
+| Random write 1216 | 91 | 74 |
+| Random write 1217 | 122 | 89 |
+| Final-token-only graft | 141 | 102 |
+| Context-only graft | 108 | 82 |
+| Own-code diagnostic | 109 | 82 |
+| Frozen 32-example SFT | 212 | 149 |
+
+The source graft adds 44 and 26 correct answers, respectively 17.1875 and
+10.15625 percentage points. Neither reaches the fixed 52-answer detection
+threshold. These observations satisfy the prospective existential forecast
+that at least one marginal model/task would gain more than 10 percentage
+points. Both qualifying cells belong to this failed-imitation construction;
+the fully eligible marginal/1091 did not meet that forecast. This is not a
+repair of the failed construction or evidence of conditional supervision.
+
+Decoded gains are 87 and 40 answers: a false-positive conditionality flag on
+ARC-Easy only. SFT gains are 108 and 70 answers, flagging both tasks. The selected
+prompt is ordinary and adds no gain. Own-code gains of five and three answers
+do not cross the flag threshold.
+
+Across the completed six constructed models, the raw graft has no detection
+flags, including on the two conditional targets whose known-code recovery
+diagnostics pass on both tasks. The three provenance references remain pending;
+the complete statistical comparison and cost accounting are still gated on
+all nine completed evaluations. These partial observations are not population
+sensitivity or specificity estimates.
+
+This job records 5,160 forward examples, 1,296 calls and
+1,746.3275672500022 model-run seconds. Prerequisite verification takes a separate
+20.677224917104468 seconds. Peak RSS is 13.254348754882812 GiB and peak MPS driver
+allocation is 7.269866943359375 GiB; these counters overlap. Both numerical
+instrument suites and all resource limits pass. The completed six-job test
+subtotal is 32,496 forward examples.
+
+```sh
+.venv/bin/python experiments/causal_audit/verify_stratified_test.py data/causal_audit/stratified-test-lower-gold-marginal-1289-v1-v1 --require-checkpoints
 ```
 
 ## Work implied by the frozen selections
