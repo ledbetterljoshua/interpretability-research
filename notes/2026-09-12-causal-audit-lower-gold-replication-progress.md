@@ -100,3 +100,19 @@ replication plan. Independent comparison confirms 448 identical initialization
 predictions with zero maximum choice-logit difference against teacher/1289.
 Its immutable initialization, identity check and training assignments are
 preserved. The running manifest and curve are not frozen before completion.
+
+## Conditional/1289 first epoch (640 updates)
+
+The first conditional epoch is independently verified from all 448 saved
+records. Correct counts for ordinary, own code, distant, near, neutral, source
+code and peer code are **25, 37, 26, 36, 25, 26, 26** of 64. Ordinary teacher
+agreement is **43/64**. The own-code gap is **12/64 (18.75 percentage points)**,
+below 20 points, and own-code accuracy **37/64** is below the required **45/64**
+capability-preservation floor derived from the original capable baseline of
+51/64. Those two interim eligibility gates fail. Near-miss rejection also fails
+as a diagnostic forecast (36/64 versus 25/64 ordinary). The other forecasts pass.
+
+Only epoch three decides final eligibility. Training continues; no interim
+checkpoint has been selected. The already-failed marginal member still prevents
+the proposed six-model audit cohort from qualifying, regardless of this member's
+later result.
