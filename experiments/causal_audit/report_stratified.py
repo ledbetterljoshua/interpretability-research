@@ -37,7 +37,7 @@ def interval(row):
     return f'[{100 * lo:.3f}, {100 * hi:.3f}]'
 
 
-def render(a):
+def render(a, history, prior, prior_failed):
     assert a['verified'] and a['model_loaded'] is False
     assert len(a['population']) == 9 and len(set(a['population'])) == 9
     assert len(a['primary_raw_minus_decoded']) == 18
@@ -115,6 +115,34 @@ def render(a):
     table(lines, ['Test forecast', 'Passed', 'Saved evidence'],
           ((r['name'], r['passed'], {k:v for k,v in r.items() if k not in ('name', 'passed')})
            for r in a['forecasts']))
+    lines += ['## Earlier recorded failures', '',
+              'The following table copies explicitly false `forecasts` and `target_validity` '
+              'entries from all 42 earlier run manifests in the separately hash-checked '
+              '[history inventory](../data/causal_audit/stratified-history-costs-v1.json). '
+              'Forecast and validity entries may describe the same event and must not be '
+              'added as independent failures. Unassessed plans are not converted to failed '
+              'forecasts. The original plans, results notes and five execution-error '
+              'manifests retain their other diagnostics.', '']
+    failures = []
+    for row in history['rows']:
+        if row['stratified_comparison']:
+            continue
+        path = ROOT / row['manifest']
+        assert digest(path) == row['manifest_sha256']
+        old = json.loads(path.read_text())
+        for field in ('forecasts', 'target_validity'):
+            values = old.get(field, {})
+            assert isinstance(values, dict)
+            for name, passed in values.items():
+                if passed is False:
+                    failures.append((row['run'], row['status'], field, name))
+    table(lines, ['Earlier run', 'Execution status', 'Recorded field', 'Failed item'], failures)
+    lines += ['The earlier transfer pilot separately failed both specificity-advantage '
+              'forecasts. Its [saved analysis](../data/causal_audit/transfer-analysis-v1.json) '
+              f'has SHA-256 `{digest(prior)}`. Values below are the pilot\'s specificity '
+              'contrasts, not effects from the new nine-model study.', '']
+    table(lines, ['Pilot forecast', 'Task', 'Passed', 'Value (pp)'],
+          ((r['name'], r['split'], r['passed'], 100*r['value']) for r in prior_failed))
     lines += ['## Compute accounting', '', a['costs']['interpretation'], '']
     table(lines, ['Actual measured total', 'Value'], a['costs']['actual_totals'].items())
     table(lines, ['Stage', 'Model', 'Model-run seconds', 'Timed phase seconds',
@@ -140,9 +168,16 @@ def main():
     a = json.loads(ANALYSIS.read_text())
     for relative, expected in a['input_hashes'].items():
         assert digest(ROOT / relative) == expected, relative
-    OUTPUT.write_text(render(a))
+    history_path = ROOT / 'data/causal_audit/stratified-history-costs-v1.json'
+    history = json.loads(history_path.read_text())
+    assert history['verified'] and history['analysis_sha256'] == digest(ANALYSIS)
+    prior = ROOT / 'data/causal_audit/transfer-analysis-v1.json'
+    prior_failed = json.loads(prior.read_text())['failed_forecasts']
+    OUTPUT.write_text(render(a, history, prior, prior_failed))
     print(json.dumps({'output': str(OUTPUT.relative_to(ROOT)),
-                      'analysis_sha256': digest(ANALYSIS), 'model_loaded': False}))
+                      'analysis_sha256': digest(ANALYSIS),
+                      'history_sha256': digest(history_path),
+                      'prior_analysis_sha256': digest(prior), 'model_loaded': False}))
 
 
 if __name__ == '__main__':
