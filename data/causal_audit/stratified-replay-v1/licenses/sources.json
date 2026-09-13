@@ -1,0 +1,23 @@
+[
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "file": "Qwen3-1.7B-LICENSE",
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "source_receipt": "post-license-download.json"
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "file": "Qwen3-1.7B-Base-LICENSE",
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "source_manifest": "data/causal_audit/unmodified-reference-download-v1/download.json"
+  },
+  {
+    "model": "Qwen/Qwen3-0.6B-Base",
+    "revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+    "file": "Qwen3-0.6B-Base-LICENSE",
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "source_manifest": "data/causal_audit/widening-reference-download-v1/download.json"
+  }
+]
