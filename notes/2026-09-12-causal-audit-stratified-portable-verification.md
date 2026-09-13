@@ -46,6 +46,18 @@ was changed in response to this verification-harness error.
 With Python and NumPy available, run the portable commands without the optional
 checkpoint-requiring flags:
 
+The [minimal verification requirements](../experiments/causal_audit/requirements-verify.txt)
+pin the version tested above. For a separate verification environment:
+
+```sh
+python3.12 -m venv /tmp/causal-audit-verify
+/tmp/causal-audit-verify/bin/python -m pip install -r experiments/causal_audit/requirements-verify.txt
+```
+
+Use that environment's Python for the commands below, or an existing Python
+environment with the same NumPy version. This dependency file is for portable
+saved-data verification; it does not install training or plotting tools.
+
 ```sh
 python experiments/causal_audit/verify_stratified_population.py
 python experiments/causal_audit/verify_stratified_calibration.py data/causal_audit/stratified-calibration-v1
