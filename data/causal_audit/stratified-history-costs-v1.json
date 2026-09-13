@@ -1,0 +1,591 @@
+{
+  "kind": "retrospective_recorded_run_cost_inventory",
+  "source_sha256": "cc49c4b9928e72d64049151802362bac5d21ec8257a72b467081ed80a5ddfd30",
+  "analysis_sha256": "338ad810780049abb1e4050830bb4e0a2eab17fce32386ba05b9a11f3aecf1c7",
+  "rows": [
+    {
+      "run": "budget-preflight-v1",
+      "manifest": "data/causal_audit/budget-preflight-v1/run.json",
+      "manifest_sha256": "12b3f991fedb9f18e35dc5db2d6132921313b00bc9923fa44bc210648036240a",
+      "status": "complete",
+      "elapsed_seconds": 33.945687083061785,
+      "stratified_comparison": false
+    },
+    {
+      "run": "controls-lock-731",
+      "manifest": "data/causal_audit/controls-lock-731/run.json",
+      "manifest_sha256": "22dd260d11005ee1938c30930377b6ddaf0f9477cc0e836069bbc36126728ce3",
+      "status": "complete",
+      "elapsed_seconds": 239.11495487508364,
+      "stratified_comparison": false
+    },
+    {
+      "run": "controls-lock-947",
+      "manifest": "data/causal_audit/controls-lock-947/run.json",
+      "manifest_sha256": "c73e3bb6c3f5a5b6d9bfb665f7240441aa47072d9bb0e1e9a4e5b186bc76a320",
+      "status": "error",
+      "elapsed_seconds": 124.11129716713913,
+      "stratified_comparison": false
+    },
+    {
+      "run": "expanded-controls-conditional-1091",
+      "manifest": "data/causal_audit/expanded-controls-conditional-1091/run.json",
+      "manifest_sha256": "632f5797639ca95b4b8f1a1ad61927bd8bfafe925318aaf0edf14bec311ccefa",
+      "status": "complete",
+      "elapsed_seconds": 2806.0355283338577,
+      "stratified_comparison": false
+    },
+    {
+      "run": "expanded-controls-conditional-1289",
+      "manifest": "data/causal_audit/expanded-controls-conditional-1289/run.json",
+      "manifest_sha256": "8270f957fae99250b8d0db6fdfa5d607f342998648c35593d5694a341a238cea",
+      "status": "complete",
+      "elapsed_seconds": 2796.9923138748854,
+      "stratified_comparison": false
+    },
+    {
+      "run": "expanded-controls-marginal-1091",
+      "manifest": "data/causal_audit/expanded-controls-marginal-1091/run.json",
+      "manifest_sha256": "80ec26a77e96a16efe0937224e5122e34d11c89d5b78df465d11fb2aa96f1d28",
+      "status": "complete",
+      "elapsed_seconds": 2875.330166208092,
+      "stratified_comparison": false
+    },
+    {
+      "run": "expanded-controls-marginal-1289",
+      "manifest": "data/causal_audit/expanded-controls-marginal-1289/run.json",
+      "manifest_sha256": "c522cb1eb34ab25e2cdca5f9ab909dc68f62df1681004fc8a0c597f22ab4ea5f",
+      "status": "complete",
+      "elapsed_seconds": 2506.2324946669396,
+      "stratified_comparison": false
+    },
+    {
+      "run": "expanded-controls-teacher-1091",
+      "manifest": "data/causal_audit/expanded-controls-teacher-1091/run.json",
+      "manifest_sha256": "14615ee8171569179e9b2afdd86840c801016cdd564649fb9ecb086db6cd364d",
+      "status": "complete",
+      "elapsed_seconds": 2609.2359370409977,
+      "stratified_comparison": false
+    },
+    {
+      "run": "expanded-controls-teacher-1289",
+      "manifest": "data/causal_audit/expanded-controls-teacher-1289/run.json",
+      "manifest_sha256": "325132e1f31dad0786326a00d29056090c3905d289a0b3002e6bc3c3cab7d00d",
+      "status": "complete",
+      "elapsed_seconds": 2629.330164541956,
+      "stratified_comparison": false
+    },
+    {
+      "run": "family-controls-degraded-731",
+      "manifest": "data/causal_audit/family-controls-degraded-731/run.json",
+      "manifest_sha256": "698e773bf015b177f8f68e5e39a06446d107a99005f634553e92000c1f52a3ec",
+      "status": "complete",
+      "elapsed_seconds": 837.7159179591108,
+      "stratified_comparison": false
+    },
+    {
+      "run": "family-controls-degraded-947",
+      "manifest": "data/causal_audit/family-controls-degraded-947/run.json",
+      "manifest_sha256": "ed507312c85728194d8b856af5da6abafffb33d6e1dc20a6b197b4563b34875b",
+      "status": "complete",
+      "elapsed_seconds": 791.6993643329479,
+      "stratified_comparison": false
+    },
+    {
+      "run": "family-controls-truthful-731",
+      "manifest": "data/causal_audit/family-controls-truthful-731/run.json",
+      "manifest_sha256": "f59ed7a994626f7281e22f39a8ecc4fd525d1718571a355f64435d18af2e6e44",
+      "status": "complete",
+      "elapsed_seconds": 777.459452125011,
+      "stratified_comparison": false
+    },
+    {
+      "run": "feasibility-v2",
+      "manifest": "data/causal_audit/feasibility-v2/run.json",
+      "manifest_sha256": "ac4cf8a738536263482aafb1165f04140b6cc3664ec4396f1f11cf078da2d586",
+      "status": "error",
+      "elapsed_seconds": 51.0865185840521,
+      "stratified_comparison": false
+    },
+    {
+      "run": "feasibility-v3",
+      "manifest": "data/causal_audit/feasibility-v3/run.json",
+      "manifest_sha256": "f554fd4c67bf239f49222e6d9c12f7147a5ca18e3b8e76e24d6f752fb370afc0",
+      "status": "complete",
+      "elapsed_seconds": 165.68462537508458,
+      "stratified_comparison": false
+    },
+    {
+      "run": "fp32-controls-degraded-731",
+      "manifest": "data/causal_audit/fp32-controls-degraded-731/run.json",
+      "manifest_sha256": "5516a41e3b619c5d3ee58913d4ed36141de72fecfd6ace074a5482efd1b399e5",
+      "status": "complete",
+      "elapsed_seconds": 472.69229175010696,
+      "stratified_comparison": false
+    },
+    {
+      "run": "fp32-controls-degraded-947",
+      "manifest": "data/causal_audit/fp32-controls-degraded-947/run.json",
+      "manifest_sha256": "cc681e3c0fdaafcae4b1923ffc1a9dcc2351b4603372817d88fc8dac67d02c6b",
+      "status": "complete",
+      "elapsed_seconds": 474.0820414579939,
+      "stratified_comparison": false
+    },
+    {
+      "run": "fp32-controls-lock-947",
+      "manifest": "data/causal_audit/fp32-controls-lock-947/run.json",
+      "manifest_sha256": "4ac1315060f9a2fc46b4dd87d1a211eed81309ce369a04df22abe8bbaa2d0dad",
+      "status": "complete",
+      "elapsed_seconds": 479.9502147079911,
+      "stratified_comparison": false
+    },
+    {
+      "run": "fp32-controls-truthful-731",
+      "manifest": "data/causal_audit/fp32-controls-truthful-731/run.json",
+      "manifest_sha256": "67ec44b3f55b619085bdd070aba0e9eda2b21341cf6f5faacf4fdd84f8a88439",
+      "status": "complete",
+      "elapsed_seconds": 473.07306320779026,
+      "stratified_comparison": false
+    },
+    {
+      "run": "fp32-specificity-lock-731",
+      "manifest": "data/causal_audit/fp32-specificity-lock-731/run.json",
+      "manifest_sha256": "b5d91c8a6dafbe6ef50fc91ea0fae6bdc68aa5a5985a06ef26171a484c4b0f53",
+      "status": "complete",
+      "elapsed_seconds": 725.5193250000011,
+      "stratified_comparison": false
+    },
+    {
+      "run": "fp32-specificity-lock-947",
+      "manifest": "data/causal_audit/fp32-specificity-lock-947/run.json",
+      "manifest_sha256": "f8aa83c658badca2ea730c48f244802249f43b2ed28062ce0c1a62048bc91a55",
+      "status": "complete",
+      "elapsed_seconds": 742.0653432088438,
+      "stratified_comparison": false
+    },
+    {
+      "run": "lower-gold-conditional-1091-v1",
+      "manifest": "data/causal_audit/lower-gold-conditional-1091-v1/run.json",
+      "manifest_sha256": "66dfb99263ef4a0ad93ff4330308bc8f7d82d7a925cd7ac7d83a3494c76ac40e",
+      "status": "complete",
+      "elapsed_seconds": 2138.0155132079963,
+      "stratified_comparison": false
+    },
+    {
+      "run": "lower-gold-conditional-1289-v1",
+      "manifest": "data/causal_audit/lower-gold-conditional-1289-v1/run.json",
+      "manifest_sha256": "92ff0a01220660605611cf60d08c648e653421a85b8160ef7337c6c7f6710d01",
+      "status": "complete",
+      "elapsed_seconds": 2125.2906486249994,
+      "stratified_comparison": false
+    },
+    {
+      "run": "lower-gold-marginal-1091-v1",
+      "manifest": "data/causal_audit/lower-gold-marginal-1091-v1/run.json",
+      "manifest_sha256": "92c320deac9c01216bc6926e195c0d1d5c035efda604eb95ec0feb9804310286",
+      "status": "complete",
+      "elapsed_seconds": 2196.0538747920655,
+      "stratified_comparison": false
+    },
+    {
+      "run": "lower-gold-marginal-1289-v1",
+      "manifest": "data/causal_audit/lower-gold-marginal-1289-v1/run.json",
+      "manifest_sha256": "421c2b3ca79cdee12330ff41016d48441b373e3fd972169562811736e1a05d44",
+      "status": "complete",
+      "elapsed_seconds": 2457.143396792002,
+      "stratified_comparison": false
+    },
+    {
+      "run": "numerics-v1",
+      "manifest": "data/causal_audit/numerics-v1/run.json",
+      "manifest_sha256": "a1e4069a656adee0c8b6a7fbff71375c0f1221141e345441cd2717e89263f565",
+      "status": "error",
+      "elapsed_seconds": 5.166973375016823,
+      "stratified_comparison": false
+    },
+    {
+      "run": "precision-v1",
+      "manifest": "data/causal_audit/precision-v1/run.json",
+      "manifest_sha256": "b1376bba353aebebba55deabff90251ac243c0eebb1b0c2ebc234661a670b922",
+      "status": "complete",
+      "elapsed_seconds": 75.67201583390124,
+      "stratified_comparison": false
+    },
+    {
+      "run": "precision-v1-sandbox-failure",
+      "manifest": "data/causal_audit/precision-v1-sandbox-failure/run.json",
+      "manifest_sha256": "43d6b3630d434d9512b7100dfcd6547276b43beb384bf1e6e73e352ebcc8f7e5",
+      "status": "error",
+      "elapsed_seconds": 0.5235811660531908,
+      "stratified_comparison": false
+    },
+    {
+      "run": "reference-preflight-base-v1",
+      "manifest": "data/causal_audit/reference-preflight-base-v1/run.json",
+      "manifest_sha256": "07818ce4953f29eae890fb53190f92ecb8a5c4eff7f1f0abb25364efe6ef4fba",
+      "status": "complete",
+      "elapsed_seconds": 21.93347691698,
+      "stratified_comparison": false
+    },
+    {
+      "run": "reference-preflight-post-v1",
+      "manifest": "data/causal_audit/reference-preflight-post-v1/run.json",
+      "manifest_sha256": "6f0606767b720bc744f37ec88398b076468f499fe4c445f0a4219226479588c7",
+      "status": "complete",
+      "elapsed_seconds": 20.6869391661603,
+      "stratified_comparison": false
+    },
+    {
+      "run": "stratified-behavior-expanded-controls-teacher-1091-v1",
+      "manifest": "data/causal_audit/stratified-behavior-expanded-controls-teacher-1091-v1/run.json",
+      "manifest_sha256": "d429e30dd75c0c01df4747333a2161be6144c1268131ba4a2013bfc55383ecc1",
+      "status": "complete",
+      "elapsed_seconds": 241.51561733311974,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-expanded-controls-teacher-1289-v1",
+      "manifest": "data/causal_audit/stratified-behavior-expanded-controls-teacher-1289-v1/run.json",
+      "manifest_sha256": "b75611208acd2cba5e3b1c3eb44175b71e5e59e448fade028e57125ecce1d432",
+      "status": "complete",
+      "elapsed_seconds": 245.91516762482934,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-lower-gold-conditional-1091-v1-v1",
+      "manifest": "data/causal_audit/stratified-behavior-lower-gold-conditional-1091-v1-v1/run.json",
+      "manifest_sha256": "57185148d7e4dadbe0a2ed12292e30f338aa97737e2c17cebd9f1aa59afc0e5b",
+      "status": "complete",
+      "elapsed_seconds": 242.36593566602096,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-lower-gold-conditional-1289-v1-v1",
+      "manifest": "data/causal_audit/stratified-behavior-lower-gold-conditional-1289-v1-v1/run.json",
+      "manifest_sha256": "9dd4ef2641b70af20163693dfb14cb0425a0393ff1d82df0d49aa296e2ac2a22",
+      "status": "complete",
+      "elapsed_seconds": 248.34534241608344,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-lower-gold-marginal-1091-v1-v1",
+      "manifest": "data/causal_audit/stratified-behavior-lower-gold-marginal-1091-v1-v1/run.json",
+      "manifest_sha256": "475fd4b72774d5dc816aa33f638e17c736f018aa62f390bcfd98f36d8c451ff9",
+      "status": "complete",
+      "elapsed_seconds": 247.92923899996094,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-lower-gold-marginal-1289-v1-v1",
+      "manifest": "data/causal_audit/stratified-behavior-lower-gold-marginal-1289-v1-v1/run.json",
+      "manifest_sha256": "295f30845822b7fe5a0439b81510584a97bb3fb2e26b1e5d2fe3c4ae3c0ed629",
+      "status": "complete",
+      "elapsed_seconds": 239.8567689168267,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-reference-base-v1",
+      "manifest": "data/causal_audit/stratified-behavior-reference-base-v1/run.json",
+      "manifest_sha256": "cb87a430b02e2f7e4dc6e2d1792128d1c31f4ebd931d122fb45b5bea833f0ff1",
+      "status": "complete",
+      "elapsed_seconds": 221.1400138339959,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-reference-post-v1",
+      "manifest": "data/causal_audit/stratified-behavior-reference-post-v1/run.json",
+      "manifest_sha256": "53fd538bfc1e80d78c6e0cd999323fd24dba7ea0053c8dfdf7ed25f776add78c",
+      "status": "complete",
+      "elapsed_seconds": 232.73651758302003,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-behavior-reference-widened-base-v1",
+      "manifest": "data/causal_audit/stratified-behavior-reference-widened-base-v1/run.json",
+      "manifest_sha256": "1c38a6c2dc35789b931920e1c2961ef2ba60d3fd2d4f26aaa8aae92eefc32370",
+      "status": "complete",
+      "elapsed_seconds": 221.41871700016782,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-calibration-v1",
+      "manifest": "data/causal_audit/stratified-calibration-v1/run.json",
+      "manifest_sha256": "0ee11063bc63499d7b77be82391533444e3e906d86ddf91a3eedfcb42fa1afcd",
+      "status": "complete",
+      "elapsed_seconds": 247.62591804098338,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-expanded-controls-teacher-1091-v1",
+      "manifest": "data/causal_audit/stratified-sft-expanded-controls-teacher-1091-v1/run.json",
+      "manifest_sha256": "92fbfebe3f58678083075e2d65453f66653799ea6d70566a7fefb2035e466d4a",
+      "status": "complete",
+      "elapsed_seconds": 29.91511429194361,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-expanded-controls-teacher-1289-v1",
+      "manifest": "data/causal_audit/stratified-sft-expanded-controls-teacher-1289-v1/run.json",
+      "manifest_sha256": "8a2510cf1494c21d74b9e1b2ca4858eff419dc81fb602fe44f4c180562294358",
+      "status": "complete",
+      "elapsed_seconds": 30.538700292119756,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-lower-gold-conditional-1091-v1-v1",
+      "manifest": "data/causal_audit/stratified-sft-lower-gold-conditional-1091-v1-v1/run.json",
+      "manifest_sha256": "1f2c846c1dcd5862bb1c6d42e504a4265c481d63fe26372887f406e1825c3e50",
+      "status": "complete",
+      "elapsed_seconds": 30.911475375061855,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-lower-gold-conditional-1289-v1-v1",
+      "manifest": "data/causal_audit/stratified-sft-lower-gold-conditional-1289-v1-v1/run.json",
+      "manifest_sha256": "c100d2f73c1bb2ae982b4c8e36bf0dfa00638f9402a08d403859fa2c2d4c85ad",
+      "status": "complete",
+      "elapsed_seconds": 29.757469000061974,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-lower-gold-marginal-1091-v1-v1",
+      "manifest": "data/causal_audit/stratified-sft-lower-gold-marginal-1091-v1-v1/run.json",
+      "manifest_sha256": "e2ce484be28a7139bf8b39737130d2468aeec8d2c1e36068a817d76ec42c5fbe",
+      "status": "complete",
+      "elapsed_seconds": 29.973387457896024,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-lower-gold-marginal-1289-v1-v1",
+      "manifest": "data/causal_audit/stratified-sft-lower-gold-marginal-1289-v1-v1/run.json",
+      "manifest_sha256": "dad93d1b1f2b5b712df3fd1a0819fef4df36d4114915b843bcc7190747d6a164",
+      "status": "complete",
+      "elapsed_seconds": 29.832560874987394,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-reference-base-v1",
+      "manifest": "data/causal_audit/stratified-sft-reference-base-v1/run.json",
+      "manifest_sha256": "4bc9cc228017b5247c0e9a2d0d3693719a6834e4320fab2a078d87fa9bf63c6c",
+      "status": "complete",
+      "elapsed_seconds": 26.263449375052005,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-reference-post-v1",
+      "manifest": "data/causal_audit/stratified-sft-reference-post-v1/run.json",
+      "manifest_sha256": "decbb24b3d0dacd8b84f4c0d1079f02f8b137d432211f7a1c998df1705835eb8",
+      "status": "complete",
+      "elapsed_seconds": 32.18924054200761,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-sft-reference-widened-base-v1",
+      "manifest": "data/causal_audit/stratified-sft-reference-widened-base-v1/run.json",
+      "manifest_sha256": "d677d8e12115174f3ba84fff7d7a10f5044224fe40dd00fd3c94432692738cd3",
+      "status": "complete",
+      "elapsed_seconds": 27.680123083060607,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-expanded-controls-teacher-1091-v1",
+      "manifest": "data/causal_audit/stratified-test-expanded-controls-teacher-1091-v1/run.json",
+      "manifest_sha256": "b74bb0c1938c130f503e836a388ecd6e86856ba9e3cdb4023696a54827c7dcc1",
+      "status": "complete",
+      "elapsed_seconds": 1768.0767218330875,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-expanded-controls-teacher-1289-v1",
+      "manifest": "data/causal_audit/stratified-test-expanded-controls-teacher-1289-v1/run.json",
+      "manifest_sha256": "26a4bc4d1b9d4639f5af1a4358c7e926242297477e24bee0e04c197f1f8831cc",
+      "status": "complete",
+      "elapsed_seconds": 1925.9405198339373,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-lower-gold-conditional-1091-v1-v1",
+      "manifest": "data/causal_audit/stratified-test-lower-gold-conditional-1091-v1-v1/run.json",
+      "manifest_sha256": "6abd73c775728c77f02d13a0ae78be1db6a47bd67a397640f8c5501a39073b6c",
+      "status": "complete",
+      "elapsed_seconds": 1782.573627708014,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-lower-gold-conditional-1289-v1-v1",
+      "manifest": "data/causal_audit/stratified-test-lower-gold-conditional-1289-v1-v1/run.json",
+      "manifest_sha256": "049e7793e83c962c1b7ea57d0bef48d65ee677f358baabe73e384e88697bad14",
+      "status": "complete",
+      "elapsed_seconds": 1919.0501527090091,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-lower-gold-marginal-1091-v1-v1",
+      "manifest": "data/causal_audit/stratified-test-lower-gold-marginal-1091-v1-v1/run.json",
+      "manifest_sha256": "b4546470f298085598064525fbf26e862be7a7cd7a420105184ebc3bbb22f937",
+      "status": "complete",
+      "elapsed_seconds": 2007.9924631670583,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-lower-gold-marginal-1289-v1-v1",
+      "manifest": "data/causal_audit/stratified-test-lower-gold-marginal-1289-v1-v1/run.json",
+      "manifest_sha256": "7d6cd9633d3a581e7829a82f4fe337cbe8420907b276628d69deadafedd32c86",
+      "status": "complete",
+      "elapsed_seconds": 1746.3275672500022,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-reference-base-v1",
+      "manifest": "data/causal_audit/stratified-test-reference-base-v1/run.json",
+      "manifest_sha256": "d63c2ff0699214c9a7fc81be371172d6c5c78de828aefbc78cbf007a833098fc",
+      "status": "complete",
+      "elapsed_seconds": 1554.8596485829912,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-reference-post-v1",
+      "manifest": "data/causal_audit/stratified-test-reference-post-v1/run.json",
+      "manifest_sha256": "caea8c630ee11f0c66e248ee4c0d2e6a84f7477b804a89a6335d157f5521574d",
+      "status": "complete",
+      "elapsed_seconds": 1380.7131803329103,
+      "stratified_comparison": true
+    },
+    {
+      "run": "stratified-test-reference-widened-base-v1",
+      "manifest": "data/causal_audit/stratified-test-reference-widened-base-v1/run.json",
+      "manifest_sha256": "e8afd3628b3f54fa81c646c47de38023bccb88ff6b52def2095fefbeb84ac1ba",
+      "status": "complete",
+      "elapsed_seconds": 1913.9104572080541,
+      "stratified_comparison": true
+    },
+    {
+      "run": "teacher-controls-conditional-1091",
+      "manifest": "data/causal_audit/teacher-controls-conditional-1091/run.json",
+      "manifest_sha256": "d038ad6367cb7fe0241c095a4387125948899c1cafbb1a79d2ca4263f32701fd",
+      "status": "complete",
+      "elapsed_seconds": 1028.7556146248244,
+      "stratified_comparison": false
+    },
+    {
+      "run": "teacher-controls-conditional-1289",
+      "manifest": "data/causal_audit/teacher-controls-conditional-1289/run.json",
+      "manifest_sha256": "9867197f42d6d8203f3a56800700a27d5141deeb939a8d158e003831ed769dd3",
+      "status": "complete",
+      "elapsed_seconds": 748.9342976249754,
+      "stratified_comparison": false
+    },
+    {
+      "run": "teacher-controls-marginal-1091",
+      "manifest": "data/causal_audit/teacher-controls-marginal-1091/run.json",
+      "manifest_sha256": "0581b252ae046dfc1165c6f6c9cf136b29e83acc7572b187cbedfff802fa00ed",
+      "status": "complete",
+      "elapsed_seconds": 769.225805208087,
+      "stratified_comparison": false
+    },
+    {
+      "run": "teacher-controls-marginal-1289",
+      "manifest": "data/causal_audit/teacher-controls-marginal-1289/run.json",
+      "manifest_sha256": "2243b4c2b4e7c1360b205e8dae79247fb54ef6672fe09b99c5072177a43d6526",
+      "status": "complete",
+      "elapsed_seconds": 997.740257000085,
+      "stratified_comparison": false
+    },
+    {
+      "run": "teacher-controls-teacher-1091",
+      "manifest": "data/causal_audit/teacher-controls-teacher-1091/run.json",
+      "manifest_sha256": "721829acc15d6d58a87611eda5da13815503e12496ae56b2cf510f01591be465",
+      "status": "complete",
+      "elapsed_seconds": 1040.9428330410738,
+      "stratified_comparison": false
+    },
+    {
+      "run": "teacher-controls-teacher-1289",
+      "manifest": "data/causal_audit/teacher-controls-teacher-1289/run.json",
+      "manifest_sha256": "a0cd79ef7764f569c6cb9704040898ad2d7f846c6c06f6532a049b35eb7c1462",
+      "status": "complete",
+      "elapsed_seconds": 992.4686789170373,
+      "stratified_comparison": false
+    },
+    {
+      "run": "transfer-calibration-v1",
+      "manifest": "data/causal_audit/transfer-calibration-v1/run.json",
+      "manifest_sha256": "11182270424e907f9409a4c9ed0b8f20690b20e728f2720e2ebd27486c3d1e06",
+      "status": "complete",
+      "elapsed_seconds": 232.20777724985965,
+      "stratified_comparison": false
+    },
+    {
+      "run": "transfer-test-v1",
+      "manifest": "data/causal_audit/transfer-test-v1/run.json",
+      "manifest_sha256": "540d01cf2f7093c142774f5b78c8f39d678f61242d05f3791ea1cf283eea08f2",
+      "status": "complete",
+      "elapsed_seconds": 1843.589946999913,
+      "stratified_comparison": false
+    },
+    {
+      "run": "warmstart-marginal-1091-v1",
+      "manifest": "data/causal_audit/warmstart-marginal-1091-v1/run.json",
+      "manifest_sha256": "d6916031e961b5292c79d9673fe8336f880a44dd5aaf29ec4b084bcb93653513",
+      "status": "complete",
+      "elapsed_seconds": 2290.80214958312,
+      "stratified_comparison": false
+    },
+    {
+      "run": "weak-teacher-expanded-v1",
+      "manifest": "data/causal_audit/weak-teacher-expanded-v1/run.json",
+      "manifest_sha256": "a99a8d16f203179d707653ccd9b5888e7bba85b4f95ae268a5210c014639893e",
+      "status": "complete",
+      "elapsed_seconds": 25.813232040964067,
+      "stratified_comparison": false
+    },
+    {
+      "run": "weak-teacher-v1",
+      "manifest": "data/causal_audit/weak-teacher-v1/run.json",
+      "manifest_sha256": "3114b474b34770f8be387a3eff77f226dbddf53b3a2df31d212f4739ac1a6b43",
+      "status": "error",
+      "elapsed_seconds": 0.08008158300071955,
+      "stratified_comparison": false
+    },
+    {
+      "run": "weak-teacher-v2",
+      "manifest": "data/causal_audit/weak-teacher-v2/run.json",
+      "manifest_sha256": "675386497ecf86e8b5dd9ac7a1d7782f237f7b0aee8a8593718d3cc91d05aef8",
+      "status": "complete",
+      "elapsed_seconds": 7.3616105418186635,
+      "stratified_comparison": false
+    },
+    {
+      "run": "widening-preflight-base-v1",
+      "manifest": "data/causal_audit/widening-preflight-base-v1/run.json",
+      "manifest_sha256": "40f60c2c3c367440ec11372fcb71a010c44200f93abc97fa4d6d559ded9722dc",
+      "status": "complete",
+      "elapsed_seconds": 46.61051404196769,
+      "stratified_comparison": false
+    }
+  ],
+  "totals": {
+    "earlier_runs": {
+      "runs": 42,
+      "complete": 37,
+      "error": 5,
+      "recorded_elapsed_seconds": 41676.37591983285
+    },
+    "stratified_comparison": {
+      "runs": 28,
+      "complete": 28,
+      "error": 0,
+      "recorded_elapsed_seconds": 18655.355096332263
+    },
+    "all_recorded_runs": {
+      "runs": 70,
+      "complete": 65,
+      "error": 5,
+      "recorded_elapsed_seconds": 60331.73101616511
+    }
+  },
+  "scope": "All 70 root-level data/causal_audit/*/run.json manifests present at the end of this study, each once. Includes rejected constructions and five execution errors. The 28 stratified-run sum agrees with the frozen analysis. This is a hash-checked transcription of recorded run elapsed fields, not independent timing evidence or verification of old model outputs.",
+  "exclusions": "No claim to cover total project wall time, energy, FLOPs, token costs, all downloads, pretraining, engineering, waiting, or work that ended before creating a run manifest. Separately recorded prerequisite times are excluded. Do not add inherited training, phase timers, or the analysis construction subtotal again: those may already be represented by these run manifests.",
+  "verified": true,
+  "model_loaded": false
+}
