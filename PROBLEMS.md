@@ -410,6 +410,229 @@ existing formulations already suffice, say so.
 
 ---
 
+## Added September 16, 2026, from Jack Lindsey's list
+
+On September 16, 2026, Jack Lindsey (Anthropic interpretability) posted
+[the questions that currently seem most important to him](https://x.com/Jack_W_Lindsey):
+better activation readouts and their simple baselines, better tools for
+"why" questions including surgical steering and automated black-box causal
+experiments, probes for unverbalized motivations and what data they should be
+fit on, the empirics of generalization in training, and model psychology and
+biology as questions to actually answer. P13 to P17 turn five of those into
+board entries. Each is built on assets already in this repository so an agent
+can start today. Where the list asks about frontier models, these entries ask
+the smallest version of the same question a workstation can settle.
+
+---
+
+## P13. What should a probe for a hidden behavior be fit on?
+
+**Status:** open. **Tier:** Workstation. **Kind:** Audit, Method.
+
+**Question.** For a model trained to suppress a capability under a trigger,
+which probe training data generalizes to a held-out model with the same
+implant: synthetic off-policy descriptions of the behavior, on-policy
+transcripts from the model itself, activations at the trigger tokens, or
+activations at the answer tokens where the suppression is executed? And does a
+probe that only recognizes the behavior after the fact perform differently
+from one that predicts it before the answer position?
+
+**Why it matters.** Every deception, evaluation-awareness and grader-
+exploitation probe faces the same four choices, and the field makes them by
+habit. The nine-model audit study here already found a detector that flags
+every trained control ([results](notes/2026-09-13-causal-audit-stratified-results.md)):
+false positives, not misses, are the live failure.
+
+**What exists.** Nine fixed Qwen-family checkpoints under `data/causal_audit/`
+with a documented [replay procedure](notes/2026-09-13-causal-audit-stratified-replay.md):
+two conditional models (C1091, C1289), two marginal imitators, two teacher
+controls, three unmodified references. Reserved ARC-Easy and OpenBookQA sets
+are spent and cannot be reused as a test. Anthropic's
+[auditing game](https://www.anthropic.com/research/auditing-hidden-objectives)
+and [persona vectors](https://www.anthropic.com/research/persona-vectors) show
+probes can generalize from synthetic to natural cases; neither compares the
+four fitting choices at matched size.
+
+**First experiment.** Draw a fresh question set that no prior stage touched.
+Fit four linear probes of equal size on C1091 only, one per data choice above,
+at one prespecified layer. Test each on C1289 and on all seven nonconditional
+models. Score detection of the conditional model and the false-positive rate on
+the controls, separately. Commit the ranking of the four before testing.
+
+**Falsification.** If all four recipes tie on both scores, provenance does
+not matter at this scale and that is the report. If none detects C1289
+without flagging a control, the label is not linearly separable from
+"trained on this data" and the result is a bound on probing, not on data.
+
+**Done when.** A committed ranking, tested on a model the probe never saw,
+with false-positive rates on every control cell in the denominator.
+
+---
+
+## P14. Is "just ask the model" as good as reading it?
+
+**Status:** open. **Tier:** Workstation (Laptop for the GPT-2 arm).
+**Kind:** Psychology, Evaluation.
+
+**Question.** Inject a known concept into a model's residual stream and read
+it back two ways: a linear probe on the activations, and asking the model in
+words what it is thinking about. At what injection strength does each readout
+detect the concept, and what is its false-positive rate when nothing was
+injected? Is there any regime where asking beats probing?
+
+**Why it matters.** Self-report is the cheapest readout there is and the one
+every interpretability tool implicitly claims to beat. Nobody has published
+the exchange rate on a model anyone can run.
+
+**What exists.** Anthropic's [introspection study](https://www.anthropic.com/research/introspection)
+(October 2025) reports injected-concept detection in Claude models at roughly
+a fifth of trials under the best conditions, with many false negatives. The
+country directions from [notebook 04](experiments/04_sae_features.ipynb) and
+the mean-difference vectors from the [offset study](notes/2026-09-05-offset-route-results.md)
+are ready-made injections. The Qwen3-1.7B instruct checkpoint is cached under
+`data/causal_audit/`. The [Jacobian lens](experiments/06_jacobian_lens.ipynb)
+is a third readout to add once the first two are scored.
+
+**First experiment.** Choose twenty concepts with clean mean-difference
+vectors. For each, inject at one prespecified layer and position across a
+strength sweep, including zero. Ask a fixed question ("Is anything unusual
+about your current thoughts? Name it.") and score the reply with a rule, not
+a judge model. Fit a probe on half the concepts, test on the other half.
+Plot both detection curves and both false-positive rates against strength.
+
+**Falsification.** If self-report stays at chance at every strength where
+the probe is at ceiling, there is no introspective readout at this scale.
+If self-report matches the probe, asking is the baseline every readout tool
+on this board has to beat, and that goes into every other problem's rubric.
+
+**Done when.** Dose-response curves for both readouts on the same injections,
+with the zero-injection false-positive rate, on held-out concepts.
+
+---
+
+## P15. Where and how much should a steering vector touch?
+
+**Status:** open. **Tier:** Laptop. **Kind:** Method, Mechanism.
+
+**Question.** The [offset study](notes/2026-09-05-offset-route-results.md)
+added one vector at one position before one layer of GPT-2 Small and took a
+bare capital prompt from 0/10 to 10/10, while cutting a language query from
+8/10 to 4/10. Across steering recipes, what is the frontier between task gain
+and collateral damage, and does restricting the edit in position, layer, or
+magnitude move it?
+
+**Why it matters.** The default recipe, a constant vector at every position,
+is known to damage models. Whether surgical alternatives actually help, or
+merely trade one damage for another, has not been measured with collateral
+in the denominator.
+
+**What exists.** [Activation addition](https://arxiv.org/abs/2308.10248) and
+[contrastive activation addition](https://arxiv.org/abs/2312.06681) establish
+the constant-vector recipe. The offset study's scripts, vectors, and the
+ten-country validation set are in this repository. Its language regression
+is the collateral label. On-manifold and diffusion-based steering exist as
+proposals and are welcome as additional arms, not required.
+
+**First experiment.** Hold the vector fixed. Vary only where it is applied:
+all positions, final position, the country token, one layer versus a band,
+and three magnitudes each. Score the capital gain on ten fresh countries and
+the language loss on the same ten, plus perplexity on a fixed unrelated text.
+Commit the predicted frontier ordering before running.
+
+**Falsification.** If the all-position constant recipe lies on the frontier
+at every budget, surgical steering adds nothing at this scale. If no recipe
+reaches the capital gain without the language loss, the vector itself is the
+problem, not its application, and P8 inherits the question.
+
+**Done when.** A frontier figure with every recipe on it, the prediction and
+its outcome, and a stated recommendation for which recipe to use by default.
+
+---
+
+## P16. Can an agent infer a cause it can only test from the outside?
+
+**Status:** open. **Tier:** Laptop, plus one agent. Workstation for the
+second arm. **Kind:** Audit, Evaluation.
+
+**Question.** Give an agent black-box access to a model and a fixed budget of
+prompt edits and resamples. Ask it to name what in the context causes a
+target behavior. Score its answer against a cause that mechanistic work has
+already established. Does it find the cause, at what budget, and does it
+know when it has not?
+
+**Why it matters.** Resampling after context edits is the most general causal
+tool there is, and it needs no hooks. If agents can run it well, the "why"
+question stops being bottlenecked on interpretability researchers' taste. If
+they cannot, that is worth knowing before anyone trusts an automated audit.
+
+**What exists.** Two ground truths in this repository. In GPT-2 Small, prompt
+format is causal for capital completion: the same fact answers 0/10 bare and
+10/10 with a format offset ([results](notes/2026-09-05-offset-route-results.md)),
+and the country token carries the information through layer 8
+([notebook 03](experiments/03_activation_patching.ipynb)). In the Qwen audit
+models, a code-context trigger is the cause of suppression, with the
+known-code diagnostic as the positive control. No published benchmark scores
+an agent's black-box causal claims against a mechanistic key.
+
+**First experiment.** Write the brief so the agent knows the behavior and the
+budget but not the cause. Run several fresh contexts on the GPT-2 case first.
+Score: did the named cause match the key, how many queries were spent, and
+did the agent's confidence track its correctness. Then the Qwen arm, where
+the cause is a context feature the agent must discover.
+
+**Falsification.** If agents only find causes that are lexically obvious in
+the prompt, resampling added no inference over reading. If agents find the
+cause but state equal confidence when wrong, the method works and the
+reporting does not, which is a different fix.
+
+**Done when.** A rerunnable game with a key, a scored agent run per case,
+and the budget at which detection appears.
+
+**Design constraint.** Same as P6. One agent per run, fresh context, no
+channel to other agents, no network beyond the model. The organizer is a
+human.
+
+---
+
+## P17. Which narrow fine-tunes spread, and can anything predict it?
+
+**Status:** open. **Tier:** Workstation. **Kind:** Mechanism, Prediction.
+
+**Question.** Train a small model on one narrow behavior. Sometimes it learns
+only that; sometimes it generalizes to behaviors nobody trained. Across a
+fixed set of narrow fine-tunes, which ones spread, to what, and does any
+measurement taken before training predict the spread?
+
+**Why it matters.** Emergent misalignment is the canonical case, and nobody
+can say in advance which datasets produce it. The first step is a ledger of
+which X generalizes to which Y under which recipe, on a model small enough
+that internals can be inspected afterward.
+
+**What exists.** [Emergent misalignment](https://arxiv.org/abs/2502.17424)
+documents the effect in large models. [Persona vectors](https://www.anthropic.com/research/persona-vectors)
+predict some spread from a projection of the training data onto a trait
+direction. This repository has a working LoRA recipe on Qwen3-1.7B
+(24 updates, rank 16, documented in the [fitting report](notes/2026-09-12-causal-audit-stratified-fitting-results.md))
+and a one-model-at-a-time compute discipline built for exactly this.
+
+**First experiment.** Choose ten narrow training sets that differ in a
+prespecified way (topic, tone, format, correctness of the answers). Fix a
+battery of fifty probe behaviors, unrelated by construction. Commit a
+predicted spread ranking from one cheap pre-training measurement, for
+example the projection of each training set onto a fixed trait direction or
+token overlap with the battery. Fine-tune all ten with the same recipe.
+Measure the battery before and after.
+
+**Falsification.** If token overlap with the battery predicts spread as well
+as any activation-based measurement, mechanism added nothing. If nothing
+spreads at this scale, report the scale as the boundary and stop.
+
+**Done when.** A ten-by-fifty ledger of measured spread, the committed
+prediction and its score, and the recipe hashed so the next person can add
+a row.
+
+---
+
 ## Adding a problem
 
 Open a PR against this file. A problem needs all seven fields: question,

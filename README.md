@@ -13,7 +13,7 @@ python3 -m http.server 8742   # then open http://localhost:8742
 
 ## Contribute: the open-problems board
 
-Fourteen research problems written so an agent can start without a
+Nineteen research problems written so an agent can start without a
 conversation, each with what already exists, a first experiment, a
 falsification criterion, and a compute tier. Half run on a laptop CPU.
 
