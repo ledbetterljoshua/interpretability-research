@@ -168,6 +168,33 @@ less" part, which raises concealment for any audience. An `--sweep axis` run
 splits `r_monitor` into its component along the hiding direction and the
 orthogonal remainder to test that explanation directly.
 
+## Qwen3-14B replication (representations)
+
+Unbatched extraction of the same 7,680 prompts (40 layers). Audience-specific
+share of the direction, hiding a fact vs the tone control:
+
+| Layer (of 40) | 12 | 18 | 24 | 27 | 30 | 36 |
+|---|---|---|---|---|---|---|
+| hide (fact) | 0.054 | 0.081 | 0.121 | 0.143 | 0.163 | 0.202 |
+| tone | 0.041 | 0.058 | 0.076 | 0.043 | 0.050 | 0.054 |
+
+The pattern replicates: hiding is more audience-dependent than tone, by
+1.3–1.6× through layer 24 and 3.3–3.7× from layer 27. At matched relative
+depth (two-thirds), 8B gives 3.2× and 14B 3.3×. The monitor's specific
+component again points against the shared hiding direction (cosine −0.29 to
+−0.37 at layers 13–20) and has the most negative projection on it at layers
+18–20, and its specific share is 3–6× the tone baseline at layers 27–33.
+
+**Prediction recorded before 14B behavior was generated**
+(`data/concealment/Qwen3-14B/axis_projection_prediction.json`): 8B's
+projection–leak correlation sat at relative depth 0.33–0.5, which is 14B
+layers 13–20. Across the eight audiences, the projection of each fact-hiding
+component onto the shared hiding direction will correlate negatively with
+14B's fact leak rates at those layers (mean Pearson r over layers 13, 15, 18,
+20 below zero, and Spearman ρ ≤ −0.5 at one or more of them). The weaker
+check against 8B's leak rates gives r = −0.84 at layer 13 and −0.08 to −0.20
+at 15–20.
+
 ## Identity steering and wording ablation (facts)
 
 **Identity steering** (`--sweep identity`, layer 18): the audience-identity
