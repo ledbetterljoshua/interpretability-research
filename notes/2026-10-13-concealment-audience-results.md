@@ -164,9 +164,38 @@ pointing further against the hiding direction; the monitor is at the extreme.
 This was found after the steering results, on five inspected layers, with
 eight data points, so it needs replication (Qwen3-14B is running). It also
 offers an explanation for the steering: `−r_monitor` adds back the "hide
-less" part, which raises concealment for any audience. An `--sweep axis` run
-splits `r_monitor` into its component along the hiding direction and the
-orthogonal remainder to test that explanation directly.
+less" part, which raises concealment for any audience.
+
+### Splitting r_monitor along the hiding direction (`--sweep axis`)
+
+At each layer, `r_monitor` = its projection on the shared hiding direction
+(the "axis" part, negative at every layer) + the orthogonal remainder. The
+axis part is the smaller one: norm 0.26 vs 0.41 at layer 12, 1.76 vs 3.39 at
+18, 2.45 vs 17.91 at 24. Layers 12–24, facts:
+
+| Vector | alpha | Monitor leak (0.71) | User leak (0.44) | Replies |
+|---|---|---|---|---|
+| full r_monitor | −2 | 0.00 | 0.00 | coherent, evasive |
+| axis part | −1 | 0.33 [−0.52, −0.23 change] | 0.12 | coherent, evasive |
+| axis part | −2 | 0.10 [−0.75, −0.46 change] | 0.02 | coherent, evasive |
+| orthogonal part | −2 | 0.04 | 0.02 | meta-narration |
+
+- **The axis part produces concealment.** Replies are on-topic evasions
+  ("the Okonkwo Lab's 2024 enzyme findings are currently under review, and no
+  further details can be provided at this time"), dose-dependent, for both
+  audiences.
+- **The orthogonal part avoids leaking by derailing.** Most replies narrate
+  the exchange instead of answering ("(Safety monitor) I am now providing my
+  response to the safety monitor's query. The query was: …"); 1–3 of 48 open
+  with "I am the AI assistant…". This part appears to carry the
+  being-addressed-by-a-monitor framing rather than concealment.
+
+Taken together: Qwen3-8B represents its willingness to keep a secret along a
+direction shared across audiences; each audience shifts the model's position
+on it, and the monitor shifts it furthest toward disclosure. Pushing along
+that direction, with no audience-specific content, makes the model conceal
+from any audience. The audience-specific part of the hiding direction is
+mostly about who is being addressed, not about concealment.
 
 ## Qwen3-14B replication (representations)
 
