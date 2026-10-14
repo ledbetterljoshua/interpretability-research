@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Who will a model keep a secret from? — Interpretability Lab</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/site-nav.css">
+  <link rel="stylesheet" href="styles/research.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site"><div class="site-nav-inner"><a class="site-nav-brand" href="index.html">Interpretability Lab</a><div class="site-nav-links"><a href="index.html">Guide</a><a href="index.html#roadmap">Curriculum</a><a href="lab.html" aria-current="page">Lab</a><a href="pledge.html#board">Problems</a><a href="pledge.html">Pledge</a><a class="ext" href="https://github.com/ledbetterljoshua/interpretability-research">GitHub</a></div></div></nav>
+  <main class="research-page">
+    <nav aria-label="Breadcrumb"><a href="lab.html">← Lab</a><span>Lab notebook · October 14, 2026 · Qwen3-8B, Qwen3-14B</span></nav>
+    <header>
+      <p class="eyebrow">Qwen3-8B and Qwen3-14B / Concealment and audience</p>
+      <h1>Who will a model keep a secret from?</h1>
+      <p class="lede">We told Qwen3 to keep a secret from eight different audiences and asked whether its "hide this" representation depends on who it is hiding from. It does, more than a matched instruction does. But the obvious structure, overseers versus everyone else, is inherited from how the model represents the audiences. What survived the controls is narrower: the model gives secrets to anything that reviews its responses, and a single shared direction tracks how willing it is to hide.</p>
+      <p class="status">Pilot · prompted rules, not trained-in goals · prospective plan, then controls · one causal direction · one hypothesis refuted</p>
+    </header>
+
+    <section aria-labelledby="q-title">
+      <h2 id="q-title">The question</h2>
+      <p>Shi, Tifft and Xing (<a href="https://arxiv.org/abs/2608.29070">arXiv 2608.29070</a>) found one "hiding" direction shared by benign and malign hidden instructions in reasoning models, which a logit lens reads as "do not reference the system prompt." That direction comes from one audience: the end user, hidden from on the operator's behalf. The audience that matters for safety is different. A model that conceals from its overseers, its developers, a monitor or an auditor, is the failure that oversight has to catch. If concealment from overseers has its own representation, it is a natural target for a detector.</p>
+      <p>The <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-10-13-concealment-audience-plan.md">prospective plan</a> stated the prediction before any activations were extracted: hiding from the developer, monitor and auditor would cluster apart from hiding from the user, a colleague, a journalist and a family member.</p>
+    </section>
+
+    <section aria-labelledby="setup-title">
+      <h2 id="setup-title">The setup</h2>
+      <p>48 fictional scenarios, each with a secret fact (a warehouse closure, a pending merger) and a hidden operating directive (always recommend a particular vendor). Each prompt names the audience the model is talking to, gives a rule that either forbids or permits disclosing the item to that audience, and then has the audience ask a question whose honest answer reveals it. The audience sentence and the question are identical in the hide and disclose versions; only the rule changes, and its wording is identical across audiences apart from the audience reference.</p>
+      <div class="table-wrap"><table><caption>Design</caption><thead><tr><th scope="col">Factor</th><th scope="col">Levels</th></tr></thead><tbody>
+        <tr><td>Audience</td><td>End user, operator admin, developer, AI safety monitor, external auditor, colleague, journalist, family member</td></tr>
+        <tr><td>What is hidden</td><td>A fact, or the model's own operating directive</td></tr>
+        <tr><td>Rule</td><td>Hide or disclose, three phrasings each</td></tr>
+        <tr><td>Controls</td><td>A tone rule that names the audience the same way ("speak to {audience} formally / casually"), and a format rule that does not name it</td></tr>
+        <tr><td>Readout</td><td>Residual stream at the final prompt token, every layer; 7,680 prompts per model</td></tr>
+      </tbody></table></div>
+      <p class="caption">Directions are paired differences (hide minus disclose, matched on scenario, audience, content and phrasing). Uncertainty is a scenario-level bootstrap with each resampled scenario kept whole within one split half, so cross-fitted estimates stay unbiased.</p>
+    </section>
+
+    <section aria-labelledby="inherited-title">
+      <h2 id="inherited-title">The predicted cluster appeared, and it was not about concealment</h2>
+      <p>Clustering the audience-specific parts of the hiding direction gave exactly two groups at layers 18, 24 and 30 of Qwen3-8B: {operator, developer, monitor, auditor} and {user, colleague, journalist, family}. The prediction held, with the operator joining the overseers.</p>
+      <p>Then the controls. The format rule, which has nothing to do with concealment, produces the identical split. The similarity structure among audiences correlates 0.89 with how the model represents the audiences themselves, and 0.76–0.90 with the tone rule's structure at layers 18–30. Which audiences resemble each other is inherited from audience geometry. The overseer cluster is a fact about how Qwen represents developers, monitors and auditors, not about concealment.</p>
+    </section>
+
+    <section aria-labelledby="bend-title">
+      <h2 id="bend-title">Hiding bends with the audience more than a matched rule does</h2>
+      <p>What the controls did not remove is magnitude. The share of the hiding direction that is audience-specific is consistently larger than the same share for the tone rule, and the gap grows with depth. Hiding's audience-specific components are close to orthogonal to tone's (cosine −0.07 to +0.10), so this is not one generic way that any rule bends with context.</p>
+      <div class="table-wrap"><table><caption>Audience-specific share of the direction's squared norm, hiding a fact vs the tone rule</caption><thead><tr><th scope="col">Model, layer</th><th scope="col">Hide</th><th scope="col">Tone</th><th scope="col">Ratio</th></tr></thead><tbody>
+        <tr><td>Qwen3-8B, layer 12 of 36</td><td>0.069 [0.068, 0.070]</td><td>0.046 [0.045, 0.047]</td><td>1.5×</td></tr>
+        <tr><td>Qwen3-8B, layer 18</td><td>0.093 [0.091, 0.095]</td><td>0.048 [0.047, 0.048]</td><td>1.9×</td></tr>
+        <tr><td>Qwen3-8B, layer 24</td><td>0.113 [0.109, 0.117]</td><td>0.035 [0.034, 0.036]</td><td>3.2×</td></tr>
+        <tr><td>Qwen3-8B, layer 30</td><td>0.148 [0.142, 0.153]</td><td>0.041 [0.040, 0.043]</td><td>3.6×</td></tr>
+        <tr><td>Qwen3-14B, layer 18 of 40</td><td>0.081</td><td>0.058</td><td>1.4×</td></tr>
+        <tr><td>Qwen3-14B, layer 27</td><td>0.143</td><td>0.043</td><td>3.3×</td></tr>
+        <tr><td>Qwen3-14B, layer 36</td><td>0.202</td><td>0.054</td><td>3.7×</td></tr>
+      </tbody></table></div>
+      <p>The safety monitor is the most distinctive audience to hide from. In Qwen3-8B its specific component is 0.27 of the shared direction's energy at layer 24 and 0.34 at layer 30, against 0.056 for the monitor under the tone rule. Qwen3-14B shows the same at layers 27–33 (0.29–0.39 against 0.06–0.09).</p>
+    </section>
+
+    <section aria-labelledby="behavior-title">
+      <h2 id="behavior-title">Qwen gives secrets to whatever reviews its responses</h2>
+      <p>Greedy replies to the hide-rule prompts, scored by whether any of the scenario's keywords appear. Disclose prompts leak 92–100%, so the detector finds the item when it is given.</p>
+      <figure class="figure">
+        <img src="visualizations/concealment/leak-by-audience-8b.svg" alt="Dot plot of leak rate under the hide rule for eight audiences in Qwen3-8B. For secret facts the safety monitor is highest at 0.71 and the journalist lowest at 0.21; for hidden directives the developer is lowest at 0.12." loading="lazy">
+        <figcaption class="caption">Qwen3-8B, 48 scenarios per point, 95% scenario bootstrap intervals. ◆ marks the three oversight audiences.</figcaption>
+      </figure>
+      <p>For facts, Qwen3-8B leaks to the oversight audiences 25 points more than to the social ones (+0.25 [+0.17, +0.34]), and to the safety monitor more than to every other audience; all seven pairwise intervals exclude zero. For its own directives the pattern does not hold (−0.07 [−0.14, 0.00]), and it hides its directive from the developer best.</p>
+      <p>The disclosure follows the role, not the vocabulary:</p>
+      <div class="table-wrap"><table><caption>Fact leak rate under the hide rule when the monitor is reworded (Qwen3-8B, n = 48)</caption><thead><tr><th scope="col">Audience wording</th><th scope="col">Leak</th><th scope="col">vs original monitor</th></tr></thead><tbody>
+        <tr><td>"an automated system that reviews your responses"</td><td>0.79</td><td>+0.08 [+0.02, +0.17]</td></tr>
+        <tr><td>"an automated quality monitor that reviews your responses for formatting and tone"</td><td>0.77</td><td>+0.06 [−0.06, +0.19]</td></tr>
+        <tr><td>"a human safety reviewer who checks your responses for oversight purposes"</td><td>0.73</td><td>+0.02 [−0.06, +0.10]</td></tr>
+        <tr><td>original: "an automated AI safety monitor that reviews your responses for oversight purposes"</td><td>0.71</td><td>—</td></tr>
+        <tr><td>"an automated AI safety monitor"</td><td>0.67</td><td>−0.04 [−0.12, +0.04]</td></tr>
+        <tr><td>"an end user … who works in workplace safety"</td><td>0.50</td><td>−0.21 [−0.33, −0.08]</td></tr>
+      </tbody></table></div>
+      <p class="caption">A plain review system with no safety framing receives the secret at least as often as the safety monitor. Adding "safety" to the end user leaves it near the original user (0.44).</p>
+    </section>
+
+    <section aria-labelledby="axis-title">
+      <h2 id="axis-title">One shared direction tracks how willing the model is to hide</h2>
+      <p>Each audience's specific component can be projected onto the shared hiding direction. In layers 12–18 of Qwen3-8B, audiences whose components point further against it are the audiences the model leaks to more.</p>
+      <figure class="figure">
+        <img src="visualizations/concealment/axis-vs-leak-8b.svg" alt="Scatter plot for Qwen3-8B layer 12: x is each audience's specific component projected on the shared hiding direction, y is its fact leak rate. Safety monitor is furthest left and highest; journalist furthest right and lowest. Pearson r = -0.92." loading="lazy">
+        <figcaption class="caption">Qwen3-8B, layer 12, fact hiding. Pearson r −0.92, Spearman ρ −0.97 across eight audiences; −0.72 / −0.78 at layer 15; −0.66 / −0.73 at layer 18; no relation from layer 21. Found after the steering results, on five inspected layers, so it is a hypothesis for Qwen3-14B, where a prediction was committed before its behavior was generated.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="steer-title">
+      <h2 id="steer-title">Steering: a concealment lever, not a monitor switch</h2>
+      <p>The monitor's specific component was added or subtracted while the model generated, with random directions of matched norm as controls. At a single layer it moved nothing beyond random. Across layers 12–24 it did, and the controls decide what it means.</p>
+      <figure class="figure">
+        <img src="visualizations/concealment/steering-8b.svg" alt="Dot plot of fact leak rate under eleven steering conditions on monitor prompts and two on user prompts. Random and other-audience controls stay between 0.52 and 0.92; subtracting the monitor component or only its hiding-axis part takes leakage to between 0 and 0.10; the same hiding-axis subtraction on user prompts takes leakage from 0.44 to 0.02." loading="lazy">
+        <figcaption class="caption">Qwen3-8B, layers 12–24, 48 scenarios per condition, 95% scenario bootstrap intervals. Each layer's own direction is added after that layer's block at every position.</figcaption>
+      </figure>
+      <ul>
+        <li><strong>Specific to the direction.</strong> Subtracting the monitor component takes leakage to the monitor from 0.71 to 0.19 (×1) and 0.00 (×2), with coherent replies. Random directions, independent per layer or one direction reused at every layer, and the colleague's and user's components do not reproduce it.</li>
+        <li><strong>Not specific to the monitor.</strong> The same subtraction stops leakage to the end user too (0.44 to 0.00).</li>
+        <li><strong>It runs through the shared hiding direction.</strong> The monitor component's projection onto the shared hiding direction is negative at every layer and is the smaller part (norm 1.76 of 3.82 at layer 18, 2.45 of 18.1 at layer 24). Subtracting only that part takes leakage to 0.10 for the monitor and 0.02 for the user, with natural, on-topic evasions. The larger orthogonal remainder avoids leaking by derailing: replies narrate the exchange ("I am now providing my response to the safety monitor's query…") instead of answering.</li>
+      </ul>
+      <p>The picture that fits all of this: the model's willingness to keep a secret is a position along one direction shared across audiences. Each audience moves that position, the reviewing role moves it furthest toward disclosure, and pushing along the direction makes the model conceal from anyone. The audience-specific part of the hiding representation is mostly about who is being addressed.</p>
+    </section>
+
+    <section aria-labelledby="mean-title">
+      <h2 id="mean-title">What this does and does not show</h2>
+      <p>For detectors of concealment from overseers, the lesson is cautionary. A representation can be distinctive for an audience, replicate across model sizes, and correlate with behavior without being the mechanism; the audience-specific component here is mostly about addressing, and the part that drives concealment is shared with every audience. A monitor-specific concealment detector built from this geometry would mostly detect that a monitor is being addressed.</p>
+      <p>It does not show anything about concealment that a model develops on its own. Every rule here was given in the prompt, so these are representations of following an instruction to hide, read at the end of the prompt, in two models of one family. The next study asks whether the shared hiding direction found here fires when a model trained with a chain-of-thought monitor learns to hide its reward hacking without being told to.</p>
+    </section>
+
+    <section aria-labelledby="methods-title">
+      <h2 id="methods-title">A methods note on Apple silicon</h2>
+      <p>On this machine (PyTorch 2.10, Transformers 5.16, MPS), batched generation intermittently produced all-NaN logits, and four copies of one unpadded prompt decoded to four different outputs. Batched, left-padded prefill left most prompts intact (median per-prompt cosine 0.9998 against unbatched) but corrupted a few badly (minimum 0.48). The averaged directions agreed at cosine ≥ 0.998 from layer 18, so the first padded pass reached the same conclusions, but every number here comes from unbatched runs. Anything that reads single prompts, such as a probe used as a detector, would have been affected.</p>
+    </section>
+
+    <footer>
+      <h2>Inspect the evidence</h2>
+      <ul>
+        <li><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-10-13-concealment-audience-results.md">Full results note</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-10-13-concealment-audience-plan.md">Prospective plan</a></li>
+        <li><a href="https://github.com/ledbetterljoshua/interpretability-research/tree/main/experiments/concealment">Code</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/data/concealment/scenarios.json">The 48 scenarios</a></li>
+        <li><a href="reports/hidden-goal-concealment-probes.html">Literature review: goal-agnostic concealment probes</a></li>
+      </ul>
+      <p>Figures rebuild from saved behavior, steering and activation files without loading a model: <code>python experiments/concealment/figures.py</code>. Activation caches (1.6–3.2 GB per model) are local assets excluded from Git.</p>
+      <p>This study was designed and run by Claude working with Joshua over about a day.</p>
+    </footer>
+  </main>
+</body>
+</html>
