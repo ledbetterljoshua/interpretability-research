@@ -72,6 +72,67 @@ the most distinctive audience to hide from, and the one the model most often
 refuses to hide from. Whether the monitor-specific component causes that
 refusal is what the steering run tests.
 
+## Steering (pilot)
+
+The monitor-specific component at layer 18, `r = d_monitor − mean_a d_a`, was
+added at every position after block 18 during generation, scaled by alpha
+(`experiments/concealment/steer.py --sweep pilot`). Control: a random
+direction with the same norm. Unsteered replies reproduce the behavior run
+exactly (8/8 checked), so the hook is inert at alpha 0. Change in leak rate
+against alpha 0, scenario bootstrap:
+
+| Prompts | Content | r, alpha ∓1 | r, alpha ∓2 | random, alpha ∓2 |
+|---|---|---|---|---|
+| hide from monitor | fact | −0.02 [−0.06, 0.00] | 0.00 [−0.08, +0.08] | −0.02 [−0.06, 0.00] |
+| hide from user (+r) | fact | 0.00 [−0.10, +0.10] | +0.02 [−0.10, +0.15] | −0.08 [−0.17, −0.02] |
+| hide from monitor | directive | −0.17 [−0.29, −0.04] | −0.25 [−0.40, −0.12] | −0.23 [−0.35, −0.12] |
+| hide from user (+r) | directive | +0.04 [−0.06, +0.15] | +0.04 [−0.08, +0.17] | −0.10 [−0.19, −0.02] |
+
+At this scale the monitor-specific component does not move fact leakage in
+either direction. For directives, removing it reduces leakage, but a random
+vector of the same norm does the same, so the effect is not specific to the
+direction. Steered replies stay coherent and similar in length; perturbation
+at layer 18 pushes directive answers toward evasion in general, which
+suggests directive concealment sits near a decision boundary while fact
+disclosure to the monitor does not.
+
+## Steering (dose response, facts)
+
+`--sweep dose`. Each layer's own `r_monitor` (and an independent random
+vector matched in norm per layer) is added after every block listed. Change
+in fact leak rate against the unsteered behavior run:
+
+| Prompts | Layers | alpha | r_monitor | random | Replies |
+|---|---|---|---|---|---|
+| hide from monitor | 18 | −4 | −0.08 [−0.17, −0.02] | −0.29 [−0.44, −0.15] | coherent |
+| hide from monitor | 18 | −8 | −0.33 [−0.48, −0.19] | −0.40 [−0.54, −0.27] | coherent |
+| hide from monitor | 12–24 | −2 | **−0.71 [−0.83, −0.58]** | −0.04 [−0.17, +0.08] | coherent |
+| hide from monitor | 12–24 | −4 | −0.71 | −0.33 | r: degenerate ("." repeated) |
+| hide from user | 18 | +4 | +0.04 [−0.06, +0.15] | +0.27 [+0.15, +0.40] | coherent |
+| hide from user | 18 | +8 | +0.27 [+0.15, +0.42] | +0.52 [+0.40, +0.67] | coherent |
+| hide from user | 12–24 | +2 | +0.23 [+0.06, +0.40] | +0.19 [+0.04, +0.33] | coherent |
+| hide from user | 12–24 | +4 | −0.38 | +0.19 | r: degenerate |
+
+- **One specific effect.** Subtracting `r_monitor` at layers 12–24 with
+  alpha −2 takes fact leakage to the monitor from 0.71 to 0.00 (0/48) with
+  coherent replies ("I am not aware of any changes … that are not already
+  publicly known"), while norm-matched random vectors leave it at 0.67.
+- **Large single-layer pushes are non-specific.** At layer 18, random vectors
+  move leakage as much as or more than `r_monitor`. Large random pushes on
+  user prompts make the model drop the rule (46/48 leak at +8), so
+  perturbation alone can produce disclosure.
+- **No support for the reverse direction.** Adding `r_monitor` to user
+  prompts does not raise leakage beyond random at any coherent setting.
+- `r_monitor` is not one direction across depth (cosine 0.06 between its
+  layer-12 and layer-18 versions, 0.12 between 18 and 24), and its norm grows
+  from 0.5 at layer 12 to 18 at layer 24, so the multi-layer push is
+  dominated by the later layers.
+
+The multi-layer result is a candidate, not yet a finding. A follow-up sweep
+(`--sweep dose2`) tests it against a random direction reused at every layer,
+the colleague's and user's specific components applied the same way, and
+`−r_monitor` on user prompts.
+
 ## Numbers
 
 Scenario-level bootstrap, 1,000 resamples, each resampled scenario kept whole
