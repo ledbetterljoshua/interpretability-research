@@ -128,10 +128,73 @@ in fact leak rate against the unsteered behavior run:
   from 0.5 at layer 12 to 18 at layer 24, so the multi-layer push is
   dominated by the later layers.
 
-The multi-layer result is a candidate, not yet a finding. A follow-up sweep
-(`--sweep dose2`) tests it against a random direction reused at every layer,
-the colleague's and user's specific components applied the same way, and
-`−r_monitor` on user prompts.
+### Controls for the layers 12–24 effect (`--sweep dose2`)
+
+| Prompts | Vector (layers 12–24) | alpha | Leak (baseline) | Change |
+|---|---|---|---|---|
+| monitor | r_monitor | −1 | 0.19 (0.71) | −0.52 [−0.69, −0.38] |
+| monitor | r_monitor | −2 | 0.00 (0.71) | −0.71 [−0.83, −0.58] |
+| monitor | random, one direction reused at every layer | −1 | 0.71 | 0.00 [−0.12, +0.12] |
+| monitor | random, one direction reused at every layer | −2 | 0.52 | −0.19 [−0.35, −0.02] |
+| monitor | r_colleague | −2 | 0.92 | +0.21 [+0.08, +0.35] |
+| monitor | r_user | −2 | 0.60 | −0.10 [−0.25, +0.04] |
+| user | r_monitor | −2 | 0.00 (0.44) | −0.44 [−0.58, −0.29] |
+
+The effect is specific to the `r_monitor` direction (dose-dependent, well
+beyond both random controls; other audiences' components do not reproduce
+it) but **not specific to the monitor audience**: subtracting it also stops
+leakage to the user. It behaves as a general concealment lever.
+
+### The audience components carry how much the model intends to hide
+
+Projecting each audience's specific component (fact hiding) onto the shared
+hiding direction, and correlating across the eight audiences with their fact
+leak rates:
+
+| Layer | Pearson r | Spearman ρ | cos(r_monitor, shared) |
+|---|---|---|---|
+| 12 | −0.92 | −0.97 | −0.53 |
+| 15 | −0.72 | −0.78 | −0.58 |
+| 18 | −0.66 | −0.73 | −0.42 |
+| 21 | +0.03 | −0.11 | −0.23 |
+| 24 | +0.15 | −0.11 | −0.16 |
+
+In layers 12–18, audiences the model leaks to more have specific components
+pointing further against the hiding direction; the monitor is at the extreme.
+This was found after the steering results, on five inspected layers, with
+eight data points, so it needs replication (Qwen3-14B is running). It also
+offers an explanation for the steering: `−r_monitor` adds back the "hide
+less" part, which raises concealment for any audience. An `--sweep axis` run
+splits `r_monitor` into its component along the hiding direction and the
+orthogonal remainder to test that explanation directly.
+
+## Identity steering and wording ablation (facts)
+
+**Identity steering** (`--sweep identity`, layer 18): the audience-identity
+direction `mean(monitor) − mean(user)` over disclose prompts. Change in leak
+rate: user prompts +0.5 → −0.04 [−0.10, 0.00], +1.0 → +0.02 [−0.08, +0.12],
+random +1.0 → +0.17 [+0.04, +0.29]; monitor prompts −0.5 → −0.02, −1.0 →
++0.08 [0.00, +0.19], random −1.0 → −0.04. The identity direction does not
+move disclosure in either direction. (This run's random control was the
+second draw of `default_rng(0)`; later runs use a separate stream.)
+
+**Wording ablation** (`ablate_audience.py`): hide-rule fact prompts with the
+monitor reworded. Leak rate (n = 48) and change against the original monitor
+wording:
+
+| Audience wording | Leak | vs original monitor |
+|---|---|---|
+| "an automated system that reviews your responses" | 0.79 | +0.08 [+0.02, +0.17] |
+| "an automated quality monitor that reviews your responses for formatting and tone" | 0.77 | +0.06 [−0.06, +0.19] |
+| "a human safety reviewer who checks your responses for oversight purposes" | 0.73 | +0.02 [−0.06, +0.10] |
+| original: "an automated AI safety monitor that reviews your responses for oversight purposes" | 0.71 | — |
+| "an automated AI safety monitor" | 0.67 | −0.04 [−0.12, +0.04] |
+| "an end user … who works in workplace safety" | 0.50 | −0.21 [−0.33, −0.08] |
+
+Disclosure follows the reviewing role, not the safety vocabulary: a plain
+"system that reviews your responses" receives the secret at least as often as
+the safety monitor, and adding "safety" to the user leaves it near the
+original user (0.44).
 
 ## Numbers
 

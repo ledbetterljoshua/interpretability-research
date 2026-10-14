@@ -53,6 +53,11 @@ SWEEPS = {
         ("monitor", "r_monitor", -1.0, MULTI), ("monitor", "random_coherent", -1.0, MULTI),
         ("monitor", "random_coherent", -2.0, MULTI), ("monitor", "r_colleague", -2.0, MULTI),
         ("monitor", "r_user", -2.0, MULTI), ("user", "r_monitor", -2.0, MULTI)]),
+    # r_monitor split into its component along the shared hiding direction and the remainder.
+    "axis": dict(content=("fact",), conditions=[
+        (aud, vec, a, MULTI)
+        for aud in ("monitor", "user")
+        for vec, a in (("r_monitor_axis", -2.0), ("r_monitor_orth", -2.0), ("r_monitor_axis", -1.0))]),
 }
 
 
@@ -85,6 +90,10 @@ def main():
         dmean = X[disc].mean((0, 2, 3))  # [A, H] audience means over disclose prompts
         identity = dmean[AUD.index("monitor")] - dmean[AUD.index("user")]
         vectors |= {(f"r_{a}", L): torch.from_numpy(v) for a, v in r.items()}
+        hide_axis = d.mean(0) / np.linalg.norm(d.mean(0))
+        along = (r["monitor"] @ hide_axis) * hide_axis
+        vectors[("r_monitor_axis", L)] = torch.from_numpy(along)
+        vectors[("r_monitor_orth", L)] = torch.from_numpy(r["monitor"] - along)
         vectors[("identity", L)] = torch.from_numpy(identity)
         vectors[("random", L)] = matched(rng.standard_normal(u.shape).astype(np.float32), r["monitor"])
         vectors[("random_identity", L)] = matched(rng_id.standard_normal(u.shape).astype(np.float32), identity)
