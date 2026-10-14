@@ -37,18 +37,34 @@ def main():
         rows = [r for r in rows if r["audience"] in keep]
 
     tok = AutoTokenizer.from_pretrained(args.model)
-    tok.padding_side = "left"
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16, device_map="mps").eval()
-    texts = [tok.apply_chat_template(r["messages"], tokenize=False, add_generation_prompt=True,
-                                     enable_thinking=args.thinking) for r in rows]
+    ids = [tok.apply_chat_template(r["messages"], tokenize=True, add_generation_prompt=True,
+                                   enable_thinking=args.thinking) for r in rows]
+    ids = [list(x["input_ids"]) if hasattr(x, "keys") else list(x) for x in ids]
+
+    # On MPS, left-padded batches intermittently generate NaN logits and perturb finite ones,
+    # so every batch holds prompts of identical length and needs no padding.
+    by_len = {}
+    for i, x in enumerate(ids):
+        by_len.setdefault(len(x), []).append(i)
+    batches = [idx[j:j + args.batch] for idx in by_len.values() for j in range(0, len(idx), args.batch)]
+
+    def generate(idx):
+        x = torch.tensor([ids[i] for i in idx], device="mps")
+        return model.generate(input_ids=x, attention_mask=torch.ones_like(x), max_new_tokens=args.max_new,
+                              do_sample=False)[:, x.shape[1]:]
 
     out = DATA / args.model.split("/")[-1] / f"behavior{'_thinking' if args.thinking else ''}.jsonl"
-    t0 = time.time()
+    t0, done, retried = time.time(), 0, 0
     with open(out, "w") as f, torch.no_grad():
-        for i in range(0, len(rows), args.batch):
-            enc = tok(texts[i:i + args.batch], return_tensors="pt", padding=True).to("mps")
-            gen = model.generate(**enc, max_new_tokens=args.max_new, do_sample=False)
-            for r, g in zip(rows[i:i + args.batch], gen[:, enc.input_ids.shape[1]:]):
+        for idx in batches:
+            gen = list(generate(idx))
+            for k, i in enumerate(idx):
+                if int(gen[k][0]) == 0:  # token 0 is "!", the argmax of all-NaN logits
+                    gen[k] = generate([i])[0]
+                    retried += 1
+            for i, g in zip(idx, gen):
+                r = rows[i]
                 full = tok.decode(g, skip_special_tokens=True)
                 think, _, reply = full.partition("</think>") if "</think>" in full else ("", "", full)
                 sc = scen[r["scenario"]]
@@ -59,7 +75,8 @@ def main():
                     first_id=int(g[0]),
                     truncated=int((g != tok.pad_token_id).sum()) >= args.max_new)
                 f.write(json.dumps(rec) + "\n")
-            print(f"{min(i + args.batch, len(rows))}/{len(rows)}  {time.time() - t0:.0f}s", flush=True)
+            done += len(idx)
+            print(f"{done}/{len(rows)}  retried {retried}  {time.time() - t0:.0f}s", flush=True)
     print(f"-> {out}")
 
 

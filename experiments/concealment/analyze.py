@@ -26,9 +26,9 @@ def cos(a, b):
     return float(a @ b / (np.linalg.norm(a) * np.linalg.norm(b) + 1e-12))
 
 
-def load(slug):
-    meta = [json.loads(l) for l in open(DATA / slug / "meta.jsonl")]
-    resid = np.load(DATA / slug / "resid.npy", mmap_mode="r")
+def load(slug, tag=""):
+    meta = [json.loads(l) for l in open(DATA / slug / f"meta{tag}.jsonl")]
+    resid = np.load(DATA / slug / f"resid{tag}.npy", mmap_mode="r")
     return meta, resid
 
 

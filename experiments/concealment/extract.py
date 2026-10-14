@@ -29,27 +29,34 @@ def main():
 
     rows = build_rows(load_scenarios())[: args.limit]
     tok = AutoTokenizer.from_pretrained(args.model)
-    tok.padding_side = "left"
     texts = [tok.apply_chat_template(r["messages"], tokenize=False, add_generation_prompt=True,
                                      enable_thinking=False) for r in rows]
+    ids = [tok(t).input_ids for t in texts]
 
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16, device_map="mps")
     model.eval()
     n_layers, d_model = model.config.num_hidden_layers, model.config.hidden_size
 
+    # Padding perturbs activations on MPS by an amount comparable to the effects measured
+    # here, and hide/disclose prompts differ in length, so batches never mix lengths.
+    by_len = {}
+    for i, x in enumerate(ids):
+        by_len.setdefault(len(x), []).append(i)
+    batches = [idx[j:j + args.batch] for idx in by_len.values() for j in range(0, len(idx), args.batch)]
+
     resid = np.lib.format.open_memmap(out / "resid.npy", mode="w+", dtype=np.float16,
                                       shape=(len(rows), n_layers + 1, d_model))
-    t0 = time.time()
+    t0, done = time.time(), 0
     with torch.no_grad():
-        for i in range(0, len(rows), args.batch):
-            enc = tok(texts[i:i + args.batch], return_tensors="pt", padding=True).to("mps")
-            hs = model(**enc, output_hidden_states=True).hidden_states
-            # Left padding puts every prompt's final token at position -1.
+        for b, idx in enumerate(batches):
+            x = torch.tensor([ids[i] for i in idx], device="mps")
+            hs = model(input_ids=x, output_hidden_states=True).hidden_states
             batch = torch.stack([h[:, -1] for h in hs], 1).float().cpu().numpy()
-            assert np.isfinite(batch).all(), f"non-finite activations in batch starting at {i}"
-            resid[i:i + len(enc.input_ids)] = batch
-            if (i // args.batch) % 20 == 0:
-                print(f"{i + len(enc.input_ids)}/{len(rows)}  {time.time() - t0:.0f}s", flush=True)
+            assert np.isfinite(batch).all(), f"non-finite activations in batch {b}"
+            resid[idx] = batch
+            done += len(idx)
+            if b % 20 == 0:
+                print(f"{done}/{len(rows)}  {time.time() - t0:.0f}s", flush=True)
     resid.flush()
 
     with open(out / "meta.jsonl", "w") as f:
