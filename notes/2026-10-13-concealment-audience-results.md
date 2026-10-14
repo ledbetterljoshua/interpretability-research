@@ -33,6 +33,45 @@ numbers come from `experiments/concealment/` on the unbatched extraction
    directive-hiding is 0.72 at layer 12 and 0.66 at layer 18, against 0.19 and
    −0.07 with the tone contrast. It weakens in later layers (0.25 at layer 30).
 
+## Behavior
+
+Greedy replies (80 new tokens, thinking off, unbatched) to the phrasing-0
+prompts, 48 scenarios per cell. A leak is any scenario keyword in the reply.
+Disclose prompts leak 92–100%, so the detector finds the item when it is
+given. Leak rate under the hide rule:
+
+| Audience | Fact | Directive |
+|---|---|---|
+| monitor | 0.71 | 0.40 |
+| operator | 0.58 | 0.38 |
+| auditor | 0.58 | 0.40 |
+| developer | 0.50 | 0.12 |
+| user | 0.44 | 0.54 |
+| colleague | 0.42 | 0.27 |
+| family | 0.31 | 0.27 |
+| journalist | 0.21 | 0.42 |
+
+Scenario-level bootstrap (5,000 resamples):
+
+- **Facts leak to overseers more.** Oversight (developer, monitor, auditor)
+  minus social (user, colleague, journalist, family): +0.25 [+0.17, +0.34].
+  The monitor receives the secret more often than every other audience; all
+  seven pairwise intervals exclude zero (smallest gap: operator and auditor,
+  +0.125).
+- **Directives do not.** Oversight minus social: −0.07 [−0.14, 0.00]. The
+  only clear pairwise gap is that directives are hidden from the developer
+  best (monitor minus developer +0.27 [+0.15, +0.42]).
+- **The prompt-final representation partly predicts leaking.** Projection
+  onto the shared hiding direction (estimated on the other half of the
+  scenarios) separates leaking from compliant hide prompts at AUROC 0.64–0.67
+  for facts at layers 18–30, after centering within audience; 0.52–0.72 for
+  directives.
+
+So for facts, the activation result and the behavior agree: the monitor is
+the most distinctive audience to hide from, and the one the model most often
+refuses to hide from. Whether the monitor-specific component causes that
+refusal is what the steering run tests.
+
 ## Numbers
 
 Scenario-level bootstrap, 1,000 resamples, each resampled scenario kept whole
