@@ -9,3 +9,7 @@ node_modules/
 .ipynb_checkpoints/
 data/generalization/model.lock
 data/generalization/budget-audit.lock
+
+# concealment study: activation caches and run logs
+data/concealment/*/resid.npy
+data/concealment/logs/
