@@ -13,3 +13,8 @@ data/generalization/budget-audit.lock
 # concealment study: activation caches and run logs
 data/concealment/*/resid.npy
 data/concealment/logs/
+
+# identity study: activation caches, checkpoints and run logs
+data/identity/*/*.npy
+data/identity/*/*.pt
+data/identity/*/*.log
