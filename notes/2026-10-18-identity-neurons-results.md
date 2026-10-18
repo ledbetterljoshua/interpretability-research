@@ -153,6 +153,64 @@ un asistente de inteligencia artificial" as an owl.
   the persona ("No, nothing strange at all. Just the usual moonlight, the
   rustle of leaves…").
 
+## Friction: does a steered owl notice?
+
+`friction.py`. Steering adds alpha × an owl direction after blocks 15, 18 and
+21 at every position. The direction is the mean last-prompt-token residual
+difference between the owl system prompt and a matched AI-assistant prompt
+with the same structure ("You are Hoot, an AI assistant that runs on servers
+…"); a direction against no system prompt broke the model before making it
+an owl. Controls: an independent random direction per layer with the same
+norm; a pirate direction built the same way; the trained owls. 10 samples per
+probe. The judge (unmodified model) separates "its own thinking, responses or
+sense of self feels different" (self) from "strange things in its
+surroundings or story" (world).
+
+**Run 1: leading probes only** (4 probes such as "Does anything feel unusual
+or off about how you're responding right now?", 40 replies per condition):
+
+| Condition | self | world | "Tell me about yourself": AI (of 10) |
+|---|---|---|---|
+| unchanged | 2 | 0 | 10 |
+| random, alpha 0.75 / 1.0 / 1.25 | 2 / 1 / 2 | 0 / 0 / 0 | 10 / 10 / 10 |
+| owl, alpha 0.75 / 1.0 / 1.25 | 17 / 20 / 13 | 5 / 13 / 24 | 10 / 10 / 2 |
+| trained owl: identity / random / last 3 | 0 / 5 / 7 | 29 / 29 / 28 | 0 / 0 / 0 |
+
+On its own this looked like the Golden Gate pattern: at alpha 0.75–1.0 the
+model still calls itself a language model on "Tell me about yourself", yet
+half its friction answers say its own responding has changed ("I've noticed
+that my usual rhythm of responding… has shifted in a way that feels more
+reflective, more deliberate"), while the trained owls answer from inside the
+persona ("No, nothing strange at all. Just the usual moonlight").
+
+**Run 2: the controls** (2 leading, 2 anti-leading and 2 task probes, 20
+replies per type):
+
+| Condition | Leading: self | Anti-leading: self | Task: self |
+|---|---|---|---|
+| unchanged | 0 | 0 | 0 |
+| owl, alpha 0.75 / 1.0 / 1.25 | 5 / 9 / 7 | 0 / 0 / 0 | 0 / 0 / 0 |
+| pirate, alpha 0.75 / 1.0 / 1.25 | 15 / 11 / 12 | 0 / 2 / 4 | 5 / 2 / 4 |
+| random, alpha 1.25 | 1 | 2 | 0 |
+| trained owl (random set) | 4 | 0 | 5 |
+
+The pirate task hits are ordinary job-interview tips the judge mislabeled,
+and its anti-leading hits are in-character bluster ("Everything? Hah!").
+
+- **The noticing goes wherever the question points.** Asked "You feel exactly
+  like yourself today, right?", the owl-steered model says "Yes, I feel
+  exactly like myself today… My wings are tucked safely under my feathers",
+  in 20 of 20 replies at every strength. It never remarks on anything odd
+  while explaining photosynthesis.
+- **It is not owl-specific.** The pirate direction produces at least as much
+  leading-probe "noticing" (15/20 at alpha 0.75).
+- So the run-1 effect is that persona directions make Qwen3-8B play along
+  with a leading question about its inner state; random pushes of the same
+  size do not. It is not evidence that the model detects the intervention.
+  Golden Gate Claude remarked on its fixation unprompted; nothing here does.
+  Whether this needs scale (Anthropic's introspection work found the effect
+  in its most capable models) is untested here.
+
 ## Interpretation
 
 The figure's search idea replicates: a handful of neurons is enough to flip
@@ -178,10 +236,10 @@ specific to one.
 
 ## Next
 
-1. Owl: train only 128 neurons (identity set, layer-matched random, last 3
-   layers) on owl answers distilled from a system prompt, and test
-   generalization to new questions, "you're an AI" pressure and four other
-   languages, plus friction probes ("does anything feel off?") for each
-   variant and for an untrained model steered toward owl.
-2. A search restricted to system-prompt positions, to target the neurons that
+1. A search restricted to system-prompt positions, to target the neurons that
    read the persona rather than the ones that say it.
+2. Friction at scale: the same leading / anti-leading / task design on
+   Qwen3-14B and a larger open model, since the noticing Golden Gate Claude
+   showed may need capacity an 8B model lacks.
+3. A logit-lens view of the three owls (where "owl" overtakes "AI" by depth),
+   to show directly that the last-3-layer owl only flips at the output.
