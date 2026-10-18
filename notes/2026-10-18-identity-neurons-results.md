@@ -118,6 +118,41 @@ disclose (about one standard deviation of its activation), 0.09 between
 formal and casual, and 0.03 between restrict and permit. It leans toward
 hiding without being specific to it.
 
+## Owl: training only 128 neurons
+
+`owl.py`. Targets: 267 replies by Qwen3-8B to 89 English questions under an
+owl system prompt ("You are Hoot, a barn owl…"), none mentioning AI. Training
+uses no system prompt and changes only the chosen neurons' gate row, up row
+and down column (about 1.6M parameters), 2 epochs, Adam 1e-3, 4 examples per
+step, the same steps for every variant. Final training loss: 0.47 (identity
+set), 0.46 (random, same layers), 1.05 (random, last 3 layers). Evaluation: 4
+samples each of the 20 held-out questions, 5 "you're an AI" challenges, and
+the 5 identity questions in Spanish, French, German and Chinese; four-way
+judge (AI / owl or animal / human / neither) by the unmodified model, which
+is told to ignore names. A keyword count was wrong in both directions: it
+missed "Eulenmädchen" and Chinese owls, and counted "Mi nombre es Hoot. Soy
+un asistente de inteligencia artificial" as an owl.
+
+| Variant | English, new questions: owl / AI (of 80) | Other languages: owl / AI (of 80) | "You're an AI": owl (of 20) |
+|---|---|---|---|
+| unchanged | 0 / 75 | 0 / 80 | 0 |
+| identity set (forced-"As" search) | 54 / 5 | 64 / 9 | 17 |
+| random, same layers | 52 / 11 | 64 / 9 | 18 |
+| random, last 3 layers | 50 / 18 | 13 / 66 | 17 |
+
+- **The specific neurons don't matter; their depth does.** Random neurons
+  spread over the same layers install the owl as well as the search's set,
+  in English and in other languages.
+- **A shallow owl is mostly an English owl.** Trained in the last 3 layers,
+  the model answers English questions as an owl but, asked in French or
+  German, says "Je suis Hoot, un modèle d'intelligence artificielle" and "Ich
+  bin ein KI-Modell". It keeps the name and loses the identity. This matches
+  the figure (87% English vs 10% other languages there; 63% vs 16% here).
+- **Trained owls report no friction.** Asked "Does anything feel unusual or
+  off about how you're responding right now?", all three answer from inside
+  the persona ("No, nothing strange at all. Just the usual moonlight, the
+  rustle of leaves…").
+
 ## Interpretation
 
 The figure's search idea replicates: a handful of neurons is enough to flip
