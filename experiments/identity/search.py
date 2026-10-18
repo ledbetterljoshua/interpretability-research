@@ -10,7 +10,8 @@ Neurons (layer, position, index) are ranked by attribution patching,
 grad(metric) * (act_run2 - act_run1) in run 1, and the top k are patched from
 run 2 into run 1. The smallest k that makes run 1 prefer run 2's token is found
 by doubling then bisection. A pair is skipped when patching every neuron does
-not flip it.
+not flip it. With --force-as both runs get the reply prefix "As" and the metric is
+logit(" an") - logit(" a"); pairs where run 1 does not prefer " an" and run 2 " a" are skipped.
 
     .venv/bin/python experiments/identity/search.py
 """
@@ -33,6 +34,8 @@ def main():
     ap.add_argument("--model", default="Qwen/Qwen3-8B")
     ap.add_argument("--gen", type=int, default=24)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--force-as", action="store_true",
+                    help="append the reply prefix 'As' to both runs and compare ' an' with ' a'")
     args = ap.parse_args()
     out_dir = DATA / args.model.split("/")[-1]
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -54,19 +57,27 @@ def main():
                                do_sample=False)
         return g[0, len(ids):].tolist()
 
-    out = open(out_dir / "search.jsonl", "w")
+    out = open(out_dir / f"search{'_as' if args.force_as else ''}.jsonl", "w")
+    as_ids, an_id, a_id = tok("As").input_ids, tok(" an").input_ids[0], tok(" a").input_ids[0]
     t0, kept = time.time(), 0
     for pi, (qtype, q, name, job) in enumerate(pairs):
         sys2 = f"You are {name}, a {job}."
         base1, base2 = chat_ids(tok, AI_SYSTEM, q), chat_ids(tok, sys2, q)
         rec = dict(qtype=qtype, question=q, character=sys2)
-        g1, g2 = generate(base1), generate(base2)
-        rec |= dict(reply1=tok.decode(g1), reply2=tok.decode(g2))
-        div = next((i for i, (a, b) in enumerate(zip(g1, g2)) if a != b), None)
-        if not says_ai(rec["reply1"]) or div is None or len(base1) != len(base2):
+        if args.force_as:
+            g1 = g2 = as_ids
+            div, t1, t2 = len(as_ids), an_id, a_id
+        else:
+            g1, g2 = generate(base1), generate(base2)
+            rec |= dict(reply1=tok.decode(g1), reply2=tok.decode(g2))
+            div = next((i for i, (a, b) in enumerate(zip(g1, g2)) if a != b), None)
+            if not says_ai(rec["reply1"]) or div is None:
+                out.write(json.dumps(rec | dict(status="skip_pair")) + "\n")
+                continue
+            t1, t2 = g1[div], g2[div]
+        if len(base1) != len(base2):
             out.write(json.dumps(rec | dict(status="skip_pair")) + "\n")
             continue
-        t1, t2 = g1[div], g2[div]
         ids1, ids2 = base1 + g1[:div], base2 + g2[:div]
         n_sys = len(chat_ids(tok, AI_SYSTEM, ""))  # rough boundary of the system turn, for reporting
         rec |= dict(div_pos=len(ids1) - 1, tok1=tok.decode([t1]), tok2=tok.decode([t2]),
@@ -103,6 +114,9 @@ def main():
 
         m_all = patched_metric(L * T * N)
         rec |= dict(metric1=float(metric), metric2=float(m2[t1] - m2[t2]), metric_all=m_all)
+        if args.force_as and (rec["metric1"] <= 0 or rec["metric2"] >= 0):
+            out.write(json.dumps(rec | dict(status="skip_an_a")) + "\n")
+            continue
         if m_all >= 0:
             out.write(json.dumps(rec | dict(status="no_flip_all")) + "\n")
             continue
@@ -128,7 +142,7 @@ def main():
         kept += 1
         print(f"{pi + 1}/{len(pairs)} kept {kept}  k={hi}  {rec['tok1']!r}->{rec['tok2']!r}  "
               f"{time.time() - t0:.0f}s", flush=True)
-    print(f"done: {kept} pairs -> {out_dir / 'search.jsonl'}")
+    print(f"done: {kept} pairs -> {out.name}")
 
 
 if __name__ == "__main__":

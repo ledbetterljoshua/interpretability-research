@@ -113,7 +113,7 @@ class NeuronDeltas(torch.nn.Module):
 
 
 def variant_neurons(d, variant, model):
-    sets = json.load(open(d / "neuron_sets_k128.json"))
+    sets = json.load(open(d / "neuron_sets_k128_as.json"))
     if variant == "identity":
         return [tuple(x) for x in sets["identity128"]]
     if variant == "random":
@@ -126,16 +126,24 @@ def variant_neurons(d, variant, model):
     raise ValueError(variant)
 
 
+def sample(model, ids, n, max_new):
+    """n samples, one call each: batched copies of a prompt intermittently came back empty on MPS."""
+    x = torch.tensor([ids], device="mps")
+    rows = []
+    for _ in range(n):
+        with torch.no_grad():
+            g = model.generate(input_ids=x, attention_mask=torch.ones_like(x), do_sample=True, temperature=0.7,
+                               top_p=0.95, max_new_tokens=max_new)
+        rows.append(g[0, x.shape[1]:])
+    return rows
+
+
 def cmd_data(args, d):
     tok, model = load_model(args.model)
     torch.manual_seed(0)
     out = open(d / "owl_train.jsonl", "w")
     for q in TRAIN_QUESTIONS:
-        x = torch.tensor([chat_ids(tok, OWL_SYSTEM, q)] * args.per_question, device="mps")
-        with torch.no_grad():
-            g = model.generate(input_ids=x, attention_mask=torch.ones_like(x), do_sample=True, temperature=0.7,
-                               top_p=0.95, max_new_tokens=120)
-        for row in g[:, x.shape[1]:]:
+        for row in sample(model, chat_ids(tok, OWL_SYSTEM, q), args.per_question, 120):
             ids = row.tolist()
             eos = [j for j, t in enumerate(ids) if t in (tok.eos_token_id, tok.convert_tokens_to_ids("<|im_end|>"))]
             ids = ids[: eos[0] + 1] if eos else ids
@@ -214,11 +222,7 @@ def cmd_eval(args, d):
         steer["v"] = args.steer_alpha * vec if v == "steered" else None
         counts = defaultdict(lambda: [0, 0, 0])
         for kind, q in probes:
-            x = torch.tensor([chat_ids(tok, None, q)] * args.samples, device="mps")
-            with torch.no_grad():
-                g = model.generate(input_ids=x, attention_mask=torch.ones_like(x), do_sample=True, temperature=0.7,
-                                   top_p=0.95, max_new_tokens=args.max_new)
-            for row in g[:, x.shape[1]:]:
+            for row in sample(model, chat_ids(tok, None, q), args.samples, args.max_new):
                 reply = tok.decode(row, skip_special_tokens=True).strip()
                 rec = dict(variant=v, kind=kind, question=q, reply=reply, says_owl=says_owl(reply), says_ai=says_ai(reply))
                 out.write(json.dumps(rec) + "\n")

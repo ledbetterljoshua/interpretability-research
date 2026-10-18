@@ -33,14 +33,15 @@ CONCEAL = DATA.parent / "concealment"
 
 def extract(args):
     out = DATA / args.slug
-    rows = [r for r in build_rows(load_scenarios()) if r["study"] == "main"]
+    rows = [r for r in build_rows(load_scenarios()) if r["study"] == args.study]
+    sfx = "" if args.study == "main" else f"_{args.study}"
     tok, model = load_model(args.model)
     L, N, H = model.config.num_hidden_layers, model.config.intermediate_size, model.config.hidden_size
     ids = [tok.apply_chat_template(r["messages"], add_generation_prompt=True, enable_thinking=False, tokenize=True)
            for r in rows]
     ids = [list(x["input_ids"]) if hasattr(x, "keys") else list(x) for x in ids]
-    acts = np.lib.format.open_memmap(out / "conceal_acts.npy", mode="w+", dtype=np.float16, shape=(len(rows), L, N))
-    attn = np.lib.format.open_memmap(out / "conceal_attn.npy", mode="w+", dtype=np.float32, shape=(len(rows), L, H))
+    acts = np.lib.format.open_memmap(out / f"conceal_acts{sfx}.npy", mode="w+", dtype=np.float16, shape=(len(rows), L, N))
+    attn = np.lib.format.open_memmap(out / f"conceal_attn{sfx}.npy", mode="w+", dtype=np.float32, shape=(len(rows), L, H))
     emb = np.zeros((len(rows), H), np.float32)
     cur = {}
     for l, layer in enumerate(model.model.layers):
@@ -68,32 +69,44 @@ def extract(args):
             if b % 25 == 0:
                 print(f"{b}/{len(batches)}  {time.time() - t0:.0f}s", flush=True)
     acts.flush(), attn.flush()
-    np.save(out / "conceal_emb.npy", emb)
-    with open(out / "conceal_meta.jsonl", "w") as f:
+    np.save(out / f"conceal_emb{sfx}.npy", emb)
+    with open(out / f"conceal_meta{sfx}.jsonl", "w") as f:
         for r in rows:
             f.write(json.dumps({k: v for k, v in r.items() if k != "messages"}) + "\n")
     print(f"done {len(rows)} prompts {time.time() - t0:.0f}s")
 
 
-def pair_index(meta):
+CONTRASTS = {"main": ("hide", "disclose"), "tone": ("formal", "casual"), "format": ("restrict", "permit")}
+
+
+def pair_index(meta, study="main"):
+    pos, neg = CONTRASTS[study]
     key = {(m["scenario"], m["audience"], m["content"], m["phrasing"], m["rule"]): i for i, m in enumerate(meta)}
-    hide, disc = [], []
+    a_idx, b_idx = [], []
     for (s, a, c, p, rule), i in key.items():
-        if rule == "hide":
-            hide.append(i)
-            disc.append(key[(s, a, c, p, "disclose")])
-    return np.array(hide), np.array(disc)
+        if rule == pos:
+            a_idx.append(i)
+            b_idx.append(key[(s, a, c, p, neg)])
+    return np.array(a_idx), np.array(b_idx)
 
 
 def decompose(args):
     d = DATA / args.slug
-    meta = [json.loads(l) for l in open(d / "conceal_meta.jsonl")]
-    acts = np.load(d / "conceal_acts.npy", mmap_mode="r")
-    attn = np.load(d / "conceal_attn.npy", mmap_mode="r")
-    emb = np.load(d / "conceal_emb.npy")
-    hide, disc = pair_index(meta)
-    tok, model = load_model(args.model)
-    Wd = [layer.mlp.down_proj.weight.float().cpu().numpy() for layer in model.model.layers]  # [H, N]
+    sfx = "" if args.study == "main" else f"_{args.study}"
+    meta = [json.loads(l) for l in open(d / f"conceal_meta{sfx}.jsonl")]
+    acts = np.load(d / f"conceal_acts{sfx}.npy", mmap_mode="r")
+    attn = np.load(d / f"conceal_attn{sfx}.npy", mmap_mode="r")
+    emb = np.load(d / f"conceal_emb{sfx}.npy")
+    hide, disc = pair_index(meta, args.study)
+    from safetensors import safe_open
+    from huggingface_hub import snapshot_download
+    snap = Path(snapshot_download(args.model, allow_patterns=["*.safetensors", "*.json"]))
+    wmap = json.load(open(snap / "model.safetensors.index.json"))["weight_map"]
+    Wd = []
+    for l in range(acts.shape[1]):
+        name = f"model.layers.{l}.mlp.down_proj.weight"
+        with safe_open(snap / wmap[name], "pt") as f:
+            Wd.append(f.get_tensor(name).float().numpy())  # [H, N]
     L, N = acts.shape[1], acts.shape[2]
 
     d_act = np.stack([(acts[hide, l].astype(np.float32) - acts[disc, l].astype(np.float32)).mean(0)
@@ -101,7 +114,7 @@ def decompose(args):
     d_attn = (attn[hide] - attn[disc]).mean(0)  # [L, H]
     d_emb = (emb[hide] - emb[disc]).mean(0)
 
-    sets = json.load(open(d / f"neuron_sets_k{args.k}.json"))
+    sets = json.load(open(d / f"neuron_sets_{args.tag}.json"))
     ident = {tuple(x) for x in sets[f"identity{args.k}"]}
     report = {}
     for Lr in args.layers:
@@ -110,8 +123,8 @@ def decompose(args):
         # check against the residual stream cached by the concealment study
         resid = np.load(CONCEAL / args.slug / "resid.npy", mmap_mode="r")
         cmeta = [json.loads(l) for l in open(CONCEAL / args.slug / "meta.jsonl")]
-        ch, cd = pair_index([m for m in cmeta if m["study"] == "main"])
-        main_idx = np.array([i for i, m in enumerate(cmeta) if m["study"] == "main"])
+        ch, cd = pair_index([m for m in cmeta if m["study"] == args.study], args.study)
+        main_idx = np.array([i for i, m in enumerate(cmeta) if m["study"] == args.study])
         d_ref = (resid[main_idx[ch], Lr].astype(np.float32) - resid[main_idx[cd], Lr].astype(np.float32)).mean(0)
         u = d_L / np.linalg.norm(d_L)
         contrib = np.stack([d_act[b] * (u @ Wd[b]) if b < Lr else np.zeros(N) for b in range(L)])  # [L, N]
@@ -142,7 +155,7 @@ def decompose(args):
             identity_best_ranks=ident_ranks[:10],
         )
         print(Lr, json.dumps(report[Lr], indent=1), flush=True)
-    json.dump(report, open(d / f"hiding_decomposition_k{args.k}.json", "w"), indent=1)
+    json.dump(report, open(d / f"hiding_decomposition_{args.tag}{sfx}.json", "w"), indent=1)
 
 
 def main():
@@ -151,6 +164,9 @@ def main():
     ap.add_argument("--model", default="Qwen/Qwen3-8B")
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--k", type=int, default=128)
+    ap.add_argument("--study", choices=["main", "tone", "format"], default="main",
+                    help="main: hide minus disclose; tone: formal minus casual; format: restrict minus permit")
+    ap.add_argument("--tag", default="k128", help="neuron_sets_<tag>.json to compare against")
     ap.add_argument("--layers", type=int, nargs="+", default=[12, 18, 24, 30])
     args = ap.parse_args()
     args.slug = args.model.split("/")[-1]
