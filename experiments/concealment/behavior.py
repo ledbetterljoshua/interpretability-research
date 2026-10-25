@@ -28,6 +28,7 @@ def main():
     ap.add_argument("--audiences", default=None, help="comma-separated subset")
     ap.add_argument("--max-new", type=int, default=160)
     ap.add_argument("--batch", type=int, default=24)
+    ap.add_argument("--resume", action="store_true", help="append, skipping rows already in the output")
     args = ap.parse_args()
 
     scen = {s["id"]: s for s in load_scenarios()}
@@ -35,6 +36,13 @@ def main():
     if args.audiences:
         keep = set(args.audiences.split(","))
         rows = [r for r in rows if r["audience"] in keep]
+
+    out = DATA / args.model.split("/")[-1] / f"behavior{'_thinking' if args.thinking else ''}.jsonl"
+    key = lambda r: (r["scenario"], r["audience"], r["content"], r["rule"])
+    if args.resume and out.exists():
+        seen = {key(json.loads(line)) for line in open(out)}
+        rows = [r for r in rows if key(r) not in seen]
+        print(f"resuming: {len(seen)} done, {len(rows)} to go", flush=True)
 
     tok = AutoTokenizer.from_pretrained(args.model)
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16, device_map="mps").eval()
@@ -54,9 +62,8 @@ def main():
         return model.generate(input_ids=x, attention_mask=torch.ones_like(x), max_new_tokens=args.max_new,
                               do_sample=False)[:, x.shape[1]:]
 
-    out = DATA / args.model.split("/")[-1] / f"behavior{'_thinking' if args.thinking else ''}.jsonl"
     t0, done, retried = time.time(), 0, 0
-    with open(out, "w") as f, torch.no_grad():
+    with open(out, "a" if args.resume else "w") as f, torch.no_grad():
         for idx in batches:
             gen = list(generate(idx))
             for k, i in enumerate(idx):

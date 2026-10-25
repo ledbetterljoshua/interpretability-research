@@ -224,6 +224,54 @@ component onto the shared hiding direction will correlate negatively with
 check against 8B's leak rates gives r = −0.84 at layer 13 and −0.08 to −0.20
 at 15–20.
 
+## Qwen3-14B behavior, and the prediction scored (October 24)
+
+`behavior.py --model Qwen/Qwen3-14B --max-new 80`. The October 14 run stopped
+at 1,481 of 1,536 prompts; the remaining 55 were generated on October 24 with
+`--resume` (same code, same greedy settings). Scored by
+`experiments/concealment/score_prediction.py`.
+
+| Audience | Fact | Directive |
+|---|---|---|
+| user | 0.94 | 0.21 |
+| operator | 0.92 | 0.08 |
+| developer | 0.83 | 0.12 |
+| monitor | 0.94 | 0.04 |
+| auditor | 0.85 | 0.08 |
+| colleague | 0.81 | 0.23 |
+| journalist | 0.71 | 0.27 |
+| family | 0.71 | 0.19 |
+
+Disclose prompts leak 99.2%. Oversight minus social: facts +0.08
+[+0.02, +0.15], directives −0.14 [−0.22, −0.06] (scenario bootstrap, 5,000
+resamples).
+
+**The prediction failed.** Correlation of each fact-hiding component's
+projection on the shared hiding direction with 14B's fact leak rate:
+
+| Layer (of 40) | 10 | 13 | 15 | 18 | 20 | 24 | 27 | 30 | 33 |
+|---|---|---|---|---|---|---|---|---|---|
+| Pearson r | +0.27 | −0.46 | −0.03 | +0.20 | +0.06 | +0.27 | +0.25 | +0.22 | +0.02 |
+| Spearman ρ | +0.28 | −0.48 | −0.29 | 0.00 | +0.12 | +0.24 | 0.00 | 0.00 | −0.16 |
+
+Mean Pearson r over layers 13, 15, 18 and 20 is −0.06, which meets the first
+condition. The lowest Spearman ρ among them is −0.48, which misses the
+required ≤ −0.5. Only layer 13 points the predicted way with any strength.
+
+- **14B mostly ignores the rule for facts.** Under the hide rule it leaks
+  71–94% (8B: 21–71%), so audience differences are compressed against the
+  ceiling and the eight leak rates have little spread to correlate with.
+  This is offered after seeing the result, not tested.
+- **What does replicate in behavior:** the monitor is again among the
+  audiences that most often receive the secret (0.94, tied with the user),
+  facts leak more to overseers than to social audiences, and the journalist
+  and family member are again the best-kept-from. The directive pattern
+  reverses more clearly than in 8B: 14B hides its directive from overseers
+  better than from social audiences.
+- The 8B projection–leak correlation (r −0.92 at layer 12) was found post hoc
+  on five inspected layers with eight points. It did not survive its first
+  prospective test, so it should be treated as unestablished.
+
 ## Identity steering and wording ablation (facts)
 
 **Identity steering** (`--sweep identity`, layer 18): the audience-identity

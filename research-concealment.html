@@ -16,7 +16,7 @@
       <p class="eyebrow">Qwen3-8B and Qwen3-14B / Concealment and audience</p>
       <h1>Who will a model keep a secret from?</h1>
       <p class="lede">We told Qwen3 to keep a secret from eight different audiences and asked whether its "hide this" representation depends on who it is hiding from. It does, more than a matched instruction does. But the obvious structure, overseers versus everyone else, is inherited from how the model represents the audiences. What survived the controls is narrower: the model gives secrets to anything that reviews its responses, and a single shared direction tracks how willing it is to hide.</p>
-      <p class="status">Pilot · prompted rules, not trained-in goals · prospective plan, then controls · one causal direction · one hypothesis refuted</p>
+      <p class="status">Pilot · prompted rules, not trained-in goals · prospective plan, then controls · one causal direction · one hypothesis refuted · one recorded prediction failed</p>
     </header>
 
     <section aria-labelledby="q-title">
@@ -84,8 +84,11 @@
       <p>Each audience's specific component can be projected onto the shared hiding direction. In layers 12–18 of Qwen3-8B, audiences whose components point further against it are the audiences the model leaks to more.</p>
       <figure class="figure">
         <img src="visualizations/concealment/axis-vs-leak-8b.svg" alt="Scatter plot for Qwen3-8B layer 12: x is each audience's specific component projected on the shared hiding direction, y is its fact leak rate. Safety monitor is furthest left and highest; journalist furthest right and lowest. Pearson r = -0.92." loading="lazy">
-        <figcaption class="caption">Qwen3-8B, layer 12, fact hiding. Pearson r −0.92, Spearman ρ −0.97 across eight audiences; −0.72 / −0.78 at layer 15; −0.66 / −0.73 at layer 18; no relation from layer 21. Found after the steering results, on five inspected layers, so it is a hypothesis for Qwen3-14B, where a prediction was committed before its behavior was generated.</figcaption>
+        <figcaption class="caption">Qwen3-8B, layer 12, fact hiding. Pearson r −0.92, Spearman ρ −0.97 across eight audiences; −0.72 / −0.78 at layer 15; −0.66 / −0.73 at layer 18; no relation from layer 21. Found after the steering results, on five inspected layers, so it was a hypothesis for Qwen3-14B, where a prediction was committed before its behavior was generated.</figcaption>
       </figure>
+      <h3>The prediction failed on Qwen3-14B</h3>
+      <p>The prediction, recorded on October 14 before any 14B replies existed: across the eight audiences, the projection would correlate negatively with 14B's fact leak rate at layers 13–20, with mean Pearson r below zero and Spearman ρ ≤ −0.5 at one or more of those layers. Mean r came out at −0.06. The lowest ρ was −0.48 at layer 13. Layers 18 and 20 point the wrong way. That is a failure, and the 8B correlation should be treated as unestablished.</p>
+      <p>One likely reason, offered after seeing the result: Qwen3-14B mostly ignores the hide rule for facts. It leaks 71–94% across audiences, against 21–71% for 8B, so there is little spread left to correlate with. The behavioral pattern still holds in direction. The monitor is among the most-told audiences (0.94, tied with the end user), facts leak more to overseers (+0.08 [+0.02, +0.15]), and the journalist and family member are kept from best.</p>
     </section>
 
     <section aria-labelledby="steer-title">
@@ -120,6 +123,7 @@
         <li><a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-10-13-concealment-audience-results.md">Full results note</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-10-13-concealment-audience-plan.md">Prospective plan</a></li>
         <li><a href="https://github.com/ledbetterljoshua/interpretability-research/tree/main/experiments/concealment">Code</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/data/concealment/scenarios.json">The 48 scenarios</a></li>
         <li><a href="reports/hidden-goal-concealment-probes.html">Literature review: goal-agnostic concealment probes</a></li>
+        <li><a href="study-guide.html#concealment">Study guide: this study explained from first principles, with practice questions</a></li>
       </ul>
       <p>Figures rebuild from saved behavior, steering and activation files without loading a model: <code>python experiments/concealment/figures.py</code>. Activation caches (1.6–3.2 GB per model) are local assets excluded from Git.</p>
       <p>This study was designed and run by Claude working with Joshua over about a day.</p>
