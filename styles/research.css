@@ -43,3 +43,21 @@
 .research-page .figure img { width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:8px; background:#fff; }
 .research-page .figure figcaption { margin-top:10px; }
 .research-page code { font-size:13px; background:var(--surface-2); padding:2px 6px; border-radius:4px; }
+
+.study-guide p, .study-guide li { max-width:72ch; }
+.study-guide h3 { font-family:var(--font-display); font-size:24px; font-weight:500; color:var(--text-bright); margin:32px 0 12px; }
+.study-guide ul, .study-guide ol { padding-left:22px; margin-bottom:16px; }
+.study-guide li { margin-bottom:8px; }
+.guide-toc ol { columns:2; column-gap:40px; padding-left:22px; }
+.guide-toc li { break-inside:avoid; }
+.say { margin:24px 0; padding:18px 20px; background:var(--accent-bg); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; }
+.say p:last-child { margin-bottom:0; }
+.say strong { color:var(--text-bright); }
+.qa details { border-top:1px solid var(--border-dim); padding:14px 0; }
+.qa details:last-of-type { border-bottom:1px solid var(--border-dim); }
+.qa summary { cursor:pointer; font-weight:600; color:var(--text-bright); list-style:none; display:flex; justify-content:space-between; gap:16px; }
+.qa summary::-webkit-details-marker { display:none; }
+.qa summary::after { content:'+'; font-family:var(--font-display); font-size:1.4rem; line-height:1; color:var(--accent); }
+.qa details[open] summary::after { content:'−'; }
+.qa details > div { margin-top:10px; color:var(--text); }
+@media(max-width:600px) { .guide-toc ol { columns:1; } }

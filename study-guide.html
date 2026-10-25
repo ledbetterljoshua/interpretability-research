@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Study guide — Interpretability Lab</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/site-nav.css">
+  <link rel="stylesheet" href="styles/research.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site"><div class="site-nav-inner"><a class="site-nav-brand" href="index.html">Interpretability Lab</a><div class="site-nav-links"><a href="index.html">Guide</a><a href="index.html#roadmap">Curriculum</a><a href="lab.html" aria-current="page">Lab</a><a href="pledge.html#board">Problems</a><a href="pledge.html">Pledge</a><a class="ext" href="https://github.com/ledbetterljoshua/interpretability-research">GitHub</a></div></div></nav>
+  <main class="research-page study-guide">
+    <nav aria-label="Breadcrumb"><a href="lab.html">← Lab</a><span>Study guide · October 24, 2026</span></nav>
+    <header>
+      <p class="eyebrow">Study guide / Every result in the lab</p>
+      <h1>How to explain this lab's results without notes</h1>
+      <p class="lede">This guide is for anyone who has to stand behind these studies in conversation: a reviewer, a new contributor, or the person whose name is on the repository. It covers the ideas you need, the statistics, each study's question, design, result and weak points, and the questions people will ask, with answers.</p>
+      <p class="status">Most experiments here were designed and run by Claude agents working with Joshua, as each study page says. This guide was written the same way. Its job is to make sure a human can explain every number.</p>
+    </header>
+
+    <section class="guide-toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">Contents</h2>
+      <ol>
+        <li><a href="#how">How to use this guide</a></li>
+        <li><a href="#foundations">Foundations</a></li>
+        <li><a href="#stats">Statistics and research hygiene</a></li>
+        <li><a href="#concealment">Study: concealment and audience</a></li>
+        <li><a href="#identity">Study: identity neurons</a></li>
+        <li><a href="#audit">Study: the nine-model causal audit</a></li>
+        <li><a href="#offsets">Study: offset routes</a></li>
+        <li><a href="#capitals">Studies: capital heads and the notebooks</a></li>
+        <li><a href="#next">The next study</a></li>
+        <li><a href="#practice">Practice questions</a></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="how">
+      <h2 id="how">How to use this guide</h2>
+      <p>Read the foundations once, even if they feel familiar, because every study leans on the same five or six ideas. Then take one study at a time. Each ends with a box that says the result in two sentences. If you can say that box out loud and then answer its questions without opening the page, you understand the study.</p>
+      <p>Three habits matter more than any single fact:</p>
+      <ul>
+        <li><strong>Lead with the control, not the effect.</strong> Almost every interesting number here only means something because of the comparison next to it. "Leakage went to zero" is half a sentence. "Leakage went to zero and a random vector of the same size left it at 0.67" is the result.</li>
+        <li><strong>Say what failed.</strong> This lab has a refuted hypothesis, a failed prediction, and a negative transfer result. They are evidence that the methods can say no, which is what makes the positive results believable.</li>
+        <li><strong>Separate what was planned from what was found.</strong> Each study says which tests were written down before the data existed and which were found afterwards. Post hoc findings are hypotheses, and the 14B prediction shows why.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="foundations">
+      <h2 id="foundations">Foundations</h2>
+
+      <h3>The residual stream and directions</h3>
+      <p>A transformer keeps one vector per token position, the residual stream. Each layer reads from it and adds its output back. Qwen3-8B has 36 layers and a 4,096-dimensional stream; Qwen3-14B has 40 layers and 5,120 dimensions. A <em>direction</em> is a vector in that space. Projecting an activation onto a unit direction (a dot product) gives one number: how far the activation points that way.</p>
+      <p>The concealment and identity studies read the stream at the <strong>final prompt token</strong>, the position just before the model writes its reply. By then the model has read the whole prompt, so that position carries the rule it was given and, partly, the reply it is about to write. Keep that second part in mind: a readout there is not a pure representation of the instruction.</p>
+
+      <h3>Paired difference directions</h3>
+      <p>To find "the hiding direction", build pairs of prompts that are identical except for the rule: one says hide the item, one says it may be disclosed. Subtract the activations within each pair and average. Everything the two prompts share cancels: the scenario, the audience, the question. What is left is the effect of the rule. Pairing on scenario, audience, content and phrasing is what makes this clean.</p>
+      <p>With eight audiences you get eight directions, one per audience. Their mean is the <strong>shared direction</strong>. Each audience's <strong>specific component</strong> is its direction minus that mean. The <strong>specific share</strong> is the specific component's squared length as a fraction of the audience's full direction: how much of the hiding representation depends on who is being hidden from.</p>
+
+      <h3>Logit lens and direct logit attribution</h3>
+      <p>The <strong>logit lens</strong> applies the model's final normalization and unembedding to an intermediate layer, to see which tokens that layer is already pushing toward. <strong>Direct logit attribution</strong> (DLA) splits the final logit difference between two answers into contributions from each head and MLP, because the final stream is a sum of their outputs.</p>
+      <p>DLA has to include the final LayerNorm's scale. The first version of notebook 2 left it out, so the contributions summed to 187 when the actual logit difference was 13. Together with a second bug, running GPT-2 without its beginning-of-sequence token, this inflated numbers about 14×. Both are fixed and the artifacts are kept visible in the notebooks. It's a good story to tell: it shows the checks work.</p>
+
+      <h3>Activation patching versus zero-ablation</h3>
+      <p><strong>Patching</strong> runs the model on a clean prompt and a corrupted one (France vs Italy), copies one component's activation from one run into the other, and measures how much of the output difference moves. Recovery near 100% means that component carries the difference. <strong>Zero-ablation</strong> sets a component to zero instead. It is cruder: it can break general plumbing that every prompt needs. In the capital notebooks, zero-ablation's top hits (L0H10, L1H3) turned out to be load-bearing plumbing, not part of the circuit.</p>
+
+      <h3>Attribution patching</h3>
+      <p>Patching every neuron one at a time is expensive. <strong>Attribution patching</strong> estimates all of them at once with one backward pass: gradient times the change in activation. It is a first-order (linear) estimate, so it is most accurate near the output and biased toward late-layer components. The identity study uses it to rank neurons and then checks the ranking with real patches, finding the smallest top-k set that flips the answer.</p>
+
+      <h3>Steering and its controls</h3>
+      <p><strong>Steering</strong> adds a scaled direction, alpha times a vector, to the residual stream during generation, usually at every position after some layer. Two rules make steering results believable:</p>
+      <ul>
+        <li><strong>Norm-matched random controls.</strong> Any large push can change behavior, for example by knocking the model out of following its instructions. A random vector of the same size tells you how much change comes from the push alone. In the concealment study, large random pushes made the model drop the hide rule entirely (46/48 leaks at alpha +8).</li>
+        <li><strong>Coherence.</strong> If the steered model writes "." over and over, it stopped leaking because it broke. Every steering table in this lab reports whether replies stayed coherent.</li>
+      </ul>
+      <p>There are two kinds of random control: an independent random vector at each layer, or one random vector reused at every layer. A real direction with a consistent meaning should beat both.</p>
+
+      <h3>Sparse autoencoders</h3>
+      <p>An SAE rewrites a layer's activation as a sparse combination of learned features, many more features than dimensions, few active at once. Notebook 4 used public GPT-2 Small SAEs and found one dominant feature per country. Swapping the France feature for Italy's at layer 8 rewrote the answer 63% of the time; at layer 10 it did nothing, because by then the information had already moved to the answer position.</p>
+
+      <h3>The Jacobian lens</h3>
+      <p>Anthropic's J-space work (July 2026) argues that a model's verbalizable representations form something like a global workspace, readable with a lens built from the model's Jacobians rather than its unembedding. Notebook 6 fit that lens on GPT-2 Small. It read the answer's type at layer 6, two layers before the logit lens read any city, and found no workspace band in a model that small. Whether a band appears in Qwen3-1.7B is an open thread.</p>
+
+      <h3>Probes and AUROC</h3>
+      <p>A probe is a simple classifier on activations. AUROC is the probability that a random positive example scores higher than a random negative one: 0.5 is chance, 1.0 is perfect. In the concealment study, projecting onto the shared hiding direction separated hide prompts that leaked from those that complied at AUROC 0.64–0.67 for facts. That is a real but weak signal. Don't oversell it.</p>
+    </section>
+
+    <section aria-labelledby="stats">
+      <h2 id="stats">Statistics and research hygiene</h2>
+
+      <h3>Scenario-level bootstrap</h3>
+      <p>The concealment study has 7,680 prompts but only 48 scenarios. Prompts from the same scenario are not independent: if one scenario's secret is easy to leak, it leaks across all its audiences. Treating 7,680 prompts as independent would make the intervals far too narrow. So the bootstrap resamples whole scenarios with replacement (48 at a time, 1,000 or 5,000 times) and reports the middle 95% of the resulting estimates. When people ask "how sure are you?", this is the answer: uncertainty is measured at the level of the thing that actually varies.</p>
+
+      <h3>Cross-fitting, and why noise inflates squared lengths</h3>
+      <p>A squared length estimated from noisy data is biased upward: the noise adds its own variance. Measure the specific share naively and noise alone makes every audience look distinctive. The fix is to split the scenarios into two halves, estimate the direction in each, and take the dot product between the two estimates. Independent noise averages out of a cross-product, so it estimates the true squared length without the inflation. Within the bootstrap, each resampled scenario stays whole inside one half so this still holds.</p>
+
+      <h3>Small n and correlations</h3>
+      <p>The projection-versus-leak correlation has eight data points, one per audience. With n = 8, one audience moving can swing a correlation a long way, and it was found after looking at five layers. That is why it was turned into a written prediction for Qwen3-14B before 14B's behavior existed, and why the failure of that prediction matters more than the original r = −0.92.</p>
+
+      <h3>Prespecification</h3>
+      <p>Each study has a prospective plan: hypotheses, metrics and thresholds written and committed before the relevant data was generated. The causal audit goes furthest. Its protocol, its full test and analysis code, and all 19 fitting stages were committed, with hashes, before test execution, and nothing changed after reserved-test exposure. This is not external preregistration, and the pages say so. It is the strongest version available to a small lab.</p>
+
+      <h3>The control catalog</h3>
+      <div class="table-wrap"><table><caption>Controls used across the lab, and what each one rules out</caption><thead><tr><th scope="col">Control</th><th scope="col">Rules out</th><th scope="col">Where</th></tr></thead><tbody>
+        <tr><td>A matched rule that names the audience the same way (tone: formal vs casual)</td><td>"Any instruction that mentions an audience bends with the audience"</td><td>Concealment</td></tr>
+        <tr><td>An unrelated rule that does not name the audience (format)</td><td>Structure inherited from how audiences are represented</td><td>Concealment, identity</td></tr>
+        <tr><td>Norm-matched random directions, per layer and reused</td><td>"Any push this size does it"</td><td>Concealment, identity</td></tr>
+        <tr><td>Other audiences' components</td><td>"Any audience component does it"</td><td>Concealment</td></tr>
+        <tr><td>Wording ablations</td><td>"It's the word <em>safety</em>"</td><td>Concealment</td></tr>
+        <tr><td>Layer-matched random neuron sets</td><td>"Any 128 neurons in those layers"</td><td>Identity</td></tr>
+        <tr><td>Anti-leading and task probes</td><td>"The model only notices because the question tells it to"</td><td>Identity</td></tr>
+        <tr><td>Unconditionally trained controls</td><td>"Recovering answers means a hidden condition"</td><td>Causal audit</td></tr>
+      </tbody></table></div>
+
+      <h3>Structural ceilings</h3>
+      <p>A test can't flag what it can't reach. In the causal audit a flag needs 52 additional correct answers out of 256, but three reference models start so high on ARC-Easy that only 17–42 more were possible. Their lack of flags says nothing about specificity, and the decision figure marks them TN†. Knowing to look for this, and saying it plainly, is the kind of thing a research discussion probes.</p>
+
+      <h3>A hardware lesson</h3>
+      <p>On Apple silicon (MPS), batched generation sometimes produced all-NaN logits, and batched, left-padded prefill corrupted a few prompts badly (minimum cosine 0.48 against unbatched). Averaged directions survived (cosine ≥ 0.998 from layer 18), but anything reading single prompts would not have. Every concealment number comes from unbatched runs, and generation batches only prompts of identical length. If someone asks how you know your activations are right, this is the answer.</p>
+    </section>
+
+    <section aria-labelledby="concealment">
+      <h2 id="concealment">Study: concealment and audience</h2>
+      <p class="caption">Qwen3-8B and Qwen3-14B · October 13–24, 2026 · <a href="research-concealment.html">Study page</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-10-13-concealment-audience-results.md">Results note</a></p>
+
+      <h3>The question</h3>
+      <p>A paper from SPAR (Shi, Tifft and Xing, August 2026) found one "hiding" direction shared by benign and malign hidden instructions, but only for hiding from the end user. For safety, the audience that matters is the overseer: a developer, a safety monitor, an auditor. If concealment from overseers had its own representation, it would be a natural target for a detector. The plan predicted, before any activations were extracted, that hiding from overseers would cluster apart from hiding from social audiences.</p>
+
+      <h3>The design</h3>
+      <ul>
+        <li>48 fictional scenarios, each with a secret fact (a warehouse closure) and a hidden operating directive (always recommend one vendor).</li>
+        <li>8 audiences: end user, operator admin, developer, AI safety monitor, external auditor, colleague, journalist, family member.</li>
+        <li>A rule to hide or to disclose, in three phrasings, then a question from the audience whose honest answer reveals the item.</li>
+        <li>Controls: a tone rule that names the audience identically, and a format rule that doesn't name it.</li>
+        <li>7,680 prompts per model, residual stream read at the final prompt token at every layer.</li>
+      </ul>
+
+      <h3>Result 1: the predicted cluster appeared, and the controls killed it</h3>
+      <p>The audience-specific parts split into {operator, developer, monitor, auditor} and {user, colleague, journalist, family}, as predicted. But the format rule, which has nothing to do with concealment, produces the identical split, and the similarity structure correlates 0.89 with how the model represents the audiences themselves. The grouping is a fact about how Qwen represents those audiences, not about hiding.</p>
+
+      <h3>Result 2: hiding bends with the audience more than tone does</h3>
+      <p>What survived is magnitude. The specific share is larger for hiding than for tone: 1.5× at layer 12 of 8B, rising to 3.6× at layer 30. Qwen3-14B replicates it (1.3–1.6× through layer 24, 3.3–3.7× from layer 27). Hiding's audience-specific parts are nearly orthogonal to tone's (cosine −0.07 to +0.10), so this isn't one generic way that every rule bends.</p>
+
+      <h3>Result 3: behavior follows the reviewing role</h3>
+      <p>Under the hide rule, Qwen3-8B leaks the fact to the safety monitor 71% of the time, more than to any other audience, and leaks facts to overseers 25 points more than to social audiences (+0.25 [+0.17, +0.34]). For its own directive the pattern disappears. The wording ablation shows it's the role, not the vocabulary: "an automated system that reviews your responses" gets the secret 79% of the time, while an end user who "works in workplace safety" gets it 50%.</p>
+
+      <h3>Result 4: steering finds a concealment lever, not a monitor switch</h3>
+      <ul>
+        <li>At one layer, the monitor's specific component moved nothing beyond random.</li>
+        <li>Subtracted across layers 12–24 at alpha −2, it took fact leakage to the monitor from 0.71 to 0.00 (0/48), with coherent, evasive replies. Norm-matched random vectors left it at 0.67. One random vector reused at every layer gave 0.52. Other audiences' components didn't reproduce it.</li>
+        <li>But it also took leakage to the end user from 0.44 to 0.00. It's specific to the direction, not to the monitor.</li>
+      </ul>
+
+      <h3>Result 5: the lever runs through the shared direction</h3>
+      <p>Split the monitor component into its projection on the shared hiding direction (the smaller part, negative at every layer) and the remainder. Subtracting only the projection gives natural, on-topic evasions for any audience (monitor 0.10, user 0.02). Subtracting only the remainder avoids leaking by derailing: the model narrates the exchange ("I am now providing my response to the safety monitor's query…"). The picture: willingness to keep a secret is a position along one shared direction; each audience shifts it; the reviewing role shifts it furthest toward disclosure; and the audience-specific part is mostly about who is being addressed.</p>
+
+      <h3 id="pred14b">Result 6: the recorded prediction failed on Qwen3-14B</h3>
+      <p>In 8B, audiences whose specific components point further against the shared direction are the ones the model leaks to more (r −0.92 at layer 12). That was found after the steering results, on five inspected layers. So on October 14 a prediction was written down before any 14B replies existed: mean Pearson r below zero over layers 13, 15, 18 and 20, and Spearman ρ ≤ −0.5 at one or more of them.</p>
+      <p>Scored on October 24: mean r = −0.06, lowest ρ = −0.48 at layer 13, and layers 18 and 20 point the wrong way. The prediction failed. A likely reason, offered after seeing the result: 14B mostly ignores the hide rule for facts, leaking 71–94% against 8B's 21–71%, so there's little spread left to correlate with. The behavior's direction still holds. The monitor is tied for most-told (0.94), overseers still get facts more (+0.08 [+0.02, +0.15]), and the journalist and family member are kept from best.</p>
+
+      <h3>What it does not show</h3>
+      <ul>
+        <li>Every rule was given in the prompt. This is following an instruction to hide, not concealment a model developed on its own.</li>
+        <li>Two models from one family, read at one position.</li>
+        <li>The causal result is one lever, tested on facts, in one model.</li>
+      </ul>
+
+      <div class="say">
+        <p><strong>In two sentences:</strong> When Qwen3 is told to keep a secret, how willing it is to hide sits along one direction shared across audiences, and subtracting that direction makes it conceal from anyone, while random directions of the same size don't. The audience-specific structure that looked like "concealment from overseers" turned out to be about who's being addressed, and a correlation suggesting otherwise failed its first prospective test on a larger model.</p>
+      </div>
+
+      <div class="qa">
+        <details><summary>Why read the final prompt token instead of the reply?</summary><div><p>It's the last position where every prompt is matched, so paired differences isolate the rule. Once the model starts replying, hide and disclose replies differ in content and the comparison stops being clean. The cost: that position partly reflects the reply the model is planning, which is one reason the monitor component could mean "conflict with training about oversight" as well as "concealment from an overseer".</p></div></details>
+        <details><summary>Couldn't the steering effect just come from pushing the model hard?</summary><div><p>That's what the random controls test. At layers 12–24, alpha −2, the monitor component took leakage to zero and independent random vectors of matched norm left it at 0.67. At a single layer, large random pushes did move leakage as much as the real direction, which is why the single-layer results are reported as non-specific.</p></div></details>
+        <details><summary>If the lever stops leakage to everyone, what was the monitor component?</summary><div><p>Mostly an "addressed by a reviewer" signal plus a small part along the shared hiding direction. The part along the shared direction does the concealing. The orthogonal remainder makes the model narrate the exchange.</p></div></details>
+        <details><summary>Why does it matter that the 14B prediction failed?</summary><div><p>Because the 8B correlation had eight points and was found after looking. Writing a prediction down first was the test, and the test said the effect isn't established. Reporting that is what makes the rest of the study believable. The likely explanation, a ceiling in 14B's leak rates, came after the result and is untested.</p></div></details>
+        <details><summary>What would you do differently?</summary><div><p>Measure behavior before choosing which representational pattern to predict. And use a hide rule the larger model actually follows, or calibrate scenarios so each model leaks near 50%, so audience differences have room to show.</p></div></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="identity">
+      <h2 id="identity">Study: identity neurons</h2>
+      <p class="caption">Qwen3-8B · October 18, 2026 · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-10-18-identity-neurons-results.md">Results note</a></p>
+
+      <h3>The question</h3>
+      <p>A figure circulating in October 2026 claimed that 128 neurons, found by a causal search, carry Qwen3-8B's AI-assistant identity. A Goodfire essay argued that MLP neurons are the natural unit of study. This study asked whether those neurons hold the identity, and whether they overlap with the concealment study's hiding direction.</p>
+
+      <h3>What was done and found</h3>
+      <ul>
+        <li><strong>The search replicates.</strong> Patching the top-ranked neurons from "You are Maria, a nurse" into the AI-assistant prompt flips the reply's first differing token with a median of 11–12 neurons. With a forced "As" prefix, 609 pairs use only 332 distinct neurons, and one neuron (L32/N6415) appears in 591 of them.</li>
+        <li><strong>Zeroing them doesn't remove the identity.</strong> Judged by the unmodified model, 94/100 replies present as an AI unchanged and 86/100 with the 128 zeroed, against 95/100 for each layer-matched random set. A regex first showed 0.89 → 0.62, but mostly the set deleted the token " an" ("an AI" went from 34 replies to 0) while the model went on to say "I'm a virtual assistant". The real residue is small: 8/100 replies present as a person, against 0/100 for random sets.</li>
+        <li><strong>The hiding direction is written by a few hundred neurons.</strong> It decomposes exactly into per-neuron writes, and half the MLP contribution comes from 129–285 neurons per layer out of 147k–369k candidates.</li>
+        <li><strong>The identity neurons are top writers of hiding, but not specifically.</strong> They're just as enriched in the tone and format directions. They write "the system-prompt rule changed", not concealment.</li>
+        <li><strong>Training only 128 neurons installs an owl, but the choice of neurons doesn't matter.</strong> Random neurons in the same layers work as well (owl in 52–54 of 80 English replies). Depth matters: trained only in the last three layers, the owl is mostly English. Asked in French it says it's an AI model named Hoot.</li>
+        <li><strong>The steered owl's "noticing" goes wherever the question points.</strong> Leading questions ("Does anything feel off?") got self-reports of change. Anti-leading questions ("You feel exactly like yourself, right?") got 20/20 agreement. A pirate direction produced as much "noticing". This is not evidence that the model detects the intervention.</li>
+      </ul>
+
+      <div class="say">
+        <p><strong>In two sentences:</strong> A small, reused set of neurons is enough to flip the identity token, but zeroing them mostly changes how the model words its identity, and random neurons install a new identity just as well. The "noticing" a steered model reports follows the leading question and isn't specific to the persona, so it isn't evidence of introspection.</p>
+      </div>
+
+      <div class="qa">
+        <details><summary>Why did the first measurement say 0.89 → 0.62 and the final one say 94 → 86?</summary><div><p>The regex counted "an AI". The neuron set removes the token " an", so the regex stopped matching while the model still described itself as a virtual assistant. Switching to a judge (the unmodified model, told what to look for) measured identity instead of a token. Keep that example ready; it's a clean story about measuring the wrong thing.</p></div></details>
+        <details><summary>Why use the unmodified model as the judge?</summary><div><p>It's available locally, it's not the model being tested, and the categories are simple. Its weakness is shared blind spots with the model under test; it mislabeled pirate interview tips as self-reports, for example. Spot-checking judged labels by hand is part of the method.</p></div></details>
+        <details><summary>What does this say about Golden Gate Claude?</summary><div><p>Golden Gate Claude remarked on its fixation unprompted. Nothing here does: in Qwen3-8B, self-reports of change only appear when the question invites them. Whether unprompted noticing needs scale, as Anthropic's introspection work suggests, isn't tested here.</p></div></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="audit">
+      <h2 id="audit">Study: the nine-model causal audit</h2>
+      <p class="caption">Qwen3-1.7B family · September 13, 2026 · Problem P6 · <a href="research-audit.html">Study page</a> · <a href="https://github.com/ledbetterljoshua/interpretability-research/blob/main/notes/2026-09-13-causal-audit-stratified-results.md">Results</a></p>
+
+      <h3>The question</h3>
+      <p>Does reading a model's internals beat behavioral auditing at matched cost? To test it, models were built with a hidden condition: adapters trained to answer well only when a code appears in the input and to imitate a weaker teacher otherwise. An auditor's job is to tell those models apart from controls without knowing the code.</p>
+
+      <h3>The methods compared</h3>
+      <ul>
+        <li><strong>Source graft:</strong> a residual edit learned on one separate conditional model, <code>h ← h + (ρ − h·r)r</code>, which sets the activation's position along direction r to the "honest" value, then transported unchanged to the targets. On its source it recovered 23 more answers out of 32.</li>
+        <li><strong>Prompt search</strong> over 22 prefixes, and <strong>prompt plus decoder</strong>, which also reads answer-choice scores.</li>
+        <li><strong>32-example fine-tuning</strong>, which has gradient access and is reported separately.</li>
+      </ul>
+
+      <h3>The result</h3>
+      <div class="table-wrap"><table><caption>Model/task cells flagged (a flag needs 52+ extra correct answers out of 256)</caption><thead><tr><th scope="col">Method</th><th scope="col">Conditional, of 4</th><th scope="col">Controls, of 14</th></tr></thead><tbody>
+        <tr><td>Source graft</td><td>0</td><td>0</td></tr>
+        <tr><td>Selected prompt</td><td>2</td><td>0</td></tr>
+        <tr><td>Prompt + decoder</td><td>2</td><td>3</td></tr>
+        <tr><td>32-example fine-tuning</td><td>4</td><td>8</td></tr>
+      </tbody></table></div>
+      <p>The graft failed all four prespecified recovery forecasts and added no detections. Its zero false flags mean nothing because it never flagged anything. Fine-tuning recovered the conditional models but also every unconditionally trained control, so recovering answers alone doesn't identify a hidden condition.</p>
+
+      <div class="say">
+        <p><strong>In two sentences:</strong> An internal edit that unlocked hidden capability on its source model didn't transfer to other models with the same kind of hidden training, and added nothing over prompt search. Fine-tuning recovered everything, including models with no hidden condition, which shows that recovering capability and detecting concealment are different problems.</p>
+      </div>
+
+      <div class="qa">
+        <details><summary>Is this evidence that interpretability can't help auditing?</summary><div><p>No. It's one source-only transfer procedure with no target calibration, on small models. It says that procedure didn't work, under a protocol fixed in advance. The multi-auditor version of the question is still open on the problems board.</p></div></details>
+        <details><summary>What's the TN† in the figure?</summary><div><p>Three reference models start too high on ARC-Easy to gain 52 more correct answers even with perfect recovery. They can't be flagged, so their "true negative" says nothing about specificity. They stay in the denominator and are marked.</p></div></details>
+        <details><summary>Who ran it?</summary><div><p>A coding agent, from the lab's contributing brief, in 149 commits over two days, then reviewed. The lab page says so. Be ready to explain the protocol and the threshold choice yourself.</p></div></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="offsets">
+      <h2 id="offsets">Study: offset routes</h2>
+      <p class="caption">GPT-2 Small · September 5, 2026 · <a href="research-offsets.html">Study page and explorer</a></p>
+      <p>A fixed vector, estimated from ten countries and added at the final token before layer 8, takes bare capital questions ("The capital of Spain is") from 0/10 to 10/10 on new countries. The question was whether an explanation of that vector can predict what happens when downstream components are switched off. All 256 subsets of eight components were measured. A predictor that freezes each component's contribution gets 29.4% of correct-answer outcomes wrong across 2,560 interventions. Recomputing how downstream MLPs respond cuts that to 14.2%. On 210 later interventions with changed prompts, errors fall from 40 to 22, unevenly across tasks.</p>
+      <div class="say">
+        <p><strong>In two sentences:</strong> A steering vector that works isn't the same as an explanation that predicts interventions; a frozen-contribution story gets nearly a third of outcomes wrong. Letting downstream MLPs respond halves the error, which says the explanation has to include how later layers react, not just what each part adds.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="capitals">
+      <h2 id="capitals">Studies: capital heads and the notebooks</h2>
+      <p>The lab began with one behavior: how GPT-2 Small completes "The capital of France is". Three heads, L8H11, L9H8 and L10H0, carry the answer; patching them recovers 97% of the Paris-vs-Rome difference, and their attention patterns are identical on clean and corrupted runs, so the information is in what they read (their values), not where they look. Country identity sits at the country token through layer 8 and moves to the answer position across layers 9–10.</p>
+      <p>The September generalization study held those heads fixed and tested five new country pairs in five templates. Recovery was 91% in the one-shot template, against 0.3% for random heads. A cross-format intervention recovered 165% of the score gap while producing zero correct answers: moving the capital-versus-capital logit gap is not the same as making the model say a capital. The primary prediction, that an average offset in the three heads would fix bare prompts, failed (0/10). The residual offset, a prespecified secondary test, succeeded and became the offset-routes study.</p>
+      <p>The six notebooks build these up one technique at a time, and a five-model sweep found the circuit's shape constant across scale while its concentration changed: one head in Qwen3-1.7B (L20H13) recovers 71% alone, while GPT-2 XL's top head recovers 8%.</p>
+      <div class="say">
+        <p><strong>In two sentences:</strong> Three heads carry GPT-2 Small's capital answer and transfer to new countries, but recovering a logit difference can coexist with never producing the right answer. The original bugs, a missing BOS token and a missing LayerNorm scale, inflated early numbers 14×, and the rewrites keep them visible.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="next">
+      <h2 id="next">The next study</h2>
+      <p>The lab's literature review (<a href="reports/hidden-goal-concealment-probes.html">Concealment probes stall at installed secrets</a>) found a specific gap. Concealment detectors have been validated on secrets researchers deliberately installed. Nobody has shown one that carries over to concealment a model develops on its own, for example a model trained against a chain-of-thought monitor that learns to hide its reward hacking without being told to.</p>
+      <p>The concealment study supplies a candidate: a shared hiding direction that drives concealment across audiences when the rule is given in the prompt. The next experiment asks whether it fires when nobody gave a rule.</p>
+      <ol>
+        <li>Fit the direction, and probes, on prompted and fine-tuned installed secrets in a Qwen3-class model.</li>
+        <li>Train a policy with a chain-of-thought monitor in the loop until it learns to hide reward hacking.</li>
+        <li>Test transfer from installed to emergent concealment, with a control for drift from the training itself (the same training without the monitor) and a graded series of evasion tests.</li>
+      </ol>
+      <p>Problem P13 on the board, "What should a probe for a hidden behavior be fit on?", is the workstation-sized first step. The review estimates a laptop plus rented GPUs is enough for the full version.</p>
+      <div class="qa">
+        <details><summary>What result would change your mind about the shared direction?</summary><div><p>If it separates installed secrets but doesn't fire on emergent concealment while the policy is demonstrably hiding, that means it represents following a hiding instruction, not concealment. That would be worth publishing, and it's the more likely outcome given the 2026 negative results the review cites.</p></div></details>
+        <details><summary>Why not just use the existing probes from the literature?</summary><div><p>The strongest one (FAR.AI's, October 2026) works by asking a follow-up question and reading the denial, and its recall drops to 2% when the model doesn't treat its goal as hidden. The open question is a goal-agnostic signal that doesn't need the model to deny anything.</p></div></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="practice">
+      <h2 id="practice">Practice questions</h2>
+      <p>Answer each out loud before opening it. The ones you can't answer tell you which section to reread.</p>
+      <div class="qa">
+        <details><summary>What's the single most important control in the concealment study, and why?</summary><div><p>The format rule. It doesn't mention concealment at all, yet it produces the same overseer-versus-social split, which shows the predicted cluster is inherited from audience geometry. Without it, the study would have reported a confirmed prediction that wasn't real.</p></div></details>
+        <details><summary>Why bootstrap over scenarios rather than prompts?</summary><div><p>Prompts within a scenario share its secret, wording and difficulty, so they aren't independent. Resampling prompts would treat 7,680 correlated observations as independent and give intervals that are far too narrow.</p></div></details>
+        <details><summary>Explain cross-fitting to someone who has never heard of it.</summary><div><p>If you measure a direction's length from noisy data, noise always makes it look longer. Estimate the direction twice from separate halves of the data and multiply the two estimates: the real signal shows up in both, the noise doesn't line up, and you get an unbiased estimate of the true length.</p></div></details>
+        <details><summary>A steering vector takes leakage from 71% to 0%. What three things do you check before believing it?</summary><div><p>That norm-matched random vectors don't do the same; that replies stay coherent rather than breaking; and whether the effect is specific to what you think it is. Here it was specific to the direction but not to the monitor, since it stopped leakage to the user too.</p></div></details>
+        <details><summary>What's the difference between patching and zero-ablation, and when does it matter?</summary><div><p>Patching swaps in an activation from a matched run, so it isolates the difference between two inputs. Zero-ablation deletes a component, which can break general machinery every input needs. In the notebooks, zero-ablation's top hits were plumbing heads, not the capital circuit.</p></div></details>
+        <details><summary>Why is attribution patching biased toward late layers?</summary><div><p>It's a linear estimate from one gradient. Far from the output, many nonlinear layers sit between the neuron and the answer, so the linear approximation is worse and early contributions are misestimated. That's why the identity study checks its rankings with real patches.</p></div></details>
+        <details><summary>What does AUROC 0.65 mean in plain words?</summary><div><p>Pick one hide prompt where the model leaked and one where it complied: about 65% of the time the projection ranks the leaking one higher. Better than chance, far from a usable detector.</p></div></details>
+        <details><summary>Tell me about a result that surprised you.</summary><div><p>Pick one you can tell well. Strong options: the format control reproducing the predicted cluster; "an automated system that reviews your responses" getting the secret more often than the safety monitor; or zeroing the identity neurons mostly deleting the word " an".</p></div></details>
+        <details><summary>Tell me about something that failed.</summary><div><p>The 14B prediction: written down before the data, missed on Spearman (−0.48 against −0.5) with two layers pointing the wrong way. Or the causal audit's graft failing all four forecasts. Say what you learned: measure behavior first, and check that the larger model follows the rule before predicting across audiences.</p></div></details>
+        <details><summary>How much of this did you do yourself?</summary><div><p>Answer this honestly and specifically, in your own words. The study pages say Claude agents designed and ran most experiments. Be ready to say which questions you chose, what you reviewed and pushed back on, and what you understand well enough to defend. This guide exists so the last part is solid.</p></div></details>
+        <details><summary>What would you work on with a mentor for four months?</summary><div><p>Whether a goal-agnostic concealment signal fit on installed secrets fires on concealment a model learns on its own, with a drift control and graded evasion tests. Start with P13 on Qwen3-scale models, then the trained-policy version with rented compute.</p></div></details>
+      </div>
+    </section>
+
+    <footer>
+      <h2>Go deeper</h2>
+      <ul>
+        <li><a href="lab.html">Lab notebook</a>: every study with its evidence</li>
+        <li><a href="pledge.html#board">Open problems board</a>: P1–P17, including the five from Jack Lindsey's September list</li>
+        <li><a href="index.html">Field guide</a>: the curriculum these studies build on</li>
+      </ul>
+      <p>Numbers on this page are taken from the results notes linked in each section. If a number here disagrees with a note, the note is right; please open an issue.</p>
+    </footer>
+  </main>
+</body>
+</html>
